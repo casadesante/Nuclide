@@ -92,7 +92,7 @@ const REPO = "https://github.com/casadesante/Nuclide";
 const llms: string[] = [
   "# Nuclide",
   "",
-  "> A public, cited knowledge graph of oncology: indications, fronts, technologies, targets, treatments and tests, companies, institutions, people, pathways, trials, pairings, roadmaps, key papers, journals, bottlenecks and ideas, one page per object, each with a plain-English TL;DR, a technical summary, dated facts and links to primary sources. Not medical advice.",
+  "> A public, cited knowledge graph of radiopharmaceuticals: indications, fronts, technologies, targets, treatments and tests, companies, institutions, people, pathways, trials, pairings, roadmaps, key papers, journals, bottlenecks and ideas, one page per object, each with a plain-English TL;DR, a technical summary, dated facts and links to primary sources. Not medical advice.",
   "",
   `${g.entities.length.toLocaleString("en-GB")} records in ${liveKinds.length} kinds: ${liveKinds.map((k) => `${g.kind(k).length.toLocaleString("en-GB")} ${KIND_META[k].plural}`).join(", ")}. Every fact is dated and linked to a primary source; where a number is not sourced it is omitted. Facts may be incomplete or out of date: cite the Nuclide page and check the primary source it links before relying on anything that matters.`,
   "",

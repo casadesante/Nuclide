@@ -92,7 +92,7 @@ export function openApiDocument(counts: Record<Kind, number>, opts: { version?: 
       version: opts.version ?? "1",
       summary: "The Nuclide oncology knowledge graph as static files.",
       description: [
-        `Nuclide is a public, cited knowledge graph of oncology: ${total.toLocaleString("en-GB")} records in ${KINDS.length} kinds, one page per object, each with a plain-English TL;DR, a technical summary, dated facts and links to primary sources.`,
+        `Nuclide is a public, cited knowledge graph of radiopharmaceuticals: ${total.toLocaleString("en-GB")} records in ${KINDS.length} kinds, one page per object, each with a plain-English TL;DR, a technical summary, dated facts and links to primary sources.`,
         "Every file here is written at build time and served from the CDN: no authentication, no rate limit beyond the CDN, permissive CORS. Files are regenerated on every deploy; meta.json carries the build time so clients can cache on it.",
         "Field names and enums come from the Zod schema in src/lib/schema.ts in the repository. The Entity schema below points at /api/v1/schema.json, which is generated from that file, so the two cannot drift.",
         `Kinds:\n${kindLines}`,

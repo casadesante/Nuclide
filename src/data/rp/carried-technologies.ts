@@ -419,6 +419,9 @@ export const carriedTechnologies: EntityInput[] = [
         "label": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Fludeoxyglucose_(18F)"
       }
+    ],
+    "indications": [
+      "nsclc"
     ]
   },
   {

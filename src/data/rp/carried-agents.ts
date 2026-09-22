@@ -1254,6 +1254,9 @@ export const carriedAgents: EntityInput[] = [
         "label": "FDA label (DailyMed)",
         "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Fludeoxyglucose%20F%2018"
       }
+    ],
+    "indications": [
+      "nsclc"
     ]
   },
   {

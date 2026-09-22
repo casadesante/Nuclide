@@ -46,6 +46,7 @@ export const asiaAgents: EntityInput[] = [
       { label: "Advances in clinical oncology research on 99mTc-3PRGD2 SPECT imaging (Frontiers in Oncology, 2022)", url: "https://doi.org/10.3389/fonc.2022.898764" },
     ],
     tags: ["diagnostic", "china", "spect", "integrin"],
+    indications: ["nsclc"],
     related: ["integrin-avb3", "tc-99m", "spect", "csnm", "china-isotope-radiation", "chinese-journal-of-nuclear-medicine-and-molecular-imaging"],
   },
 ];

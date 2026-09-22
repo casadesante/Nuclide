@@ -65,7 +65,7 @@ export const diagnosticOncologyAgents: EntityInput[] = [
     status: "phase-2",
     asOf: "2026-09-22",
     targets: ["fap"],
-    indications: ["pancreatic-net"],
+    indications: ["pancreatic-net", "nsclc"],
     technologies: ["fapi-pet", "pet-ct"],
     companies: ["ge-healthcare"],
     links: [
@@ -564,7 +564,7 @@ export const diagnosticOncologyAgents: EntityInput[] = [
     status: "phase-2",
     asOf: "2026-09-22",
     targets: [],
-    indications: ["breast-her2-positive", "glioblastoma"],
+    indications: ["breast-her2-positive", "glioblastoma", "nsclc"],
     technologies: ["pet"],
     companies: [],
     links: [

@@ -39,7 +39,7 @@ export function SiteHeader() {
         <Link href="/" className="inline-flex h-10 shrink-0 items-center gap-2.5 rounded-lg sm:pe-2 font-semibold tracking-tight" aria-label="Nuclide home">
           <Mark />
           <span className="text-[15px]">Nuclide</span>
-          <span className="hidden min-[1800px]:inline text-muted font-normal text-sm">total information dominance on cancer</span>
+          <span className="hidden min-[1800px]:inline text-muted font-normal text-sm">total information dominance on radiopharmaceuticals</span>
         </Link>
         <NavMenu />
         {/* Shrinks to an icon at phone widths so the fixed-width controls and the menu button always fit on one row.

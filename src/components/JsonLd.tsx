@@ -203,7 +203,7 @@ export function DatasetJsonLd() {
         "@context": CTX,
         "@type": "Dataset",
         "@id": `${SITE}/api/#dataset`,
-        name: "Nuclide: a cited knowledge graph of oncology",
+        name: "Nuclide: a cited knowledge graph of radiopharmaceuticals",
         description: `${g.entities.length.toLocaleString("en-GB")} records across ${counts}, each with a plain-English TL;DR, a technical summary, dated facts and links to primary sources. Not medical advice.`,
         url: `${SITE}/api/`,
         sameAs: ["https://github.com/casadesante/Nuclide"],

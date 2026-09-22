@@ -2084,6 +2084,9 @@ export const carriedTrials: EntityInput[] = [
         "label": "ClinicalTrials.gov NCT06107374",
         "url": "https://clinicaltrials.gov/study/NCT06107374"
       }
+    ],
+    "indications": [
+      "nsclc"
     ]
   },
   {
@@ -2558,6 +2561,9 @@ export const carriedTrials: EntityInput[] = [
         "label": "ClinicalTrials.gov NCT06569420",
         "url": "https://clinicaltrials.gov/study/NCT06569420"
       }
+    ],
+    "indications": [
+      "nsclc"
     ]
   },
   {
@@ -3386,6 +3392,9 @@ export const carriedTrials: EntityInput[] = [
         "label": "ClinicalTrials.gov NCT07276789",
         "url": "https://clinicaltrials.gov/study/NCT07276789"
       }
+    ],
+    "indications": [
+      "nsclc"
     ]
   },
   {
