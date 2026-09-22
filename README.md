@@ -76,10 +76,13 @@ corpus before its cron was armed, so a scheduled run does work rather than fail.
   regulators and news wires, plus the congress harvest), `roadmap-watch.yml` 05:29.
 - `refresh-hta.yml` 1st of each month 05:47 — NICE and G-BA decisions.
 
-The refresh jobs open a pull request rather than committing to `main`, and leave it open, so every
-automated change is reviewable; the weekly review reads the diffs and merges them. That needs Settings -> Actions -> General -> "Allow GitHub Actions to create and approve
-pull requests" to stay enabled. `ci.yml` runs on every push and pull request: validate, typecheck,
-lint, tests, the freshness gate and a full build.
+The refresh jobs open a pull request rather than committing to `main`, and leave it open, so nothing
+machine-generated lands unread; one branch per pipeline, reused, so the queue stays small. Two repo
+settings make that work, both under Settings -> Actions -> General: workflow permissions set to
+read and write, and "Allow GitHub Actions to create and approve pull requests" enabled. GitHub will
+not run checks on a pull request opened with `GITHUB_TOKEN` until someone approves them, so each of
+these arrives with its checks pending approval. `ci.yml` runs on every push and pull request:
+validate, typecheck, lint, tests, the freshness gate and a full build.
 
 A feed that finds nothing reports zero rather than widening its filter, and no pipeline writes a
 record: they write proposals for a human to check against the primary source.
