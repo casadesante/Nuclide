@@ -22,7 +22,7 @@ describe("feed-meta", () => {
   it("reads fetched date, count and staleness from a snapshot", () => {
     const root = mkdtempSync(join(tmpdir(), "nuclide-feeds-"));
     mkdirSync(join(root, "public", "fda"), { recursive: true });
-    writeFileSync(join(root, "public", "fda", "recent.json"), JSON.stringify({ fetched: "2026-09-01", oce: [{}, {}, {}], notInCorpus: [{}] }));
+    writeFileSync(join(root, "public", "fda", "recent.json"), JSON.stringify({ fetched: "2026-09-01", approvals: [{}, {}, {}], notInCorpus: [{}] }));
     const fresh = feedStatus(FEEDS.find((f) => f.id === "fda")!, new Date("2026-09-09"), root);
     expect(fresh.present).toBe(true);
     expect(fresh.fetched).toBe("2026-09-01");

@@ -4,7 +4,7 @@
  * Reads what the feeds found and drafts record patches for a human to review:
  *   public/factcheck.json         registry mismatches (trial status vs ClinicalTrials.gov, openFDA label vs recorded approval)
  *   public/trials/changes.json    trial status changes, posted results, moved primary completion dates
- *   public/fda/recent.json        FDA oncology approvals matched to products but missing from their regulatory events
+ *   public/fda/recent.json        Drugs@FDA approvals matched to products but missing from their regulatory events
  *   public/regional/candidates.json  EU rows missing or disagreeing with the EMA register
  *
  * Every proposal names the entity, the source file and line, the field, the current and proposed values,
@@ -93,18 +93,18 @@ function main() {
   }
 
   // 3. FDA approvals matched to products but absent from their regulatory events. Only products named in the
-  //    notice title are proposed; a CDK4/6 inhibitor mentioned as a combination partner in the summary is not.
+  //    approval title are proposed; a product named only as a comparator in the summary is not.
   const namedIn = (title: string, d: { name: string; brand?: string; aka: string[] }) => {
     const low = title.toLowerCase();
     return [d.name, d.brand ?? "", ...d.aka].join(" ").toLowerCase().split(/[^a-z0-9]+/).some((w) => w.length >= 5 && low.includes(w));
   };
-  for (const o of fda?.oce ?? []) {
+  for (const o of fda?.approvals ?? []) {
     for (const id of o.drugIds) {
       const d = g.get(id);
       if (!d || d.kind !== "drug" || !namedIn(o.title, d)) continue;
       const has = d.regulatoryEvents.some((e) => e.date === o.date || e.source === o.url);
       if (has) continue;
-      const accelerated = /accelerated approval/i.test(o.title);
+      const accelerated = /accelerated/i.test(`${o.title} ${o.summary}`);
       push({ kind: "regulatory-event", confidence: "high", entityId: d.id, entityName: d.name, entityKind: "drug", route: routeFor(d), ...loc(d.id, "drug"), field: "regulatoryEvents", current: `${d.regulatoryEvents.length} events; none dated ${o.date}`, proposed: `{ date: "${o.date}", type: "approval", region: "US", note: "${o.title.replace(/^FDA /, "").replace(/"/g, "'")}${accelerated ? " (accelerated)" : ""}", source: "${o.url}" }`, evidence: o.summary.slice(0, 300), sourceUrl: o.url, detected: o.firstSeen });
     }
   }

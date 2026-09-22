@@ -1,8 +1,8 @@
 /**
- * Which SEER Indication Stat Facts site stands for each Nuclide cancer. SEER reports by anatomical site, so several
+ * Which SEER Cancer Stat Facts site stands for each Nuclide cancer. SEER reports by anatomical site, so several
  * Nuclide indications share one site; `shared` says so in plain words and the page repeats it. Cancers with no
  * SEER fact sheet (mesothelioma, neuroendocrine tumours, most paediatric and rare indications) are absent here
- * and listed as gaps on /survival/. Fact sheets: https://seer.indication.gov/statfacts/
+ * and listed as gaps on /survival/. Fact sheets: https://seer.cancer.gov/statfacts/
  */
 export type SurvivalSite = { slug: string; seerLabel: string; shared?: string };
 

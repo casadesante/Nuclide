@@ -12,7 +12,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { graph } from "../src/lib/graph";
 
-const MAILTO = "nuclide@casadesante.com";
+const MAILTO = "casa@casadesante.com";
 const SUBFIELD = 2730; // Oncology
 
 /** Manual search queries for names OpenAlex search gets wrong. Values starting with "I" and digits are ids. */

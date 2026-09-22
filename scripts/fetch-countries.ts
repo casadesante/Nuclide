@@ -17,8 +17,8 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const MAILTO = "nuclide@casadesante.com";
-const UA = "Nuclide/1.0 (https://github.com/casadesante/Nuclide; mailto:nuclide@casadesante.com)";
+const MAILTO = "casa@casadesante.com";
+const UA = "Nuclide/1.0 (https://github.com/casadesante/Nuclide; mailto:casa@casadesante.com)";
 const YEARS = [2021, 2022, 2023, 2024, 2025];
 const BASE = "https://api.openalex.org/works";
 const out = join(process.cwd(), "public", "openalex");

@@ -1,6 +1,8 @@
 name: Refresh HTA decisions and survival statistics
 
 on:
+  schedule:
+    - cron: "47 5 1 * *"  # 1st of each month, 05:47 UTC
   workflow_dispatch:
 
 permissions:

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { NameMatcher, decodeEntities, normaliseDate, parseFeed, parseLongDate, parseOcePage, stripTags } from "./feed-utils";
+import { NameMatcher, decodeEntities, normaliseDate, parseFeed, parseLongDate, stripTags } from "./feed-utils";
 
 const ENTITIES = [
   { id: "trastuzumab-deruxtecan", kind: "drug", name: "Trastuzumab deruxtecan", brand: "Enhertu", code: "DS-8201a", aka: ["T-DXd"] },
@@ -46,12 +46,6 @@ describe("parsers", () => {
     expect(parseFeed(rdf)[0]).toMatchObject({ title: "B", link: "https://x.test/b", date: "2026-09-01" });
     const atom = `<feed><entry><title>C</title><link href="https://x.test/c"/><updated>2026-08-30T12:00:00Z</updated></entry></feed>`;
     expect(parseFeed(atom)[0]).toMatchObject({ title: "C", link: "https://x.test/c", date: "2026-08-30" });
-  });
-  it("parses the FDA OCE table", () => {
-    const html = `<table><tr><th>Webpage</th><th>Description</th><th>Date</th></tr><tr><td><a href="/drugs/x/fda-approves-foo">FDA approves foo</a></td><td>On September 9, 2026, the Food and Drug Administration approved foo (Bar, Baz Inc.) for adults.</td><td>09/09/2026</td></tr></table>`;
-    const items = parseOcePage(html);
-    expect(items).toHaveLength(1);
-    expect(items[0]).toMatchObject({ date: "2026-09-09", title: "FDA approves foo", url: "https://www.fda.gov/drugs/x/fda-approves-foo" });
   });
   it("normalises dates and entities", () => {
     expect(parseLongDate("On August 26, 2026, the FDA")).toBe("2026-08-26");

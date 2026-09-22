@@ -4,6 +4,8 @@ name: Accessibility audit
 # pages (scripts/a11y.ts). Serious and critical violations fail the job; the full report is uploaded.
 # Playwright and axe-core are installed for the run only (no package.json change).
 on:
+  schedule:
+    - cron: "17 5 * * 1"  # Mondays 05:17 UTC
   pull_request:
   workflow_dispatch:
 

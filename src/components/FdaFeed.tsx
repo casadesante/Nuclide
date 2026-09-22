@@ -6,10 +6,10 @@ import { routeFor } from "@/lib/kinds";
 /** Shape written by scripts/fetch-fda.ts (public/fda/recent.json). */
 export type FdaSnapshot = {
   fetched: string; previousFetched?: string; window: { from: string; to: string };
-  sources: { oce: string; drugsfda: string };
-  oce: Array<{ date: string; title: string; url: string; summary: string; drugIds: string[]; indicationIds: string[]; firstSeen: string }>;
+  sources: { drugsfda: string };
+  approvals: Array<{ date: string; title: string; url: string; summary: string; drugIds: string[]; indicationIds: string[]; firstSeen: string }>;
   drugsfda: Array<{ applicationNumber: string; sponsor?: string; brand?: string; generic?: string; submissionType: string; submissionNumber: string; classCode?: string; classDescription?: string; statusDate: string; drugIds: string[]; firstSeen: string }>;
-  notInCorpus: Array<{ date: string; title: string; url: string; firstSeen: string; generic?: string }>;
+  notInCorpus: Array<{ date: string; title: string; url: string; firstSeen: string; generic?: string; why?: string }>;
   errors: string[];
 };
 
@@ -19,7 +19,7 @@ export const readFda = () => readPublicJson<FdaSnapshot>("fda/recent.json");
 export function fdaActivityByDrug(snap: FdaSnapshot | null): Record<string, string> {
   const out: Record<string, string> = {};
   if (!snap) return out;
-  for (const o of snap.oce) for (const id of o.drugIds) if (!out[id] || o.date > out[id]) out[id] = o.date;
+  for (const o of snap.approvals) for (const id of o.drugIds) if (!out[id] || o.date > out[id]) out[id] = o.date;
   for (const d of snap.drugsfda) for (const id of d.drugIds) if (!out[id] || d.statusDate > out[id]) out[id] = d.statusDate;
   return out;
 }
@@ -43,19 +43,19 @@ export function FdaFeed() {
   const g = graph();
   const name = (id: string) => g.get(id)?.name ?? id;
   const route = (id: string) => { const e = g.get(id); return e ? routeFor(e) : undefined; };
-  const fresh = snap.oce.filter((o) => o.firstSeen === snap.fetched);
-  const recent = snap.oce.slice(0, 12);
+  const fresh = snap.approvals.filter((o) => o.firstSeen === snap.fetched);
+  const recent = snap.approvals.slice(0, 12);
   const supplements = snap.drugsfda.filter((d) => d.submissionType === "SUPPL" && /efficacy|labeling/i.test(d.classDescription ?? "")).slice(0, 10);
-  const missingEvents = snap.oce.filter((o) => o.drugIds.some((id) => { const d = g.get(id); return d?.kind === "drug" && !d.regulatoryEvents.some((e) => e.date === o.date || e.source === o.url); }));
+  const missingEvents = snap.approvals.filter((o) => o.drugIds.some((id) => { const d = g.get(id); return d?.kind === "drug" && !d.regulatoryEvents.some((e) => e.date === o.date || e.source === o.url); }));
 
   return (
     <section className="grid gap-4 lg:grid-cols-2">
       <div className="card p-4">
         <div className="flex items-baseline justify-between gap-3 mb-2">
-          <h2 className="font-semibold">FDA oncology approvals feed</h2>
+          <h2 className="font-semibold">FDA approvals feed</h2>
           <span className="text-xs text-muted">fetched {snap.fetched}{snap.previousFetched ? `, previous ${snap.previousFetched}` : ""}</span>
         </div>
-        <p className="text-sm text-muted mb-3">{snap.oce.length} notifications from the <a className="underline" href={snap.sources.oce} rel="noopener">Oncology Center of Excellence</a> since {snap.window.from}; {fresh.length} new since the last snapshot. {missingEvents.length > 0 && <>{missingEvents.length} are not yet recorded as regulatory events on the product page.</>}</p>
+        <p className="text-sm text-muted mb-3">{snap.approvals.length} approvals and supplements for corpus products from <a className="underline" href="https://www.accessdata.fda.gov/scripts/cder/daf/" rel="noopener">Drugs@FDA</a> since {snap.window.from}; {fresh.length} new since the last snapshot. {missingEvents.length > 0 && <>{missingEvents.length} are not yet recorded as regulatory events on the product page.</>}</p>
         <ul className="divide-y divide-border text-sm">
           {recent.map((o) => {
             const missing = missingEvents.includes(o);

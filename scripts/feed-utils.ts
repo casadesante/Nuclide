@@ -15,21 +15,45 @@ export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 export const today = () => new Date().toISOString().slice(0, 10);
 export function isoDaysAgo(d: number): string { const x = new Date(); x.setUTCDate(x.getUTCDate() - d); return x.toISOString().slice(0, 10); }
 
-/** GET a URL as text with retries and backoff. Returns null on a non-retryable failure (404, 403 after retries). */
-export async function getText(url: string, opts: { tries?: number; accept?: string; timeoutMs?: number } = {}): Promise<string | null> {
+/**
+ * GET a URL as text with retries and backoff. Returns null on a non-retryable failure.
+ *
+ * Publishers disagree about who they will serve. Some (SNMMI's journal platform) answer a
+ * self-identifying bot UA with 403 and only serve a browser UA; others (Springer's search.rss)
+ * serve the feed to a plain client but hand a browser UA a 3 KB consent page instead. So try the
+ * polite UA first, then widen the Accept header, then fall back to a browser UA, and accept the
+ * first response that passes `validate` (feed callers use `looksLikeFeed`).
+ */
+const BROWSER_UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
+
+export const looksLikeFeed = (body: string) => /<(rss|feed|rdf:RDF)[\s>]/i.test(body);
+
+export async function getText(
+  url: string,
+  opts: { tries?: number; accept?: string; timeoutMs?: number; validate?: (body: string) => boolean } = {},
+): Promise<string | null> {
   const tries = opts.tries ?? 4;
-  for (let i = 0; i < tries; i++) {
-    try {
-      const ctl = new AbortController();
-      const t = setTimeout(() => ctl.abort(), opts.timeoutMs ?? 60_000);
-      const r = await fetch(url, { headers: { "User-Agent": UA, Accept: opts.accept ?? "*/*" }, redirect: "follow", signal: ctl.signal });
-      clearTimeout(t);
-      if (r.status === 429 || r.status >= 500) { await sleep(1500 * (i + 1)); continue; }
-      if (!r.ok) return null;
-      return await r.text();
-    } catch (e) {
-      if (i === tries - 1) { console.warn(`  giving up ${url}: ${(e as Error).message}`); return null; }
-      await sleep(1000 * (i + 1));
+  const profiles: Array<Record<string, string>> = [
+    { "User-Agent": UA, Accept: opts.accept ?? "*/*" },
+    { "User-Agent": UA, Accept: "*/*" },
+    { "User-Agent": BROWSER_UA, Accept: opts.accept ?? "*/*", "Accept-Language": "en-GB,en;q=0.9" },
+  ];
+  for (const headers of profiles) {
+    for (let i = 0; i < tries; i++) {
+      try {
+        const ctl = new AbortController();
+        const t = setTimeout(() => ctl.abort(), opts.timeoutMs ?? 60_000);
+        const r = await fetch(url, { headers, redirect: "follow", signal: ctl.signal });
+        clearTimeout(t);
+        if (r.status === 429 || r.status >= 500) { await sleep(1500 * (i + 1)); continue; }
+        if (!r.ok) break; // try the next header profile rather than burning retries on a 403
+        const body = await r.text();
+        if (opts.validate && !opts.validate(body)) break;
+        return body;
+      } catch (e) {
+        if (i === tries - 1) { console.warn(`  giving up ${url}: ${(e as Error).message}`); break; }
+        await sleep(1000 * (i + 1));
+      }
     }
   }
   return null;
@@ -135,25 +159,7 @@ export function parseLongDate(s: string): string | undefined {
 // FDA Oncology Center of Excellence approval notifications (shared by fetch-fda and fetch-pulse).
 // ---------------------------------------------------------------------------------------------------
 
-export const FDA_OCE_URL = "https://www.fda.gov/drugs/resources-information-approved-drugs/oncology-cancer-hematologic-malignancies-approval-notifications";
-export type OceItem = { date: string; title: string; url: string; summary: string };
 
-/** The OCE page is a three-column table: Webpage (link), Description ("On <date>, the Food and Drug Administration ..."), Date. */
-export function parseOcePage(html: string): OceItem[] {
-  const out: OceItem[] = [];
-  for (const row of html.match(/<tr[^>]*>[\s\S]*?<\/tr>/gi) ?? []) {
-    const cells: string[] = Array.from(row.match(/<td[^>]*>[\s\S]*?<\/td>/gi) ?? []);
-    if (cells.length < 2) continue;
-    const href = cells[0].match(/href="([^"]+)"/i)?.[1];
-    if (!href) continue;
-    const title = stripTags(cells[0]);
-    const summary = stripTags(cells[1]);
-    const date = parseLongDate(summary) ?? normaliseDate(cells[2] ? stripTags(cells[2]) : undefined);
-    if (!date || !title) continue;
-    out.push({ date, title, url: href.startsWith("http") ? href : `https://www.fda.gov${href}`, summary });
-  }
-  return out;
-}
 
 // ---------------------------------------------------------------------------------------------------
 // Entity name matching: map free text (titles, abstracts, INN strings) to Nuclide entity ids.
@@ -233,7 +239,19 @@ export function matchableFromGraph(entities: Array<{ id: string; kind: string; n
 }
 
 /** Oncology keyword filter for general-news feeds. */
-export const NUCLIDE_WORDS = /\b(cancer|oncolog|tumou?r|carcinoma|leuka?emia|lymphoma|myeloma|melanoma|sarcoma|glioma|glioblastoma|metasta|chemotherap|immunotherap|antibody-drug|ADC|CAR-T|radioligand|biomarker|neoplasm|mesothelioma|myelodysplastic)/i;
+export const NUCLIDE_WORDS = /\b(radiopharmaceutical|radioligand|radionuclide|radioisotope|theranostic|radiotracer|radiolabel|nuclear medicine|molecular imaging|PET[/ -]?(?:CT|MR)?|SPECT|scintigraph|dosimetr|radioembolis|radioemboliz|brachytherap|alpha[- ]emitt|beta[- ]emitt|targeted alpha|peptide receptor radionuclide|PRRT|PSMA|SSTR|somatostatin receptor|FAPI|amyloid PET|tau PET|lutetium|actinium|radium[- ]?22[34]|iodine[- ]?131|yttrium[- ]?90|technetium|gallium[- ]?68|fluorine[- ]?18|copper[- ]?6[47]|zirconium[- ]?89|lead[- ]?212|astatine|terbium|holmium[- ]?166|rhenium[- ]?188|samarium[- ]?153|molybdenum[- ]?99|177Lu|225Ac|223Ra|99mTc|68Ga|18F|64Cu|89Zr|212Pb|131I|90Y|cyclotron|radiochemistr|hot cell|generator eluti|isotope suppl)\b/i;
+
+/**
+ * openFDA established-pharmacologic-class strings that mark a radiopharmaceutical. Checked against the
+ * drugsfda index on 2026-09-22: "Radioactive Diagnostic Agent [EPC]" covers 74 applications (FDG, ioflupane,
+ * Vizamyl, ammonia N-13 and the rest), "Radioligand Therapeutic Agent [EPC]" covers Pluvicto. Several therapy
+ * products (Xofigo, Lutathera) carry no EPC at all, which is why the nuclide word list below is also applied
+ * to the generic name.
+ */
+export const RADIOPHARM_EPC = ["Radioactive Diagnostic Agent", "Radioligand Therapeutic Agent"];
+
+/** Generic-name test for a labelled product: the nuclide, written the way Drugs@FDA writes it. */
+export const RADIONUCLIDE_NAME = /\b(?:(?:lu|ac|ra|y|tc|ga|ge|cu|zr|pb|sm|sr|re|in|rb|xe|kr|tl|cr|co|ho|at|tb|i|f|n|o|c)[\s-]?(?:[1-9][0-9]{1,2})m?|(?:lutetium|actinium|radium|yttrium|technetium|gallium|germanium|copper|zirconium|lead|samarium|strontium|rhenium|indium|rubidium|xenon|krypton|thallium|chromium|cobalt|holmium|astatine|terbium|iodine|fluorine|nitrogen|oxygen|carbon|fludeoxy\w*)[\s-]?(?:[a-z]{1,2}[\s-]?)?(?:[1-9][0-9]{1,2})m?|iobenguane|gozetotide|vipivotide|dotatate|dotatoc|edotreotide|pentetreotide|florbeta\w+|flutemetamol|flortaucipir|piflufolastat|flotufolastat|ioflupane|fluciclovine|fluoroestradiol|exametazime|sestamibi|tetrofosmin|medronate|lexidronam|oxidronate|mertiatide|pentetate|macroaggregated albumin|radiopharmaceutical|radioligand)\b/i;
 
 /** Prefilled GitHub issue URL. */
 export function issueUrl(title: string, body: string, labels: string[] = []): string {

@@ -1,21 +1,32 @@
 /**
- * Congress abstract harvest (improvement #94).
+ * Congress and supplement harvest (improvement #94).
  *
- * Meeting abstracts are published as journal supplements with DOIs: ASCO in the Journal of Clinical Oncology
- * ("16_suppl" for the annual meeting, early-year supplements for ASCO GU/GI), ESMO in Annals of Oncology,
- * ASH in Blood, SABCS in Cancer Research. Europe PMC does not index most of these supplements, so the
- * harvest uses the Crossref REST API (public, polite pool with a mailto) and matches every title against
- * Nuclide product, trial, target and cancer names.
+ * What is actually available, checked against Crossref on 2026-09-22 rather than assumed:
+ *   - The SNMMI Annual Meeting and EANM Congress abstract books are NOT deposited with DOIs. JNM
+ *     (ISSN 0161-5505) has 263 works in 2026 and its only supplement issue is "Supplement 2", a
+ *     September theranostics review supplement; EJNMMI (1619-7070) has no supplement issue at all
+ *     in the autumn 2025 congress window. So a Crossref sweep cannot return SNMMI or EANM abstracts,
+ *     and this script does not pretend to: for those two it harvests the journal's supplement issues
+ *     over the whole year, which is the review content published around each congress.
+ *   - ASCO GU does deposit its abstracts, as Journal of Clinical Oncology supplements (979 works in
+ *     the 2026 window, 890 of them abstracts), and that is where most PSMA radioligand data is first
+ *     presented, so the ASCO GU sweep is additionally gated on a nuclear-medicine keyword.
+ *
+ * Titles are matched against Nuclide product, trial, target and indication names; a run that finds
+ * nothing reports zero rather than widening its filter.
+ *
+ * Fork note: OnCo harvested ASCO, ESMO, ASH and SABCS. ASCO GU is kept because prostate theranostics
+ * is presented there; the other three were replaced by the nuclear-medicine journals.
  *
  *   public/digests/candidates.json  { fetched, congress: { id, label, year, window, source }, total, items: [...] }
  *
- * Run: npx tsx scripts/fetch-abstracts.ts [--congress=asco|asco-gu|esmo|ash|sabcs] [--year=2026]
- * Weekly via .github/workflows/refresh-pulse.yml; the script picks the most recent congress window by default.
+ * Run: npx tsx scripts/fetch-abstracts.ts [--congress=snmmi|eanm|asco-gu] [--year=2026]
+ * Weekly via .github/workflows/refresh-pulse.yml; the script picks the most recent window by default.
  */
 import { graph } from "../src/lib/graph";
-import { NameMatcher, getJson, matchableFromGraph, publicPath, sleep, stripTags, today, writeJson } from "./feed-utils";
+import { NUCLIDE_WORDS, NameMatcher, getJson, matchableFromGraph, publicPath, sleep, stripTags, today, writeJson } from "./feed-utils";
 
-const MAILTO = "nuclide@casadesante.com";
+const MAILTO = "casa@casadesante.com";
 const OUT = publicPath("digests", "candidates.json");
 const MAX_PAGES = 12; // 1,000 records per page
 const MAX_ITEMS = 400; // kept in the snapshot after ranking
@@ -24,11 +35,10 @@ type Congress = { id: string; label: string; issn: string; journal: string; /** 
 
 const isSuppl = (issue?: string) => !!issue && /suppl/i.test(issue);
 const CONGRESSES: Congress[] = [
-  { id: "asco-gu", label: "ASCO Genitourinary Cancers Symposium", issn: "0732-183X", journal: "Journal of Clinical Oncology", from: "01-15", to: "03-10", accept: (i) => isSuppl(i) },
-  { id: "asco", label: "ASCO Annual Meeting", issn: "0732-183X", journal: "Journal of Clinical Oncology", from: "05-10", to: "06-20", accept: (i) => /16_suppl/i.test(i ?? "") },
-  { id: "esmo", label: "ESMO Congress", issn: "0923-7534", journal: "Annals of Oncology", from: "09-01", to: "11-15", accept: (i, t, d) => isSuppl(i) || /annonc\.\d{4}\.0[89]\./.test(d) || /^(LBA\d+|\d{1,4}[A-Z]{1,3}|P\d+-\d+)\b/.test(t) },
-  { id: "ash", label: "ASH Annual Meeting", issn: "0006-4971", journal: "Blood", from: "10-25", to: "12-20", accept: (i) => isSuppl(i) },
-  { id: "sabcs", label: "San Antonio Breast Cancer Symposium", issn: "0008-5472", journal: "Cancer Research", from: "01-20", to: "03-31", accept: (i) => isSuppl(i) },
+  // Whole-year windows: JNM and EJNMMI publish their supplements around their congresses, but not to a date we can predict.
+  { id: "snmmi", label: "Journal of Nuclear Medicine supplements (SNMMI)", issn: "0161-5505", journal: "Journal of Nuclear Medicine", from: "01-01", to: "12-31", accept: (i) => isSuppl(i) },
+  { id: "eanm", label: "EJNMMI supplements (EANM Congress)", issn: "1619-7070", journal: "European Journal of Nuclear Medicine and Molecular Imaging", from: "01-01", to: "12-31", accept: (i) => isSuppl(i) },
+  { id: "asco-gu", label: "ASCO Genitourinary Cancers Symposium", issn: "0732-183X", journal: "Journal of Clinical Oncology", from: "01-15", to: "03-10", accept: (i, title) => isSuppl(i) && NUCLIDE_WORDS.test(title) },
 ];
 
 export type AbstractCandidate = { doi: string; url: string; title: string; issue?: string; date?: string; lba: boolean; refs: { drugs: string[]; trials: string[]; targets: string[]; indications: string[]; technologies: string[] } };
@@ -69,7 +79,10 @@ async function harvest(matcher: NameMatcher, kindOf: (id: string) => string | un
       const ids = matcher.match(title);
       if (!ids.length) continue;
       const refs = { drugs: ids.filter((i) => kindOf(i) === "drug"), trials: ids.filter((i) => kindOf(i) === "trial"), targets: ids.filter((i) => kindOf(i) === "target"), indications: ids.filter((i) => kindOf(i) === "indication"), technologies: ids.filter((i) => kindOf(i) === "technology") };
-      if (!refs.drugs.length && !refs.trials.length) continue;
+      // A congress abstract is only interesting if it names a product or a trial. The journal-supplement
+      // sweeps (SNMMI, EANM) are review content, where a match on a target or a technology is the point.
+      const anyRef = Object.values(refs).some((r) => r.length);
+      if (c.id === "asco-gu" ? !refs.drugs.length && !refs.trials.length : !anyRef) continue;
       const dp = w.issued?.["date-parts"]?.[0];
       const date = dp ? `${dp[0]}-${String(dp[1] ?? 1).padStart(2, "0")}-${String(dp[2] ?? 1).padStart(2, "0")}` : undefined;
       snap.items.push({ doi: w.DOI, url: w.URL ?? `https://doi.org/${w.DOI}`, title, issue: w.issue, date, lba: /^LBA\b|\bLBA\d/i.test(title) || /LBA/i.test(w.DOI), refs });

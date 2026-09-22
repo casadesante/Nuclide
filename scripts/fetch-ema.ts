@@ -9,7 +9,8 @@
  *   - matching status and a live EPAR URL -> the EU row is "verified" (public/regional/verified.json, and the
  *     EPAR_CHECKED stamp in regional-approvals.ts is moved to today when every checked row passes);
  *   - no EU row, or a different status (authorised vs withdrawn, conditional vs full) -> a candidate;
- *   - oncology rows (ATC L01/L02 or MeSH "Neoplasms") with no corpus product -> "not in corpus".
+ *   - radiopharmaceutical rows (ATC V09 diagnostic, V10 therapeutic, or a nuclear-medicine name, area or
+ *     indication) with no corpus product -> "not in corpus".
  *
  * MHRA: products.mhra.gov.uk is a JavaScript application with no documented public API, and PMDA publishes
  * its approvals list as PDF only. Both are recorded as "manual" sources with links; their rows in
@@ -23,7 +24,7 @@ import { join } from "node:path";
 import { inflateRawSync } from "node:zlib";
 import { graph } from "../src/lib/graph";
 import { REGION_META, regionalApprovals, type RegionalStatus } from "../src/data/regional-approvals";
-import { NameMatcher, decodeEntities, getBuffer, matchableFromGraph, publicPath, today, writeJson } from "./feed-utils";
+import { NUCLIDE_WORDS, NameMatcher, decodeEntities, getBuffer, matchableFromGraph, publicPath, today, writeJson } from "./feed-utils";
 
 const EMA_XLSX = "https://www.ema.europa.eu/en/documents/report/medicines-output-medicines-report_en.xlsx";
 const OUT = publicPath("regional", "candidates.json");
@@ -36,7 +37,7 @@ export type RegionalCandidate = { region: "EU"; drugId?: string; product: string
 export type RegionalVerified = { drugId: string; region: "EU"; status: string; year?: number; url?: string; verifiedOn: string };
 export type RegionalSnapshot = {
   fetched: string; sources: { ema: string; mhra: { url: string; note: string }; pmda: { url: string; note: string } };
-  register: { rows: number; human: number; oncology: number; generatedOn?: string };
+  register: { rows: number; human: number; radiopharmaceutical: number; generatedOn?: string };
   verified: RegionalVerified[]; candidates: RegionalCandidate[]; errors: string[];
 };
 
@@ -94,8 +95,16 @@ function excelValue(raw: string, cell: string): string {
 
 const toIso = (s?: string) => { if (!s) return undefined; const m = s.match(/^(\d{2})\/(\d{2})\/(\d{4})/); return m ? `${m[3]}-${m[2]}-${m[1]}` : s.match(/^\d{4}-\d{2}-\d{2}/)?.[0]; };
 
-const NUCLIDE = /neoplasm|carcinoma|leuk|lymphoma|myeloma|melanoma|sarcoma|glioma|tumou?r|cancer/i;
-function isOncology(r: EmaRow): boolean { return /^L0[12]/.test(r.atc ?? "") || NUCLIDE.test(r.therapeuticArea ?? "") || NUCLIDE.test(r.indication ?? ""); }
+/** The shared nuclear-medicine word list; OnCo filtered this register with an oncology word list instead. */
+const NUCLIDE = NUCLIDE_WORDS;
+/**
+ * Rows worth looking at: ATC V09 (diagnostic radiopharmaceuticals) and V10 (therapeutic radiopharmaceuticals),
+ * or a name, therapeutic area or indication that reads as nuclear medicine. OnCo used ATC L01/L02 here, the
+ * cytostatics and endocrine therapy classes, which is exactly the set a radiopharmaceutical is not in.
+ */
+function isRadiopharmaceutical(r: EmaRow): boolean {
+  return /^V(09|10)/.test(r.atc ?? "") || NUCLIDE.test(r.therapeuticArea ?? "") || NUCLIDE.test(r.indication ?? "") || NUCLIDE.test(r.name) || NUCLIDE.test(r.substance ?? "") || NUCLIDE.test(r.inn ?? "");
+}
 
 function statusOf(r: EmaRow): RegionalStatus | "other" {
   const s = r.status.toLowerCase();
@@ -116,7 +125,7 @@ async function main() {
   const exact = new Map<string, string>();
   for (const d of products) if (!exact.has(normName(d.name))) exact.set(normName(d.name), d.id);
   const snap: RegionalSnapshot = {
-    fetched: today(), register: { rows: 0, human: 0, oncology: 0 }, verified: [], candidates: [], errors: [],
+    fetched: today(), register: { rows: 0, human: 0, radiopharmaceutical: 0 }, verified: [], candidates: [], errors: [],
     sources: {
       ema: EMA_XLSX,
       mhra: { url: REGION_META.UK.url, note: "MHRA's products site has no documented public API; UK rows stay hand-verified against the SmPC search." },
@@ -147,9 +156,9 @@ async function main() {
   }
   snap.register.rows = rows.length - headerIdx - 1;
   snap.register.human = ema.length;
-  const nuclide = ema.filter(isOncology);
-  snap.register.oncology = nuclide.length;
-  console.log(`ema: ${rows.length} rows, ${ema.length} human medicines, ${nuclide.length} oncology (register generated ${snap.register.generatedOn ?? "?"})`);
+  const nuclide = ema.filter(isRadiopharmaceutical);
+  snap.register.radiopharmaceutical = nuclide.length;
+  console.log(`ema: ${rows.length} rows, ${ema.length} human medicines, ${nuclide.length} radiopharmaceutical (register generated ${snap.register.generatedOn ?? "?"})`);
 
   const matchedIds = new Set<string>();
   const perDrug = new Map<string, EmaRow[]>();

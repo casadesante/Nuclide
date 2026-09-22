@@ -31,7 +31,7 @@ const MTB = { label: "Mouse Tumor Biology database (JAX)", url: "https://tumor.i
 
 /** Shared repositories. */
 export const REPOS = {
-  pdmr: { name: "NCI Patient-Derived Models Repository (PDMR)", url: "https://pdmr.indication.gov/", note: "Free-to-academics PDX, organoid and cell-line models with clinical annotation and sequencing." },
+  pdmr: { name: "NCI Patient-Derived Models Repository (PDMR)", url: "https://pdmr.cancer.gov/", note: "Free-to-academics PDX, organoid and cell-line models with clinical annotation and sequencing." },
   pdxnet: { name: "PDXNet", url: "https://www.pdxnetwork.org/", note: "NCI consortium coordinating PDX development and co-clinical trials across US centres." },
   europdx: { name: "EurOPDX", url: "https://www.europdx.eu/", note: "European PDX consortium; models discoverable through the PDCM Finder." },
   champions: { name: "Champions Oncology", url: "https://www.championsoncology.com/", note: "Commercial bank of over 1,500 characterised PDX models (Lumin platform)." },

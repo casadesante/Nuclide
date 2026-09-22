@@ -1,6 +1,8 @@
 name: Weekly fact check, audit, and provenance
 
 on:
+  schedule:
+    - cron: "41 6 * * 1"  # Mondays 06:41 UTC
   workflow_dispatch:
 
 permissions:

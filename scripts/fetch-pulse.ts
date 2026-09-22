@@ -2,31 +2,69 @@
  * Automated research pulse (improvement #96): the latest items from the leading journals, regulators and
  * news outlets, matched to Nuclide entity ids by name and alias. Sits beside the hand-curated themes on /pulse/.
  *
- * Sources are public RSS or RDF feeds; the FDA Oncology Center of Excellence has no feed, so its approval
- * table is parsed directly. General news feeds (STAT, Endpoints) are filtered to oncology items.
+ * Sources are public RSS or Atom feeds, every one of them fetched and checked on 2026-09-22 (the count of
+ * items each returned is in the commit that added it). General-interest feeds (NEJM, Nature Medicine, STAT,
+ * Endpoints, World Nuclear News, FDA press releases) are filtered with NUCLIDE_WORDS so only nuclear-medicine
+ * items are kept; the specialist journals are taken whole.
+ *
+ * Fork note: OnCo read NEJM, Lancet Oncology, JCO and Nature Medicine behind a cancer keyword filter, plus the
+ * FDA Oncology Center of Excellence approvals page. The oncology-only sources were replaced by the nuclear
+ * medicine literature; Lancet Oncology stays because prostate and neuroendocrine theranostics publish there.
  *
  *   public/pulse/auto.json  { fetched, feeds: [{ id, name, homepage, url, ok, count, error? }], items: [{ feedId, title, url, date, refs }] }
  *
  * Run: npx tsx scripts/fetch-pulse.ts   Weekly via .github/workflows/refresh-pulse.yml.
  */
 import { graph } from "../src/lib/graph";
-import { FDA_OCE_URL, NameMatcher, NUCLIDE_WORDS, getText, isoDaysAgo, matchableFromGraph, parseFeed, parseOcePage, publicPath, readJson, sleep, today, writeJson, type FeedItem } from "./feed-utils";
+import { NameMatcher, NUCLIDE_WORDS, getJson, getText, isoDaysAgo, matchableFromGraph, parseFeed, publicPath, readJson, sleep, today, writeJson, type FeedItem, looksLikeFeed } from "./feed-utils";
 
 const OUT = publicPath("pulse", "auto.json");
 const KEEP_DAYS = 60;
 const MAX_PER_FEED = 40;
 
-type FeedDef = { id: string; name: string; homepage: string; url: string; kind: "journal" | "regulator" | "news"; sourceId?: string; onlyOncology?: boolean };
+type FeedDef = {
+  id: string; name: string; homepage: string; url: string; kind: "journal" | "regulator" | "news"; sourceId?: string;
+  /** Keep only items that mention nuclear medicine: for general journals and news wires. */ filtered?: boolean;
+  /** Crossref ISSN, used as a fallback when the publisher blocks the RSS URL (Springer serves a bot
+   * challenge to this IP range some days). Crossref has no such gate, so the journal still reports. */
+  crossrefIssn?: string;
+  /** Read Crossref first. Theranostics' RSS returns its whole archive stamped 2021-01-01, so the
+   * publication dates are unusable; Crossref carries the real issue dates. */
+  preferCrossref?: boolean;
+};
+
+const MAILTO = "casa@casadesante.com";
+
+/** Recent works for a journal from Crossref, shaped like feed items. Used when an RSS URL is blocked. */
+async function crossrefRecent(issn: string, from: string): Promise<FeedItem[] | null> {
+  type Work = { DOI: string; title?: string[]; URL?: string; issued?: { "date-parts": number[][] }; created?: { "date-time": string } };
+  const url = `https://api.crossref.org/journals/${issn}/works?filter=from-pub-date:${from}&sort=published&order=desc&rows=${MAX_PER_FEED}&select=DOI,title,URL,issued,created&mailto=${MAILTO}`;
+  const j = await getJson<{ message?: { items?: Work[] } }>(url);
+  const items = j?.message?.items;
+  if (!items?.length) return null;
+  return items
+    .filter((w) => w.title?.[0])
+    .map((w) => {
+      const dp = w.issued?.["date-parts"]?.[0];
+      const date = dp && dp[0] ? [dp[0], dp[1] ?? 1, dp[2] ?? 1].map((n, i) => (i ? String(n).padStart(2, "0") : String(n))).join("-") : w.created?.["date-time"]?.slice(0, 10);
+      return { title: (w.title as string[])[0], link: w.URL ?? `https://doi.org/${w.DOI}`, date };
+    });
+}
 
 /** `sourceId` links to the Nuclide record for the source where one exists: a collection in src/data/sources.ts or a journal record. */
 const FEEDS: FeedDef[] = [
-  { id: "fda-oce", name: "FDA Oncology Center of Excellence", homepage: FDA_OCE_URL, url: FDA_OCE_URL, kind: "regulator", sourceId: "fda-approvals" },
-  { id: "nejm", name: "New England Journal of Medicine", homepage: "https://www.nejm.org/", url: "https://www.nejm.org/action/showFeed?type=etoc&feed=rss&jc=nejm", kind: "journal", sourceId: "nejm", onlyOncology: true },
-  { id: "lancet-oncology", name: "The Lancet Oncology", homepage: "https://www.thelancet.com/journals/lanonc/home", url: "https://www.thelancet.com/rssfeed/lanonc_current.xml", kind: "journal", sourceId: "lancet-oncology" },
-  { id: "jco", name: "Journal of Clinical Oncology", homepage: "https://ascopubs.org/journal/jco", url: "https://ascopubs.org/action/showFeed?type=etoc&feed=rss&jc=jco", kind: "journal", sourceId: "jco" },
-  { id: "nature-medicine", name: "Nature Medicine", homepage: "https://www.nature.com/nm/", url: "https://www.nature.com/nm.rss", kind: "journal", sourceId: "nature-medicine", onlyOncology: true },
-  { id: "endpoints", name: "Endpoints News", homepage: "https://endpts.com/", url: "https://endpts.com/feed/", kind: "news", sourceId: "src-endpoints-news", onlyOncology: true },
-  { id: "stat", name: "STAT", homepage: "https://www.statnews.com/", url: "https://www.statnews.com/feed/", kind: "news", sourceId: "src-stat-news", onlyOncology: true },
+  { id: "jnm", name: "Journal of Nuclear Medicine", homepage: "https://jnm.snmjournals.org/", url: "https://jnm.snmjournals.org/rss/current.xml", kind: "journal", sourceId: "journal-of-nuclear-medicine" },
+  { id: "jnm-ahead", name: "Journal of Nuclear Medicine (ahead of print)", homepage: "https://jnm.snmjournals.org/content/early/recent", url: "https://jnm.snmjournals.org/rss/ahead.xml", kind: "journal", sourceId: "journal-of-nuclear-medicine" },
+  { id: "ejnmmi", name: "European Journal of Nuclear Medicine and Molecular Imaging", homepage: "https://link.springer.com/journal/259", url: "https://link.springer.com/search.rss?facet-journal-id=259&channel-name=European+Journal+of+Nuclear+Medicine+and+Molecular+Imaging", kind: "journal", crossrefIssn: "1619-7070" },
+  { id: "mib", name: "Molecular Imaging and Biology", homepage: "https://link.springer.com/journal/11307", url: "https://link.springer.com/search.rss?facet-journal-id=11307", kind: "journal", crossrefIssn: "1536-1632" },
+  { id: "jnmt", name: "Journal of Nuclear Medicine Technology", homepage: "https://tech.snmjournals.org/", url: "https://tech.snmjournals.org/rss/current.xml", kind: "journal" },
+  { id: "theranostics", name: "Theranostics", homepage: "https://www.thno.org/", url: "https://www.thno.org/rss/current.xml", kind: "journal", filtered: true, crossrefIssn: "1838-7640", preferCrossref: true },
+  { id: "lancet-oncology", name: "The Lancet Oncology", homepage: "https://www.thelancet.com/journals/lanonc/home", url: "https://www.thelancet.com/rssfeed/lanonc_current.xml", kind: "journal", sourceId: "lancet-oncology", filtered: true },
+  { id: "nejm", name: "New England Journal of Medicine", homepage: "https://www.nejm.org/", url: "https://www.nejm.org/action/showFeed?type=etoc&feed=rss&jc=nejm", kind: "journal", sourceId: "nejm", filtered: true },
+  { id: "fda-press", name: "FDA press releases", homepage: "https://www.fda.gov/news-events/fda-newsroom/press-announcements", url: "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml", kind: "regulator", sourceId: "fda-approvals", filtered: true },
+  { id: "world-nuclear-news", name: "World Nuclear News", homepage: "https://www.world-nuclear-news.org/", url: "https://www.world-nuclear-news.org/rss", kind: "news", filtered: true },
+  { id: "endpoints", name: "Endpoints News", homepage: "https://endpts.com/", url: "https://endpts.com/feed/", kind: "news", sourceId: "src-endpoints-news", filtered: true },
+  { id: "stat", name: "STAT", homepage: "https://www.statnews.com/", url: "https://www.statnews.com/feed/", kind: "news", sourceId: "src-stat-news", filtered: true },
 ];
 
 export type AutoPulseFeed = { id: string; name: string; homepage: string; url: string; kind: string; sourceId?: string; ok: boolean; count: number; error?: string };
@@ -43,11 +81,25 @@ async function main() {
   const seen = new Set<string>();
 
   for (const f of FEEDS) {
-    const text = await getText(f.url, { accept: f.id === "fda-oce" ? "text/html" : "application/rss+xml, application/atom+xml, application/xml, text/xml" });
-    await sleep(500);
-    if (!text) { snap.feeds.push({ ...f, ok: false, count: 0, error: "unreachable or blocked" }); console.warn(`pulse: ${f.id} failed`); continue; }
-    let items: FeedItem[] = f.id === "fda-oce" ? parseOcePage(text).map((o) => ({ title: o.title, link: o.url, date: o.date, summary: o.summary })) : parseFeed(text);
-    if (f.onlyOncology) items = items.filter((i) => NUCLIDE_WORDS.test(`${i.title} ${i.summary ?? ""}`));
+    let items: FeedItem[] | null = null;
+    let via: string | undefined;
+    if (f.preferCrossref && f.crossrefIssn) {
+      items = await crossrefRecent(f.crossrefIssn, cutoff);
+      if (items?.length) via = `${items.length} items via Crossref ISSN ${f.crossrefIssn}: the publisher's RSS carries unusable dates`;
+      await sleep(500);
+    }
+    if (!items?.length) {
+      const text = await getText(f.url, { accept: "application/rss+xml, application/atom+xml, application/xml, text/xml", validate: looksLikeFeed });
+      await sleep(500);
+      items = text ? parseFeed(text) : null;
+    }
+    if (!items?.length && f.crossrefIssn) {
+      items = await crossrefRecent(f.crossrefIssn, cutoff);
+      if (items?.length) via = `RSS blocked by the publisher; ${items.length} items via Crossref ISSN ${f.crossrefIssn}`;
+      await sleep(500);
+    }
+    if (!items) { snap.feeds.push({ ...f, ok: false, count: 0, error: "unreachable or blocked" }); console.warn(`pulse: ${f.id} failed`); continue; }
+    if (f.filtered) items = items.filter((i) => NUCLIDE_WORDS.test(`${i.title} ${i.summary ?? ""}`));
     items = items.filter((i) => !i.date || i.date >= cutoff).slice(0, MAX_PER_FEED);
     let n = 0;
     for (const it of items) {
@@ -56,8 +108,8 @@ async function main() {
       snap.items.push({ feedId: f.id, title: it.title, url: it.link, date: it.date, refs: matcher.match(`${it.title}. ${it.summary ?? ""}`).slice(0, 8) });
       n++;
     }
-    snap.feeds.push({ ...f, ok: true, count: n });
-    console.log(`pulse: ${f.id} ${n} items`);
+    snap.feeds.push({ ...f, ok: true, count: n, error: via });
+    console.log(`pulse: ${f.id} ${n} items${via ? " (via Crossref)" : ""}`);
   }
 
   // Keep items from feeds that failed this run, from the previous snapshot, so a blocked publisher does not blank its column.

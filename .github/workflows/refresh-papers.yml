@@ -1,6 +1,8 @@
 name: Refresh literature snapshot from Europe PMC
 
 on:
+  schedule:
+    - cron: "41 5 * * 2"  # Tuesdays 05:41 UTC
   workflow_dispatch:
 
 permissions:

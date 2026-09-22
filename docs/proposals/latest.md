@@ -1,0 +1,142 @@
+# Change proposals 2026-09-22
+
+Drafted by scripts/propose-updates.ts from: factcheck missing, trialChanges 2026-09-22, fda 2026-09-22, regional 2026-09-22.
+
+Review each line against its source. Apply by editing the file named; nothing is applied automatically.
+
+## High confidence (23)
+
+- [ ] **Floretyrosine F-18 (FET)** ([page](https://nuclide-umber.vercel.app/drugs/f-18-fet/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-09-11
+  - proposed: { date: "2026-09-11", type: "approval", region: "US", note: "PIXCLARA (FLORETYROSINE F 18): Type 1 - New Molecular Entity", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218592" }
+  - evidence: TELIX PHARMACEUTICALS US INC · ORIG 1 · Type 1 - New Molecular Entity ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218592))
+  - file: `src/data/rp/agents-diagnostic-oncology.ts:382`
+- [ ] **Cabozantinib** ([page](https://nuclide-umber.vercel.app/drugs/cabozantinib/)) · regulatory-event · `regulatoryEvents`
+  - current: 1 events; none dated 2026-09-03
+  - proposed: { date: "2026-09-03", type: "approval", region: "US", note: "OMCAZIO (CABOZANTINIB LAURYLSULFATE): ORIG", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220613" }
+  - evidence: HANDA ONCOL · ORIG 1 · ORIG ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220613))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Fludeoxyglucose F-18 (FDG)** ([page](https://nuclide-umber.vercel.app/drugs/fludeoxyglucose-f18/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-08-31
+  - proposed: { date: "2026-08-31", type: "approval", region: "US", note: "FLUDEOXYGLUCOSE F18 (FLUDEOXYGLUCOSE F 18): Manufacturing (CMC)", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=079086" }
+  - evidence: PETNET · SUPPL 31 · Manufacturing (CMC) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=079086))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Fludeoxyglucose F-18 (brain metabolism)** ([page](https://nuclide-umber.vercel.app/drugs/f-18-fdg-brain/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-08-31
+  - proposed: { date: "2026-08-31", type: "approval", region: "US", note: "FLUDEOXYGLUCOSE F18 (FLUDEOXYGLUCOSE F 18): Manufacturing (CMC)", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=079086" }
+  - evidence: PETNET · SUPPL 31 · Manufacturing (CMC) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=079086))
+  - file: `src/data/rp/agents-neuro.ts:231`
+- [ ] **Durvalumab** ([page](https://nuclide-umber.vercel.app/drugs/durvalumab/)) · regulatory-event · `regulatoryEvents`
+  - current: 9 events; none dated 2026-08-31
+  - proposed: { date: "2026-08-31", type: "approval", region: "US", note: "IMFINZI (DURVALUMAB): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069" }
+  - evidence: ASTRAZENECA UK LTD · SUPPL 60 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Cabozantinib** ([page](https://nuclide-umber.vercel.app/drugs/cabozantinib/)) · regulatory-event · `regulatoryEvents`
+  - current: 1 events; none dated 2026-08-14
+  - proposed: { date: "2026-08-14", type: "approval", region: "US", note: "CABOZANTINIB S-MALATE (CABOZANTINIB S-MALATE): ORIG", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213878" }
+  - evidence: MSN · ORIG 1 · ORIG ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213878))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Rituximab** ([page](https://nuclide-umber.vercel.app/drugs/rituximab/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-07-31
+  - proposed: { date: "2026-07-31", type: "approval", region: "US", note: "ZIMRIXBY (RITUXIMAB-CDXX): ORIG", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761376" }
+  - evidence: DR REDDYS LABS SA · ORIG 1 · ORIG ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761376))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Pembrolizumab** ([page](https://nuclide-umber.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
+  - current: 12 events; none dated 2026-07-31
+  - proposed: { date: "2026-07-31", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB AND BERAHYALURONIDASE ALFA-PMPH): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
+  - evidence: MERCK SHARP DOHME · SUPPL 15 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Enzalutamide** ([page](https://nuclide-umber.vercel.app/drugs/enzalutamide/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-07-24
+  - proposed: { date: "2026-07-24", type: "approval", region: "US", note: "XTANDI (ENZALUTAMIDE): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203415" }
+  - evidence: ASTELLAS · SUPPL 26 · Efficacy ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203415))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Florbetaben F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-florbetaben/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-07-22
+  - proposed: { date: "2026-07-22", type: "approval", region: "US", note: "NEURACEQ (FLORBETABEN F 18): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=204677" }
+  - evidence: LANTHEUS · SUPPL 41 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=204677))
+  - file: `src/data/rp/agents-neuro.ts:104`
+- [ ] **Capecitabine** ([page](https://nuclide-umber.vercel.app/drugs/capecitabine/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-07-01
+  - proposed: { date: "2026-07-01", type: "approval", region: "US", note: "CAPECITABINE (CAPECITABINE): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211724" }
+  - evidence: RELIANCE LIFE · SUPPL 6 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211724))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Everolimus** ([page](https://nuclide-umber.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-06-30
+  - proposed: { date: "2026-06-30", type: "approval", region: "US", note: "EVEROLIMUS (EVEROLIMUS): ORIG", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219464" }
+  - evidence: I3 PHARMS · ORIG 1 · ORIG ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219464))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Rituximab** ([page](https://nuclide-umber.vercel.app/drugs/rituximab/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-06-29
+  - proposed: { date: "2026-06-29", type: "approval", region: "US", note: "TRUXIMA (RITUXIMAB-ABBS): Bioequivalence", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761088" }
+  - evidence: CELLTRION INC · SUPPL 35 · Bioequivalence ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761088))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Capecitabine** ([page](https://nuclide-umber.vercel.app/drugs/capecitabine/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-06-09
+  - proposed: { date: "2026-06-09", type: "approval", region: "US", note: "CAPECITABINE (CAPECITABINE): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=202593" }
+  - evidence: ACCORD HLTHCARE · SUPPL 12 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=202593))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Abiraterone acetate** ([page](https://nuclide-umber.vercel.app/drugs/abiraterone/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-06-05
+  - proposed: { date: "2026-06-05", type: "approval", region: "US", note: "ABIRATERONE ACETATE (ABIRATERONE ACETATE): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=208371" }
+  - evidence: RISING · SUPPL 5 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=208371))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Everolimus** ([page](https://nuclide-umber.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-06-01
+  - proposed: { date: "2026-06-01", type: "approval", region: "US", note: "AFINITOR DISPERZ (EVEROLIMUS): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203985" }
+  - evidence: NOVARTIS PHARM · SUPPL 28 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203985))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Everolimus** ([page](https://nuclide-umber.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-06-01
+  - proposed: { date: "2026-06-01", type: "approval", region: "US", note: "AFINITOR (EVEROLIMUS): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022334" }
+  - evidence: NOVARTIS · SUPPL 55 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022334))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Flortaucipir F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-flortaucipir/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2024, "https://www.ema.europa.eu/en/medicines/human/EPAR/tauvid", "This medicinal product is for diagnostic use only. Flortaucipir (18F) is a radio")
+  - evidence: EMA register: Tauvid (flortaucipir (18F)) Authorised, 2024-08-22. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/tauvid))
+  - file: `src/data/regional-approvals.ts`
+- [ ] **Gallium-68 edotreotide (DOTATOC)** ([page](https://nuclide-umber.vercel.app/drugs/ga-68-dotatoc/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2016, "https://www.ema.europa.eu/en/medicines/human/EPAR/somakit-toc", "This medicinal product is for diagnostic use only. After radiolabelling with gal")
+  - evidence: EMA register: SomaKit TOC (edotreotide) Authorised, 2016-12-08. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/somakit-toc))
+  - file: `src/data/regional-approvals.ts`
+- [ ] **Flutemetamol F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-flutemetamol/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2014, "https://www.ema.europa.eu/en/medicines/human/EPAR/vizamyl", "This medicinal product is for diagnostic use only. Vizamyl is a radiopharmaceuti")
+  - evidence: EMA register: Vizamyl (flutemetamol (18F)) Authorised, 2014-08-22. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/vizamyl))
+  - file: `src/data/regional-approvals.ts`
+- [ ] **Florbetaben F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-florbetaben/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2014, "https://www.ema.europa.eu/en/medicines/human/EPAR/neuraceq", "This medicinal product is for diagnostic use only. Neuraceq is a radiopharmaceut")
+  - evidence: EMA register: Neuraceq (florbetaben (18F)) Authorised, 2014-02-20. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/neuraceq))
+  - file: `src/data/regional-approvals.ts`
+- [ ] **Florbetapir F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-florbetapir/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2013, "https://www.ema.europa.eu/en/medicines/human/EPAR/amyvid", "This medicinal product is for diagnostic use only. Amyvid is a radiopharmaceutic")
+  - evidence: EMA register: Amyvid (florbetapir (18F)) Authorised, 2013-01-14. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/amyvid))
+  - file: `src/data/regional-approvals.ts`
+- [ ] **Ioflupane I-123** ([page](https://nuclide-umber.vercel.app/drugs/i-123-ioflupane/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2000, "https://www.ema.europa.eu/en/medicines/human/EPAR/datscan", "This medicinal product is for diagnostic use only. DaTSCAN is indicated for dete")
+  - evidence: EMA register: DaTSCAN (ioflupane (123l)) Authorised, 2000-07-27. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/datscan))
+  - file: `src/data/regional-approvals.ts`
+
+## Medium confidence (4)
+
+- [ ] **CITRIC ACID ANHYDROUS AND 13C UREA** · new-product · `new drug record`
+  - current: (not in corpus)
+  - proposed: add product CITRIC ACID ANHYDROUS AND 13C UREA with a US approval dated 2026-07-24
+  - evidence: IDKIT:HP (CITRIC ACID ANHYDROUS AND 13C UREA) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021314))
+- [ ] **GALLIUM GA-68 GOZETOTIDE** · new-product · `new drug record`
+  - current: (not in corpus)
+  - proposed: add product GALLIUM GA-68 GOZETOTIDE with a US approval dated 2026-06-08
+  - evidence: GALLIUM GA 68 GOZETOTIDE (GALLIUM GA-68 GOZETOTIDE) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216410))
+- [ ] **FLORQUINITAU F-18** · new-product · `new drug record`
+  - current: (not in corpus)
+  - proposed: add product FLORQUINITAU F-18 with a US approval dated 2026-08-13
+  - evidence: TAUKLARIFY (FLORQUINITAU F-18) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220496))
+- [ ] **KIT FOR THE PREPARATION OF TECHNETIUM TC 99M RED BLOOD CELLS** · new-product · `new drug record`
+  - current: (not in corpus)
+  - proposed: add product KIT FOR THE PREPARATION OF TECHNETIUM TC 99M RED BLOOD CELLS with a US approval dated 2026-08-27
+  - evidence: ULTRATAG (KIT FOR THE PREPARATION OF TECHNETIUM TC 99M RED BLOOD CELLS) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=019981))

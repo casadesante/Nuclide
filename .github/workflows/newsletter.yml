@@ -1,6 +1,8 @@
 name: Weekly issue
 
 on:
+  schedule:
+    - cron: "31 7 * * 1"  # Mondays 07:31 UTC
   workflow_dispatch:
 
 permissions:

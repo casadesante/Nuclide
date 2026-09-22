@@ -1,0 +1,1 @@
+{"id":"dll3","kind":"target","name":"DLL3","query":"(TITLE:\"DLL3\" OR ABSTRACT:\"DLL3\") AND (cancer OR tumor OR tumour OR oncology OR carcinoma OR lymphoma OR leukemia OR leukaemia OR myeloma OR sarcoma OR melanoma OR glioma)","fetched":"2026-09-22","counts":{"2019":30,"2020":19,"2021":26,"2022":40,"2023":0,"2024":56,"2025":90,"2026":132},"last12":160,"prior12":82,"recent":[]}

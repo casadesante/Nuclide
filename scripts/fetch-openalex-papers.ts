@@ -10,7 +10,7 @@
 import { graph } from "../src/lib/graph";
 import { getJson, publicPath, sleep, today, writeJson } from "./feed-utils";
 
-const MAILTO = "nuclide@casadesante.com";
+const MAILTO = "casa@casadesante.com";
 const OUT = publicPath("openalex", "papers.json");
 
 export type PaperCitations = { doi: string; openalexId: string; cited: number; byYear: Record<string, number>; year?: number; title?: string };

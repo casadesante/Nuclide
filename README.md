@@ -59,7 +59,30 @@ npm run typecheck
 
 `npm run build` regenerates the JSON API, the ask index, embeddings, feeds and freshness data before exporting the site. Some of those steps fetch public data (Europe PMC, ClinicalTrials.gov, GitHub) and skip cleanly when offline.
 
-The GitHub Actions workflows under `.github/workflows/` keep their manual `workflow_dispatch` triggers, but their cron schedules were removed with the fork: OnCo's refresh jobs (FDA oncology approvals, oncology congress abstracts, HTA decisions and so on) were written against its corpus and its secrets, and a scheduled job that fails every week is worse than one you run on purpose. Re-arm the crons as each pipeline is checked against this corpus. `ci.yml` still runs on every push and pull request: validate, typecheck, lint, tests, the freshness gate and a full build.
+### How the data stays current
+
+Every pipeline below was re-pointed from oncology to nuclear medicine and run once against this
+corpus before its cron was armed, so a scheduled run does work rather than fail. All times are UTC.
+
+- `propose.yml` daily 03:23 — reads every snapshot and writes ranked record proposals to `public/proposals/latest.json`.
+- `refresh-trials.yml` Mondays 06:17 — ClinicalTrials.gov counts and status changes for all 95 products.
+- `a11y.yml` Mondays 05:17, `factcheck.yml` 06:41, `refresh-votes.yml` 07:17, `newsletter.yml` 07:31.
+- `refresh-papers.yml` Tuesdays 05:41 — Europe PMC literature per entity.
+- `links.yml` Wednesdays 04:17 — every external URL in the corpus.
+- `refresh-fda.yml` Wednesdays 06:07 — openFDA Drugs@FDA, both submissions for corpus products and a
+  radiopharmaceutical sweep by established pharmacologic class and by nuclide in the generic name.
+- `refresh-preprints.yml` Wednesdays 06:17, `refresh-regional.yml` 06:37 — EMA register, ATC V09/V10.
+- `refresh-research.yml` Thursdays 04:23, `refresh-pulse.yml` 05:17 (the nuclear-medicine journals,
+  regulators and news wires, plus the congress harvest), `roadmap-watch.yml` 05:29.
+- `refresh-hta.yml` 1st of each month 05:47 — NICE and G-BA decisions.
+
+The refresh jobs open a pull request rather than committing to `main`, so every automated change is
+reviewable. That needs Settings -> Actions -> General -> "Allow GitHub Actions to create and approve
+pull requests" to stay enabled. `ci.yml` runs on every push and pull request: validate, typecheck,
+lint, tests, the freshness gate and a full build.
+
+A feed that finds nothing reports zero rather than widening its filter, and no pipeline writes a
+record: they write proposals for a human to check against the primary source.
 
 The canonical origin lives in `src/lib/seo.ts` (`SITE`). It is a placeholder: **no domain is registered for this project yet**, so set it to your own before deploying — every canonical URL, sitemap entry and JSON-LD `url` is built from it.
 

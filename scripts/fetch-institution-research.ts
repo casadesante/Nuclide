@@ -39,7 +39,7 @@ import type { Institution, Person } from "../src/lib/schema";
 import { publicPath, sleep, today, writeJson } from "./feed-utils";
 import { acronymMatches, bareDoi, CLINICAL_TRIAL_CONCEPT, institutionCoreTokens, matchAuthorToPerson, nameSimilarity, NUCLIDELOGY_SUBFIELD, researchWindow, type InstitutionResearch, type MatchConfidence, type ResearchAuthor, type ResearchIndex, type ResearchIndexRow, type ResearchWork } from "../src/lib/research";
 
-const MAILTO = "nuclide@casadesante.com";
+const MAILTO = "casa@casadesante.com";
 const API = "https://api.openalex.org";
 const CACHE_DIR = "/tmp/nuclide-openalex-research";
 const MIN_INTERVAL_MS = 200; // about 5 requests per second

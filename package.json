@@ -86,7 +86,6 @@
     "fetch:xrefs": "tsx scripts/fetch-xrefs.ts",
     "fetch:cell-lines": "tsx scripts/fetch-cell-lines.ts",
     "fetch:openmedical": "tsx scripts/fetch-openmedical.ts",
-    "fetch:universe": "tsx scripts/fetch-universe.ts",
     "changelog": "tsx scripts/changelog-sync.ts",
     "orphans": "tsx scripts/orphans.ts",
     "fold:zh": "tsx scripts/fold-zh.ts",

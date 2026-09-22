@@ -1,5 +1,5 @@
 /**
- * Survival statistics (improvement #98) from the NCI SEER Indication Stat Facts pages.
+ * Survival statistics (improvement #98) from the NCI SEER Cancer Stat Facts pages.
  *
  * For every SEER site mapped in src/data/survival-map.ts the fact sheet is read for:
  *   - the headline 5-year relative survival and its data period (e.g. 91.9%, 2016-2022);
@@ -26,8 +26,8 @@ export type SurvivalSnapshot = { fetched: string; source: string; sourceUrl: str
 const pct = (s?: string) => { const m = s?.match(/(\d+(?:\.\d+)?)\s*%/); return m ? Number(m[1]) : undefined; };
 
 export function parseStatFacts(slug: string, html: string, fetched: string): SurvivalSite {
-  const url = `https://seer.indication.gov/statfacts/html/${slug}.html`;
-  const label = decodeEntities(html.match(/<title>([^<]*)<\/title>/i)?.[1] ?? slug).replace(/^Indication Stat Facts:\s*/i, "").replace(/\s*-\s*NCI.*$/i, "").replace(/\s*\|\s*SEER.*$/i, "").trim();
+  const url = `https://seer.cancer.gov/statfacts/html/${slug}.html`;
+  const label = decodeEntities(html.match(/<title>([^<]*)<\/title>/i)?.[1] ?? slug).replace(/^Cancer Stat Facts:\s*/i, "").replace(/\s*-\s*NCI.*$/i, "").replace(/\s*\|\s*SEER.*$/i, "").trim();
   const site: SurvivalSite = { slug, label, url, byStage: [], fetched };
   const head = html.match(/5-Year<br\s*\/?>\s*Relative Survival<\/p>\s*<strong>([^<]*)<\/strong>\s*<span>([^<]*)<\/span>/i);
   if (head) { const p = pct(head[1]); if (p !== undefined) site.overall = { pct: p, period: decodeEntities(head[2]).replace(/[–—]/g, "-") }; }
@@ -56,10 +56,10 @@ export function parseStatFacts(slug: string, html: string, fetched: string): Sur
 
 async function main() {
   const fetched = today();
-  const snap: SurvivalSnapshot = { fetched, source: "SEER Indication Stat Facts, Surveillance, Epidemiology, and End Results Program, National Cancer Institute", sourceUrl: "https://seer.indication.gov/statfacts/", note: "US population statistics. Relative survival compares people with the cancer to the general population of the same age, sex and race; it is not a prediction for an individual. Stage groups are SEER summary stages (localised, regional, distant), not TNM stages.", sites: {}, failed: [] };
+  const snap: SurvivalSnapshot = { fetched, source: "SEER Cancer Stat Facts, Surveillance, Epidemiology, and End Results Program, National Cancer Institute", sourceUrl: "https://seer.cancer.gov/statfacts/", note: "US population statistics. Relative survival compares people with the cancer to the general population of the same age, sex and race; it is not a prediction for an individual. Stage groups are SEER summary stages (localised, regional, distant), not TNM stages.", sites: {}, failed: [] };
   const slugs = [...new Set(Object.values(SURVIVAL_SITES).map((s) => s.slug))].sort();
   for (const slug of slugs) {
-    const html = await getText(`https://seer.indication.gov/statfacts/html/${slug}.html`, { accept: "text/html", tries: 3 });
+    const html = await getText(`https://seer.cancer.gov/statfacts/html/${slug}.html`, { accept: "text/html", tries: 3 });
     await sleep(700);
     if (!html) { snap.failed.push(slug); console.warn(`  survival: ${slug} unreachable`); continue; }
     const site = parseStatFacts(slug, html, fetched);

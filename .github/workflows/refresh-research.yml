@@ -1,6 +1,8 @@
 name: Refresh institution research output from OpenAlex
 
 on:
+  schedule:
+    - cron: "23 4 * * 4"  # Thursdays 04:23 UTC
   workflow_dispatch:
 
 permissions:
