@@ -24,6 +24,7 @@ import { carriedPapers } from "./rp/carried-papers";
 import { carriedJournals } from "./rp/carried-journals";
 import { cardiacAgents } from "./rp/agents-cardiac";
 import { globalPlayers } from "./rp/global-players";
+import { asiaAgents } from "./rp/agents-asia";
 import { diagnosticOncologyAgents } from "./rp/agents-diagnostic-oncology";
 import { neuroAgents } from "./rp/agents-neuro";
 import { newTherapyAgents } from "./rp/agents-therapy-new";
@@ -65,6 +66,7 @@ const RAW_INPUTS: EntityInput[] = [
   ...carriedJournals,
   ...cardiacAgents,
   ...globalPlayers,
+  ...asiaAgents,
   ...diagnosticOncologyAgents,
   ...neuroAgents,
   ...newTherapyAgents,

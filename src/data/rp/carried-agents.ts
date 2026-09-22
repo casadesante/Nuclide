@@ -1030,22 +1030,48 @@ export const carriedAgents: EntityInput[] = [
     "id": "florastamin-f18",
     "kind": "drug",
     "name": "Florastamin F-18",
+    "brand": "ProstaView",
     "code": "FC303",
-    "aka": [],
+    "aka": [
+      "18F-florastamin",
+      "ProstaView",
+      "Prostaview Injection",
+      "florastamine",
+      "flortastamine F-18"
+    ],
     "modality": "PSMA-targeted PET radiotracer, fluorine-18",
     "mechanism": "A fluorine-18-labelled ligand of prostate-specific membrane antigen that lights up prostate cancer on PET wherever it has spread.",
-    "status": "phase-3",
-    "asOf": "2026-09-16",
+    "status": "approved",
+    "asOf": "2026-09-22",
     "tags": [
-      "pipeline",
+      "diagnostic",
+      "psma",
+      "korea",
       "ctgov-ingest"
     ],
     "provenance": {
-      "editedBy": "Nuclide ingestion (ClinicalTrials.gov v2, curated)",
-      "editedOn": "2026-09-16"
+      "editedBy": "Nuclide ingestion (ClinicalTrials.gov v2, curated); Korean approval read from the company's announcement in the English editions of Seoul Economic Daily and Edaily",
+      "editedOn": "2026-09-22"
     },
-    "tldr": "Florastamin is FutureChem's fluorine-18 PSMA PET tracer from South Korea, in phase 3 trials for staging high-risk and recurrent prostate cancer alongside the established PSMA agents.",
-    "summary": "FutureChem, a Seoul radiopharmaceutical company, developed florastamin (FC303) as a fluorine-18 PSMA ligand for PET imaging of prostate cancer. Registered phase 3 trials assess it for initial staging of high-risk prostate cancer and for biochemical recurrence, the settings in which gallium-68 PSMA-11 and piflufolastat are already approved in the United States and Europe.",
+    "tldr": "Florastamin is FutureChem's fluorine-18 PSMA PET tracer, and the first prostate cancer diagnostic developed in South Korea to be approved there — Korea's 43rd domestically developed new drug.",
+    "summary": "FutureChem, a Seoul radiopharmaceutical company, developed florastamin (FC303) as a fluorine-18 PSMA ligand for PET imaging of prostate cancer. Korea's Ministry of Food and Drug Safety approved it on 30 April 2026 as ProstaView injection, the country's 43rd domestically developed new drug and its first home-grown prostate cancer diagnostic; first commercial sales followed on 20 August 2026, the four-month gap being the reimbursement notice and hospital code registration every new Korean drug waits through. The company romanises the brand as both ProstaView and Prostaview and the ingredient appears as florastamin, florastamine and, in one wire report, flortastamine.\n\nThe registrational evidence is a domestic phase 3 trial at 11 institutions in men whose conventional imaging suggested recurrence or metastasis. Positive predictive value, the primary endpoint, was 86.96 per cent with a 95 per cent confidence interval lower bound of 79.01, against a pre-specified benchmark of 60.6; the CT, MRI and bone scans those same patients had already had returned about 60.16 per cent. A separate prospective study in 59 men with suspected intermediate-risk disease (Clinical Nuclear Medicine, 2025) put sensitivity at 72.4 per cent and specificity at 83.3 per cent against biopsy, with multiparametric MRI more sensitive at 89.7 per cent but less specific at 66.7 per cent and the same overall accuracy of 78 per cent — a fair description of what PSMA PET adds to MRI rather than replaces.\n\nRegistered phase 3 trials also cover initial staging of high-risk prostate cancer, the setting where gallium-68 PSMA-11 and piflufolastat are already approved in the United States and Europe. The approval matters beyond Korea because it is the diagnostic half of a domestic theranostic pair: FutureChem's lutetium-177 therapy FC705 (ludotadipep) targets the same antigen and is in phase 3 in Korea, so the approved tracer is the selection tool that therapy will be filed with.",
+    "approvals": [
+      {
+        "region": "South Korea",
+        "year": 2026,
+        "indication": "PET imaging of PSMA-positive lesions in men with prostate cancer whose existing imaging suggests recurrence or metastasis",
+        "note": "MFDS marketing approval 30 April 2026; Korea's 43rd domestically developed new drug"
+      }
+    ],
+    "regulatoryEvents": [
+      {
+        "date": "2026-04-30",
+        "type": "approval",
+        "region": "South Korea",
+        "note": "MFDS marketing approval as Korea's 43rd domestically developed new drug",
+        "source": "https://en.sedaily.com/finance/2026/05/04/futurechem-wins-approval-for-koreas-first-prostate-cancer"
+      }
+    ],
     "targets": [
       "psma"
     ],
@@ -1056,12 +1082,37 @@ export const carriedAgents: EntityInput[] = [
       "psma-pet",
       "pet"
     ],
+    "companies": [
+      "futurechem"
+    ],
     "trials": [
       "nct05936658",
       "nct05004285",
       "nct06754085"
     ],
+    "related": [
+      "ksnm",
+      "nuclear-medicine-and-molecular-imaging",
+      "f-18",
+      "prostate-bcr"
+    ],
     "links": [
+      {
+        "label": "FutureChem wins approval for Korea's first prostate cancer diagnostic (Seoul Economic Daily, English)",
+        "url": "https://en.sedaily.com/finance/2026/05/04/futurechem-wins-approval-for-koreas-first-prostate-cancer"
+      },
+      {
+        "label": "First sales, with the 30 April 2026 approval date (Edaily, English)",
+        "url": "https://en.edaily.co.kr/news/eda202608205175/"
+      },
+      {
+        "label": "Diagnostic accuracy of 18F-florastamin PET/CT in intermediate-risk suspected prostate cancer (Clin Nucl Med, 2025)",
+        "url": "https://doi.org/10.1097/RLU.0000000000005798"
+      },
+      {
+        "label": "18F-florastamin PET/CT in men with clinical suspicion of prostate cancer (Prostate International, 2025)",
+        "url": "https://doi.org/10.1016/j.prnil.2025.07.001"
+      },
       {
         "label": "ClinicalTrials.gov: trials of Florastamin F-18",
         "url": "https://clinicaltrials.gov/search?intr=FC303"

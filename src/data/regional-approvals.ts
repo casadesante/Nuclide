@@ -1,7 +1,7 @@
 /**
- * Regulatory status of approved and late-stage products across seven regions.
+ * Regulatory status of approved and late-stage products across eight regions.
  *
- *   US = FDA · EU = European Commission on EMA opinion · UK = MHRA · JP = PMDA/MHLW · CN = NMPA · AU = TGA · IN = CDSCO (DCGI)
+ *   US = FDA · EU = European Commission on EMA opinion · UK = MHRA · JP = PMDA/MHLW · CN = NMPA · AU = TGA · IN = CDSCO (DCGI) · KR = MFDS
  *
  * Rules: a region is recorded only when the status can be traced to a regulator page, an EPAR, a company
  * release, or the corpus' own sourced approvals. Absent = unknown/not researched, NOT "not approved".
@@ -14,8 +14,8 @@
  * "not-filed" is used only where a sponsor has publicly said so or where a product is regionally
  * exclusive by design (e.g. China-only PD-1 antibodies without ex-China filings).
  */
-export type Region = "US" | "EU" | "UK" | "JP" | "CN" | "AU" | "IN";
-export const REGIONS: Region[] = ["US", "EU", "UK", "JP", "CN", "AU", "IN"];
+export type Region = "US" | "EU" | "UK" | "JP" | "CN" | "AU" | "IN" | "KR";
+export const REGIONS: Region[] = ["US", "EU", "UK", "JP", "CN", "AU", "IN", "KR"];
 export const REGION_META: Record<Region, { label: string; regulator: string; url: string; flag: string }> = {
   US: { label: "United States", regulator: "FDA", url: "https://www.fda.gov/drugs/resources-information-approved-drugs/oncology-cancer-hematologic-malignancies-approval-notifications", flag: "🇺🇸" },
   EU: { label: "European Union", regulator: "EMA / European Commission", url: "https://www.ema.europa.eu/en/medicines", flag: "🇪🇺" },
@@ -24,6 +24,7 @@ export const REGION_META: Record<Region, { label: string; regulator: string; url
   CN: { label: "China", regulator: "NMPA", url: "https://english.nmpa.gov.cn/", flag: "🇨🇳" },
   AU: { label: "Australia", regulator: "TGA (PBS for reimbursement)", url: "https://www.tga.gov.au/resources/artg", flag: "🇦🇺" },
   IN: { label: "India", regulator: "CDSCO (DCGI)", url: "https://cdsco.gov.in/opencms/opencms/en/Approval_new/Approved-New-Drugs/", flag: "🇮🇳" },
+  KR: { label: "South Korea", regulator: "MFDS", url: "https://www.mfds.go.kr/eng/index.do", flag: "🇰🇷" },
 };
 
 export type RegionalStatus = "approved" | "conditional" | "under-review" | "not-filed" | "withdrawn" | "rejected";
@@ -179,6 +180,8 @@ export const regionalApprovals: Record<string, RegionalRow> = {
   "ga68-dotatate": { US: A(2016, undefined, "Netspot (Ga-68 DOTATATE) 2016; Detectnet (Cu-64) 2020"), EU: A(undefined, epar("somakit-toc"), "SomaKit TOC (Ga-68 DOTATOC kit); no centralised DOTATATE kit"), UK: A(undefined, mhra("SomaKit TOC")) },
   pafolacianine: { US: A(2021, undefined, "Cytalux; ovarian 2021, lung 2022") },
   pegulicianine: { US: A(2024, undefined, "Lumisight") },
+  "florastamin-f18": { KR: A(2026, "https://en.sedaily.com/finance/2026/05/04/futurechem-wins-approval-for-koreas-first-prostate-cancer", "PSMA PET in men with suspected recurrent or metastatic prostate cancer; MFDS approval 30 Apr 2026, Korea's 43rd domestically developed new drug", "Date and phase 3 figures read from FutureChem's announcement as carried by the English editions of the Korean financial press; the MFDS publishes no searchable English approval register"), US: UR("Phase 3 (NCT05936658, NCT05004285); no NDA announced") },
+  "pexiretide-tc99m": { CN: A(2026, "https://www.nsfc.gov.cn/p1/3381/2825/121910.html", "SPECT/CT assessment of regional lymph-node metastasis in suspected lung cancer; NMPA approval 2 Apr 2026 (trade name Jilunte)", "Date from the National Natural Science Foundation of China, which funded the work; China's first independently developed Class 1 innovative radiopharmaceutical"), US: NF("Developed and filed in China only"), EU: NF("No EU filing announced") },
   "f-18-flortaucipir": { JP: A(2024, PMDA, "Tauvid, tau PET in Alzheimer's disease; 27 Dec 2024 per the PMDA English approval list") },
   "f-18-florbetapir": { JP: A(2016, PMDA, "Amyvid, amyloid PET; 19 Dec 2016 (Fujifilm RI Pharma) per the PMDA English approval list") },
   "f-18-flutemetamol": { JP: A(2017, PMDA, "Vizamyl, amyloid PET; 27 Sep 2017 (Nihon Medi-Physics) per the PMDA English approval list") },
