@@ -5,8 +5,6 @@ name: Accessibility audit
 # Playwright and axe-core are installed for the run only (no package.json change).
 on:
   pull_request:
-  schedule:
-    - cron: "17 5 * * 1" # Mondays 05:17 UTC
   workflow_dispatch:
 
 permissions:

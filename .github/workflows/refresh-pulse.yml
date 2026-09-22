@@ -1,8 +1,6 @@
 name: Refresh research pulse, congress abstracts and citations
 
 on:
-  schedule:
-    - cron: "17 5 * * 4" # Thursdays 05:17 UTC
   workflow_dispatch:
 
 permissions:

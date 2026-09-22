@@ -1,8 +1,6 @@
 name: Refresh regional approvals check (EMA register)
 
 on:
-  schedule:
-    - cron: "37 6 * * 3" # Wednesdays 06:37 UTC
   workflow_dispatch:
 
 permissions:

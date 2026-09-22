@@ -59,6 +59,8 @@ npm run typecheck
 
 `npm run build` regenerates the JSON API, the ask index, embeddings, feeds and freshness data before exporting the site. Some of those steps fetch public data (Europe PMC, ClinicalTrials.gov, GitHub) and skip cleanly when offline.
 
+The GitHub Actions workflows under `.github/workflows/` keep their manual `workflow_dispatch` triggers, but their cron schedules were removed with the fork: OnCo's refresh jobs (FDA oncology approvals, oncology congress abstracts, HTA decisions and so on) were written against its corpus and its secrets, and a scheduled job that fails every week is worse than one you run on purpose. Re-arm the crons as each pipeline is checked against this corpus. `ci.yml` still runs on every push and pull request: validate, typecheck, lint, tests, the freshness gate and a full build.
+
 The canonical origin lives in `src/lib/seo.ts` (`SITE`). It is a placeholder: **no domain is registered for this project yet**, so set it to your own before deploying — every canonical URL, sitemap entry and JSON-LD `url` is built from it.
 
 ## Repository layout

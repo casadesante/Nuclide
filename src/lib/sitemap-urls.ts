@@ -1,4 +1,3 @@
-import { guidelineCancerIds } from "./guidelines";
 import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { graph } from "./graph";

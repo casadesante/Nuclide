@@ -40,7 +40,6 @@ import { DosingCard } from "./DosingCard";
 import { ToxicityTable } from "./ToxicityTable";
 import { AccessTable } from "./AccessTable";
 import { RegulatoryTimeline } from "./RegulatoryTimeline";
-import { MechanismCard } from "./MechanismCard";
 import { SeeItInAction } from "./SeeItInAction";
 import { modalityGroup } from "@/lib/modality-group";
 import { TldrText } from "./TldrText";

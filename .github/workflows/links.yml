@@ -1,8 +1,6 @@
 name: Weekly citation link check
 
 on:
-  schedule:
-    - cron: "17 4 * * 3" # Wednesdays 04:17 UTC
   workflow_dispatch:
 
 permissions:

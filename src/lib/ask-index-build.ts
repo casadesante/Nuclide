@@ -7,7 +7,6 @@ import { graph } from "./graph";
 import { routeFor } from "./kinds";
 import { type Entity } from "./schema";
 import { benchmark } from "@/data/benchmark";
-import { buildMatcher, findMatches } from "./entity-matcher";
 import { deriveAliases, regionCode, shortTldr, type AskIndex, type AskIndexEntry, type AskIndexExtra, type AskPair } from "./ask-index";
 import { ASK_ALIASES } from "./ask-lexicon";
 import { gradeFromTags } from "./complementary";

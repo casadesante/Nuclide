@@ -6,8 +6,6 @@ name: Roadmap registry watch
 # the job log; the records themselves are edited by hand.
 
 on:
-  schedule:
-    - cron: "29 5 * * 4" # Thursdays 05:29 UTC, after the pulse refresh at 05:17
   workflow_dispatch:
 
 permissions:

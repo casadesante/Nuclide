@@ -13,12 +13,9 @@ import { z } from "zod";
 import { graph } from "../src/lib/graph";
 import { EntitySchema, KIND_META, KINDS, routeFor } from "../src/lib/schema";
 import { siteSearchDocs } from "../src/lib/search-index";
-import { rankInstitutions } from "../src/lib/ranking";
-import { benchmark } from "../src/data/benchmark";
 import { flattenForCsv, toCsv, toNdjson, EXPORT_LICENCE } from "../src/lib/csv";
 import { buildFeeds } from "./build-feeds";
 import { apiFiles, FEEDS } from "./api-layout";
-import { myCancerList } from "../src/lib/my-indication-list";
 
 const out = join(process.cwd(), "public", "api", "v1");
 // Clear the previous build, keeping rdf/: scripts/build-triples.ts rewrites only the Turtle files whose content changed
