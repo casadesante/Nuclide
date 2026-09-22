@@ -32,9 +32,4 @@ jobs:
             Automated weekly pull of paper counts per year and the five most recent titles for every product, target, indication and technology, from the Europe PMC REST API.
             Files under `public/papers/` changed. The /papers/ page recomputes fastest-growing topics from this snapshot.
           labels: automated, pipeline
-          delete-branch: true
-      - name: Merge the refresh (this run already validated and tested it)
-        if: steps.cpr.outputs.pull-request-number != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr merge --squash --delete-branch "${{ steps.cpr.outputs.pull-request-number }}" || echo "merge deferred, the pull request stays open for a human"
+          delete-branch: false

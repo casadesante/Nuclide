@@ -32,9 +32,4 @@ jobs:
             Automated weekly pull of bioRxiv, medRxiv and other preprints from the last 90 days for every target, product and technology, from the Europe PMC REST API, with the journal versions that have since appeared (HAS_PREPRINT links).
             Files under `public/preprints/` changed. The /preprints/ page is rebuilt from `public/preprints/index.json`.
           labels: automated, pipeline
-          delete-branch: true
-      - name: Merge the refresh (this run already validated and tested it)
-        if: steps.cpr.outputs.pull-request-number != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr merge --squash --delete-branch "${{ steps.cpr.outputs.pull-request-number }}" || echo "merge deferred, the pull request stays open for a human"
+          delete-branch: false

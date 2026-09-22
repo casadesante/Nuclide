@@ -38,9 +38,4 @@ jobs:
             - `public/citations/index.json`: Europe PMC citation counts for every key paper with a DOI or PMID (the "cited N times" chip on paper pages and key-paper cards).
             - `public/openalex/papers.json`: OpenAlex citation counts by year for every key paper with a DOI (`/papers/`, most cited key papers).
           labels: automated, pipeline
-          delete-branch: true
-      - name: Merge the refresh (this run already validated and tested it)
-        if: steps.cpr.outputs.pull-request-number != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr merge --squash --delete-branch "${{ steps.cpr.outputs.pull-request-number }}" || echo "merge deferred, the pull request stays open for a human"
+          delete-branch: false

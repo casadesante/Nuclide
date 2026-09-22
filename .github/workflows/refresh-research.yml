@@ -39,9 +39,4 @@ jobs:
             Each run covers what the free daily budget allows (about 140 institutions), newest gaps first, then the oldest snapshots; `unresolved` in the index lists institutions with no confident match.
             Files under `public/openalex/research/` and `public/openalex/research-index.json` changed. Institution pages show the Research output panel from these files; /universities/ reads the five-year columns from the index.
           labels: automated, pipeline
-          delete-branch: true
-      - name: Merge the refresh (this run already validated and tested it)
-        if: steps.cpr.outputs.pull-request-number != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr merge --squash --delete-branch "${{ steps.cpr.outputs.pull-request-number }}" || echo "merge deferred, the pull request stays open for a human"
+          delete-branch: false
