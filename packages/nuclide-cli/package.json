@@ -1,0 +1,20 @@
+{
+  "name": "nuclide",
+  "version": "0.1.0",
+  "description": "Nuclide, the public cited knowledge graph of radiopharmaceuticals, from the terminal: search, records, lists, cited answers (Ask Nuclide), Markdown context and CSV/JSON exports, read from the static API at nuclide.cc.",
+  "license": "MIT",
+  "homepage": "https://nuclide.cc/api/",
+  "repository": { "type": "git", "url": "https://github.com/casadesante/Nuclide.git", "directory": "packages/nuclide-cli" },
+  "bugs": { "url": "https://github.com/casadesante/Nuclide/issues" },
+  "keywords": ["radiopharmaceuticals", "nuclear-medicine", "theranostics", "knowledge-graph", "cli", "open-data", "clinical-trials", "nuclide"],
+  "type": "module",
+  "bin": { "nuclide": "./dist/nuclide.mjs" },
+  "files": ["dist/", "README.md"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "cd ../.. && npm run cli:build",
+    "test": "cd ../.. && npx vitest run packages/nuclide-cli",
+    "prepublishOnly": "npm run build && test -f dist/nuclide.mjs"
+  },
+  "publishConfig": { "access": "public" }
+}

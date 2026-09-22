@@ -1,0 +1,46 @@
+name: Refresh research pulse, congress abstracts and citations
+
+on:
+  schedule:
+    - cron: "17 5 * * 4" # Thursdays 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/fetch-pulse.ts
+      - run: npx tsx scripts/fetch-abstracts.ts
+      - run: npx tsx scripts/fetch-citations.ts
+      - run: npx tsx scripts/fetch-openalex-papers.ts
+      - run: npm run validate
+      - uses: peter-evans/create-pull-request@v7
+        id: cpr
+        with:
+          branch: bot/refresh-pulse
+          title: "Weekly refresh: automated pulse, congress abstracts, key-paper citations"
+          commit-message: "chore: refresh pulse, abstract and citation snapshots"
+          body: |
+            Automated weekly pull of four literature feeds:
+            - `public/pulse/auto.json`: latest items from journal and news feeds and the FDA OCE page, matched to entity ids (`/pulse/`, automated stream).
+            - `public/digests/candidates.json`: congress abstracts from the JCO, Annals of Oncology, Blood and Cancer Research supplements via Crossref, matched to products and trials (`/digests/`, candidates for the next digest).
+            - `public/citations/index.json`: Europe PMC citation counts for every key paper with a DOI or PMID (the "cited N times" chip on paper pages and key-paper cards).
+            - `public/openalex/papers.json`: OpenAlex citation counts by year for every key paper with a DOI (`/papers/`, most cited key papers).
+          labels: automated, pipeline
+          delete-branch: true
+      - name: Merge the refresh (this run already validated and tested it)
+        if: steps.cpr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr merge --squash --delete-branch "${{ steps.cpr.outputs.pull-request-number }}" || echo "merge deferred, the pull request stays open for a human"

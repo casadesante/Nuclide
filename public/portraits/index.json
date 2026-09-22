@@ -1,0 +1,253 @@
+{
+ "generated": "2026-09-22",
+ "portraits": {
+  "paola-anna-erba": {
+   "id": "paola-anna-erba",
+   "qid": "Q88809907",
+   "file": "paola-anna-erba.jpg",
+   "commonsFile": "Paola Anna Erba 240228.jpg",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "author": "Belgian Presidency of the Council of the EU 2024 from Belgium",
+   "attribution": "Photo: Belgian Presidency of the Council of the EU 2024 from Belgium, CC BY 2.0, via Wikimedia Commons",
+   "source": "https://commons.wikimedia.org/wiki/File:Paola_Anna_Erba_240228.jpg",
+   "fetched": "2026-09-22"
+  }
+ },
+ "unresolved": {
+  "oliver-sartor": {
+   "reason": "matched Q59678967 (Oliver Sartor) but it has no image (P18)",
+   "qid": "Q59678967",
+   "checked": "2026-09-22"
+  },
+  "amir-iravani": {
+   "reason": "matched Q89712863 (Amir Iravani) but it has no image (P18)",
+   "qid": "Q89712863",
+   "checked": "2026-09-22"
+  },
+  "andrei-iagaru": {
+   "reason": "matched Q88392913 (Andrei Iagaru) but it has no image (P18)",
+   "qid": "Q88392913",
+   "checked": "2026-09-22"
+  },
+  "chris-parker": {
+   "reason": "matched Q64349791 (Chris Parker) but it has no image (P18)",
+   "qid": "Q64349791",
+   "checked": "2026-09-22"
+  },
+  "clemens-kratochwil": {
+   "reason": "matched Q88952584 (Clemens Kratochwil) but it has no image (P18)",
+   "qid": "Q88952584",
+   "checked": "2026-09-22"
+  },
+  "dale-bailey": {
+   "reason": "matched Q91268645 (Dale Bailey) but it has no image (P18)",
+   "qid": "Q91268645",
+   "checked": "2026-09-22"
+  },
+  "declan-murphy": {
+   "reason": "matched Q99517725 (Declan G. Murphy) but it has no image (P18)",
+   "qid": "Q99517725",
+   "checked": "2026-09-22"
+  },
+  "delphine-chen": {
+   "reason": "matched Q57416831 (Delphine Chen) but it has no image (P18)",
+   "qid": "Q57416831",
+   "checked": "2026-09-22"
+  },
+  "ebrahim-delpassand": {
+   "reason": "no Wikidata item found",
+   "checked": "2026-09-22"
+  },
+  "emily-bergsland": {
+   "reason": "matched Q87793550 (Emily Bergsland) but it has no image (P18)",
+   "qid": "Q87793550",
+   "checked": "2026-09-22"
+  },
+  "erik-mittra": {
+   "reason": "no Wikidata item found",
+   "checked": "2026-09-22"
+  },
+  "frederik-giesel": {
+   "reason": "matched Q114442230 (Frederik L Giesel) but it has no image (P18)",
+   "qid": "Q114442230",
+   "checked": "2026-09-22"
+  },
+  "heiko-schoder": {
+   "reason": "matched Q117223678 (Heiko M Schöder) but it has no image (P18)",
+   "qid": "Q117223678",
+   "checked": "2026-09-22"
+  },
+  "jason-lewis": {
+   "reason": "matched Q41485356 (Jason S. Lewis) but it has no image (P18)",
+   "qid": "Q41485356",
+   "checked": "2026-09-22"
+  },
+  "jeremie-calais": {
+   "reason": "matched Q90926372 (Jeremie Calais) but it has no image (P18)",
+   "qid": "Q90926372",
+   "checked": "2026-09-22"
+  },
+  "johannes-czernin": {
+   "reason": "no plausible human item (candidates rejected)",
+   "checked": "2026-09-22"
+  },
+  "jonathan-strosberg": {
+   "reason": "matched Q89985980 (Jonathan Strosberg) but it has no image (P18)",
+   "qid": "Q89985980",
+   "checked": "2026-09-22"
+  },
+  "karim-fizazi": {
+   "reason": "matched Q73569107 (Karim Fizazi) but it has no image (P18)",
+   "qid": "Q73569107",
+   "checked": "2026-09-22"
+  },
+  "katherine-matthay": {
+   "reason": "matched Q91544711 (Katherine K Matthay) but it has no image (P18)",
+   "qid": "Q91544711",
+   "checked": "2026-09-22"
+  },
+  "ken-herrmann": {
+   "reason": "matched Q112534441 (Ken Herrmann) but it has no image (P18)",
+   "qid": "Q112534441",
+   "checked": "2026-09-22"
+  },
+  "lisa-bodei": {
+   "reason": "matched Q91985244 (Lisa Bodei) but it has no image (P18)",
+   "qid": "Q91985244",
+   "checked": "2026-09-22"
+  },
+  "louise-emmett": {
+   "reason": "matched Q61872967 (Louise Emmett) but it has no image (P18)",
+   "qid": "Q61872967",
+   "checked": "2026-09-22"
+  },
+  "matthias-eiber": {
+   "reason": "matched Q112485911 (Matthias Eiber) but it has no image (P18)",
+   "qid": "Q112485911",
+   "checked": "2026-09-22"
+  },
+  "hofman-michael": {
+   "reason": "matched Q53198887 (Michael S Hofman) but it has no image (P18)",
+   "qid": "Q53198887",
+   "checked": "2026-09-22"
+  },
+  "michael-morris": {
+   "reason": "matched Q38329744 (Michael J. Morris) but it has no image (P18)",
+   "qid": "Q38329744",
+   "checked": "2026-09-22"
+  },
+  "michael-lassmann": {
+   "reason": "matched Q41385222 (Michael Lassmann) but it has no image (P18)",
+   "qid": "Q41385222",
+   "checked": "2026-09-22"
+  },
+  "neeta-pandit-taskar": {
+   "reason": "matched Q114408543 (Neeta Pandit-Taskar) but it has no image (P18)",
+   "qid": "Q114408543",
+   "checked": "2026-09-22"
+  }
+ },
+ "rejected": {
+  "chris-parker": [
+   {
+    "qid": "Q107995761",
+    "label": "Chris Parker",
+    "description": "New Zealand comedian and actor",
+    "reason": "search description mismatch"
+   },
+   {
+    "qid": "Q110051187",
+    "label": "Chris Parker",
+    "description": "",
+    "reason": "human item without description or occupation"
+   },
+   {
+    "qid": "Q126208993",
+    "label": "Chris Parker",
+    "description": "lacrosse official",
+    "reason": "no medical/scientific signal (lacrosse official | lacrosse official)"
+   },
+   {
+    "qid": "Q116501507",
+    "label": "Chris Parker",
+    "description": "Rugby league footballer born 1978",
+    "reason": "search description mismatch"
+   },
+   {
+    "qid": "Q116501506",
+    "label": "Chris Parker",
+    "description": "Rugby league footballer born 1992",
+    "reason": "search description mismatch"
+   }
+  ],
+  "delphine-chen": [
+   {
+    "qid": "Q99478041",
+    "label": "Delphine Chenu",
+    "description": "",
+    "reason": "label does not share the surname"
+   }
+  ],
+  "johannes-czernin": [
+   {
+    "qid": "Q75379491",
+    "label": "Johannes Ladislas Graf Czernin von und zu Chudenitz",
+    "description": "(born 1932)",
+    "reason": "no medical/scientific signal ((born 1932))"
+   }
+  ],
+  "hofman-michael": [
+   {
+    "qid": "Q101170",
+    "label": "Michael Hofmann",
+    "description": "German-born poet and translator",
+    "reason": "search description mismatch"
+   },
+   {
+    "qid": "Q19522419",
+    "label": "Michael Hofmann",
+    "description": "writer (1860- )",
+    "reason": "label does not share the surname"
+   },
+   {
+    "qid": "Q110083715",
+    "label": "Michael Hofmann",
+    "description": "(1797-1867)",
+    "reason": "label does not share the surname"
+   },
+   {
+    "qid": "Q101053063",
+    "label": "Michael Hofmann",
+    "description": "researcher ORCID 0000-0003-4936-9960",
+    "reason": "label does not share the surname"
+   },
+   {
+    "qid": "Q14916795",
+    "label": "Michael Hofmann",
+    "description": "German lawyer and politician",
+    "reason": "search description mismatch"
+   },
+   {
+    "qid": "Q11882370",
+    "label": "Michael Hofmann",
+    "description": "sport shooter",
+    "reason": "label does not share the surname"
+   }
+  ],
+  "michael-morris": [
+   {
+    "qid": "Q113718295",
+    "label": "Michael J. Morris",
+    "description": "Irish theologian",
+    "reason": "no medical/scientific signal (Irish theologian | theologian)"
+   },
+   {
+    "qid": "Q137790083",
+    "label": "Michael J. Morrison",
+    "description": "Canadian political candidate from New Brunswick",
+    "reason": "label does not share the surname"
+   }
+  ]
+ }
+}

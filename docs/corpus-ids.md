@@ -1,0 +1,871 @@
+# Ids in the corpus
+
+Every object already in the graph. Reference these ids when you link a record; do not invent new ones for things that are already here.
+
+## bottleneck (14)
+
+- b-ac225-supply  —  Actinium-225 supply
+- b-authorized-user-shortage  —  Authorized user shortage for radionuclide therapy
+- b-cold-chain-logistics  —  Cold chain and time-critical logistics
+- b-dose-optimisation  —  Wrong doses
+- b-dosimetry-standardisation  —  Dosimetry standardisation for radioligand therapy
+- b-enriched-target-material  —  Enriched target material for therapeutic isotopes
+- b-hot-lab-capacity  —  Hot lab and shielded treatment room capacity
+- b-manufacturing-cell-therapy  —  Manufacturing cost and time for living and radioactive medicines
+- b-mo99-supply  —  Molybdenum-99 supply
+- b-nuclear-medicine-workforce  —  Nuclear medicine technologist and physicist workforce
+- b-radioactive-waste-regulation  —  Radioactive waste handling and disposal regulation
+- b-reimbursement-coding  —  Reimbursement and coding for radiopharmaceuticals
+- b-rlt-trial-capacity  —  Clinical trial capacity for radioligand therapy
+- b-site-readiness-referral  —  Site readiness and referral pathway delays
+
+## collection (12)
+
+- clinicaltrials-gov  —  ClinicalTrials.gov
+- eanm-guidelines  —  EANM Guidelines
+- iaea-isotope-databases  —  IAEA nuclear data and isotope databases
+- icrp-publications  —  ICRP publications and dose coefficient databases
+- imaging-data-commons  —  NCI Imaging Data Commons (IDC)
+- nrc-regulations-part35  —  US NRC 10 CFR Part 35 (Medical Use of Byproduct Material)
+- opendose  —  OpenDose
+- prostate-cancer-foundation  —  Prostate Cancer Foundation (PCF)
+- snmmi-procedure-standards  —  SNMMI Procedure Standards
+- src-snmmi  —  SNMMI Annual Meeting
+- src-urotoday  —  UroToday
+- tcia  —  The Cancer Imaging Archive (TCIA)
+
+## company (83)
+
+- abdera-therapeutics  —  Abdera Therapeutics
+- abx-advanced-biochemical-compounds  —  ABX advanced biochemical compounds
+- acrotech-biopharma  —  Acrotech Biopharma
+- actinium-pharmaceuticals  —  Actinium Pharmaceuticals
+- advanced-accelerator-applications  —  Advanced Accelerator Applications (Novartis)
+- advancell  —  AdvanCell
+- aktis-oncology  —  Aktis Oncology
+- alpha-9-oncology  —  Alpha-9 Oncology
+- alpha-tau-medical  —  Alpha Tau Medical
+- ansto  —  ANSTO (Australian Nuclear Science and Technology Organisation)
+- ariceum-therapeutics  —  Ariceum Therapeutics
+- artbio  —  ARTBIO
+- astrazeneca  —  AstraZeneca
+- atomic-alchemy  —  Atomic Alchemy
+- bayer  —  Bayer
+- blue-earth-diagnostics  —  Blue Earth Diagnostics (Bracco)
+- bms  —  Bristol Myers Squibb
+- boston-scientific  —  Boston Scientific
+- bracco  —  Bracco Imaging
+- bwxt-medical  —  BWXT Medical
+- canon-medical  —  Canon Medical Systems
+- cardinal-health  —  Cardinal Health Nuclear & Precision Health Solutions
+- cellectar  —  Cellectar Biosciences
+- clarity-pharmaceuticals  —  Clarity Pharmaceuticals
+- comecer  —  Comecer (ATS)
+- convergent-therapeutics  —  Convergent Therapeutics
+- curium  —  Curium
+- eckert-ziegler  —  Eckert & Ziegler
+- eli-lilly  —  Eli Lilly (incl. Loxo)
+- evergreen-theragnostics  —  Evergreen Theragnostics
+- full-life-technologies  —  Full-Life Technologies
+- fusion-pharma  —  Fusion Pharmaceuticals (AstraZeneca)
+- futurechem  —  FutureChem
+- ge-healthcare  —  GE HealthCare
+- hamamatsu  —  Hamamatsu Photonics
+- iba  —  IBA (Ion Beam Applications)
+- ionetix  —  IONETIX
+- ire  —  IRE (Institut national des Radioéléments)
+- isotopia  —  Isotopia Molecular Imaging
+- itm  —  ITM Isotope Technologies Munich
+- johnson-johnson  —  Johnson & Johnson
+- jubilant-radiopharma  —  Jubilant Radiopharma
+- lantheus  —  Lantheus
+- life-molecular-imaging  —  Life Molecular Imaging
+- mariana-oncology  —  Mariana Oncology
+- mediso  —  Mediso
+- merck  —  Merck & Co. (MSD)
+- mim-software  —  MIM Software (GE HealthCare)
+- molecular-targeting-technologies  —  Molecular Targeting Technologies
+- monopar  —  Monopar Therapeutics
+- navidea  —  Navidea Biopharmaceuticals
+- niowave  —  Niowave
+- nordion  —  Nordion (Sotera Health)
+- northstar-medical-radioisotopes  —  NorthStar Medical Radioisotopes
+- novartis  —  Novartis
+- ntp-radioisotopes  —  NTP Radioisotopes
+- nucleus-radiopharma  —  Nucleus RadioPharma
+- nuclidium  —  Nuclidium
+- nusano  —  Nusano
+- oncobeta  —  OncoBeta
+- orano-med  —  Orano Med
+- perspective-therapeutics  —  Perspective Therapeutics
+- petnet-solutions  —  PETNET Solutions (Siemens Healthineers)
+- pfizer  —  Pfizer (incl. Seagen)
+- point-biopharma  —  POINT Biopharma
+- precirix  —  Precirix
+- quirem-medical  —  Quirem Medical
+- radiomedix  —  RadioMedix
+- radionetics-oncology  —  Radionetics Oncology
+- radiopharm-theranostics  —  Radiopharm Theranostics
+- ratio-therapeutics  —  Ratio Therapeutics
+- rayzebio  —  RayzeBio (BMS)
+- shine-technologies  —  SHINE Technologies
+- siemens-healthineers  —  Siemens Healthineers
+- sinotau-pharmaceutical  —  Sinotau Pharmaceutical
+- sirtex  —  Sirtex Medical
+- sofie-biosciences  —  SOFIE Biosciences
+- spectrum-pharmaceuticals  —  Spectrum Pharmaceuticals
+- telix  —  Telix Pharmaceuticals
+- terrapower-isotopes  —  TerraPower Isotopes
+- trasis  —  Trasis
+- united-imaging  —  United Imaging
+- y-mabs  —  Y-mAbs Therapeutics
+
+## drug (95)
+
+- aaa817  —  AAA817
+- abiraterone  —  Abiraterone acetate
+- ac-225-fpi-2068  —  Actinium-225 FPI-2068
+- ac225-psma  —  Actinium-225 PSMA agents
+- al2846  —  AL2846
+- alphamedix  —  212Pb-DOTAMTATE
+- cabazitaxel  —  Cabazitaxel
+- cabozantinib  —  Cabozantinib
+- capecitabine  —  Capecitabine
+- choline-c11  —  Choline C-11
+- cu-64-dotatate  —  Copper-64 dotatate
+- cu-64-sar-bispsma  —  Copper-64 SAR-bisPSMA
+- dexrazoxane  —  Dexrazoxane
+- docetaxel  —  Docetaxel
+- donafenib  —  Donafenib
+- durvalumab  —  Durvalumab
+- enzalutamide  —  Enzalutamide
+- everolimus  —  Everolimus
+- f-18-fdg-brain  —  Fludeoxyglucose F-18 (brain metabolism)
+- f-18-fdopa  —  Fluorodopa F-18
+- f-18-fet  —  Floretyrosine F-18 (FET)
+- f-18-florbetaben  —  Florbetaben F-18
+- f-18-florbetapir  —  Florbetapir F-18
+- f-18-flortaucipir  —  Flortaucipir F-18
+- f-18-fluorothymidine  —  Fluorothymidine F-18 (FLT)
+- f-18-flurpiridaz  —  Flurpiridaz F-18
+- f-18-flutemetamol  —  Flutemetamol F-18
+- f-18-naf  —  Sodium fluoride F-18
+- fap-2286  —  FAP-2286 (177Lu / 68Ga)
+- florastamin-f18  —  Florastamin F-18
+- flotufolastat  —  Flotufolastat F-18
+- fluciclovine-f18  —  Fluciclovine F-18
+- fludeoxyglucose-f18  —  Fludeoxyglucose F-18 (FDG)
+- fluoroestradiol-f18  —  Fluoroestradiol F-18 (FES PET)
+- fpi-2265  —  FPI-2265
+- ga-67-citrate  —  Gallium citrate Ga-67
+- ga-68-dotatoc  —  Gallium-68 edotreotide (DOTATOC)
+- ga-68-fapi-46  —  Gallium-68 FAPI-46
+- ga-68-pentixafor  —  Gallium-68 pentixafor
+- ga68-dotatate  —  Gallium-68 DOTATATE (and Cu-64 DOTATATE)
+- ga68-psma-11  —  Gallium-68 gozetotide (PSMA-11)
+- girentuximab-zr89  —  Zirconium-89 girentuximab
+- ho-166-microspheres  —  Holmium-166 microspheres
+- hrs-4357  —  HRS-4357
+- i-123-ioflupane  —  Ioflupane I-123
+- i-123-mibg  —  Iobenguane I-123
+- i-123-mibg-cardiac  —  Iobenguane I-123 (cardiac use)
+- i-125-seeds  —  Iodine-125 brachytherapy seeds
+- i-131-tositumomab  —  Iodine-131 tositumomab
+- i131-mibg  —  131I-MIBG (iobenguane I-131) therapy
+- ibritumomab-tiuxetan  —  Ibritumomab tiuxetan
+- illuccix  —  Illuccix (kit for Ga-68 gozetotide)
+- in-111-pentetreotide  —  Indium-111 pentetreotide
+- iobenguane-i-131  —  Iobenguane I-131 (therapeutic)
+- iomab-b  —  Iomab-B
+- itm-11  —  177Lu-edotreotide
+- jnj-87189401  —  JNJ-87189401
+- locametz  —  Locametz (kit for Ga-68 gozetotide)
+- lu-177-dotatate-generic  —  Lutetium-177 dotatate (radioligand equivalent)
+- lu-177-pnt2002  —  Lutetium-177 PNT2002
+- lu177-psma-it  —  177Lu-PSMA-I&T
+- lutathera  —  Lutetium-177 dotatate
+- n-13-ammonia  —  Ammonia N-13
+- olaparib  —  Olaparib
+- pasireotide  —  Pasireotide
+- pb-212-vmt-alpha-net  —  Lead-212 VMT-alpha-NET
+- pembrolizumab  —  Pembrolizumab
+- phosphorus-32  —  Phosphorus-32 (radiophosphorus)
+- pluvicto  —  Lutetium-177 vipivotide tetraxetan
+- psma-1007-f18  —  PSMA-1007 F-18
+- pylarify  —  Piflufolastat F-18 / Pylarify TruVu
+- radioactive-iodine  —  Radioactive iodine (I-131)
+- radium-223  —  Radium-223 dichloride
+- rb-82-chloride  —  Rubidium Rb-82 chloride
+- re-188-sct  —  Rhenium-188 skin cancer therapy
+- rituximab  —  Rituximab
+- ryz101  —  Actinium-225 DOTATATE
+- samarium-153-lexidronam  —  Samarium-153 lexidronam
+- sorafenib  —  Sorafenib
+- sr-89-chloride  —  Strontium-89 chloride
+- sunitinib  —  Sunitinib
+- tc-99m-hmpao-brain  —  Technetium-99m exametazime (brain perfusion)
+- tc-99m-mdp  —  Technetium Tc-99m medronate (MDP)
+- tc-99m-psma-imaging  —  Technetium Tc-99m PSMA agents (PSMA-I&S)
+- tc-99m-pyrophosphate  —  Technetium Tc-99m pyrophosphate
+- tc-99m-sestamibi  —  Technetium Tc-99m sestamibi
+- tc-99m-tetrofosmin  —  Technetium Tc-99m tetrofosmin
+- technetium-sulfur-colloid  —  Technetium Tc-99m sulfur colloid
+- temozolomide  —  Temozolomide
+- thyrotropin-alfa  —  Thyrotropin alfa
+- tilmanocept-tc99m  —  Technetium-99m tilmanocept
+- tl-201-chloride  —  Thallous chloride Tl-201
+- tlx-591  —  Lutetium-177 rosopatamab tetraxetan
+- y-90-glass-microspheres  —  Yttrium-90 glass microspheres
+- y-90-resin-microspheres  —  Yttrium-90 resin microspheres
+
+## idea (36)
+
+- idea-accelerator-ac225-at-scale  —  Scaling actinium-225 supply with proton accelerators instead of the thorium-229 cow
+- idea-ai-lesion-segmentation-dosimetry  —  AI segmentation to make voxel-level radioligand dosimetry practical at scale
+- idea-alpha-after-adc  —  Alpha radioligands after ADC failure
+- idea-alpha-first-mhspc  —  Alpha-emitting PSMA therapy at first metastatic diagnosis
+- idea-alpha-for-oligometastatic-disease  —  Alpha-emitting PSMA therapy for oligometastatic (few-lesion) prostate cancer
+- idea-bispecific-radioligands  —  Bispecific PSMA/GRPR radioligands for discordant prostate cancer lesions
+- idea-caix-theranostics  —  CAIX theranostics: 89Zr-girentuximab PET and 177Lu/225Ac-girentuximab therapy
+- idea-cd8-pet-io  —  CD8 PET to stop or switch immunotherapy early
+- idea-copper-theranostic-pair-standard  —  A single-molecule copper-64/copper-67 pair instead of switching ligands between scan and treatment
+- idea-dosimetry-guided-dosing-standard  —  Kidney-dosimetry-guided dosing as the default for PSMA radioligand therapy
+- idea-fap-theranostics-pancancer  —  FAP theranostics as a pan-cancer stromal strategy
+- idea-fap-theranostics-sarcoma  —  FAP-targeted radioligand therapy for sarcoma
+- idea-fund-academic-radiopharma-pipeline  —  A university cyclotron network with shared regulatory files for new tracers
+- idea-mced-plus-fapi  —  FAPI PET as the workup for MCED positives
+- idea-mfbg-pet-replaces-mibg  —  18F-MFBG PET replacing 123I-MIBG scintigraphy
+- idea-neoadjuvant-psma-therapy  —  Neoadjuvant PSMA radioligand therapy before prostatectomy
+- idea-net-antagonist-ligands  —  SSTR antagonist radioligands to increase tumour dose
+- idea-net-dosimetry-prrt  —  Dosimetry-personalised PRRT instead of four fixed cycles
+- idea-open-dosimetry-data-commons  —  An open data commons linking patient-level radiopharmaceutical dosimetry to outcomes
+- idea-pretargeted-alpha-therapy  —  Pretargeted alpha radioimmunotherapy
+- idea-psma-pet-guided-mdt  —  PSMA-PET-guided metastasis-directed therapy as a curative strategy in oligorecurrent prostate cancer
+- idea-reg-ac225-accelerator-pharmacopoeia  —  Regional cyclotron hubs for actinium-225 with an agreed actinium-227 impurity limit
+- idea-reg-alpha-emitter-portfolio  —  Fund alpha emitters beyond actinium-225: lead-212, terbium-149 and astatine-211
+- idea-reg-isotope-supply-observatory  —  A global medical isotope supply observatory with forecasts and shortage alerts
+- idea-reg-legacy-radium-recovery-ac225  —  Recover legacy radium-226 sources worldwide as the feedstock for actinium-225
+- idea-reg-medical-isotope-reactor-reserve  —  A coordinated reserve and shared schedule for the world's medical isotope reactors
+- idea-reg-regional-radiopharmacy-hubs  —  Regional radiopharmacy hubs and harmonised transport rules for short-lived isotopes
+- idea-reg-yb176-enrichment-capacity  —  Build Western ytterbium-176 enrichment so lutetium-177 has more than one supplier
+- idea-regional-radiopharmacy-network  —  In-house hospital radiopharmacy compounding to cut dose waste
+- idea-rlt-plus-checkpoint-inhibitor  —  Adding a checkpoint inhibitor to PSMA radioligand therapy
+- idea-rlt-plus-parp-inhibitor  —  Adding a PARP inhibitor to PSMA radioligand therapy
+- idea-tb161-instead-of-lu177  —  Terbium-161 instead of lutetium-177 in the same ligands
+- idea-total-body-pet-dosimetry  —  Total-body PET for personalised radioligand dosing
+- idea-total-body-pet-lower-dose-tracers  —  Using total-body PET's sensitivity to cut diagnostic tracer dose, not just scan time
+- idea-tr2-psma-volume-qualification  —  Qualify PSMA PET tumour volume as a validated imaging biomarker
+- idea-trop2-pet-selection  —  TROP2 PET to choose and sequence TROP2 ADCs
+
+## indication (44)
+
+- alzheimers-disease  —  Alzheimer's disease
+- bone-pain-palliation  —  Bone pain palliation from osteoblastic metastases
+- breast-her2-positive  —  HER2-positive breast cancer
+- cardiac-amyloidosis-attr  —  Cardiac amyloidosis (transthyretin, ATTR-CM)
+- cardiac-sarcoidosis  —  Cardiac sarcoidosis
+- coronary-artery-disease  —  Coronary artery disease
+- dlbcl  —  Diffuse large B-cell lymphoma
+- epilepsy-localisation  —  Presurgical localisation of drug-resistant focal epilepsy
+- fever-of-unknown-origin  —  Fever of unknown origin
+- follicular-lymphoma  —  Follicular lymphoma
+- gastrointestinal-bleeding  —  Gastrointestinal bleeding localisation
+- glioblastoma  —  Glioma & glioblastoma
+- grade-3-net  —  Grade 3 well-differentiated neuroendocrine tumour
+- graves-hyperthyroidism  —  Graves' disease and hyperthyroidism
+- hcc  —  Hepatocellular carcinoma
+- hcc-intermediate  —  Intermediate hepatocellular carcinoma (BCLC B)
+- hereditary-ppgl  —  Hereditary pheochromocytoma and paraganglioma (SDHx, VHL, RET, NF1, MAX and TMEM127)
+- infection-prosthetic-joint  —  Prosthetic joint infection
+- lung-net  —  Lung neuroendocrine tumours (typical and atypical carcinoid)
+- meningioma  —  Meningioma
+- metastatic-ppgl  —  Metastatic pheochromocytoma and paraganglioma
+- multiple-endocrine-neoplasia  —  Multiple endocrine neoplasia syndromes (MEN1, MEN2, MEN4)
+- neuroblastoma  —  Neuroblastoma (paediatric)
+- neuroblastoma-high-risk  —  High-risk neuroblastoma
+- neuroendocrine  —  Neuroendocrine tumours
+- osteosarcoma  —  Osteosarcoma
+- pancreatic-net  —  Pancreatic neuroendocrine tumours
+- parkinsonian-syndromes  —  Parkinsonian syndromes
+- pheochromocytoma-paraganglioma  —  Pheochromocytoma and paraganglioma (PPGL)
+- prostate  —  Prostate cancer
+- prostate-bcr  —  Biochemical recurrence of prostate cancer
+- prostate-high-risk  —  Localised prostate cancer, high and very high risk
+- prostate-mcrpc  —  Metastatic castration-resistant prostate cancer
+- prostate-mhspc  —  Metastatic hormone-sensitive prostate cancer
+- prostate-nepc  —  Neuroendocrine and small-cell prostate cancer
+- prostate-nmcrpc  —  Non-metastatic castration-resistant prostate cancer
+- pulmonary-embolism-vq  —  Pulmonary embolism: ventilation/perfusion imaging
+- rcc  —  Renal cell carcinoma
+- renal-obstruction  —  Suspected upper urinary tract obstruction
+- sclc  —  Small-cell lung cancer
+- sentinel-node-mapping  —  Sentinel lymph node mapping in breast cancer and melanoma
+- small-intestinal-net  —  Small intestinal neuroendocrine tumours
+- thyroid  —  Thyroid cancer
+- thyroid-nodule-assessment  —  Functional assessment of thyroid nodules
+
+## institution (54)
+
+- aiims-delhi  —  All India Institute of Medical Sciences, New Delhi
+- anzup  —  ANZUP Cancer Trials Group
+- ccc-wuerzburg  —  Comprehensive Cancer Center Mainfranken, University Hospital Würzburg
+- centre-eugene-marquis  —  Centre Eugène Marquis
+- charite  —  Charité Universitätsmedizin Berlin
+- curanosticum  —  Curanosticum Wiesbaden-Frankfurt
+- dana-farber  —  Dana-Farber Brigham Cancer Center
+- eanm  —  European Association of Nuclear Medicine
+- ema  —  European Medicines Agency
+- erasmus-mc  —  Erasmus MC Cancer Institute
+- essen-wtz  —  West German Cancer Center (WTZ), University Hospital Essen
+- excel-diagnostics-nuclear-oncology  —  Excel Diagnostics and Nuclear Oncology Center
+- fuscc  —  Fudan University Shanghai Cancer Center
+- heidelberg-nct  —  Heidelberg University Hospital / NCT / DKFZ
+- iaea  —  International Atomic Energy Agency: Rays of Hope
+- ico-angers-nantes  —  Institut de Cancérologie de l'Ouest (ICO)
+- inselspital-bern  —  Inselspital, Bern University Hospital / University Cancer Center Inselspital
+- institut-jules-bordet  —  Institut Jules Bordet
+- iov-veneto  —  Istituto Oncologico Veneto IRCCS
+- irst-meldola  —  IRCCS Istituto Romagnolo per lo Studio dei Tumori 'Dino Amadori' (IRST)
+- ivo-valencia  —  Fundación Instituto Valenciano de Oncología (IVO)
+- johns-hopkins  —  Johns Hopkins Hospital / Sidney Kimmel Comprehensive Cancer Center
+- karolinska  —  Karolinska University Hospital
+- kfshrc  —  King Faisal Specialist Hospital and Research Centre
+- la-fe-valencia  —  Hospital Universitari i Politècnic La Fe
+- lmu-munich  —  LMU Klinikum München
+- mayo-clinic  —  Mayo Clinic
+- md-anderson  —  MD Anderson Cancer Center
+- mhra  —  Medicines and Healthcare products Regulatory Agency
+- mskcc  —  Memorial Sloan Kettering Cancer Center
+- nci  —  National Cancer Institute (NIH)
+- nct-dresden  —  NCT/UCC Dresden, University Hospital Carl Gustav Carus
+- oslo-radium-hospital  —  Oslo University Hospital, The Norwegian Radium Hospital
+- penn-abramson  —  Abramson Cancer Center, University of Pennsylvania
+- peter-mac  —  Peter MacCallum Cancer Centre
+- pla-general-hospital  —  Chinese PLA General Hospital
+- pmda  —  Pharmaceuticals and Medical Devices Agency
+- qst-hospital  —  QST Hospital (National Institutes for Quantum Science and Technology)
+- radboudumc  —  Radboudumc Centre for Oncology
+- royal-marsden  —  The Royal Marsden
+- sacro-cuore-don-calabria  —  IRCCS Sacro Cuore Don Calabria Hospital
+- sahlgrenska  —  Sahlgrenska University Hospital / Sahlgrenska Center for Cancer Research
+- sant-orsola-bologna  —  IRCCS Azienda Ospedaliero-Universitaria di Bologna, Policlinico Sant'Orsola
+- shandong-cancer-hospital  —  Shandong Cancer Hospital and Institute
+- snmmi  —  Society of Nuclear Medicine and Molecular Imaging
+- tum-munich  —  TUM Klinikum rechts der Isar / CCC München
+- turku-university-hospital  —  Turku University Hospital Cancer Centre
+- ucla-jonsson  —  UCLA Jonsson Comprehensive Cancer Center
+- ucsf  —  UCSF Helen Diller Family Comprehensive Cancer Center
+- uk-duesseldorf  —  University Hospital Düsseldorf / CIO Düsseldorf
+- umcg-groningen  —  University Medical Center Groningen Comprehensive Cancer Center
+- uppsala-akademiska  —  Uppsala University Hospital / Uppsala University
+- usb-basel  —  University Hospital Basel / Tumour Centre
+- usz-zurich  —  University Hospital Zurich / Comprehensive Cancer Center Zurich
+
+## isotope (36)
+
+- ac-225  —  Actinium-225
+- at-211  —  Astatine-211
+- bi-213  —  Bismuth-213
+- c-11  —  Carbon-11
+- cu-64  —  Copper-64
+- cu-67  —  Copper-67
+- f-18  —  Fluorine-18
+- ga-67  —  Gallium-67
+- ga-68  —  Gallium-68
+- ge-68  —  Germanium-68
+- ho-166  —  Holmium-166
+- i-123  —  Iodine-123
+- i-124  —  Iodine-124
+- i-131  —  Iodine-131
+- in-111  —  Indium-111
+- lu-177  —  Lutetium-177
+- mo-99  —  Molybdenum-99
+- n-13  —  Nitrogen-13
+- o-15  —  Oxygen-15
+- p-32  —  Phosphorus-32
+- pb-212  —  Lead-212
+- ra-223  —  Radium-223
+- ra-224  —  Radium-224
+- rb-82  —  Rubidium-82
+- re-188  —  Rhenium-188
+- sc-44  —  Scandium-44
+- sc-47  —  Scandium-47
+- sm-153  —  Samarium-153
+- sr-89  —  Strontium-89
+- tb-161  —  Terbium-161
+- tc-99m  —  Technetium-99m
+- th-227  —  Thorium-227
+- tl-201  —  Thallium-201
+- y-86  —  Yttrium-86
+- y-90  —  Yttrium-90
+- zr-89  —  Zirconium-89
+
+## journal (21)
+
+- annals-of-oncology  —  Annals of Oncology
+- cancer-biotherapy-and-radiopharmaceuticals  —  Cancer biotherapy & radiopharmaceuticals
+- cancer-imaging  —  Cancer imaging
+- clinical-cancer-research  —  Clinical Cancer Research
+- clinical-nuclear-medicine  —  Clinical Nuclear Medicine
+- ejnmmi  —  European Journal of Nuclear Medicine and Molecular Imaging (EJNMMI)
+- ejnmmi-radiopharmacy-and-chemistry  —  EJNMMI Radiopharmacy and Chemistry
+- european-urology  —  European Urology
+- jama  —  JAMA
+- jco  —  Journal of Clinical Oncology
+- journal-of-medical-imaging-and-radiation-oncology  —  Journal of medical imaging and radiation oncology
+- journal-of-nuclear-cardiology  —  Journal of Nuclear Cardiology
+- journal-of-nuclear-medicine  —  Journal of Nuclear Medicine
+- lancet  —  The Lancet
+- lancet-oncology  —  The Lancet Oncology
+- nature-medicine  —  Nature Medicine
+- nejm  —  New England Journal of Medicine
+- nuclear-medicine-and-biology  —  Nuclear Medicine and Biology
+- radiology  —  Radiology
+- science-translational-medicine  —  Science Translational Medicine
+- theranostics-journal  —  Theranostics
+
+## pairing (14)
+
+- beta-psma-then-alpha-psma-rescue  —  177Lu-PSMA-617 then 225Ac-PSMA rescue therapy
+- beta-then-alpha  —  Beta radioligand → alpha radioligand
+- docetaxel-then-lu177-psma  —  Docetaxel (taxane chemotherapy) then 177Lu-PSMA-617
+- fdg-pet-response-adapted-therapy  —  FDG PET then response-adapted chemotherapy
+- ga68-dotatate-then-lutathera  —  68Ga-DOTATATE PET before Lutathera (177Lu-DOTATATE)
+- pluvicto-plus-olaparib  —  177Lu-PSMA-617 (Pluvicto) with olaparib
+- prrt-plus-captem  —  PRRT (177Lu-DOTATATE) with capecitabine and temozolomide (CAPTEM)
+- prrt-then-alpha-net  —  Beta PRRT → alpha PRRT
+- psma-pet-to-rlt  —  PSMA PET → PSMA radioligand therapy
+- radium223-abiraterone-caution  —  Radium-223 with abiraterone: a caution, not a combination
+- rituximab-then-ibritumomab-tiuxetan  —  Rituximab pretreatment before ibritumomab tiuxetan (Zevalin)
+- sstr-pet-to-prrt  —  SSTR PET → PRRT
+- tare-plus-durvalumab-hcc  —  Radioembolisation (TARE) with durvalumab in hepatocellular carcinoma
+- tare-vs-sorafenib-caution  —  Radioembolisation (TARE) compared with sorafenib in hepatocellular carcinoma
+
+## paper (23)
+
+- paper-alsympca-radium-223-nejm-2013  —  ALSYMPCA: alpha emitter radium-223 and survival in metastatic prostate cancer with bone metastases
+- paper-baum-prrt-1048-patients-oncotarget-2018  —  Results and adverse events of personalised peptide receptor radionuclide therapy in 1048 patients with neuroendocrine neoplasms
+- paper-cabinet-cabozantinib-nejm-2024  —  CABINET (Alliance A021602): cabozantinib for advanced neuroendocrine tumours
+- paper-clarinet-lanreotide-nejm-2014  —  CLARINET: lanreotide in metastatic enteropancreatic neuroendocrine tumours
+- paper-detect-a-science-2020  —  DETECT-A: a blood test plus PET-CT found treatable cancers in 10,000 women with no symptoms
+- paper-eanm-lu177-dosimetry-recommendations-ejnmmi-2022  —  EANM dosimetry committee recommendations for dosimetry of 177Lu-labelled somatostatin-receptor- and PSMA-targeting ligands
+- paper-herrmann-radiotheranostics-lancet-oncol-2020  —  Radiotheranostics: a roadmap for future development
+- paper-hofman-lupsma-lancet-oncol-2018  —  LuPSMA trial: single-arm phase 2 study of 177Lu-PSMA-617 in metastatic castration-resistant prostate cancer
+- paper-jadvar-snmmi-psma-auc-jnm-2022  —  Appropriate use criteria for prostate-specific membrane antigen (PSMA) PET imaging
+- paper-kratochwil-ac225-psma-jnm-2016  —  225Ac-PSMA-617 for PSMA-targeted alpha-radiation therapy of metastatic castration-resistant prostate cancer
+- paper-netter-1-nejm-2017  —  NETTER-1: 177Lu-Dotatate for midgut neuroendocrine tumours progressing on octreotide
+- paper-netter-2-lancet-2024  —  NETTER-2: lutetium-177 dotatate as first treatment for higher-grade gastroenteropancreatic neuroendocrine tumours
+- paper-propsma-hofman-lancet-2020  —  proPSMA: PSMA PET-CT versus conventional imaging for staging high-risk prostate cancer
+- paper-pryma-high-specific-activity-i131-mibg-ppgl-jnm-2019  —  Efficacy and safety of high-specific-activity 131I-MIBG therapy in advanced pheochromocytoma or paraganglioma
+- paper-psmafore-lancet-2024  —  PSMAfore: 177Lu-PSMA-617 versus a change of androgen receptor pathway inhibitor in taxane-naive mCRPC
+- paper-rathl-interim-pet-adapted-abvd-advanced-hodgkin-nejm-2016  —  RATHL: adapted treatment guided by interim PET-CT in advanced Hodgkin lymphoma
+- paper-sempet-de-santis-jco-2004  —  SEMPET: FDG-PET as a predictor of viable tumour in post-chemotherapy seminoma residuals
+- paper-sgouros-tat-review-nat-rev-2020  —  Radiopharmaceutical therapy in cancer: clinical advances and challenges
+- paper-strosberg-netter1-qol-jco-2018  —  Health-related quality of life in the NETTER-1 trial of 177Lu-Dotatate
+- paper-tagawa-ac225-j591-jco-2024  —  Phase I dose-escalation study of 225Ac-J591, a PSMA-targeting alpha-emitting antibody, in mCRPC
+- paper-therap-lancet-2021  —  TheraP: [177Lu]Lu-PSMA-617 versus cabazitaxel in metastatic castration-resistant prostate cancer
+- paper-vision-nejm-2021  —  VISION: lutetium-177 PSMA-617 radioligand therapy extends survival in advanced prostate cancer
+- paper-zircon-lancet-oncol-2024  —  ZIRCON: [89Zr]Zr-girentuximab PET-CT for detecting clear-cell renal cell carcinoma
+
+## pathway (4)
+
+- choline-metabolism-in-cancer  —  Choline metabolism in cancer
+- hif-vhl  —  VHL / HIF oxygen sensing
+- lineage-plasticity-neuroendocrine  —  Lineage plasticity & neuroendocrine transformation
+- prostate-cancer-signalling  —  Prostate cancer (KEGG map)
+
+## person (47)
+
+- amir-iravani  —  Amir Iravani
+- andrei-iagaru  —  Andrei Iagaru
+- chris-parker  —  Chris C. Parker
+- clemens-kratochwil  —  Clemens Kratochwil
+- dale-bailey  —  Dale L. Bailey
+- declan-murphy  —  Declan G. Murphy
+- delphine-chen  —  Delphine L. Chen
+- ebrahim-delpassand  —  Ebrahim S. Delpassand
+- emily-bergsland  —  Emily K. Bergsland
+- erik-mittra  —  Erik S. Mittra
+- frederik-giesel  —  Frederik Giesel
+- heiko-schoder  —  Heiko Schöder
+- hofman-michael  —  Michael Hofman
+- jason-lewis  —  Jason S. Lewis
+- jeremie-calais  —  Jeremie Calais
+- johannes-czernin  —  Johannes Czernin
+- jonathan-strosberg  —  Jonathan R. Strosberg
+- karim-fizazi  —  Karim Fizazi
+- katherine-matthay  —  Katherine K. Matthay
+- ken-herrmann  —  Ken Herrmann
+- lisa-bodei  —  Lisa Bodei
+- louise-emmett  —  Louise Emmett
+- matthias-eiber  —  Matthias Eiber
+- michael-lassmann  —  Michael Lassmann
+- michael-morris  —  Michael J. Morris
+- neeta-pandit-taskar  —  Neeta Pandit-Taskar
+- oliver-sartor  —  A. Oliver Sartor
+- paola-anna-erba  —  Paola Anna Erba
+- peter-bartenstein  —  Peter Bartenstein
+- phillip-kuo  —  Phillip H. Kuo
+- pierre-vera  —  Pierre Vera
+- rafael-mariano-grossi  —  Rafael Mariano Grossi
+- rahul-aggarwal  —  Rahul Aggarwal
+- richard-baum  —  Richard P. Baum
+- robert-mach  —  Robert H. Mach
+- rodney-hicks  —  Rodney J. Hicks
+- sandhu-shahneen  —  Shahneen Sandhu
+- scott-tagawa  —  Scott T. Tagawa
+- silke-gillessen  —  Silke Gillessen
+- simron-singh  —  Simron Singh
+- song-shaoli  —  Shaoli Song
+- stefano-fanti  —  Stefano Fanti
+- thomas-hope  —  Thomas A. Hope
+- uwe-haberkorn  —  Uwe Haberkorn
+- virginia-pappas  —  Virginia Pappas
+- wolfgang-fendler  —  Wolfgang P. Fendler
+- wolfgang-weber  —  Wolfgang A. Weber
+
+## roadmap (8)
+
+- alpha-therapy-roadmap  —  Alpha-emitter roadmap: radium-223 → 225Ac-PSMA-617 → a phase 3 pipeline
+- dosimetry-roadmap  —  Dosimetry roadmap: MIRD schema → fixed dosing → personalised, image-based dose
+- isotope-supply-roadmap  —  Isotope supply roadmap: reactor dependence → non-uranium production → accelerator-made actinium
+- molecular-imaging-roadmap  —  Molecular imaging roadmap: FDG → PSMA → FAP → antigen and immune PET
+- neuro-imaging-roadmap  —  Neuro-oncology imaging roadmap: FDG PET → amino acid PET → SSTR2 theranostics in meningioma
+- psma-theranostics-roadmap  —  PSMA theranostics roadmap: antigen discovery → PSMA PET → 177Lu-PSMA-617 → earlier lines and alpha
+- radiopharma-roadmap  —  Radiopharmaceutical roadmap: iodine → lutetium → actinium
+- sstr-theranostics-roadmap  —  SSTR theranostics roadmap: octreotide scintigraphy → 68Ga-DOTATATE → 177Lu-DOTATATE → alpha
+
+## section (12)
+
+- f-alpha-therapy  —  Targeted alpha therapy
+- f-bone-targeted  —  Bone-targeted radiopharmaceuticals
+- f-cardiac-imaging  —  Cardiac imaging
+- f-dosimetry  —  Dosimetry
+- f-infection-imaging  —  Infection & inflammation imaging
+- f-isotope-supply  —  Isotope supply
+- f-molecular-imaging  —  Molecular imaging
+- f-neuro-imaging  —  Neuro-imaging
+- f-radiochemistry  —  Radiochemistry & manufacturing
+- f-radioembolisation  —  Radioembolisation
+- f-radioligand-therapy  —  Radioligand therapy
+- f-regulation-reimbursement  —  Regulation & reimbursement
+
+## target (29)
+
+- amyloid-beta  —  Amyloid beta plaques
+- b7h3  —  B7-H3
+- bone-hydroxyapatite  —  Bone mineral (hydroxyapatite)
+- caix  —  CAIX (carbonic anhydrase IX)
+- cck2-receptor  —  CCK2 receptor (gastrin receptor)
+- cd20  —  CD20
+- ceacam5  —  CEACAM5
+- cxcr4  —  CXCR4
+- dll3  —  DLL3
+- dopamine-transporter  —  Dopamine transporter (DAT)
+- fap  —  FAP
+- folr1  —  Folate receptor alpha
+- glut-hexokinase  —  GLUT1 / hexokinase (glucose metabolism)
+- gpc3  —  Glypican-3
+- grpr  —  GRPR (gastrin-releasing peptide receptor)
+- her2  —  HER2
+- integrin-avb3  —  Integrin αvβ3
+- klk2  —  KLK2 (kallikrein-2)
+- mesothelin  —  Mesothelin (MSLN)
+- nectin4  —  Nectin-4
+- nis-symporter  —  NIS (sodium-iodide symporter)
+- norepinephrine-transporter  —  Norepinephrine transporter (NET)
+- parp  —  PARP
+- psma  —  PSMA
+- sstr2  —  Somatostatin receptor 2
+- steap1  —  STEAP1
+- tau-protein  —  Tau protein (neurofibrillary tangles)
+- trop2  —  TROP2
+- upar  —  uPAR (urokinase plasminogen activator receptor)
+
+## technology (68)
+
+- actinium-225-supply  —  Actinium-225 supply: thorium stocks, accelerators and radium targets
+- ai-in-nuclear-medicine  —  AI in nuclear medicine
+- albumin-binder-ligands  —  Albumin-binder ligands
+- alpha-daughter-redistribution  —  Alpha-emitter daughter redistribution ('free daughter' problem)
+- alpha-nanogenerators  —  Alpha-emitter nanogenerators and daughter trapping
+- astatine-211-alpha-therapy  —  Astatine-211 alpha therapy
+- auger-electron-therapy  —  Auger-electron therapy
+- automated-synthesis-modules  —  Automated synthesis modules
+- caix-pet  —  CAIX PET (89Zr-girentuximab)
+- cold-kit-formulation  —  Cold kit formulation
+- ct  —  CT (computed tomography)
+- cyclotron-isotope-production  —  Cyclotron isotope production (F-18, Ga-68, Cu-64, Zr-89, At-211)
+- dota-chelation  —  DOTA chelation
+- fapi-pet  —  FAPI PET
+- fdg-pet  —  FDG PET
+- fes-pet  —  FES PET (oestrogen receptor imaging)
+- gamma-probes-dose-calibrators  —  Gamma probes, handheld gamma cameras and dose calibrators
+- ge68-ga68-generators  —  Germanium-68/gallium-68 generators
+- her2-pet  —  HER2 PET
+- hot-cells-and-shielding  —  Hot cells and radiation shielding
+- immuno-pet  —  Immuno-PET
+- in-vivo-dosimetry  —  In vivo dosimetry and patient-specific quality assurance
+- ldr-seed-brachytherapy  —  Low-dose-rate seed brachytherapy
+- lu177-radioligand-therapy  —  Lutetium-177 radioligand therapy
+- macropa-chelation  —  Macropa chelation
+- medical-cyclotrons-synthesis-modules  —  Medical cyclotrons, hot cells, and synthesis modules
+- medical-imaging-scanner-manufacturing  —  CT, MRI and PET scanner manufacturing
+- mibg-theranostics  —  MIBG imaging and 131I-MIBG therapy
+- mo99-tc99m-generators  —  Molybdenum-99/technetium-99m generators
+- monte-carlo-dosimetry  —  Monte Carlo dosimetry
+- nuclear-medicine-hardware  —  Nuclear medicine and total-body PET hardware
+- parp-pet  —  PARP PET
+- peptide-drug-conjugate  —  Peptide-drug & small-molecule-drug conjugates
+- pet  —  PET (positron emission tomography)
+- pet-adapted-therapy  —  PET-adapted (response-adapted) therapy
+- pet-ct  —  PET/CT
+- pet-mri  —  PET/MRI
+- pet-tracer-manufacturing  —  PET tracer manufacturing and distribution
+- pretargeted-radioimmunotherapy  —  Pretargeted radioimmunotherapy
+- prrt  —  Peptide receptor radionuclide therapy (PRRT)
+- psma-pet  —  PSMA PET
+- quantitative-imaging-biomarkers  —  Quantitative imaging biomarkers (RECIST, PERCIST, SUV, ADC)
+- quantitative-spect  —  Quantitative SPECT
+- radioembolisation-tare  —  Radioembolisation (TARE / SIRT, yttrium-90)
+- radiohybrid-chemistry  —  Radiohybrid (rh) chemistry
+- radioimmunotherapy  —  Radio-antibody & radio-ADC
+- radioiodine-therapy  —  Radioiodine therapy and whole-body iodine scanning
+- radiolabelling-quality-control  —  Radiolabelling quality control
+- radioligand-dosimetry  —  Radioligand dosimetry
+- radioligand-therapy  —  Radioligand therapy (beta emitters)
+- radiomics  —  Radiomics
+- radionuclide-generators-kits  —  Radionuclide generators and cold kits
+- radionuclide-parp-combination  —  Radioligand plus DNA-repair inhibitor combinations
+- radiopharmaceutical-gmp-release  —  Radiopharmaceutical GMP and releasing a drug that decays
+- radiopharmacy-network  —  Radiopharmacy and cyclotron networks
+- research-reactor-isotope-production  —  Research reactors for medical isotopes (Mo-99, Lu-177, I-131)
+- sarcophagine-chelation  —  Sarcophagine chelation
+- site-specific-conjugation  —  Site-specific conjugation & linker chemistry
+- spect  —  SPECT & bone scan
+- spect-ct  —  SPECT/CT
+- spect-dosimetry-workflow  —  SPECT dosimetry workflow for radionuclide therapy
+- sr82-rb82-generators  —  Strontium-82/rubidium-82 generators
+- sstr-pet  —  Somatostatin receptor PET (68Ga/64Cu-DOTATATE)
+- sterile-fill-finish  —  Sterile fill-finish and lyophilisation
+- targeted-alpha-therapy  —  Targeted alpha therapy
+- therapy-isotope-supply-chain  —  Therapeutic isotope supply chain (Mo-99, Lu-177, Ac-225)
+- total-body-pet-screening  —  Total-body PET for screening and ultra-low-dose imaging
+- trop2-pet  —  TROP2 PET
+
+## term (76)
+
+- absorbed-dose-term  —  Absorbed dose and the gray (Gy)
+- activity-prescription  —  Activity prescription: fixed versus dosimetry-guided dosing
+- alara  —  ALARA (as low as is reasonably achievable)
+- alpha-vs-beta  —  Alpha vs beta emitters
+- anaemia  —  Anaemia
+- antigen  —  Antigen
+- arpi  —  Androgen receptor pathway inhibitor (ARPI)
+- attenuation-correction  —  Attenuation correction
+- authorized-user  —  Authorized User (AU)
+- becquerel-curie  —  Becquerel and curie (units of radioactivity)
+- biochemical-recurrence  —  Biochemical recurrence (BCR)
+- biological-half-life  —  Biological half-life
+- bone-marrow  —  Bone marrow
+- bone-metastases  —  Bone metastases and skeletal-related events
+- chelator-term  —  Chelator (bifunctional chelating agent)
+- complete-response-term  —  Complete response (CR) and partial response (PR)
+- crossover  —  Crossover in trials
+- curie-siopen-score  —  MIBG Curie and SIOPEN scores
+- cytopenias  —  Cytopenias and myelosuppression
+- deauville-for-pet  —  Deauville five-point scale for PET
+- decay-correction  —  Decay correction
+- dose-calibrator  —  Dose calibrator
+- dosimetry  —  Dosimetry
+- effective-half-life  —  Effective half-life
+- equivalent-dose  —  Equivalent dose and effective dose (sievert)
+- estimand  —  Estimands and intercurrent events (ICH E9(R1))
+- extravasation-radiopharmaceutical  —  Radiopharmaceutical extravasation
+- fixed-versus-personalised-dosing  —  Fixed versus personalised (dosimetry-guided) dosing
+- flare-phenomenon  —  Flare phenomenon
+- gray-unit  —  Gray unit (Gy)
+- half-life  —  Half-life
+- hot-lab  —  Hot lab (radiopharmacy dispensing area)
+- krenning-score  —  Krenning score
+- ligand  —  Ligand
+- linear-energy-transfer  —  Linear energy transfer (LET)
+- mcrpc-mhspc  —  mCRPC and mHSPC (castration-resistant vs hormone-sensitive prostate cancer)
+- medicare-ced  —  Medicare coverage with evidence development
+- mird-formalism  —  MIRD formalism
+- myelosuppression-after-rlt  —  Myelosuppression after radioligand therapy
+- net-grade-ki67  —  Neuroendocrine tumour grade (Ki-67) and WHO classification
+- no-carrier-added  —  No-carrier-added (n.c.a.) and carrier-added production
+- nrc-licensing  —  NRC medical-use licensing (10 CFR Part 35)
+- oligometastatic  —  Oligometastatic disease
+- partial-volume-effect  —  Partial volume effect (PVE)
+- patient-release-criteria  —  Patient release criteria after radioactive treatment
+- payload  —  Payload (ADC)
+- pharmacokinetics  —  Pharmacokinetics (PK), half-life and exposure
+- prostatectomy  —  Radical prostatectomy
+- prrt-term  —  PRRT (peptide receptor radionuclide therapy)
+- psa-kinetics  —  PSA kinetics: PSA doubling time and PSA density
+- psa50  —  PSA50 / PSA90 response
+- psma-rads  —  PSMA-RADS (PSMA reporting and data system)
+- radiation-necrosis  —  Radiation necrosis (brain)
+- radiation-safety-officer  —  Radiation Safety Officer (RSO)
+- radiochemical-purity  —  Radiochemical purity (RCP)
+- radioiodine-term  —  Radioiodine therapy (I-131)
+- radiolysis  —  Radiolysis (self-radiolysis of radiopharmaceuticals)
+- radionuclidic-purity  —  Radionuclidic purity
+- radiopharmacy-term  —  Radiopharmacy (practice and discipline)
+- radiotherapy  —  Radiotherapy
+- relative-biological-effectiveness  —  Relative biological effectiveness (RBE)
+- release-criteria  —  Product release criteria (radiopharmaceutical quality control)
+- renal-protection-amino-acids  —  Renal protection with amino acid co-infusion
+- salivary-gland-toxicity  —  Salivary gland toxicity (xerostomia) from PSMA radioligand therapy
+- sdh-deficiency  —  SDH deficiency (SDHB immunohistochemistry loss)
+- sentinel-lymph-node-biopsy  —  Sentinel node biopsy
+- specific-activity  —  Specific activity and molar activity
+- suv  —  Standardised uptake value (SUV)
+- tare  —  TARE / SIRT (radioembolisation with yttrium-90)
+- theranostic-pair-term  —  Theranostic pair
+- theranostics  —  Theranostics
+- thrombocytopenia  —  Thrombocytopenia
+- time-activity-curve  —  Time-activity curve (TAC)
+- time-of-flight-pet  —  Time-of-flight (TOF) PET
+- tumour-hypoxia  —  Tumour hypoxia
+- tumour-to-background-ratio  —  Tumour-to-background ratio (TBR)
+
+## trial (135)
+
+- action-1  —  ACTION-1
+- ahod2131  —  AHOD2131 (COG / NCTN)
+- alphabreak  —  AlphaBreak (FPI-2265) & AcTION (225Ac-PSMA-617)
+- alphamedix-02  —  ALPHAMEDIX-02
+- alsympca  —  ALSYMPCA
+- anbl1531  —  COG ANBL1531
+- astra  —  ASTRA
+- aurora-flurpiridaz  —  AURORA
+- cabinet  —  CABINET (Alliance A021602)
+- chaarted  —  CHAARTED (E3805)
+- compete  —  COMPETE
+- condor  —  CONDOR
+- decision-sorafenib  —  DECISION
+- eclipse-psma  —  ECLIPSE
+- embark  —  EMBARK
+- enza-p  —  ENZA-p
+- estimabl2  —  ESTIMABL2
+- falcon  —  FALCON
+- hd21  —  GHSG HD21
+- hilo  —  HiLo
+- ideas-amyloid  —  IDEAS (Imaging Dementia-Evidence for Amyloid Scanning)
+- ielsg37  —  IELSG37
+- ion-trial  —  IoN
+- lighthouse  —  LIGHTHOUSE
+- lutectomy  —  LuTectomy
+- mcrpc  —  A Study of Pasritamig With or Without JNJ-87189401 Versus Placebo for Late Line Metastatic Castration-resistant Prostate Cancer (mCRPC)
+- nct02665065  —  Study of Iomab-B vs. Conventional Care in Older Subjects With Active, Relapsed or Refractory Acute Myeloid Leukemia
+- nct02952508  —  Study of Iopofosine I-131 (CLR 131) in Select B-Cell Malignancies (CLOVER-1) With Expansion in Waldenstrom
+- nct03444844  —  Biodistribution and Dosimetry of Ga-68 P16-093 in Prostate Cancer
+- nct03533283  —  An Open-Label Phase lB/II Study of Glofitamab and Atezolizumab or Polatuzumab Vedotin in Adult Patients With Relapsed/Refractory B-Cell Non-Hodgkin's Lymphoma
+- nct03690388  —  A Study of Cabozantinib Compared With Placebo in Subjects With Radioiodine-refractory Differentiated Thyroid Cancer Who Have Progressed After Prior Va
+- nct03972488  —  Study to Evaluate the Efficacy and Safety of Lutathera in Patients With Grade 2 and Grade 3 Advanced GEP-NET
+- nct03972657  —  A Trial to Find Out if REGN5678 (Nezastomig) is Safe and How Well it Works Alone or in Combination With Cemiplimab for Adult Participants With Metasta
+- nct04557059  —  A Study of Adding Apalutamide to Radiotherapy and LHRH Agonist in High-Risk Patients With Hormone-Sensitive Prostate Cancer
+- nct04711135  —  Study to Evaluate Safety and Dosimetry of Lutathera in Adolescent Patients With GEP-NETs and PPGLs
+- nct04724369  —  Open-Label Study of 18F-mFBG for Imaging Neuroblastoma
+- nct04807257  —  Auger Molecular Therapy (AMT) for Malignant Cutaneous Lesions Treatment
+- nct04868604  —  64Cu-SAR-bisPSMA and 67Cu-SAR-bisPSMA for Identification and Treatment of PSMA-expressing Metastatic Castrate Resistant Prostate Cancer (SECuRE)
+- nct04919226  —  Lutetium 177Lu-Edotreotide Versus Best Standard of Care in Well-differentiated Aggressive Grade-2 and Grade-3 GastroEnteroPancreatic NeuroEndocrine Tumors (GEP-NETs) - COMPOSE
+- nct04939610  —  A Study of 177Lu-FAP-2286 in Advanced Solid Tumors
+- nct05004285  —  Evaluate the Clinical Usefulness of [F-18]Florastamin PET/CT Imaging Diagnosis Compared to MRI Diagnosis
+- nct05063565  —  TheraSphere With Durvalumab and Tremelimumab for HCC
+- nct05142696  —  A Study of [177Lu]Lu-DOTA-TATE in Newly Diagnosed ES-SCLC Patients in Combination With Carboplatin, Etoposide and Atezolizumab
+- nct05219500  —  Targeted Alpha Therapy With 225Actinium-Prostate Specific Membrane Antigen (PSMA)-I&T of Castration-resISTant Prostate Cancer (TATCIST).
+- nct05381103  —  PSMA-PET to Guide Prostatectomy
+- nct05413850  —  Anti-tumour Activity of (177Lu) rhPSMA-10.1 Injection
+- nct05459844  —  A Study Comparing Treatment With Lutetium[177Lu] Oxodotreotide Injection to Octreotide LAR in Patients With GEP-NETs
+- nct05547061  —  A Phase 1/2 Clinical Trial to Evaluate the Safety, Tolerability, Dosimetry, and Anti-tumor Activity of Ga-68-NGUL / Lu-177-DGUL in Patients With Metastatic Castration-resistant Prostate Cancer (mCRPC) Refractory to Standard Therapy
+- nct05636618  —  Targeted Alpha-Particle Therapy for Advanced Somatostatin Receptor Type 2 (SSTR2) Positive Tumors
+- nct05655312  —  MC1R-targeted Alpha-particle Monotherapy and Combination Therapy Trial With Nivolumab in Adults With Advanced Melanoma
+- nct05658003  —  A Study Evaluating [177Lu]Lu-PSMA-617 vs. a Change of Androgen Receptor-directed Therapy in Taxane Treatment Naive Chinese Male Patients With Progressive Metastatic Castrate Resistant Prostate Cancer
+- nct05682443  —  ONC-392 Plus Lutetium Lu 177 Vipivotide Tetraxetan in Patients With mCRPC
+- nct05706129  —  A Study to Assess Safety, Tolerability and Imaging Characteristics of [68Ga]Ga-DPI-4452 and to Assess Safety, Tolerability, and Efficacy of [177Lu]Lu-DPI-4452 in Participants With Unresectable Locally Advanced or Metastatic Solid Tumors
+- nct05849298  —  A Phase II Study of AAA617 Alone and AAA617 in Combination With ARPI in Patients With PSMA PET Scan Positive CRPC
+- nct05884255  —  An Open-label Phase 3 Study of Lutetium (177Lu) Oxodotreotide Injection in Subjects With Advanced Gastrointestinal Pancreatic Neuroendocrine Tumors.
+- nct05936658  —  [18F]Florastamin PET/CT Imaging Examination in Patients With Suspected Recurrent or Metastatic Prostate Cancer
+- nct05939414  —  An Open-label Study Comparing Lutetium (177Lu) Vipivotide Tetraxetan Versus Observation in PSMA Positive OMPC.
+- nct06004661  —  Study of Lutetium (177Lu) Vipivotide Tetraxetan in mCRPC Participants With Moderately and Severely Impaired and With Normal Renal Function
+- nct06040099  —  A US Study to Evaluate Transarterial Radioembolization (TARE) in Combination With Durvalumab and Bevacizumab Therapy in People With Unresectable Hepat
+- nct06084806  —  Test-retest Evaluation of [18F]F-AraG PET
+- nct06107374  —  Imaging Advanced NSCLC Patients Undergoing PD-1/PD-L1 Directed Therapy Using [18F]-FARAG
+- nct06122584  —  Diagnostic Performance of [18F]PSMA-1007 PET/CT Imaging in Patients With Newly-Diagnosed Prostate Cancer
+- nct06139575  —  Phase 1/2 Clinical Study of Lutetium Lu 177 JH020002 Injection in Patients With Advanced Prostate Cancer
+- nct06184035  —  A Dose Escalation and Expansion Study of [177Lu]Lu-SN201 in Participants With Advanced Cancer
+- nct06235151  —  Copper Cu 64 PSMA I&T PET Imaging in Men With Newly Diagnosed Prostate Cancer
+- nct06247995  —  A Phase I/II, Dose Finding and Optimization Study of [177Lu]Lu-NeoB in Combination With Capecitabine in Patients With GRPR+, ER+, HER2- Metastatic Breast Cancer After Progression on Previous Endocrine Therapy in Combination With a CDK4/6 Inhibitor.
+- nct06298916  —  64Cu-LNTH-1363S in Patients With Sarcoma or Gastrointestinal Tract Cancer
+- nct06359847  —  Study of ST-1898 in Locally Advanced or Metastatic Radioiodine-Refractory Differentiated Thyroid Cancer
+- nct06369831  —  HER2 Targeted Molecular Imaging in mBC and Other Metastatic Solid Carcinomas Using 68Ga-ABS011
+- nct06383052  —  A Phase 1/2 Study of 177Lu-NYM032 Injection in mCRPC
+- nct06398444  —  A Clinical Study of Lutetium[177Lu] Oxodotreotide Injection in Patients With Advanced Neuroendocrine Neoplasms
+- nct06474806  —  Safety and Diagnostic Performance of uPAR PET Imaging in Localised, Untreated Prostate Cancer
+- nct06504147  —  A Study of Radspherin® in Patients With Primary Advanced Epithelial Cancer, With Peritoneal Metastasis That Are Homologous Recombination Proficient Scheduled to Undergo Neoadjuvant Chemotherapy and Interval Debulking Surgery
+- nct06505395  —  A Trial to Assess Efficacy, Safety, Pharmacokinetics of Octreotide Subcutaneous Injection in Patients With Gastroentero-pancreatic Neuroendocrine Tumor (GEP-NET)
+- nct06520345  —  The Study of 177Lu-TLX591 Plus SOC Versus SOC Alone in Patients With mCRPC (ProstACT Global)
+- nct06549465  —  Study Evaluating Dosimetry, Randomized Dose Optimization, Dose Escalation and Efficacy of Ac-225 Rosopatamab Tetraxetan in Participants With PSMA PET-Positive Castration-Resistant Prostate Cancer (CRPC)
+- nct06569420  —  Study Of Comparing SAF-189s With Crizotinib In First Line ALK-Positive Advanced and Metastatic NSCLC
+- nct06590857  —  Trial of 225Ac-DOTATATE (RYZ101) in Subjects With ER+, HER2-negative Unresectable or Metastatic Breast Cancer Expressing SSTRs.
+- nct06710756  —  Lead-212 PSV359 Therapy for Patients With Solid Tumors
+- nct06726161  —  Study of the Theranostic Pair RYZ811 (Diagnostic) and RYZ801 (Therapeutic) to Identify and Treat Subjects With GPC3+ (Glypican-3) Unresectable HCC
+- nct06750419  —  89Zr-TLX250 for PET/CT Imaging of ccRCC - ZIRCON-CP Study
+- nct06754085  —  Study of 18F-Florastamin PET/CT Imaging in Patients With Suspected Recurrence of Prostate Cancer
+- nct06777433  —  Phase 2b Imaging Study of RAD101 in Participants With Suspected Recurrent Brain Metastases
+- nct06780670  —  Open-label Study Comparing AAA817 Versus Standard of Care in the Treatment of Previously Treated PSMA-positive mCRPC Adults Who Have Disease Progressed on or After [177Lu]Lu-PSMA Targeted Therapy
+- nct06784752  —  Study to Evaluate the Efficacy and Safety of [177Lu]Lu-DOTA-TATE in Patients With Grade 1 and Grade 2 Advanced GEP-NET
+- nct06855277  —  Study Comparing AAA817+ARPI Versus Standard of Care in Adult Participants With PSMA-positive mCRPC
+- nct06860971  —  A Study of AL2846 Capsule Versus Placebo in the Treatment of Advanced Radioiodine-Refractory Differentiated Thyroid Carcinoma
+- nct06894511  —  An Open-label Study of Lutetium (177Lu) Vipivotide Tetraxetan (AAA617) in Combination With ARPI Versus AAA617 in PSMA Positive First-line mCRPC
+- nct06906471  —  A Single-Arm, Blinded, Fluorescent PSMA Histopathology Trial of AS1986NS
+- nct06909825  —  FPI-2265 (225Ac-PSMA-I&T) and Olaparib for Patients With Metastatic Castration-Resistant Prostate Cancer (mCRPC)
+- nct06925581  —  A Trial of HRS-6768 in Patients With Advanced Solid Tumors
+- nct06990880  —  A Study of GSK5458514 Administered Alone or In Combination With Other Anti-Cancer Agents in Participants With Prostate Cancer
+- nct07047118  —  A Study of JSB462 (Luxdegalutamide) Plus Lutetium (177Lu) Vipivotide Tetraxetan in Patients With Metastatic Castration Resistant Prostate Cancer (mCRPC)
+- nct07052214  —  PSMA PET Combined With MRI for the Detection of PCa
+- nct07070349  —  A Trial of HRS-6213 in Healthy Subjects and Patients With Solid Tumors
+- nct07129252  —  A Study to Investigate Safety and Effectiveness of CRN09682 in Participants With SST2-Expressing NENs and Other Solid Tumors
+- nct07189871  —  177Lu-BetaBart in Patients With Relapsed/Refractory, Locally Advanced Inoperable, or Metastatic Solid Tumors
+- nct07197580  —  Phase 3 Study to Assess Safety and Efficacy of 177Lu-TLX250 in Advanced Relapsed or Recurrent ccRCC
+- nct07217704  —  Using 18F-FAPI PET to Detect Metastatic Disease in Patients That Have Gastric or Esophageal Cancer.
+- nct07219238  —  Study to Evaluate the Diagnostic Performance of GEH300079 (68Ga) Injection PET/CT for Detection of PC in Patients With Colorectal, Gastric, Ovarian, o
+- nct07226986  —  A Phase Ib/II Open-label Study of AMO959 With Lutetium (177Lu) Vipivotide Tetraxetan (AAA617) in Combination With ARPI in Adult Participants With PSMA
+- nct07258407  —  A Clinical Trial Evaluating the Safety of TD001 In Patients With PSMA-Expressing Metastatic Prostate Cancer
+- nct07259213  —  A Study of Terbium 161 (161Tb)-RAD402 in Participants With CRPC
+- nct07276789  —  Efficacy and Safety of a Single Dose of LS301-IT for Fluorescence Intraoperative Molecular Imaging (IMI) for Patients Undergoing Lung Cancer Resection for Non Small Cell Lung Cancer
+- nct07278479  —  Study of [212Pb]Pb-DOTAM-MAM279 ([212Pb]Pb-MP0712) in Patients With Small Cell Lung Cancer and Other DLL3 Expressing Solid Tumors
+- nct07311694  —  A Phase III Study Comparing HRS-4357 With Novel Androgen Receptor Pathway Inhibitors in Patients With Progressive, PSMA-Positive Metastatic Castration-Resistant Prostate Cancer
+- nct07357519  —  Lu-TARGO (177Lu-TARGeted Osteosarcoma Therapy)
+- nct07432633  —  [18F]FPyQCP PET Imaging of Fibroblast Activation Protein in Selected Oncology Indications
+- nct07567521  —  A Study of TRC003 in the Treatment of Patients With Progressive PSMA-positive mCRPC
+- nct07590934  —  Phase Ib/II Platform Study of Multiple Anti-Cancer Agents in Participants With Metastatic Prostate Cancer
+- nct07611110  —  AZD2265 Compared With Standard of Care in PSMA-positive Metastatic Castration-resistant Prostate Cancer (VECTRA-01)
+- nct07615101  —  Investigating the Safety and Diagnostic Performance of 68Ga-NYM032 Injection PET/CT in Men With Newly Diagnosed Prostate Cancer.
+- nct07649122  —  This Study Evaluates the Diagnostic Performance and Safety of 68Ga-NYM032 PET/CT Imaging in Patients With Suspected Recurrence of Prostate Cancer.
+- nct07691775  —  A Study to Evaluate the Safety and Diagnostic Performance of F18 FBPA PET/CT Imaging in Solid Tumors
+- nct07702292  —  [68Ga]BED003 PET Imaging of Fibroblast Activation Protein in Selected Oncology Indications
+- netter-1  —  NETTER-1
+- osprey  —  OSPREY
+- phergain  —  PHERGain
+- pop-rt  —  POP-RT
+- prince-trial  —  PRINCE
+- propsma  —  proPSMA
+- prosper  —  PROSPER
+- psmaddition  —  PSMAddition
+- psmafore  —  PSMAfore
+- radiant-3-4  —  RADIANT-3 and RADIANT-4
+- rathl  —  RATHL
+- sarah-sirvenib  —  SARAH and SIRveNIB
+- select-lenvatinib  —  SELECT
+- splash  —  SPLASH
+- spotlight  —  SPOTLIGHT
+- stampede  —  STAMPEDE
+- therap  —  TheraP (ANZUP 1603)
+- upfront-psma  —  UpFrontPSMA
+- vision  —  VISION
+- zircon  —  ZIRCON

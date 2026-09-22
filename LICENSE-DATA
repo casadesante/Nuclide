@@ -1,0 +1,46 @@
+The contents of src/data/ (the Nuclide corpus: the text, structure, curation and
+derived files that Nuclide made) are copyright Nuclide and its contributors.
+
+Part of this corpus was carried over from OnCo (https://github.com/judegomila/OnCo)
+and re-scoped for radiopharmaceuticals; those records are copyright OnCo and its
+contributors, are used here under the same CC BY-NC 4.0 terms, and each file that
+holds them says so in its header. Attribution for them is "Data from OnCo
+(https://github.com/judegomila/OnCo), adapted in Nuclide". Commercial licensing of
+those records is OnCo's to grant, not Nuclide's.
+
+They are licensed for non-commercial use under the Creative Commons
+Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+https://creativecommons.org/licenses/by-nc/4.0/
+
+  Free: individual and educational use (personal, academic, charitable and other
+  non-profit use), with attribution.
+  Paid: commercial use (for example inside a paid product, a commercial
+  service, advertising-funded redistribution or a company's internal
+  data pipeline) needs permission. Ask through
+  https://github.com/casadesante/Nuclide/issues (label "licensing"). For the
+  records carried from OnCo, ask OnCo.
+
+Attribution: "Data from Nuclide" with a link to https://github.com/casadesante/Nuclide.
+
+Contributions accepted into the corpus are licensed to Nuclide on the same terms
+so that the whole corpus can be offered under one licence.
+
+The corpus describes third-party products, organisations, trials and publications.
+Facts are not copyrightable; the licence covers Nuclide's selection, arrangement,
+wording and derived files. Trademarks belong to their owners. Linked external
+sources and anything ingested from upstream keep their own licences, recorded in
+docs/DATA-SOURCES.md and per file where relevant. Nothing in the corpus is medical
+advice.
+
+Logos under public/logos/ are trademarks of their respective owners and are shown for
+identification only (nominative use). Files sourced from Wikimedia Commons carry their own
+licences and attribution, recorded per file in public/logos/index.json. Favicons are the
+organisations' own site icons, fetched via Google's favicon service.
+
+Portraits under public/portraits/ are photographs from Wikimedia Commons, taken only from the image
+(P18) attached to the person's Wikidata item and only when the file carries a free licence (CC0,
+CC BY 1.0-4.0, CC BY-SA 1.0-4.0 or public domain). Each file keeps its own licence, which is not
+CC BY 4.0 unless stated; the licence, author, attribution line and Commons file page are recorded
+per person in public/portraits/index.json and shown on every page that displays the image (title
+attribute on the picture and a credit line on the person page). No institutional or news photographs
+are copied. To request removal or a correction, open a GitHub issue.

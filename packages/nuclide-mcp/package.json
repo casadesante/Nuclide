@@ -1,0 +1,25 @@
+{
+  "name": "nuclide-mcp",
+  "version": "0.1.0",
+  "mcpName": "io.github.casadesante/Nuclide-mcp",
+  "description": "Model Context Protocol server for Nuclide, the public cited knowledge graph of radiopharmaceuticals. Tools: search, get_entity, list_kind, ask (cited answers), context (Markdown), compare. Reads the static API at nuclide.cc; no checkout needed.",
+  "license": "MIT",
+  "homepage": "https://nuclide.cc/api/",
+  "repository": { "type": "git", "url": "https://github.com/casadesante/Nuclide.git", "directory": "packages/nuclide-mcp" },
+  "bugs": { "url": "https://github.com/casadesante/Nuclide/issues" },
+  "keywords": ["mcp", "model-context-protocol", "radiopharmaceuticals", "nuclear-medicine", "theranostics", "knowledge-graph", "clinical-trials", "nuclide"],
+  "type": "module",
+  "bin": { "nuclide-mcp": "./dist/nuclide-mcp.mjs" },
+  "files": ["dist/", "README.md"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "cd ../.. && npm run mcp:build",
+    "test": "cd ../.. && npx vitest run packages/nuclide-mcp",
+    "prepublishOnly": "npm run build && test -f dist/nuclide-mcp.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.5.4"
+  },
+  "publishConfig": { "access": "public" }
+}

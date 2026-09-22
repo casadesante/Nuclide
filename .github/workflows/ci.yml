@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      # Freshness gate: fails when critical stale records (approved products over 90 days, open trials
+      # over 120, cancer pages over 180, past calendar events over 30) exceed FRESHNESS_LIMIT. See /freshness/.
+      - name: Freshness SLAs
+        run: npx tsx scripts/freshness.ts --check
+        env:
+          FRESHNESS_LIMIT: 25
+      - run: npm run build

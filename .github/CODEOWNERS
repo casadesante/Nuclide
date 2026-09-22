@@ -1,0 +1,62 @@
+# Code owners by review track (.github/REVIEWERS.md). GitHub requests a review from the owners of any
+# file a pull request touches. Every line resolves to the maintainer today; as reviewers join a track,
+# add their handle after the maintainer's on that track's lines (teams work too: @org/nuclide-clinical).
+#
+# Later lines win, so the specific data files below override the catch-all.
+
+*                                   @casadesante
+
+# Maintainer: schema, build, site
+/src/lib/schema.ts                  @casadesante
+/src/lib/kinds.ts                   @casadesante
+/src/data/index.ts                  @casadesante
+/scripts/                           @casadesante
+/.github/                           @casadesante
+
+# Expert (clinical): indication pages, trials, trial outcomes
+/src/data/rp/carried-indications.ts @casadesante
+/src/data/rp/indications-nononcology.ts @casadesante
+/src/data/rp/carried-trials.ts      @casadesante
+/src/data/rp/trials-new.ts          @casadesante
+/src/data/rp/carried-pairings.ts    @casadesante
+/src/data/rp/pairings-new.ts        @casadesante
+
+# Expert (scientific): isotopes, targets, pathways, technologies, payloads, resistance
+/src/data/rp/isotopes-therapy.ts    @casadesante
+/src/data/rp/isotopes-imaging.ts    @casadesante
+/src/data/rp/carried-targets.ts     @casadesante
+/src/data/rp/targets-new.ts         @casadesante
+/src/data/rp/carried-pathways.ts    @casadesante
+/src/data/rp/carried-technologies.ts @casadesante
+/src/data/rp/technologies-new.ts    @casadesante
+/src/data/payloads.ts               @casadesante
+/src/data/resistance.ts             @casadesante
+/src/data/biomarkers.ts             @casadesante
+
+# Expert (regulatory): approvals, regional status, calendar
+/src/data/rp/carried-agents.ts      @casadesante
+/src/data/rp/agents-cardiac.ts      @casadesante
+/src/data/rp/agents-diagnostic-oncology.ts @casadesante
+/src/data/rp/agents-neuro.ts        @casadesante
+/src/data/rp/agents-therapy-new.ts  @casadesante
+/src/data/regional-approvals.ts     @casadesante
+/src/data/calendar.ts               @casadesante
+/src/data/coverage-us.ts            @casadesante
+/src/data/coverage-uk.ts            @casadesante
+
+# Patient advocate: plain-language layers
+/src/data/rp/terms-clinical.ts      @casadesante
+/src/data/rp/terms-physics.ts       @casadesante
+/src/data/terms-basics.ts           @casadesante
+/src/data/paths.ts                  @casadesante
+
+# Organisations and people (self-edits are verified per REVIEWERS.md)
+/src/data/rp/carried-companies.ts   @casadesante
+/src/data/rp/companies-new.ts       @casadesante
+/src/data/rp/carried-institutions.ts @casadesante
+/src/data/rp/carried-people.ts      @casadesante
+/src/data/rp/people-new.ts          @casadesante
+
+# Public record of errors and reviews
+/CORRECTIONS.md                     @casadesante
+/src/data/reviews.ts                @casadesante

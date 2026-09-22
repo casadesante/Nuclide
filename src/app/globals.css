@@ -1,0 +1,557 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------------------------------------
+   Nuclide design tokens
+   Serious, scientific, warm: a quiet garden. One accent (the pink long used by cancer groups) for meaning:
+   primary actions, active state, focus. Neutrals are warm stone with a breath of sage so the kind and status
+   colours still carry the information. `--garden-*` are wash tints for backgrounds and `--garden-ink` is the
+   stroke colour of the botanical line art (src/components/Garden.tsx); none of them is ever used for text.
+   Contrast (WCAG): light body 15.1:1 on background, muted 5.5:1 (5.1:1 on surface); dark body 14.8:1, muted 8:1.
+   ------------------------------------------------------------------------------------------------ */
+:root {
+  --background: #f5f4ee;
+  --foreground: #1b1f1c;
+  --muted: #5b655e;
+  --border: #e0ded4;
+  --border-strong: #c9c6b9;
+  --card: #fcfbf8;
+  --surface: #eeece4;
+  --accent: #c2185b;
+  --accent-solid: #d6336c;
+  --accent-fg: #ffffff;
+  --accent-soft: #fce7f0;
+  --ring: #d6336c;
+  --wire-hot: #b45309;
+  --garden-1: #9db59a;
+  --garden-2: #6d8a68;
+  --garden-3: #d9d2bf;
+  --garden-ink: #3f5c3d;
+  --shadow-1: 0 1px 2px rgb(31 40 33 / 0.04), 0 2px 6px -2px rgb(31 40 33 / 0.05);
+  --shadow-2: 0 10px 24px -12px rgb(31 40 33 / 0.16), 0 2px 6px -2px rgb(31 40 33 / 0.06);
+  --shadow-3: 0 20px 44px -20px rgb(31 40 33 / 0.26), 0 4px 12px -4px rgb(31 40 33 / 0.08);
+  --header-h: 3.5rem;
+  --sticky-top: var(--header-h);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-card: var(--card);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent-solid: var(--accent-solid);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-garden-1: var(--garden-1);
+  --color-garden-2: var(--garden-2);
+  --color-garden-3: var(--garden-3);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --text-small: 0.8125rem;
+  --text-small--line-height: 1.25rem;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.55rem;
+  --shadow-card: var(--shadow-1);
+  --shadow-lift: var(--shadow-2);
+  --shadow-pop: var(--shadow-3);
+}
+
+/* Dark: a night garden. Deep green-grey (never pure black), cards a step lighter, borders visible, pale fronds. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121816;
+    --foreground: #e6e9e6;
+    --muted: #a6afa9;
+    --border: #2b3431;
+    --border-strong: #3c4642;
+    --card: #1a201e;
+    --surface: #212927;
+    --accent: #f9a8d4;
+    --accent-solid: #db2777;
+    --accent-fg: #ffffff;
+    --accent-soft: #3b1a2b;
+    --ring: #f87171;
+    --wire-hot: #fbbf24;
+    --garden-1: #3d5a45;
+    --garden-2: #5f7f63;
+    --garden-3: #2a3330;
+    --garden-ink: #c3d3bf;
+    --shadow-1: 0 1px 2px rgb(0 0 0 / 0.35);
+    --shadow-2: 0 8px 20px -10px rgb(0 0 0 / 0.6);
+    --shadow-3: 0 18px 40px -18px rgb(0 0 0 / 0.7);
+  }
+}
+
+/* Themes (ThemeToggle sets data-theme on <html>; default follows prefers-color-scheme above). */
+[data-theme="light"] {
+  --background: #f5f4ee; --foreground: #1b1f1c; --muted: #5b655e; --border: #e0ded4; --border-strong: #c9c6b9; --card: #fcfbf8; --surface: #eeece4;
+  --accent: #c2185b; --accent-solid: #d6336c; --accent-fg: #ffffff; --accent-soft: #fce7f0; --ring: #d6336c; --wire-hot: #b45309;
+  --garden-1: #9db59a; --garden-2: #6d8a68; --garden-3: #d9d2bf; --garden-ink: #3f5c3d;
+  --shadow-1: 0 1px 2px rgb(31 40 33 / 0.04), 0 2px 6px -2px rgb(31 40 33 / 0.05);
+  --shadow-2: 0 10px 24px -12px rgb(31 40 33 / 0.16), 0 2px 6px -2px rgb(31 40 33 / 0.06);
+  --shadow-3: 0 20px 44px -20px rgb(31 40 33 / 0.26), 0 4px 12px -4px rgb(31 40 33 / 0.08);
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --background: #121816; --foreground: #e6e9e6; --muted: #a6afa9; --border: #2b3431; --border-strong: #3c4642; --card: #1a201e; --surface: #212927;
+  --accent: #f9a8d4; --accent-solid: #db2777; --accent-fg: #ffffff; --accent-soft: #3b1a2b; --ring: #f9a8d4; --wire-hot: #fbbf24;
+  --garden-1: #3d5a45; --garden-2: #5f7f63; --garden-3: #2a3330; --garden-ink: #c3d3bf;
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 0.35);
+  --shadow-2: 0 8px 20px -10px rgb(0 0 0 / 0.6);
+  --shadow-3: 0 18px 40px -18px rgb(0 0 0 / 0.7);
+  color-scheme: dark;
+}
+[data-theme="contrast"] {
+  --background: #000000; --foreground: #ffffff; --muted: #e0e0e0; --border: #ffffff; --border-strong: #ffffff; --card: #000000; --surface: #1a1a1a;
+  --accent: #ffd400; --accent-solid: #ffd400; --accent-fg: #000000; --accent-soft: #2a2300; --ring: #ffd400; --wire-hot: #ff9f1a;
+  --garden-1: transparent; --garden-2: transparent; --garden-3: transparent; --garden-ink: transparent;
+  --shadow-1: none; --shadow-2: none; --shadow-3: none;
+  color-scheme: dark;
+}
+
+/* `dark:` utilities follow the chosen theme, not only the OS. Contrast counts as dark. */
+@custom-variant dark {
+  &:where([data-theme="dark"], [data-theme="dark"] *, [data-theme="contrast"], [data-theme="contrast"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:not([data-theme="light"], [data-theme="light"] *)) {
+      @slot;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Base: type scale and rhythm
+   display  clamp 40 to 68px   .display
+   h1       30 / 36px          text-3xl sm:text-4xl (PageHeader)
+   h2       20 to 24px         text-xl / text-2xl
+   h3       17px               text-[17px]
+   body     15 or 16px         text-body / base
+   small    13px               text-small
+   ------------------------------------------------------------------------------------------------ */
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern", "liga", "calt";
+  }
+  h1, h2, h3, h4 { text-wrap: balance; letter-spacing: -0.015em; font-weight: 600; line-height: 1.15; }
+  h1 { font-size: 1.875rem; letter-spacing: -0.025em; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.0625rem; letter-spacing: -0.01em; }
+  p { text-wrap: pretty; }
+  table, .num, time, kbd { font-variant-numeric: tabular-nums; }
+  kbd { font-family: var(--font-sans); }
+  ::selection { background: color-mix(in srgb, var(--accent) 22%, transparent); }
+  /* Keyboard focus is always visible, and drawn the same way everywhere. */
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 4px; }
+  input:focus-visible, select:focus-visible, textarea:focus-visible { outline-offset: 0; }
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Components. Kept in the components layer so Tailwind utilities on the same element still win.
+   ------------------------------------------------------------------------------------------------ */
+@layer components {
+  .display {
+    font-size: clamp(2.5rem, 1.6rem + 3.4vw, 4.25rem);
+    line-height: 1.02;
+    letter-spacing: -0.032em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  .kicker {
+    font-size: 0.6875rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  /* Surfaces: a hairline in stone, a soft corner, a shadow that reads as air rather than ink. */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.875rem;
+    box-shadow: var(--shadow-1);
+    transition: box-shadow 160ms ease, transform 160ms ease, border-color 160ms ease;
+  }
+  a.card:hover, .card-link:hover {
+    box-shadow: var(--shadow-2);
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
+  }
+  a.card:active, .card-link:active { transform: translateY(0); box-shadow: var(--shadow-1); }
+
+  /* Ambient wash behind wireframe schematics: a breath of accent top-left, garden green bottom-right. Garden vars are
+     transparent in the contrast theme, so the wash vanishes there. */
+  .wire-bg {
+    background:
+      radial-gradient(90% 100% at 12% -10%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 70%),
+      radial-gradient(80% 90% at 92% 110%, color-mix(in srgb, var(--garden-1) 26%, transparent), transparent 70%),
+      linear-gradient(to bottom, color-mix(in srgb, var(--surface) 45%, transparent), transparent 60%);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    padding: 0.125rem 0.6rem;
+    /* One pill is one unit: wrap between pills, never inside a word (row 120). */
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    max-width: 100%;
+    /* A label wider than the space is cut with an ellipsis instead of spilling out of the pill (issue 42).
+       `clip` rather than `hidden` so an inline-block chip keeps its text baseline in running text.
+       ChipTitles (src/components/ChipTitles.tsx) puts the full label in a title tooltip on truncated chips. */
+    min-width: 0;
+    overflow: clip;
+    text-overflow: ellipsis;
+    font-size: 0.72rem;
+    line-height: 1.35;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    font-variant-numeric: tabular-nums;
+    border: 1px solid transparent;
+  }
+  /* text-overflow only works on a block container's own text, not on the anonymous item a flex container wraps it
+     in, so a chip that is plain text becomes inline-block (same box, same baseline); chips with a glyph or spans stay
+     inline-flex and truncate inside their spans. */
+  .chip:not(:has(> *)) { display: inline-block; }
+  .chip > span { min-width: 0; overflow: clip; text-overflow: ellipsis; }
+  /* A glyph inside a chip keeps its size and sits on the chip's centre line beside the label. */
+  .chip > svg, .chip > img { display: block; flex-shrink: 0; }
+
+  /* Header controls share one 40px height and one look. */
+  .ctl {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    padding: 0 0.75rem;
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 0.625rem;
+    font-size: 0.875rem;
+    line-height: 1;
+    color: var(--foreground);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    transition: background-color 120ms ease, border-color 120ms ease;
+  }
+  .ctl:hover { background: var(--surface); border-color: var(--border-strong); }
+  .ctl[aria-expanded="true"] { background: var(--surface); }
+  /* Icon-only: a square with no padding, so the icon is centred by the box rather than by padding. */
+  .ctl-icon { padding: 0; width: 2.5rem; }
+  .ctl > svg { display: block; flex-shrink: 0; }
+  /* Emoji and text glyphs used as icons sit in a fixed square, so their optical centre lands on the control's centre. */
+  .ctl-glyph { display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; font-size: 1rem; line-height: 1; flex-shrink: 0; }
+  /* Short text beside an icon: one size and one line height, so it shares the icon's centre line. */
+  .ctl-label { font-size: 0.75rem; line-height: 1; font-weight: 500; }
+  /* Two runs of text at different sizes inside one control share a baseline. */
+  .ctl-text { display: inline-flex; align-items: baseline; gap: 0.3rem; }
+
+  /* Section tabs on object pages: adjoining tabs sharing one hairline, first and last rounded, the active tab filled.
+     Pills (.chip) are for lists of things; this strip is for moving between sections. */
+  .tabstrip { display: inline-flex; align-items: stretch; flex-shrink: 0; }
+  .tabstrip > .tab {
+    display: inline-flex; align-items: center; gap: 0.375rem;
+    height: 2rem; padding: 0 0.75rem; margin-inline-start: -1px;
+    border: 1px solid var(--border); background: var(--card);
+    font-size: 0.8125rem; line-height: 1; white-space: nowrap;
+    color: color-mix(in srgb, var(--foreground) 78%, transparent);
+    transition: background-color 120ms ease, color 120ms ease;
+  }
+  .tabstrip > .tab:first-child { margin-inline-start: 0; border-start-start-radius: 0.5rem; border-end-start-radius: 0.5rem; }
+  .tabstrip > .tab:last-child { border-start-end-radius: 0.5rem; border-end-end-radius: 0.5rem; }
+  .tabstrip > .tab:hover { background: var(--surface); color: var(--foreground); }
+  .tabstrip > .tab:focus-visible { position: relative; z-index: 2; }
+  .tabstrip > .tab[aria-current="true"] { position: relative; z-index: 1; background: var(--foreground); border-color: var(--foreground); color: var(--background); font-weight: 500; }
+  /* The count shares the label's size and line height, so the two sit on one baseline; it is hidden on the active tab. */
+  .tabstrip > .tab .tab-count { font-variant-numeric: tabular-nums; color: var(--muted); }
+  .tabstrip > .tab[aria-current="true"] .tab-count { display: none; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    height: 2.5rem; padding: 0 1rem; border-radius: 0.625rem;
+    font-size: 0.875rem; font-weight: 500; line-height: 1; white-space: nowrap;
+    border: 1px solid var(--border); background: var(--card); color: var(--foreground);
+    transition: background-color 120ms ease, border-color 120ms ease, transform 120ms ease;
+  }
+  .btn:hover { background: var(--surface); border-color: var(--border-strong); }
+  .btn-primary { background: var(--accent-solid); border-color: var(--accent-solid); color: var(--accent-fg); }
+  .btn-primary:hover { filter: brightness(1.08); background: var(--accent-solid); border-color: var(--accent-solid); }
+  .btn-lg { height: 2.75rem; padding: 0 1.125rem; font-size: 0.9375rem; }
+
+  /* Long-form text */
+  .prose-nuclide { line-height: 1.6; }
+  .prose-nuclide p + p, .prose-nuclide p + ul, .prose-nuclide p + ol, .prose-nuclide ul + p, .prose-nuclide ol + p { margin-top: 0.8em; }
+  .prose-nuclide ul, .prose-nuclide ol { padding-left: 1.4em; }
+  .prose-nuclide ul { list-style: disc; }
+  .prose-nuclide ol { list-style: decimal; }
+  .prose-nuclide li + li { margin-top: 0.3em; }
+  .prose-nuclide h2, .prose-nuclide h3 { margin-top: 1.6em; margin-bottom: 0.5em; }
+  .prose-nuclide strong { font-weight: 600; color: var(--foreground); }
+  .prose-nuclide code { font-family: var(--font-mono); font-size: 0.875em; background: var(--surface); padding: 0.1em 0.35em; border-radius: 0.3em; }
+  .prose-nuclide a { text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .prose-nuclide a:hover { text-decoration-color: currentColor; }
+
+  /* Data tables: sticky header, comfortable cells, quiet row hover, emphasised first column. */
+  table.nuclide { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.875rem; line-height: 1.45; font-variant-numeric: tabular-nums; }
+  table.nuclide thead th {
+    position: sticky;
+    top: var(--sticky-top);
+    z-index: 2;
+    text-align: start;
+    vertical-align: bottom;
+    font-weight: 600;
+    color: var(--muted);
+    font-size: 0.6875rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.7rem 0.75rem 0.55rem;
+    background: var(--card);
+    border-bottom: 1px solid var(--border-strong);
+    white-space: nowrap;
+  }
+  table.nuclide thead th:first-child { color: var(--foreground); }
+  table.nuclide thead th button { color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; }
+  table.nuclide thead th button:hover { color: var(--foreground); }
+  /* break-word (not anywhere): a column is never narrower than its longest word, so short categorical columns such as
+     Grade, Phase or Stage keep whole words while long text columns still wrap at spaces. */
+  table.nuclide td { padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; overflow-wrap: break-word; }
+  table.nuclide td:first-child { font-weight: 500; }
+  table.nuclide td:first-child .text-muted { font-weight: 400; }
+  table.nuclide tbody tr:last-child td { border-bottom-color: transparent; }
+  table.nuclide tbody tr:hover td { background: color-mix(in srgb, var(--foreground) 3.5%, transparent); }
+  table.nuclide th:first-child, table.nuclide td:first-child { padding-left: 1rem; }
+  table.nuclide th:last-child, table.nuclide td:last-child { padding-right: 1rem; }
+  /* A sideways-scrolling wrapper is the sticky container for its table, so a page-relative offset
+     would push the header row down over the first rows. Pin it to the wrapper top instead; the
+     results table goes back to tracking the page from lg, where it stops scrolling sideways. */
+  .overflow-x-auto table.nuclide thead th, .overflow-auto table.nuclide thead th { top: 0; }
+  @media (width >= 64rem) { .results-table table.nuclide thead th { top: var(--sticky-top); } }
+
+  /* A sideways scroller must also be the containing block for its absolutely positioned descendants
+     (notably `sr-only` text inside static buttons): otherwise their static position past the right
+     edge escapes the clip and widens the whole page on phones. Fixed popovers are unaffected. */
+  .overflow-x-auto, .overflow-auto { position: relative; }
+
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
+  /* Home hero: layered washes, dawn pink at the top-left, sage at the top-right, warm stone low down. */
+  .hero {
+    background:
+      radial-gradient(52rem 24rem at 10% -8%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 70%),
+      radial-gradient(48rem 30rem at 94% -4%, color-mix(in srgb, var(--garden-1) 24%, transparent), transparent 70%),
+      radial-gradient(44rem 18rem at 42% 108%, color-mix(in srgb, var(--garden-3) 50%, transparent), transparent 70%),
+      linear-gradient(to bottom, color-mix(in srgb, var(--surface) 55%, transparent), var(--background));
+  }
+  /* Header band for group landing pages: the hero's quieter sibling. */
+  .garden-band {
+    background:
+      radial-gradient(40rem 20rem at 96% -12%, color-mix(in srgb, var(--garden-1) 20%, transparent), transparent 70%),
+      radial-gradient(36rem 14rem at 6% 112%, color-mix(in srgb, var(--garden-3) 40%, transparent), transparent 70%),
+      linear-gradient(to bottom, color-mix(in srgb, var(--surface) 45%, transparent), var(--background));
+  }
+  /* Footer: the ground. A warm stone wash that settles into the page background. */
+  .garden-footer {
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--garden-3) 34%, var(--background)), color-mix(in srgb, var(--surface) 40%, var(--background)) 45%);
+  }
+
+  /* Hairline separator with a label, used between home sections. */
+  .rule { height: 1px; background: var(--border); }
+}
+
+/* A table inside a horizontally scrolling wrapper scrolls with the wrapper, not the page, so a sticky header
+   would pin itself 56px down inside the card and hide the first rows. Keep it static there, and restore it only
+   where the wrapper stops scrolling (ResultsTable's lg:overflow-x-visible). */
+.overflow-x-auto > table.nuclide thead th { position: static; }
+@media (min-width: 64rem) { .lg\:overflow-x-visible > table.nuclide thead th { position: sticky; } }
+
+/* Section tab bar on narrow screens: fade the right edge so the hidden tabs read as scrollable. */
+@media (max-width: 63.99rem) {
+  .tabbar { mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); }
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Garden: botanical line art (src/components/Garden.tsx). Ink follows the theme; the art is thin
+   strokes at low opacity, and fronds sway a degree or two over 15 to 25 seconds. CSS only.
+   `--tilt` and `--flip` are set inline per instance so a mirrored, leaning frond can still sway.
+   ------------------------------------------------------------------------------------------------ */
+.garden { color: var(--garden-ink); z-index: 0; }
+.garden-art { transform: scaleX(var(--flip, 1)) rotate(var(--tilt, 0deg)); transform-origin: 50% 100%; will-change: auto; }
+@keyframes garden-sway {
+  from { transform: scaleX(var(--flip, 1)) rotate(calc(var(--tilt, 0deg) - 1.4deg)); }
+  to   { transform: scaleX(var(--flip, 1)) rotate(calc(var(--tilt, 0deg) + 1.4deg)); }
+}
+.garden-sway { animation: garden-sway var(--sway, 16s) ease-in-out infinite alternate; }
+
+/* Animation budget (src/lib/use-animation-budget.ts). Elements with `motion-css` carry a CSS keyframe animation; it
+   pauses while the tab is hidden, on low-budget devices (Save-Data, four or fewer cores: <html data-motion~="low">),
+   and inside any box marked data-motion-paused (MotionScope, the body map, the resistance map) while that box is off
+   screen. Reduced motion is handled below with everything else. */
+html[data-motion~="hidden"] .motion-css, html[data-motion~="low"] .motion-css, [data-motion-paused] .motion-css { animation-play-state: paused !important; }
+/* Graph explorer: on a low budget the nodes jump to their new places instead of gliding (each move re-lays out a hundred SVG groups). */
+html[data-motion~="low"] .gx-node, html[data-motion~="low"] .gx-bubble, html[data-motion~="low"] .gx-edge, html[data-motion~="low"] .gx-link, html[data-motion~="low"] .gx-band, html[data-motion~="low"] .gx-arc-chip, html[data-motion~="low"] .gx-label { transition-duration: 0s; animation: none; }
+/* Page-header art fades out towards the text on its left; hero art fades before the count grid. */
+.garden-fade { mask-image: linear-gradient(to left, #000 45%, transparent 100%); }
+.garden-hero-fade { mask-image: linear-gradient(to bottom, #000 52%, transparent 74%); }
+
+/* Theme-specific overrides sit outside layers on purpose so they beat utilities. */
+[data-theme="contrast"] .garden { display: none; }
+[data-theme="contrast"] .hero, [data-theme="contrast"] .garden-band, [data-theme="contrast"] .garden-footer { background: var(--background); }
+[data-theme="contrast"] .card { border-width: 2px; }
+[data-theme="contrast"] a { text-decoration: underline; }
+[data-theme="contrast"] .chip { border-color: currentColor; }
+[data-theme="contrast"] table.nuclide thead th { border-bottom-width: 2px; }
+
+/* Graph explorer (src/components/GraphExplorer.tsx). SVG is themed through variables; --k carries the node's kind hue.
+   Fills are the hue mixed into the card colour, so the same hue reads softly on both the cream and the night palette. */
+.gx { --gx-tint: 16%; --gx-tint-on: 30%; }
+@media (prefers-color-scheme: dark) { .gx { --gx-tint: 26%; --gx-tint-on: 42%; } }
+[data-theme="light"] .gx { --gx-tint: 16%; --gx-tint-on: 30%; }
+[data-theme="dark"] .gx { --gx-tint: 26%; --gx-tint-on: 42%; }
+.gx-node { cursor: pointer; outline: none; transition: transform 520ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 220ms ease; animation: gx-in 420ms ease backwards; }
+.gx-bubble { fill: color-mix(in srgb, var(--k) var(--gx-tint), var(--card)); stroke: var(--k); stroke-width: 1.25; transition: stroke-width 160ms ease, fill 160ms ease, r 520ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.gx-node:hover .gx-bubble, .gx-node:focus-visible .gx-bubble, .gx-node.is-hover .gx-bubble { stroke-width: 2; fill: color-mix(in srgb, var(--k) var(--gx-tint-on), var(--card)); }
+.gx-node.is-on .gx-bubble { stroke-width: 1.75; }
+.gx-node:focus-visible .gx-bubble { stroke: var(--ring); }
+.gx-ico { color: var(--k); pointer-events: none; }
+.gx-label { font-size: 11px; fill: var(--foreground); opacity: 0.8; paint-order: stroke; stroke: var(--card); stroke-width: 3px; stroke-linejoin: round; transition: opacity 200ms ease; }
+.gx-node.is-on .gx-label, .gx-node.is-hover .gx-label { opacity: 1; font-weight: 600; }
+.gx-center-label { font-size: 13px; font-weight: 600; fill: var(--foreground); paint-order: stroke; stroke: var(--card); stroke-width: 3px; }
+.gx-center-sub { font-size: 10.5px; fill: var(--muted); }
+.gx.is-dim .gx-node:not(.is-on):not(.is-hover):not(.is-center) { opacity: 0.26; }
+.gx-edge { fill: none; stroke-width: 1.1; stroke-linecap: round; opacity: 0.55; transition: opacity 200ms ease, stroke-width 200ms ease; animation: gx-in 420ms ease backwards; }
+.gx.is-dim .gx-edge:not(.is-on) { opacity: 0.08; }
+.gx-edge.is-on { opacity: 1; stroke-width: 1.8; }
+.gx-link { fill: none; stroke-width: 1.2; stroke-linecap: round; opacity: 0.5; animation: gx-in 220ms ease backwards; }
+.gx-ring { fill: none; stroke: var(--border-strong); stroke-dasharray: 2 6; opacity: 0.8; }
+.gx-band { fill: none; stroke: var(--k); stroke-width: 2.5; stroke-linecap: round; opacity: 0.4; animation: gx-in 420ms ease backwards; }
+.gx-kchip { background: color-mix(in srgb, var(--k) 14%, var(--card)); border-color: color-mix(in srgb, var(--k) 45%, var(--border)); color: var(--foreground); transition: background-color 120ms ease, border-color 120ms ease; }
+.gx-kchip:hover { background: color-mix(in srgb, var(--k) 24%, var(--card)); }
+.gx-kchip[aria-pressed="false"] { background: var(--card); border-color: var(--border); color: var(--muted); text-decoration: line-through; }
+.gx-arc-chip { position: absolute; z-index: 2; white-space: nowrap; box-shadow: var(--shadow-1); background: color-mix(in srgb, var(--k) 14%, var(--card)); border-color: color-mix(in srgb, var(--k) 45%, var(--border)); color: var(--foreground); animation: gx-in 420ms ease backwards; transition: background-color 120ms ease, left 520ms cubic-bezier(0.2, 0.7, 0.2, 1), top 520ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.gx-arc-chip:hover { background: color-mix(in srgb, var(--k) 26%, var(--card)); }
+.gx-avatar { background: color-mix(in srgb, var(--k) 16%, var(--card)); border: 1px solid color-mix(in srgb, var(--k) 45%, var(--border)); color: var(--k); }
+@keyframes gx-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* Skip link for keyboard users. */
+.skip-link { position: absolute; left: 0.75rem; top: -3rem; z-index: 200; padding: 0.5rem 0.75rem; border-radius: 0.5rem; background: var(--accent-solid); color: var(--accent-fg); font-weight: 600; transition: top 120ms; }
+.skip-link:focus { top: 0.75rem; }
+
+/* Reduced motion: no transitions, no animation, instant scroll. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  a.card:hover, .card-link:hover { transform: none; }
+  .garden-sway { animation: none !important; }
+}
+
+/* ------------------------------------------------------------------------------------------------
+   Languages. The layer writes the site language to <html lang>, <html dir> and `data-lang`; TldrText sets `lang`
+   on each TL;DR for the language it is actually in. Right-to-left scripts flip direction and alignment; when the
+   whole site is Arabic, <html dir="rtl"> flips the chrome too (components use logical utilities: ps-/pe-/ms-/me-,
+   start/end). CJK, Devanagari and Arabic get system font stacks with the glyphs, since Geist has none. On <html>
+   itself Geist stays first so Latin names, codes and numbers keep the site face.
+   ------------------------------------------------------------------------------------------------ */
+[lang="ar"], [lang="he"], [lang="fa"], [lang="ur"] { direction: rtl; unicode-bidi: isolate; text-align: start; }
+[lang="ar"] { font-family: "Noto Naskh Arabic", "Geeza Pro", "Segoe UI", Tahoma, var(--font-sans); line-height: 1.8; }
+html[lang="ar"] { unicode-bidi: normal; font-family: var(--font-sans), "Noto Naskh Arabic", "Geeza Pro", "Segoe UI", Tahoma, sans-serif; line-height: inherit; }
+html[lang="ja"] { font-family: var(--font-sans), "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", "Meiryo", sans-serif; }
+html[lang="zh"] { font-family: var(--font-sans), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif; }
+html[lang="hi"] { font-family: var(--font-sans), "Kohinoor Devanagari", "Nirmala UI", "Noto Sans Devanagari", sans-serif; }
+/* Latin-script identifiers inside an RTL page keep their own direction. */
+html[dir="rtl"] code, html[dir="rtl"] kbd, html[dir="rtl"] .tabular-nums { unicode-bidi: isolate; }
+[lang="ja"] { font-family: var(--font-sans), "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", "Meiryo", sans-serif; line-height: 1.75; }
+[lang="zh"] { font-family: var(--font-sans), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif; line-height: 1.75; }
+[lang="hi"] { font-family: var(--font-sans), "Kohinoor Devanagari", "Nirmala UI", "Noto Sans Devanagari", sans-serif; line-height: 1.75; }
+/* The translation mark beside a TL;DR takes the direction of its own text (EN stays LTR inside Arabic, and vice versa). */
+[lang] > span[title] { unicode-bidi: isolate; }
+
+/* ------------------------------------------------------------------------------------------------
+   Forced colours (Windows High Contrast). System colours replace ours; keep the borders that carry
+   meaning and make the focus ring and chips visible.
+   ------------------------------------------------------------------------------------------------ */
+@media (forced-colors: active) {
+  .card, .chip, .ctl, .btn, kbd, input, select, textarea { border: 1px solid CanvasText !important; }
+  .chip[aria-pressed="true"], [aria-current="true"], [aria-selected="true"] { outline: 2px solid Highlight; outline-offset: 1px; }
+  :focus-visible { outline: 3px solid Highlight !important; }
+  .garden { display: none; }
+  a { text-decoration: underline; }
+}
+
+/* ---- Print: strip chrome, keep content, add a running header with the date, the URL, a QR code and the disclaimer ---- */
+.print-header { display: none; }
+@media print {
+  header, footer, nav, aside, .no-print, canvas, .garden, .tabbar { display: none !important; }
+  .hero, .garden-band { background: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  /* The header is portalled to the end of <main> by PrintButton; flex + order puts it first on paper. */
+  main { display: flex !important; flex-direction: column; }
+  main > * { order: 1; }
+  .print-header { display: block !important; order: 0; margin: 0 1.5rem 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid #000; font-size: 9.5pt; color: #000; }
+  .print-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.25rem; }
+  .print-header-text { min-width: 0; flex: 1; }
+  .print-header-brand { font-weight: 700; letter-spacing: -0.01em; font-size: 12pt; }
+  .print-header-brand span { font-weight: 400; color: #555; margin-left: 0.5rem; }
+  .print-header-title { font-size: 11pt; font-weight: 600; margin-top: 0.15rem; }
+  .print-header-meta { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; margin-top: 0.25rem; color: #333; font-size: 8.5pt; }
+  .print-header-disclaimer { margin-top: 0.4rem; font-size: 8pt; line-height: 1.35; color: #333; max-width: 60em; }
+  .print-header-qr { width: 88px; height: 88px; flex: none; }
+  .card { border: 1px solid #ccc !important; box-shadow: none !important; break-inside: avoid; }
+  a { color: #000 !important; text-decoration: none !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.75em; color: #555; }
+  .grid { display: block !important; }
+  h1 { font-size: 22pt; } h2 { font-size: 15pt; margin-top: 1.2em; }
+  h1, h2, h3, h4, .kicker { break-after: avoid; }
+  .line-clamp-1, .line-clamp-2, .line-clamp-3 { -webkit-line-clamp: unset; display: block; }
+  /* Tables: header row repeats on each page, rows never split, sticky offsets are meaningless on paper. */
+  table.nuclide thead th { position: static; }
+  table.nuclide thead { display: table-header-group; }
+  table.nuclide tfoot { display: table-footer-group; }
+  table.nuclide tr, table.nuclide td, table.nuclide th { break-inside: avoid; }
+  table.nuclide { break-inside: auto; }
+  .overflow-x-auto, .overflow-auto, .results-table { overflow: visible !important; }
+  /* Sections: allow long sections to flow, but keep a section heading with its first block. */
+  .print-section { break-inside: auto; }
+  .print-section > div:first-child { break-after: avoid; }
+  /* "This section" mode: PrintButton marks the chosen section .print-active. */
+  [data-print="section"] .print-section:not(.print-active) { display: none !important; }
+  /* Patient pack: technical-only widgets and edit tooling go; plain text and tables stay. */
+  [data-print="pack"] .print-technical { display: none !important; }
+  /* Interactive-only affordances. */
+  button, [role="menu"], .skip-link, kbd { display: none !important; }
+  @page { margin: 14mm 12mm 16mm; }
+}
+
+/* Appointment sheet (/prep/[id]/): one page, sections kept whole, ruled lines where a field is empty. */
+.prep-lines { background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.5rem - 1px), var(--color-border, #ccc) calc(1.5rem - 1px), var(--color-border, #ccc) 1.5rem); }
+@media print {
+  .prep-sheet { font-size: 10pt; }
+  .prep-sheet .prep-part { break-inside: avoid; margin-top: 0.6rem; }
+  .prep-sheet h1 { font-size: 16pt; }
+  .prep-sheet h2 { font-size: 11pt; margin-top: 0; }
+  .prep-sheet .prep-lines { background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.5rem - 1px), #999 calc(1.5rem - 1px), #999 1.5rem); }
+  .prep-sheet input, .prep-sheet textarea { display: none !important; }
+  .prep-sheet a[href^="http"]::after { content: none; }
+}
