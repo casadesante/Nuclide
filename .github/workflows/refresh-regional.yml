@@ -31,7 +31,7 @@ jobs:
           commit-message: "chore: check regional approvals against the EMA register"
           body: |
             Automated weekly comparison of `src/data/regional-approvals.ts` with the EMA human-medicines register (public spreadsheet, no key).
-            Outputs: `public/regional/candidates.json` (missing EU rows, status or year disagreements, oncology medicines not in the corpus) and `public/regional/verified.json` (EU rows that agree, with the check date). When every checked row agrees the `EPAR_CHECKED` stamp in `regional-approvals.ts` moves to today.
+            Outputs: `public/regional/candidates.json` (missing EU rows, status or year disagreements, radiopharmaceuticals not in the corpus) and `public/regional/verified.json` (EU rows that agree, with the check date). When every checked row agrees the `EPAR_CHECKED` stamp in `regional-approvals.ts` moves to today.
             MHRA and PMDA have no machine-readable lists; UK and Japanese rows stay hand-verified.
           labels: automated, pipeline
           delete-branch: true

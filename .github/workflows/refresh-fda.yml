@@ -1,4 +1,4 @@
-name: Refresh FDA oncology approvals feed
+name: Refresh FDA approvals feed
 
 on:
   schedule:
@@ -26,10 +26,10 @@ jobs:
         id: cpr
         with:
           branch: bot/refresh-fda
-          title: "Weekly refresh: FDA oncology approvals feed"
+          title: "Weekly refresh: FDA approvals feed"
           commit-message: "chore: refresh FDA approvals feed (OCE notifications, openFDA drugsfda)"
           body: |
-            Automated weekly pull of the FDA Oncology Center of Excellence approval notifications and openFDA `drugsfda` submissions for corpus products, into `public/fda/recent.json`.
+            Automated weekly pull of openFDA `drugsfda`: submissions for corpus products, plus a radiopharmaceutical sweep by established pharmacologic class and by nuclide in the generic name, into `public/fda/recent.json`.
             `/regulatory/` shows items new since the last snapshot and notices that match no product ("not yet in corpus"). Add missing regulatory events to the product records and open new-object issues for the rest.
           labels: automated, pipeline
           delete-branch: true

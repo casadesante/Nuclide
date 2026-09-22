@@ -29,7 +29,7 @@ jobs:
           title: "Weekly refresh: Europe PMC literature snapshot"
           commit-message: "chore: refresh literature snapshot from Europe PMC"
           body: |
-            Automated weekly pull of paper counts per year and the five most recent titles for every product, target, cancer, and technology, from the Europe PMC REST API.
+            Automated weekly pull of paper counts per year and the five most recent titles for every product, target, indication and technology, from the Europe PMC REST API.
             Files under `public/papers/` changed. The /papers/ page recomputes fastest-growing topics from this snapshot.
           labels: automated, pipeline
           delete-branch: true

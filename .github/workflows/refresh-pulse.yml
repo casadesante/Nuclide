@@ -33,8 +33,8 @@ jobs:
           commit-message: "chore: refresh pulse, abstract and citation snapshots"
           body: |
             Automated weekly pull of four literature feeds:
-            - `public/pulse/auto.json`: latest items from journal and news feeds and the FDA OCE page, matched to entity ids (`/pulse/`, automated stream).
-            - `public/digests/candidates.json`: congress abstracts from the JCO, Annals of Oncology, Blood and Cancer Research supplements via Crossref, matched to products and trials (`/digests/`, candidates for the next digest).
+            - `public/pulse/auto.json`: latest items from the nuclear-medicine journals, regulators and news wires, matched to entity ids (`/pulse/`, automated stream).
+            - `public/digests/candidates.json`: congress and journal-supplement abstracts from the Journal of Nuclear Medicine, EJNMMI and ASCO GU (JCO) supplements via Crossref, matched to products and trials (`/digests/`, candidates for the next digest).
             - `public/citations/index.json`: Europe PMC citation counts for every key paper with a DOI or PMID (the "cited N times" chip on paper pages and key-paper cards).
             - `public/openalex/papers.json`: OpenAlex citation counts by year for every key paper with a DOI (`/papers/`, most cited key papers).
           labels: automated, pipeline
