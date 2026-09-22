@@ -1,0 +1,38 @@
+name: Refresh non-English market watch
+
+on:
+  schedule:
+    - cron: "29 6 * * 5"  # Fridays 06:29 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/fetch-global.ts
+      - run: npm run validate
+      - run: npm run typecheck
+      - uses: peter-evans/create-pull-request@v7
+        id: cpr
+        with:
+          branch: bot/refresh-global
+          title: "Weekly refresh: markets outside the US and Western Europe"
+          commit-message: "chore: refresh the non-English market watch"
+          body: |
+            Automated weekly sweep of the regulators and registries that cover the rest of the world, reported in English:
+            Health Canada's drug product database (radiopharmaceutical class, with marketed status), Swissmedic's authorisation spreadsheet (`Radiopharmazeutika`), the NMPA and MFDS English news boards, the PMDA's cumulative English approval list (edition watch by file size), the EU clinical trials register (CTIS) and Europe PMC publication counts by country affiliation.
+            Output: `public/global/index.json`.
+            Original-language strings are stored verbatim with a `lang` marker; nothing here is machine-translated and presented as a source's own words. A source that returns nothing records zero rather than widening its filter.
+          labels: automated, pipeline
+          delete-branch: false

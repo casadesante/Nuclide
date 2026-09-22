@@ -21,10 +21,9 @@
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { inflateRawSync } from "node:zlib";
 import { graph } from "../src/lib/graph";
 import { REGION_META, regionalApprovals, type RegionalStatus } from "../src/data/regional-approvals";
-import { NUCLIDE_WORDS, NameMatcher, decodeEntities, getBuffer, matchableFromGraph, publicPath, today, writeJson } from "./feed-utils";
+import { NUCLIDE_WORDS, NameMatcher, getBuffer, matchableFromGraph, parseSheet, publicPath, today, writeJson, zipEntries } from "./feed-utils";
 
 const EMA_XLSX = "https://www.ema.europa.eu/en/documents/report/medicines-output-medicines-report_en.xlsx";
 const OUT = publicPath("regional", "candidates.json");
@@ -40,58 +39,6 @@ export type RegionalSnapshot = {
   register: { rows: number; human: number; radiopharmaceutical: number; generatedOn?: string };
   verified: RegionalVerified[]; candidates: RegionalCandidate[]; errors: string[];
 };
-
-// ---------- minimal xlsx reader ----------
-
-function zipEntries(buf: Buffer): Map<string, Buffer> {
-  const out = new Map<string, Buffer>();
-  let eocd = buf.length - 22;
-  while (eocd >= 0 && buf.readUInt32LE(eocd) !== 0x06054b50) eocd--;
-  if (eocd < 0) throw new Error("not a zip file");
-  const count = buf.readUInt16LE(eocd + 10);
-  let p = buf.readUInt32LE(eocd + 16);
-  for (let i = 0; i < count; i++) {
-    if (buf.readUInt32LE(p) !== 0x02014b50) break;
-    const method = buf.readUInt16LE(p + 10), csize = buf.readUInt32LE(p + 20), nlen = buf.readUInt16LE(p + 28), elen = buf.readUInt16LE(p + 30), clen = buf.readUInt16LE(p + 32), off = buf.readUInt32LE(p + 42);
-    const name = buf.toString("utf8", p + 46, p + 46 + nlen);
-    const lnlen = buf.readUInt16LE(off + 26), lelen = buf.readUInt16LE(off + 28);
-    const start = off + 30 + lnlen + lelen;
-    const data = buf.subarray(start, start + csize);
-    out.set(name, method === 8 ? inflateRawSync(data) : Buffer.from(data));
-    p += 46 + nlen + elen + clen;
-  }
-  return out;
-}
-
-const cellText = (xml: string) => decodeEntities((xml.match(/<t[^>]*>([\s\S]*?)<\/t>/g) ?? []).map((t) => t.replace(/<[^>]+>/g, "")).join(""));
-
-/** Rows as arrays of strings keyed by column letter. Dates arrive as Excel serials when not stored as text. */
-export function parseSheet(sheetXml: string, sharedXml: string): Array<Record<string, string>> {
-  const shared = (sharedXml.match(/<si>[\s\S]*?<\/si>/g) ?? []).map(cellText);
-  const rows: Array<Record<string, string>> = [];
-  for (const row of sheetXml.match(/<row [^>]*>[\s\S]*?<\/row>/g) ?? []) {
-    const rec: Record<string, string> = {};
-    for (const c of row.match(/<c [^>]*?(?:\/>|>[\s\S]*?<\/c>)/g) ?? []) {
-      const col = c.match(/r="([A-Z]+)\d+"/)?.[1];
-      if (!col) continue;
-      const type = c.match(/\st="([a-zA-Z]+)"/)?.[1];
-      let v = "";
-      if (type === "s") v = shared[Number(c.match(/<v>(\d+)<\/v>/)?.[1] ?? -1)] ?? "";
-      else if (type === "inlineStr") v = cellText(c);
-      else { const raw = c.match(/<v>([\s\S]*?)<\/v>/)?.[1]; v = raw === undefined ? "" : excelValue(raw, c); }
-      if (v) rec[col] = v.trim();
-    }
-    if (Object.keys(rec).length) rows.push(rec);
-  }
-  return rows;
-}
-
-function excelValue(raw: string, cell: string): string {
-  const n = Number(raw);
-  // Serial dates: EMA date columns are plain numbers around 30,000-50,000 when styled as dates.
-  if (!Number.isNaN(n) && n > 20000 && n < 80000 && /s="\d+"/.test(cell)) return new Date(Date.UTC(1899, 11, 30) + n * 86_400_000).toISOString().slice(0, 10);
-  return decodeEntities(raw);
-}
 
 const toIso = (s?: string) => { if (!s) return undefined; const m = s.match(/^(\d{2})\/(\d{2})\/(\d{4})/); return m ? `${m[3]}-${m[2]}-${m[1]}` : s.match(/^\d{4}-\d{2}-\d{2}/)?.[0]; };
 

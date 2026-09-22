@@ -70,6 +70,8 @@
     "fetch:fda": "tsx scripts/fetch-fda.ts",
     "fetch:ema": "tsx scripts/fetch-ema.ts",
     "fetch:abstracts": "tsx scripts/fetch-abstracts.ts",
+    "fetch:patents": "tsx scripts/fetch-patents.ts",
+    "fetch:global": "tsx scripts/fetch-global.ts",
     "fetch:hta": "tsx scripts/fetch-hta.ts",
     "fetch:pulse": "tsx scripts/fetch-pulse.ts",
     "fetch:citations": "tsx scripts/fetch-citations.ts",

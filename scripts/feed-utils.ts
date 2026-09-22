@@ -7,6 +7,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { inflateRawSync } from "node:zlib";
 
 export const UA = "Mozilla/5.0 (compatible; Nuclide/1.0; +https://github.com/casadesante/Nuclide)";
 export const REPO = "https://github.com/casadesante/Nuclide";
@@ -252,6 +253,60 @@ export const RADIOPHARM_EPC = ["Radioactive Diagnostic Agent", "Radioligand Ther
 
 /** Generic-name test for a labelled product: the nuclide, written the way Drugs@FDA writes it. */
 export const RADIONUCLIDE_NAME = /\b(?:(?:lu|ac|ra|y|tc|ga|ge|cu|zr|pb|sm|sr|re|in|rb|xe|kr|tl|cr|co|ho|at|tb|i|f|n|o|c)[\s-]?(?:[1-9][0-9]{1,2})m?|(?:lutetium|actinium|radium|yttrium|technetium|gallium|germanium|copper|zirconium|lead|samarium|strontium|rhenium|indium|rubidium|xenon|krypton|thallium|chromium|cobalt|holmium|astatine|terbium|iodine|fluorine|nitrogen|oxygen|carbon|fludeoxy\w*)[\s-]?(?:[a-z]{1,2}[\s-]?)?(?:[1-9][0-9]{1,2})m?|iobenguane|gozetotide|vipivotide|dotatate|dotatoc|edotreotide|pentetreotide|florbeta\w+|flutemetamol|flortaucipir|piflufolastat|flotufolastat|ioflupane|fluciclovine|fluoroestradiol|exametazime|sestamibi|tetrofosmin|medronate|lexidronam|oxidronate|mertiatide|pentetate|macroaggregated albumin|radiopharmaceutical|radioligand)\b/i;
+
+// ---------- minimal xlsx reader ----------
+// Several registers publish as .xlsx (the EMA medicines register, the Swissmedic authorised-medicines
+// list). An xlsx file is a zip of XML, so it is read here with node:zlib and no dependency.
+
+export function zipEntries(buf: Buffer): Map<string, Buffer> {
+  const out = new Map<string, Buffer>();
+  let eocd = buf.length - 22;
+  while (eocd >= 0 && buf.readUInt32LE(eocd) !== 0x06054b50) eocd--;
+  if (eocd < 0) throw new Error("not a zip file");
+  const count = buf.readUInt16LE(eocd + 10);
+  let p = buf.readUInt32LE(eocd + 16);
+  for (let i = 0; i < count; i++) {
+    if (buf.readUInt32LE(p) !== 0x02014b50) break;
+    const method = buf.readUInt16LE(p + 10), csize = buf.readUInt32LE(p + 20), nlen = buf.readUInt16LE(p + 28), elen = buf.readUInt16LE(p + 30), clen = buf.readUInt16LE(p + 32), off = buf.readUInt32LE(p + 42);
+    const name = buf.toString("utf8", p + 46, p + 46 + nlen);
+    const lnlen = buf.readUInt16LE(off + 26), lelen = buf.readUInt16LE(off + 28);
+    const start = off + 30 + lnlen + lelen;
+    const data = buf.subarray(start, start + csize);
+    out.set(name, method === 8 ? inflateRawSync(data) : Buffer.from(data));
+    p += 46 + nlen + elen + clen;
+  }
+  return out;
+}
+
+const cellText = (xml: string) => decodeEntities((xml.match(/<t[^>]*>([\s\S]*?)<\/t>/g) ?? []).map((t) => t.replace(/<[^>]+>/g, "")).join(""));
+
+/** Rows as arrays of strings keyed by column letter. Dates arrive as Excel serials when not stored as text. */
+export function parseSheet(sheetXml: string, sharedXml: string): Array<Record<string, string>> {
+  const shared = (sharedXml.match(/<si>[\s\S]*?<\/si>/g) ?? []).map(cellText);
+  const rows: Array<Record<string, string>> = [];
+  for (const row of sheetXml.match(/<row [^>]*>[\s\S]*?<\/row>/g) ?? []) {
+    const rec: Record<string, string> = {};
+    for (const c of row.match(/<c [^>]*?(?:\/>|>[\s\S]*?<\/c>)/g) ?? []) {
+      const col = c.match(/r="([A-Z]+)\d+"/)?.[1];
+      if (!col) continue;
+      const type = c.match(/\st="([a-zA-Z]+)"/)?.[1];
+      let v = "";
+      if (type === "s") v = shared[Number(c.match(/<v>(\d+)<\/v>/)?.[1] ?? -1)] ?? "";
+      else if (type === "inlineStr") v = cellText(c);
+      else { const raw = c.match(/<v>([\s\S]*?)<\/v>/)?.[1]; v = raw === undefined ? "" : excelValue(raw, c); }
+      if (v) rec[col] = v.trim();
+    }
+    if (Object.keys(rec).length) rows.push(rec);
+  }
+  return rows;
+}
+
+function excelValue(raw: string, cell: string): string {
+  const n = Number(raw);
+  // Serial dates: EMA date columns are plain numbers around 30,000-50,000 when styled as dates.
+  if (!Number.isNaN(n) && n > 20000 && n < 80000 && /s="\d+"/.test(cell)) return new Date(Date.UTC(1899, 11, 30) + n * 86_400_000).toISOString().slice(0, 10);
+  return decodeEntities(raw);
+}
 
 /** Prefilled GitHub issue URL. */
 export function issueUrl(title: string, body: string, labels: string[] = []): string {

@@ -74,6 +74,14 @@ corpus before its cron was armed, so a scheduled run does work rather than fail.
 - `refresh-preprints.yml` Wednesdays 06:17, `refresh-regional.yml` 06:37 — EMA register, ATC V09/V10.
 - `refresh-research.yml` Thursdays 04:23, `refresh-pulse.yml` 05:17 (the nuclear-medicine journals,
   regulators and news wires, plus the congress harvest), `roadmap-watch.yml` 05:29.
+- `refresh-patents.yml` Tuesdays 04:53 — worldwide patent publications from Google Patents: CPC class
+  A61K51 plus phrase queries for radioligand therapy, targeted alpha therapy, actinium-225,
+  lutetium-177, PSMA radioligands and isotope supply. Titles arrive in English whatever the filing
+  language; applicant names stay in the original script and are flagged.
+- `refresh-global.yml` Fridays 06:29 — the markets the English-language regulators miss: Health
+  Canada, Swissmedic, the NMPA and MFDS English boards, the PMDA's cumulative English approval list,
+  the EU trials register (CTIS) and Europe PMC output by country. Reported in English; original
+  product names kept verbatim with a language marker rather than machine-translated.
 - `refresh-hta.yml` 1st of each month 05:47 — NICE and G-BA decisions.
 
 The refresh jobs open a pull request rather than committing to `main`, and leave it open, so nothing

@@ -1,0 +1,38 @@
+name: Refresh worldwide patent filings
+
+on:
+  schedule:
+    - cron: "53 4 * * 2"  # Tuesdays 04:53 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/fetch-patents.ts
+      - run: npm run validate
+      - run: npm run typecheck
+      - uses: peter-evans/create-pull-request@v7
+        id: cpr
+        with:
+          branch: bot/refresh-patents
+          title: "Weekly refresh: worldwide radiopharmaceutical patent filings"
+          commit-message: "chore: refresh the worldwide patent snapshot"
+          body: |
+            Automated weekly harvest of radiopharmaceutical patent publications from Google Patents: the CPC class A61K51 (radioactive preparations for in vivo use) plus phrase queries for radioligand therapy, targeted alpha therapy, actinium-225, lutetium-177, PSMA radioligands and isotope supply.
+            Output: `public/patents/index.json` — newest publications first, counts by patent office and by year, and the corpus records each filing mentions.
+            Titles are Google's English titles, including for filings published in Chinese, Japanese, Korean and Russian; applicant names stay in the original script and are flagged with `applicantLang`.
+            Google rate-limits by IP. When a query is blocked the script keeps the previous week's items for that query and records the reason in `errors`, so a blocked run degrades to "no new filings" rather than to an empty file.
+          labels: automated, pipeline
+          delete-branch: false

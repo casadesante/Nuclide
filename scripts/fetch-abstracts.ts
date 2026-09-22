@@ -11,6 +11,13 @@
  *   - ASCO GU does deposit its abstracts, as Journal of Clinical Oncology supplements (979 works in
  *     the 2026 window, 890 of them abstracts), and that is where most PSMA radioligand data is first
  *     presented, so the ASCO GU sweep is additionally gated on a nuclear-medicine keyword.
+ *   - ASNC (the American Society of Nuclear Cardiology) DOES deposit its Annual Scientific Session
+ *     abstracts, in the Journal of Nuclear Cardiology (ISSN 1071-3581) - but with no issue label at
+ *     all, so a supplement filter finds nothing. They are visible instead as an annual spike against
+ *     a 15-25 papers per month baseline: August 2025 held 151 items and September 2026 held 116, and
+ *     reading those titles confirms they are meeting abstracts (amyloid screening before aortic valve
+ *     replacement, myocardial flow reserve, 18F-FDG and 18F-FAPI PET/CT risk stratification, MUGA
+ *     utilisation). So for ASNC the date window is the filter, and every item in it is accepted.
  *
  * Titles are matched against Nuclide product, trial, target and indication names; a run that finds
  * nothing reports zero rather than widening its filter.
@@ -20,7 +27,7 @@
  *
  *   public/digests/candidates.json  { fetched, congress: { id, label, year, window, source }, total, items: [...] }
  *
- * Run: npx tsx scripts/fetch-abstracts.ts [--congress=snmmi|eanm|asco-gu] [--year=2026]
+ * Run: npx tsx scripts/fetch-abstracts.ts [--congress=snmmi|eanm|asco-gu|asnc] [--year=2026]
  * Weekly via .github/workflows/refresh-pulse.yml; the script picks the most recent window by default.
  */
 import { graph } from "../src/lib/graph";
@@ -39,6 +46,9 @@ const CONGRESSES: Congress[] = [
   { id: "snmmi", label: "Journal of Nuclear Medicine supplements (SNMMI)", issn: "0161-5505", journal: "Journal of Nuclear Medicine", from: "01-01", to: "12-31", accept: (i) => isSuppl(i) },
   { id: "eanm", label: "EJNMMI supplements (EANM Congress)", issn: "1619-7070", journal: "European Journal of Nuclear Medicine and Molecular Imaging", from: "01-01", to: "12-31", accept: (i) => isSuppl(i) },
   { id: "asco-gu", label: "ASCO Genitourinary Cancers Symposium", issn: "0732-183X", journal: "Journal of Clinical Oncology", from: "01-15", to: "03-10", accept: (i, title) => isSuppl(i) && NUCLIDE_WORDS.test(title) },
+  // The congress runs in September; the deposit lands in the August-to-October window. No supplement
+  // label exists to filter on, so the window is the filter (see the note at the top of this file).
+  { id: "asnc", label: "ASNC Annual Scientific Session", issn: "1071-3581", journal: "Journal of Nuclear Cardiology", from: "08-01", to: "10-15", accept: () => true },
 ];
 
 export type AbstractCandidate = { doi: string; url: string; title: string; issue?: string; date?: string; lba: boolean; refs: { drugs: string[]; trials: string[]; targets: string[]; indications: string[]; technologies: string[] } };

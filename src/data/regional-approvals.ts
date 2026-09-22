@@ -162,11 +162,11 @@ export const regionalApprovals: Record<string, RegionalRow> = {
   "sipuleucel-t": { US: A(2010), EU: W(2015, epar("provenge"), "Authorised Sep 2013; marketing authorisation withdrawn May 2015 at the holder's request (commercial)") },
 
   // ================= Radiopharmaceuticals and imaging =================
-  pluvicto: { US: A(2022), EU: A(2022, epar("pluvicto"), "mCRPC post-ARPI and taxane; pre-chemo 2025"), UK: A(2023, mhra("Pluvicto")), JP: A(2025, PMDA, "PSMA+ mCRPC (Mar 2025)"), CN: UR("NMPA review; Novartis China"), AU: A(2023, tga("Pluvicto")) },
-  lutathera: { US: A(2018), EU: A(2017, epar("lutathera"), "First approval globally (Sep 2017)"), UK: A(2018, mhra("Lutathera")), JP: A(2021, PMDA), CN: A(2024, NMPA), AU: A(2018, tga("Lutathera")) },
+  pluvicto: { US: A(2022), EU: A(2022, epar("pluvicto"), "mCRPC post-ARPI and taxane; pre-chemo 2025"), UK: A(2023, mhra("Pluvicto")), JP: A(2025, PMDA, "Pluvicto Injection (Novartis Pharma K.K.), PSMA-positive mCRPC; 19 Sep 2025 per the PMDA English approval list"), CN: A(2025, "https://news.qq.com/rain/a/20251105A066V200", "PSMA-positive mCRPC; reported approved November 2025", "Date reported by Chinese trade press (5 or 7 November 2025 depending on outlet) and corroborated by Shanghai hospital first-treatment reports; not yet read from the NMPA register, which blocks automated queries"), AU: A(2023, tga("Pluvicto")) },
+  lutathera: { US: A(2018), EU: A(2017, epar("lutathera"), "First approval globally (Sep 2017)"), UK: A(2018, mhra("Lutathera")), JP: A(2021, PMDA, "Lutathera and LysaKare (amino acid renal protection); both 23 Jun 2021 per the PMDA English approval list"), CN: A(2024, NMPA), AU: A(2018, tga("Lutathera")) },
   "radium-223": global("Xofigo", "xofigo", 2013, 2013, 2013, 2016, 2020, 2014),
   pylarify: { US: A(2021), EU: A(2023, epar("pylclari"), "EU brand Pylclari (Curium)"), UK: A(2023, mhra("Pylclari")) },
-  "ga68-psma-11": { US: A(2020, undefined, "UCSF/UCLA Ga-68 PSMA-11 Dec 2020; Illuccix, Locametz 2021-22"), EU: A(2022, epar("locametz")), UK: A(2022, mhra("Locametz")), JP: A(2025, PMDA, "Locametz kit (gozetotide), PSMA PET to select patients for PSMA-targeted therapy; 19 Sep 2025"), AU: A(2021, tga("Illuccix"), "Illuccix (Telix), Nov 2021") },
+  "ga68-psma-11": { US: A(2020, undefined, "UCSF/UCLA Ga-68 PSMA-11 Dec 2020; Illuccix, Locametz 2021-22"), EU: A(2022, epar("locametz")), UK: A(2022, mhra("Locametz")), JP: A(2025, PMDA, "Locametz kit (gozetotide), PSMA PET to select patients for PSMA-targeted therapy; 19 Sep 2025"), CN: A(2025, "https://synapse.zhihuiya.com/drug/fa63a410756b449a84e5dd463d3c2624", "Locametz (gozetotide), companion diagnostic for Pluvicto; 25 Nov 2025, approval number 国药准字HJ20250137", "Read from a commercial drug register entry; the NMPA database blocks automated queries"), AU: A(2021, tga("Illuccix"), "Illuccix (Telix), Nov 2021") },
   flotufolastat: { US: A(2023), EU: UR("MAA (Blue Earth Diagnostics)") },
   "radioactive-iodine": global("Sodium iodide I-131", "sodium-iodide-131", 1951, 1990, 1990, 1990, 1990, 1990, "Legacy product; national approvals predate modern registers"),
   "lu177-psma-it": { US: UR("SPLASH phase 3 met rPFS, missed OS; BLA decision pending"), EU: UR("ECLIPSE/SPLASH; no MAA decision") },
@@ -179,6 +179,13 @@ export const regionalApprovals: Record<string, RegionalRow> = {
   "ga68-dotatate": { US: A(2016, undefined, "Netspot (Ga-68 DOTATATE) 2016; Detectnet (Cu-64) 2020"), EU: A(undefined, epar("somakit-toc"), "SomaKit TOC (Ga-68 DOTATOC kit); no centralised DOTATATE kit"), UK: A(undefined, mhra("SomaKit TOC")) },
   pafolacianine: { US: A(2021, undefined, "Cytalux; ovarian 2021, lung 2022") },
   pegulicianine: { US: A(2024, undefined, "Lumisight") },
+  "f-18-flortaucipir": { JP: A(2024, PMDA, "Tauvid, tau PET in Alzheimer's disease; 27 Dec 2024 per the PMDA English approval list") },
+  "f-18-florbetapir": { JP: A(2016, PMDA, "Amyvid, amyloid PET; 19 Dec 2016 (Fujifilm RI Pharma) per the PMDA English approval list") },
+  "f-18-flutemetamol": { JP: A(2017, PMDA, "Vizamyl, amyloid PET; 27 Sep 2017 (Nihon Medi-Physics) per the PMDA English approval list") },
+  "f-18-florbetaben": { CN: A(2023, "https://www.sinotau.com/", "Ouweining (florbetaben F-18 injection), China's first amyloid PET agent; 15 Sep 2023, approval number 国药准字H20234130", "Sinotau under licence from Life Molecular Imaging; date from the company's own announcement, not the NMPA register") },
+  "i-123-ioflupane": { JP: A(2013, PMDA, "DaTscan, dopamine transporter SPECT; 20 Sep 2013 (Nihon Medi-Physics) per the PMDA English approval list") },
+  "i-123-mibg-cardiac": { JP: A(2009, PMDA, "MyoMIBG-I123, cardiac sympathetic imaging", "The PMDA English list carries entries dated 6 Nov 2009, 20 May 2011 and 22 Dec 2023 for this product") },
+  "i131-mibg": { JP: A(2021, PMDA, "Raiatt MIBG-I 131 injection (PDRadiopharma), unresectable phaeochromocytoma and paraganglioma; 27 Sep 2021, with a further entry dated 19 Sep 2025") },
   "tilmanocept-tc99m": { US: A(2013), EU: W(2024, epar("lymphoseek"), "Authorised Nov 2014; marketing authorisation withdrawn at Navidea's request 10 Jun 2024"), UK: A(2014, mhra("Lymphoseek")) },
 
   // ================= Kinase and small-molecule targeted =================

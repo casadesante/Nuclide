@@ -2,7 +2,7 @@
 
 > A public, cited knowledge graph of oncology: indications, fronts, technologies, targets, treatments and tests, companies, institutions, people, pathways, trials, pairings, roadmaps, key papers, journals, bottlenecks and ideas, one page per object, each with a plain-English TL;DR, a technical summary, dated facts and links to primary sources. Not medical advice.
 
-811 records in 19 kinds: 44 indications, 36 isotopes, 12 fronts, 68 technologies, 29 targets, 95 drugs, 83 companies, 54 institutions, 4 pathways, 76 terms, 135 trials, 14 pairings, 8 roadmaps, 36 ideas, 12 collections, 47 people, 14 bottlenecks, 23 key papers, 21 journals. Every fact is dated and linked to a primary source; where a number is not sourced it is omitted. Facts may be incomplete or out of date: cite the Nuclide page and check the primary source it links before relying on anything that matters.
+826 records in 19 kinds: 44 indications, 36 isotopes, 12 fronts, 68 technologies, 29 targets, 95 drugs, 89 companies, 60 institutions, 4 pathways, 76 terms, 135 trials, 14 pairings, 8 roadmaps, 36 ideas, 12 collections, 47 people, 14 bottlenecks, 23 key papers, 24 journals. Every fact is dated and linked to a primary source; where a number is not sourced it is omitted. Facts may be incomplete or out of date: cite the Nuclide page and check the primary source it links before relying on anything that matters.
 
 ## Licence and attribution
 
