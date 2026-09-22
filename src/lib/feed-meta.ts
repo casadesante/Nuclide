@@ -62,7 +62,14 @@ export const FEEDS: FeedDef[] = [
   { id: "patents", label: "Worldwide patent filings", path: "patents/index.json", script: "scripts/fetch-patents.ts", workflow: "refresh-patents.yml", cadenceDays: 7, source: "Google Patents (CPC A61K51 and radiopharmaceutical phrase queries, titles in English)",
     describe: (j) => { const c = j.byCountry as Record<string, number> | undefined; const top = c ? Object.entries(c).sort((a, b) => b[1] - a[1])[0] : undefined; return { fetched: str(j.fetched), count: len(j.items), note: top ? `most filings ${top[0]} (${top[1]})` : undefined }; } },
   { id: "global", label: "Non-English market watch", path: "global/index.json", script: "scripts/fetch-global.ts", workflow: "refresh-global.yml", cadenceDays: 7, source: "Health Canada DPD, Swissmedic, NMPA, MFDS, PMDA, CTIS, Europe PMC",
-    describe: (j) => { const s2 = j.sections as Record<string, { count?: number }> | undefined; const errs = len(j.errors) ?? 0; return { fetched: str(j.fetched), count: s2 ? Object.values(s2).reduce((n, v) => n + (v.count ?? 0), 0) : undefined, note: errs ? `${errs} source errors` : "all sources reachable" }; } },
+    describe: (j) => {
+      const reg = j.regulators as Record<string, { total?: number }> | undefined;
+      const trials = (j.euTrials as { total?: number } | undefined)?.total ?? 0;
+      const errs = len(j.errors) ?? 0;
+      const products = reg ? Object.values(reg).reduce((n, v) => n + (v.total ?? 0), 0) : 0;
+      const countries = keys((j.research as { countries?: unknown })?.countries) ?? 0;
+      return { fetched: str(j.fetched), count: products + trials, note: errs ? `${errs} source errors` : `${products} authorisations, ${trials} EU trials, ${countries} countries` };
+    } },
   { id: "factcheck", label: "Registry fact check", path: "factcheck.json", script: "scripts/factcheck.ts", workflow: "factcheck.yml", cadenceDays: 7, source: "openFDA labels, ClinicalTrials.gov",
     describe: (j) => ({ fetched: str(j.generated)?.slice(0, 10), count: len(j.mismatches), note: "mismatches" }) },
   { id: "audit", label: "Corpus audit", path: "audit.json", script: "scripts/audit.ts", workflow: "factcheck.yml", cadenceDays: 7, source: "corpus rules",
