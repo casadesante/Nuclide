@@ -433,14 +433,6 @@ export const EN = {
   "l.Stage": "Stage",
   "l.Tag": "Tag",
   "l.Who acts": "Who acts",
-  "account.signInCta": "Sign in/up",
-  "account.email": "Email address",
-  "signup.title": "Stay in the loop",
-  "signup.why": "Leave your email and Nuclide will write when something big changes in cancer research. No spam, one click to unsubscribe.",
-  "signup.button": "Keep me posted",
-  "signup.done": "Thank you. You are on the list.",
-  "signup.icon": "Your profile and email updates",
-  "signup.soon": "Email updates open shortly. Until then, press Watch on any page to keep it on your list.",
 } as const;
 
 export type UiKey = keyof typeof EN;

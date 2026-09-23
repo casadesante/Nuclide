@@ -401,12 +401,4 @@ export const fr: UiDict = {
   "l.Stage": "Stade",
   "l.Tag": "Étiquette",
   "l.Who acts": "Qui agit",
-  "account.signInCta": "Connexion/inscription",
-  "account.email": "Adresse courriel",
-  "signup.title": "Restez informé",
-  "signup.why": "Laissez votre adresse et Nuclide vous écrira quand quelque chose d'important change dans la recherche sur le cancer. Pas de spam, désinscription en un clic.",
-  "signup.button": "Tenez-moi au courant",
-  "signup.done": "Merci. Vous êtes sur la liste.",
-  "signup.icon": "Votre profil et les alertes par courriel",
-  "signup.soon": "Les alertes par courriel arrivent bientôt. En attendant, appuyez sur Suivre sur n'importe quelle page pour la garder dans votre liste.",
 };

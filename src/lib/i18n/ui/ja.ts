@@ -401,12 +401,4 @@ export const ja: UiDict = {
   "l.Stage": "病期",
   "l.Tag": "タグ",
   "l.Who acts": "行動する主体",
-  "account.signInCta": "ログイン/登録",
-  "account.email": "メールアドレス",
-  "signup.title": "最新情報を受け取る",
-  "signup.why": "メールアドレスを残していただくと、がん研究に大きな変化があったときにNuclideからお知らせします。迷惑メールはなく、ワンクリックで解除できます。",
-  "signup.button": "お知らせを受け取る",
-  "signup.done": "ありがとうございます。リストに登録されました。",
-  "signup.icon": "プロフィールとメール通知",
-  "signup.soon": "メール通知はまもなく始まります。それまでは各ページの「ウォッチ」を押してリストに残してください。",
 };

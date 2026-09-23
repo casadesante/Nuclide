@@ -401,12 +401,4 @@ export const es: UiDict = {
   "l.Stage": "Estadio",
   "l.Tag": "Etiqueta",
   "l.Who acts": "Quién actúa",
-  "account.signInCta": "Entrar/registrarse",
-  "account.email": "Correo electrónico",
-  "signup.title": "Mantente al día",
-  "signup.why": "Deja tu correo y Nuclide te escribirá cuando cambie algo importante en la investigación del cáncer. Sin spam; te das de baja con un clic.",
-  "signup.button": "Avisadme",
-  "signup.done": "Gracias. Ya estás en la lista.",
-  "signup.icon": "Tu perfil y avisos por correo",
-  "signup.soon": "Los avisos por correo llegarán pronto. Mientras tanto, pulsa Seguir en cualquier página para guardarla en tu lista.",
 };

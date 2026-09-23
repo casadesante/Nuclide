@@ -7,7 +7,6 @@ import { ThemeToggle } from "./ThemeToggle";
 import { LayerToggle } from "./LayerToggle";
 import { RegionToggle } from "./RegionToggle";
 import { GitHubStars } from "./GitHubStars";
-import { AccountMenu } from "./AccountMenu";
 import { GardenBackdrop } from "./Garden";
 import { FooterNav } from "./FooterNav";
 import { AnalyticsChoice } from "./AnalyticsConsent";
@@ -52,8 +51,6 @@ export function SiteHeader() {
         <LayerToggle />
         <ThemeToggle />
         <GitHubStars className="hidden sm:inline-flex" />
-        {/* Sign in/up: a link to the signed-in site, me.nuclide.cc; this site keeps no session. */}
-        <AccountMenu className="inline-flex" />
       </div>
     </header>
   );

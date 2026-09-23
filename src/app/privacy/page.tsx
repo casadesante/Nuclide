@@ -11,22 +11,19 @@ import { AnalyticsChoice } from "@/components/AnalyticsConsent";
  *  - hosting: src/app/layout.tsx (static export on Vercel)
  *  - analytics: src/lib/analytics-consent.ts and src/components/AnalyticsConsent.tsx (gtag.js with G-2TTJ25WSN8, plain
  *    config call, inserted only after Allow; Global Privacy Control read as No thanks)
- *  - accounts: none on this site; the header's Sign in/up is a link to the separate signed-in site me.nuclide.cc
- *    (src/components/AccountMenu.tsx), which has its own privacy notice
+ *  - accounts: none. There is no sign-in control anywhere on the site and no code that could create a session
  *  - the browser-only choices: src/lib/layer.ts, src/lib/region.tsx
  *  - saved items: src/lib/watchlist.ts, src/lib/saved-views.ts
- *  - newsletter box: src/components/SignupForm.tsx (posts to NEXT_PUBLIC_SIGNUP_ACTION when set)
+ *  - the weekly issue: scripts/newsletter.ts renders static pages under /newsletter/; no email address is ever asked for
  *  - storage keys: the KEY constants in the files above plus ThemeToggle, layer.ts, region.tsx, CommandPalette,
  *    not-found-query.ts, GitHubStars, TranslateOffer; service worker caches: public/sw.js
  *  - other hosts the browser contacts: ctgov.ts, ctgov-geo.ts, europepmc.ts, GitHubStars.tsx, WorldMap.tsx
  */
 const TITLE = "Privacy policy";
-const DESCRIPTION = "What Nuclide collects and where it lives, from the code: static pages on Vercel, Google Analytics visit counts only after you allow them, and every choice you make kept in your own browser. nuclide.cc holds no account data; accounts live on the separate signed-in site me.nuclide.cc under its own privacy notice. No advertising, no sale of data.";
+const DESCRIPTION = "What Nuclide collects and where it lives, from the code: static pages on Vercel, Google Analytics visit counts only after you allow them, and every choice you make kept in your own browser. There is no sign-in, no account and no email list: the site asks you for nothing. No advertising, no sale of data.";
 export const metadata: Metadata = pageMeta({ title: TITLE, description: DESCRIPTION, path: "/privacy/" });
 
 const GA_ID = "G-2TTJ25WSN8";
-/** The separate signed-in site, where accounts live; it has its own privacy notice at /privacy/. */
-const ME = "https://me.nuclide.cc/";
 
 const SECTIONS: readonly LegalSectionDef[] = [
   { id: "who", title: "Who runs this site", icon: "building" },
@@ -35,7 +32,7 @@ const SECTIONS: readonly LegalSectionDef[] = [
   { id: "analytics", title: "Analytics", icon: "chart" },
   { id: "accounts", title: "Accounts", icon: "key" },
   { id: "on-your-device", title: "Your choices and saved items", icon: "user" },
-  { id: "newsletter", title: "Email sign-up", icon: "mail" },
+  { id: "newsletter", title: "The weekly issue", icon: "mail" },
   { id: "storage", title: "Cookies and browser storage", icon: "cookie" },
   { id: "health", title: "Health information", icon: "heart" },
   { id: "third-parties", title: "Other services your browser may contact", icon: "globe" },
@@ -88,7 +85,7 @@ export default function PrivacyPage() {
           <ul className="list-disc pl-5 space-y-1.5">
             <li>The site is a set of <Term tip="Pages built once, in advance, and served as plain files. There is no programme of ours running when you read them.">static pages</Term> served by Vercel. Nuclide runs no server and no database for nuclide.cc.</li>
             <li>Google Analytics counts visits and page views, but only after you press <em>Allow</em> on the bar at the foot of the page. Until then, and if you choose <em>No thanks</em>, it is not loaded at all. It is the only analytics on the site.</li>
-            <li>nuclide.cc has no accounts and holds no account data. <em>Sign in/up</em> in the header takes you to the separate signed-in site, <a href={ME} rel="noopener">me.nuclide.cc</a>, which has its own <a href={`${ME}privacy/`} rel="noopener">privacy notice</a>.</li>
+            <li>There is no sign-in, no account and no email list. The site never asks you for your name, your address or anything about your health.</li>
             <li>Everything you choose on this site (reading mode, region, watched pages, saved views) stays in your own browser and is never sent to us.</li>
             <li>No advertising, no advertising trackers, no sale or sharing of personal data for marketing.</li>
           </ul>
@@ -108,8 +105,8 @@ export default function PrivacyPage() {
         </LegalSection>
 
         <LegalSection {...S.accounts}>
-          <p>nuclide.cc is the public, signed-out site. It has no sign-in of its own, keeps no session and holds no account data, neither in your browser nor on any server. The <em>Sign in/up</em> control in the header is a plain link to the separate signed-in site, <a href={ME} rel="noopener">me.nuclide.cc</a>, carrying the address of the page you were on so you can come back to it. Nothing about you travels with that link beyond the page address itself.</p>
-          <p>me.nuclide.cc is a different application with its own sign-in and its own database; that is where a role and case details can be stored on an account. What it collects and how it is kept are set out in its own <a href={`${ME}privacy/`} rel="noopener">privacy notice</a>, which applies from the moment you arrive there. This policy covers nuclide.cc only.</p>
+          <p>There are none. The site has no sign-in control, no registration and no database behind it, so there is nothing to log in to and no account record to hold. Every page is the same for every visitor, and nothing you do here is tied to a person.</p>
+          <p>Because there is no account, there is also no password to be stolen, no profile to be sold and no list of readers anywhere. What you choose on the site (reading mode, region, watched pages) stays in your own browser, as the next section describes.</p>
         </LegalSection>
 
         <LegalSection {...S["on-your-device"]}>
@@ -119,7 +116,7 @@ export default function PrivacyPage() {
         </LegalSection>
 
         <LegalSection {...S.newsletter}>
-          <p>The email box on <Link href="/signup/">Stay in the loop</Link> is a newsletter box, nothing more. With a mailing-list provider configured (a Buttondown or Listmonk form address, set at build time), the address you type is posted from your browser straight to that provider, tagged <code>nuclide.cc</code>, and that provider&apos;s privacy policy applies; Nuclide never receives it. With no provider configured, the page says that sign-up is not yet active and stores nothing. The newsletter issues themselves are static pages with no scripts and no tracking.</p>
+          <p>Nuclide publishes a weekly issue of what changed in the corpus, and it is a page you read, not a mailing. There is no email box anywhere on the site and no list to join: the issues sit in the open at <Link href="/newsletter/">the archive</Link> as static pages with no scripts and no tracking, and the same material is in the <Link href="/changelog/">changelog</Link> and the feeds. Nuclide holds no email addresses because it never collects any.</p>
         </LegalSection>
 
         <LegalSection {...S.storage}>
@@ -144,7 +141,7 @@ export default function PrivacyPage() {
         </LegalSection>
 
         <LegalSection {...S.health}>
-          <p>The reading mode you choose on Nuclide is kept only on your device, in the storage listed above, and is never sent to Nuclide or to Google. No health information leaves your device through nuclide.cc. Anything you choose to store on an account at <a href={ME} rel="noopener">me.nuclide.cc</a> is governed by that site&apos;s privacy notice.</p>
+          <p>The reading mode you choose on Nuclide is kept only on your device, in the storage listed above, and is never sent to Nuclide or to Google. No health information leaves your device through this site, and because there is no account there is nowhere for it to be stored.</p>
           <p>Two limits are outside our control and worth knowing. First, the address of a page you read (for example a page about one indication or agent) is part of an ordinary page view, so it is visible to Vercel in its request log and, if you have allowed analytics, to Google Analytics as a page view. Second, if you type a condition, a drug or a place into a tool that queries ClinicalTrials.gov, Europe PMC or OpenStreetMap, that query goes to that service from your browser (next section).</p>
         </LegalSection>
 
@@ -169,7 +166,7 @@ export default function PrivacyPage() {
           <p>Most of these you can do yourself:</p>
           <ul className="list-disc pl-5 space-y-1.5">
             <li><strong>Your choices and saved items:</strong> they are only in your browser, so clearing the site&apos;s data there, or using the controls on <Link href="/saved/">Saved</Link>, deletes them completely; we hold no copy to delete or hand over.</li>
-            <li><strong>Your account:</strong> nuclide.cc has none. For an account on <a href={ME} rel="noopener">me.nuclide.cc</a>, use that site&apos;s controls and the routes in its <a href={`${ME}privacy/`} rel="noopener">privacy notice</a>.</li>
+            <li><strong>Your account:</strong> there is none to ask about. The site has no sign-in, keeps no account and holds no email address, so there is no personal record here to see, correct or delete.</li>
             <li><strong>Analytics:</strong> change your choice with the control in the <a href="#analytics">analytics section</a> or the <em>Analytics choice</em> link in the footer; Google&apos;s controls are at <a href="https://myaccount.google.com/data-and-privacy" rel="noopener">myaccount.google.com</a>.</li>
             <li><strong>Anything else:</strong> open an issue at <a href={ISSUES_URL} rel="noopener">GitHub</a> or email <Placeholder>[contact email]</Placeholder>. We answer within the time the law allows, normally one month.</li>
           </ul>

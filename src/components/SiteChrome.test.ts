@@ -3,16 +3,15 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { AppRouterContext, type AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { SiteHeader } from "./SiteChrome";
-import { ME_URL, meHref } from "./AccountMenu";
 import { UI_DICTS } from "@/lib/i18n/all";
 import { LANGS } from "@/lib/layer";
 
 /**
- * The header as every visitor sees it (nuclide.cc has no sessions, so there is only one state). Two things the owner
- * asked for and one that HTML forbids: a visible "Sign in/up" control rather than a bare icon, every control on the
- * same 40px box so they share a centre line, and no anchor nested inside another (the GitHub link and the sign-in
- * link are siblings of the other controls, never children of one). The sign-in control is a bridge: a plain anchor
- * to the signed-in site me.nuclide.cc that reads no session and, once mounted, carries the current address as `back`.
+ * The header as every visitor sees it (the site has no sessions, so there is only one state). The owner removed the
+ * sign-in control and the email sign-up on 23 September 2026: this site asks the reader for nothing, so the first
+ * test here is a guard that no sign-in, account or email-capture control comes back into the chrome, in any language.
+ * The rest is layout the owner asked for: every control on the same 40px box so they share a centre line, and no
+ * anchor nested inside another (the GitHub link is a sibling of the other controls, never a child of one).
  */
 const router: AppRouterInstance = { push() {}, replace() {}, prefetch() {}, back() {}, forward() {}, refresh() {}, bfcacheId: "static" };
 const html = renderToStaticMarkup(createElement(AppRouterContext.Provider, { value: router }, createElement(SiteHeader)));
@@ -21,34 +20,19 @@ const html = renderToStaticMarkup(createElement(AppRouterContext.Provider, { val
 const tags = (s: string) => [...s.matchAll(/<(\/?)([a-zA-Z][\w-]*)[^>]*?(\/?)>/g)].map((m) => ({ close: m[1] === "/", name: m[2].toLowerCase(), self: m[3] === "/" }));
 
 describe("site header", () => {
-  it("shows the sign-in call to action with the user glyph and a tooltip", () => {
-    const label = UI_DICTS.en["account.signInCta"];
-    expect(label).toBe("Sign in/up");
-    expect(html).toContain(`>${label}</span>`);
-    expect(html).toContain(`title="${label}"`);
-    // Primary pill in the accent, same 40px control box as its neighbours; the label steps out below sm.
-    const start = html.indexOf('class="ctl btn-primary');
-    expect(start).toBeGreaterThanOrEqual(0);
-    const cta = html.slice(start, html.indexOf(`>${label}</span>`, start) + 1);
-    expect(cta).toContain("w-10 px-0 sm:w-auto sm:px-2.5");
-    expect(cta).toContain('<span class="hidden sm:inline">');
-    expect(cta).toMatch(/<svg[^>]*><circle cx="12" cy="8" r="4">/);
-  });
-
-  it("links the sign-in pill to the signed-in site in the same tab, with no session code behind it", () => {
-    const a = html.match(/<a [^>]*data-testid="sign-in-bridge"[^>]*>/)?.[0] ?? "";
-    // The exported HTML carries the bare address; the page's own address is only known in the browser.
-    expect(a).toContain(`href="${ME_URL}"`);
-    expect(a).not.toContain("target=");
-    expect(a).not.toContain('href="/signup/"');
-    expect(meHref("https://nuclide.cc/indications/aml/?tab=trials#phase-3")).toBe("https://me.nuclide.cc/signin/?back=https%3A%2F%2Fnuclide.cc%2Findications%2Faml%2F%3Ftab%3Dtrials%23phase-3");
-    expect(meHref(null)).toBe(ME_URL);
-    // Nothing signed-in is left in the header: no avatar pill, popover, sync line or delete control.
-    for (const gone of ["signed-in-pill", "cloud-sync", "preference-chips", 'role="menu"', "Delete my account"]) expect(html).not.toContain(gone);
-  });
-
-  it("keeps the sign-in label in all nine languages", () => {
-    for (const l of LANGS) expect((UI_DICTS[l.code] as Record<string, string>)["account.signInCta"], l.code).toBeTruthy();
+  it("offers no sign-in, account or email-capture control", () => {
+    for (const gone of ["Sign in", "sign-in", "signin", "Sign up", "/signup/", "me.nuclide.cc", "signed-in-pill", "cloud-sync", 'role="menu"', "Delete my account"]) {
+      expect(html, gone).not.toContain(gone);
+    }
+    expect(html).not.toMatch(/<input[^>]*type="(email|password)"/);
+    expect(html).not.toMatch(/<form/);
+    // The strings are gone from every dictionary too, so no language can render a control English has dropped.
+    for (const l of LANGS) {
+      const d = UI_DICTS[l.code] as Record<string, string>;
+      for (const k of ["account.signInCta", "account.email", "signup.title", "signup.button", "signup.why", "signup.done", "signup.icon", "signup.soon"]) {
+        expect(d[k], `${l.code} ${k}`).toBeUndefined();
+      }
+    }
   });
 
   it("nests no anchor inside another anchor", () => {

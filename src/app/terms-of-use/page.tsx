@@ -8,7 +8,7 @@ import { buildDate, ISSUES_URL, LegalMeta, LegalSection, LegalToc, Placeholder, 
 /**
  * Terms of use. Lives at /terms-of-use/ because /terms/ is the glossary (kind "term"). Every statement about the
  * service is taken from the code: static export on Vercel, no sign-in on this site (the header's Sign in/up links to the
- * separate signed-in site me.nuclide.cc, src/components/AccountMenu.tsx), choices kept in localStorage (src/lib/profile.ts),
+ * no accounts and no sign-in control anywhere in the chrome), choices kept in localStorage (src/lib/profile.ts),
  * licences as in LICENSE and LICENSE-DATA.
  */
 const TITLE = "Terms of use";
@@ -74,8 +74,7 @@ export default function TermsOfUsePage() {
         </LegalSection>
 
         <LegalSection {...S.accounts}>
-          <p>nuclide.cc has no accounts. Nothing here needs a sign-in, and the site keeps no session and no account data: the reading mode, region and saved items you choose stay in your own browser (see the <Link href="/privacy/#on-your-device">privacy policy</Link>). The <em>Sign in/up</em> control in the header is a link to the separate signed-in site, <a href="https://me.nuclide.cc/" rel="noopener">me.nuclide.cc</a>, which brings you back to the page you left.</p>
-          <p>me.nuclide.cc has its own terms and its own <a href="https://me.nuclide.cc/privacy/" rel="noopener">privacy notice</a>, which apply from the moment you arrive there. These terms cover nuclide.cc only.</p>
+          <p>There are no accounts. Nothing here needs a sign-in, there is no sign-in control to find, and the site keeps no session and no account data: the reading mode, region and saved items you choose stay in your own browser (see the <Link href="/privacy/#on-your-device">privacy policy</Link>). Nuclide asks you for no email address and keeps no mailing list.</p>
         </LegalSection>
 
         <LegalSection {...S.licences}>

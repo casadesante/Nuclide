@@ -58,7 +58,9 @@ describe("terms of use", () => {
     expect(terms).toContain("not medical advice, diagnosis or treatment");
     expect(terms).toContain("CC BY-NC 4.0");
     expect(terms).toContain("MIT licence");
-    expect(terms).toContain("me.nuclide.cc");
+    // No sign-in and no mailing list anywhere on the site, so the terms must not promise either (23 Sep 2026).
+    expect(terms).not.toMatch(/me\.nuclide\.cc|Sign in\/up|sign-up|newsletter box/i);
+    expect(terms).toContain("There are no accounts");
     expect(terms).not.toMatch(/WorkOS|Supabase/);
     expect(terms).toContain("[jurisdiction]");
     expect(terms).toContain("[legal entity and address]");
@@ -87,8 +89,9 @@ describe("privacy policy", () => {
 
   it("describes only the data flows the code has", () => {
     expect(privacy).toContain("G-2TTJ25WSN8");
-    // No account data on this site: the header's Sign in/up links to me.nuclide.cc, which has its own privacy notice.
-    expect(privacy).toContain('href="https://me.nuclide.cc/privacy/"');
+    // The site collects no email address and has no sign-in, so the policy must not describe either (23 Sep 2026).
+    expect(privacy).not.toMatch(/me\.nuclide\.cc|Sign in\/up|Stay in the loop|NEXT_PUBLIC_SIGNUP/i);
+    expect(privacy).toContain("no email list");
     expect(privacy).not.toMatch(/WorkOS|Supabase|api\.workos\.com|nuclide:session|nuclide:account-profile|nuclide:pkce/);
     expect(privacy).toContain("nuclide:profile:v1");
     expect(privacy).toContain("nuclide:watchlist:v1");

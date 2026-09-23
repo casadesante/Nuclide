@@ -16,7 +16,7 @@ export function ExternalLinks() {
       let url: URL;
       try { url = new URL(a.href, window.location.href); } catch { return; }
       if (!/^https?:$/.test(url.protocol) || url.host === window.location.host) return;
-      // me.nuclide.cc and other nuclide.cc subdomains are part of the site: the sign-in bridge must take over this tab.
+      // Other nuclide.cc subdomains are part of the site, so they take over this tab rather than opening a new one.
       if (url.hostname === "nuclide.cc" || url.hostname.endsWith(".nuclide.cc")) return;
       a.target = "_blank";
       a.rel = a.rel ? `${a.rel} noopener` : "noopener";

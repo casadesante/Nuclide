@@ -38,6 +38,11 @@
   ],
   "redirects": [
     {
+      "source": "/signup/:path*",
+      "destination": "/newsletter/",
+      "permanent": true
+    },
+    {
       "source": "/companies/hansoh/:path*",
       "destination": "/companies/hansoh-pharma/:path*",
       "permanent": true

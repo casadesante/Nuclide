@@ -401,12 +401,4 @@ export const de: UiDict = {
   "l.Stage": "Stadium",
   "l.Tag": "Schlagwort",
   "l.Who acts": "Wer handelt",
-  "account.signInCta": "Anmelden/registrieren",
-  "account.email": "E-Mail-Adresse",
-  "signup.title": "Auf dem Laufenden bleiben",
-  "signup.why": "Hinterlassen Sie Ihre E-Mail-Adresse, und Nuclide schreibt Ihnen, wenn sich in der Krebsforschung etwas Wichtiges ändert. Kein Spam, Abmeldung mit einem Klick.",
-  "signup.button": "Haltet mich auf dem Laufenden",
-  "signup.done": "Danke. Sie stehen auf der Liste.",
-  "signup.icon": "Ihr Profil und E-Mail-Updates",
-  "signup.soon": "E-Mail-Updates starten bald. Bis dahin: Auf jeder Seite auf Beobachten drücken, um sie in Ihrer Liste zu behalten.",
 };

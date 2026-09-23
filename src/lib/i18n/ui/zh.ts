@@ -401,12 +401,4 @@ export const zh: UiDict = {
   "l.Stage": "分期",
   "l.Tag": "标签",
   "l.Who acts": "行动方",
-  "account.signInCta": "登录/注册",
-  "account.email": "邮箱地址",
-  "signup.title": "保持联系",
-  "signup.why": "留下您的邮箱，当癌症研究出现重大变化时 Nuclide 会写信告知您。没有垃圾邮件，一键退订。",
-  "signup.button": "订阅更新",
-  "signup.done": "谢谢，您已加入名单。",
-  "signup.icon": "您的个人资料和邮件更新",
-  "signup.soon": "邮件更新即将开放。在此之前，请在任意页面点击“关注”将其保存到您的列表。",
 };
