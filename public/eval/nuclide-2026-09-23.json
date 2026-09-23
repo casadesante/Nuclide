@@ -1,0 +1,1527 @@
+{
+ "summary": {
+  "system": "Nuclide (search-retrieval proxy, top 8 entities)",
+  "date": "2026-09-23",
+  "questions": 102,
+  "meanScore": 0.763,
+  "meanRetrievalRecall": 0.546,
+  "byCategory": {
+   "factual": 0.784,
+   "reasoning": 0.778,
+   "procedural": 0.666
+  },
+  "method": "For each question: MiniSearch retrieval over the site index; rubric coverage of tldr+summary of the top entities. 1 point per rubric item met, normalised to 0-1."
+ },
+ "results": [
+  {
+   "id": "iso-01",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "tc-99m",
+    "mo-99"
+   ],
+   "retrievalRecall": 1,
+   "answer": "tc-99m-psma-imaging, mo99-tc99m-generators, tc-99m-mdp, technetium-sulfur-colloid, tc-99m, tc-99m-pyrophosphate, mo-99, pexiretide-tc99m"
+  },
+  {
+   "id": "iso-02",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "lu-177"
+   ],
+   "retrievalRecall": 1,
+   "answer": "lu-177-pnt2002, lu177-radioligand-therapy, idea-copper-theranostic-pair-standard, lu-177, lu-177-dotatate-generic, estimand, paper-netter-2-lancet-2024, paper-eanm-lu177-dosimetry-recommendations-ejnmmi-2022"
+  },
+  {
+   "id": "iso-03",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "ac-225"
+   ],
+   "retrievalRecall": 1,
+   "answer": "actinium-225-supply, ac-225, b-ac225-supply, idea-reg-alpha-emitter-portfolio, ac-225-fpi-2068, therapy-isotope-supply-chain, idea-accelerator-ac225-at-scale, f-alpha-therapy"
+  },
+  {
+   "id": "iso-04",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "delayed"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "arpi, idea-reg-medical-isotope-reactor-reserve, idea-accelerator-ac225-at-scale, antigen, atomic-alchemy, cancer-imaging, isotope-supply-roadmap, nct06780670"
+  },
+  {
+   "id": "iso-05",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "67.7-minute"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "china-isotope-radiation, b-enriched-target-material, sstr-theranostics-roadmap, itm, idea-caix-theranostics, ga68-dotatate-then-lutathera, iaea-isotope-databases, paper-strosberg-netter1-qol-jco-2018"
+  },
+  {
+   "id": "iso-06",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "f-18"
+   ],
+   "retrievalRecall": 1,
+   "answer": "f-18, f-18-naf, cyclotron-isotope-production, f-18-fet, florastamin-f18, curie-siopen-score, alara, f-18-flurpiridaz"
+  },
+  {
+   "id": "iso2-01",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "ac-225",
+    "bi-213"
+   ],
+   "retrievalRecall": 1,
+   "answer": "ac-225, bi-213, actinium-225-supply, idea-reg-alpha-emitter-portfolio, idea-accelerator-ac225-at-scale, b-ac225-supply, at-211, therapy-isotope-supply-chain"
+  },
+  {
+   "id": "iso2-02",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "ra-223"
+   ],
+   "retrievalRecall": 1,
+   "answer": "radium-223, ra-223, paper-alsympca-radium-223-nejm-2013, idea-accelerator-ac225-at-scale, idea-reg-legacy-radium-recovery-ac225, radium223-abiraterone-caution, multiple-endocrine-neoplasia, prostate-nepc"
+  },
+  {
+   "id": "iso2-03",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "th-227",
+    "ra-223"
+   ],
+   "retrievalRecall": 1,
+   "answer": "th-227, actinium-225-supply, idea-accelerator-ac225-at-scale, ra-223, radium-223, ra-224, idea-reg-legacy-radium-recovery-ac225, ac-225"
+  },
+  {
+   "id": "iso2-04",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "at-211"
+   ],
+   "retrievalRecall": 1,
+   "answer": "at-211, astatine-211-alpha-therapy, scott-tagawa, tl-201-chloride, paper-strosberg-netter1-qol-jco-2018, docetaxel-then-lu177-psma, idea-total-body-pet-lower-dose-tracers, idea-reg-alpha-emitter-portfolio"
+  },
+  {
+   "id": "iso2-05",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "tb-161"
+   ],
+   "retrievalRecall": 1,
+   "answer": "tb-161, idea-tb161-instead-of-lu177, paper-psmafore-lancet-2024, beta-psma-then-alpha-psma-rescue, psma-theranostics-roadmap, auger-electron-therapy, lu-177-pnt2002, nct05658003"
+  },
+  {
+   "id": "iso2-06",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "i-131"
+   ],
+   "retrievalRecall": 1,
+   "answer": "i-131-tositumomab, radioiodine-term, i-131, arpi, paper-tagawa-ac225-j591-jco-2024, radioactive-iodine, nis-symporter, estimand"
+  },
+  {
+   "id": "iso2-07",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "y-90",
+    "ho-166"
+   ],
+   "retrievalRecall": 1,
+   "answer": "y-90-glass-microspheres, y-90-resin-microspheres, ho-166-microspheres, ho-166, tare, y-90, radioembolisation-tare, f-radioembolisation"
+  },
+  {
+   "id": "iso2-08",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "cu-64",
+    "cu-67"
+   ],
+   "retrievalRecall": 1,
+   "answer": "cu-67, idea-copper-theranostic-pair-standard, cu-64, cu-64-sar-bispsma, cu-64-dotatate, idea-neoadjuvant-psma-therapy, idea-total-body-pet-lower-dose-tracers, radioiodine-therapy"
+  },
+  {
+   "id": "iso2-09",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.6,
+   "met": 3,
+   "total": 5,
+   "missed": [
+    "0.02 microcurie",
+    "25-day"
+   ],
+   "retrievedEntities": [
+    "mo-99",
+    "ge-68"
+   ],
+   "retrievalRecall": 0.6666666666666666,
+   "answer": "mo99-tc99m-generators, mo-99, ge-68, sr82-rb82-generators, ge68-ga68-generators, b-mo99-supply, rb-82-chloride, therapy-isotope-supply-chain"
+  },
+  {
+   "id": "img-01",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0.4,
+   "met": 2,
+   "total": 5,
+   "missed": [
+    "warburg",
+    "glut",
+    "infection and inflammation"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "curie-siopen-score, paper-jadvar-snmmi-psma-auc-jnm-2022, idea-total-body-pet-lower-dose-tracers, arpi, psma-theranostics-roadmap, tc-99m-psma-imaging, neuro-imaging-roadmap, estimand"
+  },
+  {
+   "id": "img-02",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "ct or bone scan",
+    "10%",
+    "ganglia"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "psa-kinetics, tc-99m-psma-imaging, prostate-bcr, prostate-nepc, psma-rads, paper-jadvar-snmmi-psma-auc-jnm-2022, idea-psma-pet-guided-mdt, psma-theranostics-roadmap"
+  },
+  {
+   "id": "img-03",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.4,
+   "met": 2,
+   "total": 5,
+   "missed": [
+    "krenning score",
+    "flip-flop",
+    "dedifferentiated"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "grade-3-net, lung-net, arpi, idea-net-antagonist-ligands, antigen, paper-baum-prrt-1048-patients-oncotarget-2018, paper-cabinet-cabozantinib-nejm-2024, pancreatic-net"
+  },
+  {
+   "id": "img-04",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "fapi-pet"
+   ],
+   "retrievalRecall": 1,
+   "answer": "fapi-pet, ga-68-fapi-46, molecular-imaging-roadmap, fap, trop2-pet, nct07217704, neuro-imaging-roadmap, fdg-pet"
+  },
+  {
+   "id": "img-05",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "123i-mibg",
+    "131i-mibg"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "nct03972657, curie-siopen-score, neuroblastoma-high-risk, b-hot-lab-capacity, idea-total-body-pet-lower-dose-tracers, alara, krenning-score, iaea-isotope-databases"
+  },
+  {
+   "id": "img-06",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 0.6,
+   "met": 3,
+   "total": 5,
+   "missed": [
+    "rib fracture",
+    "sentinel"
+   ],
+   "retrievedEntities": [
+    "spect"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "nuclear-medicine-hardware, spect, chinese-journal-of-nuclear-medicine-and-molecular-imaging, ai-in-nuclear-medicine, ansto, clinical-nuclear-medicine, bone-hydroxyapatite, snmmi"
+  },
+  {
+   "id": "img-07",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "since 2001"
+   ],
+   "retrievedEntities": [
+    "pet-mri"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "pet-mri, fdg-pet-response-adapted-therapy, paper-jadvar-snmmi-psma-auc-jnm-2022, psma-pet, idea-cd8-pet-io, paper-rathl-interim-pet-adapted-abvd-advanced-hodgkin-nejm-2016, nct05004285, idea-mfbg-pet-replaces-mibg"
+  },
+  {
+   "id": "img-08",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "total-body-pet-screening"
+   ],
+   "retrievalRecall": 1,
+   "answer": "total-body-pet-screening, idea-total-body-pet-lower-dose-tracers, idea-total-body-pet-dosimetry, nuclear-medicine-hardware, choline-metabolism-in-cancer, prostate-high-risk, idea-accelerator-ac225-at-scale, ai-in-nuclear-medicine"
+  },
+  {
+   "id": "img-09",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "quantitative-spect"
+   ],
+   "retrievalRecall": 1,
+   "answer": "spect-dosimetry-workflow, quantitative-spect, spect, beta-psma-then-alpha-psma-rescue, idea-dosimetry-guided-dosing-standard, scott-tagawa, idea-total-body-pet-lower-dose-tracers, idea-copper-theranostic-pair-standard"
+  },
+  {
+   "id": "img-10",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "ai-in-nuclear-medicine"
+   ],
+   "retrievalRecall": 1,
+   "answer": "idea-ai-lesion-segmentation-dosimetry, idea-dosimetry-guided-dosing-standard, nct03972657, alara, psma-theranostics-roadmap, tc-99m-psma-imaging, ai-in-nuclear-medicine, paper-jadvar-snmmi-psma-auc-jnm-2022"
+  },
+  {
+   "id": "img-48",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "idea-copper-theranostic-pair-standard, antigen, abx-advanced-biochemical-compounds, arpi, nct05849298, medical-imaging-scanner-manufacturing, curie-siopen-score, alara"
+  },
+  {
+   "id": "img-49",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "fapi-pet"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "fapi-pet, antigen, paper-sempet-de-santis-jco-2004, ga-68-fapi-46, arpi, idea-total-body-pet-lower-dose-tracers, andrei-iagaru, molecular-imaging-roadmap"
+  },
+  {
+   "id": "ther-01",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "neuroendocrine, paper-netter-1-nejm-2017, paper-strosberg-netter1-qol-jco-2018, paper-netter-2-lancet-2024, lung-net, small-intestinal-net, netter-1, nct03972488"
+  },
+  {
+   "id": "ther-02",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "psma-refractory",
+    "alpha therapy after beta failure"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "prostate-nepc, paper-kratochwil-ac225-psma-jnm-2016, prostate-bcr, beta-psma-then-alpha-psma-rescue, psma-theranostics-roadmap, prostate-mcrpc, prostate-high-risk, pluvicto-plus-olaparib"
+  },
+  {
+   "id": "ther-03",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "fixed activities",
+    "kidney and marrow"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "idea-total-body-pet-lower-dose-tracers, radiotherapy, f-radioligand-therapy, idea-net-antagonist-ligands, idea-rlt-plus-parp-inhibitor, idea-neoadjuvant-psma-therapy, idea-rlt-plus-checkpoint-inhibitor, idea-fap-theranostics-sarcoma"
+  },
+  {
+   "id": "ther-04",
+   "category": "procedural",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "spect-dosimetry-workflow"
+   ],
+   "retrievalRecall": 1,
+   "answer": "idea-dosimetry-guided-dosing-standard, spect-dosimetry-workflow, ideas-amyloid, paper-eanm-lu177-dosimetry-recommendations-ejnmmi-2022, nct06780670, idea-ai-lesion-segmentation-dosimetry, tc-99m-psma-imaging, idea-reg-medical-isotope-reactor-reserve"
+  },
+  {
+   "id": "ther-05",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "dota-chelation",
+    "macropa-chelation"
+   ],
+   "retrievalRecall": 1,
+   "answer": "ac-225, ac-225-fpi-2068, macropa-chelation, actinium-225-supply, idea-accelerator-ac225-at-scale, b-ac225-supply, dota-chelation, idea-reg-ac225-accelerator-pharmacopoeia"
+  },
+  {
+   "id": "ther-06",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "100-200 kev",
+    "francium-221",
+    "18-35",
+    "renal toxicity"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "ac-225-fpi-2068, ac-225, idea-accelerator-ac225-at-scale, actinium-225-supply, alpha-tau-medical, beta-psma-then-alpha-psma-rescue, idea-reg-legacy-radium-recovery-ac225, alpha-nanogenerators"
+  },
+  {
+   "id": "ther-07",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "24-72 hours",
+    "bio-orthogonal",
+    "tetrazine"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "bone-marrow, idea-total-body-pet-lower-dose-tracers, paper-tagawa-ac225-j591-jco-2024, hot-cells-and-shielding, idea-regional-radiopharmacy-network, absorbed-dose-term, cytopenias, nct03972657"
+  },
+  {
+   "id": "ther-08",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "dosisphere-01",
+    "legacy"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "tare-vs-sorafenib-caution, tare-plus-durvalumab-hcc, crossover, anzup, nct03972657, prostate-nepc, sorafenib, hcc-intermediate"
+  },
+  {
+   "id": "ther-09",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "212pb-dotamtate"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "idea-accelerator-ac225-at-scale, actinium-225-supply, ra-224, ra-223, idea-reg-alpha-emitter-portfolio, idea-reg-legacy-radium-recovery-ac225, ac-225, radium-223"
+  },
+  {
+   "id": "ther-10",
+   "category": "factual",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "monte-carlo-dosimetry"
+   ],
+   "retrievalRecall": 1,
+   "answer": "monte-carlo-dosimetry, mird-formalism, idea-dosimetry-guided-dosing-standard, specific-activity, nct03972657, beta-psma-then-alpha-psma-rescue, idea-total-body-pet-lower-dose-tracers, b-dosimetry-standardisation"
+  },
+  {
+   "id": "drug-01",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "psma pet positiv",
+    "xerostomia"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "prostate-high-risk, prostate-nepc, nct03972657, prostate-mhspc, metastatic-ppgl, pluvicto-plus-olaparib, prostate-mcrpc, alara"
+  },
+  {
+   "id": "drug-02",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "netspot",
+    "changes management in about a third",
+    "amino acid infusion"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "ga68-dotatate-then-lutathera, estimand, patient-release-criteria, idea-dosimetry-guided-dosing-standard, idea-open-dosimetry-data-commons, fixed-versus-personalised-dosing, nct03972488, in-vivo-dosimetry"
+  },
+  {
+   "id": "drug-03",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "calcium mimetic",
+    "14.9",
+    "first alpha-emitting drug"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "nct03972657, prostate-nepc, paper-jadvar-snmmi-psma-auc-jnm-2022, b-authorized-user-shortage, prostate-high-risk, prostate-mcrpc, idea-neoadjuvant-psma-therapy, bone-metastases"
+  },
+  {
+   "id": "drug-04",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "era 223",
+    "excess fractures",
+    "contraindicated",
+    "peace iii"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "radium223-abiraterone-caution, nct03972657, abiraterone, tumour-to-background-ratio, i-131-tositumomab, idea-total-body-pet-lower-dose-tracers, pluvicto-plus-olaparib, itm"
+  },
+  {
+   "id": "drug-05",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "central manufacture",
+    "choline c-11"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "idea-total-body-pet-lower-dose-tracers, idea-copper-theranostic-pair-standard, tc-99m-psma-imaging, snmmi, psma-rads, psma-theranostics-roadmap, paper-psmafore-lancet-2024, time-of-flight-pet"
+  },
+  {
+   "id": "drug-06",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "1994",
+    "2000",
+    "glucose metabolism",
+    "inflammation"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "idea-total-body-pet-lower-dose-tracers, fdg-pet-response-adapted-therapy, estimand, deauville-for-pet, neuro-imaging-roadmap, f-18-fet, psma-theranostics-roadmap, antigen"
+  },
+  {
+   "id": "drug-07",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "f-18-naf"
+   ],
+   "retrievalRecall": 1,
+   "answer": "f-18-naf, idea-total-body-pet-lower-dose-tracers, tc-99m-psma-imaging, amyloid-beta, curie-siopen-score, choline-metabolism-in-cancer, nct05849298, patient-release-criteria"
+  },
+  {
+   "id": "drug-08",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "cognitively normal older adults",
+    "tau neurofibrillary tangles",
+    "clinical and other diagnostic evaluation"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "ideas-amyloid, nct05849298, idea-copper-theranostic-pair-standard, antigen, curie-siopen-score, arpi, fdg-pet-response-adapted-therapy, paper-jadvar-snmmi-psma-auc-jnm-2022"
+  },
+  {
+   "id": "drug-09",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "i-123-ioflupane"
+   ],
+   "retrievalRecall": 1,
+   "answer": "arpi, antigen, absorbed-dose-term, radiopharmaceutical-gmp-release, alara, idea-reg-ac225-accelerator-pharmacopoeia, i-123-ioflupane, amyloid-beta"
+  },
+  {
+   "id": "drug-10",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "i-123-mibg",
+    "i131-mibg"
+   ],
+   "retrievalRecall": 0.6666666666666666,
+   "answer": "curie-siopen-score, idea-copper-theranostic-pair-standard, mibg-theranostics, i131-mibg, i-123-mibg, theranostics, estimand, idea-reg-medical-isotope-reactor-reserve"
+  },
+  {
+   "id": "trial-01",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "18%"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "paper-strosberg-netter1-qol-jco-2018, paper-netter-1-nejm-2017, lu-177-dotatate-generic, lu-177, paper-netter-2-lancet-2024, lutathera, lu177-radioligand-therapy, lu-177-pnt2002"
+  },
+  {
+   "id": "trial-02",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "psmafore"
+   ],
+   "retrievalRecall": 1,
+   "answer": "docetaxel-then-lu177-psma, radiopharmaceutical-gmp-release, paper-psmafore-lancet-2024, pluvicto-plus-olaparib, psmafore, idea-neoadjuvant-psma-therapy, idea-reg-yb176-enrichment-capacity, partial-volume-effect"
+  },
+  {
+   "id": "trial-03",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "monotherapy"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "paper-alsympca-radium-223-nejm-2013, radium-223, ra-223, alpha-therapy-roadmap, ra-224, docetaxel-then-lu177-psma, estimand, idea-reg-ac225-accelerator-pharmacopoeia"
+  },
+  {
+   "id": "trial-04",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "prince-trial"
+   ],
+   "retrievalRecall": 1,
+   "answer": "prince-trial, tc-99m-psma-imaging, estimand, complete-response-term, i-123-mibg-cardiac, nct06247995, iobenguane-i-131, idea-rlt-plus-checkpoint-inhibitor"
+  },
+  {
+   "id": "trial-05",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "compete"
+   ],
+   "retrievalRecall": 1,
+   "answer": "compete, therap, estimand, f-radioligand-therapy, paper-netter-1-nejm-2017, prostate-nmcrpc, prince-trial, complete-response-term"
+  },
+  {
+   "id": "trial-06",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "splash"
+   ],
+   "retrievalRecall": 1,
+   "answer": "splash, eclipse-psma, psma-theranostics-roadmap, lu177-psma-it, paper-vision-nejm-2021, idea-neoadjuvant-psma-therapy, paper-jadvar-snmmi-psma-auc-jnm-2022, lantheus"
+  },
+  {
+   "id": "trial-07",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "enza-p"
+   ],
+   "retrievalRecall": 1,
+   "answer": "enza-p, idea-psma-pet-guided-mdt, psa-kinetics, idea-neoadjuvant-psma-therapy, tc-99m-psma-imaging, prince-trial, nct06894511, nct05849298"
+  },
+  {
+   "id": "trial-08",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "upfront-psma"
+   ],
+   "retrievalRecall": 1,
+   "answer": "upfront-psma, lighthouse, lutectomy, nct06235151, prince-trial, nct06122584, paper-vision-nejm-2021, idea-neoadjuvant-psma-therapy"
+  },
+  {
+   "id": "trial-09",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "psmaddition"
+   ],
+   "retrievalRecall": 1,
+   "answer": "psmaddition, pluvicto-plus-olaparib, paper-jadvar-snmmi-psma-auc-jnm-2022, nrc-licensing, nct03972657, paper-strosberg-netter1-qol-jco-2018, f-18-fet, b-hot-lab-capacity"
+  },
+  {
+   "id": "trial-10",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "therap"
+   ],
+   "retrievalRecall": 1,
+   "answer": "paper-therap-lancet-2021, therap, fdg-pet-response-adapted-therapy, f-radioligand-therapy, paper-psmafore-lancet-2024, radioligand-therapy, docetaxel-then-lu177-psma, idea-neoadjuvant-psma-therapy"
+  },
+  {
+   "id": "sup-01",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "66 hours",
+    "95%",
+    "just-in-time"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "idea-reg-medical-isotope-reactor-reserve, research-reactor-isotope-production, nct06780670, isotope-supply-roadmap, estimand, b-authorized-user-shortage, idea-copper-theranostic-pair-standard, arpi"
+  },
+  {
+   "id": "sup-02",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "b-ac225-supply"
+   ],
+   "retrievalRecall": 1,
+   "answer": "idea-accelerator-ac225-at-scale, idea-reg-ac225-accelerator-pharmacopoeia, b-ac225-supply, b-hot-lab-capacity, ac-225, idea-reg-legacy-radium-recovery-ac225, idea-dosimetry-guided-dosing-standard, actinium-225-supply"
+  },
+  {
+   "id": "sup-03",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "action-1",
+    "single global supplier"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "bms, paper-strosberg-netter1-qol-jco-2018, nct06590857, sdh-deficiency, estimand, nct05547061, curie-siopen-score, nct02952508"
+  },
+  {
+   "id": "sup-04",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "b-enriched-target-material"
+   ],
+   "retrievalRecall": 1,
+   "answer": "idea-reg-yb176-enrichment-capacity, no-carrier-added, b-enriched-target-material, nct05682443, lu-177-pnt2002, prrt-term, itm, tlx-591"
+  },
+  {
+   "id": "sup-05",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 0,
+   "met": 0,
+   "total": 5,
+   "missed": [
+    "hot lab",
+    "dose calibrator",
+    "decay-in-storage",
+    "10 cfr 35.92",
+    "'hot' toilets"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "lutectomy, lu-177, lu177-radioligand-therapy, idea-rlt-plus-checkpoint-inhibitor, idea-neoadjuvant-psma-therapy, lu-177-pnt2002, nct06780670, idea-rlt-plus-parp-inhibitor"
+  },
+  {
+   "id": "sup-06",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "b-authorized-user-shortage"
+   ],
+   "retrievalRecall": 1,
+   "answer": "b-authorized-user-shortage, authorized-user, arpi, idea-rlt-plus-checkpoint-inhibitor, estimand, nct06040099, prrt-term, re-188-sct"
+  },
+  {
+   "id": "sup-07",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "b-dosimetry-standardisation"
+   ],
+   "retrievalRecall": 1,
+   "answer": "idea-tb161-instead-of-lu177, idea-dosimetry-guided-dosing-standard, idea-total-body-pet-lower-dose-tracers, idea-copper-theranostic-pair-standard, idea-net-dosimetry-prrt, idea-accelerator-ac225-at-scale, dosimetry-roadmap, b-dosimetry-standardisation"
+  },
+  {
+   "id": "sup-08",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "b-reimbursement-coding"
+   ],
+   "retrievalRecall": 1,
+   "answer": "b-reimbursement-coding, radiopharmaceutical-gmp-release, arpi, ideas-amyloid, medicare-ced, idea-alpha-for-oligometastatic-disease, paper-herrmann-radiotheranostics-lancet-oncol-2020, antigen"
+  },
+  {
+   "id": "sup-09",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "22%",
+    "66-hour",
+    "cannot be replaced",
+    "class 7"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "idea-total-body-pet-lower-dose-tracers, idea-ai-lesion-segmentation-dosimetry, curie-siopen-score, idea-copper-theranostic-pair-standard, tc-99m-psma-imaging, idea-accelerator-ac225-at-scale, idea-regional-radiopharmacy-network, scott-tagawa"
+  },
+  {
+   "id": "sup-10",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "twenty-fold",
+    "lansing, michigan"
+   ],
+   "retrievedEntities": [
+    "b-ac225-supply"
+   ],
+   "retrievalRecall": 0.25,
+   "answer": "idea-accelerator-ac225-at-scale, actinium-225-supply, b-ac225-supply, idea-reg-legacy-radium-recovery-ac225, ac-225, th-227, idea-reg-ac225-accelerator-pharmacopoeia, ac-225-fpi-2068"
+  },
+  {
+   "id": "term-01",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "hours to a day",
+    "daily",
+    "6.6 days",
+    "physical half-life"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "docetaxel-then-lu177-psma, tc-99m-psma-imaging, paper-kratochwil-ac225-psma-jnm-2016, prostate-high-risk, i-124, beta-psma-then-alpha-psma-rescue, estimand, idea-neoadjuvant-psma-therapy"
+  },
+  {
+   "id": "term-02",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "specific-activity"
+   ],
+   "retrievalRecall": 1,
+   "answer": "specific-activity, idea-accelerator-ac225-at-scale, idea-total-body-pet-lower-dose-tracers, paper-pryma-high-specific-activity-i131-mibg-ppgl-jnm-2019, no-carrier-added, idea-rlt-plus-checkpoint-inhibitor, time-activity-curve, idea-tb161-instead-of-lu177"
+  },
+  {
+   "id": "term-03",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "crossfire",
+    "100 kev per micrometre",
+    "1 to 10 mm",
+    "50 to 100 micrometres"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "idea-accelerator-ac225-at-scale, lung-net, idea-net-antagonist-ligands, actinium-225-supply, ac-225-fpi-2068, small-intestinal-net, nct05706129, molecular-targeting-technologies"
+  },
+  {
+   "id": "term-04",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "theranostic pair"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "arpi, idea-copper-theranostic-pair-standard, tc-99m-psma-imaging, prostate-nepc, sdh-deficiency, prostate-mhspc, prostate-cancer-signalling, prostate-high-risk"
+  },
+  {
+   "id": "term-05",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "suv"
+   ],
+   "retrievalRecall": 1,
+   "answer": "suv, quantitative-imaging-biomarkers, idea-total-body-pet-lower-dose-tracers, antigen, fes-pet, medical-imaging-scanner-manufacturing, curie-siopen-score, fapi-pet"
+  },
+  {
+   "id": "term-06",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "psma-rads"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "tc-99m-psma-imaging, psa-kinetics, psma-rads, paper-jadvar-snmmi-psma-auc-jnm-2022, idea-tr2-psma-volume-qualification, alara, psma-theranostics-roadmap, idea-psma-pet-guided-mdt"
+  },
+  {
+   "id": "term-07",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "deauville-for-pet"
+   ],
+   "retrievalRecall": 1,
+   "answer": "deauville-for-pet, curie-siopen-score, fdg-pet-response-adapted-therapy, krenning-score, paper-rathl-interim-pet-adapted-abvd-advanced-hodgkin-nejm-2016, quantitative-imaging-biomarkers, thrombocytopenia, follicular-lymphoma"
+  },
+  {
+   "id": "term-08",
+   "category": "procedural",
+   "difficulty": 3,
+   "score": 0.8,
+   "met": 4,
+   "total": 5,
+   "missed": [
+    "98%"
+   ],
+   "retrievedEntities": [
+    "release-criteria"
+   ],
+   "retrievalRecall": 0.3333333333333333,
+   "answer": "release-criteria, beta-psma-then-alpha-psma-rescue, lutectomy, psma-theranostics-roadmap, salivary-gland-toxicity, idea-rlt-plus-checkpoint-inhibitor, idea-neoadjuvant-psma-therapy, tc-99m-psma-imaging"
+  },
+  {
+   "id": "term-09",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "authorized user",
+    "10 cfr part 35",
+    "alara",
+    "shielding"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "idea-total-body-pet-lower-dose-tracers, estimand, china-isotope-radiation, patient-release-criteria, b-radioactive-waste-regulation, idea-dosimetry-guided-dosing-standard, pharmacokinetics, idea-open-dosimetry-data-commons"
+  },
+  {
+   "id": "term-10",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "becquerel",
+    "3.7 x 10^10"
+   ],
+   "retrievedEntities": [
+    "absorbed-dose-term",
+    "equivalent-dose"
+   ],
+   "retrievalRecall": 0.6666666666666666,
+   "answer": "idea-copper-theranostic-pair-standard, absorbed-dose-term, estimand, equivalent-dose, idea-total-body-pet-lower-dose-tracers, curie-siopen-score, patient-release-criteria, idea-ai-lesion-segmentation-dosimetry"
+  },
+  {
+   "id": "clin-01",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "cardiac-amyloidosis-attr"
+   ],
+   "retrievalRecall": 1,
+   "answer": "cardiac-amyloidosis-attr, tc-99m-pyrophosphate, antigen, n-13-ammonia, amyloid-beta, aurora-flurpiridaz, arpi, nct05849298"
+  },
+  {
+   "id": "clin-02",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "ml/min/g"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "aurora-flurpiridaz, f-18-flurpiridaz, idea-total-body-pet-lower-dose-tracers, pulmonary-embolism-vq, bracco, fes-pet, quantitative-imaging-biomarkers, tc-99m-hmpao-brain"
+  },
+  {
+   "id": "clin-03",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "drug label"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "dopamine-transporter, tc-99m-psma-imaging, idea-accelerator-ac225-at-scale, psa-kinetics, idea-total-body-pet-lower-dose-tracers, nct03972657, estimand, curie-siopen-score"
+  },
+  {
+   "id": "clin-04",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "alzheimers-disease"
+   ],
+   "retrievalRecall": 1,
+   "answer": "ideas-amyloid, amyloid-beta, idea-total-body-pet-lower-dose-tracers, curie-siopen-score, paper-jadvar-snmmi-psma-auc-jnm-2022, alzheimers-disease, patient-release-criteria, sdh-deficiency"
+  },
+  {
+   "id": "clin-05",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "infection-prosthetic-joint"
+   ],
+   "retrievalRecall": 1,
+   "answer": "infection-prosthetic-joint, nct03972657, f-infection-imaging, time-activity-curve, antigen, sstr-theranostics-roadmap, idea-rlt-plus-checkpoint-inhibitor, alara"
+  },
+  {
+   "id": "clin-06",
+   "category": "procedural",
+   "difficulty": 1,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "graves-hyperthyroidism"
+   ],
+   "retrievalRecall": 1,
+   "answer": "graves-hyperthyroidism, estimand, i-131-tositumomab, radioactive-iodine, radioiodine-term, i-124, i-125-seeds, i-123"
+  },
+  {
+   "id": "clin-07",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "thyroid"
+   ],
+   "retrievalRecall": 1,
+   "answer": "i-131-tositumomab, thyroid, patient-release-criteria, radioiodine-term, nct03690388, radioactive-iodine, idea-open-dosimetry-data-commons, grade-3-net"
+  },
+  {
+   "id": "clin-08",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "hereditary-ppgl"
+   ],
+   "retrievalRecall": 1,
+   "answer": "hereditary-ppgl, sdh-deficiency, ga68-dotatate-then-lutathera, cu-64-dotatate, metastatic-ppgl, sstr-theranostics-roadmap, deauville-for-pet, sstr-pet"
+  },
+  {
+   "id": "clin-09",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "neuroblastoma-high-risk"
+   ],
+   "retrievalRecall": 1,
+   "answer": "neuroblastoma-high-risk, prostate-high-risk, neuroblastoma, estimand, paper-propsma-hofman-lancet-2020, b-rlt-trial-capacity, paper-strosberg-netter1-qol-jco-2018, inselspital-bern"
+  },
+  {
+   "id": "clin-10",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "bone-pain-palliation"
+   ],
+   "retrievalRecall": 1,
+   "answer": "bone-hydroxyapatite, bone-metastases, paper-alsympca-radium-223-nejm-2013, radium-223, bone-pain-palliation, ra-223, idea-reg-legacy-radium-recovery-ac225, prostate-nepc"
+  },
+  {
+   "id": "reg-01",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "100-200 patients"
+   ],
+   "retrievedEntities": [
+    "radiopharma-roadmap"
+   ],
+   "retrievalRecall": 0.3333333333333333,
+   "answer": "radiopharma-roadmap, isotope-supply-roadmap, therapy-isotope-supply-chain, idea-accelerator-ac225-at-scale, idea-reg-medical-isotope-reactor-reserve, b-enriched-target-material, b-ac225-supply, idea-reg-isotope-supply-observatory"
+  },
+  {
+   "id": "reg-02",
+   "category": "procedural",
+   "difficulty": 1,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "select patients for psma-targeted radioligand therapy",
+    "nccn"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "tc-99m-psma-imaging, estimand, idea-copper-theranostic-pair-standard, idea-total-body-pet-lower-dose-tracers, docetaxel-then-lu177-psma, paper-rathl-interim-pet-adapted-abvd-advanced-hodgkin-nejm-2016, psma-theranostics-roadmap, i-123-mibg"
+  },
+  {
+   "id": "reg-03",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "idea-dosimetry-guided-dosing-standard",
+    "f-dosimetry"
+   ],
+   "retrievalRecall": 1,
+   "answer": "idea-dosimetry-guided-dosing-standard, fixed-versus-personalised-dosing, activity-prescription, dosimetry-roadmap, idea-net-dosimetry-prrt, b-dosimetry-standardisation, paper-eanm-lu177-dosimetry-recommendations-ejnmmi-2022, f-dosimetry"
+  },
+  {
+   "id": "reg-04",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "sstr-theranostics-roadmap"
+   ],
+   "retrievalRecall": 1,
+   "answer": "sstr-theranostics-roadmap, neuro-imaging-roadmap, psma-theranostics-roadmap, radiopharm-theranostics, curie-siopen-score, idea-copper-theranostic-pair-standard, theranostics, tc-99m-psma-imaging"
+  },
+  {
+   "id": "reg-05",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "guideline weight"
+   ],
+   "retrievedEntities": [
+    "idea-fap-theranostics-pancancer"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "idea-fap-theranostics-pancancer, fap, idea-fap-theranostics-sarcoma, psma-theranostics-roadmap, radiopharm-theranostics, idea-total-body-pet-lower-dose-tracers, sstr-theranostics-roadmap, tc-99m-psma-imaging"
+  },
+  {
+   "id": "reg-06",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "lacks randomised phase 3 evidence"
+   ],
+   "retrievedEntities": [
+    "alpha-therapy-roadmap"
+   ],
+   "retrievalRecall": 0.3333333333333333,
+   "answer": "idea-alpha-for-oligometastatic-disease, paper-tagawa-ac225-j591-jco-2024, beta-psma-then-alpha-psma-rescue, alpha-therapy-roadmap, estimand, auger-electron-therapy, nct06780670, paper-kratochwil-ac225-psma-jnm-2016"
+  },
+  {
+   "id": "reg-07",
+   "category": "reasoning",
+   "difficulty": 1,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "phase 1/2",
+    "refractory to lutetium-177"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "idea-accelerator-ac225-at-scale, idea-reg-ac225-accelerator-pharmacopoeia, idea-alpha-for-oligometastatic-disease, nct05219500, ac-225, actinium-225-supply, paper-tagawa-ac225-j591-jco-2024, estimand"
+  },
+  {
+   "id": "reg-08",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "idea-reg-legacy-radium-recovery-ac225",
+    "idea-accelerator-ac225-at-scale"
+   ],
+   "retrievalRecall": 0.6666666666666666,
+   "answer": "b-ac225-supply, idea-accelerator-ac225-at-scale, idea-reg-legacy-radium-recovery-ac225, ac-225, actinium-225-supply, therapy-isotope-supply-chain, isotope-supply-roadmap, idea-dosimetry-guided-dosing-standard"
+  },
+  {
+   "id": "reg-09",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "darlington",
+    "75%"
+   ],
+   "retrievedEntities": [
+    "isotope-supply-roadmap"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "therapy-isotope-supply-chain, b-enriched-target-material, idea-reg-medical-isotope-reactor-reserve, isotope-supply-roadmap, estimand, sstr-theranostics-roadmap, idea-tb161-instead-of-lu177, lu177-radioligand-therapy"
+  },
+  {
+   "id": "prostate-23",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "theranostics"
+   ],
+   "retrievalRecall": 0.25,
+   "answer": "radiopharm-theranostics, theranostics, estimand, psma-theranostics-roadmap, sstr-theranostics-roadmap, theranostics-journal, idea-caix-theranostics, alara"
+  },
+  {
+   "id": "prostate-24",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "vision"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "vision, paper-strosberg-netter1-qol-jco-2018, b-rlt-trial-capacity, paper-vision-nejm-2021, estimand, convergent-therapeutics, prince-trial, lighthouse"
+  },
+  {
+   "id": "prostate-25",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "beta-then-alpha",
+    "ac225-psma"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "paper-tagawa-ac225-j591-jco-2024, paper-kratochwil-ac225-psma-jnm-2016, beta-psma-then-alpha-psma-rescue, idea-alpha-for-oligometastatic-disease, idea-alpha-first-mhspc, tc-99m-psma-imaging, ac225-psma, beta-then-alpha"
+  },
+  {
+   "id": "tech-63",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "therapy-isotope-supply-chain, b-enriched-target-material, idea-reg-legacy-radium-recovery-ac225, ac-225, idea-accelerator-ac225-at-scale, lu-177-dotatate-generic, idea-tb161-instead-of-lu177, actinium-225-supply"
+  },
+  {
+   "id": "tech-64",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "actinium-225-supply, ac-225, b-ac225-supply, idea-accelerator-ac225-at-scale, therapy-isotope-supply-chain, ac225-psma, idea-reg-alpha-emitter-portfolio, actinium-pharmaceuticals"
+  },
+  {
+   "id": "who-73",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "heidelberg",
+    "haberkorn"
+   ],
+   "retrievedEntities": [
+    "fapi-pet"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "idea-mced-plus-fapi, fapi-pet, ga-68-fapi-46, fap, penn-abramson, nct07217704, paper-propsma-hofman-lancet-2020, f-18-fet"
+  }
+ ]
+}

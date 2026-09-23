@@ -100,7 +100,7 @@ const pct = (x: number) => `${Math.round(x * 100)}%`;
   writeFileSync(join(out, "index.json"), JSON.stringify(listRuns(out), null, 1));
   const natural = {
     summary: {
-      system: summary.system, date, questions: nAfter.length, set: "src/data/ask-eval.ts (60 natural questions: patient, clinician, investor)",
+      system: summary.system, date, questions: nAfter.length, set: `src/data/ask-eval.ts (${askEval.length} natural questions: patient, clinician, investor)`,
       meanScore: r3(mean(nAfter.map((r) => r.score))), meanRetrievalRecall: r3(mean(nAfter.map((r) => r.retrievalRecall))), byAudience: byAud(nAfter),
       before: { system: summary.before.system, meanScore: r3(mean(nBefore.map((r) => r.score))), meanRetrievalRecall: r3(mean(nBefore.map((r) => r.retrievalRecall))), byAudience: byAud(nBefore) },
     },

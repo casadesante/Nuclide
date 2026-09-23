@@ -1,0 +1,78 @@
+[
+ {
+  "file": "ask-2026-09-23.json",
+  "system": "Nuclide Ask (intents, entity resolution, templated cited answers; extractive fallback)",
+  "date": "2026-09-23",
+  "questions": 102,
+  "meanScore": 0.429,
+  "meanRetrievalRecall": 1,
+  "byCategory": {
+   "factual": 0.599,
+   "reasoning": 0.32,
+   "procedural": 0.3
+  },
+  "method": "For each question: intent from wording rules; records named in the question resolved by longest match over names and aliases; a template per intent fills sentences from those records' structured fields (TL;DR first), each sentence cited; curated benchmark and patient-question pairs supply records when the question matches closely; sentence retrieval (MiniSearch plus concept index, fused) is the fallback and adds detail. The answer text shown on /ask/ is scored for rubric coverage. No language model.",
+  "before": {
+   "system": "Nuclide Ask (extractive answer, lexical + concept retrieval, top 6 records)",
+   "meanScore": 0.36,
+   "meanRetrievalRecall": 0.617,
+   "byCategory": {
+    "factual": 0.474,
+    "reasoning": 0.326,
+    "procedural": 0.163
+   }
+  },
+  "withoutCuratedPairs": {
+   "meanScore": 0.36,
+   "meanRetrievalRecall": 0.76,
+   "byCategory": {
+    "factual": 0.533,
+    "reasoning": 0.266,
+    "procedural": 0.181
+   }
+  },
+  "intents": {
+   "general": 50,
+   "define": 20,
+   "compare": 1,
+   "results": 8,
+   "approval": 5,
+   "trials": 3,
+   "side-effects": 2,
+   "treatments": 2,
+   "cost": 2,
+   "companies": 1,
+   "who": 2,
+   "mechanism": 3,
+   "roadmap": 3
+  },
+  "templates": {
+   "orientation": 50,
+   "define": 27,
+   "compare": 1,
+   "results": 8,
+   "approval": 3,
+   "trials": 3,
+   "side-effects": 2,
+   "treatments": 2,
+   "companies": 1,
+   "mechanism": 2,
+   "roadmap": 2,
+   "who": 1
+  }
+ },
+ {
+  "file": "nuclide-2026-09-23.json",
+  "system": "Nuclide (search-retrieval proxy, top 8 entities)",
+  "date": "2026-09-23",
+  "questions": 102,
+  "meanScore": 0.763,
+  "meanRetrievalRecall": 0.546,
+  "byCategory": {
+   "factual": 0.784,
+   "reasoning": 0.778,
+   "procedural": 0.666
+  },
+  "method": "For each question: MiniSearch retrieval over the site index; rubric coverage of tldr+summary of the top entities. 1 point per rubric item met, normalised to 0-1."
+ }
+]

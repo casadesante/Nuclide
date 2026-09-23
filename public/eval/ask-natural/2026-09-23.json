@@ -1,0 +1,575 @@
+{
+ "summary": {
+  "system": "Nuclide Ask (intents, entity resolution, templated cited answers; extractive fallback)",
+  "date": "2026-09-23",
+  "questions": 42,
+  "set": "src/data/ask-eval.ts (42 natural questions: patient, clinician, investor)",
+  "meanScore": 0.423,
+  "meanRetrievalRecall": 0.81,
+  "byAudience": {
+   "patient": 0.25,
+   "clinician": 0.548,
+   "investor": 0.487
+  },
+  "before": {
+   "system": "Nuclide Ask (extractive answer, lexical + concept retrieval, top 6 records)",
+   "meanScore": 0.454,
+   "meanRetrievalRecall": 0.702,
+   "byAudience": {
+    "patient": 0.333,
+    "clinician": 0.548,
+    "investor": 0.494
+   }
+  }
+ },
+ "results": [
+  {
+   "id": "p-01",
+   "audience": "patient",
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "68ga-psma-11",
+    "60 to 120 minutes",
+    "333 mbq",
+    "biochemical recurrence"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "A prostate-cancer-specific PET scan that finds spread far earlier than CT or bone scan, and tells you whether a matched radioactive drug will work. [1] European nuclear medicine physicists set out a detailed, agreed method for measuring exactly how much radiation dose a patient's kidneys and tumours actually receive during lutetium-177 treatments, so that dosing can eventually be tailored to the individual rather than fixed for everyone. [2] A PET scan using a radioactive form of oestrogen that lights up every tumour deposit still carrying the oestrogen receptor, so doctors can see whether metastases across the body will respond to hormone treatment without biopsying each one. [3] Getting a patient from 'this treatment might help you' to actually receiving it can take weeks or months, because the scan, the specialist review and the treatment often happen at different places, and not every hospital is equipped to give the treatment at all. [4] Radioligand therapy referral is a multi-step journey: a treating physician suspects eligibility, the patient needs a PSMA- or somatostatin-receptor PET scan (often at a different centre from where the eligibility decision or treatment happens), a multidisciplinary team reviews the scan, and only then is the patient scheduled at a licensed, hot-lab-equipped centre. [4] A version of the PSMA prostate cancer scan that uses the same cheap, widely available radioactive tag as a standard bone scan instead of the PET tracers. [5]\n\nSources\n[1] PSMA PET (https://nuclide.cc/technologies/psma-pet/)\n[2] EANM dosimetry committee recommendations for dosimetry of 177Lu-labelled somatostatin-receptor- and PSMA-targeting ligands (https://nuclide.cc/key-papers/paper-eanm-lu177-dosimetry-recommendations-ejnmmi-2022/)\n[3] FES PET (oestrogen receptor imaging) (https://nuclide.cc/technologies/fes-pet/)\n[4] Site readiness and referral pathway delays (https://nuclide.cc/bottlenecks/b-site-readiness-referral/)\n[5] Technetium Tc-99m PSMA agents (PSMA-I&S) (https://nuclide.cc/drugs/tc-99m-psma-imaging/)"
+  },
+  {
+   "id": "p-02",
+   "audience": "patient",
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "7.4 gbq",
+    "every 8 weeks",
+    "lysine",
+    "kidney"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "Lutetium-177 dotatate was the first modern radioligand therapy (2018), for neuroendocrine tumours, and is now used in first line. [1] If a control patient crosses over to the experimental drug at progression, does the overall survival comparison ask what happens under the policy of assigning the drug (whatever patients later receive), or what would have happened had nobody crossed over? [2] These things that happen after randomisation and change what is measured are called intercurrent events, and the estimand framework in the 2019 addendum ICH E9(R1) requires a trial to name, for each one, the strategy it will use: treatment policy (count everything that happens, the classic intention-to-treat approach), hypothetical (estimate what would have happened without the event, as crossover adjustment does), composite (treat the event as part of the outcome), while-on-treatment, or principal stratum (restrict to the patients in whom the event would not occur under either arm). [2] Before starting the neuroendocrine tumour treatment Lutathera, patients get a somatostatin-receptor PET scan to confirm the tumour actually has the right target for the drug to lock onto. [3] Lutathera's approval and use are built around this scan-first rule. [3] The Japanese radiopharmaceutical business that PeptiDream bought from FUJIFILM: it sells most of Japan's radioactive diagnostics and the therapies that go with them. [4]\n\nSources\n[1] Lutetium-177 dotatate (https://nuclide.cc/drugs/lutathera/)\n[2] Estimands and intercurrent events (ICH E9(R1)) (https://nuclide.cc/terms/estimand/)\n[3] 68Ga-DOTATATE PET before Lutathera (177Lu-DOTATATE) (https://nuclide.cc/pairings/ga68-dotatate-then-lutathera/)\n[4] PDRadiopharma (https://nuclide.cc/companies/pdradiopharma/)"
+  },
+  {
+   "id": "p-03",
+   "audience": "patient",
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "six cycles",
+    "every 6 weeks",
+    "xerostomia",
+    "psma pet positivity"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] Before a peptide receptor radionuclide therapy infusion, patients are given an IV drip of two amino acids, lysine and arginine, which reduces how much radioactivity the kidneys reabsorb and hold onto, protecting kidney function. [2] An early trial gave the prostate cancer radiotherapy Pluvicto together with the tablet olaparib, on the idea that the pill makes the radiation harder for the cancer cell to repair. [3]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Renal protection with amino acid co-infusion (https://nuclide.cc/terms/renal-protection-amino-acids/)\n[3] 177Lu-PSMA-617 (Pluvicto) with olaparib (https://nuclide.cc/pairings/pluvicto-plus-olaparib/)"
+  },
+  {
+   "id": "p-04",
+   "audience": "patient",
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "thyroid function tests",
+    "radioiodine uptake",
+    "antithyroid drugs",
+    "hypothyroidism"
+   ],
+   "retrievalRecall": 1,
+   "answer": "The original targeted radiotherapy: thyroid cells soak up iodine, so radioactive iodine destroys leftover thyroid tissue and metastases while sparing everything else. [1] Radioactive iodine (I-131) approvals: US 1951 for Hyperthyroidism and thyroid carcinoma (first radiopharmaceutical approval). [1] When a lump is found in the thyroid, a scan showing whether it takes up iodine-like tracer more or less than the rest of the gland tells doctors whether it is a low-risk overactive nodule that rarely needs a biopsy, or a quiet 'cold' nodule that does. [2] A long-lived, PET-visible form of radioactive iodine used to map how a thyroid cancer takes up iodine over several days, so the dose of the treatment isotope, iodine-131, can be planned before it is given. [3] A radioactive form of iodine that decays quickly and gives off gamma rays, used to take a picture of the thyroid or, attached to a nerve-tracing molecule, of tumours of the adrenal gland and nervous system, before deciding whether a therapeutic dose of iodine-131 makes sense. [4] Oral radioactive iodine-131 has been used to treat it since the 1940s: because the thyroid concentrates iodine, an orally administered dose is taken up almost exclusively by thyroid tissue, which is then irradiated from within by the beta particles, over weeks progressively destroying overactive follicular cells. [5]\n\nSources\n[1] Radioactive iodine (I-131) (https://nuclide.cc/drugs/radioactive-iodine/)\n[2] Functional assessment of thyroid nodules (https://nuclide.cc/indications/thyroid-nodule-assessment/)\n[3] Iodine-124 (https://nuclide.cc/isotopes/i-124/)\n[4] Iodine-123 (https://nuclide.cc/isotopes/i-123/)\n[5] Graves' disease and hyperthyroidism (https://nuclide.cc/indications/graves-hyperthyroidism/)"
+  },
+  {
+   "id": "p-05",
+   "audience": "patient",
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "5 msv",
+    "1 msv",
+    "breastfeeding",
+    "written instructions"
+   ],
+   "retrievalRecall": 0,
+   "answer": "A radioactive form of iodine. Because the thyroid gland naturally absorbs iodine, swallowing it lets the radiation destroy thyroid cells or thyroid cancer cells almost anywhere they have spread, with very little effect on the rest of the body. [1] Iodine-131 decays by beta emission with an associated gamma emission and a physical half-life of 8.02-8.04 days. [1] Its principal beta emissions average around 190 keV with higher-energy components up to roughly 606 keV, and the dominant imaging gamma is 364.5 keV (about 81% abundance); roughly 90% of local irradiation from sodium iodide I-131 comes from the beta component and 10% from gamma, per the FDA label. [1] Swallowing a capsule of radioactive iodine after thyroid surgery: thyroid cells (including cancer cells) are the only ones that soak up iodine, so the radiation destroys leftover thyroid tissue and metastases while sparing everything else. [2]\n\nSources\n[1] Iodine-131 (https://nuclide.cc/isotopes/i-131/)\n[2] Radioiodine therapy (I-131) (https://nuclide.cc/terms/radioiodine-term/)"
+  },
+  {
+   "id": "p-06",
+   "audience": "patient",
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "tede",
+    "5 msv",
+    "same-day release"
+   ],
+   "retrievalRecall": 0,
+   "answer": "Lutetium-177 emits beta particles with a range of a few millimetres and gamma rays that allow imaging, making it the workhorse isotope of radioligand therapy. [1] Lutathera (Lu-177 dotatate, approved 2018) targets somatostatin receptors on neuroendocrine tumours, and Pluvicto (Lu-177 PSMA-617, approved 2022) targets PSMA on prostate cancer; both improved outcomes in randomised trials. [1] A peptide or small molecule with high affinity for a tumour receptor is chelated to Lu-177 and infused; bound molecules irradiate the cell and its neighbours over the isotope's 6.6-day half-life. [1]\n\nSources\n[1] Lutetium-177 radioligand therapy (https://nuclide.cc/technologies/lu177-radioligand-therapy/)"
+  },
+  {
+   "id": "p-07",
+   "audience": "patient",
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "10 cfr 20.1003"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Most of that extra sensitivity has been used to make scans faster; using it instead to lower the radiation dose given to patients and staff is a separate, less-explored option. [1] Radioactive drugs are made and handled behind thick walls of lead, tungsten or concrete inside sealed, negative-pressure boxes with built-in robot arms, so the radiation stays contained and staff outside stay safe. [2] A hot cell is a sealed, negative-pressure, lead- or lead-and-steel-shielded enclosure, commonly fitted with leaded-glass viewing windows, mechanical manipulator arms or gloved arm-ports, HEPA/charcoal filtration and an integrated dose calibrator, used to contain the synthesis, dispensing and quality control of radiopharmaceuticals at activities that would otherwise give unacceptable doses to staff. [2] A shielded robotic 'chemistry-in-a-box' machine mixes and purifies radioactive drugs behind thick walls, so staff never have to handle dangerous, highly radioactive liquids by hand. [3] Even where the radioactive medicine itself is available, giving it to a patient needs a specially shielded room, lead-lined equipment, and a toilet that can hold radioactive waste safely. [4] In a nuclear medicine or radiopharmacy setting this translates into concrete practice: shielding (lead or tungsten syringe shields, L-blocks, hot-cell walls), distance (using tongs or automated dispensers rather than close manual handling), time (minimising time spent near unshielded sources), workflow design that keeps the highest-activity work furthest from staff and the public, and engineering controls such as ventilated hoods for volatile radiopharmaceuticals. [5]\n\nSources\n[1] Using total-body PET's sensitivity to cut diagnostic tracer dose, not just scan time (https://nuclide.cc/ideas/idea-total-body-pet-lower-dose-tracers/)\n[2] Hot cells and radiation shielding (https://nuclide.cc/technologies/hot-cells-and-shielding/)\n[3] Automated synthesis modules (https://nuclide.cc/technologies/automated-synthesis-modules/)\n[4] Hot lab and shielded treatment room capacity (https://nuclide.cc/bottlenecks/b-hot-lab-capacity/)\n[5] ALARA (as low as is reasonably achievable) (https://nuclide.cc/terms/alara/)"
+  },
+  {
+   "id": "p-08",
+   "audience": "patient",
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "skin necrosis",
+    "stop the infusion",
+    "plastic surgeon"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Sometimes an injected radioactive tracer or treatment leaks into the tissue around the vein instead of going into the bloodstream. [1] Extravasation is the inadvertent leakage of an injected radiopharmaceutical into the tissue surrounding the injection site instead of the vein. [1] Every radioactive treatment leaves behind radioactive waste, such as used vials and, for a short time, the patient's own urine, which has to be safely stored until it stops being radioactive. [2] Dexrazoxane protects the heart from the cumulative damage of doxorubicin in women with metastatic breast cancer who need to keep receiving it, and, as Totect, limits tissue destruction when an anthracycline leaks out of a vein. [3] A molecular 'cage' that grips a radioactive metal atom tightly so it stays attached to the drug all the way to the tumour, instead of leaking out and going to the wrong part of the body. [4] After certain radioactive treatments, US rules set a specific radiation limit that must be checked before a patient can safely go home, and if the dose to a household member could exceed a lower limit, the patient gets written safety instructions (including, if relevant, guidance on breastfeeding). [5]\n\nSources\n[1] Radiopharmaceutical extravasation (https://nuclide.cc/terms/extravasation-radiopharmaceutical/)\n[2] Radioactive waste handling and disposal regulation (https://nuclide.cc/bottlenecks/b-radioactive-waste-regulation/)\n[3] Dexrazoxane (https://nuclide.cc/drugs/dexrazoxane/)\n[4] Chelator (bifunctional chelating agent) (https://nuclide.cc/terms/chelator-term/)\n[5] Patient release criteria after radioactive treatment (https://nuclide.cc/terms/patient-release-criteria/)"
+  },
+  {
+   "id": "p-09",
+   "audience": "patient",
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "39%",
+    "dry mouth",
+    "xerostomia",
+    "dose reduction"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] An early trial gave the prostate cancer radiotherapy Pluvicto together with the tablet olaparib, on the idea that the pill makes the radiation harder for the cancer cell to repair. [2]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] 177Lu-PSMA-617 (Pluvicto) with olaparib (https://nuclide.cc/pairings/pluvicto-plus-olaparib/)"
+  },
+  {
+   "id": "p-10",
+   "audience": "patient",
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "blood counts",
+    "decreased platelets",
+    "withhold",
+    "grade 3"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A drug that finds tumour cells and carries a radioactive atom that irradiates them from inside the body. [1] 177Lu emits beta particles with ~2 mm range and gamma photons for SPECT imaging; the ligand determines biodistribution. [1] Strengths: Systemic, whole-body targeting of microscopic disease; Crossfire kills antigen-negative neighbours. [1]\n\nSources\n[1] Radioligand therapy (beta emitters) (https://nuclide.cc/technologies/radioligand-therapy/)"
+  },
+  {
+   "id": "p-11",
+   "audience": "patient",
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "lysine",
+    "kidney",
+    "nausea",
+    "4 hours"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Lutetium-177 dotatate was the first modern radioligand therapy (2018), for neuroendocrine tumours, and is now used in first line. [1] Lutetium-177 dotatate is a radioligand therapy: the somatostatin analogue DOTATATE binds SSTR2 on neuroendocrine tumour cells and carries the beta emitter 177Lu into them, irradiating over a few millimetres. [1] NETTER-1 established it in midgut NETs progressing on octreotide, and NETTER-2 (2024) moved it into first line for higher grade-2 and grade-3 GEP-NETs with PFS 22.8 versus 8.5 months. [1] SSTR2 agonist peptide with 177Lu. [1] First approved in EU in 2017 for First approval globally (Sep 2017). [1] Sold as Lutathera; developed or marketed by Novartis. [1] Dosing: IV infusion; 7.4 GBq (200 mCi) every 8 weeks for 4 doses, with amino acid infusion starting 30 minutes before and continuing ≥3 hours. [1] Monitoring: Blood counts, creatinine, LFTs before each dose; long-term MDS/AML surveillance. [1]\n\nSources\n[1] Lutetium-177 dotatate (https://nuclide.cc/drugs/lutathera/)"
+  },
+  {
+   "id": "p-12",
+   "audience": "patient",
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "biopsy",
+    "prostate cancer almost certainly present",
+    "benign"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A prostate-cancer-specific PET scan that finds spread far earlier than CT or bone scan, and tells you whether a matched radioactive drug will work. [1] PSMA PET uses small-molecule urea-based ligands that bind the active site of prostate-specific membrane antigen and are internalised, labelled with 68Ga or 18F. [1] Approved agents are 68Ga-PSMA-11 (Illuccix, Locametz), 18F-DCFPyL (Pylarify, with Pylarify TruVu approved in March 2026) and 18F-rhPSMA-7.3 (Posluma). [1] A standard 1-to-5 scale that nuclear medicine doctors use to describe how likely a spot seen on a PSMA PET scan is to be prostate cancer, so different hospitals describe the same finding the same way. [2] Reports give up to five target lesions a PSMA-RADS category plus an overall scan score equal to the highest individual lesion score. [2] It took until 2020-2022 for scans and treatments that target it to reach approval, but once they did, PSMA PET and Pluvicto changed how metastatic prostate cancer is staged and treated, and the same target is now being tried earlier in the disease and with more powerful alpha particles. [3]\n\nSources\n[1] PSMA PET (https://nuclide.cc/technologies/psma-pet/)\n[2] PSMA-RADS (PSMA reporting and data system) (https://nuclide.cc/terms/psma-rads/)\n[3] PSMA theranostics roadmap: antigen discovery → PSMA PET → 177Lu-PSMA-617 → earlier lines and alpha (https://nuclide.cc/roadmaps/psma-theranostics-roadmap/)"
+  },
+  {
+   "id": "p-13",
+   "audience": "patient",
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievalRecall": 1,
+   "answer": "A 0-to-4 scale doctors use to describe how strongly a tumour lights up on a somatostatin receptor scan, by comparing it with the normal liver and spleen. A higher score generally means the tumour is a good candidate for peptide receptor radionuclide therapy. [1] The Krenning score is a five-point visual grading system (0-4) developed for planar and SPECT imaging with 111In-pentetreotide (OctreoScan), which grades tumour uptake of a somatostatin receptor tracer against two internal reference tissues: normal liver (grades 1-3) and spleen or kidney (grade 4). [1] Grade 0 is no uptake; grade 1 is uptake below liver; grade 2 is uptake equal to or slightly less than liver; grade 3 is uptake greater than liver; grade 4 is uptake greater than spleen or kidney. [1] Why it matters: it decides or shapes the use of 177Lu-edotreotide, Gallium-68 DOTATATE (and Cu-64 DOTATATE) and Lutetium-177 dotatate, and it comes up in Neuroendocrine tumours. [1] A radioactive drug for neuroendocrine tumours: a small peptide that homes to the somatostatin receptor on the tumour cells carries lutetium-177, which irradiates them from within. Given four times, two months apart. [2] The NETTER-1 trial required tumour uptake at least equal to normal liver (Krenning grade 2 or above) for enrolment, and a score greater than 2 is the practical threshold most centres use when selecting patients for PRRT with lutetium-177 dotatate. [1] Mandatory for staging, for selecting patients for PRRT (Krenning score ≥3 or uptake above liver), and for detecting occult primaries. [3]\n\nSources\n[1] Krenning score (https://nuclide.cc/terms/krenning-score/)\n[2] PRRT (peptide receptor radionuclide therapy) (https://nuclide.cc/terms/prrt-term/)\n[3] Somatostatin receptor PET (68Ga/64Cu-DOTATATE) (https://nuclide.cc/technologies/sstr-pet/)"
+  },
+  {
+   "id": "p-14",
+   "audience": "patient",
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "one to a few weeks",
+    "extravasation",
+    "survival benefit"
+   ],
+   "retrievalRecall": 1,
+   "answer": "For cancer that has spread widely to bone and causes pain everywhere at once, a bone-seeking radioactive injection travels to every affected spot in the skeleton and delivers pain-relieving radiation from the inside, sparing a trip to radiotherapy for each site. [1] Right after some cancer treatments start working, a scan can briefly look worse before it looks better, because healing bone or an early immune response makes lesions light up more, not because the cancer has actually grown. [2] The flare phenomenon (bone flare or scintigraphic flare) is an apparent early worsening on a bone scan, PET or PSMA-PET scan that reflects a reparative or reactive process rather than true disease progression, and is followed by genuine improvement on later imaging if the underlying treatment is actually working. [2] It causes pain, fractures and high calcium, and the complications are counted in trials as 'skeletal-related events'. [3] Some radioactive drugs are built to home in on damaged bone rather than the tumour itself, easing bone pain from cancer that has spread to the skeleton and, in one case, helping patients live longer. [4] A single injection can ease bone pain for weeks by irradiating those spots from within. [5]\n\nSources\n[1] Bone pain palliation from osteoblastic metastases (https://nuclide.cc/indications/bone-pain-palliation/)\n[2] Flare phenomenon (https://nuclide.cc/terms/flare-phenomenon/)\n[3] Bone metastases and skeletal-related events (https://nuclide.cc/terms/bone-metastases/)\n[4] Bone-targeted radiopharmaceuticals (https://nuclide.cc/fronts/f-bone-targeted/)\n[5] Strontium-89 (https://nuclide.cc/isotopes/sr-89/)"
+  },
+  {
+   "id": "c-01",
+   "audience": "clinician",
+   "score": 0.3333333333333333,
+   "met": 1,
+   "total": 3,
+   "missed": [
+    "androgen receptor pathway inhibitor and a taxane",
+    "six cycles"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] Metastatic castration-resistant prostate cancer is disease that grows despite castrate testosterone. Sequenced treatments now include androgen receptor inhibitors, docetaxel and cabazitaxel, PARP inhibitors for men with BRCA-type mutations, the radioligand 177Lu-PSMA-617 and radium-223 for bone-predominant disease. [2] An early trial gave the prostate cancer radiotherapy Pluvicto together with the tablet olaparib, on the idea that the pill makes the radiation harder for the cancer cell to repair. [3] The label then moved earlier: on 28 March 2025 the FDA expanded Pluvicto's indication, based on the PSMAfore trial, to PSMA-positive mCRPC patients who have progressed on one androgen receptor pathway inhibitor and are considered appropriate to delay chemotherapy, removing the prior-taxane requirement and roughly tripling the eligible US population. [4]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Metastatic castration-resistant prostate cancer (https://nuclide.cc/indications/prostate-mcrpc/)\n[3] 177Lu-PSMA-617 (Pluvicto) with olaparib (https://nuclide.cc/pairings/pluvicto-plus-olaparib/)\n[4] PSMA theranostics roadmap: antigen discovery → PSMA PET → 177Lu-PSMA-617 → earlier lines and alpha (https://nuclide.cc/roadmaps/psma-theranostics-roadmap/)"
+  },
+  {
+   "id": "c-02",
+   "audience": "clinician",
+   "score": 1,
+   "met": 3,
+   "total": 3,
+   "missed": [],
+   "retrievalRecall": 0.5,
+   "answer": "A radioactive version of the hormone mimic used for the scan; it homes to neuroendocrine tumour cells and irradiates them from inside. [1] A 0-to-4 scale doctors use to describe how strongly a tumour lights up on a somatostatin receptor scan, by comparing it with the normal liver and spleen. A higher score generally means the tumour is a good candidate for peptide receptor radionuclide therapy. [2] The NETTER-1 trial required tumour uptake at least equal to normal liver (Krenning grade 2 or above) for enrolment, and a score greater than 2 is the practical threshold most centres use when selecting patients for PRRT with lutetium-177 dotatate. [2] Mandatory for staging, for selecting patients for PRRT (Krenning score ≥3 or uptake above liver), and for detecting occult primaries. [3] SSTR PET followed by PRRT is the original theranostic pair: the scan with the diagnostic isotope decides who gets the same molecule with the therapeutic isotope. [4]\n\nSources\n[1] Peptide receptor radionuclide therapy (PRRT) (https://nuclide.cc/technologies/prrt/)\n[2] Krenning score (https://nuclide.cc/terms/krenning-score/)\n[3] Somatostatin receptor PET (68Ga/64Cu-DOTATATE) (https://nuclide.cc/technologies/sstr-pet/)\n[4] SSTR PET → PRRT (https://nuclide.cc/pairings/sstr-pet-to-prrt/)"
+  },
+  {
+   "id": "c-03",
+   "audience": "clinician",
+   "score": 0.3333333333333333,
+   "met": 1,
+   "total": 3,
+   "missed": [
+    "symptomatic bone-metastatic",
+    "monotherapy"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Prostate cancer is the home of theranostics: PSMA PET finds it, PSMA radioligands treat it. Hormonal therapy remains the foundation, with PARP and AKT inhibitors added by genotype. [1] A radioactive form of the mineral radium that behaves like calcium and settles into bone. It gives off very short-range, high-energy particles that damage cancer growing in bone while barely reaching the healthy marrow next to it. [2] Radium-223, an injected alpha-emitting radioisotope that homes to bone, lengthened survival and delayed skeletal complications in men with castration-resistant prostate cancer that had spread to bone but not to organs. [3] Phase 3 placebo-controlled trial of 921 men with castration-resistant prostate cancer, symptomatic bone metastases and no visceral disease, randomised 2:1 to six injections of radium-223 or placebo with best standard of care. [3] Radium-223 was the first alpha-emitting drug ever approved (2013). [4] It homes to bone like calcium and treats prostate cancer that has spread only to bone. [4] Norway's national cancer hospital and research institute, where the alpha emitter radium-223 (Xofigo) and Photocure's bladder imaging agent were born. [5]\n\nSources\n[1] Prostate cancer (https://nuclide.cc/indications/prostate/)\n[2] Radium-223 (https://nuclide.cc/isotopes/ra-223/)\n[3] ALSYMPCA: alpha emitter radium-223 and survival in metastatic prostate cancer with bone metastases (https://nuclide.cc/key-papers/paper-alsympca-radium-223-nejm-2013/)\n[4] Radium-223 dichloride (https://nuclide.cc/drugs/radium-223/)\n[5] Oslo University Hospital, The Norwegian Radium Hospital (https://nuclide.cc/institutions/oslo-radium-hospital/)"
+  },
+  {
+   "id": "c-04",
+   "audience": "clinician",
+   "score": 0,
+   "met": 0,
+   "total": 3,
+   "missed": [
+    "30-60 minutes",
+    "lysine",
+    "4 hours"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A radioactive drug for neuroendocrine tumours: a small peptide that homes to the somatostatin receptor on the tumour cells carries lutetium-177, which irradiates them from within. Given four times, two months apart. [1] Neuroendocrine tumours overexpress somatostatin receptor 2, imaged with gallium-68 or copper-64 DOTATATE PET and treated first with cold somatostatin analogues (octreotide, lanreotide) for symptom and growth control. [1] 177Lu-DOTATATE (NETTER-1, approved 2018) improved progression-free survival dramatically in midgut NETs and NETTER-2 (2024) moved it to first line in high-grade tumours; 177Lu-edotreotide (COMPETE) followed. [1] Why it matters: it decides or shapes the use of Gallium-68 DOTATATE (and Cu-64 DOTATATE) and Lutetium-177 dotatate, and it comes up in Grade 3 well-differentiated neuroendocrine tumour, Neuroendocrine tumours, Pancreatic neuroendocrine tumours and Small intestinal neuroendocrine tumours. [1] Dosing is 7.4 GBq every 8 weeks for 4 doses with an amino acid infusion to protect the kidneys; lymphopenia is common, and myelodysplastic syndrome (2.3%) and acute leukaemia (0.5%) are rare late risks. [2] Lutetium-177 dotatate dosing: IV infusion; 7.4 GBq (200 mCi) every 8 weeks for 4 doses, with amino acid infusion starting 30 minutes before and continuing ≥3 hours. [2]\n\nSources\n[1] PRRT (peptide receptor radionuclide therapy) (https://nuclide.cc/terms/prrt-term/)\n[2] Lutetium-177 dotatate (https://nuclide.cc/drugs/lutathera/)"
+  },
+  {
+   "id": "c-05",
+   "audience": "clinician",
+   "score": 0.3333333333333333,
+   "met": 1,
+   "total": 3,
+   "missed": [
+    "24 hours and 7 days",
+    "renal cortex"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Measuring how much radiation dose each organ and tumour actually received from a radioactive drug. [1] It relies on post-therapy SPECT/CT imaging at several time points and enables personalised activity prescription instead of fixed doses, and regulators and payers increasingly require it. [1] Why it matters: it comes up in Hepatocellular carcinoma and Neuroendocrine tumours. [1] Cancer-seeking molecules carrying the radioactive metal lutetium-177, which delivers short-range radiation to tumours it binds; approved for neuroendocrine tumours and prostate cancer. [2] It specifies imaging protocols (typically three well-separated SPECT/CT time points per cycle for kidney and tumour dosimetry), segmentation and recovery-correction methods, and reports the underlying pharmacokinetic and dosimetric literature: mean kidney absorbed doses of roughly 0.54-1.00 Gy/GBq for 177Lu-somatostatin-receptor ligands and 0.4-0.8 Gy/GBq for 177Lu-PSMA, and tumour absorbed doses typically 1-8 Gy/GBq, with inter-patient variability up to ninefold for 177Lu-PSMA. [3] Recommends kidney dosimetry using SPECT/CT at three well-separated time points between day 1 and day 7 after each therapy cycle. [3]\n\nSources\n[1] Dosimetry (https://nuclide.cc/terms/dosimetry/)\n[2] Lutetium-177 radioligand therapy (https://nuclide.cc/technologies/lu177-radioligand-therapy/)\n[3] EANM dosimetry committee recommendations for dosimetry of 177Lu-labelled somatostatin-receptor- and PSMA-targeting ligands (https://nuclide.cc/key-papers/paper-eanm-lu177-dosimetry-recommendations-ejnmmi-2022/)"
+  },
+  {
+   "id": "c-06",
+   "audience": "clinician",
+   "score": 1,
+   "met": 3,
+   "total": 3,
+   "missed": [],
+   "retrievalRecall": 1,
+   "answer": "PSMA-RADS version 1.0, proposed by Rowe, Pienta, Pomper and Gorin at Johns Hopkins in 2017-2018, is a structured reporting system for PSMA-targeted PET imaging modelled on other \"reporting and data systems\" such as BI-RADS. [1] It assigns each lesion a category from 1 (benign, subdivided into 1A without uptake and 1B with uptake but known-benign) through 2 (likely benign, low-level uptake atypical for prostate cancer), 3A/3B/3C/3D (equivocal, warranting further work-up such as biopsy or 3-6 month follow-up imaging), 4 (intense uptake typical of prostate cancer but without a corresponding finding on conventional imaging) to 5 (intense uptake with a corresponding conventional-imaging finding, prostate cancer almost certainly present). [1] Why it matters: it decides or shapes the use of Gallium-68 gozetotide (PSMA-11), Lutetium-177 vipivotide tetraxetan and Piflufolastat F-18 / Pylarify TruVu, and it comes up in Metastatic castration-resistant prostate cancer. [1] Reports give up to five target lesions a PSMA-RADS category plus an overall scan score equal to the highest individual lesion score. [1] Because PET and SPECT images are reconstructed and displayed with contrast-dependent scaling, TBR is a practical proxy for lesion conspicuity and is used both qualitatively (as a component of the Krenning score and PSMA-RADS) and quantitatively in response criteria. [2]\n\nSources\n[1] PSMA-RADS (PSMA reporting and data system) (https://nuclide.cc/terms/psma-rads/)\n[2] Tumour-to-background ratio (TBR) (https://nuclide.cc/terms/tumour-to-background-ratio/)"
+  },
+  {
+   "id": "c-07",
+   "audience": "clinician",
+   "score": 0.3333333333333333,
+   "met": 1,
+   "total": 3,
+   "missed": [
+    "complete metabolic response",
+    "good-prognosis"
+   ],
+   "retrievalRecall": 1,
+   "answer": "The numbers pulled from scans that decide whether a cancer is shrinking, growing or dead: tumour diameters for RECIST, sugar uptake on PET, water movement on MRI; they run every trial and most clinic decisions, and they are only as good as the way the scan was taken. [1] A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [2] A simple 1-to-5 score doctors use on a PET scan of lymphoma to say whether treatment is working, by comparing how bright the tumour looks against two normal reference areas: the blood in the chest and the liver. [3] Neuroblastoma soaks up MIBG, a radioactive cousin of noradrenaline; the Curie and SIOPEN scores count how many body regions still light up on the scan, and a score that has not fallen enough after the first rounds of chemotherapy marks a child who is unlikely to be cured with the standard plan. [4] Using a PET scan after two cycles to decide the rest of treatment let patients with a clear scan drop bleomycin, sparing their lungs without losing cure, while those with a positive scan were escalated to stronger chemotherapy. [5] A higher score generally means the tumour is a good candidate for peptide receptor radionuclide therapy. [6]\n\nSources\n[1] Quantitative imaging biomarkers (RECIST, PERCIST, SUV, ADC) (https://nuclide.cc/technologies/quantitative-imaging-biomarkers/)\n[2] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[3] Deauville five-point scale for PET (https://nuclide.cc/terms/deauville-for-pet/)\n[4] MIBG Curie and SIOPEN scores (https://nuclide.cc/terms/curie-siopen-score/)\n[5] RATHL: adapted treatment guided by interim PET-CT in advanced Hodgkin lymphoma (https://nuclide.cc/key-papers/paper-rathl-interim-pet-adapted-abvd-advanced-hodgkin-nejm-2016/)\n[6] Krenning score (https://nuclide.cc/terms/krenning-score/)"
+  },
+  {
+   "id": "c-08",
+   "audience": "clinician",
+   "score": 0.3333333333333333,
+   "met": 1,
+   "total": 3,
+   "missed": [
+    "taxane-naive",
+    "crossover"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] Metastatic castration-resistant prostate cancer is disease that grows despite castrate testosterone. Sequenced treatments now include androgen receptor inhibitors, docetaxel and cabazitaxel, PARP inhibitors for men with BRCA-type mutations, the radioligand 177Lu-PSMA-617 and radium-223 for bone-predominant disease. [2] Lutetium-177 vipivotide tetraxetan approvals: US 2022 for PSMA+ mCRPC after ARPI and taxane; US 2025 for PSMA+ mCRPC after ARPI, before chemotherapy; US 2026 for Label expansion (July 2026); EU 2022 for mCRPC post-ARPI and taxane; pre-chemo 2025. [1] VISION established 177Lu-PSMA-617 after chemotherapy and PSMAfore moved it before, for PSMA PET-positive disease; 177Lu-PSMA-I&T (SPLASH, ECLIPSE) follows the same path. [2] After an androgen receptor pathway inhibitor: Docetaxel; olaparib or rucaparib for BRCA-mutant disease (PROfound); 177Lu-PSMA-617 for PSMA-positive disease before chemotherapy (PSMAfore); pembrolizumab for mismatch repair-deficient tumours. [2] In the trial that got 177Lu-PSMA-617 (Pluvicto) approved, everyone had already been treated with a taxane chemotherapy drug like docetaxel and with a hormone pill first. [3] That is the treatment order the approval is based on, though a newer trial is now testing whether Pluvicto can be used earlier, before chemotherapy. [3]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Metastatic castration-resistant prostate cancer (https://nuclide.cc/indications/prostate-mcrpc/)\n[3] Docetaxel (taxane chemotherapy) then 177Lu-PSMA-617 (https://nuclide.cc/pairings/docetaxel-then-lu177-psma/)"
+  },
+  {
+   "id": "c-09",
+   "audience": "clinician",
+   "score": 0,
+   "met": 0,
+   "total": 3,
+   "missed": [
+    "34 vs 26 months",
+    "hr 0.55",
+    "anaemia and thrombocytopenia"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] VISION: OS HR 0.62. [2] PSMAfore: rPFS HR 0.41. [3] A phase 1/2 trial of Gotistobart, Lutetium-177 vipivotide tetraxetan in prostate cancer, run by OncoC4, Inc., active and no longer recruiting. [4] Latest regulatory event: 2026-07-31, approval (US): PSMA+ metastatic hormone-sensitive prostate cancer with ARPI (PSMAddition). [1] Enzalutamide is a second-generation androgen-receptor blocker that stops the receptor binding testosterone, entering the nucleus and switching on genes. It is approved at every stage of advanced prostate cancer, from rising PSA after surgery to castration-resistant disease, and fatigue, falls and memory problems are its main drawbacks. [5] In men newly diagnosed with prostate cancer that has already spread widely, giving two doses of the radioactive drug lutetium-PSMA before starting chemotherapy cleared PSA to undetectable levels in more men than chemotherapy alone, without adding side effects. [6]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] VISION (https://nuclide.cc/trials/vision/)\n[3] PSMAfore (https://nuclide.cc/trials/psmafore/)\n[4] ONC-392 Plus Lutetium Lu 177 Vipivotide Tetraxetan in Patients With mCRPC (https://nuclide.cc/trials/nct05682443/)\n[5] Enzalutamide (https://nuclide.cc/drugs/enzalutamide/)\n[6] UpFrontPSMA (https://nuclide.cc/trials/upfront-psma/)"
+  },
+  {
+   "id": "c-10",
+   "audience": "clinician",
+   "score": 1,
+   "met": 3,
+   "total": 3,
+   "missed": [],
+   "retrievalRecall": 1,
+   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] Grade 3 well-differentiated neuroendocrine tumours divide fast enough to be called grade 3 yet still look and behave like their slower relatives rather than like neuroendocrine carcinoma. [2] In the pivotal VISION trial of lutetium-177 vipivotide tetraxetan (Pluvicto), dry mouth (xerostomia) occurred in 39% of patients receiving Pluvicto plus best standard of care versus 0.5-1% on standard of care alone (any grade); no grade 3-4 xerostomia was reported in VISION. [3] The FDA label for Pluvicto lists dry mouth among the most common adverse reactions (occurring in \\u226520% of patients) and specifies dose modifications for recurrent or higher-grade dry mouth: for grade 2, withhold until improvement and consider a 20% dose reduction; for grade 3, withhold and reduce by 20% to 5.9 GBq; recurrent grade 3 dry mouth after one dose reduction is grounds for permanent discontinuation. [3] Toxicity was mostly low grade (dry mouth in 87%, transient nausea and fatigue in 50%), though grade 3-4 thrombocytopenia occurred in 13%. [4] The phase 3 trials that will decide whether alpha-emitting PSMA drugs become the next step after Pluvicto. [5]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Grade 3 well-differentiated neuroendocrine tumour (https://nuclide.cc/indications/grade-3-net/)\n[3] Salivary gland toxicity (xerostomia) from PSMA radioligand therapy (https://nuclide.cc/terms/salivary-gland-toxicity/)\n[4] LuPSMA trial: single-arm phase 2 study of 177Lu-PSMA-617 in metastatic castration-resistant prostate cancer (https://nuclide.cc/key-papers/paper-hofman-lupsma-lancet-oncol-2018/)\n[5] AlphaBreak (FPI-2265) & AcTION (225Ac-PSMA-617) (https://nuclide.cc/trials/alphabreak/)"
+  },
+  {
+   "id": "c-11",
+   "audience": "clinician",
+   "score": 1,
+   "met": 3,
+   "total": 3,
+   "missed": [],
+   "retrievalRecall": 1,
+   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] The side effects recorded for Lutetium-177 vipivotide tetraxetan (VISION), most serious first: lymphocytes decreased (85% any grade, 47% grade 3 or higher); haemoglobin decreased (64% any grade, 15% grade 3 or higher); platelets decreased (9% grade 3 or higher); fatigue (48% any grade); dry mouth (39% any grade). [1] Monitoring: Blood counts and renal function before each dose; hydration; radiation-protection instructions for 7 days. [1] Dose changes: Hold for grade ≥3 myelosuppression or renal impairment; permanently discontinue for grade 4 haematologic toxicity. [1] The Pluvicto label requires complete blood counts before and during treatment and specifies dose modifications for myelosuppression: withhold for grade 2, and withhold plus reduce the dose by 20% (to 5.9 GBq/160 mCi) for grade 3 or higher, with permanent discontinuation for recurrent grade 3 or higher myelosuppression after one dose reduction. [2]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Myelosuppression after radioligand therapy (https://nuclide.cc/terms/myelosuppression-after-rlt/)"
+  },
+  {
+   "id": "c-12",
+   "audience": "clinician",
+   "score": 1,
+   "met": 3,
+   "total": 3,
+   "missed": [],
+   "retrievalRecall": 1,
+   "answer": "The trial that made radioligand therapy a standard: a radioactive drug homing to the somatostatin receptor held midgut neuroendocrine tumours in check far longer than high-dose octreotide, and it underpins Lutathera's approvals. [1] NETTER-1 is a phase 3 trial run by Advanced Accelerator Applications (Novartis) with 231 participants: Inoperable, progressive midgut neuroendocrine tumours: 177Lu-Dotatate plus octreotide versus high-dose octreotide LAR. [1] Headline result: PFS at 20 months 65.2% vs 10.8% (HR 0.21); ORR 18% vs 3%. [1] NETTER-1, Progression-free survival at 20 months: 177Lu-Dotatate + octreotide 65.2% versus High-dose octreotide LAR 10.8%, hazard ratio 0.21, p <0.001. [1] Lutetium-177 dotatate was the first modern radioligand therapy (2018), for neuroendocrine tumours, and is now used in first line. [2] Because NETTER-1's primary endpoint (progression-free survival) had already shown a large benefit, this paper mattered for showing the benefit was not bought at the cost of how patients felt day to day - in every domain measured, 177Lu-Dotatate patients did the same or better than those on high-dose octreotide, never worse. [3] Everolimus earned its gut indication in RADIANT-4 (Lancet 2016), where progression-free survival was 11.0 against 3.9 months in non-functional lung and gastrointestinal tumours, and cabozantinib was approved in 2025 after the extra-pancreatic cohort of CABINET (New England Journal of Medicine 2024) showed 8.4 against 3.9 months. [4]\n\nSources\n[1] NETTER-1 (https://nuclide.cc/trials/netter-1/)\n[2] Lutetium-177 dotatate (https://nuclide.cc/drugs/lutathera/)\n[3] Health-related quality of life in the NETTER-1 trial of 177Lu-Dotatate (https://nuclide.cc/key-papers/paper-strosberg-netter1-qol-jco-2018/)\n[4] Small intestinal neuroendocrine tumours (https://nuclide.cc/indications/small-intestinal-net/)"
+  },
+  {
+   "id": "c-13",
+   "audience": "clinician",
+   "score": 1,
+   "met": 3,
+   "total": 3,
+   "missed": [],
+   "retrievalRecall": 1,
+   "answer": "VISION was the trial that established radioligand therapy in prostate cancer. [1] VISION is a phase 3 trial run by Novartis with 861 participants: PSMA+ metastatic castration-resistant prostate cancer after ARPI and taxane: 177Lu-PSMA-617 + SOC vs SOC. [1] Headline result: OS HR 0.62. [1] VISION, Overall survival: 177Lu-PSMA-617 + standard care 15.3 months versus Standard care 11.3 months, hazard ratio 0.62, p <0.001. [1] It randomised 831 men with PSMA-positive metastatic castration-resistant prostate cancer after an androgen receptor pathway inhibitor and a taxane to 177Lu-PSMA-617 plus standard care or standard care alone, selected by PSMA PET, and met both primary endpoints of overall and radiographic progression-free survival. [1] Replication: Consistent with TheraP (phase 2, 177Lu-PSMA-617 vs cabazitaxel: higher PSA response, similar OS) and with PSMAfore in an earlier line. [1] A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [2]\n\nSources\n[1] VISION (https://nuclide.cc/trials/vision/)\n[2] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)"
+  },
+  {
+   "id": "c-14",
+   "audience": "clinician",
+   "score": 0,
+   "met": 0,
+   "total": 3,
+   "missed": [
+    "pt1a to t1b",
+    "node-negative",
+    "non-inferiority"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Thyroid cancer is usually curable with surgery and radioactive iodine, the original theranostic. Rare aggressive forms respond to RET and BRAF inhibitors. [1] A radioactive form of iodine. Because the thyroid gland naturally absorbs iodine, swallowing it lets the radiation destroy thyroid cells or thyroid cancer cells almost anywhere they have spread, with very little effect on the rest of the body. [2] Survivorship: Lifelong levothyroxine with risk-adapted TSH targets; calcium/PTH monitoring after surgery; salivary care after radioiodine; low-risk patients can be discharged to primary care. [1] Swallowing a capsule of radioactive iodine after thyroid surgery: thyroid cells (including cancer cells) are the only ones that soak up iodine, so the radiation destroys leftover thyroid tissue and metastases while sparing everything else. [3] Differentiated (papillary and follicular) thyroid cancer retains iodine uptake, so I-131 ablates remnant tissue after total thyroidectomy in intermediate- and high-risk patients and treats iodine-avid metastases; low-risk patients no longer need it (ESTIMABL2, IoN). [3] Proved that most people with small, low-risk thyroid cancers can skip radioactive iodine after surgery without any increase in recurrence. [4] Nuclide links it to thyroid cancer, radioiodine therapy, radioactive iodine, the low-risk thyroid cancer term, Gustave Roussy and Martin Schlumberger, and together with IoN and HiLo it removed radioiodine from routine low-risk care in ATA and ESMO guidance; the UK IoN trial reached the same conclusion. [4]\n\nSources\n[1] Thyroid cancer (https://nuclide.cc/indications/thyroid/)\n[2] Iodine-131 (https://nuclide.cc/isotopes/i-131/)\n[3] Radioiodine therapy (I-131) (https://nuclide.cc/terms/radioiodine-term/)\n[4] ESTIMABL2 (https://nuclide.cc/trials/estimabl2/)"
+  },
+  {
+   "id": "i-01",
+   "audience": "investor",
+   "score": 0.3333333333333333,
+   "met": 1,
+   "total": 3,
+   "missed": [
+    "1.5 billion",
+    "cern"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] Lutetium-177 vipivotide tetraxetan is developed or marketed by Novartis. [1] The company that made radioligand therapy a business, with Pluvicto and Lutathera, and the maker of Kisqali and Gleevec. [2] Institutions on Nuclide linked to Lutetium-177 vipivotide tetraxetan: ANZUP Cancer Trials Group, European Association of Nuclear Medicine, Inselspital, Bern University Hospital / University Cancer Center Inselspital and IRCCS Istituto Romagnolo per lo Studio dei Tumori 'Dino Amadori' (IRST). [1] VISION (2021): OS 15.3 vs 11.3 months in post-chemotherapy mCRPC. [1]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Novartis (https://nuclide.cc/companies/novartis/)"
+  },
+  {
+   "id": "i-02",
+   "audience": "investor",
+   "score": 1,
+   "met": 3,
+   "total": 3,
+   "missed": [],
+   "retrievalRecall": 1,
+   "answer": "Radium-223 was the first alpha-emitting drug ever approved (2013). It homes to bone like calcium and treats prostate cancer that has spread only to bone. [1] Radium-223 dichloride is developed or marketed by Bayer. [1] Bayer owns Xofigo, the only approved alpha emitter, and is developing next-generation actinium PSMA agents. [2] Radium-223 is a calcium mimetic incorporated into bone matrix at sites of metastatic bone turnover, where each decay chain delivers four alpha emissions over a range of a few cells, killing tumour while largely sparing marrow. [1]\n\nSources\n[1] Radium-223 dichloride (https://nuclide.cc/drugs/radium-223/)\n[2] Bayer (https://nuclide.cc/companies/bayer/)"
+  },
+  {
+   "id": "i-03",
+   "audience": "investor",
+   "score": 1,
+   "met": 3,
+   "total": 3,
+   "missed": [],
+   "retrievalRecall": 1,
+   "answer": "Piflufolastat F-18 (Pylarify) is the leading PSMA PET tracer for prostate cancer, with a new formulation approved in March 2026. [1] Piflufolastat F-18 / Pylarify TruVu is developed or marketed by Lantheus. [1] Lantheus makes Pylarify, the leading PSMA PET agent, with a new TruVu formulation approved in March 2026. [2] Institutions on Nuclide linked to Piflufolastat F-18 / Pylarify TruVu: Society of Nuclear Medicine and Molecular Imaging. [1] Piflufolastat F-18 is a PET tracer: an 18F-labelled urea that binds prostate-specific membrane antigen (PSMA), lighting up prostate cancer deposits that conventional CT and bone scan miss. [1]\n\nSources\n[1] Piflufolastat F-18 / Pylarify TruVu (https://nuclide.cc/drugs/pylarify/)\n[2] Lantheus (https://nuclide.cc/companies/lantheus/)"
+  },
+  {
+   "id": "i-04",
+   "audience": "investor",
+   "score": 0,
+   "met": 0,
+   "total": 3,
+   "missed": [
+    "63 gbq",
+    "100-200",
+    "185 gbq"
+   ],
+   "retrievalRecall": 1,
+   "answer": "There is barely enough of the radioactive metal actinium-225 in the world to treat a few hundred patients a year, even though several new cancer drugs need it. New ways of making it are being built, but they are not yet running at full scale. [1] Like radioligand therapy but with alpha particles: far more destructive over a much shorter range, so single cells can be killed with less collateral damage. [2] Bill Gates-backed producer of actinium-225 from thorium-229, building a Philadelphia facility to raise supply 20-fold. [3] Actinium-225's legacy supply comes from milking thorium-229 'cow' generators held at only four sites worldwide: Oak Ridge National Laboratory (US), the Joint Research Centre in Karlsruhe (Germany), the Institute for Physics and Power Engineering (Russia, irregular), and formerly SCK CEN (Belgium). [1] It obtains actinium-225 from the decay of thorium-229 recovered from a legacy uranium-233 stockpile and holds supply agreements with Bayer, Bristol Myers Squibb and others. [3] Nuclide links it to neuroendocrine tumours, to somatostatin receptor 2 as a target, to peptide receptor radionuclide therapy, targeted alpha therapy and the isotope supply chain, and to the idea of funding alpha emitters beyond actinium-225, including lead-212, terbium-149 and astatine-211. [4] ITM-11 was positive in the COMPETE phase 3 trial in gastroenteropancreatic neuroendocrine tumours in 2025, and the company is investing in actinium-225 supply. [5] Supply and demand for lutetium-177, actinium-225, iodine-131 and their precursors are opaque; producers guard volumes, and shortages surface only when clinics cancel doses. [6]\n\nSources\n[1] Actinium-225 supply (https://nuclide.cc/bottlenecks/b-ac225-supply/)\n[2] Targeted alpha therapy (https://nuclide.cc/technologies/targeted-alpha-therapy/)\n[3] TerraPower Isotopes (https://nuclide.cc/companies/terrapower-isotopes/)\n[4] Orano Med (https://nuclide.cc/companies/orano-med/)\n[5] ITM Isotope Technologies Munich (https://nuclide.cc/companies/itm/)\n[6] A global medical isotope supply observatory with forecasts and shortage alerts (https://nuclide.cc/ideas/idea-reg-isotope-supply-observatory/)"
+  },
+  {
+   "id": "i-05",
+   "audience": "investor",
+   "score": 0,
+   "met": 0,
+   "total": 3,
+   "missed": [
+    "could not secure enough actinium-225",
+    "single global supplier",
+    "june 2024"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Tests whether an actinium alpha-radioligand rescues neuroendocrine tumours after lutetium therapy fails. [1] ACTION-1 is a phase 3 trial run by BMS (RayzeBio): SSTR-positive GEP-NETs progressing after 177Lu somatostatin-analogue therapy: 225Ac-DOTATATE (RYZ101) vs investigator's choice. [1] Its phase 1b established a fixed dose of 10.2 MBq with encouraging responses, the phase 3 against investigator's choice is enrolling with an interim analysis expected in 2026, and its dosimetry was published in the Journal of Nuclear Medicine in 2026. [1] RayzeBio is the actinium-225 radiopharma company that BMS bought for $4.1B; its RYZ101 is in phase 3. [2]\n\nSources\n[1] ACTION-1 (https://nuclide.cc/trials/action-1/)\n[2] RayzeBio (BMS) (https://nuclide.cc/companies/rayzebio/)"
+  },
+  {
+   "id": "i-06",
+   "audience": "investor",
+   "score": 0.6666666666666666,
+   "met": 2,
+   "total": 3,
+   "missed": [
+    "1.5 billion"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "VISION was the trial that established radioligand therapy in prostate cancer. [1] VISION is a phase 3 trial run by Novartis with 861 participants: PSMA+ metastatic castration-resistant prostate cancer after ARPI and taxane: 177Lu-PSMA-617 + SOC vs SOC. [1] Headline result: OS HR 0.62. [1] VISION, Overall survival: 177Lu-PSMA-617 + standard care 15.3 months versus Standard care 11.3 months, hazard ratio 0.62, p <0.001. [1] It randomised 831 men with PSMA-positive metastatic castration-resistant prostate cancer after an androgen receptor pathway inhibitor and a taxane to 177Lu-PSMA-617 plus standard care or standard care alone, selected by PSMA PET, and met both primary endpoints of overall and radiographic progression-free survival. [1] Replication: Consistent with TheraP (phase 2, 177Lu-PSMA-617 vs cabazitaxel: higher PSA response, similar OS) and with PSMAfore in an earlier line. [1] A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [2]\n\nSources\n[1] VISION (https://nuclide.cc/trials/vision/)\n[2] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)"
+  },
+  {
+   "id": "i-07",
+   "audience": "investor",
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievalRecall": 0.3333333333333333,
+   "answer": "An alpha-emitting radioligand met all its primary endpoints, with responses in more than half of patients new to radioligand therapy. [1] ALPHAMEDIX-02 is a phase 2 trial run by RadioMedix / Orano Med / Sanofi: Unresectable or metastatic SSTR-positive GEP-NETs, PRRT-naive and PRRT-exposed cohorts: 212Pb-DOTAMTATE single arm. [1] Headline result: ORR 54.3% (PRRT-naive); all primary endpoints met. [1] ALPHAMEDIX-02, Objective response rate (PRRT-naive): 212Pb-DOTAMTATE 54.3%. [1] In the single-arm phase 2 the objective response rate in PRRT-naive patients was 54.3 percent, most were still progression-free around three years, and the PRRT-exposed cohort was largely progression-free at eighteen months, as Sanofi reported in October 2025; the drug holds Breakthrough Therapy designation and the registrational path is being finalised. [1] An alpha-particle version of neuroendocrine radioligand therapy that produced responses in over half of patients who had never had PRRT, with FDA Breakthrough designation. [2] That compassionate-use experience seeded a pipeline of sponsor-run trials repeating the beta-to-alpha substitution across targets: 225Ac-DOTATATE (RYZ101, RayzeBio/BMS) in the ACTION-1 trial for neuroendocrine tumours progressing after 177Lu-DOTATATE; 225Ac-PSMA-I&T (FPI-2265, Fusion Pharmaceuticals/AstraZeneca) in AlphaBreak for prostate cancer after 177Lu-PSMA; 225Ac-PSMA-617 (AAA817, Novartis) in a phase 3 programme; and 212Pb-DOTAMTATE (AlphaMedix, RadioMedix/Orano Med/Sanofi), whose phase 2 ALPHAMEDIX-02 study reported that it met all primary efficacy endpoints in October 2025. [3]\n\nSources\n[1] ALPHAMEDIX-02 (https://nuclide.cc/trials/alphamedix-02/)\n[2] 212Pb-DOTAMTATE (https://nuclide.cc/drugs/alphamedix/)\n[3] Alpha-emitter roadmap: radium-223 → 225Ac-PSMA-617 → a phase 3 pipeline (https://nuclide.cc/roadmaps/alpha-therapy-roadmap/)"
+  },
+  {
+   "id": "i-08",
+   "audience": "investor",
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "largest supplier",
+    "endolucinbeta",
+    "isotopia",
+    "6.65-day"
+   ],
+   "retrievalRecall": 0.6666666666666666,
+   "answer": "Cancer-seeking molecules carrying the radioactive metal lutetium-177, which delivers short-range radiation to tumours it binds; approved for neuroendocrine tumours and prostate cancer. [1] Companies behind the approved products: Novartis (Lutathera and Pluvicto). [1] Institutions: Curanosticum Wiesbaden-Frankfurt. [1] People: Michael Lassmann, Richard P. Baum and Wolfgang P. Fendler. [1] Lutetium-177 emits beta particles with a range of a few millimetres and gamma rays that allow imaging, making it the workhorse isotope of radioligand therapy. [1] Lutetium-177 dotatate was the first modern radioligand therapy (2018), for neuroendocrine tumours, and is now used in first line. [2] Lutetium-177 dotatate is a radioligand therapy: the somatostatin analogue DOTATATE binds SSTR2 on neuroendocrine tumour cells and carries the beta emitter 177Lu into them, irradiating over a few millimetres. [2]\n\nSources\n[1] Lutetium-177 radioligand therapy (https://nuclide.cc/technologies/lu177-radioligand-therapy/)\n[2] Lutetium-177 dotatate (https://nuclide.cc/drugs/lutathera/)"
+  },
+  {
+   "id": "i-09",
+   "audience": "investor",
+   "score": 0.3333333333333333,
+   "met": 1,
+   "total": 3,
+   "missed": [
+    "50,000 patient doses",
+    "spring house"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Nucleus RadioPharma does not make its own cancer drugs; it manufactures and ships radioactive cancer medicines for other companies, which is hard because the drugs decay within days. It is expanding its plants in Minnesota and Pennsylvania. [1] Nucleus RadioPharma is a Rochester, Minnesota contract development and manufacturing organisation (CDMO) dedicated to targeted radiotherapies, offering formulation and analytical development, isotope-flexible supply chain, GMP manufacturing and regulatory support. [1] Jubilant Radiopharma is a radiopharmacy network and the manufacturer of I-131 MIBG (AdreView), Ruby-Fill, and PET tracers. [2] A way of describing how 'pure' a batch of radioactive material is: whether ordinary, non-radioactive atoms of the same element were deliberately or accidentally mixed in during manufacture. [3] Co-PSMA head-to-head data (EAU 2026) showed Cu-64 SAR-bisPSMA more than doubled lesion and patient detection versus Ga-68 PSMA-11; FDA Fast Track in biochemical recurrence; commercial manufacturing agreement with Nucleus RadioPharma (April 2026). [4] Evergreen Theragnostics manufactures radioactive cancer medicines for other companies and develops its own imaging agent for neuroendocrine tumours and a treatment for small cell lung cancer. [5]\n\nSources\n[1] Nucleus RadioPharma (https://nuclide.cc/companies/nucleus-radiopharma/)\n[2] Jubilant Radiopharma (https://nuclide.cc/companies/jubilant-radiopharma/)\n[3] No-carrier-added (n.c.a.) and carrier-added production (https://nuclide.cc/terms/no-carrier-added/)\n[4] Clarity Pharmaceuticals (https://nuclide.cc/companies/clarity-pharmaceuticals/)\n[5] Evergreen Theragnostics (https://nuclide.cc/companies/evergreen-theragnostics/)"
+  },
+  {
+   "id": "i-10",
+   "audience": "investor",
+   "score": 0,
+   "met": 0,
+   "total": 3,
+   "missed": [
+    "225ac-psma-i&t",
+    "225ac-psma-617",
+    "225ac-psma-trillium"
+   ],
+   "retrievalRecall": 0,
+   "answer": "A protein on prostate cancer cells that lets doctors both see the cancer on a PET scan and hit it with a radioactive drug. [1] Companies behind the approved products: FutureChem (ProstaView), Blue Earth Diagnostics (Bracco) (Posluma), Telix Pharmaceuticals (Illuccix), Novartis (Illuccix, Locametz and Pluvicto) and Advanced Accelerator Applications (Novartis) (Locametz). [1] Also working on PSMA: AdvanCell, ARTBIO, Bracco Imaging, Clarity Pharmaceuticals, Convergent Therapeutics, Full-Life Technologies, Nuclidium, Perspective Therapeutics and POINT Biopharma. [1] An Australian biotech building its own supply of the rare radioactive metal lead-212 so it can make alpha-particle cancer therapies, starting with one for prostate cancer. [2] ARTBIO makes cancer treatments that deliver short-range alpha radiation from lead-212 directly to tumour cells, starting with prostate cancer. Its first medicine is in early human trials, currently paused by the company while it reviews data. [3] An Italian company that makes the dyes and tracers doctors use to see inside the body on X-ray, CT, MRI, ultrasound and PET/SPECT scans, and, through a subsidiary, some of the radioactive scans used to find prostate cancer. [4] Alpha-emitting 225Ac-PSMA agents and PSMA-targeted bispecifics and CAR-T are in trials. [1]\n\nSources\n[1] PSMA (https://nuclide.cc/targets/psma/)\n[2] AdvanCell (https://nuclide.cc/companies/advancell/)\n[3] ARTBIO (https://nuclide.cc/companies/artbio/)\n[4] Bracco Imaging (https://nuclide.cc/companies/bracco/)"
+  },
+  {
+   "id": "i-11",
+   "audience": "investor",
+   "score": 0.3333333333333333,
+   "met": 1,
+   "total": 3,
+   "missed": [
+    "research reactors",
+    "hfr"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Molybdenum-99 decays with a 65.94-hour (about 2.75-day) half-life to technetium-99m, and its whole purpose in the supply chain is to act as a transportable parent: its longer half-life lets bulk 99Mo be irradiated, processed and shipped internationally to radiopharmacies, which then load it into 99Mo/99mTc generators and elute the six-hour daughter locally, on demand, for the roughly tens of millions of Tc-99m scans performed worldwide each year. [1] ANSTO runs the OPAL research reactor near Sydney and a molybdenum-99 plant that supplies Australia's nuclear medicine and exports, and produces lutetium-177 for radioligand therapy. [2] Nordion supplies most of the world's cobalt-60, which sterilises single-use bioprocess bags and medical devices and powers Gamma Knife units, and was the largest molybdenum-99 processor until Canada's NRU reactor stopped. [3] Reactor outages cause global shortages. [4]\n\nSources\n[1] Molybdenum-99 (https://nuclide.cc/isotopes/mo-99/)\n[2] ANSTO (Australian Nuclear Science and Technology Organisation) (https://nuclide.cc/companies/ansto/)\n[3] Nordion (Sotera Health) (https://nuclide.cc/companies/nordion/)\n[4] Therapeutic isotope supply chain (Mo-99, Lu-177, Ac-225) (https://nuclide.cc/technologies/therapy-isotope-supply-chain/)"
+  },
+  {
+   "id": "i-12",
+   "audience": "investor",
+   "score": 0.6666666666666666,
+   "met": 2,
+   "total": 3,
+   "missed": [
+    "2017 and 2018"
+   ],
+   "retrievalRecall": 1,
+   "answer": "The parent isotope shipped worldwide to make technetium-99m, the gamma-ray tracer used in the majority of nuclear medicine scans. It is made in a handful of ageing research reactors, and when one breaks down, scans get delayed or cancelled. [1] Molybdenum-99 decays with a 65.94-hour (about 2.75-day) half-life to technetium-99m, and its whole purpose in the supply chain is to act as a transportable parent: its longer half-life lets bulk 99Mo be irradiated, processed and shipped internationally to radiopharmacies, which then load it into 99Mo/99mTc generators and elute the six-hour daughter locally, on demand, for the roughly tens of millions of Tc-99m scans performed worldwide each year. [1] New non-fission routes are diversifying supply: NorthStar's RadioGenix System, which produces 99Mo by neutron activation of enriched or natural molybdenum targets rather than uranium fission, reached commercial scale in the 2020s (though NorthStar separately announced in 2023 a temporary halt to one production line), and Australia's ANSTO and South Africa's NTP Radioisotopes remain major LEU-fission suppliers outside the historic European/Canadian core. [1] NTP, part of South Africa's state nuclear corporation, processes molybdenum-99 and other isotopes from the SAFARI-1 reactor and was the first major producer to switch to low-enriched uranium targets. [2] NTP Radioisotopes, a subsidiary of the South African Nuclear Energy Corporation, irradiates targets in the SAFARI-1 research reactor at Pelindaba and processes molybdenum-99, iodine-131 and lutetium-177 for export to generator makers and radiopharmacies worldwide. [2]\n\nSources\n[1] Molybdenum-99 (https://nuclide.cc/isotopes/mo-99/)\n[2] NTP Radioisotopes (https://nuclide.cc/companies/ntp-radioisotopes/)"
+  },
+  {
+   "id": "p-15",
+   "audience": "patient",
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievalRecall": 1,
+   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] A CT scan is a fast 3D X-ray that shows the size and shape of tumours and whether they have spread. [2] Principle of PET: Positron-emitting isotopes (18F, 68Ga, 89Zr, 64Cu) attached to a targeting molecule; coincidence detection of 511 keV photons; standardised uptake value (SUV) quantifies uptake. [1] Principle of CT: A rotating X-ray source and detector measure attenuation, which is reconstructed into cross-sectional images. [2] Since of PET: 1975. [1] Since of CT: 1971. [2] Status of PET: standard-of-care. [1] Strengths of PET: Whole-body biology in one scan; Quantitative. [1] Strengths of CT: Fast, ubiquitous; Sub-millimetre resolution. [2] Limitations of PET: Resolution ~4 mm; Tracer supply and cost. [1] Limitations of CT: Anatomic only; cannot distinguish scar from live tumour; Radiation dose. [2]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] CT (computed tomography) (https://nuclide.cc/technologies/ct/)"
+  },
+  {
+   "id": "i-13",
+   "audience": "investor",
+   "score": 1,
+   "met": 2,
+   "total": 2,
+   "missed": [],
+   "retrievalRecall": 0.5,
+   "answer": "A drug that finds tumour cells and carries a radioactive atom that irradiates them from inside the body. [1] Companies behind the approved products: Novartis (Netspot, Locametz and Lutathera), Curium (Netspot and Bexlutry) and Advanced Accelerator Applications (Novartis) (Locametz). [1] Also linked to Radioligand therapy: Abdera Therapeutics, Alpha-9 Oncology, Ariceum Therapeutics, ARTBIO, Atomic Alchemy and Clarity Pharmaceuticals. [1] Institutions: All India Institute of Medical Sciences, New Delhi, ANZUP Cancer Trials Group, Comprehensive Cancer Center Mainfranken, University Hospital Würzburg and Curanosticum Wiesbaden-Frankfurt. [1] People: A. Oliver Sartor, Ebrahim S. Delpassand, Emily K. Bergsland and Jason S. Lewis. [1] A second, cheaper version of an already-approved radioactive drug for neuroendocrine tumours has been approved, using the same active radioactive ingredient as the original but made by a different company. [2] A radioactive drug that homes to the PSMA protein on prostate cancer cells helped men with heavily pretreated metastatic prostate cancer live about four months longer, launching radioligand therapy as a mainstream treatment. [3]\n\nSources\n[1] Radioligand therapy (beta emitters) (https://nuclide.cc/technologies/radioligand-therapy/)\n[2] Lutetium-177 dotatate (radioligand equivalent) (https://nuclide.cc/drugs/lu-177-dotatate-generic/)\n[3] VISION: lutetium-177 PSMA-617 radioligand therapy extends survival in advanced prostate cancer (https://nuclide.cc/key-papers/paper-vision-nejm-2021/)"
+  }
+ ],
+ "second": {
+  "set": "src/data/ask-eval.ts askEvalNew (60 questions on the September 2026 kinds: India and China, journals, KEGG maps, companies, investors, complementary approaches, roadmaps)",
+  "questions": 0,
+  "meanScore": 0,
+  "meanRetrievalRecall": 0,
+  "byAudience": {},
+  "before": {
+   "meanScore": 0,
+   "meanRetrievalRecall": 0,
+   "byAudience": {}
+  },
+  "results": []
+ }
+}

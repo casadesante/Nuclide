@@ -39,7 +39,7 @@ export default function EvalPage() {
   return (
     <>
       <PageHeader kicker={<GroupKicker id="learn" />} title="Open evaluation"
-        lede="One hundred questions a patient, carer, clinician, or analyst might ask, each with a grounded expected answer and a rubric of must-mention points. The same rubric scores Nuclide, a search engine, or an AI assistant. Scores are published here in public, every run." />
+        lede={`${benchmark.length} questions a patient, carer, clinician or analyst might ask about radiopharmaceuticals, each with an expected answer grounded in the corpus and a rubric of must-mention points whose phrases are verbatim record text. The same rubric scores Nuclide, a search engine, or an AI assistant. Scores are published here in public, every run.`} />
       <Container className="pb-16">
         <section className="grid gap-3 sm:grid-cols-3">
           <div className="card p-4"><div className="kicker mb-1">Questions</div><div className="text-2xl font-semibold tabular-nums">{benchmark.length}</div><div className="text-xs text-muted">{cats.map((c) => `${counts[c]} ${CAT_LABEL[c].toLowerCase()}`).join(" · ")}</div></div>

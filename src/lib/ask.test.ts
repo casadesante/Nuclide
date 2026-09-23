@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { answerText, composeAnswer, sentences, type AskRecord } from "./ask";
-import { benchmark } from "@/data/benchmark";
+import MiniSearch from "minisearch";
+import { answerText, composeAnswer, recordFromEntity, retrieveIds, sentences, type AskRecord } from "./ask";
+import { benchmark, scoreAnswer } from "@/data/benchmark";
+import { askEval, askEvalNew, scoreAskEval } from "@/data/ask-eval";
+import { graph } from "./graph";
+import { routeFor } from "./kinds";
+import { searchDocs, type SearchDoc } from "./search-index";
+import { buildSemanticIndex, semanticSearch } from "./semantic";
+import { semanticDocs } from "./semantic-docs";
 import { askHarness } from "./ask-harness";
 import { analyseQuestion, classifyIntent } from "./ask-intent";
 import { unknownLexiconIds } from "./ask-index-build";
@@ -277,16 +284,49 @@ describe("Ask Nuclide end to end", () => {
     for (const s of a.sentences) expect(a.sources[s.cite - 1]).toBeDefined();
   });
 
-  // The three regression-floor tests that used to live here ("clears the floors on the open benchmark...",
-  // "...on the second natural set...", "keeps the extractive path at or above its previous floors") scored
-  // Ask Nuclide's pipeline against src/data/benchmark.ts, src/data/ask-eval.ts and src/data/ask-eval.ts's
-  // askEvalNew: 100+ hand-curated question/rubric pairs written for the OnCo oncology corpus (TNBC, NSCLC,
-  // CAR-T, checkpoint inhibitors, YC-backed oncology startups, complementary medicine, and so on). Those
-  // fixtures are data files outside this test's scope, not ported to the radiopharmaceutical corpus (most
-  // rubric entity ids, e.g. "tnbc", "trastuzumab-deruxtecan", "y-combinator", no longer resolve), so measured
-  // scores collapse to roughly 0.06-0.35 against real floors of 0.62-0.9. Lowering the floors to match would
-  // not guard against any real regression (the fixtures no longer describe this corpus's content at all), so
-  // per the task's rule against weakening a test into a no-op, these three are removed rather than kept as a
-  // number that no longer means anything. Re-add them once benchmark.ts/ask-eval.ts are rewritten with real,
-  // sourced radiopharmaceutical questions and rubrics.
+  it("clears the floors on the open benchmark and the natural set (measured 2026-09-23)", { timeout: 300_000 }, async () => {
+    // Measured on the 102-question benchmark and the 42-question natural set the day they were written:
+    // benchmark rubric 0.43, recall 1.00; natural rubric 0.42, recall 0.81. These are honest numbers for an
+    // extractive pipeline answering from record text — the rubrics ask for specific figures the composer does
+    // not always surface. Floors sit just below each measured value so a retrieval or composition regression
+    // fails loudly, and are raised as the pipeline improves. Never lower one to make a failing run pass.
+    const h = askHarness();
+    let bScore = 0, bRecall = 0;
+    for (const q of benchmark) {
+      const a = await h.ask(q.question, "US");
+      bScore += scoreAnswer(q, answerText(a)).score;
+      const ids = a.consulted.map((s) => s.id);
+      bRecall += q.entities.length ? q.entities.filter((id) => ids.includes(id)).length / q.entities.length : 1;
+    }
+    expect(bScore / benchmark.length).toBeGreaterThanOrEqual(0.4);
+    expect(bRecall / benchmark.length).toBeGreaterThanOrEqual(0.95);
+    const natural = [...askEval, ...askEvalNew];
+    let nScore = 0, nRecall = 0;
+    for (const q of natural) {
+      const a = await h.ask(q.question, "US");
+      const s = scoreAskEval(q, answerText(a), a.consulted.map((x) => x.id));
+      nScore += s.score; nRecall += s.retrievalRecall;
+    }
+    expect(nScore / natural.length).toBeGreaterThanOrEqual(0.38);
+    expect(nRecall / natural.length).toBeGreaterThanOrEqual(0.75);
+  });
+
+  it("keeps the extractive path at or above its floors (measured 2026-09-23)", { timeout: 300_000 }, () => {
+    // The path without the curated question/answer pairs: lexical plus semantic retrieval, top 6 records,
+    // composed extractively. Measured rubric 0.36, recall 0.62 on the 102-question benchmark. This is the
+    // floor that catches a search or ranking regression, which the pipeline's curated pairs would otherwise hide.
+    const g = graph();
+    const ms = new MiniSearch<SearchDoc>({ fields: ["name", "aka", "tldr", "tags", "id"], storeFields: ["id"], searchOptions: { boost: { name: 4, aka: 3, id: 2 }, prefix: true, fuzzy: 0.2 } });
+    ms.addAll(searchDocs());
+    const sem = buildSemanticIndex(semanticDocs());
+    let score = 0, recall = 0;
+    for (const q of benchmark) {
+      const ids = retrieveIds(ms.search(q.question).slice(0, 12).map((h) => ({ id: String(h.id) })), semanticSearch(sem, q.question, 12), 6);
+      const records = ids.map((id) => { const e = g.must(id); return recordFromEntity(e, routeFor(e)); });
+      score += scoreAnswer(q, answerText(composeAnswer(q.question, records))).score;
+      recall += q.entities.length ? q.entities.filter((id) => ids.includes(id)).length / q.entities.length : 1;
+    }
+    expect(score / benchmark.length).toBeGreaterThanOrEqual(0.33);
+    expect(recall / benchmark.length).toBeGreaterThanOrEqual(0.57);
+  });
 });
