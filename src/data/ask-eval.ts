@@ -1,5 +1,5 @@
 /**
- * Ask Nuclide natural-question set: 42 questions written the way a patient, a clinician or an investor
+ * Ask Nuclide natural-question set: 46 questions written the way a patient, a clinician or an investor
  * actually types them ("who owns pluvicto", "how long am I radioactive after radioiodine"), each with the
  * records that carry the answer and a rubric of must-mention points (any phrase in a point satisfies it,
  * case-insensitive substring). Complements the open benchmark (benchmark.ts), which is phrased more
@@ -69,6 +69,11 @@ export const askEval: AskEvalQuestion[] = [
   Q("i-11", "investor", "why does a single reactor outage cause a molybdenum-99 shortage so fast", ["mo-99", "b-mo99-supply"], [["65.94-hour", "66 hours"], ["research reactors"], ["hfr", "october 2024"]]),
   Q("i-12", "investor", "who processes molybdenum-99 in south africa", ["ntp-radioisotopes"], [["safari-1"], ["low-enriched uranium"], ["2017 and 2018", "2018"]]),
 
+  // ---------------- lung agents (added with the Technegas, MAA and PSV359 records) ----------------
+  Q("p-16", "patient", "what is the gas they make me breathe for a lung scan", ["technegas"], [["technegas"], ["carbon"], ["breath", "inhal"], ["ventilation"]]),
+  Q("p-17", "patient", "is the injection for a lung perfusion scan safe if I have pulmonary hypertension", ["tc-99m-maa"], [["contraindicated", "deaths have been reported"], ["pulmonary hypertension"], ["particle"]]),
+  Q("c-15", "clinician", "lung shunt fraction threshold before y-90", ["tc-99m-maa"], [["30 gy", "50 gy"], ["20%", "shunt"], ["hepatic artery", "radioembolisation"]]),
+  Q("i-14", "investor", "does telix have a lung cancer programme", ["telix"], [["regeneron"], ["dll3"], ["discovery", "pre-clinical", "no asset"], ["lung cancer"]]),
   // Carried from OnCo's set: still true of this corpus, renumbered to fit the new ids.
   Q("p-15", "patient", "What is the difference between a PET scan and a CT scan?", ["pet", "ct"], [["tracer", "glucose", "fdg", "metabol", "radioactive"], ["x-ray", "anatom", "structure", "cross-section"], ["pet"], ["ct"]]),
   Q("i-13", "investor", "Who are the main companies in radioligand therapy?", ["radioligand-therapy", "novartis"], [["novartis"], ["pluvicto", "lutathera"]]),

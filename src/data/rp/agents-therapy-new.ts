@@ -36,7 +36,7 @@ export const newTherapyAgents: EntityInput[] = [
       { label: "Sirtex: FDA approval for HCC indication (7 July 2025)", url: "https://www.sirtex.com/media/p1kjiw5m/sirtex-medical-announces-fda-approval-hcc-indication-us.pdf" },
       { label: "FDA: original SSED for colorectal indication (2002)", url: "https://www.accessdata.fda.gov/cdrh_docs/pdf/p990065b.pdf" },
     ],
-    related: ["y-90-glass-microspheres", "ho-166-microspheres"],
+    related: ["y-90-glass-microspheres", "ho-166-microspheres", "tc-99m-maa"],
   },
   {
     id: "y-90-glass-microspheres",

@@ -3,37 +3,37 @@
   "file": "ask-2026-09-23.json",
   "system": "Nuclide Ask (intents, entity resolution, templated cited answers; extractive fallback)",
   "date": "2026-09-23",
-  "questions": 102,
-  "meanScore": 0.429,
+  "questions": 108,
+  "meanScore": 0.437,
   "meanRetrievalRecall": 1,
   "byCategory": {
-   "factual": 0.599,
-   "reasoning": 0.32,
-   "procedural": 0.3
+   "factual": 0.612,
+   "reasoning": 0.328,
+   "procedural": 0.282
   },
   "method": "For each question: intent from wording rules; records named in the question resolved by longest match over names and aliases; a template per intent fills sentences from those records' structured fields (TL;DR first), each sentence cited; curated benchmark and patient-question pairs supply records when the question matches closely; sentence retrieval (MiniSearch plus concept index, fused) is the fallback and adds detail. The answer text shown on /ask/ is scored for rubric coverage. No language model.",
   "before": {
    "system": "Nuclide Ask (extractive answer, lexical + concept retrieval, top 6 records)",
-   "meanScore": 0.36,
-   "meanRetrievalRecall": 0.617,
+   "meanScore": 0.362,
+   "meanRetrievalRecall": 0.624,
    "byCategory": {
-    "factual": 0.474,
-    "reasoning": 0.326,
-    "procedural": 0.163
+    "factual": 0.484,
+    "reasoning": 0.317,
+    "procedural": 0.168
    }
   },
   "withoutCuratedPairs": {
-   "meanScore": 0.36,
-   "meanRetrievalRecall": 0.76,
+   "meanScore": 0.354,
+   "meanRetrievalRecall": 0.769,
    "byCategory": {
-    "factual": 0.533,
-    "reasoning": 0.266,
-    "procedural": 0.181
+    "factual": 0.508,
+    "reasoning": 0.276,
+    "procedural": 0.171
    }
   },
   "intents": {
-   "general": 50,
-   "define": 20,
+   "general": 54,
+   "define": 21,
    "compare": 1,
    "results": 8,
    "approval": 5,
@@ -43,12 +43,12 @@
    "cost": 2,
    "companies": 1,
    "who": 2,
-   "mechanism": 3,
+   "mechanism": 4,
    "roadmap": 3
   },
   "templates": {
-   "orientation": 50,
-   "define": 27,
+   "orientation": 54,
+   "define": 28,
    "compare": 1,
    "results": 8,
    "approval": 3,
@@ -56,7 +56,7 @@
    "side-effects": 2,
    "treatments": 2,
    "companies": 1,
-   "mechanism": 2,
+   "mechanism": 3,
    "roadmap": 2,
    "who": 1
   }
@@ -65,13 +65,13 @@
   "file": "nuclide-2026-09-23.json",
   "system": "Nuclide (search-retrieval proxy, top 8 entities)",
   "date": "2026-09-23",
-  "questions": 102,
-  "meanScore": 0.763,
-  "meanRetrievalRecall": 0.546,
+  "questions": 108,
+  "meanScore": 0.757,
+  "meanRetrievalRecall": 0.542,
   "byCategory": {
-   "factual": 0.784,
-   "reasoning": 0.778,
-   "procedural": 0.666
+   "factual": 0.764,
+   "reasoning": 0.787,
+   "procedural": 0.656
   },
   "method": "For each question: MiniSearch retrieval over the site index; rubric coverage of tldr+summary of the top entities. 1 point per rubric item met, normalised to 0-1."
  }

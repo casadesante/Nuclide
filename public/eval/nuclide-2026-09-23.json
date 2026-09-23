@@ -2,13 +2,13 @@
  "summary": {
   "system": "Nuclide (search-retrieval proxy, top 8 entities)",
   "date": "2026-09-23",
-  "questions": 102,
-  "meanScore": 0.763,
-  "meanRetrievalRecall": 0.546,
+  "questions": 108,
+  "meanScore": 0.757,
+  "meanRetrievalRecall": 0.542,
   "byCategory": {
-   "factual": 0.784,
-   "reasoning": 0.778,
-   "procedural": 0.666
+   "factual": 0.764,
+   "reasoning": 0.787,
+   "procedural": 0.656
   },
   "method": "For each question: MiniSearch retrieval over the site index; rubric coverage of tldr+summary of the top entities. 1 point per rubric item met, normalised to 0-1."
  },
@@ -26,7 +26,7 @@
     "mo-99"
    ],
    "retrievalRecall": 1,
-   "answer": "tc-99m-psma-imaging, mo99-tc99m-generators, tc-99m-mdp, technetium-sulfur-colloid, tc-99m, tc-99m-pyrophosphate, mo-99, pexiretide-tc99m"
+   "answer": "tc-99m-psma-imaging, mo99-tc99m-generators, tc-99m-mdp, technetium-sulfur-colloid, tc-99m, tc-99m-pyrophosphate, mo-99, tc-99m-maa"
   },
   {
    "id": "iso-02",
@@ -154,7 +154,7 @@
     "at-211"
    ],
    "retrievalRecall": 1,
-   "answer": "at-211, astatine-211-alpha-therapy, scott-tagawa, tl-201-chloride, paper-strosberg-netter1-qol-jco-2018, docetaxel-then-lu177-psma, idea-total-body-pet-lower-dose-tracers, idea-reg-alpha-emitter-portfolio"
+   "answer": "at-211, astatine-211-alpha-therapy, scott-tagawa, tl-201-chloride, paper-strosberg-netter1-qol-jco-2018, docetaxel-then-lu177-psma, idea-total-body-pet-lower-dose-tracers, estimand"
   },
   {
    "id": "iso2-05",
@@ -541,7 +541,7 @@
    ],
    "retrievedEntities": [],
    "retrievalRecall": 0,
-   "answer": "idea-accelerator-ac225-at-scale, actinium-225-supply, ra-224, ra-223, idea-reg-alpha-emitter-portfolio, idea-reg-legacy-radium-recovery-ac225, ac-225, radium-223"
+   "answer": "idea-accelerator-ac225-at-scale, actinium-225-supply, ra-224, ra-223, idea-reg-legacy-radium-recovery-ac225, idea-reg-alpha-emitter-portfolio, ac-225, radium-223"
   },
   {
    "id": "ther-10",
@@ -1107,7 +1107,7 @@
     "deauville-for-pet"
    ],
    "retrievalRecall": 1,
-   "answer": "deauville-for-pet, curie-siopen-score, fdg-pet-response-adapted-therapy, krenning-score, paper-rathl-interim-pet-adapted-abvd-advanced-hodgkin-nejm-2016, quantitative-imaging-biomarkers, thrombocytopenia, follicular-lymphoma"
+   "answer": "deauville-for-pet, curie-siopen-score, fdg-pet-response-adapted-therapy, krenning-score, paper-rathl-interim-pet-adapted-abvd-advanced-hodgkin-nejm-2016, thrombocytopenia, quantitative-imaging-biomarkers, follicular-lymphoma"
   },
   {
    "id": "term-08",
@@ -1200,7 +1200,7 @@
    ],
    "retrievedEntities": [],
    "retrievalRecall": 0,
-   "answer": "dopamine-transporter, tc-99m-psma-imaging, idea-accelerator-ac225-at-scale, psa-kinetics, idea-total-body-pet-lower-dose-tracers, nct03972657, estimand, curie-siopen-score"
+   "answer": "dopamine-transporter, tc-99m-psma-imaging, idea-accelerator-ac225-at-scale, psa-kinetics, idea-total-body-pet-lower-dose-tracers, estimand, nct03972657, curie-siopen-score"
   },
   {
    "id": "clin-04",
@@ -1438,6 +1438,99 @@
    ],
    "retrievalRecall": 0.5,
    "answer": "therapy-isotope-supply-chain, b-enriched-target-material, idea-reg-medical-isotope-reactor-reserve, isotope-supply-roadmap, estimand, sstr-theranostics-roadmap, idea-tb161-instead-of-lu177, lu177-radioligand-therapy"
+  },
+  {
+   "id": "lung-01",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0.2,
+   "met": 1,
+   "total": 5,
+   "missed": [
+    "technegas",
+    "mismatch",
+    "inhaled",
+    "perfusion"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "idea-tr2-psma-volume-qualification, extravasation-radiopharmaceutical, integrin-avb3, pb-212-vmt-alpha-net, quantitative-imaging-biomarkers, quirem-medical, curie-siopen-score, idea-ai-lesion-segmentation-dosimetry"
+  },
+  {
+   "id": "lung-02",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "technegas"
+   ],
+   "retrievalRecall": 1,
+   "answer": "technegas, nct03972657, alara, estimand, arpi, metastatic-ppgl, idea-reg-isotope-supply-observatory, nct03054870"
+  },
+  {
+   "id": "lung-03",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "tc-99m-maa"
+   ],
+   "retrievalRecall": 1,
+   "answer": "tc-99m-maa, time-activity-curve, specific-activity, nct03972657, effective-half-life, equivalent-dose, gray-unit, paper-pryma-high-specific-activity-i131-mibg-ppgl-jnm-2019"
+  },
+  {
+   "id": "lung-04",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "30 gy",
+    "radiation pneumonitis"
+   ],
+   "retrievedEntities": [
+    "y-90-resin-microspheres"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "y-90, tare, y-90-resin-microspheres, y-90-glass-microspheres, radioembolisation-tare, estimand, idea-neoadjuvant-psma-therapy, nct03972657"
+  },
+  {
+   "id": "lung-05",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "psv359",
+    "fap-alpha"
+   ],
+   "retrievedEntities": [],
+   "retrievalRecall": 0,
+   "answer": "lung-net, astatine-211-alpha-therapy, pb-212-vmt-alpha-net, nsclc, alpha-tau-medical, choline-metabolism-in-cancer, idea-alpha-for-oligometastatic-disease, shandong-cancer-hospital"
+  },
+  {
+   "id": "lung-06",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "65 countries"
+   ],
+   "retrievedEntities": [
+    "technegas"
+   ],
+   "retrievalRecall": 0.3333333333333333,
+   "answer": "technegas, inselspital-bern, paper-jadvar-snmmi-psma-auc-jnm-2022, asnc, idea-reg-yb176-enrichment-capacity, in-111-pentetreotide, idea-regional-radiopharmacy-network, choline-metabolism-in-cancer"
   },
   {
    "id": "prostate-23",

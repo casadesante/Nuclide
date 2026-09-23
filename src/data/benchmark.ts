@@ -1,5 +1,5 @@
 /**
- * The Nuclide open benchmark: 102 questions a patient, carer, clinician or analyst might actually ask
+ * The Nuclide open benchmark: 108 questions a patient, carer, clinician or analyst might actually ask
  * about radiopharmaceuticals — isotope production and supply, imaging protocols, radioligand therapy,
  * dosimetry, approved products, trial readouts, terminology, the non-oncology indications, and the
  * industry's bottlenecks.
@@ -7,7 +7,7 @@
  * Every question is grounded in the corpus: the entity ids listed carry the answer, every figure in an
  * expected answer appears in those records, and every rubric point has at least one accepted phrase that
  * is a verbatim substring of those records' own text. src/data/benchmark.test.ts enforces all of that, so
- * the set cannot drift away from the corpus the way the inherited OnCo set did. 94 questions were written
+ * the set cannot drift away from the corpus the way the inherited OnCo set did. 100 questions were written
  * for this fork; 8 were carried from OnCo's set because they are true of a radiopharmaceutical corpus.
  *
  * A system's free-text answer scores one point per rubric item for which at least one phrase appears
@@ -455,6 +455,31 @@ export const benchmark: Question[] = [
     ["isotope-supply-roadmap", "f-isotope-supply"],
     [["ytterbium-176", "yb-176"], ["darlington"], ["shine"], ["75%"]]),
 
+  // ---------------- Lung: ventilation, perfusion and the lung-cancer programmes ----------------
+  Q("lung-01", "Why does a V/Q scan need two separate radiopharmaceuticals?", "factual", 1, "patient",
+    "Because it compares two maps of the same lungs. Air is mapped with an inhaled agent such as Technegas, and blood flow with injected Tc-99m macroaggregated albumin particles that lodge in the pulmonary capillaries. A clot shows as a segment that is ventilated but not perfused.",
+    ["pulmonary-embolism-vq", "technegas", "tc-99m-maa"],
+    [["technegas"], ["macroaggregated albumin", "maa"], ["mismatch", "ventilated but not perfused"], ["inhaled"], ["perfusion"]]),
+  Q("lung-02", "What exactly is Technegas and why is it better than a wet aerosol in someone with COPD?", "reasoning", 2, "clinician",
+    "It is technetium encapsulated in carbon, made by flash-heating dried Tc-99m pertechnetate in a graphite crucible at about 2,700 C in argon. The particles are nanometre-scale, under 500 nm aerodynamic diameter, so they travel with inspired air to the lung periphery instead of impacting in the central airways the way a wet aerosol such as Tc-99m DTPA does, which is what produces hot spots in obstructive disease.",
+    ["technegas"],
+    [["2,700 c", "carbon crucible", "graphite crucible"], ["500 nm", "nanoparticle"], ["periphery", "lung periphery"], ["dtpa", "central airways", "impact"]]),
+  Q("lung-03", "Why is MAA dosed by number of particles rather than by activity alone?", "reasoning", 3, "clinician",
+    "Each particle works by physically occluding a pulmonary arteriole or capillary, so the safety margin comes from how few of them are given relative to the capillary bed: 200,000 to 700,000 particles for an adult, about 350,000 recommended, down to 10,000 to 50,000 for a neonate. It is contraindicated in severe pulmonary hypertension, where deaths have been reported.",
+    ["tc-99m-maa"],
+    [["200,000 to 700,000", "350,000"], ["10,000 to 50,000", "neonate"], ["capillar", "arteriole"], ["pulmonary hypertension"]]),
+  Q("lung-04", "What scan is done before Y-90 radioembolisation and what is it looking for?", "procedural", 2, "clinician",
+    "Tc-99m MAA injected into the hepatic artery, imaged to estimate the lung shunt fraction, because hepatopulmonary shunting can deliver enough dose to the lungs to cause radiation pneumonitis. The usual constraint is a lung mean dose of 30 Gy from one treatment or 50 Gy cumulative, and a shunt above 20% has traditionally ruled out resin microspheres.",
+    ["tc-99m-maa", "y-90-resin-microspheres"],
+    [["lung shunt fraction", "shunt"], ["hepatic artery"], ["30 gy", "50 gy"], ["radiation pneumonitis"]]),
+  Q("lung-05", "Is any alpha therapy actually being tested in lung cancer?", "factual", 2, "analyst",
+    "Yes, one. Perspective Therapeutics' lead-212 PSV359 targets FAP-alpha on cancer-associated fibroblasts; in September 2026 its phase 1/2 trial NCT06710756 was amended with Merck to add cohorts combining it with pembrolizumab in FAP-alpha-positive non-small cell lung cancer and colorectal cancer.",
+    ["pb-212-psv359"],
+    [["psv359"], ["fap-alpha", "fibroblast activation protein"], ["pembrolizumab"], ["non-small cell lung cancer", "nsclc"]]),
+  Q("lung-06", "Technegas has been used abroad for decades, so why did American hospitals only get it in 2023?", "factual", 2, "analyst",
+    "The FDA approved it on 29 September 2023 under NDA 022335, held by Cyclomedica Australia, after the CYC-009 phase 3 study comparing it with xenon-133 planar imaging. It was already sold in 65 countries with more than 5 million procedures performed; US revenue-generating sites went from 35 in June 2025 to 83 by August 2026.",
+    ["technegas", "cyclopharm", "nct03054870"],
+    [["29 september 2023", "nda 022335"], ["xenon-133"], ["65 countries", "5 million"], ["cyclomedica", "cyclopharm"]]),
   // ---------------- Carried over from the fork's own set ----------------
   Q("prostate-23", "What is theranostics and what is the best-known example?", "factual", 1, "patient",
     "Using the same targeting molecule for a diagnostic scan and a treatment: PSMA PET shows where prostate cancer is, and 177Lu-PSMA-617 (Pluvicto) delivers radiation to the same target.",

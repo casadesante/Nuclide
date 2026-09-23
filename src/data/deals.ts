@@ -79,6 +79,16 @@ export const deals: Deal[] = [
     upfront: "$350m in cash at closing", total: "up to $750m including $400m in earn-out and milestone payments", territories: "Company acquisition; completed 22 July 2025", refs: ["amyloid-beta", "pet"],
     note: "Diagnostics beyond cancer: the buyer of PSMA imaging bought amyloid imaging, as anti-amyloid drugs made PET a gate to treatment.",
     source: "https://investor.lantheus.com/node/15966/pdf", status: "closed" },
+  { id: "d-2025-telix-imaginab", date: "2025-01-13", type: "acquisition", from: x("ImaginAb", "US"), to: c("telix", "Telix Pharmaceuticals"),
+    assets: [], assetText: "Early-stage therapeutic candidates against DLL3 and integrin alpha-v beta-6, a biologics technology platform and a protein engineering and discovery facility",
+    upfront: "$45m: $10m cash and $31m equity at closing, plus up to $4m deferred equity", total: "up to $185m in development and commercial milestones, with low single-digit royalties", territories: "Asset purchase", refs: ["dll3", "sclc"],
+    note: "The DLL3 candidate is aimed at small-cell lung cancer, and is the closest Telix has to a lung programme: discovery stage, with no TLX code or isotope assigned and no place on the published pipeline.",
+    source: "https://www.sec.gov/Archives/edgar/data/2007191/000200719125000003/frelease.htm", status: "closed" },
+  { id: "d-2026-telix-regeneron", date: "2026-04-13", type: "co-development", from: x("Regeneron Pharmaceuticals", "US"), to: c("telix", "Telix Pharmaceuticals"),
+    assets: [], assetText: "Four initial radiopharmaceutical therapy programmes built on Regeneron antibodies from VelocImmune mice, plus jointly developed diagnostics; Telix contributes radiolabelling, manufacturing and supply",
+    upfront: "$40m non-refundable payment to Telix", total: "equal share of global commercialisation costs and profits, or up to $2.1bn in aggregate milestones plus low double-digit royalties if Telix opts out of co-funding", territories: "Global, with an option to expand to four further programmes", refs: ["nsclc", "radioligand-therapy"],
+    note: "Telix's second-quarter 2026 results describe the collaboration as initially focused on lung cancer. No target, isotope or candidate code has been disclosed and nothing is in the clinic.",
+    source: "https://telixpharma.com/news-views/telix-and-regeneron-announce-strategic-radiopharma-collaboration/", status: "announced" },
 ];
 
 export const DEAL_TYPE_LABEL: Record<DealType, string> = { licence: "Licence", acquisition: "Acquisition", "co-development": "Co-development", option: "Option" };

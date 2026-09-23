@@ -112,7 +112,7 @@ export const lungIndications: EntityInput[] = [
       { year: 2025, title: "Ninth-edition TNM takes effect on 1 January", note: "N2 splits into N2a and N2b, M1c into M1c1 and M1c2; T categories unchanged.", refs: ["pet-ct"] },
       { year: 2026, title: "China approves technetium (99mTc) pexiretide for nodal staging", note: "NMPA approval on 2 April 2026 of an integrin alpha-v-beta-3 RGD peptide for SPECT/CT assessment of regional lymph nodes in suspected lung cancer.", refs: ["pexiretide-tc99m"] },
     ],
-    pipeline: ["pexiretide-tc99m", "ga-68-fapi-46", "fapi-pet", "f-18-fluorothymidine", "nct06107374", "nct07276789"],
+    pipeline: ["pexiretide-tc99m", "ga-68-fapi-46", "fapi-pet", "f-18-fluorothymidine", "pb-212-psv359", "nct06107374", "nct07276789"],
     openProblems: [
       "FDG PET misses about a quarter of mediastinal nodal metastases, so a negative mediastinum on PET does not reliably spare a patient invasive staging when the pre-test probability is high.",
       "False positives are frequent enough that a PET-positive mediastinal node cannot be treated as proof of spread; the money saved by skipping mediastinoscopy was judged not to justify the error rate.",
@@ -158,7 +158,7 @@ export const lungIndications: EntityInput[] = [
       { label: "18F-FLT and 18F-FDG uptake versus Ki-67 in NSCLC (Eur J Nucl Med Mol Imaging, 2007)", url: "https://doi.org/10.1007/s00259-007-0449-7" },
       { label: "68Ga-FAPI-04 PET/CT in NSCLC: nodal metastasis and FAP expression (J Nucl Med, 2024)", url: "https://doi.org/10.2967/jnumed.123.266806" },
     ],
-    related: ["sclc", "lung-net", "f-18", "tc-99m", "ga-68"],
+    related: ["sclc", "lung-net", "f-18", "tc-99m", "ga-68", "pb-212-psv359", "pulmonary-embolism-vq"],
     indications: ["sclc", "lung-net"],
     technologies: ["fdg-pet", "pet-ct", "ct", "spect-ct", "fapi-pet", "radiomics"],
     targets: ["glut-hexokinase", "fap", "integrin-avb3"],

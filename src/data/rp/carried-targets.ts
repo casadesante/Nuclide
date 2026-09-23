@@ -184,7 +184,7 @@ export const carriedTargets: EntityInput[] = [
     "asOf": "2026-09-04",
     "wikipedia": "https://en.wikipedia.org/wiki/DLL3",
     "tldr": "A protein that appears on the surface of small-cell lung cancer cells, now hit by a drug that pulls T cells onto them.",
-    "summary": "Delta-like ligand 3 is an inhibitory Notch ligand aberrantly surface-expressed in ~85% of small-cell lung cancer and neuroendocrine prostate cancer. The first DLL3 ADC (rovalpituzumab tesirine) failed; the T-cell engager tarlatamab (Imdelltra) succeeded, with a survival benefit in second-line SCLC (DeLLphi-304). Trispecifics and CAR-T follow.",
+    "summary": "Delta-like ligand 3 is an inhibitory Notch ligand aberrantly surface-expressed in ~85% of small-cell lung cancer and neuroendocrine prostate cancer. The first DLL3 ADC (rovalpituzumab tesirine) failed; the T-cell engager tarlatamab (Imdelltra) succeeded, with a survival benefit in second-line SCLC (DeLLphi-304). Trispecifics and CAR-T follow. For radiopharmaceuticals it is a target in waiting rather than in use: no DLL3 radioligand is in the clinic, and the nearest commitment is the discovery-stage DLL3 programme Telix acquired from ImaginAb in January 2025, which carries no candidate code or isotope. A surface antigen present on most small-cell lung cancers, in a disease where a scan-then-treat pair does not yet exist, is the obvious place for one.",
     "biology": "Normally intracellular Golgi protein; ASCL1-driven neuroendocrine lineage exposes it on the membrane.",
     "whereFound": [
       "Small-cell lung cancer",

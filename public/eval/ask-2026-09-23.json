@@ -2,37 +2,37 @@
  "summary": {
   "system": "Nuclide Ask (intents, entity resolution, templated cited answers; extractive fallback)",
   "date": "2026-09-23",
-  "questions": 102,
-  "meanScore": 0.429,
+  "questions": 108,
+  "meanScore": 0.437,
   "meanRetrievalRecall": 1,
   "byCategory": {
-   "factual": 0.599,
-   "reasoning": 0.32,
-   "procedural": 0.3
+   "factual": 0.612,
+   "reasoning": 0.328,
+   "procedural": 0.282
   },
   "method": "For each question: intent from wording rules; records named in the question resolved by longest match over names and aliases; a template per intent fills sentences from those records' structured fields (TL;DR first), each sentence cited; curated benchmark and patient-question pairs supply records when the question matches closely; sentence retrieval (MiniSearch plus concept index, fused) is the fallback and adds detail. The answer text shown on /ask/ is scored for rubric coverage. No language model.",
   "before": {
    "system": "Nuclide Ask (extractive answer, lexical + concept retrieval, top 6 records)",
-   "meanScore": 0.36,
-   "meanRetrievalRecall": 0.617,
+   "meanScore": 0.362,
+   "meanRetrievalRecall": 0.624,
    "byCategory": {
-    "factual": 0.474,
-    "reasoning": 0.326,
-    "procedural": 0.163
+    "factual": 0.484,
+    "reasoning": 0.317,
+    "procedural": 0.168
    }
   },
   "withoutCuratedPairs": {
-   "meanScore": 0.36,
-   "meanRetrievalRecall": 0.76,
+   "meanScore": 0.354,
+   "meanRetrievalRecall": 0.769,
    "byCategory": {
-    "factual": 0.533,
-    "reasoning": 0.266,
-    "procedural": 0.181
+    "factual": 0.508,
+    "reasoning": 0.276,
+    "procedural": 0.171
    }
   },
   "intents": {
-   "general": 50,
-   "define": 20,
+   "general": 54,
+   "define": 21,
    "compare": 1,
    "results": 8,
    "approval": 5,
@@ -42,12 +42,12 @@
    "cost": 2,
    "companies": 1,
    "who": 2,
-   "mechanism": 3,
+   "mechanism": 4,
    "roadmap": 3
   },
   "templates": {
-   "orientation": 50,
-   "define": 27,
+   "orientation": 54,
+   "define": 28,
    "compare": 1,
    "results": 8,
    "approval": 3,
@@ -55,7 +55,7 @@
    "side-effects": 2,
    "treatments": 2,
    "companies": 1,
-   "mechanism": 2,
+   "mechanism": 3,
    "roadmap": 2,
    "who": 1
   }
@@ -143,7 +143,7 @@
     "lu-177"
    ],
    "retrievalRecall": 1,
-   "answer": "Lutetium-177 dotatate was the first modern radioligand therapy (2018), for neuroendocrine tumours, and is now used in first line. [1] A radioactive metal with a one-hour lifetime that is eluted from a shielded generator or made on a cyclotron and attached to a molecule that finds tumours, giving a PET scan the same day. [2] A radioactive metal that gives off short-range radiation. Attached to a molecule that sticks to a tumour, it irradiates the tumour from the inside while sparing most healthy tissue. [3] Gallium-68 decays with a 67.7-minute half-life, mostly by positron emission, and is the diagnostic half of two of the most important theranostic pairs in oncology: 68Ga-DOTATATE/DOTATOC paired with 177Lu-DOTATATE for neuroendocrine tumours, and 68Ga-PSMA-11 paired with 177Lu-PSMA-617 or 225Ac-PSMA for prostate cancer. [2] Before starting the neuroendocrine tumour treatment Lutathera, patients get a somatostatin-receptor PET scan to confirm the tumour actually has the right target for the drug to lock onto. [4] Lutathera targets the same somatostatin receptor (SSTR2) that 68Ga-DOTATATE PET images, so the diagnostic scan doubles as the biomarker test confirming a tumour expresses enough receptor to be worth treating, and later as the response-assessment tool. [4] In people with a slow-growing gut cancer, the radioactive treatment lutetium-177 dotatate did not just shrink tumours for longer - it also kept their day-to-day quality of life, including energy, pain and diarrhoea, better for much longer than the older drug it was compared with. [5] TTD was significantly longer with 177Lu-Dotatate across every domain tested: global health status (HR 0.406), physical functioning (HR 0.518), role functioning (HR 0.580), fatigue (HR 0.621), pain (HR 0.566), diarrhoea (HR 0.473), disease-related worries (HR 0.572) and body image (HR 0.425). [5]\n\nSources\n[1] Lutetium-177 dotatate (https://nuclide.cc/drugs/lutathera/)\n[2] Gallium-68 (https://nuclide.cc/isotopes/ga-68/)\n[3] Lutetium-177 (https://nuclide.cc/isotopes/lu-177/)\n[4] 68Ga-DOTATATE PET before Lutathera (177Lu-DOTATATE) (https://nuclide.cc/pairings/ga68-dotatate-then-lutathera/)\n[5] Health-related quality of life in the NETTER-1 trial of 177Lu-Dotatate (https://nuclide.cc/key-papers/paper-strosberg-netter1-qol-jco-2018/)"
+   "answer": "Lutetium-177 dotatate was the first modern radioligand therapy (2018), for neuroendocrine tumours, and is now used in first line. [1] A radioactive metal with a one-hour lifetime that is eluted from a shielded generator or made on a cyclotron and attached to a molecule that finds tumours, giving a PET scan the same day. [2] A radioactive metal that gives off short-range radiation. Attached to a molecule that sticks to a tumour, it irradiates the tumour from the inside while sparing most healthy tissue. [3] Gallium-68 decays with a 67.7-minute half-life, mostly by positron emission, and is the diagnostic half of two of the most important theranostic pairs in oncology: 68Ga-DOTATATE/DOTATOC paired with 177Lu-DOTATATE for neuroendocrine tumours, and 68Ga-PSMA-11 paired with 177Lu-PSMA-617 or 225Ac-PSMA for prostate cancer. [2] In people with a slow-growing gut cancer, the radioactive treatment lutetium-177 dotatate did not just shrink tumours for longer - it also kept their day-to-day quality of life, including energy, pain and diarrhoea, better for much longer than the older drug it was compared with. [4] TTD was significantly longer with 177Lu-Dotatate across every domain tested: global health status (HR 0.406), physical functioning (HR 0.518), role functioning (HR 0.580), fatigue (HR 0.621), pain (HR 0.566), diarrhoea (HR 0.473), disease-related worries (HR 0.572) and body image (HR 0.425). [4] China's state-backed isotope and nuclear medicine group: it makes the radioactive material and the medicines that use it. [5] Jonathan Strosberg was principal investigator of NETTER-1, which showed 177Lu-DOTATATE reduces the risk of progression by 79% in midgut neuroendocrine tumours and led to Lutathera's approval, the first radioligand therapy approved for a solid tumour and the template for PSMA-targeted therapy. [6]\n\nSources\n[1] Lutetium-177 dotatate (https://nuclide.cc/drugs/lutathera/)\n[2] Gallium-68 (https://nuclide.cc/isotopes/ga-68/)\n[3] Lutetium-177 (https://nuclide.cc/isotopes/lu-177/)\n[4] Health-related quality of life in the NETTER-1 trial of 177Lu-Dotatate (https://nuclide.cc/key-papers/paper-strosberg-netter1-qol-jco-2018/)\n[5] China Isotope & Radiation Corporation (https://nuclide.cc/companies/china-isotope-radiation/)\n[6] Jonathan R. Strosberg (https://nuclide.cc/people/jonathan-strosberg/)"
   },
   {
    "id": "iso-06",
@@ -563,18 +563,16 @@
    "id": "ther-02",
    "category": "factual",
    "difficulty": 1,
-   "score": 0.75,
-   "met": 3,
+   "score": 1,
+   "met": 4,
    "total": 4,
-   "missed": [
-    "phase 3"
-   ],
+   "missed": [],
    "retrievedEntities": [
     "targeted-alpha-therapy",
     "pluvicto"
    ],
    "retrievalRecall": 1,
-   "answer": "Prostate cancer is the home of theranostics: PSMA PET finds it, PSMA radioligands treat it. Hormonal therapy remains the foundation, with PARP and AKT inhibitors added by genotype. [1] A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [2] A protein on prostate cancer cells that lets doctors both see the cancer on a PET scan and hit it with a radioactive drug. [3] Alpha therapy after beta failure produces responses in PSMA-refractory disease. [4] The first published report of two men with very advanced prostate cancer, who had run out of other options, having their cancer disappear on scans after treatment with an alpha-emitting radioactive drug aimed at PSMA. [5] When the standard radioactive prostate cancer treatment (177Lu-PSMA) stops working, some clinics switch to a more powerful alpha-particle version (225Ac-PSMA) as a rescue option. [6] It took until 2020-2022 for scans and treatments that target it to reach approval, but once they did, PSMA PET and Pluvicto changed how metastatic prostate cancer is staged and treated, and the same target is now being tried earlier in the disease and with more powerful alpha particles. [7] Neuroendocrine prostate cancer is a form that has stopped depending on the androgen receptor, either from the start or after years of hormone therapy. [8]\n\nSources\n[1] Prostate cancer (https://nuclide.cc/indications/prostate/)\n[2] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[3] PSMA (https://nuclide.cc/targets/psma/)\n[4] Targeted alpha therapy (https://nuclide.cc/technologies/targeted-alpha-therapy/)\n[5] 225Ac-PSMA-617 for PSMA-targeted alpha-radiation therapy of metastatic castration-resistant prostate cancer (https://nuclide.cc/key-papers/paper-kratochwil-ac225-psma-jnm-2016/)\n[6] 177Lu-PSMA-617 then 225Ac-PSMA rescue therapy (https://nuclide.cc/pairings/beta-psma-then-alpha-psma-rescue/)\n[7] PSMA theranostics roadmap: antigen discovery → PSMA PET → 177Lu-PSMA-617 → earlier lines and alpha (https://nuclide.cc/roadmaps/psma-theranostics-roadmap/)\n[8] Neuroendocrine and small-cell prostate cancer (https://nuclide.cc/indications/prostate-nepc/)"
+   "answer": "Prostate cancer is the home of theranostics: PSMA PET finds it, PSMA radioligands treat it. Hormonal therapy remains the foundation, with PARP and AKT inhibitors added by genotype. [1] A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [2] A protein on prostate cancer cells that lets doctors both see the cancer on a PET scan and hit it with a radioactive drug. [3] Alpha therapy after beta failure produces responses in PSMA-refractory disease. [4] The first published report of two men with very advanced prostate cancer, who had run out of other options, having their cancer disappear on scans after treatment with an alpha-emitting radioactive drug aimed at PSMA. [5] When the standard radioactive prostate cancer treatment (177Lu-PSMA) stops working, some clinics switch to a more powerful alpha-particle version (225Ac-PSMA) as a rescue option. [6] Neuroendocrine prostate cancer is a form that has stopped depending on the androgen receptor, either from the start or after years of hormone therapy. [7] The phase 3 trials that will decide whether alpha-emitting PSMA drugs become the next step after Pluvicto. [8]\n\nSources\n[1] Prostate cancer (https://nuclide.cc/indications/prostate/)\n[2] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[3] PSMA (https://nuclide.cc/targets/psma/)\n[4] Targeted alpha therapy (https://nuclide.cc/technologies/targeted-alpha-therapy/)\n[5] 225Ac-PSMA-617 for PSMA-targeted alpha-radiation therapy of metastatic castration-resistant prostate cancer (https://nuclide.cc/key-papers/paper-kratochwil-ac225-psma-jnm-2016/)\n[6] 177Lu-PSMA-617 then 225Ac-PSMA rescue therapy (https://nuclide.cc/pairings/beta-psma-then-alpha-psma-rescue/)\n[7] Neuroendocrine and small-cell prostate cancer (https://nuclide.cc/indications/prostate-nepc/)\n[8] AlphaBreak (FPI-2265) & AcTION (225Ac-PSMA-617) (https://nuclide.cc/trials/alphabreak/)"
   },
   {
    "id": "ther-03",
@@ -809,7 +807,7 @@
     "choline-c11"
    ],
    "retrievalRecall": 1,
-   "answer": "A prostate-cancer-specific PET scan that finds spread far earlier than CT or bone scan, and tells you whether a matched radioactive drug will work. [1] Piflufolastat F-18 (Pylarify) is the leading PSMA PET tracer for prostate cancer, with a new formulation approved in March 2026. [2] Gallium-68 PSMA-11 was the first PSMA PET tracer approved in the US (2020), and is made on site from a generator or cyclotron. [3] Most PSMA treatments use one molecule to take the pre-treatment scan and a slightly different molecule for the actual treatment, so the scan is only an approximate guide. [4] A copper-based pair uses the identical molecule for both steps, just with a different form of copper, so the scan should be a much truer preview of where the treatment radiation will go. [4] New whole-body scanners are so much more sensitive than standard PET machines that they can produce a clear picture using a small fraction of the usual radioactive tracer dose. [5] Urologist who co-led proPSMA, the trial that showed PSMA PET should replace CT and bone scan for staging prostate cancer. [6] Not every prostate cancer cell carries the same marker: some show the PSMA protein that most scans target, others show a different marker called GRPR instead. [7]\n\nSources\n[1] PSMA PET (https://nuclide.cc/technologies/psma-pet/)\n[2] Piflufolastat F-18 / Pylarify TruVu (https://nuclide.cc/drugs/pylarify/)\n[3] Gallium-68 gozetotide (PSMA-11) (https://nuclide.cc/drugs/ga68-psma-11/)\n[4] A single-molecule copper-64/copper-67 pair instead of switching ligands between scan and treatment (https://nuclide.cc/ideas/idea-copper-theranostic-pair-standard/)\n[5] Using total-body PET's sensitivity to cut diagnostic tracer dose, not just scan time (https://nuclide.cc/ideas/idea-total-body-pet-lower-dose-tracers/)\n[6] Declan G. Murphy (https://nuclide.cc/people/declan-murphy/)\n[7] Bispecific PSMA/GRPR radioligands for discordant prostate cancer lesions (https://nuclide.cc/ideas/idea-bispecific-radioligands/)"
+   "answer": "A prostate-cancer-specific PET scan that finds spread far earlier than CT or bone scan, and tells you whether a matched radioactive drug will work. [1] Piflufolastat F-18 (Pylarify) is the leading PSMA PET tracer for prostate cancer, with a new formulation approved in March 2026. [2] Gallium-68 PSMA-11 was the first PSMA PET tracer approved in the US (2020), and is made on site from a generator or cyclotron. [3] Most PSMA treatments use one molecule to take the pre-treatment scan and a slightly different molecule for the actual treatment, so the scan is only an approximate guide. [4] A copper-based pair uses the identical molecule for both steps, just with a different form of copper, so the scan should be a much truer preview of where the treatment radiation will go. [4] A version of the PSMA prostate cancer scan that uses the same cheap, widely available radioactive tag as a standard bone scan instead of the PET tracers. [5] New whole-body scanners are so much more sensitive than standard PET machines that they can produce a clear picture using a small fraction of the usual radioactive tracer dose. [6] Urologist who co-led proPSMA, the trial that showed PSMA PET should replace CT and bone scan for staging prostate cancer. [7]\n\nSources\n[1] PSMA PET (https://nuclide.cc/technologies/psma-pet/)\n[2] Piflufolastat F-18 / Pylarify TruVu (https://nuclide.cc/drugs/pylarify/)\n[3] Gallium-68 gozetotide (PSMA-11) (https://nuclide.cc/drugs/ga68-psma-11/)\n[4] A single-molecule copper-64/copper-67 pair instead of switching ligands between scan and treatment (https://nuclide.cc/ideas/idea-copper-theranostic-pair-standard/)\n[5] Technetium Tc-99m PSMA agents (PSMA-I&S) (https://nuclide.cc/drugs/tc-99m-psma-imaging/)\n[6] Using total-body PET's sensitivity to cut diagnostic tracer dose, not just scan time (https://nuclide.cc/ideas/idea-total-body-pet-lower-dose-tracers/)\n[7] Declan G. Murphy (https://nuclide.cc/people/declan-murphy/)"
   },
   {
    "id": "drug-06",
@@ -1776,6 +1774,111 @@
    ],
    "retrievalRecall": 1,
    "answer": "The radioactive ingredients in these medicines are made in a small number of ageing reactors and accelerators worldwide, and demand is now growing faster than that supply. [1] Every radiopharmaceutical begins as an isotope made in a reactor or accelerator, and the whole field sits on a genuinely fragile production base. [1] Roughly 95% of the world's molybdenum-99 (the parent of technetium-99m, used in about 30 million SPECT scans a year, 80% of all nuclear medicine imaging) comes from a handful of research reactors in South Africa, the Netherlands, Belgium and Australia; because Mo-99's half-life is 66 hours it cannot be stockpiled, so a reactor outage cancels scans within days (OECD-NEA, 2025 review of medical radioisotope supply). [1] Cancer-seeking molecules carrying the radioactive metal lutetium-177, which delivers short-range radiation to tumours it binds; approved for neuroendocrine tumours and prostate cancer. [2] The radioactive ingredients that make theranostics work come from a small number of ageing nuclear reactors, generators and accelerators around the world. A shortage anywhere in that chain delays cancer scans and treatments; new non-uranium and accelerator-based production lines are being built to fix that, but they take years and hundreds of millions of dollars. [3]\n\nSources\n[1] Isotope supply (https://nuclide.cc/fronts/f-isotope-supply/)\n[2] Lutetium-177 radioligand therapy (https://nuclide.cc/technologies/lu177-radioligand-therapy/)\n[3] Isotope supply roadmap: reactor dependence → non-uranium production → accelerator-made actinium (https://nuclide.cc/roadmaps/isotope-supply-roadmap/)"
+  },
+  {
+   "id": "lung-01",
+   "category": "factual",
+   "difficulty": 1,
+   "score": 0.4,
+   "met": 2,
+   "total": 5,
+   "missed": [
+    "mismatch",
+    "inhaled",
+    "perfusion"
+   ],
+   "retrievedEntities": [
+    "pulmonary-embolism-vq",
+    "technegas",
+    "tc-99m-maa"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A drug that finds tumour cells and carries a radioactive atom that irradiates them from inside the body. [1] 177Lu emits beta particles with ~2 mm range and gamma photons for SPECT imaging; the ligand determines biodistribution. [1] Strengths: Systemic, whole-body targeting of microscopic disease; Crossfire kills antigen-negative neighbours. [1] A puff of radioactive carbon particles so fine they travel with the breath into the depths of the lung, where they stick. A gamma camera then photographs which parts of the lung are getting air, which is compared with a second scan showing which parts are getting blood. [2] Tiny clumps of albumin, a normal blood protein, tagged with a radioactive marker and injected into a vein. They wedge briefly in the smallest blood vessels of the lung wherever blood is flowing, so the scan maps the lung's blood supply; the clumps then break up and clear. [3]\n\nSources\n[1] Radioligand therapy (beta emitters) (https://nuclide.cc/technologies/radioligand-therapy/)\n[2] Technegas (technetium Tc-99m labelled carbon inhalation aerosol) (https://nuclide.cc/drugs/technegas/)\n[3] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)"
+  },
+  {
+   "id": "lung-02",
+   "category": "reasoning",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "technegas"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A puff of radioactive carbon particles so fine they travel with the breath into the depths of the lung, where they stick. A gamma camera then photographs which parts of the lung are getting air, which is compared with a second scan showing which parts are getting blood. [1] Technegas is an inhaled ventilation agent generated at the bedside: a Technegas generator flash-heats dried Tc-99m pertechnetate in a carbon crucible at roughly 2,700 C in argon, producing technetium encapsulated in carbon nanoparticle agglomerates measured at 60-160 nm, themselves built from 7-23 nm primary particles, with a radioactivity aerodynamic diameter below 500 nm. [1] That size is the point: unlike a wet aerosol such as Tc-99m DTPA, which impacts in the central airways and gives hot spots in obstructive disease, Technegas distributes to the lung periphery and holds still long enough to image in multiple projections. [1] Dried sodium pertechnetate Tc-99m is loaded into a graphite crucible and flash-heated to about 2,700 C for a few seconds in high-purity argon, which encapsulates the technetium inside carbon. The product is an ultrafine dispersion of carbon nanoparticle agglomerates with a radioactivity aerodynamic diameter under 500 nm, small enough to behave much like a gas: it follows inspired air to the alveoli rather than impacting in the large airways, then deposits and stays put, so the image is a map of where air actually reaches. Made with an argon/oxygen mix instead, the same generator yields Pertechnegas, whose technetium is not fully encased and which clears rapidly as soluble pertechnetate. [1] First approved in US in 2023 for Visualisation of pulmonary ventilation, and evaluation of pulmonary embolism when paired with perfusion imaging, in adults and children aged 6 and over. [1] Sold as Technegas. [1] The trial that got Technegas approved in the United States: it compared the inhaled carbon aerosol against xenon-133 gas, the agent it was meant to replace. [2]\n\nSources\n[1] Technegas (technetium Tc-99m labelled carbon inhalation aerosol) (https://nuclide.cc/drugs/technegas/)\n[2] CYC-009: Technegas versus xenon-133 ventilation imaging (https://nuclide.cc/trials/nct03054870/)"
+  },
+  {
+   "id": "lung-03",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "200,000 to 700,000",
+    "10,000 to 50,000",
+    "capillar",
+    "pulmonary hypertension"
+   ],
+   "retrievedEntities": [
+    "tc-99m-maa"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Tiny clumps of albumin, a normal blood protein, tagged with a radioactive marker and injected into a vein. They wedge briefly in the smallest blood vessels of the lung wherever blood is flowing, so the scan maps the lung's blood supply; the clumps then break up and clear. [1] Dosing is by particle count rather than activity alone. [1] It is always shorter than either process acting alone, and it is the number that actually drives how much radiation dose an organ receives. [2] Higher specific activity means more radioactive atoms are packed onto the targeting molecules, so fewer 'cold' (non-radioactive) copies compete for the same receptors. [3] The qualitative terms carrier-free, no-carrier-added (n.c.a.) and carrier-added describe roughly how much stable-isotope carrier is present without stating a number; a 2018 international nomenclature consensus recommends always reporting the measured specific or molar activity rather than relying on these qualitative labels alone. [3]\n\nSources\n[1] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)\n[2] Effective half-life (https://nuclide.cc/terms/effective-half-life/)\n[3] Specific activity and molar activity (https://nuclide.cc/terms/specific-activity/)"
+  },
+  {
+   "id": "lung-04",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "lung shunt fraction",
+    "hepatic artery",
+    "30 gy",
+    "radiation pneumonitis"
+   ],
+   "retrievedEntities": [
+    "tc-99m-maa",
+    "y-90-resin-microspheres"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Millions of tiny radioactive glass or resin beads are injected into the liver artery, lodging in the tumour and irradiating it from within. [1] Tiny clumps of albumin, a normal blood protein, tagged with a radioactive marker and injected into a vein. They wedge briefly in the smallest blood vessels of the lung wherever blood is flowing, so the scan maps the lung's blood supply; the clumps then break up and clear. [2]\n\nSources\n[1] Radioembolisation (TARE / SIRT, yttrium-90) (https://nuclide.cc/technologies/radioembolisation-tare/)\n[2] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)"
+  },
+  {
+   "id": "lung-05",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "pb-212-psv359"
+   ],
+   "retrievalRecall": 1,
+   "answer": "The cancer that kills more people than any other, and the reason most PET scanners are busy. Most cases are found once the disease has already spread, and a scan with radioactive sugar is what decides who can still be cured by surgery. [1] A drug that homes to the scaffolding cells tumours build around themselves, carrying a radioactive metal that fires alpha particles over a very short range. A matching scan version shows first whether a patient's tumour has the target. [2] Therapy is the gap: no radiopharmaceutical is approved to treat lung cancer of any histology anywhere, and the alpha-emitting DLL3 programmes now in the clinic are aimed at small-cell disease, which has its own record. [1] FAP-alpha is attractive because it is present in the stroma of most epithelial cancers and nearly absent from normal adult tissue, and because high expression tracks with poor prognosis in non-small cell lung, colorectal, pancreatic, gastric, mesothelioma, head and neck, oesophageal and ovarian cancers. [2] On 14 September 2026 Perspective announced a clinical collaboration and supply agreement with Merck under which the trial is amended to add cohorts combining [212Pb]PSV359 with pembrolizumab in FAP-alpha-positive non-small cell lung cancer and colorectal cancer. [2] A drug that targets a marker on neuroendocrine tumour cells is being tested with two versions of a radioactive metal: one lets doctors see where the tumour is on a scan, and the other delivers a strong, short-range dose of radiation to kill the tumour cells. [3] Lung neuroendocrine tumours, called typical and atypical carcinoids, are slow-growing tumours of the airways that are usually cured by surgery. [4]\n\nSources\n[1] Non-small cell lung cancer (https://nuclide.cc/indications/nsclc/)\n[2] Lead-212 PSV359 (https://nuclide.cc/drugs/pb-212-psv359/)\n[3] Lead-212 VMT-alpha-NET (https://nuclide.cc/drugs/pb-212-vmt-alpha-net/)\n[4] Lung neuroendocrine tumours (typical and atypical carcinoid) (https://nuclide.cc/indications/lung-net/)"
+  },
+  {
+   "id": "lung-06",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0.75,
+   "met": 3,
+   "total": 4,
+   "missed": [
+    "65 countries"
+   ],
+   "retrievedEntities": [
+    "technegas",
+    "cyclopharm",
+    "nct03054870"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A puff of radioactive carbon particles so fine they travel with the breath into the depths of the lung, where they stick. A gamma camera then photographs which parts of the lung are getting air, which is compared with a second scan showing which parts are getting blood. [1] The trial that got Technegas approved in the United States: it compared the inhaled carbon aerosol against xenon-133 gas, the agent it was meant to replace. [2] The Australian company behind Technegas, the inhaled ventilation agent, which spent thirty years as a product the United States could not buy and is now being installed across American hospitals. [3] The FDA approved Technegas on 29 September 2023 under NDA 022335, held by Cyclomedica Australia, after decades of use elsewhere. [1] Installing compact, automated dose-preparation equipment inside individual hospitals, so they compound the treatment themselves from bulk material, could cut that wasted radioactivity and get treatment to more places. [4]\n\nSources\n[1] Technegas (technetium Tc-99m labelled carbon inhalation aerosol) (https://nuclide.cc/drugs/technegas/)\n[2] CYC-009: Technegas versus xenon-133 ventilation imaging (https://nuclide.cc/trials/nct03054870/)\n[3] Cyclopharm (https://nuclide.cc/companies/cyclopharm/)\n[4] In-house hospital radiopharmacy compounding to cut dose waste (https://nuclide.cc/ideas/idea-regional-radiopharmacy-network/)"
   },
   {
    "id": "prostate-23",

@@ -1642,7 +1642,7 @@ export const carriedCompanies: EntityInput[] = [
     "website": "https://perspectivetherapeutics.com",
     "ticker": "CATX",
     "tldr": "Lead-212 alpha-therapy company whose SSTR2 agent [212Pb]VMT-α-NET reported a 43% response rate in neuroendocrine tumours and is heading for phase 3.",
-    "summary": "Phase 1/2a of [212Pb]VMT-α-NET (NCT05636618): 43% ORR in cohort 2 with 72% progression-free/alive at the 2026 update; 76 NET patients treated by July 2026; first meningioma patient dosed June 2026; EU orphan designation July 2026. Phase 3 planned at a cumulative 20 mCi dose. Also developing PSMA and melanocortin-1 receptor 212Pb agents.",
+    "summary": "Phase 1/2a of [212Pb]VMT-α-NET (NCT05636618): 43% ORR in cohort 2 with 72% progression-free/alive at the 2026 update; 76 NET patients treated by July 2026; first meningioma patient dosed June 2026; EU orphan designation July 2026. Phase 3 planned at a cumulative 20 mCi dose. Also developing PSMA and melanocortin-1 receptor 212Pb agents. Its FAP-alpha agent PSV359, paired with the 203Pb/68Ga imaging analogue PSV377, is in a phase 1/2 first-in-human study (NCT06710756); on 14 September 2026 the company announced a collaboration and supply agreement with Merck to add cohorts combining [212Pb]PSV359 with pembrolizumab in FAP-alpha-positive non-small cell lung cancer and colorectal cancer, which is the first time an alpha-emitting radioligand has been taken into NSCLC. The dose-expansion part of the VMT-alpha-NET trial also enrols bronchial neuroendocrine tumours.",
     "technologies": [
       "targeted-alpha-therapy"
     ],
@@ -1660,7 +1660,19 @@ export const carriedCompanies: EntityInput[] = [
       {
         "label": "Q2 2026 highlights",
         "url": "https://www.globenewswire.com/news-release/2026/08/10/3342260/0/en/perspective-therapeutics-provides-recent-business-highlights-and-reports-2q-2026-results.html"
+      },
+      {
+        "label": "Clinical collaboration and supply agreement with Merck to evaluate [212Pb]PSV359 with Keytruda in FAP-alpha positive solid tumours, including NSCLC (14 September 2026)",
+        "url": "https://www.perspectivetherapeutics.com/pr/perspective-therapeutics-announces-clinical-collaboration-and-supply-agreement-with-merck-to-evaluate-212pbpsv359-in-combination-with-keytruda-pembrolizumab-in-fap-a-positive-solid-tumors"
       }
+    ],
+    "drugs": [
+      "pb-212-vmt-alpha-net",
+      "pb-212-psv359"
+    ],
+    "related": [
+      "nsclc",
+      "lung-net"
     ]
   },
   {
@@ -2183,6 +2195,22 @@ export const carriedCompanies: EntityInput[] = [
       {
         "label": "Official website",
         "url": "https://telixpharma.com"
+      },
+      {
+        "label": "Telix and Regeneron announce strategic radiopharma collaboration (13 April 2026)",
+        "url": "https://telixpharma.com/news-views/telix-and-regeneron-announce-strategic-radiopharma-collaboration/"
+      },
+      {
+        "label": "Telix Q2 2026 results: the Regeneron collaboration is \"initially focused on lung cancer\" (21 July 2026)",
+        "url": "https://telixpharma.com/news-views/telix-q2-2026-revenue-us247m-strong-momentum-and-pipeline-progress/"
+      },
+      {
+        "label": "Telix asset purchase from ImaginAb, including a discovery-stage DLL3 programme for small-cell lung cancer (13 January 2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/2007191/000200719125000003/frelease.htm"
+      },
+      {
+        "label": "Telix pipeline (no lung indication listed)",
+        "url": "https://telixpharma.com/our-pipeline/"
       }
     ],
     "name": "Telix Pharmaceuticals",
@@ -2192,9 +2220,14 @@ export const carriedCompanies: EntityInput[] = [
     "website": "https://telixpharma.com",
     "ticker": "TLX.AX",
     "tldr": "Telix is the Australian theranostics company behind Illuccix and Gozellix PSMA imaging and a broad therapeutic pipeline.",
-    "summary": "Telix Pharmaceuticals, based in Melbourne and listed as TLX.AX, is the Australian theranostics company behind the Illuccix and Gozellix kits for gallium-68 PSMA-11 imaging and a broad therapeutic pipeline. TLX250-CDx, or zirconium-89 girentuximab for carbonic anhydrase IX PET in kidney cancer, received an FDA complete response letter in 2025, TLX591, or lutetium-177 rosopatamab, a PSMA antibody in the ProstACT phase 3, and TLX101 for glioma follow. Nuclide links it to prostate cancer and renal cell carcinoma, to PSMA as a target, to CAIX PET and PET tracer manufacturing, and to the idea of CAIX theranostics pairing girentuximab imaging with lutetium or actinium therapy. Whether an antibody-based PSMA therapy can compete with small-molecule ligands is the open question. Illuccix has its own page.",
+    "summary": "Telix Pharmaceuticals, based in Melbourne and listed as TLX.AX, is the Australian theranostics company behind the Illuccix and Gozellix kits for gallium-68 PSMA-11 imaging and a broad therapeutic pipeline. TLX250-CDx, or zirconium-89 girentuximab for carbonic anhydrase IX PET in kidney cancer, received an FDA complete response letter in 2025, TLX591, or lutetium-177 rosopatamab, a PSMA antibody in the ProstACT phase 3, and TLX101 for glioma follow. Nuclide links it to prostate cancer and renal cell carcinoma, to PSMA as a target, to CAIX PET and PET tracer manufacturing, and to the idea of CAIX theranostics pairing girentuximab imaging with lutetium or actinium therapy. Whether an antibody-based PSMA therapy can compete with small-molecule ligands is the open question. Illuccix has its own page.\n\nIts lung-cancer position is entirely pre-clinical, which is worth stating plainly because the company is often named in the same breath as lung radiopharmaceuticals. No asset on the published pipeline carries a lung indication, and ClinicalTrials.gov returns no recruiting Telix lung-cancer study. What exists is two commitments. In January 2025 Telix bought a pipeline of early-stage therapeutic candidates and a biologics platform from ImaginAb for US$45 million plus up to US$185 million in milestones, including a discovery-stage programme against DLL3, the surface protein of small-cell lung cancer, with no TLX code or isotope assigned. In April 2026 it signed a collaboration with Regeneron covering four initial programmes built on Regeneron antibodies, for US$40 million upfront, an equal share of costs and profits and up to US$2.1 billion in milestones; Telix\u2019s own second-quarter 2026 results describe that collaboration as initially focused on lung cancer.",
     "targets": [
-      "psma"
+      "psma",
+      "dll3"
+    ],
+    "related": [
+      "sclc",
+      "nsclc"
     ]
   },
   {

@@ -2,23 +2,23 @@
  "summary": {
   "system": "Nuclide Ask (intents, entity resolution, templated cited answers; extractive fallback)",
   "date": "2026-09-23",
-  "questions": 42,
-  "set": "src/data/ask-eval.ts (42 natural questions: patient, clinician, investor)",
-  "meanScore": 0.423,
-  "meanRetrievalRecall": 0.81,
+  "questions": 46,
+  "set": "src/data/ask-eval.ts (46 natural questions: patient, clinician, investor)",
+  "meanScore": 0.449,
+  "meanRetrievalRecall": 0.804,
   "byAudience": {
-   "patient": 0.25,
-   "clinician": 0.548,
-   "investor": 0.487
+   "patient": 0.294,
+   "clinician": 0.556,
+   "investor": 0.524
   },
   "before": {
    "system": "Nuclide Ask (extractive answer, lexical + concept retrieval, top 6 records)",
-   "meanScore": 0.454,
-   "meanRetrievalRecall": 0.702,
+   "meanScore": 0.48,
+   "meanRetrievalRecall": 0.685,
    "byAudience": {
-    "patient": 0.333,
-    "clinician": 0.548,
-    "investor": 0.494
+    "patient": 0.373,
+    "clinician": 0.556,
+    "investor": 0.53
    }
   }
  },
@@ -537,6 +537,52 @@
    ],
    "retrievalRecall": 1,
    "answer": "The parent isotope shipped worldwide to make technetium-99m, the gamma-ray tracer used in the majority of nuclear medicine scans. It is made in a handful of ageing research reactors, and when one breaks down, scans get delayed or cancelled. [1] Molybdenum-99 decays with a 65.94-hour (about 2.75-day) half-life to technetium-99m, and its whole purpose in the supply chain is to act as a transportable parent: its longer half-life lets bulk 99Mo be irradiated, processed and shipped internationally to radiopharmacies, which then load it into 99Mo/99mTc generators and elute the six-hour daughter locally, on demand, for the roughly tens of millions of Tc-99m scans performed worldwide each year. [1] New non-fission routes are diversifying supply: NorthStar's RadioGenix System, which produces 99Mo by neutron activation of enriched or natural molybdenum targets rather than uranium fission, reached commercial scale in the 2020s (though NorthStar separately announced in 2023 a temporary halt to one production line), and Australia's ANSTO and South Africa's NTP Radioisotopes remain major LEU-fission suppliers outside the historic European/Canadian core. [1] NTP, part of South Africa's state nuclear corporation, processes molybdenum-99 and other isotopes from the SAFARI-1 reactor and was the first major producer to switch to low-enriched uranium targets. [2] NTP Radioisotopes, a subsidiary of the South African Nuclear Energy Corporation, irradiates targets in the SAFARI-1 research reactor at Pelindaba and processes molybdenum-99, iodine-131 and lutetium-177 for export to generator makers and radiopharmacies worldwide. [2]\n\nSources\n[1] Molybdenum-99 (https://nuclide.cc/isotopes/mo-99/)\n[2] NTP Radioisotopes (https://nuclide.cc/companies/ntp-radioisotopes/)"
+  },
+  {
+   "id": "p-16",
+   "audience": "patient",
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "technegas",
+    "carbon",
+    "breath"
+   ],
+   "retrievalRecall": 0,
+   "answer": "Lung neuroendocrine tumours, called typical and atypical carcinoids, are slow-growing tumours of the airways that are usually cured by surgery. [1] When they spread, everolimus is the one drug tested in a randomised trial for this site, cabozantinib was approved in 2025, and somatostatin analogues and lutetium radioligand therapy are borrowed from gut tumours. [1] Labelled as [15O]water, it diffuses freely across cell membranes and its uptake is not confounded by metabolism, which makes it the physics gold standard for quantifying regional cerebral or myocardial blood flow; the very short half-life also allows repeat rest and stress or activation scans in the same session only 10-15 minutes apart, with a very low cumulative radiation dose. [2] Most cases are found once the disease has already spread, and a scan with radioactive sugar is what decides who can still be cured by surgery. [3] To check whether a blood clot has lodged in the lung's blood vessels, a scan compares which parts of the lung get air (ventilation) with which parts get blood flow (perfusion); a clot shows up as an area that is ventilated but not perfused. [4] A radioactive gas-forming isotope with a ten-minute lifetime, turned into ammonia and injected to map blood flow to the heart muscle on a PET scan. [5]\n\nSources\n[1] Lung neuroendocrine tumours (typical and atypical carcinoid) (https://nuclide.cc/indications/lung-net/)\n[2] Oxygen-15 (https://nuclide.cc/isotopes/o-15/)\n[3] Non-small cell lung cancer (https://nuclide.cc/indications/nsclc/)\n[4] Pulmonary embolism: ventilation/perfusion imaging (https://nuclide.cc/indications/pulmonary-embolism-vq/)\n[5] Nitrogen-13 (https://nuclide.cc/isotopes/n-13/)"
+  },
+  {
+   "id": "p-17",
+   "audience": "patient",
+   "score": 1,
+   "met": 3,
+   "total": 3,
+   "missed": [],
+   "retrievalRecall": 1,
+   "answer": "To check whether a blood clot has lodged in the lung's blood vessels, a scan compares which parts of the lung get air (ventilation) with which parts get blood flow (perfusion); a clot shows up as an area that is ventilated but not perfused. [1] Ventilation/perfusion (V/Q) scintigraphy diagnoses or excludes acute pulmonary embolism by comparing two maps of the lung obtained in the same sitting: a perfusion map, made by injecting Tc-99m-labelled macroaggregated albumin (MAA) particles that lodge in pulmonary capillaries in proportion to blood flow, and a ventilation map, made with an inhaled agent such as Technegas or krypton-81m gas. [1] Lung neuroendocrine tumours, called typical and atypical carcinoids, are slow-growing tumours of the airways that are usually cured by surgery. [2] The labels contraindicate the agent in severe pulmonary hypertension, where deaths have been reported, and in albumin hypersensitivity. [3] Technetium Tc-99m albumin aggregated (MAA) dosing: Intravenous injection for lung perfusion; intra-arterial (hepatic artery) for radioembolisation work-up; Adults 200,000-700,000 particles per injection, approximately 350,000 recommended; paediatric doses reduced by age, 10,000-50,000 particles for neonates under four weeks. [3] SPECT and the bone scan are an older type of nuclear scan, still used for bone metastases and to check where a radioactive drug went after treatment. [4]\n\nSources\n[1] Pulmonary embolism: ventilation/perfusion imaging (https://nuclide.cc/indications/pulmonary-embolism-vq/)\n[2] Lung neuroendocrine tumours (typical and atypical carcinoid) (https://nuclide.cc/indications/lung-net/)\n[3] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)\n[4] SPECT & bone scan (https://nuclide.cc/technologies/spect/)"
+  },
+  {
+   "id": "c-15",
+   "audience": "clinician",
+   "score": 0.6666666666666666,
+   "met": 2,
+   "total": 3,
+   "missed": [
+    "30 gy"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Injecting tiny radioactive glass or resin beads into the liver's artery so they lodge in the tumour and irradiate it from inside. [1] Before yttrium-90 radioembolisation, MAA is injected into the hepatic artery and imaged to estimate the lung shunt fraction, because hepatopulmonary shunting can deliver enough dose to the lungs to cause radiation pneumonitis. [2]\n\nSources\n[1] TARE / SIRT (radioembolisation with yttrium-90) (https://nuclide.cc/terms/tare/)\n[2] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)"
+  },
+  {
+   "id": "i-14",
+   "audience": "investor",
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievalRecall": 1,
+   "answer": "The cancer that kills more people than any other, and the reason most PET scanners are busy. Most cases are found once the disease has already spread, and a scan with radioactive sugar is what decides who can still be cured by surgery. [1] Therapy is the gap: no radiopharmaceutical is approved to treat lung cancer of any histology anywhere, and the alpha-emitting DLL3 programmes now in the clinic are aimed at small-cell disease, which has its own record. [1] In January 2025 Telix bought a pipeline of early-stage therapeutic candidates and a biologics platform from ImaginAb for US$45 million plus up to US$185 million in milestones, including a discovery-stage programme against DLL3, the surface protein of small-cell lung cancer, with no TLX code or isotope assigned. [2] In April 2026 it signed a collaboration with Regeneron covering four initial programmes built on Regeneron antibodies, for US$40 million upfront, an equal share of costs and profits and up to US$2.1 billion in milestones; Telix’s own second-quarter 2026 results describe that collaboration as initially focused on lung cancer. [2] Shandong Cancer Hospital runs one of China's largest radiotherapy departments under Jinming Yu, with a proton therapy centre and PET-guided adaptive radiotherapy; it has led Chinese trials combining radiotherapy with immunotherapy in lung and oesophageal cancer and studies of brain metastasis management. [3] Actinium Pharmaceuticals attaches the alpha-emitting isotope actinium-225 to antibodies to treat acute myeloid leukaemia and, more recently, solid tumours such as prostate and lung cancer. [4]\n\nSources\n[1] Non-small cell lung cancer (https://nuclide.cc/indications/nsclc/)\n[2] Telix Pharmaceuticals (https://nuclide.cc/companies/telix/)\n[3] Shandong Cancer Hospital and Institute (https://nuclide.cc/institutions/shandong-cancer-hospital/)\n[4] Actinium Pharmaceuticals (https://nuclide.cc/companies/actinium-pharmaceuticals/)"
   },
   {
    "id": "p-15",
