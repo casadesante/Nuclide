@@ -90,7 +90,7 @@ export function AskNuclide({ examples }: { examples: AskExample[] }) {
     <div className="grid gap-8 lg:grid-cols-[1fr_320px] [&>*]:min-w-0">
       <div>
         <form onSubmit={(e) => { e.preventDefault(); submit(q); }} className="flex flex-wrap gap-2">
-          <input value={q} onChange={(e) => setQ(e.target.value)} autoFocus placeholder="What does 'triple-negative' mean in breast cancer?" aria-label="Your question" className="flex-1 min-w-[16rem] rounded-lg border border-border bg-card px-3 py-3 text-base outline-none focus:ring-2 focus:ring-accent/40" />
+          <input value={q} onChange={(e) => setQ(e.target.value)} autoFocus placeholder="What does 'theranostic' mean, and which scan comes before Pluvicto?" aria-label="Your question" className="flex-1 min-w-[16rem] rounded-lg border border-border bg-card px-3 py-3 text-base outline-none focus:ring-2 focus:ring-accent/40" />
           <button type="submit" className="rounded-lg bg-foreground text-background px-4 py-2 text-sm font-medium">Ask</button>
         </form>
         <p className="mt-2 text-xs text-muted">Answers are assembled from Nuclide records by rules, not generated. Each sentence is numbered and linked to the record it came from. Not medical advice.</p>

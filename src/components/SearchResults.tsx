@@ -230,7 +230,7 @@ export function SearchResults() {
   return (
     <div>
       <form role="search" onSubmit={(e) => { e.preventDefault(); submit(q); }} className="flex flex-wrap gap-2 mb-4">
-        <input type="search" value={q} onChange={(e) => type(e.target.value)} autoFocus placeholder="drug for HER2-low breast cancer, PSMA radioligand trial, who leads ADC trials in Madrid…" aria-label="Search Nuclide" className="flex-1 min-w-[16rem] rounded-lg border border-border bg-card px-3 py-3 text-base outline-none focus:ring-2 focus:ring-accent/40" />
+        <input type="search" value={q} onChange={(e) => type(e.target.value)} autoFocus placeholder="PSMA radioligand trial, actinium-225 supply, who makes lutetium-177 in Europe…" aria-label="Search Nuclide" className="flex-1 min-w-[16rem] rounded-lg border border-border bg-card px-3 py-3 text-base outline-none focus:ring-2 focus:ring-accent/40" />
         <button type="submit" className="rounded-lg bg-foreground text-background px-4 py-2 text-sm font-medium">Search</button>
         {query && <Link href={askHref(query)} className="rounded-lg border border-border bg-card px-4 py-2 text-sm hover:bg-foreground/5">Ask Nuclide this</Link>}
       </form>

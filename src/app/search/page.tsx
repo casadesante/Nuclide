@@ -9,7 +9,7 @@ export const metadata: Metadata = pageMeta({ title: "Search", description: "Sear
 export default function SearchPage() {
   return (
     <>
-      <PageHeader kicker={<GroupKicker id="find" />} title="Search" lede="Word search and concept search, side by side. Type a name, a code, or a plain phrase such as a drug for HER2-low breast cancer. Every result says why it matched. Everything runs in your browser." />
+      <PageHeader kicker={<GroupKicker id="find" />} title="Search" lede="Word search and concept search, side by side. Type a name, a code, or a plain phrase such as a radioligand for prostate cancer. Every result says why it matched. Everything runs in your browser." />
       <Container className="pb-16">
         <Suspense><SearchResults /></Suspense>
       </Container>
