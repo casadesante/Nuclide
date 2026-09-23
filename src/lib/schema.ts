@@ -66,7 +66,7 @@ const Base = z.object({
   terms: z.array(id).default([]),
   trials: z.array(id).default([]),
   people: z.array(id).default([]),
-  /** Bottlenecks of the war on cancer this object bears on (ideas attack them; technologies, trials, collections relieve them). */
+  /** Bottlenecks of the field this object bears on (ideas attack them; technologies, trials, collections relieve them). */
   bottlenecks: z.array(id).default([]),
   /** Key papers (kind "paper") this object rests on or is discussed in. */
   keyPapers: z.array(id).default([]),
@@ -422,7 +422,7 @@ export const JournalSchema = Base.extend({
   society: z.string().optional(),
 });
 
-/** A bottleneck: a systemic constraint that slows the whole war on cancer. Ideas link to bottlenecks; the fixes are derived by backlink. */
+/** A bottleneck: a systemic constraint that slows the whole field. Ideas link to bottlenecks; the fixes are derived by backlink. */
 export const BottleneckSchema = Base.extend({
   kind: z.literal("bottleneck"),
   /** Where in the pipeline it bites. */

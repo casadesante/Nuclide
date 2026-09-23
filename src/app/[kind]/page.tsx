@@ -40,7 +40,7 @@ export default async function KindIndex({ params }: { params: Promise<{ kind: st
   const k = ROUTE_TO_KIND[kind];
   if (!k) notFound();
   const meta = KIND_META[k];
-  const title = k === "section" ? "Fronts of the war on cancer" : k === "term" ? "Glossary" : k === "bottleneck" ? "Bottlenecks of the war on cancer" : (meta.title ?? cap(meta.plural));
+  const title = k === "section" ? "Fronts of the field" : k === "term" ? "Glossary" : k === "bottleneck" ? "Bottlenecks of the war on cancer" : (meta.title ?? cap(meta.plural));
   const built = buildBrowser(k);
   // Glossary tooltips inside free-text cells: any non-chip, non-numeric string column gets its technical terms marked.
   const richKeys = new Set(built.columns.filter((c) => !c.chip && !c.numeric).map((c) => c.key));

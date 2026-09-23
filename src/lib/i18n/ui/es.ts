@@ -205,7 +205,7 @@ export const es: UiDict = {
 
   "kind.indication.label": "Indicación", "kind.indication.plural": "indicaciones",
   "kind.isotope.label": "Isótopo", "kind.isotope.plural": "isótopos",
-  "kind.section.label": "Frente", "kind.section.plural": "frentes", "kind.section.title": "Frentes de la guerra contra el cáncer",
+  "kind.section.label": "Frente", "kind.section.plural": "frentes", "kind.section.title": "Frentes",
   "kind.technology.label": "Tecnología", "kind.technology.plural": "tecnologías",
   "kind.target.label": "Diana", "kind.target.plural": "dianas",
   "kind.drug.label": "Agente", "kind.drug.plural": "agentes", "kind.drug.title": "Agentes y trazadores",
@@ -221,7 +221,7 @@ export const es: UiDict = {
   "kind.person.label": "Persona", "kind.person.plural": "personas",
   "kind.journal.label": "Revista", "kind.journal.plural": "revistas",
   "kind.paper.label": "Artículo clave", "kind.paper.plural": "artículos clave",
-  "kind.bottleneck.label": "Cuello de botella", "kind.bottleneck.plural": "cuellos de botella", "kind.bottleneck.title": "Cuellos de botella de la guerra contra el cáncer",
+  "kind.bottleneck.label": "Cuello de botella", "kind.bottleneck.plural": "cuellos de botella", "kind.bottleneck.title": "Cuellos de botella",
 
   "l.Summary": "Resumen",
   "l.Overview": "Visión general",

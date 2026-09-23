@@ -205,7 +205,7 @@ export const de: UiDict = {
 
   "kind.indication.label": "Indikation", "kind.indication.plural": "Indikationen",
   "kind.isotope.label": "Isotop", "kind.isotope.plural": "Isotope",
-  "kind.section.label": "Front", "kind.section.plural": "Fronten", "kind.section.title": "Die Fronten im Krieg gegen den Krebs",
+  "kind.section.label": "Front", "kind.section.plural": "Fronten", "kind.section.title": "Fronten",
   "kind.technology.label": "Technologie", "kind.technology.plural": "Technologien",
   "kind.target.label": "Zielstruktur", "kind.target.plural": "Zielstrukturen",
   "kind.drug.label": "Präparat", "kind.drug.plural": "Präparate", "kind.drug.title": "Präparate und Tracer",
@@ -221,7 +221,7 @@ export const de: UiDict = {
   "kind.person.label": "Person", "kind.person.plural": "Personen",
   "kind.journal.label": "Zeitschrift", "kind.journal.plural": "Zeitschriften",
   "kind.paper.label": "Schlüsselpublikation", "kind.paper.plural": "Schlüsselpublikationen",
-  "kind.bottleneck.label": "Engpass", "kind.bottleneck.plural": "Engpässe", "kind.bottleneck.title": "Die Engpässe im Krieg gegen den Krebs",
+  "kind.bottleneck.label": "Engpass", "kind.bottleneck.plural": "Engpässe", "kind.bottleneck.title": "Engpässe",
 
   "l.Summary": "Zusammenfassung",
   "l.Overview": "Überblick",

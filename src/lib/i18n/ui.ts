@@ -236,7 +236,7 @@ export const EN = {
   // ---- kinds ----
   "kind.indication.label": "Indication", "kind.indication.plural": "indications",
   "kind.isotope.label": "Isotope", "kind.isotope.plural": "isotopes",
-  "kind.section.label": "Front", "kind.section.plural": "fronts", "kind.section.title": "Fronts of the war on cancer",
+  "kind.section.label": "Front", "kind.section.plural": "fronts", "kind.section.title": "Fronts of the field",
   "kind.technology.label": "Technology", "kind.technology.plural": "technologies",
   "kind.target.label": "Target", "kind.target.plural": "targets",
   "kind.drug.label": "Agent", "kind.drug.plural": "drugs", "kind.drug.title": "Agents & tracers",
@@ -252,7 +252,7 @@ export const EN = {
   "kind.person.label": "Person", "kind.person.plural": "people",
   "kind.journal.label": "Journal", "kind.journal.plural": "journals",
   "kind.paper.label": "Key paper", "kind.paper.plural": "key papers",
-  "kind.bottleneck.label": "Bottleneck", "kind.bottleneck.plural": "bottlenecks", "kind.bottleneck.title": "Bottlenecks of the war on cancer",
+  "kind.bottleneck.label": "Bottleneck", "kind.bottleneck.plural": "bottlenecks", "kind.bottleneck.title": "Bottlenecks of the field",
 
   // ---- headings, field labels, facet and column labels (looked up by English text) ----
   "l.Summary": "Summary",

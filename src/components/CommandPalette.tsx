@@ -36,7 +36,7 @@ const PAGES: Item[] = [
   { id: "p-paths", name: "Reading paths", tldr: "Curated sequences of pages", route: "/paths/", action: true },
   { id: "p-institutions", name: "Institutions map and ranking", tldr: "Who matters, where", route: "/institutions/", action: true },
   { id: "p-saved", name: "Saved views and watchlist", tldr: "Your saved tables and starred pages, with what changed since you looked", route: "/saved/", action: true },
-  { id: "p-report", name: "State of the war on cancer, 2026", tldr: "Annual report from the corpus", route: "/report/2026/", action: true },
+  { id: "p-report", name: "State of radiopharmaceuticals, 2026", tldr: "Annual report from the corpus", route: "/report/2026/", action: true },
   { id: "p-hub", name: "Roadmap", tldr: "What Nuclide is building next, in waves, with status", route: "/roadmap/", action: true },
   { id: "p-api", name: "Open API", tldr: "The corpus as JSON, CSV and feeds", route: "/api/", action: true },
   { id: "p-about", name: "About and methodology", tldr: "Rules for facts, ranking formula, licence", route: "/about/", action: true },

@@ -205,7 +205,7 @@ export const pt: UiDict = {
 
   "kind.indication.label": "Indicação", "kind.indication.plural": "indicações",
   "kind.isotope.label": "Isótopo", "kind.isotope.plural": "isótopos",
-  "kind.section.label": "Frente", "kind.section.plural": "frentes", "kind.section.title": "Frentes da guerra contra o cancro",
+  "kind.section.label": "Frente", "kind.section.plural": "frentes", "kind.section.title": "Frentes",
   "kind.technology.label": "Tecnologia", "kind.technology.plural": "tecnologias",
   "kind.target.label": "Alvo", "kind.target.plural": "alvos",
   "kind.drug.label": "Agente", "kind.drug.plural": "agentes", "kind.drug.title": "Agentes e traçadores",
@@ -221,7 +221,7 @@ export const pt: UiDict = {
   "kind.person.label": "Pessoa", "kind.person.plural": "pessoas",
   "kind.journal.label": "Revista", "kind.journal.plural": "revistas",
   "kind.paper.label": "Artigo-chave", "kind.paper.plural": "artigos-chave",
-  "kind.bottleneck.label": "Estrangulamento", "kind.bottleneck.plural": "estrangulamentos", "kind.bottleneck.title": "Estrangulamentos da guerra contra o cancro",
+  "kind.bottleneck.label": "Estrangulamento", "kind.bottleneck.plural": "estrangulamentos", "kind.bottleneck.title": "Estrangulamentos",
 
   "l.Summary": "Resumo",
   "l.Overview": "Visão geral",

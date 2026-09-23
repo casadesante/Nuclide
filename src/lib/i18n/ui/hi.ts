@@ -205,7 +205,7 @@ export const hi: UiDict = {
 
   "kind.indication.label": "संकेत", "kind.indication.plural": "संकेत",
   "kind.isotope.label": "आइसोटोप", "kind.isotope.plural": "आइसोटोप",
-  "kind.section.label": "मोर्चा", "kind.section.plural": "मोर्चे", "kind.section.title": "कैंसर के विरुद्ध युद्ध के मोर्चे",
+  "kind.section.label": "मोर्चा", "kind.section.plural": "मोर्चे", "kind.section.title": "मोर्चे",
   "kind.technology.label": "तकनीक", "kind.technology.plural": "तकनीकें",
   "kind.target.label": "लक्ष्य", "kind.target.plural": "लक्ष्य",
   "kind.drug.label": "एजेंट", "kind.drug.plural": "एजेंट", "kind.drug.title": "एजेंट और ट्रेसर",
@@ -221,7 +221,7 @@ export const hi: UiDict = {
   "kind.person.label": "व्यक्ति", "kind.person.plural": "लोग",
   "kind.journal.label": "पत्रिका", "kind.journal.plural": "पत्रिकाएँ",
   "kind.paper.label": "प्रमुख शोधपत्र", "kind.paper.plural": "प्रमुख शोधपत्र",
-  "kind.bottleneck.label": "अड़चन", "kind.bottleneck.plural": "अड़चनें", "kind.bottleneck.title": "कैंसर के विरुद्ध युद्ध की अड़चनें",
+  "kind.bottleneck.label": "अड़चन", "kind.bottleneck.plural": "अड़चनें", "kind.bottleneck.title": "अड़चनें",
 
   "l.Summary": "सार",
   "l.Overview": "अवलोकन",

@@ -205,7 +205,7 @@ export const ja: UiDict = {
 
   "kind.indication.label": "適応疾患", "kind.indication.plural": "適応疾患",
   "kind.isotope.label": "アイソトープ", "kind.isotope.plural": "アイソトープ",
-  "kind.section.label": "戦線", "kind.section.plural": "戦線", "kind.section.title": "がんとの戦いの戦線",
+  "kind.section.label": "戦線", "kind.section.plural": "戦線", "kind.section.title": "戦線",
   "kind.technology.label": "技術", "kind.technology.plural": "技術",
   "kind.target.label": "標的", "kind.target.plural": "標的",
   "kind.drug.label": "薬剤", "kind.drug.plural": "薬剤", "kind.drug.title": "薬剤とトレーサー",
@@ -221,7 +221,7 @@ export const ja: UiDict = {
   "kind.person.label": "人物", "kind.person.plural": "人物",
   "kind.journal.label": "学術誌", "kind.journal.plural": "学術誌",
   "kind.paper.label": "重要論文", "kind.paper.plural": "重要論文",
-  "kind.bottleneck.label": "ボトルネック", "kind.bottleneck.plural": "ボトルネック", "kind.bottleneck.title": "がんとの戦いのボトルネック",
+  "kind.bottleneck.label": "ボトルネック", "kind.bottleneck.plural": "ボトルネック", "kind.bottleneck.title": "ボトルネック",
 
   "l.Summary": "要約",
   "l.Overview": "概要",

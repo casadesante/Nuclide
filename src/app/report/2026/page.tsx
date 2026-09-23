@@ -6,7 +6,7 @@ import { KIND_META, KINDS, routeFor, type Entity } from "@/lib/schema";
 import { STATUS_LABEL, statusClass } from "@/lib/text";
 import { ChipList, Container, GroupKicker, PageHeader, Section, StatusChip } from "@/components/ui";
 
-export const metadata: Metadata = pageMeta({ title: "The state of the war on cancer, 2026", description: "Nuclide's annual report, generated from the corpus: approvals, trial results, roadmap progress, and open problems.", path: "/report/2026/" });
+export const metadata: Metadata = pageMeta({ title: "The state of radiopharmaceuticals, 2026", description: "Nuclide's annual report, generated from the corpus: approvals, trial results, roadmap progress, supply bottlenecks and open problems.", path: "/report/2026/" });
 
 export default function Report2026() {
   const g = graph();
@@ -29,12 +29,12 @@ export default function Report2026() {
 
   return (
     <>
-      <PageHeader kicker={<GroupKicker id="intel" />} title="The state of the war on cancer, 2026"
+      <PageHeader kicker={<GroupKicker id="intel" />} title="The state of radiopharmaceuticals, 2026"
         lede="Generated from the Nuclide corpus: what was approved, what read out, where the roadmaps stand, and what is still unsolved. Every figure below is a count over the objects on this site, so it is auditable and it is incomplete in exactly the ways the corpus is." />
       <Container className="pb-16">
         <div className="prose-nuclide text-[15px] leading-relaxed max-w-3xl">
-          <p>Three things defined 2026 in oncology as recorded here. First, antibody-drug conjugates moved from rescue therapy to first choice: two TROP2 ADCs were approved for first-line triple-negative breast cancer, trastuzumab deruxtecan reached early-stage HER2-positive disease, and the first bispecific ADC succeeded in phase 3. Second, immunotherapy grew a new limb: a personalised mRNA vaccine met its phase 3 endpoints in melanoma, an oncolytic virus was approved after an earlier rejection, and a blood test for residual disease decided, for the first time, who receives adjuvant immunotherapy. Third, targeted protein degradation arrived, with the first PROTAC approved for ESR1-mutant breast cancer.</p>
-          <p>The failures matter as much. TIGIT blockade did not add to PD-1 inhibition; a CD47 antibody was abandoned; a second TOP1-payload ADC given straight after a first works poorly. Pancreatic cancer and glioblastoma remain the deadliest common indications, though the first pan-RAS inhibitor is in a pivotal trial and tumour treating fields earned the first pancreatic approval in decades.</p>
+          <p>Three things stand out in what this corpus recorded in 2026. First, the diagnostic side widened past PSMA: a fluorine-18 amino-acid tracer for glioma reached the US market, a <Link href="/drugs/pexiretide-tc99m/">technetium-99m integrin agent</Link> became China&rsquo;s first home-grown Class 1 innovative diagnostic, and <Link href="/drugs/florastamin-f18/">florastamin F-18</Link> was approved in South Korea &mdash; three first-ever approvals, two of them from regulators outside the FDA and EMA. Second, therapy moved earlier and got a second supplier: <Link href="/drugs/pluvicto/">Pluvicto</Link> gained a label expansion, and a 505(b)(2) equivalent of <Link href="/drugs/lutathera/">Lutathera</Link> was approved in September, the first time a radioligand therapy has faced a direct copy. Third, the constraint moved from the molecule to everything around it: of the fourteen bottlenecks recorded here, most are supply, staffing or payment &mdash; actinium-225 and molybdenum-99 production, hot-lab and treatment-room capacity, authorised users, dosimetry standardisation, coding and reimbursement.</p>
+          <p>What has not arrived is as informative. The alpha-emitter roadmap still sits at &ldquo;supply scales and the first phase 2 readouts land&rdquo;, not at phase 3 evidence; the dosimetry roadmap records guidelines that openly disagree on whether patient-specific dosimetry should be mandatory. The corpus keeps four programmes that stopped &mdash; therapeutic iobenguane I-131, the ASTRA trial, SARAH and SIRveNIB, and I-131 tositumomab &mdash; and every one of them is a reminder that a tracer that images well is not yet a therapy that works. Ninety-seven trials in the corpus are recruiting or active, which is where the next edition of this page will come from.</p>
         </div>
 
         <Section title="Corpus at a glance">

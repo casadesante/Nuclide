@@ -205,7 +205,7 @@ export const fr: UiDict = {
 
   "kind.indication.label": "Indication", "kind.indication.plural": "indications",
   "kind.isotope.label": "Isotope", "kind.isotope.plural": "isotopes",
-  "kind.section.label": "Front", "kind.section.plural": "fronts", "kind.section.title": "Les fronts de la guerre contre le cancer",
+  "kind.section.label": "Front", "kind.section.plural": "fronts", "kind.section.title": "Fronts",
   "kind.technology.label": "Technologie", "kind.technology.plural": "technologies",
   "kind.target.label": "Cible", "kind.target.plural": "cibles",
   "kind.drug.label": "Agent", "kind.drug.plural": "agents", "kind.drug.title": "Agents et traceurs",
@@ -221,7 +221,7 @@ export const fr: UiDict = {
   "kind.person.label": "Personne", "kind.person.plural": "personnes",
   "kind.journal.label": "Revue", "kind.journal.plural": "revues",
   "kind.paper.label": "Article clé", "kind.paper.plural": "articles clés",
-  "kind.bottleneck.label": "Goulet d'étranglement", "kind.bottleneck.plural": "goulets d'étranglement", "kind.bottleneck.title": "Les goulets d'étranglement de la guerre contre le cancer",
+  "kind.bottleneck.label": "Goulet d'étranglement", "kind.bottleneck.plural": "goulets d'étranglement", "kind.bottleneck.title": "Goulets d'étranglement",
 
   "l.Summary": "Résumé",
   "l.Overview": "Vue d'ensemble",

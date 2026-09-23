@@ -3,7 +3,7 @@ import { Tip } from "./Tip";
 
 export type BottleneckLite = { id: string; name: string; tldr: string; route: string; stage: string; severity: "critical" | "major" | "moderate"; ideas: number };
 
-/** Order and plain names of the stages the war on cancer runs through, left to right. */
+/** Order and plain names of the stages a radiopharmaceutical runs through, left to right. */
 export const STAGES: Array<{ id: string; label: string; hint: string }> = [
   { id: "biology", label: "Understand the disease", hint: "Biology we cannot yet see, model or drug." },
   { id: "prevention-detection", label: "Prevent and find early", hint: "Stopping cancer or catching it while it is curable." },
@@ -22,7 +22,7 @@ const SEV: Record<BottleneckLite["severity"], { dot: string; ring: string; label
 };
 
 /**
- * The war on cancer as a pipeline: eight stages left to right, the bottlenecks that bite at each,
+ * The field as a pipeline: eight stages left to right, the bottlenecks that bite at each,
  * sized by severity and annotated with how many ideas attack them. Server component; hover for TL;DRs.
  */
 export function BottleneckMap({ items }: { items: BottleneckLite[] }) {

@@ -205,7 +205,7 @@ export const ar: UiDict = {
 
   "kind.indication.label": "استطباب", "kind.indication.plural": "استطبابات",
   "kind.isotope.label": "نظير", "kind.isotope.plural": "نظائر",
-  "kind.section.label": "جبهة", "kind.section.plural": "جبهات", "kind.section.title": "جبهات الحرب على السرطان",
+  "kind.section.label": "جبهة", "kind.section.plural": "جبهات", "kind.section.title": "جبهات",
   "kind.technology.label": "تقنية", "kind.technology.plural": "تقنيات",
   "kind.target.label": "هدف", "kind.target.plural": "أهداف",
   "kind.drug.label": "مستحضر", "kind.drug.plural": "مستحضرات", "kind.drug.title": "المستحضرات والمقتفيات",
@@ -221,7 +221,7 @@ export const ar: UiDict = {
   "kind.person.label": "شخص", "kind.person.plural": "أشخاص",
   "kind.journal.label": "مجلة", "kind.journal.plural": "مجلات",
   "kind.paper.label": "ورقة رئيسية", "kind.paper.plural": "أوراق رئيسية",
-  "kind.bottleneck.label": "عائق", "kind.bottleneck.plural": "عوائق", "kind.bottleneck.title": "عوائق الحرب على السرطان",
+  "kind.bottleneck.label": "عائق", "kind.bottleneck.plural": "عوائق", "kind.bottleneck.title": "عوائق",
 
   "l.Summary": "الملخص",
   "l.Overview": "نظرة عامة",

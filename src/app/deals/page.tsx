@@ -10,7 +10,7 @@ import { regionForCountry, type DealFlowItem } from "@/lib/deal-regions";
 import { deals, DEAL_TYPE_LABEL, type Party } from "@/data/deals";
 import { statusClass } from "@/lib/text";
 
-export const metadata: Metadata = pageMeta({ title: "Deals and licences", description: "Licences, acquisitions and co-development deals that moved oncology assets between companies: date, parties, asset, upfront and total value, territories, with a flow diagram by region and year.", path: "/deals/" });
+export const metadata: Metadata = pageMeta({ title: "Deals and licences", description: "Licences, acquisitions and co-development deals that moved radiopharmaceutical assets, isotope supply or radiopharmacy networks between companies: date, parties, asset, upfront and total value, territories, with a flow diagram by region and year.", path: "/deals/" });
 
 function PartyName({ p }: { p: Party }) {
   const e = p.id ? graph().get(p.id) : undefined;
@@ -29,7 +29,7 @@ export default function DealsPage() {
   return (
     <>
       <PageHeader kicker={<GroupKicker id="intel" />} title="Deals and licences"
-        lede={`${deals.length} deals since ${sorted[sorted.length - 1].date.slice(0, 4)}: ${acquisitions} acquisitions and ${deals.length - acquisitions} licences or co-development agreements, ${chinaOut} of them China-out. Every row has the announcement, the parties, the asset, what was paid up front and the headline total, with territories. The chord shows where assets move between regions.`} />
+        lede={`${deals.length} radiopharmaceutical deals since ${sorted[sorted.length - 1].date.slice(0, 4)}: ${acquisitions} acquisitions and ${deals.length - acquisitions} licences or co-development agreements${chinaOut ? `, ${chinaOut} of them China-out` : ""}. What changed hands is a radiopharmaceutical, the isotope supply behind one, or the network that delivers one. Every row has the announcement, the parties, the asset, what was paid up front and the headline total, with territories, and every figure comes from the acquirer's own release.`} />
       <Container className="pb-16">
         <DealFlow flows={flows} />
         <div className="mt-10 space-y-10">

@@ -205,7 +205,7 @@ export const zh: UiDict = {
 
   "kind.indication.label": "适应症", "kind.indication.plural": "适应症",
   "kind.isotope.label": "同位素", "kind.isotope.plural": "同位素",
-  "kind.section.label": "战线", "kind.section.plural": "战线", "kind.section.title": "抗癌战争的各条战线",
+  "kind.section.label": "战线", "kind.section.plural": "战线", "kind.section.title": "战线",
   "kind.technology.label": "技术", "kind.technology.plural": "技术",
   "kind.target.label": "靶点", "kind.target.plural": "靶点",
   "kind.drug.label": "药剂", "kind.drug.plural": "药剂", "kind.drug.title": "药剂与示踪剂",
@@ -221,7 +221,7 @@ export const zh: UiDict = {
   "kind.person.label": "人物", "kind.person.plural": "人物",
   "kind.journal.label": "期刊", "kind.journal.plural": "期刊",
   "kind.paper.label": "关键论文", "kind.paper.plural": "关键论文",
-  "kind.bottleneck.label": "瓶颈", "kind.bottleneck.plural": "瓶颈", "kind.bottleneck.title": "抗癌战争的瓶颈",
+  "kind.bottleneck.label": "瓶颈", "kind.bottleneck.plural": "瓶颈", "kind.bottleneck.title": "瓶颈",
 
   "l.Summary": "摘要",
   "l.Overview": "概览",
