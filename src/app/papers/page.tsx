@@ -65,7 +65,7 @@ export default function PapersPage() {
                 <li>Name collisions inflate some counts (a code like &ldquo;MK-2870&rdquo; is precise; a word like &ldquo;PET&rdquo; is not). Treat the ranking as a prompt to look, not as a measurement.</li>
                 <li>The current year is partial, so its bar is drawn lighter.</li>
               </ul>
-              <p className="text-muted">Related: <Link className="underline" href="/digests/">weekly digests</Link>, <Link className="underline" href="/universities/">who publishes where</Link>.</p>
+              <p className="text-muted">Related: <Link className="underline" href="/digests/">weekly digests</Link>, <Link className="underline" href="/institutions/">who publishes where</Link>.</p>
             </section>
           </>
         )}

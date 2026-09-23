@@ -33,7 +33,7 @@ export default function About() {
         </section>
         <section>
           <h2 className="text-xl font-semibold mb-2">Institution ranking methodology</h2>
-          <p>The <Link href="/institutions/">institution table</Link> uses a disclosed formula: Newsweek points (60 minus the Newsweek/Statista World&apos;s Best Specialized Hospitals 2026 Oncology rank; zero if unranked), plus NCI designation points (Comprehensive 15, Clinical or Basic Laboratory 8), plus two points per distinct Nuclide object linked to the institution. The last term rewards presence in this evidence base and is therefore also a coverage measure. The <Link href="/universities/">university table</Link> sums those scores by parent university and sits alongside links to Nature Index and SCImago, which are better measures of research output. Treat all of it as a starting point for argument, not a verdict.</p>
+          <p>The <Link href="/institutions/">institution table</Link> uses a disclosed formula: Newsweek points (60 minus the Newsweek/Statista World&apos;s Best Specialized Hospitals 2026 Oncology rank; zero if unranked), plus NCI designation points (Comprehensive 15, Clinical or Basic Laboratory 8), plus two points per distinct Nuclide object linked to the institution. The last term rewards presence in this evidence base and is therefore also a coverage measure. The <Link href="/institutions/">institution table</Link> also links out to Nature Index and SCImago, which are better measures of research output. Treat all of it as a starting point for argument, not a verdict.</p>
         </section>
         <section>
           <h2 className="text-xl font-semibold mb-2">How it is built</h2>

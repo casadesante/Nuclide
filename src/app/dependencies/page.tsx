@@ -11,7 +11,7 @@ import { FrontIcon } from "@/components/FrontIcon";
 
 export const metadata: Metadata = pageMeta({
   title: "Technology dependency map",
-  description: "What each oncology technology needs to exist, drawn as a layered dependency graph: CAR-T needs apheresis, viral vectors and cryopreservation; radioligand therapy needs isotopes, radiopharmacies and dosimetry. Chokepoints and single-vendor steps flagged.",
+  description: "What each technology in the corpus needs to exist, drawn as a layered dependency graph: radioligand therapy needs isotopes, radiopharmacies and dosimetry; PET needs cyclotrons, generators and scanners. Chokepoints and single-vendor steps flagged.",
   path: "/dependencies/",
 });
 

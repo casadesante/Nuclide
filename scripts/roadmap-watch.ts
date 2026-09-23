@@ -100,7 +100,9 @@ async function registry(ncts: string[]): Promise<Map<string, RegistryRecord>> {
   return out;
 }
 
-const CANCER_TERMS = "(cancer OR tumor OR tumour OR oncology OR carcinoma OR leukemia OR leukaemia OR lymphoma OR myeloma OR neoplasm OR sarcoma OR melanoma OR glioma OR glioblastoma)";
+// Topical guard, widened past the fork's cancer-only list so a cardiac, neurology or infection readout for a
+// watched acronym is not discarded before it is ever seen.
+const CANCER_TERMS = "(radiopharmaceutical OR radioligand OR radionuclide OR theranostic OR \"nuclear medicine\" OR \"molecular imaging\" OR radiotracer OR scintigraphy OR cancer OR tumor OR tumour OR oncology OR carcinoma OR leukemia OR leukaemia OR lymphoma OR myeloma OR neoplasm OR sarcoma OR melanoma OR glioma OR glioblastoma)";
 
 /**
  * Papers whose title names the acronym, on a cancer topic, since `since`. Acronyms that are ordinary words (VISION,

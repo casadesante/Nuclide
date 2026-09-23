@@ -60,7 +60,7 @@ function Hubs({ heading }: { heading: string }) {
     <section aria-labelledby="search-hubs" className="mt-6">
       <SectionHeading id="search-hubs" icon={<NavIcon id="map" className="h-4 w-4" />}>{heading}</SectionHeading>
       <ul className="grid gap-2 sm:grid-cols-2">
-        {[{ href: "/body/", label: "Body map", blurb: "Start from where the cancer is in the body." }, { href: "/for-me/", label: "For me", blurb: "Choose your cancer type and see what works and what could work." }].map((h) => (
+        {[{ href: "/indications/", label: "Indications", blurb: "Start from the disease and see the agents used in it." }, { href: "/for-me/", label: "For me", blurb: "Pick the indication you follow and Nuclide remembers it." }].map((h) => (
           <li key={h.href}>
             <Link href={h.href} className="card p-3 flex items-start gap-3 hover:bg-foreground/5 h-full">
               <span className="text-accent mt-0.5"><NavItemIcon href={h.href} label={h.label} className="h-5 w-5" /></span>

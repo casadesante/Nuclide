@@ -26,7 +26,7 @@ export function CoverageUkCard({ drugId }: { drugId: string }) {
     <div className="card p-4">
       <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
         <div className="kicker">What the NHS offers (UK)</div>
-        <Link href="/coverage/uk/" className="text-xs text-muted underline decoration-foreground/20 underline-offset-[3px] hover:decoration-foreground">All products and how the system works →</Link>
+        <Link href="/regulatory/regions/" className="text-xs text-muted underline decoration-foreground/20 underline-offset-[3px] hover:decoration-foreground">All products and how the system works →</Link>
       </div>
       <div className="flex flex-wrap items-center gap-2">
         <span className={`chip ${NICE_CHIP_CLASS[nice.status]}`} title={NICE_STATUS_TIP[nice.status]}>{NICE_STATUS_LABEL[nice.status]}</span>

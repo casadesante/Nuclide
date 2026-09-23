@@ -11,7 +11,7 @@ import { PulseBoard, type PulseSource, type RefLite } from "@/components/PulseBo
 import { AutoPulse, type AutoPulseSnapshot } from "@/components/AutoPulse";
 import { readPublicJson } from "@/lib/feed-meta";
 
-export const metadata: Metadata = pageMeta({ title: "Research pulse", description: "What the leading oncology journals, preprint servers, regulators, and news outlets are saying right now, and the cross-source themes.", path: "/pulse/" });
+export const metadata: Metadata = pageMeta({ title: "Research pulse", description: "What the leading nuclear medicine journals, preprint servers, regulators, and news outlets are saying right now, and the cross-source themes.", path: "/pulse/" });
 
 const TYPE_OF = (tags: string[]) => tags.find((t) => ["journal", "news", "preprint", "congress", "patient", "data"].includes(t)) ?? "other";
 
@@ -44,7 +44,7 @@ export default function PulsePage() {
         <PulseBoard items={pulseItems} themes={pulseThemes} sources={srcs} refs={refs} asOf={pulseAsOf} />
         <section className="mt-12">
           <div className="flex flex-wrap items-baseline justify-between gap-3 mb-1"><h2 className="text-xl font-semibold tracking-tight">Automated stream</h2>{auto && <span className="text-xs text-muted">fetched {auto.fetched} · refreshed weekly</span>}</div>
-          <p className="text-sm text-muted mb-3 max-w-3xl">Everything the leading journals, the FDA Oncology Center of Excellence and two news outlets published recently, pulled from their feeds without editing and matched to Nuclide objects by name. The curated board above is a reading of the field; this is the raw material it is read from.</p>
+          <p className="text-sm text-muted mb-3 max-w-3xl">Everything the leading journals, the FDA press room and the trade press published recently, pulled from their feeds without editing and matched to Nuclide objects by name. The curated board above is a reading of the field; this is the raw material it is read from.</p>
           {auto ? <AutoPulse snap={auto} refs={refs} /> : <p className="card p-4 text-sm text-muted">The automated stream is not part of this build yet; it appears after the next weekly refresh. The curated board above is complete.</p>}
         </section>
         <section className="mt-12 card p-5 text-sm text-muted max-w-3xl">

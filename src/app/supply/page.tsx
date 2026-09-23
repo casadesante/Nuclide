@@ -5,7 +5,7 @@ import { Container, GroupKicker, PageHeader } from "@/components/ui";
 import { RefChips } from "@/components/RefChips";
 import { statusClass } from "@/lib/text";
 
-export const metadata: Metadata = pageMeta({ title: "Isotope supply", description: "The radionuclides behind oncology imaging and radioligand therapy: half-lives, emissions, production routes, suppliers, and supply status.", path: "/supply/" });
+export const metadata: Metadata = pageMeta({ title: "Isotope supply", description: "The radionuclides behind diagnostic imaging and radioligand therapy: half-lives, emissions, production routes, suppliers, and supply status.", path: "/supply/" });
 
 const TONE: Record<string, string> = { adequate: "approved", tight: "phase-2", constrained: "negative", emerging: "phase-1" };
 

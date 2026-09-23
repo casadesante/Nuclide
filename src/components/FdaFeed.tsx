@@ -76,7 +76,7 @@ export function FdaFeed() {
       <div className="space-y-4">
         <div className="card p-4">
           <h2 className="font-semibold mb-2">Not yet in the corpus</h2>
-          {snap.notInCorpus.length === 0 ? <p className="text-sm text-muted">Every FDA oncology notice in the window matched a product in Nuclide.</p> : (
+          {snap.notInCorpus.length === 0 ? <p className="text-sm text-muted">Every FDA notice in the window matched a product in Nuclide.</p> : (
             <ul className="space-y-2 text-sm">
               {snap.notInCorpus.map((n) => (
                 <li key={n.url} className="flex flex-wrap items-baseline gap-2">

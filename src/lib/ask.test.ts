@@ -258,7 +258,9 @@ describe("Ask Nuclide end to end", () => {
     expect(a.template).toBe("prognosis");
     expect(a.sentences[0].field).toBe("TL;DR");
     expect(a.sentences.some((s) => s.field === "survival disclosure")).toBe(true);
-    expect(a.readMore.some((r) => r.href === "/survival/")).toBe(true);
+    // The fork has no /survival/ room: the SEER figure sits on the record itself behind the survival
+    // disclosure, and the answer reads on to the indications index instead.
+    expect(a.readMore.some((r) => r.href === "/indications/")).toBe(true);
     expect(a.sentences[0].text).not.toMatch(/\d+%/);
   });
 

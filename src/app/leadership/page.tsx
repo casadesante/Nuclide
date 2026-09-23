@@ -13,7 +13,7 @@ export default function Leadership() {
     <>
       <PageHeader kicker={<GroupKicker id="who" />} title="Trial leadership"
         lede="Publication counts reward volume. This index rewards presence in the evidence that changed practice: the trials, products, and technologies recorded in Nuclide that an institution or cooperative group is linked to. It is disclosed, simple, and only as complete as the corpus."
-        right={<div className="flex gap-2"><Link href="/institutions/" className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium">Map & ranking</Link><Link href="/universities/" className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium">Research output</Link></div>} />
+        right={<div className="flex gap-2"><Link href="/institutions/" className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium">Map & ranking</Link><Link href="/institutions/" className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium">Research output</Link></div>} />
       <Container className="pb-16">
         <div className="card p-4 mb-6 text-sm text-muted">
           score = 3 × linked trials + 2 × linked products + linked technologies + linked targets, counting distinct Nuclide objects connected in either direction. Cooperative groups (SWOG, NRG, Alliance, BIG…) are included because they, not single hospitals, run most academic phase 3 trials. To move an institution up, document the trial it led and link it.

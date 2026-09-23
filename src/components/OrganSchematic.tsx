@@ -24,7 +24,7 @@ export function OrganSchematic({ indicationId, organ, compact = false, height }:
       <div className="px-4 py-3 border-t border-border text-sm">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <div><span className="font-medium">{o.name}: subsites and node stations</span><span className="text-muted"> · wireframe schematic, not to scale</span></div>
-          <Link href={`/atlas/organs/#${o.id}`} className="text-xs underline text-muted">Organ atlas →</Link>
+
         </div>
         <p className="text-muted mt-1">{o.caption}</p>
         <div className="grid gap-4 sm:grid-cols-2 mt-3">

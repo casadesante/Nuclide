@@ -23,30 +23,30 @@ function PickGlyph({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
-/** Header chip next to the profile icon: the chosen cancer with its icon, or "My cancer" opening the picker. */
+/** Header chip next to the profile icon: the chosen indication with its icon, or "My indication" opening the picker. */
 export function MyCancerChip({ className = "" }: { className?: string }) {
   const { id } = useMyCancer();
   const mine = pickMyCancer(useMyCancerList(!!id), id);
   const base = `inline-flex h-10 max-w-[11rem] items-center gap-1.5 rounded-[0.625rem] border px-2.5 text-sm font-medium transition ${className}`;
   if (!mine) {
     return (
-      <Link href="/for-me/" className={`${base} border-border bg-card text-muted hover:text-foreground hover:border-border-strong`} title="Choose your cancer type; Nuclide remembers it in this browser" aria-label="My indication: not chosen yet, open the picker">
-        <PickGlyph className="h-4 w-4 shrink-0" /><span className="hidden sm:inline truncate">My cancer</span>
+      <Link href="/for-me/" className={`${base} border-border bg-card text-muted hover:text-foreground hover:border-border-strong`} title="Choose the indication you follow; Nuclide remembers it in this browser" aria-label="My indication: not chosen yet, open the picker">
+        <PickGlyph className="h-4 w-4 shrink-0" /><span className="hidden sm:inline truncate">My indication</span>
       </Link>
     );
   }
   return (
-    <Link href={mine.route} className={`${base} border-accent/40 bg-accent-soft text-accent hover:border-accent`} title={`${mine.name}: your remembered cancer type. Change it in For me.`} aria-label={`My indication: ${mine.name}`}>
+    <Link href={mine.route} className={`${base} border-accent/40 bg-accent-soft text-accent hover:border-accent`} title={`${mine.name}: your remembered indication. Change it in For me.`} aria-label={`My indication: ${mine.name}`}>
       <IndicationIcon indicationId={mine.id} className="h-5 w-5 shrink-0" /><span className="hidden sm:inline truncate">{shortCancerName(mine.name)}</span>
     </Link>
   );
 }
 
-/** Home hero: "Research my cancer type" until a cancer is remembered, then "Continue with <cancer>" straight to its page. */
+/** Home hero: "Research my indication" until one is remembered, then "Continue with <indication>" straight to its page. */
 export function MyCancerContinue() {
   const { id } = useMyCancer();
   const mine = pickMyCancer(useMyCancerList(!!id), id);
-  if (!mine) return <Link href="/for-me/" className="btn btn-primary">Research my cancer type <span aria-hidden>→</span></Link>;
+  if (!mine) return <Link href="/for-me/" className="btn btn-primary">Research my indication <span aria-hidden>→</span></Link>;
   return (
     <Link href={mine.route} className="btn btn-primary inline-flex items-center gap-2" title={mine.name}>
       <IndicationIcon indicationId={mine.id} className="h-5 w-5" />Continue with {shortCancerName(mine.name)} <span aria-hidden>→</span>
@@ -61,7 +61,7 @@ export function MyIndicationPin({ indications }: { indications: MyCancerTile[] }
   if (!mine) return null;
   return (
     <div className="mb-8">
-      <div className="kicker mb-2 flex items-center gap-1.5"><PickGlyph className="h-3.5 w-3.5 text-accent" />My cancer</div>
+      <div className="kicker mb-2 flex items-center gap-1.5"><PickGlyph className="h-3.5 w-3.5 text-accent" />My indication</div>
       <div className="flex flex-wrap items-stretch gap-2">
         <Link href={mine.route} title={mine.tldr} className="card p-3 flex items-center gap-3 border-accent/40 hover:shadow-md transition min-w-0 max-w-md">
           <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent"><IndicationIcon indicationId={mine.id} className="h-8 w-8" /></span>
@@ -81,7 +81,7 @@ export function MyIndicationPin({ indications }: { indications: MyCancerTile[] }
 export function MyIndicationTrialsFilter() {
   const { id } = useMyCancer();
   const mine = pickMyCancer(useMyCancerList(!!id), id);
-  if (!mine) return <Link href="/for-me/" className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium inline-flex items-center gap-1.5"><PickGlyph className="h-4 w-4 text-accent" />Trials for my cancer →</Link>;
+  if (!mine) return <Link href="/for-me/" className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium inline-flex items-center gap-1.5"><PickGlyph className="h-4 w-4 text-accent" />Trials for my indication →</Link>;
   return (
     <Link href={`/trials/?indications=${encodeURIComponent(mine.name)}`} className="rounded-lg border border-accent/40 bg-accent-soft text-accent px-4 py-2 text-sm font-medium inline-flex items-center gap-1.5" title={`Only trials linked to ${mine.name}`}>
       <IndicationIcon indicationId={mine.id} className="h-4 w-4" />Trials for {shortCancerName(mine.name)} →

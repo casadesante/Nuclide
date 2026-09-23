@@ -4,8 +4,8 @@ The app progressively exposes two read-only tools to a WebMCP-capable browser:
 
 | Tool | Arguments | Result |
 | --- | --- | --- |
-| `onco_search` | `query` (1–300 characters), optional `kind`, optional `limit` (1–20, default 10) | Lexical matches from the same MiniSearch index as the search UI, with IDs, summaries, status and same-origin page URLs. |
-| `onco_get_entity` | Exact kebab-case `id` from search | Full static API record, dated facts and source links, neighbours, and page URL. Missing IDs return `found: false`. |
+| `nuclide_search` | `query` (1–300 characters), optional `kind`, optional `limit` (1–20, default 10) | Lexical matches from the same MiniSearch index as the search UI, with IDs, summaries, status and same-origin page URLs. |
+| `nuclide_get_entity` | Exact kebab-case `id` from search | Full static API record, dated facts and source links, neighbours, and page URL. Missing IDs return `found: false`. |
 
 Every result includes the data attribution and an orientation/not-medical-advice disclaimer. Tools do not change user settings, navigate, submit forms, access accounts, or provide personalised medical advice. Search is lexical; the full search page also supports concept search. The existing stdio MCP servers remain available independently.
 
@@ -26,6 +26,6 @@ References checked 17 September 2026:
 
 Run `npm ci`, `npm run validate`, `npm run typecheck`, `npm run lint`, `npm test`, and `npm run build`. The WebMCP tests cover unsupported environments, async import/unmount races, independent remount lifetimes, synchronous and asynchronous registration failures, invalid arguments, path traversal, filtering before limiting, missing records, malformed responses, and network errors/retry.
 
-For browser checks, run `npm run dev`, open `/search/` in a WebMCP-capable browser and discover the two tools using the browser's agent interface. Call `onco_search` with `{"query":"pluvicto","kind":"drug","limit":2}`, then `onco_get_entity` with `{"id":"pluvicto"}`. Verify IDs, source links, attribution and disclaimer. Call the lookup with a nonexistent kebab-case ID to verify `found: false`. Navigate within the app and verify the root tools remain available.
+For browser checks, run `npm run dev`, open `/search/` in a WebMCP-capable browser and discover the two tools using the browser's agent interface. Call `nuclide_search` with `{"query":"pluvicto","kind":"drug","limit":2}`, then `nuclide_get_entity` with `{"id":"pluvicto"}`. Verify IDs, source links, attribution and disclaimer. Call the lookup with a nonexistent kebab-case ID to verify `found: false`. Navigate within the app and verify the root tools remain available.
 
 In a browser without WebMCP, use the search form and follow a result normally. Do not install a polyfill to simulate lack of support. Browser-provided WebMCP bridges may expose non-configurable properties, so deleting or overwriting `document.modelContext` is not a portable fallback test; the automated lifecycle test verifies that the unavailable path does not load tools.

@@ -84,9 +84,7 @@ import { SpreadMap } from "./SpreadMap";
 import { spreadFor, SPREAD_LABELS } from "@/data/spread";
 import { GentleSection } from "./GentleSection";
 import { WhatIsBeingDone, WhatIsBeingDoneFor } from "./WhatIsBeingDone";
-import { journeysForCancer } from "@/data/journeys";
 import { organFor } from "@/data/organ-schematics";
-import { guidelineCancerIds } from "@/lib/guidelines";
 import { IdentifierRow, XrefStrip } from "./XrefStrip";
 import { EN_TEXT, nameAttrs } from "@/lib/translate";
 import { HotspotPlot } from "./HotspotPlot";
@@ -281,7 +279,7 @@ function kindTabs(e: Entity): Tab[] {
       return [
         overview(<>
           <div className="mt-8"><TechSchematic tech={e} /></div>
-          {modelFor(e.id) && (() => { const m = modelFor(e.id)!; return (<div className="mt-6 card p-4 text-sm"><div className="kicker mb-1">Model registry</div><div className="grid gap-x-6 gap-y-1 sm:grid-cols-2"><div><span className="text-muted">Modality:</span> {m.modality}</div>{m.parametersM && <div><span className="text-muted">Parameters:</span> {m.parametersM >= 1000 ? `${m.parametersM / 1000} B` : `${m.parametersM} M`}</div>}<div><span className="text-muted">Weights:</span> {m.weights}</div>{m.licence && <div><span className="text-muted">Licence:</span> {m.licence}</div>}<div className="sm:col-span-2"><span className="text-muted">Training data:</span> {m.trainingData}</div>{m.benchmark && <div className="sm:col-span-2"><span className="text-muted">Reported result:</span> {m.benchmark}</div>}</div><Link className="underline text-xs text-muted mt-2 inline-block" href="/models/">Compare all models →</Link></div>); })()}
+          {modelFor(e.id) && (() => { const m = modelFor(e.id)!; return (<div className="mt-6 card p-4 text-sm"><div className="kicker mb-1">Model registry</div><div className="grid gap-x-6 gap-y-1 sm:grid-cols-2"><div><span className="text-muted">Modality:</span> {m.modality}</div>{m.parametersM && <div><span className="text-muted">Parameters:</span> {m.parametersM >= 1000 ? `${m.parametersM / 1000} B` : `${m.parametersM} M`}</div>}<div><span className="text-muted">Weights:</span> {m.weights}</div>{m.licence && <div><span className="text-muted">Licence:</span> {m.licence}</div>}<div className="sm:col-span-2"><span className="text-muted">Training data:</span> {m.trainingData}</div>{m.benchmark && <div className="sm:col-span-2"><span className="text-muted">Reported result:</span> {m.benchmark}</div>}</div></div>); })()}
           <Block title="How it works"><p className="text-[15px] leading-relaxed max-w-3xl">{e.principle}</p></Block>
           <div className="grid gap-6 sm:grid-cols-2 mt-8">
             <Field label="Strengths"><Bullets items={e.strengths} linked={(t) => withTermHovers(t, { skipId: e.id })} /></Field>
@@ -300,11 +298,10 @@ function kindTabs(e: Entity): Tab[] {
           {structuresForTarget(e.id).length > 0 && <div className="mt-6"><div className="kicker mb-2">Solved structures with a drug bound</div><MoleculeViewer entries={structuresForTarget(e.id)} /></div>}
           <div className="mt-6"><TargetExplainer target={e} /></div>
           <div className="mt-6"><CatalystsPanel id={e.id} /></div>
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-2"><Link href={`/dossiers/${e.id}/`} className="chip border bg-card border-border hover:bg-foreground/5 text-sm">Full dossier: hotspots, trials, resistance, assays, models, open questions →</Link></div>
+          
           <Block title="External identifiers"><XrefStrip targetId={e.id} compact /></Block>
-          {hotspotsFor(e.id) && <Block title="Mutation hotspots"><HotspotPlot map={hotspotsFor(e.id)!} compact /><p className="text-xs text-muted mt-1"><Link className="underline" href={`/dossiers/${e.id}/#hotspots`}>Residue-by-residue table on the dossier →</Link></p></Block>}
-          {assaysForTarget(e.id).length > 0 && <Block title="Companion diagnostics"><ul className="text-sm space-y-1">{assaysForTarget(e.id).map((a) => <li key={a.id}><Link className="font-medium hover:underline" href={`/assays/#${a.id}`}>{a.name}</Link> <span className="text-muted">· {a.cutoff}</span></li>)}</ul></Block>}
-          {modelsFor(e.id) && <p className="text-sm text-muted mt-4"><Link className="underline" href={`/preclinical-models/?subject=${encodeURIComponent(e.name.split(" (")[0])}`}>Cell lines and mouse models for this target →</Link></p>}
+          {hotspotsFor(e.id) && <Block title="Mutation hotspots"><HotspotPlot map={hotspotsFor(e.id)!} compact /></Block>}
+          {assaysForTarget(e.id).length > 0 && <Block title="Companion diagnostics"><ul className="text-sm space-y-1">{assaysForTarget(e.id).map((a) => <li key={a.id}><span className="font-medium">{a.name}</span> <span className="text-muted">· {a.cutoff}</span></li>)}</ul></Block>}
           <Block title="Biology"><p className="text-[15px] leading-relaxed max-w-3xl">{withTermHovers(e.biology, { skipId: e.id })}</p></Block>
           <div className="grid gap-6 sm:grid-cols-2 mt-8">
             <Field label="Where it is found"><Bullets items={e.whereFound} linked={(t) => withTermHovers(t, { skipId: e.id })} /></Field>
@@ -329,7 +326,7 @@ function kindTabs(e: Entity): Tab[] {
             <Field label="Linker">{e.linker}</Field>
           </div>
           {e.dosing && <div className="mt-6"><DosingCard drug={e} /></div>}
-          {assaysForDrug(e.id).length > 0 && <div className="mt-6"><div className="kicker mb-2"><TL text="Companion diagnostics" /></div><ul className="text-sm space-y-1">{assaysForDrug(e.id).map((a) => <li key={a.id}><Link className="font-medium hover:underline" href={`/assays/#${a.id}`}>{a.name}</Link> <span className="text-muted">· {a.cutoff}</span></li>)}</ul></div>}
+          {assaysForDrug(e.id).length > 0 && <div className="mt-6"><div className="kicker mb-2"><TL text="Companion diagnostics" /></div><ul className="text-sm space-y-1">{assaysForDrug(e.id).map((a) => <li key={a.id}><span className="font-medium">{a.name}</span> <span className="text-muted">· {a.cutoff}</span></li>)}</ul></div>}
           {(coverageUs[e.id] || coverageUk[e.id]) && <div className="mt-6 grid gap-4 md:grid-cols-2">{coverageUs[e.id] && <CoverageUsCard drugId={e.id} />}{coverageUk[e.id] && <CoverageUkCard drugId={e.id} />}</div>}
           <div className="mt-6 space-y-4"><DealsPanel id={e.id} /><CatalystsPanel id={e.id} /></div>
           {regionalApprovals[e.id] && <div className="mt-6"><div className="kicker mb-2"><TL text="Where it is approved" /></div><RegionStrip row={regionalApprovals[e.id]} /><p className="text-xs text-muted mt-1"><Link className="underline" href="/regulatory/regions/">Compare all products across the US, EU, UK, Japan, China and Australia →</Link></p></div>}
@@ -502,7 +499,7 @@ function kindTabs(e: Entity): Tab[] {
           <Field label="Holds">{e.holds}</Field>
           <Field label="Licence">{e.license}</Field>
           <Field label="Maintainer">{e.maintainer}</Field>
-          {datasetFor(e.id) && (() => { const d = datasetFor(e.id)!; return (<div className="sm:col-span-2 card p-4 text-sm"><div className="kicker mb-1">Dataset registry</div><div><span className="text-muted">Size:</span> {d.size}</div><div><span className="text-muted">Access:</span> {d.access}</div><div><span className="text-muted">Consent and reuse:</span> {d.consent}</div><Link className="underline text-xs text-muted mt-2 inline-block" href="/models/">All datasets and the models trained on them →</Link></div>); })()}
+          {datasetFor(e.id) && (() => { const d = datasetFor(e.id)!; return (<div className="sm:col-span-2 card p-4 text-sm"><div className="kicker mb-1">Dataset registry</div><div><span className="text-muted">Size:</span> {d.size}</div><div><span className="text-muted">Access:</span> {d.access}</div><div><span className="text-muted">Consent and reuse:</span> {d.consent}</div></div>); })()}
         </div>),
       ];
     case "person": {
@@ -716,9 +713,8 @@ function cancerTabs(c: Indication): Tab[] {
       <CancerBasics c={c} />
       <Block title="State of the art"><SurvivalDisclosure items={c.stateOfArt} skipId={c.id} /></Block>
       <CancerOutlook c={c} />
-      {journeysForCancer(c.id).length > 0 && <div className="card p-4 mt-6"><div className="kicker mb-1"><TL text="Treatment journeys" /></div><p className="text-sm text-muted mb-2">What the next twelve months look like, phase by phase, with the decision points.</p><div className="flex flex-wrap gap-1.5">{journeysForCancer(c.id).map((j) => <Link key={j.id} href={`/journeys/${j.id}/`} className="chip border bg-card border-border hover:bg-foreground/5">{j.stage}</Link>)}</div></div>}
       {organFor(c.id) && <Block title="Anatomy and lymph node drainage"><OrganSchematic indicationId={c.id} /></Block>}
-      {modelsFor(c.id) && <Block title="Preclinical models"><p className="text-sm text-muted">{modelsFor(c.id)!.cellLines.length} cell lines, {modelsFor(c.id)!.gemms.length} mouse models and {modelsFor(c.id)!.pdx.length + modelsFor(c.id)!.organoids.length} repositories are listed for this cancer. <Link className="underline" href={`/preclinical-models/?subject=${encodeURIComponent(c.name.split(" (")[0])}`}>See them →</Link></p></Block>}
+      {modelsFor(c.id) && <Block title="Preclinical models"><p className="text-sm text-muted">{modelsFor(c.id)!.cellLines.length} cell lines, {modelsFor(c.id)!.gemms.length} mouse models and {modelsFor(c.id)!.pdx.length + modelsFor(c.id)!.organoids.length} repositories are listed for this cancer.</p></Block>}
       <div className="grid gap-6 sm:grid-cols-2 mt-8">
         <Field label="Who gets it and what has changed"><SurvivalDisclosure text={c.burden} skipId={c.id} /></Field>
         <Field label="Group"><Tip title={`${c.group[0].toUpperCase()}${c.group.slice(1)} indications`} text={`All ${c.group} indications in Nuclide, filtered in the indications table.`} href={`/indications/?group=${encodeURIComponent(c.group[0].toUpperCase() + c.group.slice(1))}`}><Link className="capitalize underline decoration-dotted decoration-foreground/30 underline-offset-[3px]" href={`/indications/?group=${encodeURIComponent(c.group[0].toUpperCase() + c.group.slice(1))}`}>{c.group}</Link></Tip></Field>
@@ -733,16 +729,16 @@ function cancerTabs(c: Indication): Tab[] {
               <ol className="space-y-2 text-sm">{spreadFor(c.id)!.sites.map((s) => <li key={s.region} className="card p-3"><div className="flex items-baseline justify-between gap-2"><span className="font-medium">{s.site}</span><span className="chip bg-foreground/5">{s.tier}</span></div>{(s.pct || s.note) && <p className="text-muted mt-1">{[s.pct, s.note].filter(Boolean).join(". ")}.</p>}</li>)}</ol>
             </div>
           </div>
-          <p className="text-xs text-muted mt-2"><Link href={`/atlas/spread/#${c.id}`} className="underline">All indications side by side</Link></p>
+          
         </GentleSection>
       )}
     </> },
     { id: "care", label: "Standard of care", count: c.standardOfCare.length, content: (
       <div className="space-y-3">
         <div className="flex flex-wrap gap-3 text-sm mb-2">
-          <Link href={`/sequencing/${c.id}/`} className="underline">Lines of therapy by subgroup →</Link>
-          {guidelineCancerIds().includes(c.id) && <Link href={`/guidelines/${c.id}/`} className="underline">Guideline history and concordance →</Link>}
-          <Link href={`/staging/#${c.id}`} className="underline">Staging and risk scores →</Link>
+          
+          
+          
         </div>
         {c.standardOfCare.map((s, i) => (
           <div key={i} className="card p-4">

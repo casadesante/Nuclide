@@ -157,12 +157,6 @@ export function parseLongDate(s: string): string | undefined {
 }
 
 // ---------------------------------------------------------------------------------------------------
-// FDA Oncology Center of Excellence approval notifications (shared by fetch-fda and fetch-pulse).
-// ---------------------------------------------------------------------------------------------------
-
-
-
-// ---------------------------------------------------------------------------------------------------
 // Entity name matching: map free text (titles, abstracts, INN strings) to Nuclide entity ids.
 // ---------------------------------------------------------------------------------------------------
 
@@ -239,7 +233,7 @@ export function matchableFromGraph(entities: Array<{ id: string; kind: string; n
   return entities.map((e) => ({ id: e.id, kind: e.kind, name: e.name, aka: e.aka, brand: typeof e.brand === "string" ? e.brand : undefined, code: typeof e.code === "string" ? e.code : undefined }));
 }
 
-/** Oncology keyword filter for general-news feeds. */
+/** Radiopharmaceutical keyword filter for general-news feeds. */
 export const NUCLIDE_WORDS = /\b(radiopharmaceutical|radioligand|radionuclide|radioisotope|theranostic|radiotracer|radiolabel|nuclear medicine|molecular imaging|PET[/ -]?(?:CT|MR)?|SPECT|scintigraph|dosimetr|radioembolis|radioemboliz|brachytherap|alpha[- ]emitt|beta[- ]emitt|targeted alpha|peptide receptor radionuclide|PRRT|PSMA|SSTR|somatostatin receptor|FAPI|amyloid PET|tau PET|lutetium|actinium|radium[- ]?22[34]|iodine[- ]?131|yttrium[- ]?90|technetium|gallium[- ]?68|fluorine[- ]?18|copper[- ]?6[47]|zirconium[- ]?89|lead[- ]?212|astatine|terbium|holmium[- ]?166|rhenium[- ]?188|samarium[- ]?153|molybdenum[- ]?99|177Lu|225Ac|223Ra|99mTc|68Ga|18F|64Cu|89Zr|212Pb|131I|90Y|cyclotron|radiochemistr|hot cell|generator eluti|isotope suppl)\b/i;
 
 /**

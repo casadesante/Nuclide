@@ -37,7 +37,7 @@ export const TOPICS: Record<ProblemTopic, TopicMeta> = {
     bottlenecks: ["b-dormancy-mrd"],
     seeds: ["mrd-testing", "liquid-biopsy", "ngs-mrd-clonoseq", "flow-cytometry-mrd", "ctdna-lymphoma-monitoring", "signatera", "neoantigen-mrna-vaccine", "shared-antigen-vaccine", "structured-exercise-survivorship", "dynamic", "circulate-japan", "imvigor011", "cambria", "natalee", "monarche", "olympia", "adaura", "keynote-522", "mrd", "ctdna", "late-recurrence", "relapse-recurrence", "neoadjuvant-adjuvant", "tumor-dormancy", "disseminated-tumor-cells"],
     keywords: /\b(recurr\w*|relaps\w*|residual disease|minimal residual|molecular residual|\bmrd\b|dorman\w*|come back|came back|disease-free|microscopic disease)/i,
-    pages: [{ label: "Treatment journeys", href: "/journeys/" }, { label: "Survivorship planner", href: "/survivorship/" }],
+    pages: [{ label: "Indications", href: "/indications/" }],
   },
   spread: {
     label: "Advanced and metastatic disease",
@@ -45,7 +45,7 @@ export const TOPICS: Record<ProblemTopic, TopicMeta> = {
     bottlenecks: ["b-metastasis-biology", "b-brain-delivery"],
     seeds: ["sbrt", "radioligand-therapy", "targeted-alpha-therapy", "psma-pet", "whole-body-mri", "pet-ct", "liquid-biopsy", "hipec", "bone-modifying-agents", "radioembolisation-tare", "bbb-focused-ultrasound", "thermal-ablation", "radium-223", "pluvicto", "tucatinib", "trastuzumab-deruxtecan", "mslt-ii", "oligometastatic", "oligoprogression", "metastasis", "peritoneal-metastasis", "emt", "organ-tropism-seed-soil", "blood-brain-barrier-metastasis", "activating-invasion-metastasis"],
     keywords: /\b(metasta\w*|spread\w*|advanced disease|stage iv|stage 4|distant|secondary (cancer|tumour)|disseminat\w*|brain (lesion|involvement)|leptomening\w*|peritoneal)/i,
-    pages: [{ label: "Atlas of advanced disease", href: "/atlas/spread/" }, { label: "Invasion and metastasis", href: "/mechanics/#metastasis" }],
+    pages: [{ label: "Indications", href: "/indications/" }],
   },
   resistance: {
     label: "Resistance to treatment",
@@ -53,7 +53,7 @@ export const TOPICS: Record<ProblemTopic, TopicMeta> = {
     bottlenecks: ["b-resistance", "b-tumor-heterogeneity"],
     seeds: ["protac-degrader", "dual-payload-adc", "bispecific-adc", "liquid-biopsy", "kinase-inhibitors", "adc-payload-neutralizer", "single-cell-spatial", "osimertinib", "amivantamab", "camizestrant", "pirtobrutinib", "bgb-16673", "lorlatinib", "serena-6", "mariposa", "flaura2", "bruin-cll-321", "resistance", "efflux-pump", "cross-resistance", "antigen-escape", "gatekeeper-mutation", "adc-sequencing", "esr1-mutation", "c797s"],
     keywords: /\b(resist\w*|refractory|stops? working|stopped working|escape\w*|bypass|progression on|no longer (works|respond)|reversion|cross-resist\w*)/i,
-    pages: [{ label: "Resistance atlas", href: "/resistance/" }, { label: "Lines of therapy", href: "/sequencing/" }],
+    pages: [{ label: "Open problems", href: "/gaps/" }],
   },
   "side-effects": {
     label: "Side effects and quality of life",
@@ -61,7 +61,7 @@ export const TOPICS: Record<ProblemTopic, TopicMeta> = {
     bottlenecks: ["b-toxicity-qol", "b-cachexia-supportive"],
     seeds: ["scalp-cooling", "cardio-oncology", "exercise-oncology", "geriatric-assessment", "masked-adc", "site-specific-conjugation", "proton-therapy", "imrt-igrt", "sentinel-node", "robotic-surgery", "nutrition-screening-mnt", "structured-exercise-survivorship", "irae", "toxicity-grade", "quality-of-life", "de-escalation", "ctcae-grading", "supportive-care"],
     keywords: /\b(toxic\w*|side[- ]effect\w*|adverse|irae\w*|neuropath\w*|cardiotox\w*|quality of life|late effect\w*|cytokine release|neurotox\w*|infertil\w*|hearing loss|fatigue|nausea|morbidity|tolerab\w*)/i,
-    pages: [{ label: "Side effects by symptom", href: "/side-effects/" }, { label: "Immune-related side effects", href: "/irae/" }, { label: "Toxicity compare", href: "/toxicity/" }, { label: "Survivorship planner", href: "/survivorship/" }],
+    pages: [{ label: "Dosimetry", href: "/roadmaps/dosimetry-roadmap/" }],
     skipBottleneckRelations: true,
   },
   "late-diagnosis": {
@@ -78,7 +78,7 @@ export const TOPICS: Record<ProblemTopic, TopicMeta> = {
     bottlenecks: ["b-drug-pricing", "b-global-access"],
     seeds: ["trastuzumab-biosimilars", "imatinib", "hpv-vaccine", "biosimilar", "accelerated-approval", "real-world-evidence", "idea-single-dose-hpv-self-sampling-elimination"],
     keywords: /\b(\bcost\w*|access\w*|afford\w*|pric\w*|low- and middle|lmic\w*|inequit\w*|dispar\w*|supply|shortage\w*|capacity|unavailable|reimburse\w*|coverage)/i,
-    pages: [{ label: "Financial help", href: "/assistance/" }, { label: "Coverage by country", href: "/coverage/" }, { label: "HTA decisions", href: "/hta/" }],
+    pages: [{ label: "Approvals and coverage by region", href: "/regulatory/regions/" }],
     skipBottleneckRelations: true,
   },
   rare: {
@@ -95,7 +95,7 @@ export const TOPICS: Record<ProblemTopic, TopicMeta> = {
     bottlenecks: ["b-undruggable-targets"],
     seeds: ["kras-inhibitors", "protac-degrader", "antisense-sirna", "synthetic-lethality-approaches", "ai-drug-design", "shared-antigen-vaccine", "crispr-screens", "sotorasib", "adagrasib", "daraxonrasib", "zoldonrasib", "revumenib", "eli-002-7p", "rasolute-302", "kras-roadmap"],
     keywords: /\b(undrugg\w*|undrugged|no (targeted|approved|effective) (therap\w*|drug\w*|option\w*|inhibitor)|no target\w*|no drug\w*|lacks? targets|few targets|beyond (egfr|pd-1)|transcription factor|no (new )?first-line regimen)/i,
-    pages: [{ label: "Targets", href: "/targets/" }, { label: "KRAS roadmap", href: "/roadmaps/kras-roadmap/" }],
+    pages: [{ label: "Targets", href: "/targets/" }, { label: "Radiopharma roadmap", href: "/roadmaps/radiopharma-roadmap/" }],
   },
 };
 

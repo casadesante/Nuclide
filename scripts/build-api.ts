@@ -6,6 +6,7 @@
  *   <plural>.json       entities of one kind                             <plural>.csv the same, flattened
  *   entities/<id>.json  one entity with its neighbours                   schema.json  JSON Schema of an entity
  *   search.json, ranking.json, benchmark.json, meta.json                 feeds: see scripts/build-feeds.ts
+ *   my-indications.json the indication chooser list the header fetches on demand
  */
 import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -13,6 +14,9 @@ import { z } from "zod";
 import { graph } from "../src/lib/graph";
 import { EntitySchema, KIND_META, KINDS, routeFor } from "../src/lib/schema";
 import { siteSearchDocs } from "../src/lib/search-index";
+import { myCancerList } from "../src/lib/my-indication-list";
+import { rankInstitutions } from "../src/lib/ranking";
+import { benchmark } from "../src/data/benchmark";
 import { flattenForCsv, toCsv, toNdjson, EXPORT_LICENCE } from "../src/lib/csv";
 import { buildFeeds } from "./build-feeds";
 import { apiFiles, FEEDS } from "./api-layout";
@@ -56,6 +60,12 @@ try {
 } catch (err) {
   console.warn(`api: schema.json not written (${err instanceof Error ? err.message : String(err)})`);
 }
+
+// The three files the /api, /build and /eval pages document: the indication chooser list the header
+// fetches on demand, the institution ranking with its score components, and the open question set.
+write("my-indications.json", myCancerList());
+write("ranking.json", rankInstitutions());
+write("benchmark.json", benchmark);
 
 const feeds = buildFeeds();
 

@@ -129,7 +129,7 @@ export default function StatusPage() {
 
         <section className="card p-5 text-sm text-muted max-w-3xl">
           <div className="kicker mb-1">Stale records</div>
-          <p>{over60 ? `${over60} records were last checked more than 60 days ago and ${over180} more than 180 days ago` : "No record was last checked more than 60 days ago"} (every record carries the date it was last checked). {over60 ? "The oldest are listed on the " : "When any fall behind they are listed on the "}<Link className="underline" href="/audit/">audit page</Link>; oncology moves weekly, so anything over 60 days is due. Raw data: <a className="underline" href="/audit.json">audit.json</a>.</p>
+          <p>{over60 ? `${over60} records were last checked more than 60 days ago and ${over180} more than 180 days ago` : "No record was last checked more than 60 days ago"} (every record carries the date it was last checked). {over60 ? "The oldest are listed on the " : "When any fall behind they are listed on the "}<Link className="underline" href="/audit/">audit page</Link>; the field moves weekly, so anything over 60 days is due. Raw data: <a className="underline" href="/audit.json">audit.json</a>.</p>
         </section>
       </Container>
     </>

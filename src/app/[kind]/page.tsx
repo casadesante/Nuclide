@@ -47,9 +47,9 @@ export default async function KindIndex({ params }: { params: Promise<{ kind: st
   const rows = built.rows.map((r) => { const cols = { ...r.cols }; for (const key of richKeys) { const v = cols[key]; if (typeof v === "string" && v.length > 3) { const marks = termMarks(v); if (marks.length) cols[key] = { text: v, marks }; } } return { ...r, cols }; });
   const { facets, columns, hideStatus, hideTldr, defaultSort } = built;
 
-  const right = k === "indication" ? <Link href="/for-me/" className="rounded-lg bg-accent text-white px-4 py-2 text-sm font-medium">Pick mine →</Link>
+  const right = k === "indication" ? <Link href="/explore/" className="rounded-lg bg-accent text-white px-4 py-2 text-sm font-medium">Explore →</Link>
     : k === "drug" ? <Link href="/explore/?kind=drug" className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium">Rank by cancer type →</Link>
-    : k === "institution" ? <Link href="/universities/" className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium">University output →</Link>
+    : k === "institution" ? <Link href="/leadership/" className="rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium">Trial leadership →</Link>
     : k === "bottleneck" ? <Link href="/ideas/" className="rounded-lg bg-accent text-white px-4 py-2 text-sm font-medium">All ideas →</Link>
     : k === "trial" ? <MyIndicationTrialsFilter />
     : undefined;

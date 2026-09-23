@@ -21,7 +21,7 @@ export function apiFiles(counts: Record<Kind, number>): ApiFile[] {
     { path: "/api/v1/search.json", contents: "Compact search documents" },
     { path: "/api/v1/entities/<id>.json", contents: "One entity with its neighbours" },
     { path: "/api/v1/for-me/<id>.json", contents: "One cancer's situation data for the For me page: standard-of-care rows with decision anchors, biomarkers resolved to targets, drugs with regional approvals, recruiting trials, red cards, questions" },
-    { path: "/api/v1/my-indications.json", contents: "Every cancer as id, name, site route and hub group: the chooser list the header and welcome step fetch on demand" },
+    { path: "/api/v1/my-indications.json", contents: "Every indication as id, name, site route and group: the chooser list the header and For me page fetch on demand" },
     { path: "/api/v1/context/<id>.md", contents: "One entity as clean Markdown for language models" },
     { path: "/api/v1/context/index.md", contents: "Index of the Markdown context files" },
     { path: "/api/v1/nuclide.nt", contents: "The graph as RDF N-Triples (schema.org, owl:sameAs to Wikidata)" },
@@ -73,7 +73,7 @@ export function openApiDocument(counts: Record<Kind, number>, opts: { version?: 
     "/api/v1/{plural}.csv": get("listKindCsv", "All entities of one kind as CSV: scalars as-is, arrays joined with '; ', nested records as JSON; the first line is a licence comment", ok({ type: "string" }, "text/csv"), { parameters: [pluralParam] }),
     "/api/v1/entities/{id}.json": get("getEntity", "One entity with its site route and its neighbours grouped by kind", { ...ok(ref("EntityResponse")), "404": { description: "No such id; the CDN returns the site's 404 page." } }, { parameters: [idParam("Kebab-case entity id, for example tnbc, trop2 or trastuzumab-deruxtecan.")] }),
     "/api/v1/for-me/{id}.json": get("getForMeSituation", "One cancer's situation data for the For me page: standard-of-care rows with decision-page anchors, biomarkers resolved to target records, drugs with regional approval rows, recruiting trials, red cards and questions; assembled in the browser by src/lib/for-me-situation.ts", { ...ok({ type: "object", additionalProperties: true }), "404": { description: "No such cancer id." } }, { parameters: [idParam("Kebab-case cancer id, for example tnbc or nsclc.")] }),
-    "/api/v1/my-indications.json": get("getMyCancers", "Every cancer as id, name, site route and hub group; the small chooser list the site's header chip, account menu and welcome step fetch on demand", ok({ type: "array", items: { type: "object", required: ["id", "name", "route", "group"], properties: { id: { type: "string" }, name: { type: "string" }, route: { type: "string" }, group: { type: "string" } } } })),
+    "/api/v1/my-indications.json": get("getMyCancers", "Every indication as id, name, site route and group; the small chooser list the site's header chip, account menu and welcome step fetch on demand", ok({ type: "array", items: { type: "object", required: ["id", "name", "route", "group"], properties: { id: { type: "string" }, name: { type: "string" }, route: { type: "string" }, group: { type: "string" } } } })),
     "/api/v1/context/{id}.md": get("getContext", "One entity as clean Markdown for language models: TL;DR, summary, fields, sources and connected records", { ...ok({ type: "string" }, "text/markdown"), "404": { description: "No such id." } }, { parameters: [idParam()] }),
     "/api/v1/context/index.md": get("getContextIndex", "Index of every Markdown context file with the record's TL;DR", ok({ type: "string" }, "text/markdown")),
     "/llms.txt": get("getLlmsTxt", "llms.txt: what the site is, the licence and the best entry points, for language models", ok({ type: "string" }, "text/plain"), { tags: ["site"] }),
@@ -90,7 +90,7 @@ export function openApiDocument(counts: Record<Kind, number>, opts: { version?: 
     info: {
       title: "Nuclide Open API",
       version: opts.version ?? "1",
-      summary: "The Nuclide oncology knowledge graph as static files.",
+      summary: "The Nuclide radiopharmaceutical knowledge graph as static files.",
       description: [
         `Nuclide is a public, cited knowledge graph of radiopharmaceuticals: ${total.toLocaleString("en-GB")} records in ${KINDS.length} kinds, one page per object, each with a plain-English TL;DR, a technical summary, dated facts and links to primary sources.`,
         "Every file here is written at build time and served from the CDN: no authentication, no rate limit beyond the CDN, permissive CORS. Files are regenerated on every deploy; meta.json carries the build time so clients can cache on it.",

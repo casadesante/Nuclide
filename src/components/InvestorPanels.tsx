@@ -26,12 +26,12 @@ export function CompanyScorePanel({ id }: { id: string }) {
   const fin = financialsFor(id)[0];
   const parts: Array<[string, number]> = [["approved products", s.approvedPoints], ["phase 3", s.phase3Points], ["phase 1/2", s.earlyPoints], ["targets", s.targetPoints], ["modalities", s.modalityPoints], ["regions", s.regionPoints], ["24-month regulatory events", s.momentumPoints], ["registry trials", s.trialPoints], ["failures", s.failurePenalty]];
   return (
-    <Section title="Scorecard" aside={<Link href="/scorecards/" className="text-sm underline text-muted">All companies</Link>}>
+    <Section title="Scorecard" aside={<Link href="/companies/" className="text-sm underline text-muted">All companies</Link>}>
       <div className="grid gap-4 md:grid-cols-2">
         <div className="card p-4 text-sm">
           <div className="flex items-baseline gap-3"><span className="text-3xl font-semibold tabular-nums">#{s.rank}</span><span className="text-muted">of {graph().kind("company").length} companies, score {s.score}</span></div>
           <ul className="mt-2 text-xs text-muted columns-2 gap-4">{parts.filter(([, v]) => v).map(([k, v]) => <li key={k}>{k} <span className="tabular-nums text-foreground">{v > 0 ? "+" : ""}{v}</span></li>)}</ul>
-          <div className="text-xs text-muted mt-2">{s.approved} approved, {s.phase3} in phase 3, {s.early} earlier, {s.targets} targets, {s.registryTrials.toLocaleString("en-GB")} registry studies. Formula on the <Link href="/scorecards/" className="underline">scorecards page</Link>.</div>
+          <div className="text-xs text-muted mt-2">{s.approved} approved, {s.phase3} in phase 3, {s.early} earlier, {s.targets} targets, {s.registryTrials.toLocaleString("en-GB")} registry studies. Formula on the <Link href="/about/" className="underline">about page</Link>.</div>
         </div>
         {fin && (
           <div className="card p-4 text-sm">

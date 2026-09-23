@@ -56,7 +56,7 @@ export function CatalystBrowser({ events, feedPath }: { events: CatalystEvent[];
   const groups = useMemo(() => { const m = new Map<string, CatalystEvent[]>(); for (const e of filtered) { const q = quarterOf(e.date); m.set(q, [...(m.get(q) ?? []), e]); } return [...m.entries()]; }, [filtered]);
 
   const download = () => {
-    const ics = toIcs(filtered.map((e) => ({ uid: `nuclide-${e.origin}-${e.id}`, date: e.date, summary: e.title, description: `${e.note}${e.confidence === "expected" ? "\n\nEditorial estimate; can slip by quarters." : ""}${e.companies.length ? `\n\nCompanies: ${e.companies.map((c) => c.name).join(", ")}` : ""}`, url: e.source, categories: [e.kindLabel, e.confidence] })), { name: "Nuclide oncology catalysts (filtered)", description: "Exported from nuclide.cc/catalysts/", stamp: new Date() });
+    const ics = toIcs(filtered.map((e) => ({ uid: `nuclide-${e.origin}-${e.id}`, date: e.date, summary: e.title, description: `${e.note}${e.confidence === "expected" ? "\n\nEditorial estimate; can slip by quarters." : ""}${e.companies.length ? `\n\nCompanies: ${e.companies.map((c) => c.name).join(", ")}` : ""}`, url: e.source, categories: [e.kindLabel, e.confidence] })), { name: "Nuclide radiopharmaceutical catalysts (filtered)", description: "Exported from nuclide.cc/catalysts/", stamp: new Date() });
     const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a"); a.href = url; a.download = "nuclide-catalysts.ics"; a.click();

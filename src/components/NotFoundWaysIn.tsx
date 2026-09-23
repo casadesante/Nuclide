@@ -9,8 +9,7 @@ import { KIND_META, KINDS } from "@/lib/kinds";
 
 /** Ways in that are not a kind hub: the anatomical map, the per-cancer view, the full search and home. */
 const WAYS_IN: { href: string; title: string; blurb: string }[] = [
-  { href: "/body/", title: "Body map", blurb: "Pick where the cancer is to reach its page and the technologies used there." },
-  { href: "/for-me/", title: "For me", blurb: "Choose one or more indications and see everything in Nuclide that touches them." },
+  { href: "/for-me/", title: "For me", blurb: "Pick the indication you follow and Nuclide remembers it in this browser." },
   { href: "/search/", title: "Full search", blurb: "Word and concept search over every record, with why each result matched." },
   { href: "/", title: "Home", blurb: "The front page: fronts, latest changes and the state of the art." },
 ];

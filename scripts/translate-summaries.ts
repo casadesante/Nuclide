@@ -109,13 +109,13 @@ function plan(records: Entity[]): Job[] {
 /** Per-language register and terminology notes. Drug names, gene symbols, trial ids and doses stay as written whatever the language. */
 const LANG_NOTES: Record<SummaryLang, string> = {
   zh: "Simplified Chinese as used in mainland China. Use the standard terminology of the NMPA (国家药品监督管理局) and Chinese clinical guidelines for diseases, procedures and endpoints. Keep drug names in Latin script exactly as written.",
-  es: "Neutral international Spanish. Use the standard medical terminology of Spanish-language oncology (SEOM, AEMPS) for diseases, procedures and endpoints.",
-  pt: "Portuguese readable in Brazil and Portugal. Use the standard medical terminology of Portuguese-language oncology (ANVISA, INFARMED).",
-  fr: "French. Use the standard medical terminology of French-language oncology (ANSM, HAS).",
-  de: "German. Use the standard medical terminology of German-language oncology (BfArM, AWMF).",
-  ja: "Japanese. Use the standard medical terminology of Japanese oncology (PMDA, JSCO); write drug names in Latin script exactly as in the English.",
-  hi: "Hindi in Devanagari. Use the terms used by Indian oncology services; keep drug names, gene symbols and trial ids in Latin script.",
-  ar: "Modern Standard Arabic. Use the standard medical terminology of Arabic-language oncology; keep drug names, gene symbols and trial ids in Latin script.",
+  es: "Neutral international Spanish. Use the standard medical terminology of Spanish-language nuclear medicine and oncology (SEMNIM, SEOM, AEMPS) for diseases, procedures and endpoints.",
+  pt: "Portuguese readable in Brazil and Portugal. Use the standard medical terminology of Portuguese-language nuclear medicine and oncology (SBMN, ANVISA, INFARMED).",
+  fr: "French. Use the standard medical terminology of French-language nuclear medicine and oncology (SFMN, ANSM, HAS).",
+  de: "German. Use the standard medical terminology of German-language nuclear medicine and oncology (DGN, BfArM, AWMF).",
+  ja: "Japanese. Use the standard medical terminology of Japanese nuclear medicine and oncology (JSNM, PMDA, JSCO); write drug names in Latin script exactly as in the English.",
+  hi: "Hindi in Devanagari. Use the terms used by Indian nuclear medicine and oncology services; keep drug names, gene symbols and trial ids in Latin script.",
+  ar: "Modern Standard Arabic. Use the standard medical terminology of Arabic-language nuclear medicine and oncology; keep drug names, gene symbols and trial ids in Latin script.",
 };
 
 const SYSTEM = [

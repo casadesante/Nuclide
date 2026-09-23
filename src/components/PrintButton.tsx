@@ -13,7 +13,7 @@ const MODES: Array<{ id: Mode; label: string; hint: string }> = [
   { id: "pack", label: "Patient pack", hint: "Every section in plain language, with the date, a QR code back to this page and the disclaimer" },
 ];
 
-const DISCLAIMER = "Nuclide is a public, cited, work-in-progress map of oncology. Facts may be incomplete, out of date or wrong; verify anything here at its primary source. Nothing on this page is medical advice; decisions belong with you and your clinicians.";
+const DISCLAIMER = "Nuclide is a public, cited, work-in-progress map of radiopharmaceuticals. Facts may be incomplete, out of date or wrong; verify anything here at its primary source. Nothing on this page is medical advice; decisions belong with you and your clinicians.";
 
 /** The section the reader is looking at: the sticky bar's active pill, else the URL hash, else the first section. */
 function activeSection(): HTMLElement | null {

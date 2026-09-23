@@ -69,7 +69,7 @@ for (const d of matches) {
   const studies = await fetch(\`https://clinicaltrials.gov/api/v2/studies?\${q}\`).then((r) => r.json());
   console.log(d.name, d.status, studies.studies?.map((s: { protocolSection: { identificationModule: { nctId: string } } }) => s.protocolSection.identificationModule.nctId));
 }`}</Code>
-          <p className="text-xs text-muted mt-2">The site&rsquo;s own <Link href="/tumor-board/" className="underline">tumour board</Link> and <Link href="/navigator/" className="underline">navigator</Link> use the same approach; see <code>src/lib/biomarker-match.ts</code> and <code>src/lib/ctgov.ts</code> in the repo for the edge cases (aliases, combination names, condition wording).</p>
+          <p className="text-xs text-muted mt-2">The site&rsquo;s own <Link href="/ask/" className="underline">ask</Link> and <Link href="/query/" className="underline">query</Link> surfaces use the same approach; see <code>src/lib/biomarker-match.ts</code> and <code>src/lib/ctgov.ts</code> in the repo for the edge cases (aliases, combination names, condition wording).</p>
         </Section>
 
         <Section title="Recipe 2: a dashboard">
@@ -86,7 +86,7 @@ console.table(linkers);
 
 // Refresh: meta.json carries the build time; re-fetch when it changes
 const { built, counts } = await fetch("${SITE}/api/v1/meta.json").then((r) => r.json());`}</Code>
-          <p className="text-xs text-muted mt-2">all.json is a few megabytes; for a production dashboard fetch the per-kind files you need and cache on <code>meta.json</code>&rsquo;s <code>built</code> timestamp. The pages under <Link href="/pivot/" className="underline">landscape grid</Link> and <Link href="/scorecards/" className="underline">scorecards</Link> are built this way at build time.</p>
+          <p className="text-xs text-muted mt-2">all.json is a few megabytes; for a production dashboard fetch the per-kind files you need and cache on <code>meta.json</code>&rsquo;s <code>built</code> timestamp. The pages under <Link href="/pivot/" className="underline">landscape grid</Link> and <Link href="/companies/" className="underline">scorecards</Link> are built this way at build time.</p>
         </Section>
 
         <Section title="Recipe 3: a chatbot over MCP">

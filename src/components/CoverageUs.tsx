@@ -13,7 +13,7 @@ export function CoverageUsCard({ drugId }: { drugId: string }) {
     <div className="card p-4">
       <div className="flex items-baseline justify-between gap-3 mb-2">
         <div className="kicker">US coverage</div>
-        <Link href="/coverage/us/" className="text-xs underline text-muted">How paying for cancer care works in the US →</Link>
+        <Link href="/regulatory/regions/" className="text-xs underline text-muted">Approvals and coverage by region →</Link>
       </div>
       <dl className="grid gap-4 sm:grid-cols-2 text-sm">
         <div>

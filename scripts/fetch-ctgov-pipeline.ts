@@ -1,6 +1,8 @@
 /**
  * Bulk ingestion helper: industry lead sponsors of recruiting or active phase 2 and phase 3 interventional
- * oncology trials on ClinicalTrials.gov, with their investigational products, diffed against the corpus.
+ * trials on ClinicalTrials.gov, with their investigational products, diffed against the corpus. The query is
+ * query.cond=cancer, so it finds the oncology end of the field; scripts/fetch-trials.ts covers the corpus
+ * trials themselves, including the cardiac, neurology and infection ones.
  *
  *   npx tsx scripts/fetch-ctgov-pipeline.ts [--out=.claude/ctgov-cache] [--no-fetch]
  *

@@ -212,7 +212,7 @@ export function DatasetJsonLd() {
         creator: { "@type": "Organization", name: SITE_NAME, url: SITE },
         publisher: { "@type": "Organization", name: SITE_NAME, url: SITE },
         citation: "https://github.com/casadesante/Nuclide/blob/main/CITATION.cff",
-        keywords: ["oncology", "indication", "clinical trials", "targeted therapy", "immunotherapy", "knowledge graph", "drug approvals", "cancer centres"],
+        keywords: ["radiopharmaceuticals", "nuclear medicine", "theranostics", "molecular imaging", "radioligand therapy", "clinical trials", "knowledge graph", "drug approvals"],
         inLanguage: "en",
         distribution: [
           dl("/api/v1/all.json", "application/json", "Every record (JSON)"),

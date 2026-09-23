@@ -235,7 +235,7 @@ export default function TrialDesignsPage() {
               <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent">{svg("M4 19V5M4 19h16M6 15c3 0 4-8 7-8s4 5 7 5")}</span>
               <h2 className="text-xl font-semibold"><a href="#reading" className="hover:underline">Reading the result</a></h2>
             </div>
-            <p className="text-sm text-muted mb-4 max-w-3xl">The statistics a trial report throws at you, each with a worked example from the corpus. The <Link href="/forest/" className="underline">forest plot</Link> puts every hazard ratio in Nuclide on one axis and <Link href="/explained/" className="underline">Trials in plain words</Link> turns results into people out of 100.</p>
+            <p className="text-sm text-muted mb-4 max-w-3xl">The statistics a trial report throws at you, each with a worked example from the corpus. The <Link href="/evidence/" className="underline">evidence table</Link> puts every hazard ratio in Nuclide on one axis and <Link href="/explained/" className="underline">Trials in plain words</Link> turns results into people out of 100.</p>
             <div className="flex flex-wrap gap-2">
               {READING.map((r) => { const t = term(r.term); return t ? <Link key={r.term} href={routeFor(t)} className="chip border border-border bg-card hover:bg-foreground/5 inline-flex items-center gap-1.5"><KindIcon kind="term" className="h-4 w-4 text-accent" />{r.label}</Link> : null; })}
             </div>

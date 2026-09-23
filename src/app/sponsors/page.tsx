@@ -28,7 +28,7 @@ export default function SponsorsPage() {
           <div className="card p-5 space-y-2">
             <h2 className="font-semibold text-base">Names and indications</h2>
             <p>Sponsor strings are normalised to company, institution and cooperative-group ids in <code className="text-xs">src/data/sponsor-aliases.ts</code>; acquired companies roll up to the acquirer. About {Math.round(unmatchedShare * 100)}% of study credits belong to names with no mapping yet and appear under the name as written. Cancers are matched from the registered condition text to corpus indications by name and alias; a study counts under a cancer only when the text names it.</p>
-            <p>Compare with <Link href="/leadership/" className="underline">trial leadership</Link>, which ranks institutions by their presence in the landmark trials, and the <Link href="/scorecards/" className="underline">company scorecards</Link>.</p>
+            <p>Compare with <Link href="/leadership/" className="underline">trial leadership</Link>, which ranks institutions by their presence in the landmark trials, and the <Link href="/companies/" className="underline">company records</Link>.</p>
           </div>
         </section>
       </Container>

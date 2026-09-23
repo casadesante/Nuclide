@@ -357,7 +357,7 @@ function tTreatments(c: Ctx, r: AskEntityRecord): boolean {
     if (!rows.length) for (const x of e.stateOfArt?.slice(0, 2) ?? []) c.b.add(s, x, "state of the art");
     const pipe = (e.pipeline ?? []).slice(0, 6).map((id) => nameOf(c.lookup, id));
     if (pipe.length) c.b.add(s, `In the pipeline for ${short(r)}: ${list(pipe)}.`, "pipeline");
-    c.readMore.push({ label: `Lines of therapy for ${short(r)}`, href: `/sequencing/${e.id}/` }, { label: "Questions to ask your oncologist", href: `/prep/?cancer=${e.id}` });
+    c.readMore.push({ label: "Evidence: every trial ranked", href: "/evidence/" }, { label: "Approvals and filings timeline", href: "/regulatory/" });
     return true;
   }
   if (e.kind === "drug") {
@@ -387,7 +387,7 @@ function tBiomarkers(c: Ctx, r: AskEntityRecord): boolean {
   c.b.add(s, e.tldr, "TL;DR");
   if (e.biomarkers?.length) c.b.add(s, `Biomarkers tested in ${short(r)}: ${e.biomarkers.join("; ")}.`, "biomarkers");
   if (e.subtypes?.length) c.b.add(s, `Recognised subtypes: ${e.subtypes.slice(0, 6).join("; ")}.`, "subtypes");
-  c.readMore.push({ label: "Biomarker matrix", href: "/biomarker-matrix/" }, { label: "Report reader", href: "/report-reader/" });
+  c.readMore.push({ label: "Targets A-Z", href: "/targets/" });
   return (e.biomarkers?.length ?? 0) > 0;
 }
 
@@ -456,11 +456,7 @@ function tSideEffects(c: Ctx, r: AskEntityRecord): boolean {
     }
     if (e.dosing?.monitoring) c.b.add(s, `Monitoring: ${e.dosing.monitoring}.`, "dosing");
     if (e.dosing?.modifications) c.b.add(s, `Dose changes: ${e.dosing.modifications}.`, "dosing");
-    const checkpoint = (e.technologies ?? []).includes("checkpoint-inhibitor") || (e.targets ?? []).some((t) => t === "pd1" || t === "pdl1" || t === "ctla4" || t === "lag3");
-    if (checkpoint) c.readMore.push({ label: "irAE guide", href: "/irae/" });
-    const irae = c.related.find((x) => x.entity.id === "irae");
-    if (checkpoint && irae) c.b.add(toSource(irae), irae.entity.tldr, "TL;DR");
-    c.readMore.push({ label: "Side effects by symptom", href: "/side-effects/" });
+    c.readMore.push({ label: "Dosimetry and safety technologies", href: "/technologies/" });
     return true;
   }
   if (e.kind === "technology" || e.kind === "term" || e.kind === "indication") {
@@ -468,9 +464,7 @@ function tSideEffects(c: Ctx, r: AskEntityRecord): boolean {
     const pool = [...(e.limitations ?? []), ...sentences(e.summary), ...(e.openProblems ?? [])];
     const hits = pool.filter((x) => /toxic|adverse|side effect|safety|neutropenia|nausea|diarrhoea|pneumonitis|ILD|fatigue|rash|colitis|thyroid|cytokine|CRS|neurotox|hair|alopecia|immune-related|irAE|hospital/i.test(x));
     for (const x of hits.slice(0, 3)) c.b.add(s, x, e.limitations?.includes(x) ? "limitations" : "summary");
-    const irae = c.related.find((x) => x.entity.id === "irae");
-    if (irae) { c.b.add(toSource(irae), irae.entity.tldr, "TL;DR"); for (const x of first(irae.entity.summary, 1)) c.b.add(toSource(irae), x, "summary"); c.readMore.push({ label: "irAE guide", href: "/irae/" }); }
-    c.readMore.push({ label: "Side effects by symptom", href: "/side-effects/" });
+    c.readMore.push({ label: "Dosimetry and safety technologies", href: "/technologies/" });
     return c.b.sentences.length > 1;
   }
   return false;
@@ -487,7 +481,6 @@ function tTrials(c: Ctx, r: AskEntityRecord): boolean {
   } else {
     c.b.add(s, `Nuclide lists no trial linked to ${short(r)} yet; the registry search below covers every registered study.`, "linked trials");
   }
-  if (e.kind === "indication") c.readMore.push({ label: `Lines of therapy for ${short(r)}`, href: `/sequencing/${e.id}/` });
   c.readMore.push({ label: "ClinicalTrials.gov (registry)", href: "/collections/clinicaltrials-gov/" }, { label: "Trials in plain words", href: "/explained/" });
   return true;
 }
@@ -503,7 +496,7 @@ function tResults(c: Ctx, r: AskEntityRecord): boolean {
     for (const x of first(e.summary, 2)) c.b.add(s, x, "summary");
     c.b.add(s, e.replication ? `Replication: ${e.replication}` : undefined, "replication");
     for (const d of c.related.filter((x) => x.entity.kind === "drug").slice(0, 2)) c.b.add(toSource(d), d.entity.tldr, "TL;DR");
-    c.readMore.push({ label: "Forest plot of every hazard ratio", href: "/forest/" });
+    c.readMore.push({ label: "Evidence: every trial ranked", href: "/evidence/" });
     return true;
   }
   if (e.kind === "drug" || e.kind === "technology" || e.kind === "target") {
@@ -565,11 +558,11 @@ function tPrognosis(c: Ctx, r: AskEntityRecord): boolean {
   if (soc) c.b.add(s, `${soc.setting}: ${soc.approach}`, "standard of care");
   c.b.add(s, `Outcomes in ${short(r)} depend on stage, subtype and the treatments above, and population statistics describe groups, not any one person; that is why this page starts with what can be done rather than a number.`, "how to read survival figures");
   const site = SURVIVAL_SITES[e.id];
-  if (site) c.b.add(s, `Five-year relative survival for "${site.seerLabel}" from SEER, with the period it covers and its caveats, is on the survival page${site.shared ? `. ${cap(site.shared)}` : ""}`, "survival disclosure");
-  else c.b.add(s, `No population survival table is available for ${short(r)} in SEER; the survival page lists it as a gap and points to international registries.`, "survival disclosure");
+  if (site) c.b.add(s, `Five-year relative survival for "${site.seerLabel}" from SEER, with the period it covers and its caveats, is shown on this record behind the survival disclosure${site.shared ? `. ${cap(site.shared)}` : ""}`, "survival disclosure");
+  else c.b.add(s, `No population survival table is available for ${short(r)} in SEER, so this record carries no population figure; international registries are the fallback.`, "survival disclosure");
   const prog = c.related.find((x) => x.entity.id === "prognosis");
   if (prog) c.b.add(toSource(prog), prog.entity.tldr, "TL;DR");
-  c.readMore.push({ label: "Survival statistics", href: "/survival/" }, { label: `Treatment journeys for ${short(r)}`, href: "/journeys/" });
+  c.readMore.push({ label: "Indications A-Z", href: "/indications/" });
   return true;
 }
 
@@ -582,7 +575,7 @@ function tWho(c: Ctx, r: AskEntityRecord): boolean {
       const products = (r.neighbours.drug ?? []).slice(0, 8).map((d) => d.name);
       if (products.length) c.b.add(s, `Products on Nuclide linked to ${short(r)}: ${list(products)}.`, "linked products");
       for (const x of first(e.summary, 1)) c.b.add(s, x, "summary");
-      c.readMore.push({ label: "Company scorecards", href: "/scorecards/" });
+      c.readMore.push({ label: "Companies A-Z", href: "/companies/" });
       return true;
     }
     case "institution": {
@@ -591,7 +584,7 @@ function tWho(c: Ctx, r: AskEntityRecord): boolean {
       if (e.programs?.length) c.b.add(s, `Programmes: ${list(e.programs.slice(0, 5))}.`, "programs");
       const people = (r.neighbours.person ?? []).slice(0, 5).map((p) => p.name);
       if (people.length) c.b.add(s, `People on Nuclide at ${short(r)}: ${list(people)}.`, "linked people");
-      c.readMore.push({ label: "Institutions, mapped and ranked", href: "/institutions/" }, { label: "Second opinion", href: "/second-opinion/" });
+      c.readMore.push({ label: "Institutions, mapped and ranked", href: "/institutions/" });
       return true;
     }
     case "person": {
@@ -647,7 +640,7 @@ function tCost(c: Ctx, r: AskEntityRecord): boolean {
   }
   if (!rows.length) c.b.add(s, `Nuclide has no cost or coverage record for ${short(r)} yet; the financial-help page lists manufacturer programmes and national schemes by country.`, "access");
   for (const x of regionalSentences(short(r), e.id, regionFromQuestion(c.question) ?? c.region).slice(0, 1)) c.b.add(s, x, "regional approvals");
-  c.readMore.push({ label: "Financial help by country and product", href: "/assistance/" }, { label: "Cost and coverage by drug", href: "/coverage/" });
+  c.readMore.push({ label: "Approvals by region", href: "/regulatory/regions/" });
   return true;
 }
 
@@ -669,8 +662,8 @@ function tEvidence(c: Ctx, r: AskEntityRecord): boolean {
   for (const x of (e.limitations ?? []).slice(0, positive ? 1 : 2)) c.b.add(s, `Limitation: ${x}`, "limitations");
   const drugs = (r.neighbours.drug ?? []).slice(0, 4).map((d) => d.name);
   if (grade === "harm" && drugs.length) c.b.add(s, `Treatments on Nuclide it interacts with or has been used instead of: ${list(drugs)}.`, "linked products");
-  c.readMore.push({ label: "Complementary and supportive approaches", href: "/live/complementary/" });
-  if (!positive) c.readMore.push({ label: "Questions to ask your oncologist", href: "/prep/" });
+  c.readMore.push({ label: "Explainers in plain words", href: "/explained/" });
+
   return true;
 }
 
@@ -722,7 +715,7 @@ function tRegionalApprovals(c: Ctx, r: AskEntityRecord): boolean {
     c.b.add(s, `Nuclide has no record of a ${short(r)} product approved in ${label}; absence means unknown, not "not approved".`, "regional approvals");
   }
   c.readMore.push({ label: "Regulatory status by region", href: "/regulatory/regions/" });
-  if (region === "CN" || region === "IN") c.readMore.push({ label: `${cap(label.replace(/^the /, ""))}: country page`, href: `/countries/${region.toLowerCase()}/` });
+  c.readMore.push({ label: "Approvals by region", href: "/regulatory/regions/" });
   return true;
 }
 
@@ -753,7 +746,7 @@ function tCompanies(c: Ctx, r: AskEntityRecord): boolean {
     } else {
       c.b.add(s, `No company on Nuclide names ${short(r)} as an investor yet; portfolios are derived from sourced rounds only.`, "portfolio");
     }
-    c.readMore.push({ label: "Investors and their portfolios", href: "/investors/" }, { label: "Oncology startups", href: "/startups/" });
+    c.readMore.push({ label: "Companies and their backers", href: "/companies/" });
     return true;
   }
   c.b.add(s, e.tldr, "TL;DR");
@@ -766,7 +759,7 @@ function tCompanies(c: Ctx, r: AskEntityRecord): boolean {
   if (direct.length) c.b.add(s, `${viaProducts.size ? "Also working" : "Companies on Nuclide working"} on ${short(r)}: ${list(direct.slice(0, 16).map((x) => x.name))}${direct.length > 16 ? `, and ${direct.length - 16} more on its page` : ""}.`, "linked companies");
   for (const co of c.related.filter((x) => x.entity.kind === "company").slice(0, 3)) c.b.add(toSource(co), co.entity.tldr, "TL;DR");
   if (!viaProducts.size && !direct.length) c.b.add(s, `Nuclide links no company to ${short(r)} yet.`, "linked companies");
-  c.readMore.push({ label: "Oncology startups", href: "/startups/" }, { label: "Company scorecards", href: "/scorecards/" });
+  c.readMore.push({ label: "Companies A-Z", href: "/companies/" });
   return true;
 }
 
@@ -786,7 +779,7 @@ function tInvestors(c: Ctx, r: AskEntityRecord): boolean {
     if (e.acquiredBy) c.b.add(s, `${short(r)} was acquired by ${nameOf(c.lookup, e.acquiredBy)}.`, "acquisition");
     if (e.ycBatch) c.b.add(s, `${short(r)} went through Y Combinator in the ${batchLabel(e.ycBatch)} batch.`, "yc batch");
     for (const x of c.related.filter((y) => y.entity.kind === "company").slice(0, 1)) c.b.add(toSource(x), x.entity.tldr, "TL;DR");
-    c.readMore.push({ label: "Investors and their portfolios", href: "/investors/" }, { label: "Deals and licences", href: "/deals/" });
+    c.readMore.push({ label: "Companies and their backers", href: "/companies/" }, { label: "Deals and licences", href: "/deals/" });
     return true;
   }
   c.b.add(s, e.tldr, "TL;DR");
@@ -801,7 +794,7 @@ function tInvestors(c: Ctx, r: AskEntityRecord): boolean {
   }
   const names = (r.neighbours.company ?? []).slice(0, 12).map((x) => x.name);
   if (names.length) c.b.add(s, `Companies on Nuclide linked to ${short(r)}: ${list(names)}.`, "linked companies");
-  c.readMore.push({ label: "Investors and their portfolios", href: "/investors/" }, { label: "Oncology startups", href: "/startups/" });
+  c.readMore.push({ label: "Companies and their backers", href: "/companies/" });
   return true;
 }
 
@@ -972,7 +965,7 @@ export function composeTemplated(input: ComposeInput): AskAnswer {
   for (const r of named.slice(0, 3)) pushRm({ label: r.entity.name, href: r.route });
   for (const x of c.readMore) pushRm(x);
   for (const s of answer.sources.slice(0, 3)) pushRm({ label: s.name, href: s.route });
-  if (/\bask\b/i.test(input.question) && named.some((r) => r.entity.kind === "indication")) pushRm({ label: "Appointment prep pack", href: "/prep/" });
+
 
   const followUps = primary ? followUpsFor(primary.entity, applied ? intent : "general") : [];
   const entities: Source[] = named.map(toSource);

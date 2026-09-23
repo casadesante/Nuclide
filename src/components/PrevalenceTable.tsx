@@ -79,7 +79,7 @@ export function IndicationPrevalence({ indicationId }: { indicationId: string })
           ))}
         </tbody>
       </table>
-      <p className="px-3 py-2 text-xs text-muted">How common each drug target or alteration is in this cancer. Population-level and approximate; see the target page for detail. <Link className="underline" href="/prevalence/">Full matrix</Link>.</p>
+      <p className="px-3 py-2 text-xs text-muted">How common each drug target or alteration is in this cancer. Population-level and approximate; see the target page for detail.</p>
     </div>
   );
 }

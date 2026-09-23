@@ -11,7 +11,7 @@ export type TLHistory = { year: number; indication: string; cancerRoute: string;
 export type TLStep = { start: number; end: number; era: string; title: string; roadmap: string; route: string; status: string };
 export type TimelineData = { approvals: TLApproval[]; trials: TLTrial[]; history: TLHistory[]; steps: TLStep[]; min: number; max: number };
 
-/** Year slider: the state of oncology as of year Y, derived from dated records in the corpus. */
+/** Year slider: the state of the field as of year Y, derived from dated records in the corpus. */
 export function TimelineScrubber({ data }: { data: TimelineData }) {
   const [year, setYear] = useState(2026);
   const [playing, setPlaying] = useState(false);

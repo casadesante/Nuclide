@@ -5,7 +5,7 @@ import { pathData } from "@/lib/paths-data";
 import { Container, GroupKicker, PageHeader } from "@/components/ui";
 import { PathFinder, type PathExample } from "@/components/PathFinder";
 
-export const metadata: Metadata = pageMeta({ title: "Path finder", description: "How is one object in oncology related to another? Shortest routes through the Nuclide knowledge graph with every relationship named.", path: "/path/" });
+export const metadata: Metadata = pageMeta({ title: "Path finder", description: "How is one object in radiopharmaceuticals related to another? Shortest routes through the Nuclide knowledge graph with every relationship named.", path: "/path/" });
 
 const CANDIDATES: PathExample[] = [
   { from: "hippo-yap-taz", to: "sacituzumab-govitecan", label: "Hippo pathway to sacituzumab govitecan" },

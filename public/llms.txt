@@ -27,7 +27,7 @@
 - [OpenAPI 3.1](https://nuclide.cc/api/v1/openapi.json): machine-readable description of every route
 - [RDF N-Triples](https://nuclide.cc/api/v1/nuclide.nt): a record's IRI is its page URL; owl:sameAs links to Wikidata
 - [RDF Turtle per record](https://nuclide.cc/api/v1/rdf/tnbc.ttl): /api/v1/rdf/<id>.ttl, one small file with the record's own triples, its outgoing relations and its owl:sameAs, prefixes declared once
-- MCP: `npx -y nuclide-mcp` (tools search, get_entity, list_kind, ask, context, compare). WebMCP: browsers with a model context get onco_search and onco_get_entity on every page.
+- MCP: `npx -y nuclide-mcp` (tools search, get_entity, list_kind, ask, context, compare). WebMCP: browsers with a model context get nuclide_search and nuclide_get_entity on every page.
 - Every record page carries <link rel="alternate"> tags to its Markdown, JSON and Turtle twins, schema.org JSON-LD (typed by kind, with a BreadcrumbList), and a hidden navigation landmark labelled "Machine-readable versions" whose links carry data-nuclide-id, data-nuclide-kind and data-nuclide-format; <main> carries data-nuclide-id and data-nuclide-kind.
 - Language is a reader-side toggle on the same URL, so there is one URL per record and no hreflang variants.
 

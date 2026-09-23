@@ -16,6 +16,6 @@ export function GET() {
     description: `${e.note}${e.confidence === "expected" ? "\n\nEditorial estimate; can slip by quarters." : ""}${e.companies.length ? `\n\nCompanies: ${e.companies.map((c) => c.name).join(", ")}` : ""}\n\n${absoluteUrl(`/catalysts/#${e.id}`)}`,
     url: e.source,
     categories: [e.kindLabel, e.confidence],
-  })), { name: "Nuclide oncology catalysts", description: "Regulatory decisions, expected readouts, advisory committees, congresses and deal closings in oncology, from nuclide.cc.", stamp: now });
+  })), { name: "Nuclide radiopharmaceutical catalysts", description: "Regulatory decisions, expected readouts, advisory committees, congresses and deal closings in radiopharmaceuticals, from nuclide.cc.", stamp: now });
   return new Response(ics, { headers: { "Content-Type": "text/calendar; charset=utf-8", "Cache-Control": "public, max-age=3600" } });
 }

@@ -20,7 +20,7 @@ export default function OpenToolsPage() {
   return (
     <>
       <PageHeader kicker={<GroupKicker id="learn" />} title="Open tools"
-        lede={`${openmedical.length} open-source projects relevant to oncology, ${verified} of them with records verified by a person at the registry, grouped by the front they serve. Viewers and archives for imaging, slide and cytometry tools for diagnostics, somatic variant callers, treatment planning and QA code for radiotherapy, data standards, and patient tools. Catalogued by the Open Medical Registry, a third party; Nuclide maps each record to its fronts, technologies and indications.`} />
+        lede={`${openmedical.length} open-source projects relevant to medical imaging and cancer care, ${verified} of them with records verified by a person at the registry, grouped by the front they serve. Viewers and archives for imaging, slide and cytometry tools for diagnostics, somatic variant callers, treatment planning and QA code for radiotherapy, data standards, and patient tools. Catalogued by the Open Medical Registry, a third party; Nuclide maps each record to its fronts, technologies and indications.`} />
       <Container className="pb-16">
         <nav aria-label="Fronts with open tools" className="flex flex-wrap gap-1.5 mb-8">
           {groups.map(({ sectionId, entries }) => { const s = g.get(sectionId); return s ? <a key={sectionId} href={`#${sectionId}`} className="chip border bg-card border-border hover:bg-foreground/5 inline-flex items-center gap-1.5"><FrontIcon id={sectionId} className="h-3.5 w-3.5" />{s.name} <span className="text-muted tabular-nums">{entries.length}</span></a> : null; })}
@@ -45,7 +45,7 @@ export default function OpenToolsPage() {
         </div>
         <div className="mt-12 max-w-3xl text-sm text-muted space-y-2">
           <OpenMedicalFooter />
-          <p className="text-xs">Snapshot taken {OPENMEDICAL_GENERATED}; refresh with <code>npm run fetch:openmedical</code>. The mapping to fronts is Nuclide&apos;s and lives in <code>scripts/fetch-openmedical.ts</code>; a project appears only after its record was read and judged relevant. Several well-known oncology tools are not yet in the registry (for example MONAI core, TotalSegmentator, matRad, OpenTPS, cBioPortal core, CanReg5 and mCODE); add them at <a className="underline" href={`${OPENMEDICAL_SITE}contribute/`} rel="noopener">openmedical.sh/contribute</a> and they will be picked up on the next refresh. Missing a mapping? <Link className="underline" href="/suggest/">Suggest an edit</Link>.</p>
+          <p className="text-xs">Snapshot taken {OPENMEDICAL_GENERATED}; refresh with <code>npm run fetch:openmedical</code>. The mapping to fronts is Nuclide&apos;s and lives in <code>scripts/fetch-openmedical.ts</code>; a project appears only after its record was read and judged relevant. Several well-known imaging and radiotherapy tools are not yet in the registry (for example MONAI core, TotalSegmentator, matRad, OpenTPS, cBioPortal core, CanReg5 and mCODE); add them at <a className="underline" href={`${OPENMEDICAL_SITE}contribute/`} rel="noopener">openmedical.sh/contribute</a> and they will be picked up on the next refresh. Missing a mapping? <Link className="underline" href="/suggest/">Suggest an edit</Link>.</p>
         </div>
       </Container>
     </>

@@ -35,12 +35,12 @@ export function FundingPanel({ id }: { id: string }) {
   const acquirer = c.acquiredBy ? g.get(c.acquiredBy) : undefined;
   if (!rounds.length && !investors.length && !c.ycBatch && !acquirer) return null;
   return (
-    <Section title="Funding" aside={<Link href="/startups/" className="text-sm underline text-muted">All startups</Link>}>
+    <Section title="Funding" aside={<Link href="/companies/" className="text-sm underline text-muted">All companies</Link>}>
       <div className="grid gap-4 md:grid-cols-2">
         <div className="card p-4 text-sm space-y-3">
           <div className="flex flex-wrap items-center gap-2">
             <StageChip company={c} />
-            {c.ycBatch && <Link href={`/startups/?yc=${encodeURIComponent(c.ycBatch)}`} className="inline-flex items-center rounded-full bg-accent-soft text-accent px-2.5 py-0.5 text-xs font-medium hover:underline" title={`Y Combinator, ${ycBatchLabel(c.ycBatch)} batch`}>YC {c.ycBatch}</Link>}
+            {c.ycBatch && <Link href={`/companies/`} className="inline-flex items-center rounded-full bg-accent-soft text-accent px-2.5 py-0.5 text-xs font-medium hover:underline" title={`Y Combinator, ${ycBatchLabel(c.ycBatch)} batch`}>YC {c.ycBatch}</Link>}
             {acquirer && <span className="text-xs text-muted">Acquired by <Link href={routeFor(acquirer)} className="underline">{acquirer.name}</Link></span>}
           </div>
           {investors.length > 0 && (
@@ -82,7 +82,7 @@ export function PortfolioPanel({ id }: { id: string }) {
   if (!inv || inv.kind !== "company" || inv.companyType !== "investor") return null;
   const portfolio = portfolioOf(id);
   return (
-    <Section title={`Portfolio (${portfolio.length})`} aside={<Link href={`/startups/?investor=${encodeURIComponent(inv.name)}`} className="text-sm underline text-muted">Filter the startups table</Link>}>
+    <Section title={`Portfolio (${portfolio.length})`} aside={<Link href={`/companies/`} className="text-sm underline text-muted">Filter the startups table</Link>}>
       {portfolio.length === 0 ? (
         <p className="text-sm text-muted">No Nuclide company names this investor yet. Portfolio links are declared on the startup record (`investors`), so adding one there lists it here.</p>
       ) : (

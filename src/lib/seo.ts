@@ -106,7 +106,7 @@ export const MACHINE = {
   triples: "/api/v1/nuclide.nt",
   llms: "/llms.txt",
   mcp: { command: "npx -y nuclide-mcp", tools: ["search", "get_entity", "list_kind", "ask", "context", "compare"] },
-  webmcp: { tools: ["onco_search", "onco_get_entity"] },
+  webmcp: { tools: ["nuclide_search", "nuclide_get_entity"] },
 } as const;
 
 /** Metadata for an entity page. */
