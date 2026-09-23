@@ -221,6 +221,7 @@ export const ar: UiDict = {
   "kind.person.label": "شخص", "kind.person.plural": "أشخاص",
   "kind.journal.label": "مجلة", "kind.journal.plural": "مجلات",
   "kind.paper.label": "ورقة رئيسية", "kind.paper.plural": "أوراق رئيسية",
+  "kind.opportunity.label": "فرصة", "kind.opportunity.plural": "فرص",
   "kind.bottleneck.label": "عائق", "kind.bottleneck.plural": "عوائق", "kind.bottleneck.title": "عوائق",
 
   "l.Summary": "الملخص",

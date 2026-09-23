@@ -23,7 +23,7 @@ export type EntityLike = {
   id: string; kind: Kind; name: string; tldr: string; summary: string; route?: string; simple?: string; notes?: string[];
   stateOfArt?: string[]; openProblems?: string[]; standardOfCare?: Array<{ setting: string; approach: string }>;
   principle?: string; strengths?: string[]; limitations?: string[]; biology?: string; whereFound?: string[]; mechanism?: string;
-  result?: string; replication?: string; rationale?: string; evidence?: string; hypothesis?: string; test?: string;
+  result?: string; replication?: string; rationale?: string; evidence?: string; hypothesis?: string; test?: string; unmetNeed?: string; useCase?: string; mostAdvanced?: string; differentiation?: string;
   findings?: string[]; whatItMeans?: string; caveats?: string[]; causes?: string[]; currentEfforts?: string[]; successLooksLike?: string;
   analogy?: string; interventions?: string[]; holds?: string; role?: string;
   outcomes?: Array<{ endpoint: string; unit?: string; arms: Array<{ name: string; value?: number; n?: number }>; hr?: number; p?: string }>;
@@ -58,6 +58,10 @@ export function recordFromEntity(e: EntityLike, route: string): AskRecord {
   add("what it means", e.whatItMeans);
   addAll("findings", e.findings);
   addAll("caveats", e.caveats);
+  add("unmet need", e.unmetNeed);
+  add("use case", e.useCase);
+  add("most advanced agent", e.mostAdvanced);
+  add("differentiation", e.differentiation);
   add("hypothesis", e.hypothesis);
   add("rationale", e.rationale);
   add("evidence", e.evidence);

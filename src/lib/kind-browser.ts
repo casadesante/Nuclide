@@ -14,6 +14,24 @@ import { termVisual, type TermVisual } from "@/lib/term-visual";
  * has a visual (a molecule, drawing, organ icon, logo, initials tile or the kind's own symbol), never a gap.
  */
 
+/** What each surfacing lens means, shown as the tooltip on the lens chip at /opportunities/. */
+export const LENS_TIP: Record<string, string> = {
+  "theranostic-gap": "A therapy is in the clinic or approved and no diagnostic is paired with it.",
+  "standalone-diagnostic": "A companion diagnostic inside somebody else's therapy programme that would also stand on its own.",
+  "target-crossover": "A target already validated by an antibody, ADC or small molecule, with no radioligand against it yet.",
+  "unmet-need-first": "Starts from a decision nobody can make today, then asks which target could settle it.",
+  "non-us-registry": "The work is registered outside ClinicalTrials.gov, so pipeline tracking built on that registry misses it.",
+  "maturing-preclinical": "Preclinical evidence close enough to the clinic to belong in a clinical-stage funnel.",
+  "supply-isotope": "The opportunity is production, supply, dosimetry or delivery rather than the molecule.",
+};
+/** What each standalone verdict means. A companion-only diagnostic depends on another company's drug approval. */
+export const VERDICT_TIP: Record<string, string> = {
+  "standalone-and-companion": "Has a use of its own and a use selecting patients for a therapy.",
+  "standalone-only": "Answers a clinical question on its own; no therapy depends on it.",
+  "companion-only": "Only useful alongside a therapy, so its market depends on that therapy being approved.",
+  unclear: "The public evidence does not yet settle whether it stands alone.",
+};
+
 export const cap = (s: string) => s[0].toUpperCase() + s.slice(1);
 const short = (s: string) => s.replace(/ \(.*\)$/, "");
 const logoFor = (id: string, website?: string) => logoSrc(id, website);
@@ -223,6 +241,53 @@ export function buildBrowser(k: Kind): { rows: BrowserRow[]; facets: FacetDef[];
       rows: g.kind("idea").map((i) => ({ ...base(i), ...borrowed(i, true), facets: { maturity: [matLabel(i.maturity)], bottleneck: names(i.bottlenecks), actor: i.actor ? [cap(i.actor)] : [], cost: i.cost ? [cap(i.cost)] : [], indications: names(i.indications), technologies: names(i.technologies) }, cols: { maturity: fl("maturity", matLabel(i.maturity)), bottlenecks: links(i.bottlenecks), actor: fl("actor", i.actor ? cap(i.actor) : undefined), cost: fl("cost", i.cost ? cap(i.cost) : undefined), indications: links(i.indications), technologies: links(i.technologies) }, sortKeys: { maturity: rank(ORDER, i.maturity) } })),
       facets: [{ key: "bottleneck", label: "Bottleneck", width: "w-60" }, { key: "maturity", label: "Maturity", searchable: false, width: "w-52", order: ORDER.map(matLabel) }, { key: "actor", label: "Who acts", searchable: false, width: "w-44" }, { key: "cost", label: "Cost to try", searchable: false, width: "w-40" }, { key: "indications", label: "Indication", width: "w-52" }, { key: "technologies", label: "Technology", width: "w-52" }],
       columns: [{ key: "maturity", label: "Maturity", sortable: true, chip: true }, { key: "bottlenecks", label: "Bottleneck", hide: "hidden md:table-cell" }, { key: "actor", label: "Who acts", sortable: true, hide: "hidden lg:table-cell" }, { key: "cost", label: "Cost", sortable: true, hide: "hidden xl:table-cell" }, { key: "technologies", label: "Technologies", hide: "hidden lg:table-cell" }, { key: "indications", label: "Indications", hide: "hidden xl:table-cell" }],
+      defaultSort: { key: "maturity", dir: 1 },
+      };
+    }
+    case "opportunity": {
+      /** Most evidence first, so the list opens on what is already in patients. */
+      const MAT = ["approved-elsewhere", "being-tested-at-scale", "early-clinical", "preclinical-evidence", "speculative"] as const;
+      const LENS = ["theranostic-gap", "standalone-diagnostic", "target-crossover", "unmet-need-first", "non-us-registry", "maturing-preclinical", "supply-isotope"] as const;
+      const VERDICT = ["standalone-and-companion", "standalone-only", "companion-only", "unclear"] as const;
+      const lab = (s: string) => cap(s.replace(/-/g, " "));
+      /** The worst light on any of the six review categories: one red is what a triage reader looks for. */
+      const worst = (o: Extract<Entity, { kind: "opportunity" }>) => o.flags.some((f) => f.flag === "red") ? "Red" : o.flags.some((f) => f.flag === "amber") ? "Amber" : o.flags.length ? "Green" : "Not rated";
+      return {
+      hideStatus: true,
+      rows: g.kind("opportunity").map((o) => o.kind === "opportunity" ? ({
+        ...base(o), ...borrowed(o, true), sub: o.unmetNeed,
+        facets: {
+          lens: [lab(o.lens)], maturity: [lab(o.maturity)], verdict: [lab(o.verdict)], flag: [worst(o)],
+          indications: names(o.indications), targets: names(o.targets), technologies: names(o.technologies), isotopes: names(o.related.filter((id) => g.get(id)?.kind === "isotope")), tags: o.tags,
+        },
+        cols: {
+          lens: fl("lens", lab(o.lens), { tip: LENS_TIP[o.lens] }),
+          need: o.unmetNeed,
+          maturity: fl("maturity", lab(o.maturity)),
+          verdict: fl("verdict", lab(o.verdict), { tip: VERDICT_TIP[o.verdict] }),
+          flag: fl("flag", worst(o), { tip: `Worst of the six review categories: ${o.flags.filter((f) => f.flag === "red").map((f) => lab(f.category)).join(", ") || o.flags.filter((f) => f.flag === "amber").map((f) => lab(f.category)).join(", ") || "none red or amber"}.` }),
+          targets: links(o.targets), indications: links(o.indications),
+        },
+        sortKeys: { maturity: rank(MAT, o.maturity), flag: worst(o) === "Red" ? 0 : worst(o) === "Amber" ? 1 : worst(o) === "Green" ? 2 : 3 },
+      }) : base(o)),
+      facets: [
+        { key: "lens", label: "How it was found", searchable: false, width: "w-60", order: LENS.map(lab) },
+        { key: "indications", label: "Indication", width: "w-52" },
+        { key: "targets", label: "Target", width: "w-44" },
+        { key: "technologies", label: "Technology", width: "w-52" },
+        { key: "verdict", label: "Standalone?", searchable: false, width: "w-56", order: VERDICT.map(lab) },
+        { key: "maturity", label: "Maturity", searchable: false, width: "w-52", order: MAT.map(lab) },
+        { key: "flag", label: "Worst flag", searchable: false, width: "w-40", order: ["Red", "Amber", "Green", "Not rated"] },
+        { key: "isotopes", label: "Isotope", width: "w-40" },
+      ],
+      columns: [
+        { key: "lens", label: "How it was found", chip: true },
+        { key: "maturity", label: "Maturity", sortable: true, chip: true, hide: "hidden md:table-cell" },
+        { key: "verdict", label: "Standalone?", chip: true, hide: "hidden lg:table-cell" },
+        { key: "flag", label: "Worst flag", sortable: true, chip: true, hide: "hidden sm:table-cell" },
+        { key: "targets", label: "Target", hide: "hidden xl:table-cell" },
+        { key: "indications", label: "Indication", hide: "hidden xl:table-cell" },
+      ],
       defaultSort: { key: "maturity", dir: 1 },
       };
     }

@@ -18,6 +18,7 @@ import { KindName } from "@/components/T";
 import { buildBrowser, cap } from "@/lib/kind-browser";
 import { MyIndicationPin, MyIndicationTrialsFilter } from "@/components/MyIndication";
 import { myIndicationTiles } from "@/lib/my-indication-list";
+import { OpportunityScan } from "@/components/OpportunityScan";
 
 const ROUTE_TO_KIND: Record<string, Kind> = Object.fromEntries(KINDS.map((k) => [KIND_META[k].route, k])) as Record<string, Kind>;
 
@@ -40,7 +41,7 @@ export default async function KindIndex({ params }: { params: Promise<{ kind: st
   const k = ROUTE_TO_KIND[kind];
   if (!k) notFound();
   const meta = KIND_META[k];
-  const title = k === "section" ? "Fronts of the field" : k === "term" ? "Glossary" : k === "bottleneck" ? "Bottlenecks of the war on cancer" : (meta.title ?? cap(meta.plural));
+  const title = k === "section" ? "Fronts of the field" : k === "term" ? "Glossary" : k === "bottleneck" ? "Bottlenecks of nuclear medicine" : (meta.title ?? cap(meta.plural));
   const built = buildBrowser(k);
   // Glossary tooltips inside free-text cells: any non-chip, non-numeric string column gets its technical terms marked.
   const richKeys = new Set(built.columns.filter((c) => !c.chip && !c.numeric).map((c) => c.key));
@@ -62,6 +63,7 @@ export default async function KindIndex({ params }: { params: Promise<{ kind: st
         {k === "bottleneck" && <BottlenecksPipeline />}
         {k === "indication" && <CancersGrid />}
         {k === "term" && <GlossaryCategories />}
+        {k === "opportunity" && <OpportunityScan />}
         <EntityBrowser rows={rows} facets={facets} columns={columns} noun={meta.plural} hideStatus={hideStatus} hideTldr={hideTldr} defaultSort={defaultSort} nameKind={k} />
         {k === "institution" && (
           <p className="text-xs text-muted mt-3 max-w-3xl">Score = Newsweek points (60 − Newsweek/Statista 2026 Oncology rank, 0 if unranked) + NCI designation points (Comprehensive 15, Clinical or Basic 8) + 2 × distinct Nuclide objects linked to the institution. The last term measures presence in this evidence base and grows with the corpus. A starting point for argument, not a verdict.</p>

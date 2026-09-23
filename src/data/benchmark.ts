@@ -1,5 +1,5 @@
 /**
- * The Nuclide open benchmark: 110 questions a patient, carer, clinician or analyst might actually ask
+ * The Nuclide open benchmark: 122 questions a patient, carer, clinician or analyst might actually ask
  * about radiopharmaceuticals — isotope production and supply, imaging protocols, radioligand therapy,
  * dosimetry, approved products, trial readouts, terminology, the non-oncology indications, and the
  * industry's bottlenecks.
@@ -7,7 +7,7 @@
  * Every question is grounded in the corpus: the entity ids listed carry the answer, every figure in an
  * expected answer appears in those records, and every rubric point has at least one accepted phrase that
  * is a verbatim substring of those records' own text. src/data/benchmark.test.ts enforces all of that, so
- * the set cannot drift away from the corpus the way the inherited OnCo set did. 102 questions were written
+ * the set cannot drift away from the corpus the way the inherited OnCo set did. 114 questions were written
  * for this fork; 8 were carried from OnCo's set because they are true of a radiopharmaceutical corpus.
  *
  * A system's free-text answer scores one point per rubric item for which at least one phrase appears
@@ -513,4 +513,53 @@ export const benchmark: Question[] = [
     "Heidelberg (University Hospital, DKFZ/NCT; Haberkorn, Giesel, Kratochwil), which also ran the first-in-human 225Ac-PSMA therapy.",
     ["heidelberg-nct", "fapi-pet"],
     [["heidelberg"], ["dkfz", "nct", "university hospital"], ["haberkorn", "giesel", "kratochwil", "germany"], ["psma", "actinium", "225ac"]]),
+  // ---- Opportunities: the surfacing layer (Sep 2026) ----
+  Q("opp-01", "There is an approved drug for small-cell lung cancer that works through DLL3. Is there a scan that shows whether the tumours still carry it?", "factual", 2, "clinician",
+    "Not an approved one. Tarlatamab, a DLL3-directed bispecific T-cell engager, was given accelerated approval on 16 May 2024 and traditional approval on 19 November 2025, but selection still rests on immunohistochemistry from one biopsy. The only imaging agent with human data is the zirconium-89 antibody 89Zr-DFO-SC16.56, reported in Lancet Oncology in 2024 in 18 patients, with uptake congruent with DLL3 immunohistochemistry in 15 of 16 patients with evaluable tissue.",
+    ["opp-dll3-imaging-sclc"],
+    [["tarlatamab"], ["89zr-dfo-sc16.56", "zirconium-89"], ["immunohistochemistry"], ["18 patients", "15 of 16"]]),
+  Q("opp-02", "Why would anyone build another Nectin-4 tracer when one already exists?", "reasoning", 3, "analyst",
+    "Because the existing one is cleared the wrong way. The bicyclic peptide 68Ga-N188 from Peking University has first-in-human data in 14 patients and a 62-patient head-to-head against FDG, but it is excreted in urine, which a 2025 review says poses challenges for in-situ bladder cancer detection because of high background activity in the urinary tract. The opportunity is a Nectin-4 ligand cleared hepatobiliary rather than renally, so the bladder and pelvic nodes can be read.",
+    ["opp-nectin4-imaging-urothelial"],
+    [["68ga-n188"], ["excreted in urine", "urinary tract", "background activity"], ["hepatobiliary"], ["enfortumab vedotin"]]),
+  Q("opp-03", "My bowel cancer CEA is rising but the scans are clear. Is there a scan that can find where it has come back?", "procedural", 2, "patient",
+    "Not a specific one. Arcitumomab, the anti-CEA antibody fragment approved for exactly this problem, was withdrawn from the US and EU markets in 2005 and nothing has replaced it, so teams use FDG PET/CT off-label; in one referred series it found recurrence in 56 of 88 patients with raised CEA and negative conventional imaging. Tumour-informed ctDNA now detects recurrence about 5.9 months before imaging does, which creates more patients needing localisation, not fewer.",
+    ["opp-ceacam5-imaging-colorectal"],
+    [["arcitumomab"], ["2005"], ["56 of 88", "fdg pet/ct"], ["ctdna", "5.9 months"]]),
+  Q("opp-04", "HER3 is on most lung cancers and there are drugs for it, so why is there no HER3 PET agent?", "reasoning", 3, "analyst",
+    "Because measuring HER3 has not predicted who benefits. Three antibody tracers were built and all three belong to drug programmes that stalled or were discontinued, and patritumab deruxtecan's own biomarker analyses report no relationship between efficacy and HER3 protein expression by immunohistochemistry. One published tracer study could determine no correlation between tumour uptake and ex-vivo immunohistochemistry, and the drug's BLA was withdrawn in May 2025 after HERTHENA-Lung02 missed overall survival.",
+    ["opp-her3-imaging-crossover"],
+    [["patritumab"], ["no relationship between efficacy", "no correlation"], ["herthena-lung02", "withdrawn"], ["three antibody pet tracers", "discontinued", "stalled"]]),
+  Q("opp-05", "How wrong can one biopsy be about claudin-18.2 in stomach cancer?", "factual", 2, "clinician",
+    "Against whole-tumour-section truth, a single representative biopsy gave 58.8% sensitivity for CLDN18.2, rising to 76.5% with six to eight biopsies, and 18% of tumours were discordant between the primary and the matched nodal metastasis. A multi-laboratory ring trial found a 12% false-negative rate. That matters because zolbetuximab and a CLDN18.2 CAR-T are both given only to patients whose tissue tests positive.",
+    ["opp-cldn18-2-imaging-gastric", "cldn18-2"],
+    [["58.8%"], ["76.5%", "six to eight biopsies"], ["18%", "discordant"], ["12%", "ring trial"], ["zolbetuximab"]]),
+  Q("opp-06", "Do the approved TROP2 drugs need a TROP2 test first, and does the level matter?", "factual", 2, "clinician",
+    "No test is required for either sacituzumab govitecan or datopotamab deruxtecan, but the level does appear to matter: in the ASCENT biomarker analysis, high TROP2 expression gave an objective response rate of 44% against 22% in the low group, with progression-free survival of 6.9 against 2.7 months. The reason there is no test is that the assays disagree, with only fair-to-moderate concordance between three immunohistochemistry assays and no validated plasma assay.",
+    ["opp-trop2-imaging-heterogeneity"],
+    [["sacituzumab govitecan"], ["44%", "22%"], ["6.9", "2.7 months"], ["no validated plasma", "concordance"]]),
+  Q("opp-07", "How good is the girentuximab PET scan at telling whether a kidney mass is clear cell cancer?", "factual", 2, "clinician",
+    "In the phase 3 ZIRCON trial, 300 patients were dosed and 284 were evaluable, giving sensitivity of 85.5% and specificity of 87.0% for clear cell renal cell carcinoma with no safety signals. It is still not approved anywhere: the FDA issued a complete response letter on chemistry, manufacturing and controls rather than on efficacy or safety. The problem it addresses is that between 12.8% and 40% of resected small renal masses turn out to be benign.",
+    ["opp-caix-indeterminate-renal-mass"],
+    [["zircon"], ["85.5%"], ["87.0%"], ["complete response letter"], ["benign"]]),
+  Q("opp-08", "Is a PET scan good enough to replace adrenal vein sampling in primary aldosteronism?", "reasoning", 3, "clinician",
+    "Not yet proven at scale, but close. 68Ga-PentixaFor holds EMA PRIME status and FDA Fast Track designation, with a phase 3 called PANDA planned at approximately 270 patients. In a 100-patient prospective study, PET/CT agreed with adrenal vein sampling in 90% of patients against 54% for conventional CT. The reason it matters is access: primary aldosteronism accounts for 5 to 14% of all hypertension and fewer than 1% of patients are identified and fully investigated.",
+    ["opp-cxcr4-primary-aldosteronism"],
+    [["pentixafor"], ["prime", "fast track"], ["270 patients", "panda"], ["90%", "54%"], ["fewer than 1%"]]),
+  Q("opp-09", "Can a scan see the alpha-synuclein clumps in Parkinson's disease?", "factual", 2, "patient",
+    "Not in Parkinson's disease itself. The most advanced tracer, [18F]ACI-12589, was studied in 42 participants and separates multiple system atrophy from controls and from other neurodegenerative disorders, but shows limited binding in Parkinson's disease. A cerebrospinal fluid seed amplification assay already identifies Parkinson's with 87.7% sensitivity and 96.3% specificity, though it cannot say where in the brain the pathology is.",
+    ["opp-alpha-synuclein-pet-parkinsons", "alpha-synuclein"],
+    [["aci-12589"], ["multiple system atrophy"], ["limited binding"], ["87.7%", "96.3%"]]),
+  Q("opp-10", "How often does pancreatic cancer surgery turn out to be futile, and can FAPI PET help?", "reasoning", 3, "clinician",
+    "A Cochrane review found the median pre-test probability of unresectable disease after CT was 41.4%, so 41 of 100 patients who looked resectable on CT were unresectable at laparotomy. FAPI PET detects more: a pancreatic-specific meta-analysis of 7 studies and 322 patients gives pooled sensitivity of 0.99 against 0.84 for FDG, and 18F-FAPI-04 upgraded the TNM stage in 14 of 62 patients. What no trial has yet shown is that FAPI-based selection reduces the non-curative laparotomy rate.",
+    ["opp-fap-pancreatic-staging"],
+    [["41.4%"], ["0.99", "0.84"], ["14 patients", "upgraded the tnm stage"], ["non-curative laparotomy", "has yet reported"]]),
+  Q("opp-11", "Why would you want a cardiac sarcoidosis tracer that is not FDG?", "reasoning", 3, "clinician",
+    "Because FDG needs the patient's myocardium suppressed by a strict diet and imperfect suppression produces false positives on which immunosuppression is then started, while the histological reference standard is worse: endomyocardial biopsy sensitivity is roughly 20 to 30%, and there is no reliable serum biomarker. Somatostatin receptor tracers need no dietary preparation; in 11 patients, 68Ga-DOTATATE gave 91% patient-level concordance with FDG but only 77.1% segment-level agreement.",
+    ["opp-cardiac-sarcoidosis-specific-tracer"],
+    [["dietary", "suppression"], ["20 to 30%", "endomyocardial biopsy"], ["91%"], ["77.1%"]]),
+  Q("opp-12", "What is being done about liver nodules that scans cannot classify, and where is that work happening?", "factual", 3, "analyst",
+    "Mostly in China, aimed at glypican-3, which is overexpressed in 70 to 80% of hepatocellular carcinomas and effectively absent from normal liver. The problem is that 31% of LR-3 and 64% of LR-4 LI-RADS observations prove to be cancer. The most mature single dataset is Western, a 24-patient first-in-human series of [68Ga]Ga-RAYZ-8009, but the deepest programme is 68Ga-XH06 at Wuhan Union Hospital under NCT06383520, with a registered 150-patient head-to-head against enhanced MRI.",
+    ["opp-gpc3-hcc-china"],
+    [["70 to 80%"], ["lr-3", "lr-4"], ["rayz-8009"], ["xh06", "nct06383520"]]),
 ];

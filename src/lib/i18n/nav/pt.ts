@@ -65,6 +65,7 @@ export const navPt: NavDict = {
 
   "/about/": ["Sobre e metodologia", "Regras para os factos, fórmulas de classificação, licença."],
   "/roadmap/": ["Roteiro", "Indicadores de saúde do corpus, cada ideia por estado, e como o Nuclide cresce e se mantém atual."],
+  "/opportunities/": ["Oportunidades", "Onde hoje não se consegue tomar uma decisão clínica e um radiofármaco poderia resolvê-la, com a evidência lida e o estudo que a testaria."],
   "/gaps/": ["Lacunas a preencher", "Objetos e campos que precisam de trabalho."],
   "/review/": ["Fila de revisão", "Que páginas mais precisam de um revisor identificado, cobertura por tipo e via, cobertura de traduções."],
   "/reviewers/": ["Lista de revisores", "Quem validou páginas, em que via, com conflitos de interesse declarados."],

@@ -22,6 +22,7 @@ export const KINDS = [
   "collection",
   "person",
   "bottleneck",
+  "opportunity",
   "paper",
   "journal",
 ] as const;
@@ -89,6 +90,7 @@ export const KIND_META: Record<Kind, { plural: string; label: string; route: str
   person: { plural: "people", label: "Person", route: "people", blurb: "The clinicians and scientists doing the work: specialisms, bios, papers, and where to find them.", color: "pink" },
   journal: { plural: "journals", label: "Journal", route: "journals", blurb: "Where the evidence is published: the journals, their scope and access model, and the key papers each one carried.", color: "slate" },
   paper: { plural: "key papers", label: "Key paper", route: "key-papers", blurb: "The papers that changed practice or thinking, each explained: what it found, what it means, and what to be careful about.", color: "sky" },
+  opportunity: { plural: "opportunities", label: "Opportunity", route: "opportunities", blurb: "Where a clinical decision cannot be made today and a radiopharmaceutical could settle it: the unmet need, the most advanced agent anywhere, the evidence on five domains and a traffic light on six.", color: "blue" },
   bottleneck: { plural: "bottlenecks", label: "Bottleneck", route: "bottlenecks", blurb: "The systemic constraints slowing the field, from isotope supply to reimbursement, with the ideas that could break each one.", color: "red" },
 };
 

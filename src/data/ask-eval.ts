@@ -1,5 +1,5 @@
 /**
- * Ask Nuclide natural-question set: 48 questions written the way a patient, a clinician or an investor
+ * Ask Nuclide natural-question set: 52 questions written the way a patient, a clinician or an investor
  * actually types them ("who owns pluvicto", "how long am I radioactive after radioiodine"), each with the
  * records that carry the answer and a rubric of must-mention points (any phrase in a point satisfies it,
  * case-insensitive substring). Complements the open benchmark (benchmark.ts), which is phrased more
@@ -85,7 +85,14 @@ export const askEval: AskEvalQuestion[] = [
  * A second set, kept as the place where new questions land. OnCo's entries here were all oncology-specific
  * (PD-1 antibodies, ADC deals, investor portfolios) and were removed with the fork rather than reworded.
  */
-export const askEvalNew: AskEvalQuestion[] = [];
+export const askEvalNew: AskEvalQuestion[] = [
+  // ---- Opportunities: the surfacing layer (Sep 2026) ----
+  Q("ask-49", "investor", "where are the gaps in radiopharmaceutical diagnostics", ["opp-dll3-imaging-sclc", "opp-ceacam5-imaging-colorectal", "opp-caix-indeterminate-renal-mass"], [["tarlatamab", "dll3"], ["arcitumomab", "withdrawn"], ["zircon", "girentuximab"], ["no approved", "standalone"]]),
+  Q("ask-50", "clinician", "what do you do when the PSMA scan is negative but the PSA is high", ["opp-grpr-psma-negative-prostate"], [["grpr", "68ga-rm2"], ["psma-negative", "negative on psma-pet"], ["177lu-neob", "9.25 gbq", "lancet oncology"]]),
+  Q("ask-51", "investor", "which radiopharmaceutical diagnostics could sell without another company's drug", ["opp-caix-indeterminate-renal-mass", "opp-cxcr4-primary-aldosteronism"], [["standalone"], ["renal mass", "clear cell"], ["primary aldosteronism", "adrenal vein sampling"], ["85.5%", "90%"]]),
+  Q("ask-52", "clinician", "is there any point imaging claudin 18.2 before starting zolbetuximab", ["opp-cldn18-2-imaging-gastric", "cldn18-2"], [["zolbetuximab"], ["58.8%", "12%"], ["ventana", "companion diagnostic"], ["first-in-human", "68ga-pmd22"]]),
+];
+
 
 export type AskEvalScored = { id: string; audience: AskEvalQuestion["audience"]; score: number; met: number; total: number; missed: string[]; retrievalRecall: number; answer?: string };
 

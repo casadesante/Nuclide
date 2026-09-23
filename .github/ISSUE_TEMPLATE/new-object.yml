@@ -7,7 +7,7 @@ body:
     id: kind
     attributes:
       label: Kind
-      options: [indication, isotope, front, technology, target, agent, company, institution, pathway, term, trial, pairing, roadmap, idea, collection, person, bottleneck, key paper, journal]
+      options: [indication, isotope, front, technology, target, agent, company, institution, pathway, term, trial, pairing, roadmap, idea, collection, person, bottleneck, opportunity, key paper, journal]
     validations:
       required: true
   - type: input

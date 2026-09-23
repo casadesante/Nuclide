@@ -16,12 +16,12 @@ import { baseName, type AskIndex, type AskIndexEntry, type AskPair } from "./ask
 import { ASK_CASE_SENSITIVE } from "./ask-lexicon";
 import type { Kind } from "./kinds";
 
-export type Intent = "define" | "treatments" | "biomarkers" | "approval" | "regional-approvals" | "mechanism" | "side-effects" | "trials" | "results" | "evidence" | "compare" | "prognosis" | "who" | "investors" | "companies" | "roadmap" | "journals" | "cost" | "general";
+export type Intent = "define" | "treatments" | "biomarkers" | "approval" | "regional-approvals" | "mechanism" | "side-effects" | "trials" | "results" | "evidence" | "compare" | "prognosis" | "who" | "investors" | "companies" | "roadmap" | "journals" | "cost" | "openings" | "general";
 
 export const INTENT_LABEL: Record<Intent, string> = {
   define: "what it means", treatments: "how it is treated", biomarkers: "which biomarkers matter", approval: "approval status", "regional-approvals": "what a regulator approved", mechanism: "how it works",
   "side-effects": "side effects", trials: "trials", results: "trial results", evidence: "how good the evidence is", compare: "comparison", prognosis: "outlook", who: "who and where",
-  investors: "who invests", companies: "which companies work on it", roadmap: "where it is heading", journals: "where it is published", cost: "cost and coverage", general: "general",
+  investors: "who invests", companies: "which companies work on it", roadmap: "where it is heading", journals: "where it is published", cost: "cost and coverage", openings: "where the openings are", general: "general",
 };
 
 /** Straight quotes and hyphens, single spaces. Length-preserving for the character classes it touches. */
@@ -77,6 +77,9 @@ const RULES: Rule[] = [
   { intent: "define", re: [/\bkegg\b/, /\bwhich (?:signalling |signaling )?(?:pathway|map)\b/, /\bpathway (?:covers|map|for)\b/] },
   { intent: "journals", re: [/\bwhich journals?\b/, /\bwhat journals?\b/, /\bjournals? (?:publish|cover|carry|for|on|in|about)\b/, /\bwhere (?:is|are|was|were|do|does|did) .+ published\b/, /\bwho publishes\b/, /\bpublished in which\b/, /\bwhich journal\b/, /\bwhere (?:to|should i|can i) (?:read|publish)\b/] },
   { intent: "roadmap", re: [/\broadmap\b/, /\bwhere (?:is|are) .+ (?:heading|headed|going)\b/, /\bfuture of\b/, /\bover the next (?:decade|ten years|five years|10 years|5 years|few years)\b/, /\bnext decade\b/, /\bhow (?:has|did|will) .+ (?:evolve|evolved|change|changed|develop|developed)\b/, /\btimeline (?:of|for)\b/, /\bhistory (?:and future )?of\b/, /\bwhat(?:'s| is) (?:next|coming) (?:for|in|after)\b/, /\bwhat comes (?:next|after)\b/] },
+  // The surfacing question: gaps, unmet needs and standalone opportunities. Before "define" so
+  // "what is the unmet need in pancreatic cancer" reaches the opportunity records, not the glossary.
+  { intent: "openings", re: [/\bunmet (?:clinical |medical )?needs?\b/, /\bwhere (?:are|is) the (?:gaps?|opportunit(?:y|ies)|openings?|white space)\b/, /\bgaps? in (?:the )?(?:[\w-]+ ){0,3}(?:diagnostics?|imaging|pipeline|market|field|care|provision)\b/, /\bwhite space\b/, /\bstandalone (?:diagnostic|opportunit|use)/, /\bwithout (?:another|someone else'?s) compan(?:y|ies)'?s? (?:drug|therapy|approval|asset)\b/, /\bwhere (?:could|would|should) (?:we|i|one) (?:look|build|invest|start)\b/, /\bwhat (?:is|are) (?:not|nobody) (?:yet )?(?:built|building|imaging|measuring)\b/, /\bwhich (?:decisions?|questions?) cannot be (?:made|answered)\b/] },
   { intent: "evidence", re: [/\bworth it\b/, /\bworth (?:trying|taking|doing|the money)\b/, /\bproven\b/, /\b(?:is|are) (?:there )?(?:any |real |good |the )?evidence\b/, /\bevidence[- ]based\b/, /\b(?:is|are) .+ (?:effective|legit|legitimate|a scam|quackery|pseudoscience|backed by|any good|recommended)\b/, /(?<!\bhow |\bwhy )\bdoes .+ (?:help|work|cure|fight|prevent|stop|reduce|treat|shrink|kill|slow)\b/, /(?<!\bhow |\bwhy )\bdo .+ (?:help|work|cure|fight|prevent|stop|reduce|treat|shrink|kill|slow)\b/, /\bcan i (?:take|use|try|do|drink|eat)\b/, /\bshould i (?:take|try|use|do|drink|eat|avoid)\b/, /\bsafe to (?:use|take|try)\b/, /\bcure for cancer\b/, /\bcures? cancer\b/, /\b(?:supplements?|herbs?|herbal|diet|vitamins?|remedy|remedies|alternative medicine|natural|holistic)\b/] },
   // A regulator or region must be named; "which ADCs are approved for X" without one stays an ordinary approval question.
   { intent: "regional-approvals", re: [new RegExp(`\\bwhat (?:did|has|have|does|do) ${REGULATORS} (?:approve|approved|clear|cleared|authoris|authoriz|licen[cs]e)`), new RegExp(`\\bwhich (?:[\\w-]+ ){0,2}(?:drugs|products|treatments|medicines|therapies|adcs|antibodies|inhibitors|vaccines|tests|car-?t(?: products| therapies)?) (?:did|has|have|were|are|is|got) ${REGULATORS}\\b`), new RegExp(`\\b(?:approved|cleared|authori[sz]ed|licen[cs]ed) (?:in|by) ${REGULATORS} (?:for|in|that|which)\\b`), new RegExp(`\\bapprovals? in ${REGULATORS}\\b`), new RegExp(`\\b${REGULATORS} (?:has|have|had) (?:approved|cleared|authori[sz]ed)\\b`)] },
@@ -113,7 +116,7 @@ export function classifyIntent(question: string, entityCount = 2, sameKind = tru
 /** How much a record kind fits an intent, 0 to 0.5. Chooses the primary record among what the question named. */
 export function kindPriority(intent: Intent, kind: Kind): number {
   const table: Partial<Record<Intent, Partial<Record<Kind, number>>>> = {
-    define: { term: 0.5, indication: 0.45, target: 0.4, technology: 0.4, journal: 0.4, pathway: 0.38, roadmap: 0.35, drug: 0.3, company: 0.3, institution: 0.3, person: 0.3, trial: 0.25, collection: 0.2, bottleneck: 0.25, paper: 0.2, idea: 0.2 },
+    define: { term: 0.5, indication: 0.45, target: 0.4, technology: 0.4, journal: 0.4, pathway: 0.38, roadmap: 0.35, drug: 0.3, company: 0.3, institution: 0.3, person: 0.3, trial: 0.25, collection: 0.2, bottleneck: 0.25, paper: 0.2, idea: 0.2, opportunity: 0.3 },
     treatments: { indication: 0.5, drug: 0.3, target: 0.3, technology: 0.25, term: 0.1, trial: 0.1 },
     biomarkers: { indication: 0.5, target: 0.3, term: 0.25, technology: 0.2, drug: 0.2 },
     approval: { drug: 0.5, technology: 0.35, indication: 0.3, target: 0.25, term: 0.1 },
@@ -131,7 +134,8 @@ export function kindPriority(intent: Intent, kind: Kind): number {
     roadmap: { roadmap: 0.5, section: 0.45, technology: 0.4, indication: 0.35, target: 0.3, term: 0.25, drug: 0.2, company: 0.1 },
     journals: { journal: 0.5, paper: 0.4, trial: 0.35, person: 0.3, term: 0.2, indication: 0.2, technology: 0.2, drug: 0.2 },
     cost: { drug: 0.5, indication: 0.2, technology: 0.2 },
-    general: { indication: 0.3, drug: 0.3, target: 0.3, technology: 0.3, trial: 0.3, term: 0.25, pathway: 0.25, journal: 0.25, roadmap: 0.25, company: 0.2, institution: 0.2, person: 0.2, collection: 0.2, bottleneck: 0.2 },
+    openings: { opportunity: 0.5, bottleneck: 0.4, indication: 0.35, idea: 0.3, target: 0.3, technology: 0.25, drug: 0.2, trial: 0.15, paper: 0.15, term: 0.1 },
+    general: { indication: 0.3, drug: 0.3, target: 0.3, technology: 0.3, trial: 0.3, term: 0.25, pathway: 0.25, journal: 0.25, roadmap: 0.25, company: 0.2, institution: 0.2, person: 0.2, collection: 0.2, bottleneck: 0.2, opportunity: 0.3 },
   };
   return table[intent]?.[kind] ?? 0.05;
 }

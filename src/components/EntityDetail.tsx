@@ -4,6 +4,7 @@ import { publicTags } from "@/lib/tags";
 import type { ReactNode } from "react";
 import type { Indication, Entity, Roadmap, Term } from "@/lib/schema";
 import { KIND_META, phaseLabel, routeFor } from "@/lib/kinds";
+import { LENS_TIP, VERDICT_TIP } from "@/lib/kind-browser";
 import { graph } from "@/lib/graph";
 import { paragraphs, KIND_COLOR, statusClass } from "@/lib/text";
 import { Bullets, ChipList, Container, KindChip, PageHeader, StatusChip } from "./ui";
@@ -434,6 +435,78 @@ function kindTabs(e: Entity): Tab[] {
           {e.bottlenecks.length > 0 && <Field label="Bottlenecks it attacks"><ul className="space-y-1">{e.bottlenecks.map((id) => { const b = g.get(id); return b ? <li key={id}><Link className="underline" href={routeFor(b)}>{b.name}</Link><span className="text-muted"> · {b.tldr}</span></li> : null; })}</ul></Field>}
         </div>),
       ];
+    case "opportunity": {
+      const DOMAIN: Record<string, string> = { "target-biology": "Target biology and scientific rationale", "clinical-evidence": "Clinical evidence", "diagnostic-performance": "Diagnostic performance, unmet need and differentiation", "safety-dosimetry": "Safety and radiation dosimetry", "regulatory-path": "Clinical and regulatory evidence" };
+      const CATEGORY: Record<string, string> = { technical: "Technical performance", "unmet-need": "Clinical unmet need", ip: "Intellectual property", commercial: "Commercial", isotope: "Isotope", competition: "Competitive landscape" };
+      const stateClass = (st: string) => st === "strong" ? "positive" : st === "moderate" ? "mixed" : st === "thin" ? "phase-1" : "negative";
+      const flagClass = (f: string) => f === "green" ? "positive" : f === "amber" ? "mixed" : "negative";
+      const matClass = e.maturity === "approved-elsewhere" ? "approved" : e.maturity === "being-tested-at-scale" ? "phase-3" : e.maturity === "early-clinical" ? "phase-2" : e.maturity === "preclinical-evidence" ? "phase-1" : "concept";
+      const dd = e.dueDiligence;
+      const reds = e.flags.filter((f) => f.flag === "red").length, ambers = e.flags.filter((f) => f.flag === "amber").length;
+      return [
+        overview(<div className="grid gap-6 mt-8">
+          <div className="flex flex-wrap gap-2 items-center text-sm">
+            <span className="chip bg-foreground/5">{LENS_TIP[e.lens] ? e.lens.replace(/-/g, " ") : e.lens}</span>
+            <span className={`chip ${statusClass(matClass)}`}>{e.maturity.replace(/-/g, " ")}</span>
+            <span className="chip bg-foreground/5">{e.verdict.replace(/-/g, " ")}</span>
+            {e.flags.length > 0 && <span className={`chip ${statusClass(reds ? "negative" : ambers ? "mixed" : "positive")}`}>{reds ? `${reds} red` : ambers ? `${ambers} amber` : "all green"}</span>}
+          </div>
+          <div className="card p-4 bg-accent-soft/60 border-accent/20">
+            <div className="kicker mb-1"><TL text="The decision nobody can make today" /></div>
+            <p className="text-[15px] leading-relaxed">{withTermHovers(e.unmetNeed)}</p>
+          </div>
+          <Field label="Who would use it">{withTermHovers(e.useCase)}</Field>
+          {e.mostAdvanced && <Field label="Most advanced agent anywhere">{withTermHovers(e.mostAdvanced)}</Field>}
+          <Field label="How this was found"><span>{LENS_TIP[e.lens] ?? e.lens.replace(/-/g, " ")}</span></Field>
+          <Field label="Would it stand alone?"><span>{VERDICT_TIP[e.verdict] ?? e.verdict.replace(/-/g, " ")}</span></Field>
+          {e.differentiation && <Field label="Against the tests that already exist">{withTermHovers(e.differentiation)}</Field>}
+          {e.metrics.length > 0 && <div><div className="kicker mb-2"><TL text="Size of the problem" /></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{e.metrics.map((m, i) => <div key={i} className="card p-3"><div className="text-2xl font-semibold tabular-nums">{m.value}</div><div className="text-sm">{m.label}</div>{(m.source || m.url) && <div className="text-xs text-muted mt-1">{m.url ? <a className="underline" href={m.url} rel="noopener">{m.source ?? "source"}</a> : m.source}</div>}</div>)}</div></div>}
+          <Field label="Hypothesis">{withTermHovers(e.hypothesis)}</Field>
+          <Field label="Rationale">{withTermHovers(e.rationale)}</Field>
+          <Field label="What would settle it">{withTermHovers(e.test)}</Field>
+          {e.risks.length > 0 && <Field label="What would kill it"><ul className="list-disc ps-5 space-y-1">{e.risks.map((r, i) => <li key={i}>{withTermHovers(r)}</li>)}</ul></Field>}
+          {e.watch.length > 0 && <Field label="What to watch next"><ul className="list-disc ps-5 space-y-1">{e.watch.map((w, i) => <li key={i}>{withTermHovers(w)}</li>)}</ul></Field>}
+        </div>),
+        ...(dd.length ? [{ id: "evidence", label: "Evidence read", count: dd.length, content: (
+          <div className="grid gap-3">
+            <p className="text-sm text-muted">The five domains of a radiopharmaceutical due-diligence review, adapted from the Fryback-Thornbury hierarchy of diagnostic efficacy. Each carries the state of the <em>public</em> evidence and the fact behind it, not a score out of five: a single total hides the reason and stops telling candidates apart. Domains marked as carrying most weight are the ones that decide the case at this asset&apos;s stage.</p>
+            {dd.map((d, i) => (
+              <div key={i} className="card p-4">
+                <div className="flex flex-wrap items-center gap-2 mb-1">
+                  <span className={`chip ${statusClass(stateClass(d.state))}`}>{d.state}</span>
+                  <span className="font-medium">{DOMAIN[d.domain] ?? d.domain}</span>
+                  {d.weighted && <span className="chip bg-foreground/5">carries most weight at this stage</span>}
+                </div>
+                <p className="text-[15px] leading-relaxed">{withTermHovers(d.why)}</p>
+                {(d.source || d.url) && <div className="text-xs text-muted mt-1">{d.url ? <a className="underline break-all" href={d.url} rel="noopener">{d.source ?? d.url}</a> : d.source}</div>}
+              </div>
+            ))}
+          </div>
+        ) }] : []),
+        ...(e.flags.length ? [{ id: "flags", label: "Review flags", count: e.flags.length, content: (
+          <div className="grid gap-3">
+            <p className="text-sm text-muted">Red, amber or green on each review category, each with its reason, so an obvious no-go takes seconds rather than a meeting.</p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {e.flags.map((f, i) => (
+                <div key={i} className="card p-4">
+                  <div className="flex flex-wrap items-center gap-2 mb-1"><span className={`chip ${statusClass(flagClass(f.flag))}`}>{f.flag}</span><span className="font-medium">{CATEGORY[f.category] ?? f.category}</span></div>
+                  <p className="text-sm leading-relaxed">{withTermHovers(f.why)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) }] : []),
+        ...(e.competition.length ? [{ id: "landscape", label: "Who else is in it", count: e.competition.length, content: (
+          <ul className="grid gap-3">{e.competition.map((c, i) => (
+            <li key={i} className="card p-4">
+              <div className="flex flex-wrap items-center gap-2"><span className="font-medium">{c.name}</span>{c.stage && <span className="chip bg-foreground/5">{c.stage}</span>}</div>
+              <p className="text-sm leading-relaxed mt-1">{withTermHovers(c.what)}</p>
+              {c.url && <a className="text-xs underline break-all text-muted" href={c.url} rel="noopener">{c.url}</a>}
+            </li>
+          ))}</ul>
+        ) }] : []),
+      ];
+    }
     case "paper": {
       const typeLabel: Record<string, string> = { rct: "Randomised controlled trial", "meta-analysis": "Meta-analysis", observational: "Observational study", "real-world": "Real-world evidence", basic: "Basic science", translational: "Translational study", review: "Review", guideline: "Guideline", methods: "Methods" };
       return [

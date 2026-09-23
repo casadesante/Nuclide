@@ -221,6 +221,7 @@ export const ja: UiDict = {
   "kind.person.label": "人物", "kind.person.plural": "人物",
   "kind.journal.label": "学術誌", "kind.journal.plural": "学術誌",
   "kind.paper.label": "重要論文", "kind.paper.plural": "重要論文",
+  "kind.opportunity.label": "機会", "kind.opportunity.plural": "機会",
   "kind.bottleneck.label": "ボトルネック", "kind.bottleneck.plural": "ボトルネック", "kind.bottleneck.title": "ボトルネック",
 
   "l.Summary": "要約",

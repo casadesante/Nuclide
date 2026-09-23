@@ -221,6 +221,7 @@ export const zh: UiDict = {
   "kind.person.label": "人物", "kind.person.plural": "人物",
   "kind.journal.label": "期刊", "kind.journal.plural": "期刊",
   "kind.paper.label": "关键论文", "kind.paper.plural": "关键论文",
+  "kind.opportunity.label": "机会", "kind.opportunity.plural": "机会",
   "kind.bottleneck.label": "瓶颈", "kind.bottleneck.plural": "瓶颈", "kind.bottleneck.title": "瓶颈",
 
   "l.Summary": "摘要",

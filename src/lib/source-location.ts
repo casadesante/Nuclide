@@ -11,7 +11,7 @@ export type SourceLocation = { file: string; line: number; url: string };
 const REPO = "https://github.com/casadesante/Nuclide";
 const KIND_FILE: Record<Kind, string> = {
   indication: "indications.ts", section: "sections.ts", technology: "technologies.ts", target: "targets.ts", isotope: "rp/isotopes.ts", drug: "drugs.ts", company: "companies.ts",
-  institution: "institutions.ts", pathway: "pathways.ts", term: "terms.ts", trial: "trials.ts", pairing: "pairings.ts", roadmap: "roadmaps.ts", idea: "ideas.ts", collection: "collections.ts", person: "people/index.ts", bottleneck: "bottlenecks.ts", paper: "key-papers/index.ts", journal: "journals.ts",
+  institution: "institutions.ts", pathway: "pathways.ts", term: "terms.ts", trial: "trials.ts", pairing: "pairings.ts", roadmap: "roadmaps.ts", idea: "ideas.ts", collection: "collections.ts", person: "people/index.ts", bottleneck: "bottlenecks.ts", opportunity: "opportunities.ts", paper: "key-papers/index.ts", journal: "journals.ts",
 };
 
 let index: Map<string, { file: string; line: number }> | null = null;

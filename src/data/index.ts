@@ -47,6 +47,8 @@ import { newTechnologies } from "./rp/technologies-new";
 import { clinicalTerms } from "./rp/terms-clinical";
 import { physicsTerms } from "./rp/terms-physics";
 import { newTrials } from "./rp/trials-new";
+import { opportunities } from "./rp/opportunities";
+import { opportunityIndications } from "./rp/indications-opp";
 
 const RAW_INPUTS: EntityInput[] = [
   ...carriedIndications,
@@ -71,6 +73,8 @@ const RAW_INPUTS: EntityInput[] = [
   ...globalPlayers,
   ...asiaAgents,
   ...lungIndications,
+  ...opportunityIndications,
+  ...opportunities,
   ...diagnosticOncologyAgents,
   ...neuroAgents,
   ...newTherapyAgents,

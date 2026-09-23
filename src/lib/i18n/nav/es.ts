@@ -65,6 +65,7 @@ export const navEs: NavDict = {
 
   "/about/": ["Acerca de y metodología", "Reglas para los hechos, fórmulas de clasificación, licencia."],
   "/roadmap/": ["Hoja de ruta", "Indicadores de salud del corpus, cada idea por estado, y cómo Nuclide crece y se mantiene al día."],
+  "/opportunities/": ["Oportunidades", "Donde hoy no se puede tomar una decisión clínica y un radiofármaco podría resolverla, con la evidencia leída y el estudio que lo comprobaría."],
   "/gaps/": ["Lagunas por llenar", "Objetos y campos que necesitan trabajo."],
   "/review/": ["Cola de revisión", "Qué páginas más necesitan un revisor con nombre, cobertura por tipo y vía, cobertura de traducciones."],
   "/reviewers/": ["Lista de revisores", "Quién ha validado páginas, en qué vía, con conflictos de interés declarados."],

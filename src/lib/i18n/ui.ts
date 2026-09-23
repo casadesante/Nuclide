@@ -252,6 +252,7 @@ export const EN = {
   "kind.person.label": "Person", "kind.person.plural": "people",
   "kind.journal.label": "Journal", "kind.journal.plural": "journals",
   "kind.paper.label": "Key paper", "kind.paper.plural": "key papers",
+  "kind.opportunity.label": "Opportunity", "kind.opportunity.plural": "opportunities",
   "kind.bottleneck.label": "Bottleneck", "kind.bottleneck.plural": "bottlenecks", "kind.bottleneck.title": "Bottlenecks of the field",
 
   // ---- headings, field labels, facet and column labels (looked up by English text) ----

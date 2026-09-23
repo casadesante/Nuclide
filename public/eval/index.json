@@ -3,43 +3,43 @@
   "file": "ask-2026-09-23.json",
   "system": "Nuclide Ask (intents, entity resolution, templated cited answers; extractive fallback)",
   "date": "2026-09-23",
-  "questions": 110,
-  "meanScore": 0.43,
+  "questions": 122,
+  "meanScore": 0.409,
   "meanRetrievalRecall": 1,
   "byCategory": {
-   "factual": 0.607,
-   "reasoning": 0.321,
-   "procedural": 0.289
+   "factual": 0.543,
+   "reasoning": 0.323,
+   "procedural": 0.3
   },
   "method": "For each question: intent from wording rules; records named in the question resolved by longest match over names and aliases; a template per intent fills sentences from those records' structured fields (TL;DR first), each sentence cited; curated benchmark and patient-question pairs supply records when the question matches closely; sentence retrieval (MiniSearch plus concept index, fused) is the fallback and adds detail. The answer text shown on /ask/ is scored for rubric coverage. No language model.",
   "before": {
    "system": "Nuclide Ask (extractive answer, lexical + concept retrieval, top 6 records)",
-   "meanScore": 0.375,
-   "meanRetrievalRecall": 0.623,
+   "meanScore": 0.36,
+   "meanRetrievalRecall": 0.652,
    "byCategory": {
-    "factual": 0.484,
-    "reasoning": 0.352,
-    "procedural": 0.167
+    "factual": 0.426,
+    "reasoning": 0.365,
+    "procedural": 0.171
    }
   },
   "withoutCuratedPairs": {
-   "meanScore": 0.349,
-   "meanRetrievalRecall": 0.759,
+   "meanScore": 0.336,
+   "meanRetrievalRecall": 0.79,
    "byCategory": {
-    "factual": 0.502,
-    "reasoning": 0.27,
-    "procedural": 0.183
+    "factual": 0.455,
+    "reasoning": 0.276,
+    "procedural": 0.187
    }
   },
   "intents": {
-   "general": 56,
-   "define": 21,
+   "general": 62,
+   "define": 22,
    "compare": 1,
-   "results": 8,
-   "approval": 5,
+   "results": 10,
+   "approval": 7,
    "trials": 3,
    "side-effects": 2,
-   "treatments": 2,
+   "treatments": 3,
    "cost": 2,
    "companies": 1,
    "who": 2,
@@ -47,14 +47,14 @@
    "roadmap": 3
   },
   "templates": {
-   "orientation": 56,
-   "define": 28,
+   "orientation": 62,
+   "define": 30,
    "compare": 1,
-   "results": 8,
-   "approval": 3,
+   "results": 9,
+   "approval": 5,
    "trials": 3,
    "side-effects": 2,
-   "treatments": 2,
+   "treatments": 3,
    "companies": 1,
    "mechanism": 3,
    "roadmap": 2,

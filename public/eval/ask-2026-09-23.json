@@ -2,43 +2,43 @@
  "summary": {
   "system": "Nuclide Ask (intents, entity resolution, templated cited answers; extractive fallback)",
   "date": "2026-09-23",
-  "questions": 110,
-  "meanScore": 0.43,
+  "questions": 122,
+  "meanScore": 0.409,
   "meanRetrievalRecall": 1,
   "byCategory": {
-   "factual": 0.607,
-   "reasoning": 0.321,
-   "procedural": 0.289
+   "factual": 0.543,
+   "reasoning": 0.323,
+   "procedural": 0.3
   },
   "method": "For each question: intent from wording rules; records named in the question resolved by longest match over names and aliases; a template per intent fills sentences from those records' structured fields (TL;DR first), each sentence cited; curated benchmark and patient-question pairs supply records when the question matches closely; sentence retrieval (MiniSearch plus concept index, fused) is the fallback and adds detail. The answer text shown on /ask/ is scored for rubric coverage. No language model.",
   "before": {
    "system": "Nuclide Ask (extractive answer, lexical + concept retrieval, top 6 records)",
-   "meanScore": 0.375,
-   "meanRetrievalRecall": 0.623,
+   "meanScore": 0.36,
+   "meanRetrievalRecall": 0.652,
    "byCategory": {
-    "factual": 0.484,
-    "reasoning": 0.352,
-    "procedural": 0.167
+    "factual": 0.426,
+    "reasoning": 0.365,
+    "procedural": 0.171
    }
   },
   "withoutCuratedPairs": {
-   "meanScore": 0.349,
-   "meanRetrievalRecall": 0.759,
+   "meanScore": 0.336,
+   "meanRetrievalRecall": 0.79,
    "byCategory": {
-    "factual": 0.502,
-    "reasoning": 0.27,
-    "procedural": 0.183
+    "factual": 0.455,
+    "reasoning": 0.276,
+    "procedural": 0.187
    }
   },
   "intents": {
-   "general": 56,
-   "define": 21,
+   "general": 62,
+   "define": 22,
    "compare": 1,
-   "results": 8,
-   "approval": 5,
+   "results": 10,
+   "approval": 7,
    "trials": 3,
    "side-effects": 2,
-   "treatments": 2,
+   "treatments": 3,
    "cost": 2,
    "companies": 1,
    "who": 2,
@@ -46,14 +46,14 @@
    "roadmap": 3
   },
   "templates": {
-   "orientation": 56,
-   "define": 28,
+   "orientation": 62,
+   "define": 30,
    "compare": 1,
-   "results": 8,
-   "approval": 3,
+   "results": 9,
+   "approval": 5,
    "trials": 3,
    "side-effects": 2,
-   "treatments": 2,
+   "treatments": 3,
    "companies": 1,
    "mechanism": 3,
    "roadmap": 2,
@@ -128,7 +128,7 @@
     "tc-99m"
    ],
    "retrievalRecall": 1,
-   "answer": "The parent isotope shipped worldwide to make technetium-99m, the gamma-ray tracer used in the majority of nuclear medicine scans. It is made in a handful of ageing research reactors, and when one breaks down, scans get delayed or cancelled. [1] The single most widely used medical radioisotope: a metastable metal with a six-hour lifetime, milked on demand from a bedside generator (a 'moly cow') and attached to a cold kit to image bone, heart, kidneys or lymph nodes. [2] Roughly 95% of the world's molybdenum-99 (the parent of technetium-99m, used in about 30 million SPECT scans a year, 80% of all nuclear medicine imaging) comes from a handful of research reactors in South Africa, the Netherlands, Belgium and Australia; because Mo-99's half-life is 66 hours it cannot be stockpiled, so a reactor outage cancels scans within days (OECD-NEA, 2025 review of medical radioisotope supply). [3] Most of the world's therapeutic and scanning isotopes are made by putting targets into about half a dozen ageing research reactors and flying the product out within days. [4] When two reactors were down at once in 2009 and 2010, hospitals worldwide ran short of the most used scan isotope. [4]\n\nSources\n[1] Molybdenum-99 (https://nuclide.cc/isotopes/mo-99/)\n[2] Technetium-99m (https://nuclide.cc/isotopes/tc-99m/)\n[3] Isotope supply (https://nuclide.cc/fronts/f-isotope-supply/)\n[4] Research reactors for medical isotopes (Mo-99, Lu-177, I-131) (https://nuclide.cc/technologies/research-reactor-isotope-production/)"
+   "answer": "The parent isotope shipped worldwide to make technetium-99m, the gamma-ray tracer used in the majority of nuclear medicine scans. It is made in a handful of ageing research reactors, and when one breaks down, scans get delayed or cancelled. [1] The single most widely used medical radioisotope: a metastable metal with a six-hour lifetime, milked on demand from a bedside generator (a 'moly cow') and attached to a cold kit to image bone, heart, kidneys or lymph nodes. [2] Most of the world's therapeutic and scanning isotopes are made by putting targets into about half a dozen ageing research reactors and flying the product out within days. [3] When two reactors were down at once in 2009 and 2010, hospitals worldwide ran short of the most used scan isotope. [3] Roughly 95% of the world's molybdenum-99 (the parent of technetium-99m, used in about 30 million SPECT scans a year, 80% of all nuclear medicine imaging) comes from a handful of research reactors in South Africa, the Netherlands, Belgium and Australia; because Mo-99's half-life is 66 hours it cannot be stockpiled, so a reactor outage cancels scans within days (OECD-NEA, 2025 review of medical radioisotope supply). [4]\n\nSources\n[1] Molybdenum-99 (https://nuclide.cc/isotopes/mo-99/)\n[2] Technetium-99m (https://nuclide.cc/isotopes/tc-99m/)\n[3] Research reactors for medical isotopes (Mo-99, Lu-177, I-131) (https://nuclide.cc/technologies/research-reactor-isotope-production/)\n[4] Isotope supply (https://nuclide.cc/fronts/f-isotope-supply/)"
   },
   {
    "id": "iso-05",
@@ -157,7 +157,7 @@
     "f-18"
    ],
    "retrievalRecall": 1,
-   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] Positron emission tomography detects the paired 511 keV gamma photons produced when a positron from a radioactive tracer annihilates with an electron; coincidence detection localises the source and the standardised uptake value (SUV) quantifies it. [1] Isotopes such as 18F, 68Ga, 89Zr and 64Cu are attached to a targeting molecule, and the tracer determines what is measured: glucose metabolism (FDG), receptor expression (PSMA, SSTR, TROP2, HER2), stroma (FAP), immune cells (CD8) or DNA repair (PARP). [1] Positron-emitting isotopes (18F, 68Ga, 89Zr, 64Cu) attached to a targeting molecule; coincidence detection of 511 keV photons; standardised uptake value (SUV) quantifies uptake. [1] A short-lived radioactive form of fluorine, made fresh each morning at a local facility, that is attached to a sugar or other small molecule and used for a PET scan. [2] Its 109.8-minute half-life is long enough for a regional cyclotron to make a batch, run it through automated radiochemistry and quality control, and ship unit doses to nearby hospitals, but short enough that the whole chain has to be scheduled tightly around the day's scan list; roughly a third of the activity is lost every hour. [2] Fluorine-18 is made every morning within driving distance of the scanner; gallium-68 comes from either a generator or a cyclotron; copper-64 and zirconium-89 last long enough to ship across a country. [3]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] Fluorine-18 (https://nuclide.cc/isotopes/f-18/)\n[3] Cyclotron isotope production (F-18, Ga-68, Cu-64, Zr-89, At-211) (https://nuclide.cc/technologies/cyclotron-isotope-production/)"
+   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] Positron emission tomography detects the paired 511 keV gamma photons produced when a positron from a radioactive tracer annihilates with an electron; coincidence detection localises the source and the standardised uptake value (SUV) quantifies it. [1] Isotopes such as 18F, 68Ga, 89Zr and 64Cu are attached to a targeting molecule, and the tracer determines what is measured: glucose metabolism (FDG), receptor expression (PSMA, SSTR, TROP2, HER2), stroma (FAP), immune cells (CD8) or DNA repair (PARP). [1] Positron-emitting isotopes (18F, 68Ga, 89Zr, 64Cu) attached to a targeting molecule; coincidence detection of 511 keV photons; standardised uptake value (SUV) quantifies uptake. [1] A short-lived radioactive form of fluorine, made fresh each morning at a local facility, that is attached to a sugar or other small molecule and used for a PET scan. [2] Its 109.8-minute half-life is long enough for a regional cyclotron to make a batch, run it through automated radiochemistry and quality control, and ship unit doses to nearby hospitals, but short enough that the whole chain has to be scheduled tightly around the day's scan list; roughly a third of the activity is lost every hour. [2]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] Fluorine-18 (https://nuclide.cc/isotopes/f-18/)"
   },
   {
    "id": "iso2-01",
@@ -334,19 +334,20 @@
    "id": "img-01",
    "category": "factual",
    "difficulty": 1,
-   "score": 0.4,
-   "met": 2,
+   "score": 0.2,
+   "met": 1,
    "total": 5,
    "missed": [
     "warburg",
     "glut",
+    "prostate cancer",
     "infection and inflammation"
    ],
    "retrievedEntities": [
     "fdg-pet"
    ],
    "retrievalRecall": 1,
-   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] FDG PET is the standard PET scan. A radioactive sugar shows which tissues are burning glucose fast, which most cancers do. [2] New whole-body scanners are so much more sensitive than standard PET machines that they can produce a clear picture using a small fraction of the usual radioactive tracer dose. [3] Total-body PET's roughly 40-fold sensitivity gain over conventional PET can be used to cut injected diagnostic tracer activity by 90% or more while preserving diagnostic image quality and lesion detection, reducing radiation dose to patients and staff, rather than being used only to shorten scan duration. [3] FAPI PET is a PET scan that lights up the scaffolding around almost any solid tumour, including cancers the standard sugar scan misses. [4] Neuroblastoma soaks up MIBG, a radioactive cousin of noradrenaline; the Curie and SIOPEN scores count how many body regions still light up on the scan, and a score that has not fallen enough after the first rounds of chemotherapy marks a child who is unlikely to be cured with the standard plan. [5] A panel of cancer and imaging specialists agreed, scenario by scenario, when a PSMA PET scan for prostate cancer is a good idea and when it usually is not - a reference clinicians and insurers use to decide who should get the scan. [6]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] FDG PET (https://nuclide.cc/technologies/fdg-pet/)\n[3] Using total-body PET's sensitivity to cut diagnostic tracer dose, not just scan time (https://nuclide.cc/ideas/idea-total-body-pet-lower-dose-tracers/)\n[4] FAPI PET (https://nuclide.cc/technologies/fapi-pet/)\n[5] MIBG Curie and SIOPEN scores (https://nuclide.cc/terms/curie-siopen-score/)\n[6] Appropriate use criteria for prostate-specific membrane antigen (PSMA) PET imaging (https://nuclide.cc/key-papers/paper-jadvar-snmmi-psma-auc-jnm-2022/)"
+   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] FDG PET is the standard PET scan. A radioactive sugar shows which tissues are burning glucose fast, which most cancers do. [2] New whole-body scanners are so much more sensitive than standard PET machines that they can produce a clear picture using a small fraction of the usual radioactive tracer dose. [3] Total-body PET's roughly 40-fold sensitivity gain over conventional PET can be used to cut injected diagnostic tracer activity by 90% or more while preserving diagnostic image quality and lesion detection, reducing radiation dose to patients and staff, rather than being used only to shorten scan duration. [3] FAPI PET is a PET scan that lights up the scaffolding around almost any solid tumour, including cancers the standard sugar scan misses. [4] Parkinson's disease is defined by a protein clumping in the brain, and no scan can see it. [5] Deciding whether to put a patient on long-term steroids for heart sarcoidosis depends on a scan that only works if the patient's heart has been starved of sugar for a day, and a biopsy that misses the disease most of the time. [6]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] FDG PET (https://nuclide.cc/technologies/fdg-pet/)\n[3] Using total-body PET's sensitivity to cut diagnostic tracer dose, not just scan time (https://nuclide.cc/ideas/idea-total-body-pet-lower-dose-tracers/)\n[4] FAPI PET (https://nuclide.cc/technologies/fapi-pet/)\n[5] Alpha-synuclein PET: works for MSA, not for Parkinson's (https://nuclide.cc/opportunities/opp-alpha-synuclein-pet-parkinsons/)\n[6] An inflammation tracer that does not need a diet (https://nuclide.cc/opportunities/opp-cardiac-sarcoidosis-specific-tracer/)"
   },
   {
    "id": "img-02",
@@ -403,17 +404,19 @@
    "id": "img-05",
    "category": "factual",
    "difficulty": 2,
-   "score": 0.75,
-   "met": 3,
+   "score": 0.25,
+   "met": 1,
    "total": 4,
    "missed": [
-    "curie score"
+    "123i-mibg",
+    "curie score",
+    "18f-mfbg"
    ],
    "retrievedEntities": [
     "mibg-theranostics"
    ],
    "retrievalRecall": 1,
-   "answer": "Neuroblastoma is a childhood nerve-cell cancer where anti-GD2 antibodies and, recently, GD2 CAR-T have improved survival in high-risk disease. [1] A noradrenaline look-alike that neuroblastoma cells swallow: labelled with a small amount of radioactivity it shows the tumour on a scan; with a large amount it treats it. [2] A same-day PET tracer could replace the two-day, low-resolution MIBG scan children now undergo repeatedly. [3]\n\nSources\n[1] Neuroblastoma (paediatric) (https://nuclide.cc/indications/neuroblastoma/)\n[2] MIBG imaging and 131I-MIBG therapy (https://nuclide.cc/technologies/mibg-theranostics/)\n[3] 18F-MFBG PET replacing 123I-MIBG scintigraphy (https://nuclide.cc/ideas/idea-mfbg-pet-replaces-mibg/)"
+   "answer": "Neuroblastoma is a childhood nerve-cell cancer where anti-GD2 antibodies and, recently, GD2 CAR-T have improved survival in high-risk disease. [1] A noradrenaline look-alike that neuroblastoma cells swallow: labelled with a small amount of radioactivity it shows the tumour on a scan; with a large amount it treats it. [2]\n\nSources\n[1] Neuroblastoma (paediatric) (https://nuclide.cc/indications/neuroblastoma/)\n[2] MIBG imaging and 131I-MIBG therapy (https://nuclide.cc/technologies/mibg-theranostics/)"
   },
   {
    "id": "img-06",
@@ -539,7 +542,7 @@
     "fap"
    ],
    "retrievalRecall": 1,
-   "answer": "FAPI PET is a PET scan that lights up the scaffolding around almost any solid tumour, including cancers the standard sugar scan misses. [1] Quinoline-based FAP inhibitors (FAPI-04, FAPI-46, FAPI-74) labelled with 68Ga or 18F image cancer-associated fibroblasts. [1] Superior to FDG in pancreatic, gastric, HCC, and peritoneal disease in head-to-head series. [1] Small molecule binds FAP on stromal fibroblasts; rapid uptake, low background, minimal brain and liver signal. [1] FDG PET is the standard PET scan. A radioactive sugar shows which tissues are burning glucose fast, which most cancers do. [2] FAP (fibroblast activation protein) sits on the cancer-associated fibroblasts that scaffold more than 90% of epithelial cancers and is almost absent from normal adult tissue. FAPI PET tracers therefore light up tumours with high contrast, including pancreatic, gastric and low-grade cancers where FDG PET is weak, and FAP-targeted radioligands are in development. [3] A PET scan using a radioactive form of oestrogen that lights up every tumour deposit still carrying the oestrogen receptor, so doctors can see whether metastases across the body will respond to hormone treatment without biopsying each one. [4]\n\nSources\n[1] FAPI PET (https://nuclide.cc/technologies/fapi-pet/)\n[2] FDG PET (https://nuclide.cc/technologies/fdg-pet/)\n[3] FAP (https://nuclide.cc/targets/fap/)\n[4] FES PET (oestrogen receptor imaging) (https://nuclide.cc/technologies/fes-pet/)"
+   "answer": "FAPI PET is a PET scan that lights up the scaffolding around almost any solid tumour, including cancers the standard sugar scan misses. [1] Quinoline-based FAP inhibitors (FAPI-04, FAPI-46, FAPI-74) labelled with 68Ga or 18F image cancer-associated fibroblasts. [1] Superior to FDG in pancreatic, gastric, HCC, and peritoneal disease in head-to-head series. [1] Small molecule binds FAP on stromal fibroblasts; rapid uptake, low background, minimal brain and liver signal. [1] FDG PET is the standard PET scan. A radioactive sugar shows which tissues are burning glucose fast, which most cancers do. [2] FAP (fibroblast activation protein) sits on the cancer-associated fibroblasts that scaffold more than 90% of epithelial cancers and is almost absent from normal adult tissue. FAPI PET tracers therefore light up tumours with high contrast, including pancreatic, gastric and low-grade cancers where FDG PET is weak, and FAP-targeted radioligands are in development. [3] A Stanford nuclear medicine professor who led the division for a decade and has published widely on new PET tracers, from FAPI scans of fibrosis-related proteins to whole-body PET scanners that image the entire body at once. [4]\n\nSources\n[1] FAPI PET (https://nuclide.cc/technologies/fapi-pet/)\n[2] FDG PET (https://nuclide.cc/technologies/fdg-pet/)\n[3] FAP (https://nuclide.cc/targets/fap/)\n[4] Andrei Iagaru (https://nuclide.cc/people/andrei-iagaru/)"
   },
   {
    "id": "ther-01",
@@ -557,7 +560,7 @@
     "prrt"
    ],
    "retrievalRecall": 1,
-   "answer": "A phase 3 trial of Lutetium-177 dotatate in pancreatic ductal adenocarcinoma, run by Advanced Accelerator Applications, active and no longer recruiting. [1] Study to Evaluate the Efficacy and Safety of Lutathera in Patients With Grade 2 and Grade 3 Advanced GEP-NET is a phase 3 trial run by Advanced Accelerator Applications with 226 participants: A Phase III Multi-center, Randomized, Open-label Study to Evaluate the Efficacy and Safety of Lutathera in Patients With Grade 2 and Grade 3 Advanced GEP-NET. [1] Study to Evaluate the Efficacy and Safety of Lutathera in Patients With Grade 2 and Grade 3 Advanced GEP-NET is a phase 3 interventional study registered as NCT03972488 by Advanced Accelerator Applications, with 226 participants enrolled, started 2020-01-08 and due to reach its primary completion in 2023-07-20. [1] Interventions recorded: Lutathera, 30 mg Octreotide long acting repeatable (LAR) (Sandostatin LAR Depot), 2.5% Lys-Arg sterile amino acid solution and High dose 60 mg octreotide long-acting repeatable. [1] Lutetium-177 dotatate was the first modern radioligand therapy (2018), for neuroendocrine tumours, and is now used in first line. [2] A family of usually slow-growing tumours that start in hormone-producing cells of the gut, pancreas and lungs. They pioneered the idea of using the same molecule to see a tumour on a scan and then to treat it with radiation. [3] Grade 3 well-differentiated neuroendocrine tumours divide fast enough to be called grade 3 yet still look and behave like their slower relatives rather than like neuroendocrine carcinoma. [4]\n\nSources\n[1] Study to Evaluate the Efficacy and Safety of Lutathera in Patients With Grade 2 and Grade 3 Advanced GEP-NET (https://nuclide.cc/trials/nct03972488/)\n[2] Lutetium-177 dotatate (https://nuclide.cc/drugs/lutathera/)\n[3] Neuroendocrine tumours (https://nuclide.cc/indications/neuroendocrine/)\n[4] Grade 3 well-differentiated neuroendocrine tumour (https://nuclide.cc/indications/grade-3-net/)"
+   "answer": "A phase 3 trial of Lutetium-177 dotatate in pancreatic ductal adenocarcinoma, run by Advanced Accelerator Applications, active and no longer recruiting. [1] Study to Evaluate the Efficacy and Safety of Lutathera in Patients With Grade 2 and Grade 3 Advanced GEP-NET is a phase 3 trial run by Advanced Accelerator Applications with 226 participants: A Phase III Multi-center, Randomized, Open-label Study to Evaluate the Efficacy and Safety of Lutathera in Patients With Grade 2 and Grade 3 Advanced GEP-NET. [1] Study to Evaluate the Efficacy and Safety of Lutathera in Patients With Grade 2 and Grade 3 Advanced GEP-NET is a phase 3 interventional study registered as NCT03972488 by Advanced Accelerator Applications, with 226 participants enrolled, started 2020-01-08 and due to reach its primary completion in 2023-07-20. [1] Interventions recorded: Lutathera, 30 mg Octreotide long acting repeatable (LAR) (Sandostatin LAR Depot), 2.5% Lys-Arg sterile amino acid solution and High dose 60 mg octreotide long-acting repeatable. [1] Lutetium-177 dotatate was the first modern radioligand therapy (2018), for neuroendocrine tumours, and is now used in first line. [2] A family of usually slow-growing tumours that start in hormone-producing cells of the gut, pancreas and lungs. They pioneered the idea of using the same molecule to see a tumour on a scan and then to treat it with radiation. [3] Small intestinal neuroendocrine tumours are slow-growing hormone-producing tumours of the ileum and jejunum, often found only after they have spread to lymph nodes and the liver. [4]\n\nSources\n[1] Study to Evaluate the Efficacy and Safety of Lutathera in Patients With Grade 2 and Grade 3 Advanced GEP-NET (https://nuclide.cc/trials/nct03972488/)\n[2] Lutetium-177 dotatate (https://nuclide.cc/drugs/lutathera/)\n[3] Neuroendocrine tumours (https://nuclide.cc/indications/neuroendocrine/)\n[4] Small intestinal neuroendocrine tumours (https://nuclide.cc/indications/small-intestinal-net/)"
   },
   {
    "id": "ther-02",
@@ -807,7 +810,7 @@
     "choline-c11"
    ],
    "retrievalRecall": 1,
-   "answer": "A prostate-cancer-specific PET scan that finds spread far earlier than CT or bone scan, and tells you whether a matched radioactive drug will work. [1] Piflufolastat F-18 (Pylarify) is the leading PSMA PET tracer for prostate cancer, with a new formulation approved in March 2026. [2] Gallium-68 PSMA-11 was the first PSMA PET tracer approved in the US (2020), and is made on site from a generator or cyclotron. [3] Most PSMA treatments use one molecule to take the pre-treatment scan and a slightly different molecule for the actual treatment, so the scan is only an approximate guide. [4] A copper-based pair uses the identical molecule for both steps, just with a different form of copper, so the scan should be a much truer preview of where the treatment radiation will go. [4] A version of the PSMA prostate cancer scan that uses the same cheap, widely available radioactive tag as a standard bone scan instead of the PET tracers. [5] New whole-body scanners are so much more sensitive than standard PET machines that they can produce a clear picture using a small fraction of the usual radioactive tracer dose. [6] Urologist who co-led proPSMA, the trial that showed PSMA PET should replace CT and bone scan for staging prostate cancer. [7]\n\nSources\n[1] PSMA PET (https://nuclide.cc/technologies/psma-pet/)\n[2] Piflufolastat F-18 / Pylarify TruVu (https://nuclide.cc/drugs/pylarify/)\n[3] Gallium-68 gozetotide (PSMA-11) (https://nuclide.cc/drugs/ga68-psma-11/)\n[4] A single-molecule copper-64/copper-67 pair instead of switching ligands between scan and treatment (https://nuclide.cc/ideas/idea-copper-theranostic-pair-standard/)\n[5] Technetium Tc-99m PSMA agents (PSMA-I&S) (https://nuclide.cc/drugs/tc-99m-psma-imaging/)\n[6] Using total-body PET's sensitivity to cut diagnostic tracer dose, not just scan time (https://nuclide.cc/ideas/idea-total-body-pet-lower-dose-tracers/)\n[7] Declan G. Murphy (https://nuclide.cc/people/declan-murphy/)"
+   "answer": "A prostate-cancer-specific PET scan that finds spread far earlier than CT or bone scan, and tells you whether a matched radioactive drug will work. [1] Piflufolastat F-18 (Pylarify) is the leading PSMA PET tracer for prostate cancer, with a new formulation approved in March 2026. [2] Gallium-68 PSMA-11 was the first PSMA PET tracer approved in the US (2020), and is made on site from a generator or cyclotron. [3] Most PSMA treatments use one molecule to take the pre-treatment scan and a slightly different molecule for the actual treatment, so the scan is only an approximate guide. [4] A copper-based pair uses the identical molecule for both steps, just with a different form of copper, so the scan should be a much truer preview of where the treatment radiation will go. [4] A version of the PSMA prostate cancer scan that uses the same cheap, widely available radioactive tag as a standard bone scan instead of the PET tracers. [5] Urologist who co-led proPSMA, the trial that showed PSMA PET should replace CT and bone scan for staging prostate cancer. [6] New whole-body scanners are so much more sensitive than standard PET machines that they can produce a clear picture using a small fraction of the usual radioactive tracer dose. [7]\n\nSources\n[1] PSMA PET (https://nuclide.cc/technologies/psma-pet/)\n[2] Piflufolastat F-18 / Pylarify TruVu (https://nuclide.cc/drugs/pylarify/)\n[3] Gallium-68 gozetotide (PSMA-11) (https://nuclide.cc/drugs/ga68-psma-11/)\n[4] A single-molecule copper-64/copper-67 pair instead of switching ligands between scan and treatment (https://nuclide.cc/ideas/idea-copper-theranostic-pair-standard/)\n[5] Technetium Tc-99m PSMA agents (PSMA-I&S) (https://nuclide.cc/drugs/tc-99m-psma-imaging/)\n[6] Declan G. Murphy (https://nuclide.cc/people/declan-murphy/)\n[7] Using total-body PET's sensitivity to cut diagnostic tracer dose, not just scan time (https://nuclide.cc/ideas/idea-total-body-pet-lower-dose-tracers/)"
   },
   {
    "id": "drug-06",
@@ -826,7 +829,7 @@
     "fludeoxyglucose-f18"
    ],
    "retrievalRecall": 1,
-   "answer": "FDG PET is the standard PET scan. A radioactive sugar shows which tissues are burning glucose fast, which most cancers do. [1] FDG PET uses 18F-fluorodeoxyglucose, a radioactive sugar analogue taken up through GLUT transporters and trapped after phosphorylation by hexokinase, exploiting the Warburg effect by which most cancers burn glucose fast. [1] It is the standard PET scan for staging and response in lymphoma (scored on the Deauville scale), lung cancer, melanoma, head and neck cancer and oesophageal cancer, with universal availability and decades of validation. [1] The radioactive sugar used in almost every cancer PET scan, approved in the 1990s and made fresh each day by regional cyclotrons. [2] Scan after two cycles of chemotherapy; if the tumour has gone dark, give less treatment, and if not, give more. [3] A simple 1-to-5 score doctors use on a PET scan of lymphoma to say whether treatment is working, by comparing how bright the tumour looks against two normal reference areas: the blood in the chest and the liver. [4]\n\nSources\n[1] FDG PET (https://nuclide.cc/technologies/fdg-pet/)\n[2] Fludeoxyglucose F-18 (FDG) (https://nuclide.cc/drugs/fludeoxyglucose-f18/)\n[3] PET-adapted (response-adapted) therapy (https://nuclide.cc/technologies/pet-adapted-therapy/)\n[4] Deauville five-point scale for PET (https://nuclide.cc/terms/deauville-for-pet/)"
+   "answer": "FDG PET is the standard PET scan. A radioactive sugar shows which tissues are burning glucose fast, which most cancers do. [1] FDG PET uses 18F-fluorodeoxyglucose, a radioactive sugar analogue taken up through GLUT transporters and trapped after phosphorylation by hexokinase, exploiting the Warburg effect by which most cancers burn glucose fast. [1] It is the standard PET scan for staging and response in lymphoma (scored on the Deauville scale), lung cancer, melanoma, head and neck cancer and oesophageal cancer, with universal availability and decades of validation. [1] The radioactive sugar used in almost every cancer PET scan, approved in the 1990s and made fresh each day by regional cyclotrons. [2] Scan after two cycles of chemotherapy; if the tumour has gone dark, give less treatment, and if not, give more. [3]\n\nSources\n[1] FDG PET (https://nuclide.cc/technologies/fdg-pet/)\n[2] Fludeoxyglucose F-18 (FDG) (https://nuclide.cc/drugs/fludeoxyglucose-f18/)\n[3] PET-adapted (response-adapted) therapy (https://nuclide.cc/technologies/pet-adapted-therapy/)"
   },
   {
    "id": "drug-07",
@@ -845,7 +848,7 @@
     "f-18-naf"
    ],
    "retrievalRecall": 1,
-   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] A radioactive form of fluoride that collects in areas of bone rebuilding. A PET scan after the injection shows those hot spots, which can be cancer that has spread to bone or something harmless like a healed fracture. [2] The hard mineral that makes up bone. [3] Certain radioactive drugs stick to this mineral wherever bone is being actively rebuilt, which is how bone scans find fractures, infection and cancer that has spread to bone, and how some treatments deliver radiation straight to bone metastases. [3] Cancer spread to the bones, most common in prostate, breast, lung, kidney and thyroid cancer and myeloma. [4]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] Sodium fluoride F-18 (https://nuclide.cc/drugs/f-18-naf/)\n[3] Bone mineral (hydroxyapatite) (https://nuclide.cc/targets/bone-hydroxyapatite/)\n[4] Bone metastases and skeletal-related events (https://nuclide.cc/terms/bone-metastases/)"
+   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] A radioactive form of fluoride that collects in areas of bone rebuilding. A PET scan after the injection shows those hot spots, which can be cancer that has spread to bone or something harmless like a healed fracture. [2] The hard mineral that makes up bone. [3] Certain radioactive drugs stick to this mineral wherever bone is being actively rebuilt, which is how bone scans find fractures, infection and cancer that has spread to bone, and how some treatments deliver radiation straight to bone metastases. [3]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] Sodium fluoride F-18 (https://nuclide.cc/drugs/f-18-naf/)\n[3] Bone mineral (hydroxyapatite) (https://nuclide.cc/targets/bone-hydroxyapatite/)"
   },
   {
    "id": "drug-08",
@@ -864,7 +867,7 @@
     "f-18-flortaucipir"
    ],
    "retrievalRecall": 1,
-   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] A PET scan tracer that shows whether a patient's brain contains the sticky amyloid protein clumps linked to Alzheimer's disease, and whether they qualify for amyloid-lowering drugs. [2] A PET scan tracer that shows the tangled tau protein build-up in the brain seen in Alzheimer's disease, used alongside amyloid testing and clinical assessment, not on its own. [3] A large US Medicare study asked whether a brain scan that detects amyloid protein (a hallmark of Alzheimer's disease) actually changes what doctors do for patients with memory problems; it found that doctors changed the treatment or diagnosis plan for roughly six in ten patients after seeing the scan. [4] Amyloid PET changed the composite management plan (drug therapy or counselling) within 90 days in 60.2% of patients with mild cognitive impairment and 63.5% of patients with dementia of uncertain cause, both far exceeding the pre-specified 30% threshold, among 11,409 analysed patients (Rabinovici et al., JAMA 2019). [4] PET scans using tracers that bind these clumps can show a doctor how much amyloid is present, well before it would show up on a brain biopsy. [5] A copper-based pair uses the identical molecule for both steps, just with a different form of copper, so the scan should be a much truer preview of where the treatment radiation will go. [6]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] Florbetapir F-18 (https://nuclide.cc/drugs/f-18-florbetapir/)\n[3] Flortaucipir F-18 (https://nuclide.cc/drugs/f-18-flortaucipir/)\n[4] IDEAS (Imaging Dementia-Evidence for Amyloid Scanning) (https://nuclide.cc/trials/ideas-amyloid/)\n[5] Amyloid beta plaques (https://nuclide.cc/targets/amyloid-beta/)\n[6] A single-molecule copper-64/copper-67 pair instead of switching ligands between scan and treatment (https://nuclide.cc/ideas/idea-copper-theranostic-pair-standard/)"
+   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] A PET scan tracer that shows whether a patient's brain contains the sticky amyloid protein clumps linked to Alzheimer's disease, and whether they qualify for amyloid-lowering drugs. [2] A PET scan tracer that shows the tangled tau protein build-up in the brain seen in Alzheimer's disease, used alongside amyloid testing and clinical assessment, not on its own. [3] A large US Medicare study asked whether a brain scan that detects amyloid protein (a hallmark of Alzheimer's disease) actually changes what doctors do for patients with memory problems; it found that doctors changed the treatment or diagnosis plan for roughly six in ten patients after seeing the scan. [4] Amyloid PET changed the composite management plan (drug therapy or counselling) within 90 days in 60.2% of patients with mild cognitive impairment and 63.5% of patients with dementia of uncertain cause, both far exceeding the pre-specified 30% threshold, among 11,409 analysed patients (Rabinovici et al., JAMA 2019). [4] A copper-based pair uses the identical molecule for both steps, just with a different form of copper, so the scan should be a much truer preview of where the treatment radiation will go. [5]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] Florbetapir F-18 (https://nuclide.cc/drugs/f-18-florbetapir/)\n[3] Flortaucipir F-18 (https://nuclide.cc/drugs/f-18-flortaucipir/)\n[4] IDEAS (Imaging Dementia-Evidence for Amyloid Scanning) (https://nuclide.cc/trials/ideas-amyloid/)\n[5] A single-molecule copper-64/copper-67 pair instead of switching ligands between scan and treatment (https://nuclide.cc/ideas/idea-copper-theranostic-pair-standard/)"
   },
   {
    "id": "drug-09",
@@ -1092,7 +1095,7 @@
     "b-mo99-supply"
    ],
    "retrievalRecall": 1,
-   "answer": "Most of the world's everyday nuclear medicine scans depend on a radioactive metal, molybdenum-99, made in a handful of ageing research reactors. When one of them breaks down, hospitals thousands of miles away run short of scans within days because the material decays so fast it cannot be stockpiled. [1] The radioactive ingredients that make theranostics work come from a small number of ageing nuclear reactors, generators and accelerators around the world. [2] A shortage anywhere in that chain delays cancer scans and treatments; new non-uranium and accelerator-based production lines are being built to fix that, but they take years and hundreds of millions of dollars. [2] Most of the world's therapeutic and scanning isotopes are made by putting targets into about half a dozen ageing research reactors and flying the product out within days. [3] When two reactors were down at once in 2009 and 2010, hospitals worldwide ran short of the most used scan isotope. [3]\n\nSources\n[1] Molybdenum-99 supply (https://nuclide.cc/bottlenecks/b-mo99-supply/)\n[2] Isotope supply roadmap: reactor dependence → non-uranium production → accelerator-made actinium (https://nuclide.cc/roadmaps/isotope-supply-roadmap/)\n[3] Research reactors for medical isotopes (Mo-99, Lu-177, I-131) (https://nuclide.cc/technologies/research-reactor-isotope-production/)"
+   "answer": "Most of the world's everyday nuclear medicine scans depend on a radioactive metal, molybdenum-99, made in a handful of ageing research reactors. When one of them breaks down, hospitals thousands of miles away run short of scans within days because the material decays so fast it cannot be stockpiled. [1] Most of the world's therapeutic and scanning isotopes are made by putting targets into about half a dozen ageing research reactors and flying the product out within days. [2] When two reactors were down at once in 2009 and 2010, hospitals worldwide ran short of the most used scan isotope. [2] The radioactive ingredients that make theranostics work come from a small number of ageing nuclear reactors, generators and accelerators around the world. [3] A shortage anywhere in that chain delays cancer scans and treatments; new non-uranium and accelerator-based production lines are being built to fix that, but they take years and hundreds of millions of dollars. [3]\n\nSources\n[1] Molybdenum-99 supply (https://nuclide.cc/bottlenecks/b-mo99-supply/)\n[2] Research reactors for medical isotopes (Mo-99, Lu-177, I-131) (https://nuclide.cc/technologies/research-reactor-isotope-production/)\n[3] Isotope supply roadmap: reactor dependence → non-uranium production → accelerator-made actinium (https://nuclide.cc/roadmaps/isotope-supply-roadmap/)"
   },
   {
    "id": "sup-02",
@@ -1202,7 +1205,7 @@
     "b-dosimetry-standardisation"
    ],
    "retrievalRecall": 1,
-   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] Doctors give almost every patient the same fixed amount of radioactive drug, rather than measuring how much radiation each person's tumour and organs actually absorb and adjusting the dose. Personalising the dose might work better for some patients, but nobody has yet proven it clearly enough for it to become the standard of care. [2] Measure the radiation each patient's tumour and kidneys actually absorb and adjust the number and size of doses, instead of giving everyone four identical cycles. [3] Most PSMA treatments use one molecule to take the pre-treatment scan and a slightly different molecule for the actual treatment, so the scan is only an approximate guide. [4] Working out how much radiation a treatment actually delivers to a tumour and to healthy organs, rather than just giving everyone the same fixed amount, could let doctors treat some patients more and some less. [5] Terbium-161 is a close chemical cousin of lutetium-177 that, as well as giving off the same kind of radiation, also releases a shower of extremely short-range electrons. [6]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Dosimetry standardisation for radioligand therapy (https://nuclide.cc/bottlenecks/b-dosimetry-standardisation/)\n[3] Dosimetry-personalised PRRT instead of four fixed cycles (https://nuclide.cc/ideas/idea-net-dosimetry-prrt/)\n[4] A single-molecule copper-64/copper-67 pair instead of switching ligands between scan and treatment (https://nuclide.cc/ideas/idea-copper-theranostic-pair-standard/)\n[5] Dosimetry roadmap: MIRD schema → fixed dosing → personalised, image-based dose (https://nuclide.cc/roadmaps/dosimetry-roadmap/)\n[6] Terbium-161 instead of lutetium-177 in the same ligands (https://nuclide.cc/ideas/idea-tb161-instead-of-lu177/)"
+   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] Doctors give almost every patient the same fixed amount of radioactive drug, rather than measuring how much radiation each person's tumour and organs actually absorb and adjusting the dose. Personalising the dose might work better for some patients, but nobody has yet proven it clearly enough for it to become the standard of care. [2] Measure the radiation each patient's tumour and kidneys actually absorb and adjust the number and size of doses, instead of giving everyone four identical cycles. [3] Working out how much radiation a treatment actually delivers to a tumour and to healthy organs, rather than just giving everyone the same fixed amount, could let doctors treat some patients more and some less. [4] Terbium-161 is a close chemical cousin of lutetium-177 that, as well as giving off the same kind of radiation, also releases a shower of extremely short-range electrons. [5]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Dosimetry standardisation for radioligand therapy (https://nuclide.cc/bottlenecks/b-dosimetry-standardisation/)\n[3] Dosimetry-personalised PRRT instead of four fixed cycles (https://nuclide.cc/ideas/idea-net-dosimetry-prrt/)\n[4] Dosimetry roadmap: MIRD schema → fixed dosing → personalised, image-based dose (https://nuclide.cc/roadmaps/dosimetry-roadmap/)\n[5] Terbium-161 instead of lutetium-177 in the same ligands (https://nuclide.cc/ideas/idea-tb161-instead-of-lu177/)"
   },
   {
    "id": "sup-08",
@@ -1271,7 +1274,7 @@
     "half-life"
    ],
    "retrievalRecall": 1,
-   "answer": "A protein on prostate cancer cells that lets doctors both see the cancer on a PET scan and hit it with a radioactive drug. [1] The time it takes for the amount of a drug in the blood to fall by half. It sets how often a drug must be given: hours to a day for small molecules such as kinase inhibitors, so they are taken daily, and two to four weeks for antibodies, so they are given every three or six weeks. [2] In the trial that got 177Lu-PSMA-617 (Pluvicto) approved, everyone had already been treated with a taxane chemotherapy drug like docetaxel and with a hormone pill first. [3] Most approved radioligand therapy today is given as a fixed activity on a fixed schedule — 7.4 GBq of 177Lu-PSMA-617 every six weeks for up to six cycles, or 7.4 GBq of 177Lu-DOTATATE every eight weeks for four cycles — regardless of how much radiation dose that delivers to an individual patient's tumour, kidneys or bone marrow. [4] A version of the PSMA prostate cancer scan that uses the same cheap, widely available radioactive tag as a standard bone scan instead of the PET tracers. [5] The first published report of two men with very advanced prostate cancer, who had run out of other options, having their cancer disappear on scans after treatment with an alpha-emitting radioactive drug aimed at PSMA. [6]\n\nSources\n[1] PSMA (https://nuclide.cc/targets/psma/)\n[2] Half-life (https://nuclide.cc/terms/half-life/)\n[3] Docetaxel (taxane chemotherapy) then 177Lu-PSMA-617 (https://nuclide.cc/pairings/docetaxel-then-lu177-psma/)\n[4] Dosimetry (https://nuclide.cc/fronts/f-dosimetry/)\n[5] Technetium Tc-99m PSMA agents (PSMA-I&S) (https://nuclide.cc/drugs/tc-99m-psma-imaging/)\n[6] 225Ac-PSMA-617 for PSMA-targeted alpha-radiation therapy of metastatic castration-resistant prostate cancer (https://nuclide.cc/key-papers/paper-kratochwil-ac225-psma-jnm-2016/)"
+   "answer": "A protein on prostate cancer cells that lets doctors both see the cancer on a PET scan and hit it with a radioactive drug. [1] The time it takes for the amount of a drug in the blood to fall by half. It sets how often a drug must be given: hours to a day for small molecules such as kinase inhibitors, so they are taken daily, and two to four weeks for antibodies, so they are given every three or six weeks. [2] Prostate cancer imaging and treatment both rely on one protein, PSMA. [3] In the trial that got 177Lu-PSMA-617 (Pluvicto) approved, everyone had already been treated with a taxane chemotherapy drug like docetaxel and with a hormone pill first. [4] Most approved radioligand therapy today is given as a fixed activity on a fixed schedule — 7.4 GBq of 177Lu-PSMA-617 every six weeks for up to six cycles, or 7.4 GBq of 177Lu-DOTATATE every eight weeks for four cycles — regardless of how much radiation dose that delivers to an individual patient's tumour, kidneys or bone marrow. [5] A version of the PSMA prostate cancer scan that uses the same cheap, widely available radioactive tag as a standard bone scan instead of the PET tracers. [6] The first published report of two men with very advanced prostate cancer, who had run out of other options, having their cancer disappear on scans after treatment with an alpha-emitting radioactive drug aimed at PSMA. [7]\n\nSources\n[1] PSMA (https://nuclide.cc/targets/psma/)\n[2] Half-life (https://nuclide.cc/terms/half-life/)\n[3] GRPR imaging when the PSMA scan is negative (https://nuclide.cc/opportunities/opp-grpr-psma-negative-prostate/)\n[4] Docetaxel (taxane chemotherapy) then 177Lu-PSMA-617 (https://nuclide.cc/pairings/docetaxel-then-lu177-psma/)\n[5] Dosimetry (https://nuclide.cc/fronts/f-dosimetry/)\n[6] Technetium Tc-99m PSMA agents (PSMA-I&S) (https://nuclide.cc/drugs/tc-99m-psma-imaging/)\n[7] 225Ac-PSMA-617 for PSMA-targeted alpha-radiation therapy of metastatic castration-resistant prostate cancer (https://nuclide.cc/key-papers/paper-kratochwil-ac225-psma-jnm-2016/)"
   },
   {
    "id": "term-02",
@@ -1338,7 +1341,7 @@
     "suv"
    ],
    "retrievalRecall": 1,
-   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] The standardised uptake value (SUV) is a number for how brightly a spot lights up on a PET scan. [2] The numbers pulled from scans that decide whether a cancer is shrinking, growing or dead: tumour diameters for RECIST, sugar uptake on PET, water movement on MRI; they run every trial and most clinic decisions, and they are only as good as the way the scan was taken. [3] Before a surgeon removes part of a lung, the scan is used as an arithmetic tool rather than a picture: it measures what share of the breathing work that piece of lung is actually doing, so the team can predict the patient's lung function after the operation and decide whether they will tolerate it. [4] A PET tracer that measures how much of the DNA repair enzyme PARP a tumour has, to predict response to PARP inhibitors. [5] A PET scan using a radioactive form of oestrogen that lights up every tumour deposit still carrying the oestrogen receptor, so doctors can see whether metastases across the body will respond to hormone treatment without biopsying each one. [6]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] Standardised uptake value (SUV) (https://nuclide.cc/terms/suv/)\n[3] Quantitative imaging biomarkers (RECIST, PERCIST, SUV, ADC) (https://nuclide.cc/technologies/quantitative-imaging-biomarkers/)\n[4] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)\n[5] PARP PET (https://nuclide.cc/technologies/parp-pet/)\n[6] FES PET (oestrogen receptor imaging) (https://nuclide.cc/technologies/fes-pet/)"
+   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] The standardised uptake value (SUV) is a number for how brightly a spot lights up on a PET scan. [2] The numbers pulled from scans that decide whether a cancer is shrinking, growing or dead: tumour diameters for RECIST, sugar uptake on PET, water movement on MRI; they run every trial and most clinic decisions, and they are only as good as the way the scan was taken. [3] Before a surgeon removes part of a lung, the scan is used as an arithmetic tool rather than a picture: it measures what share of the breathing work that piece of lung is actually doing, so the team can predict the patient's lung function after the operation and decide whether they will tolerate it. [4] A PET tracer that measures how much of the DNA repair enzyme PARP a tumour has, to predict response to PARP inhibitors. [5]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] Standardised uptake value (SUV) (https://nuclide.cc/terms/suv/)\n[3] Quantitative imaging biomarkers (RECIST, PERCIST, SUV, ADC) (https://nuclide.cc/technologies/quantitative-imaging-biomarkers/)\n[4] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)\n[5] PARP PET (https://nuclide.cc/technologies/parp-pet/)"
   },
   {
    "id": "term-06",
@@ -1396,7 +1399,7 @@
     "radiopharmacy-term"
    ],
    "retrievalRecall": 1,
-   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] Before any batch of radioactive drug can be given to a patient, it has to pass a checklist of quality tests, such as being the right radioactive strength, sterile, and chemically pure. [2] A quality check on a radioactive drug that asks: of all the radioactivity in the vial, what fraction is actually in the correct, working chemical form, rather than stuck to the wrong molecule or floating free? [3] In the trial that got 177Lu-PSMA-617 (Pluvicto) approved, everyone had already been treated with a taxane chemotherapy drug like docetaxel and with a hormone pill first. [4] For men with high-risk prostate cancer that hasn't spread yet, giving a dose or two of PSMA-targeted radioactive treatment before surgery, rather than only using it after the cancer has spread, might kill hidden cancer cells surgery alone would miss. [5] When the standard radioactive prostate cancer treatment (177Lu-PSMA) stops working, some clinics switch to a more powerful alpha-particle version (225Ac-PSMA) as a rescue option. [6] 177Lu-PSMA-I&T is a second PSMA radioligand, chemically different from Pluvicto, that has passed two phase 3 trials on progression but has not yet shown a survival benefit. [7] LuTectomy, Highest tumour radiation absorbed dose after cycle 1: 177Lu-PSMA-617 (5 GBq), one or two cycles before prostatectomy 35.5 Gy. [8]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Product release criteria (radiopharmaceutical quality control) (https://nuclide.cc/terms/release-criteria/)\n[3] Radiochemical purity (RCP) (https://nuclide.cc/terms/radiochemical-purity/)\n[4] Docetaxel (taxane chemotherapy) then 177Lu-PSMA-617 (https://nuclide.cc/pairings/docetaxel-then-lu177-psma/)\n[5] Neoadjuvant PSMA radioligand therapy before prostatectomy (https://nuclide.cc/ideas/idea-neoadjuvant-psma-therapy/)\n[6] 177Lu-PSMA-617 then 225Ac-PSMA rescue therapy (https://nuclide.cc/pairings/beta-psma-then-alpha-psma-rescue/)\n[7] 177Lu-PSMA-I&T (https://nuclide.cc/drugs/lu177-psma-it/)\n[8] LuTectomy (https://nuclide.cc/trials/lutectomy/)"
+   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] Before any batch of radioactive drug can be given to a patient, it has to pass a checklist of quality tests, such as being the right radioactive strength, sterile, and chemically pure. [2] A quality check on a radioactive drug that asks: of all the radioactivity in the vial, what fraction is actually in the correct, working chemical form, rather than stuck to the wrong molecule or floating free? [3] For men with high-risk prostate cancer that hasn't spread yet, giving a dose or two of PSMA-targeted radioactive treatment before surgery, rather than only using it after the cancer has spread, might kill hidden cancer cells surgery alone would miss. [4] When the standard radioactive prostate cancer treatment (177Lu-PSMA) stops working, some clinics switch to a more powerful alpha-particle version (225Ac-PSMA) as a rescue option. [5] 177Lu-PSMA-I&T is a second PSMA radioligand, chemically different from Pluvicto, that has passed two phase 3 trials on progression but has not yet shown a survival benefit. [6] LuTectomy, Highest tumour radiation absorbed dose after cycle 1: 177Lu-PSMA-617 (5 GBq), one or two cycles before prostatectomy 35.5 Gy. [7] LuTectomy, PSA50 response: 177Lu-PSMA-617 before prostatectomy 45%. [7]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Product release criteria (radiopharmaceutical quality control) (https://nuclide.cc/terms/release-criteria/)\n[3] Radiochemical purity (RCP) (https://nuclide.cc/terms/radiochemical-purity/)\n[4] Neoadjuvant PSMA radioligand therapy before prostatectomy (https://nuclide.cc/ideas/idea-neoadjuvant-psma-therapy/)\n[5] 177Lu-PSMA-617 then 225Ac-PSMA rescue therapy (https://nuclide.cc/pairings/beta-psma-then-alpha-psma-rescue/)\n[6] 177Lu-PSMA-I&T (https://nuclide.cc/drugs/lu177-psma-it/)\n[7] LuTectomy (https://nuclide.cc/trials/lutectomy/)"
   },
   {
    "id": "term-09",
@@ -1448,7 +1451,7 @@
     "cardiac-amyloidosis-attr"
    ],
    "retrievalRecall": 1,
-   "answer": "A misfolded blood protein called transthyretin builds up as stiff deposits inside the heart muscle, making it thicken and stop relaxing properly. A bone-scanning tracer that also sticks to these deposits can diagnose it without a heart biopsy. [1] Comparing how brightly the heart lights up against the ribs on the same scan tells doctors whether this specific, now-treatable type of heart disease is present, usually without needing a heart biopsy. [2] A PET scan using a radioactive form of oestrogen that lights up every tumour deposit still carrying the oestrogen receptor, so doctors can see whether metastases across the body will respond to hormone treatment without biopsying each one. [3] CAIX PET is a scan using an antibody against a protein almost unique to clear-cell kidney cancer, to tell cancer from benign kidney lumps without a biopsy. [4]\n\nSources\n[1] Cardiac amyloidosis (transthyretin, ATTR-CM) (https://nuclide.cc/indications/cardiac-amyloidosis-attr/)\n[2] Technetium Tc-99m pyrophosphate (https://nuclide.cc/drugs/tc-99m-pyrophosphate/)\n[3] FES PET (oestrogen receptor imaging) (https://nuclide.cc/technologies/fes-pet/)\n[4] CAIX PET (89Zr-girentuximab) (https://nuclide.cc/technologies/caix-pet/)"
+   "answer": "A misfolded blood protein called transthyretin builds up as stiff deposits inside the heart muscle, making it thicken and stop relaxing properly. A bone-scanning tracer that also sticks to these deposits can diagnose it without a heart biopsy. [1] Comparing how brightly the heart lights up against the ribs on the same scan tells doctors whether this specific, now-treatable type of heart disease is present, usually without needing a heart biopsy. [2] Deciding whether to put a patient on long-term steroids for heart sarcoidosis depends on a scan that only works if the patient's heart has been starved of sugar for a day, and a biopsy that misses the disease most of the time. [3] A PET scan using a radioactive form of oestrogen that lights up every tumour deposit still carrying the oestrogen receptor, so doctors can see whether metastases across the body will respond to hormone treatment without biopsying each one. [4] CAIX PET is a scan using an antibody against a protein almost unique to clear-cell kidney cancer, to tell cancer from benign kidney lumps without a biopsy. [5]\n\nSources\n[1] Cardiac amyloidosis (transthyretin, ATTR-CM) (https://nuclide.cc/indications/cardiac-amyloidosis-attr/)\n[2] Technetium Tc-99m pyrophosphate (https://nuclide.cc/drugs/tc-99m-pyrophosphate/)\n[3] An inflammation tracer that does not need a diet (https://nuclide.cc/opportunities/opp-cardiac-sarcoidosis-specific-tracer/)\n[4] FES PET (oestrogen receptor imaging) (https://nuclide.cc/technologies/fes-pet/)\n[5] CAIX PET (89Zr-girentuximab) (https://nuclide.cc/technologies/caix-pet/)"
   },
   {
    "id": "clin-02",
@@ -1471,20 +1474,18 @@
    "id": "clin-03",
    "category": "reasoning",
    "difficulty": 3,
-   "score": 0,
-   "met": 0,
+   "score": 0.5,
+   "met": 2,
    "total": 4,
    "missed": [
-    "multiple system atrophy",
     "progressive supranuclear palsy",
-    "drug label",
-    "striatal uptake"
+    "drug label"
    ],
    "retrievedEntities": [
     "parkinsonian-syndromes"
    ],
    "retrievalRecall": 1,
-   "answer": "A protein on the ends of brain cells that make dopamine, which recycles the dopamine after it has done its job. A scan using a tracer that sticks to this protein can show whether those brain cells are dying, which happens in Parkinson's disease. [1] A group of movement disorders, including Parkinson's disease, that cause tremor, stiffness and slow movement because the brain loses nerve cells that make dopamine. [2]\n\nSources\n[1] Dopamine transporter (DAT) (https://nuclide.cc/targets/dopamine-transporter/)\n[2] Parkinsonian syndromes (https://nuclide.cc/indications/parkinsonian-syndromes/)"
+   "answer": "A protein on the ends of brain cells that make dopamine, which recycles the dopamine after it has done its job. A scan using a tracer that sticks to this protein can show whether those brain cells are dying, which happens in Parkinson's disease. [1] A group of movement disorders, including Parkinson's disease, that cause tremor, stiffness and slow movement because the brain loses nerve cells that make dopamine. [2] Parkinson's disease is defined by a protein clumping in the brain, and no scan can see it. [3] A brain scan that shows how many dopamine-releasing nerve endings remain in a part of the brain called the striatum, helping tell shaking from Parkinson's-type disease apart from other kinds of tremor and from Alzheimer's-type memory loss. [4]\n\nSources\n[1] Dopamine transporter (DAT) (https://nuclide.cc/targets/dopamine-transporter/)\n[2] Parkinsonian syndromes (https://nuclide.cc/indications/parkinsonian-syndromes/)\n[3] Alpha-synuclein PET: works for MSA, not for Parkinson's (https://nuclide.cc/opportunities/opp-alpha-synuclein-pet-parkinsons/)\n[4] Ioflupane I-123 (https://nuclide.cc/drugs/i-123-ioflupane/)"
   },
   {
    "id": "clin-04",
@@ -1517,7 +1518,7 @@
     "infection-prosthetic-joint"
    ],
    "retrievalRecall": 1,
-   "answer": "When a replacement hip or knee might be infected, doctors can label a small sample of the patient's own white blood cells with a radioactive tracer and watch, over a day, whether they gather around the implant the way they would around a real infection. [1] Distinguishing infection from aseptic loosening around a hip or knee prosthesis matters because the treatments diverge completely: infection needs antibiotics and usually staged revision surgery, while loosening needs a single revision. [1] The same FDG tracer used to find cancer also lights up sites of infection and inflammation, which helps doctors find hidden abscesses, infected joint replacements or heart-valve infections that scans and blood tests alone can miss. [2] For periprosthetic joint infection specifically, a pooled analysis cited in the guideline reports FDG PET sensitivity of about 85% and specificity of about 86% across 23 studies (1,437 patients), and the guideline states that the absence of periprosthetic uptake reliably excludes infection in both hip and knee prostheses, while a positive scan needs careful interpretation because aseptic loosening, recent surgery and metal-related artefact can all cause false-positive uptake. [2]\n\nSources\n[1] Prosthetic joint infection (https://nuclide.cc/indications/infection-prosthetic-joint/)\n[2] Infection & inflammation imaging (https://nuclide.cc/fronts/f-infection-imaging/)"
+   "answer": "When a replacement hip or knee might be infected, doctors can label a small sample of the patient's own white blood cells with a radioactive tracer and watch, over a day, whether they gather around the implant the way they would around a real infection. [1] Distinguishing infection from aseptic loosening around a hip or knee prosthesis matters because the treatments diverge completely: infection needs antibiotics and usually staged revision surgery, while loosening needs a single revision. [1] The same FDG tracer used to find cancer also lights up sites of infection and inflammation, which helps doctors find hidden abscesses, infected joint replacements or heart-valve infections that scans and blood tests alone can miss. [2]\n\nSources\n[1] Prosthetic joint infection (https://nuclide.cc/indications/infection-prosthetic-joint/)\n[2] Infection & inflammation imaging (https://nuclide.cc/fronts/f-infection-imaging/)"
   },
   {
    "id": "clin-06",
@@ -1540,17 +1541,19 @@
    "id": "clin-07",
    "category": "reasoning",
    "difficulty": 3,
-   "score": 0.75,
-   "met": 3,
+   "score": 0.25,
+   "met": 1,
    "total": 4,
    "missed": [
-    "hilo"
+    "hilo",
+    "estimabl2",
+    "low-risk"
    ],
    "retrievedEntities": [
     "thyroid"
    ],
    "retrievalRecall": 1,
-   "answer": "The original targeted radiotherapy: thyroid cells soak up iodine, so radioactive iodine destroys leftover thyroid tissue and metastases while sparing everything else. [1] Thyroid cancer is usually curable with surgery and radioactive iodine, the original theranostic. Rare aggressive forms respond to RET and BRAF inhibitors. [2] Because the thyroid gland naturally absorbs iodine, swallowing it lets the radiation destroy thyroid cells or thyroid cancer cells almost anywhere they have spread, with very little effect on the rest of the body. [3] A cancer-targeting antibody carrying a radioactive form of iodine was used, as a single course, to treat a type of blood cancer called non-Hodgkin lymphoma. [4] Sacro Cuore Don Calabria Hospital in Negrar, near Verona, is a Catholic non-profit hospital recognised as an IRCCS research hospital; it runs medical oncology, radiotherapy, robotic and hepatobiliary surgery and an early-phase trials unit, and OECI accredits it as a Cancer Centre. [5] Proved that most people with small, low-risk thyroid cancers can skip radioactive iodine after surgery without any increase in recurrence. [6]\n\nSources\n[1] Radioactive iodine (I-131) (https://nuclide.cc/drugs/radioactive-iodine/)\n[2] Thyroid cancer (https://nuclide.cc/indications/thyroid/)\n[3] Iodine-131 (https://nuclide.cc/isotopes/i-131/)\n[4] Iodine-131 tositumomab (https://nuclide.cc/drugs/i-131-tositumomab/)\n[5] IRCCS Sacro Cuore Don Calabria Hospital (https://nuclide.cc/institutions/sacro-cuore-don-calabria/)\n[6] ESTIMABL2 (https://nuclide.cc/trials/estimabl2/)"
+   "answer": "The original targeted radiotherapy: thyroid cells soak up iodine, so radioactive iodine destroys leftover thyroid tissue and metastases while sparing everything else. [1] Thyroid cancer is usually curable with surgery and radioactive iodine, the original theranostic. Rare aggressive forms respond to RET and BRAF inhibitors. [2] Because the thyroid gland naturally absorbs iodine, swallowing it lets the radiation destroy thyroid cells or thyroid cancer cells almost anywhere they have spread, with very little effect on the rest of the body. [3] A cancer-targeting antibody carrying a radioactive form of iodine was used, as a single course, to treat a type of blood cancer called non-Hodgkin lymphoma. [4] Sacro Cuore Don Calabria Hospital in Negrar, near Verona, is a Catholic non-profit hospital recognised as an IRCCS research hospital; it runs medical oncology, radiotherapy, robotic and hepatobiliary surgery and an early-phase trials unit, and OECI accredits it as a Cancer Centre. [5]\n\nSources\n[1] Radioactive iodine (I-131) (https://nuclide.cc/drugs/radioactive-iodine/)\n[2] Thyroid cancer (https://nuclide.cc/indications/thyroid/)\n[3] Iodine-131 (https://nuclide.cc/isotopes/i-131/)\n[4] Iodine-131 tositumomab (https://nuclide.cc/drugs/i-131-tositumomab/)\n[5] IRCCS Sacro Cuore Don Calabria Hospital (https://nuclide.cc/institutions/sacro-cuore-don-calabria/)"
   },
   {
    "id": "clin-08",
@@ -1625,12 +1628,11 @@
    "id": "reg-02",
    "category": "procedural",
    "difficulty": 1,
-   "score": 0.25,
-   "met": 1,
+   "score": 0.5,
+   "met": 2,
    "total": 4,
    "missed": [
     "select patients for psma-targeted radioligand therapy",
-    "psma-negative",
     "nccn"
    ],
    "retrievedEntities": [
@@ -1638,7 +1640,7 @@
     "f-radioligand-therapy"
    ],
    "retrievalRecall": 1,
-   "answer": "A prostate-cancer-specific PET scan that finds spread far earlier than CT or bone scan, and tells you whether a matched radioactive drug will work. [1] A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [2] Molecular imaging uses a small radioactive tracer injected into the body and a PET or SPECT camera to show where a specific protein sits on a tumour, so doctors can pick the right treatment and check it is working. [3] A version of the PSMA prostate cancer scan that uses the same cheap, widely available radioactive tag as a standard bone scan instead of the PET tracers. [4] A nuclear medicine doctor who runs the molecular imaging service at Memorial Sloan Kettering and has spent years studying how PET scans taken partway through chemotherapy for lymphoma can predict which patients need more or less treatment. [5] A copper-based pair uses the identical molecule for both steps, just with a different form of copper, so the scan should be a much truer preview of where the treatment radiation will go. [6]\n\nSources\n[1] PSMA PET (https://nuclide.cc/technologies/psma-pet/)\n[2] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[3] Molecular imaging (https://nuclide.cc/fronts/f-molecular-imaging/)\n[4] Technetium Tc-99m PSMA agents (PSMA-I&S) (https://nuclide.cc/drugs/tc-99m-psma-imaging/)\n[5] Heiko Schöder (https://nuclide.cc/people/heiko-schoder/)\n[6] A single-molecule copper-64/copper-67 pair instead of switching ligands between scan and treatment (https://nuclide.cc/ideas/idea-copper-theranostic-pair-standard/)"
+   "answer": "A prostate-cancer-specific PET scan that finds spread far earlier than CT or bone scan, and tells you whether a matched radioactive drug will work. [1] A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [2] Molecular imaging uses a small radioactive tracer injected into the body and a PET or SPECT camera to show where a specific protein sits on a tumour, so doctors can pick the right treatment and check it is working. [3] A version of the PSMA prostate cancer scan that uses the same cheap, widely available radioactive tag as a standard bone scan instead of the PET tracers. [4] A prostate multidisciplinary team would order a GRPR scan as a second look after a negative or discordant PSMA PET in a man whose PSA says the disease is there, and as the selection test before GRPR-directed radioligand therapy in a patient who has exhausted PSMA-directed options. [5] A nuclear medicine doctor who runs the molecular imaging service at Memorial Sloan Kettering and has spent years studying how PET scans taken partway through chemotherapy for lymphoma can predict which patients need more or less treatment. [6]\n\nSources\n[1] PSMA PET (https://nuclide.cc/technologies/psma-pet/)\n[2] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[3] Molecular imaging (https://nuclide.cc/fronts/f-molecular-imaging/)\n[4] Technetium Tc-99m PSMA agents (PSMA-I&S) (https://nuclide.cc/drugs/tc-99m-psma-imaging/)\n[5] GRPR imaging when the PSMA scan is negative (https://nuclide.cc/opportunities/opp-grpr-psma-negative-prostate/)\n[6] Heiko Schöder (https://nuclide.cc/people/heiko-schoder/)"
   },
   {
    "id": "reg-03",
@@ -1917,7 +1919,7 @@
     "tc-99m-maa"
    ],
    "retrievalRecall": 1,
-   "answer": "Before a surgeon removes part of a lung, the scan is used as an arithmetic tool rather than a picture: it measures what share of the breathing work that piece of lung is actually doing, so the team can predict the patient's lung function after the operation and decide whether they will tolerate it. [1] Tiny clumps of albumin, a normal blood protein, tagged with a radioactive marker and injected into a vein. They wedge briefly in the smallest blood vessels of the lung wherever blood is flowing, so the scan maps the lung's blood supply; the clumps then break up and clear. [2] Before a lobectomy it adds little: segment counting predicts postoperative FEV1 about as accurately, so guidelines reserve the scan for pneumonectomy candidates and borderline function. [1] When a lump is found in the thyroid, a scan showing whether it takes up iodine-like tracer more or less than the rest of the gland tells doctors whether it is a low-risk overactive nodule that rarely needs a biopsy, or a quiet 'cold' nodule that does. [3] Lung neuroendocrine tumours, called typical and atypical carcinoids, are slow-growing tumours of the airways that are usually cured by surgery. [4] Most cases are found once the disease has already spread, and a scan with radioactive sugar is what decides who can still be cured by surgery. [5]\n\nSources\n[1] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)\n[2] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)\n[3] Functional assessment of thyroid nodules (https://nuclide.cc/indications/thyroid-nodule-assessment/)\n[4] Lung neuroendocrine tumours (typical and atypical carcinoid) (https://nuclide.cc/indications/lung-net/)\n[5] Non-small cell lung cancer (https://nuclide.cc/indications/nsclc/)"
+   "answer": "Before a surgeon removes part of a lung, the scan is used as an arithmetic tool rather than a picture: it measures what share of the breathing work that piece of lung is actually doing, so the team can predict the patient's lung function after the operation and decide whether they will tolerate it. [1] Tiny clumps of albumin, a normal blood protein, tagged with a radioactive marker and injected into a vein. They wedge briefly in the smallest blood vessels of the lung wherever blood is flowing, so the scan maps the lung's blood supply; the clumps then break up and clear. [2] Before a lobectomy it adds little: segment counting predicts postoperative FEV1 about as accurately, so guidelines reserve the scan for pneumonectomy candidates and borderline function. [1] A drug that attacks small-cell lung cancer through a protein called DLL3 is already approved, but there is no approved scan that shows whether a patient's tumours still carry that protein. [3] Deciding whether to put a patient on long-term steroids for heart sarcoidosis depends on a scan that only works if the patient's heart has been starved of sugar for a day, and a biopsy that misses the disease most of the time. [4] A different tracer would not need the diet. [4]\n\nSources\n[1] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)\n[2] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)\n[3] DLL3 imaging for small-cell lung cancer (https://nuclide.cc/opportunities/opp-dll3-imaging-sclc/)\n[4] An inflammation tracer that does not need a diet (https://nuclide.cc/opportunities/opp-cardiac-sarcoidosis-specific-tracer/)"
   },
   {
    "id": "prostate-23",
@@ -2018,6 +2020,226 @@
    ],
    "retrievalRecall": 1,
    "answer": "FAPI PET is a PET scan that lights up the scaffolding around almost any solid tumour, including cancers the standard sugar scan misses. [1] Companies on Nuclide linked to FAPI PET: SOFIE Biosciences. [1] Institutions: All India Institute of Medical Sciences, New Delhi, Curanosticum Wiesbaden-Frankfurt, European Association of Nuclear Medicine and Heidelberg University Hospital / NCT / DKFZ. [1] People: Andrei Iagaru, Frederik Giesel, Ken Herrmann and Shaoli Song. [1] Heidelberg is Germany's cancer research capital, home to the DKFZ (largest cancer research institute in Germany) and the NCT, and the birthplace of FAPI PET and the brain tumour methylation classifier. [2] Nuclear medicine physician whose group invented FAPI PET tracers and pioneered PSMA and FAP radioligand therapy. [3] His Heidelberg group invented the quinoline-based FAP inhibitor (FAPI) tracers, and his Journal of Nuclear Medicine paper reported 68Ga-FAPI PET/CT tracer uptake across 28 different kinds of cancer. [3]\n\nSources\n[1] FAPI PET (https://nuclide.cc/technologies/fapi-pet/)\n[2] Heidelberg University Hospital / NCT / DKFZ (https://nuclide.cc/institutions/heidelberg-nct/)\n[3] Uwe Haberkorn (https://nuclide.cc/people/uwe-haberkorn/)"
+  },
+  {
+   "id": "opp-01",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "89zr-dfo-sc16.56",
+    "immunohistochemistry",
+    "18 patients"
+   ],
+   "retrievedEntities": [
+    "opp-dll3-imaging-sclc"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A fast-growing lung cancer that responds to chemotherapy then relapses quickly. After 30 years without progress, T-cell engagers and ADCs are finally moving the needle. [1] Limited stage: Chemoradiation → durvalumab; prophylactic cranial irradiation or MRI surveillance. [1] Extensive stage: Platinum-etoposide + atezolizumab/durvalumab; lurbinectedin + atezolizumab maintenance. [1] Relapsed: Tarlatamab (preferred), lurbinectedin, topotecan; I-DXd in trials. [1] Screening and diagnosis: Low-dose CT screening in heavy smokers finds some SCLC but stage shift is limited; diagnosis by bronchoscopic or CT-guided biopsy; staging with PET/CT and brain MRI. [1] Very limited stage (T1-2 N0, ~5%): Lobectomy with mediastinal node dissection or SBRT, followed by adjuvant platinum-etoposide; PCI or MRI surveillance. [1] Limited stage: Concurrent cisplatin-etoposide with thoracic radiotherapy (45 Gy twice daily or 60-70 Gy once daily), then durvalumab consolidation up to 2 years (ADRIATIC); PCI or MRI surveillance. [1] In the pipeline for Small-cell lung cancer: Actinium-225 DOTATATE and Targeted alpha therapy. [1] A protein that appears on the surface of small-cell lung cancer cells, now hit by a drug that pulls T cells onto them. [2]\n\nSources\n[1] Small-cell lung cancer (https://nuclide.cc/indications/sclc/)\n[2] DLL3 (https://nuclide.cc/targets/dll3/)"
+  },
+  {
+   "id": "opp-02",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "68ga-n188",
+    "excreted in urine",
+    "hepatobiliary"
+   ],
+   "retrievedEntities": [
+    "opp-nectin4-imaging-urothelial"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Nectin-4 is an adhesion protein plentiful on bladder cancer cells, used as the docking site for the ADC enfortumab vedotin. [1] An approved bladder cancer drug works by latching onto a protein called Nectin-4, and half of patients lose that protein as the disease spreads. The one scan built to show it is cleared through the kidneys, so the bladder and the nearby lymph nodes glow with waste tracer and are the hardest places to read. [2]\n\nSources\n[1] Nectin-4 (https://nuclide.cc/targets/nectin4/)\n[2] A liver-cleared Nectin-4 tracer for urothelial cancer (https://nuclide.cc/opportunities/opp-nectin4-imaging-urothelial/)"
+  },
+  {
+   "id": "opp-03",
+   "category": "procedural",
+   "difficulty": 2,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "arcitumomab",
+    "56 of 88",
+    "ctdna"
+   ],
+   "retrievedEntities": [
+    "opp-ceacam5-imaging-colorectal"
+   ],
+   "retrievalRecall": 1,
+   "answer": "The third commonest cancer in the world and the second biggest cancer killer. Most of it is curable if caught before it spreads, which is why so much of the imaging effort goes into finding out whether it has. [1] After bowel cancer surgery, a rising blood marker often signals that the cancer is back, but scans frequently cannot say where. The one scan ever approved for that exact problem was withdrawn from the market in 2005 and nothing has replaced it. [2] A second receptor, GRPR, is the best-studied alternative, and the honest reading of the head-to-head studies is that it finds fewer lesions overall but different ones. [3] A PET scan (the tracer later approved as Posluma) was tested in men whose PSA rose again after treatment for prostate cancer, to see how often it can find exactly where the cancer has come back. [4]\n\nSources\n[1] Colorectal cancer (https://nuclide.cc/indications/colorectal-cancer/)\n[2] CEACAM5 imaging for occult colorectal recurrence (https://nuclide.cc/opportunities/opp-ceacam5-imaging-colorectal/)\n[3] GRPR imaging when the PSMA scan is negative (https://nuclide.cc/opportunities/opp-grpr-psma-negative-prostate/)\n[4] SPOTLIGHT (https://nuclide.cc/trials/spotlight/)"
+  },
+  {
+   "id": "opp-04",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "no relationship between efficacy",
+    "herthena-lung02"
+   ],
+   "retrievedEntities": [
+    "opp-her3-imaging-crossover"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A receptor on the surface of most lung cancer cells that helps tumours resist treatment. Drugs aimed at it exist, but measuring how much of it a tumour carries has so far failed to predict who benefits. [1] HER3 sits on most lung cancers and there are drugs aimed at it, so a scan showing which tumours carry it looks obvious. Three attempts were made and all three stopped, largely because the drug's own trials could not show that how much HER3 a tumour has predicts whether the drug works. [2] One published series reported HER3 expression in 83% of non-small cell lung cancers, with overexpression in 42% of a 45-patient cohort, more often than HER2. [1] HER3 is the textbook crossover case: expressed in around 80% of non-small cell lung cancers, targeted by patritumab deruxtecan and other antibody-drug conjugates, with no radioligand in routine use. [2] The cancer that kills more people than any other, and the reason most PET scanners are busy. [3]\n\nSources\n[1] HER3 (ERBB3) (https://nuclide.cc/targets/her3/)\n[2] HER3 imaging, and why three tracers stalled (https://nuclide.cc/opportunities/opp-her3-imaging-crossover/)\n[3] Non-small cell lung cancer (https://nuclide.cc/indications/nsclc/)"
+  },
+  {
+   "id": "opp-05",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0,
+   "met": 0,
+   "total": 5,
+   "missed": [
+    "58.8%",
+    "76.5%",
+    "18%",
+    "12%",
+    "zolbetuximab"
+   ],
+   "retrievedEntities": [
+    "opp-cldn18-2-imaging-gastric",
+    "cldn18-2"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Cancer of the stomach or the junction where the gullet meets the stomach is common worldwide and still mostly found late, which is why survival is poor for most patients. Treatment now depends heavily on testing the tumour for a handful of markers that decide which targeted drugs and immunotherapies can be used. [1] A protein that seals the gaps between stomach lining cells. It stays on many stomach cancers as they spread, and two approved treatments are given only to patients whose biopsy shows it. [2] Stomach cancer patients now get a drug only if a biopsy shows a protein called claudin-18.2. One biopsy core finds it only about six times in ten when the whole tumour has it, so patients are being refused a treatment on a test that misses. [3] Claudin-18 splice variant 2 is a tight-junction protein of the gastric mucosa whose epitope becomes accessible on tumour cells as normal tissue architecture breaks down, making it an unusually tractable target in a cancer with few. [2]\n\nSources\n[1] Gastric and gastro-oesophageal junction adenocarcinoma (https://nuclide.cc/indications/gastric-oesophageal-cancer/)\n[2] Claudin-18.2 (https://nuclide.cc/targets/cldn18-2/)\n[3] Claudin-18.2 imaging when one biopsy says negative (https://nuclide.cc/opportunities/opp-cldn18-2-imaging-gastric/)"
+  },
+  {
+   "id": "opp-06",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "44%",
+    "6.9",
+    "no validated plasma"
+   ],
+   "retrievedEntities": [
+    "opp-trop2-imaging-heterogeneity"
+   ],
+   "retrievalRecall": 1,
+   "answer": "TROP2 is a surface glycoprotein present at high levels on most epithelial cancers (breast, lung, urothelial, gastric, pancreatic) and at low levels on normal tissue. It does not drive the cancer; it is a delivery address, used by the approved ADCs sacituzumab govitecan and datopotamab deruxtecan and by sacituzumab tirumotecan, with a TROP2 PET tracer in development to pick patients. [1] No product against TROP2 is approved yet on Nuclide's record. [1] Two approved breast cancer drugs work through a protein called TROP2, and neither requires any test for it before use. Tumours vary a lot in how much they carry, and a quarter of patients lose it over time, so nobody currently knows who is being treated for a target that is no longer there. [2]\n\nSources\n[1] TROP2 (https://nuclide.cc/targets/trop2/)\n[2] TROP2 imaging where no tissue test is required (https://nuclide.cc/opportunities/opp-trop2-imaging-heterogeneity/)"
+  },
+  {
+   "id": "opp-07",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0.4,
+   "met": 2,
+   "total": 5,
+   "missed": [
+    "85.5%",
+    "87.0%",
+    "complete response letter"
+   ],
+   "retrievedEntities": [
+    "opp-caix-indeterminate-renal-mass"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Scans find small kidney lumps all the time and cannot tell which are cancer. Up to one in five that are surgically removed turn out to be harmless. A scan that recognises the commonest kidney cancer would spare those operations, and it needs no drug to be useful. [1] This is the cleanest standalone diagnostic case in the field: the scan answers a question on its own, with no therapy dependency. [1] Between 12.8% and 40% of surgically resected small renal masses are benign depending on size, and no imaging technique reliably defines histological subtype before surgery. [1] CAIX PET is a scan using an antibody against a protein almost unique to clear-cell kidney cancer, to tell cancer from benign kidney lumps without a biopsy. [2] Zirconium-89 girentuximab is Telix's PET scan that tells whether a kidney mass is clear cell renal cell carcinoma without a biopsy; the phase 3 ZIRCON trial met its endpoints in 2023 and the product is under regulatory review. [3] PET scans built from radiolabelled antibodies or their fragments, to see any protein an antibody can reach, including immune cells inside tumours. [4]\n\nSources\n[1] CAIX imaging of the indeterminate renal mass (https://nuclide.cc/opportunities/opp-caix-indeterminate-renal-mass/)\n[2] CAIX PET (89Zr-girentuximab) (https://nuclide.cc/technologies/caix-pet/)\n[3] Zirconium-89 girentuximab (https://nuclide.cc/drugs/girentuximab-zr89/)\n[4] Immuno-PET (https://nuclide.cc/technologies/immuno-pet/)"
+  },
+  {
+   "id": "opp-08",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.2,
+   "met": 1,
+   "total": 5,
+   "missed": [
+    "pentixafor",
+    "prime",
+    "270 patients",
+    "90%"
+   ],
+   "retrievedEntities": [
+    "opp-cxcr4-primary-aldosteronism"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Primary aldosteronism is a hormonal condition in which one or both adrenal glands make too much of a hormone that raises blood pressure. It is a common but badly under-diagnosed cause of hypertension, usually flagged by a blood test, and curable with surgery when only one gland is overactive. [1] A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [2] A common and curable cause of high blood pressure is almost never cured, because finding out which adrenal gland is at fault needs an invasive procedure few hospitals do well. A PET scan can answer the same question, and one is now heading into a registrational trial. [3] Confirmed primary aldosteronism considering surgery: Adrenal lateralization with CT scanning and adrenal vein sampling is suggested before deciding between medical and surgical treatment, except in young patients under 35 with marked disease and a clear unilateral adenoma over 1 cm on CT, where adrenalectomy without prior adrenal vein sampling can be considered. [1] An endocrinologist or hypertension specialist with a confirmed diagnosis of primary aldosteronism would use the scan to decide between adrenalectomy and lifelong medical therapy, replacing adrenal vein sampling. [3] CXCR4-targeted PET will lateralise primary aldosteronism accurately enough to replace adrenal vein sampling, and by removing the invasive step will raise the proportion of patients investigated and cured well above the current figure of fewer than 1%. [3] A PET scan using a radioactive form of oestrogen that lights up every tumour deposit still carrying the oestrogen receptor, so doctors can see whether metastases across the body will respond to hormone treatment without biopsying each one. [4]\n\nSources\n[1] Primary aldosteronism (https://nuclide.cc/indications/primary-aldosteronism/)\n[2] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[3] CXCR4 imaging instead of adrenal vein sampling (https://nuclide.cc/opportunities/opp-cxcr4-primary-aldosteronism/)\n[4] FES PET (oestrogen receptor imaging) (https://nuclide.cc/technologies/fes-pet/)"
+  },
+  {
+   "id": "opp-09",
+   "category": "factual",
+   "difficulty": 2,
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "aci-12589",
+    "multiple system atrophy",
+    "limited binding",
+    "87.7%"
+   ],
+   "retrievedEntities": [
+    "opp-alpha-synuclein-pet-parkinsons",
+    "alpha-synuclein"
+   ],
+   "retrievalRecall": 1,
+   "answer": "The protein that clumps inside brain cells in Parkinson's disease and related conditions. Nobody can yet see those clumps in a living person, which is why these diseases are still diagnosed by watching the patient. [1] Parkinson's disease is defined by a protein clumping in the brain, and no scan can see it. The first tracer to reach patients does light up a rarer, related disease but not Parkinson's itself, while a spinal-fluid test already identifies Parkinson's with high accuracy. [2] There is no way to see pathological alpha-synuclein in a living brain, so ambiguous parkinsonian syndromes cannot be told apart at the molecular level and no anti-alpha-synuclein drug can demonstrate that it engaged its target. [2] PET scans using tracers that bind these clumps can show a doctor how much amyloid is present, well before it would show up on a brain biopsy. [3] Adding a single dose of an alpha-particle radioactive drug at the same time, instead of the more established beta-particle version, might mop up cancer cells too small to see on a scan, because alpha radiation travels a much shorter distance and hits harder in that short range. [4]\n\nSources\n[1] Alpha-synuclein (https://nuclide.cc/targets/alpha-synuclein/)\n[2] Alpha-synuclein PET: works for MSA, not for Parkinson's (https://nuclide.cc/opportunities/opp-alpha-synuclein-pet-parkinsons/)\n[3] Amyloid beta plaques (https://nuclide.cc/targets/amyloid-beta/)\n[4] Alpha-emitting PSMA therapy for oligometastatic (few-lesion) prostate cancer (https://nuclide.cc/ideas/idea-alpha-for-oligometastatic-disease/)"
+  },
+  {
+   "id": "opp-10",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "0.99",
+    "14 patients",
+    "non-curative laparotomy"
+   ],
+   "retrievedEntities": [
+    "opp-fap-pancreatic-staging"
+   ],
+   "retrievalRecall": 1,
+   "answer": "FAPI PET is a PET scan that lights up the scaffolding around almost any solid tumour, including cancers the standard sugar scan misses. [1] Quinoline-based FAP inhibitors (FAPI-04, FAPI-46, FAPI-74) labelled with 68Ga or 18F image cancer-associated fibroblasts. [1] Superior to FDG in pancreatic, gastric, HCC, and peritoneal disease in head-to-head series. [1] Pancreatic cancer is one of the deadliest common cancers because it is usually found only after it has already grown into nearby structures or spread elsewhere. Surgery can cure it, but scans before the operation often cannot tell whether the tumour is truly removable, so some patients are opened up only to find the cancer has already spread too far. [2] Four in ten pancreatic cancer patients whose scans say the tumour can be removed turn out, once opened up, to have disease that cannot be removed. A scan that lights up the scar tissue around tumour deposits sees more of that hidden disease than the standard one. [3] The clinical gap this leaves is large: conventional CT misjudges resectability often enough that published series report 20% to 48% of patients thought resectable on CT turning out to be unresectable at surgery, and a Cochrane meta-analysis put the median pre-test probability of unresectable disease after a resectable-looking CT at 41.4%, while no validated tumour-specific serum marker exists to help, since CA 19-9 has low specificity and a normal level does not exclude recurrence. [2] An experimental PET tracer that lights up the scaffolding cells cancers build around themselves, not the cancer cells directly. [4]\n\nSources\n[1] FAPI PET (https://nuclide.cc/technologies/fapi-pet/)\n[2] Pancreatic ductal adenocarcinoma (https://nuclide.cc/indications/pancreatic-cancer/)\n[3] FAP imaging to stop futile pancreatic surgery (https://nuclide.cc/opportunities/opp-fap-pancreatic-staging/)\n[4] Gallium-68 FAPI-46 (https://nuclide.cc/drugs/ga-68-fapi-46/)"
+  },
+  {
+   "id": "opp-11",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0.5,
+   "met": 2,
+   "total": 4,
+   "missed": [
+    "91%",
+    "77.1%"
+   ],
+   "retrievedEntities": [
+    "opp-cardiac-sarcoidosis-specific-tracer"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Sarcoidosis is patches of inflammation that can form in the heart as well as the lungs and other organs, and it can trigger dangerous heart rhythms or heart failure. A PET scan that shows heart inflammation, paired with a separate scan of blood flow, helps find and track it. [1] FDG PET is the standard PET scan. A radioactive sugar shows which tissues are burning glucose fast, which most cancers do. [2] Deciding whether to put a patient on long-term steroids for heart sarcoidosis depends on a scan that only works if the patient's heart has been starved of sugar for a day, and a biopsy that misses the disease most of the time. A different tracer would not need the diet. [3] diagnostic PET protocol for suspected cardiac sarcoidosis: Resting perfusion PET (N-13 ammonia or Rb-82) or SPECT perfusion, paired with F-18 FDG PET after myocardial glucose suppression, read as a perfusion/metabolism pattern. [1] A somatostatin-receptor or other macrophage-directed tracer will identify active cardiac sarcoidosis with accuracy at least equal to well-prepared FDG PET while removing the dietary preparation, and will therefore give a reliable answer in the patients where FDG currently fails. [3] A prospective multicentre study in suspected cardiac sarcoidosis, imaging every patient with both an SSTR tracer and correctly prepared FDG PET, with cardiac MRI and where available endomyocardial biopsy as comparators, and a pre-specified analysis of the subgroup in which FDG suppression failed. [3] A radioactive tracer that mimics the body's own \"fight or flight\" nerve chemical and is taken up by the nerve endings in heart muscle. [4]\n\nSources\n[1] Cardiac sarcoidosis (https://nuclide.cc/indications/cardiac-sarcoidosis/)\n[2] FDG PET (https://nuclide.cc/technologies/fdg-pet/)\n[3] An inflammation tracer that does not need a diet (https://nuclide.cc/opportunities/opp-cardiac-sarcoidosis-specific-tracer/)\n[4] Iobenguane I-123 (cardiac use) (https://nuclide.cc/drugs/i-123-mibg-cardiac/)"
+  },
+  {
+   "id": "opp-12",
+   "category": "factual",
+   "difficulty": 3,
+   "score": 0.25,
+   "met": 1,
+   "total": 4,
+   "missed": [
+    "70 to 80%",
+    "rayz-8009",
+    "xh06"
+   ],
+   "retrievedEntities": [
+    "opp-gpc3-hcc-china"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Cirrhotic livers throw up nodules that scans cannot classify, and the usual answer is to wait three to six months to see if they grow. Several Chinese hospital programmes are testing tracers that recognise a protein carried by most liver cancers, and almost none of that work appears in Western pipeline reviews. [1] This record exists partly to demonstrate the non-US-registry lens. [1] The clinical problem is well defined: using the CT/MRI LI-RADS algorithm, the pooled proportion of hepatocellular carcinoma is 31% for LR-3 and 64% for LR-4 observations, so a large share of nodules sit in categories that neither confirm nor exclude cancer, and the management default is serial imaging. [1]\n\nSources\n[1] GPC3 imaging of the indeterminate liver nodule, led from China (https://nuclide.cc/opportunities/opp-gpc3-hcc-china/)"
   }
  ]
 }

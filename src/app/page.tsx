@@ -17,6 +17,17 @@ import { GardenDivider } from "@/components/GardenDivider";
 import { WebSiteJsonLd } from "@/components/JsonLd";
 import { pageMeta } from "@/lib/seo";
 
+/** Short labels for the seven surfacing lenses, used on the home cards. */
+const LENS_LABEL: Record<string, string> = {
+  "theranostic-gap": "Theranostic gap",
+  "standalone-diagnostic": "Standalone diagnostic",
+  "target-crossover": "Target crossover",
+  "unmet-need-first": "Unmet need first",
+  "non-us-registry": "Non-US registry",
+  "maturing-preclinical": "Maturing preclinical",
+  "supply-isotope": "Supply and isotope",
+};
+
 const HOME_DESCRIPTION = "The open, cited map of radiopharmaceuticals: every isotope, therapy, tracer, target, trial, manufacturer and institution on one page each, therapy and diagnostic imaging alike, in plain English first, with sources.";
 
 export const metadata: Metadata = pageMeta({ title: "Nuclide", absoluteTitle: "Nuclide: the open, cited map of radiopharmaceuticals — isotopes, therapies, tracers, trials and supply", description: HOME_DESCRIPTION, path: "/" });
@@ -37,7 +48,7 @@ const AUDIENCES: Array<{ id: string; title: string; lede: string; links: Array<{
       { href: "/technologies/", label: "Technologies", blurb: "Chemistry, hardware and imaging methods" },
       { href: "/targets/", label: "Targets", blurb: "PSMA, SSTR, FAP, CAIX and the rest" },
       { href: "/papers/", label: "Key papers", blurb: "The literature that defines each sub-field" },
-      { href: "/explore/", label: "Explore", blurb: "Pick an indication, switch kind, sort the list" },
+      { href: "/opportunities/", label: "Opportunities", blurb: "Decisions nobody can make today, and what would settle them" },
     ],
   },
   {
@@ -71,6 +82,18 @@ export default function Home() {
   const approvalYear = Math.max(...drugs.flatMap((d) => d.approvals.map((a) => a.year)));
   const approvals = drugs.filter((d) => d.approvals.some((a) => a.year === approvalYear)).sort((a, b) => a.name.localeCompare(b.name));
   const frontier = g.kind("technology").filter((t) => t.tags.includes("frontier")).slice(0, 8);
+  // Six openings for the home page: the ones whose case is strongest first (a standalone use, then the
+  // most advanced public work), so the first thing a reader meets is not a speculative one.
+  const MATURITY_RANK: Record<string, number> = { "approved-elsewhere": 0, "being-tested-at-scale": 1, "early-clinical": 2, "preclinical-evidence": 3, speculative: 4 };
+  const VERDICT_RANK: Record<string, number> = { "standalone-and-companion": 0, "standalone-only": 1, unclear: 2, "companion-only": 3 };
+  const openings = [...g.kind("opportunity")]
+    .sort((a, b) => {
+      const av = a as unknown as { verdict: string; maturity: string }, bv = b as unknown as { verdict: string; maturity: string };
+      return (VERDICT_RANK[av.verdict] ?? 9) - (VERDICT_RANK[bv.verdict] ?? 9)
+        || (MATURITY_RANK[av.maturity] ?? 9) - (MATURITY_RANK[bv.maturity] ?? 9)
+        || a.name.localeCompare(b.name);
+    })
+    .slice(0, 6);
   const roadmaps = g.kind("roadmap");
   const counts = KINDS.map((k) => ({ k, n: g.kind(k).length })).filter((c) => c.n > 0);
   const total = counts.reduce((a, c) => a + c.n, 0);
@@ -99,6 +122,7 @@ export default function Home() {
             </p>
             <div className="mt-8 max-w-2xl"><SearchBox large autoFocus={false} /></div>
             <div className="mt-5 flex flex-wrap gap-2">
+              <Link href="/opportunities/" className="btn">Where the openings are</Link>
               <Link href="/isotopes/lu-177/" className="btn">Example: lutetium-177</Link>
               <Link href="/roadmaps/psma-theranostics-roadmap/" className="btn">PSMA theranostics roadmap</Link>
               <Link href="/supply/" className="btn">Isotope supply</Link>
@@ -166,6 +190,20 @@ export default function Home() {
 
       {/* Fronts */}
       <Container className="mt-16"><GardenDivider /></Container>
+      <Container className="mt-16"><GardenDivider /></Container>
+      <Container className="mt-10">
+        <Heading title="Openings" sub="Each one is a decision that cannot be made today, with the evidence read, the flags that would sink it and the study that would settle it." href="/opportunities/" label="All opportunities" />
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {openings.map((o) => (
+            <Link key={o.id} href={`/opportunities/${o.id}/`} className="card p-4 hover:border-foreground/25">
+              <div className="kicker mb-1.5">{LENS_LABEL[(o as { lens: string }).lens] ?? "Opportunity"}</div>
+              <div className="font-medium leading-snug">{o.name}</div>
+              <p className="mt-1.5 text-sm text-muted leading-relaxed">{(o as { unmetNeed: string }).unmetNeed}</p>
+            </Link>
+          ))}
+        </div>
+      </Container>
+
       <Container className="mt-10">
         <Heading title="Fronts of nuclear medicine" sub="Every way a radionuclide is used to see or to treat, grouped. Each schematic is a working model, not to scale." href="/fronts/" label="All fronts" />
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

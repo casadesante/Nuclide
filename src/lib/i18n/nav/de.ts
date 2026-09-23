@@ -65,6 +65,7 @@ export const navDe: NavDict = {
 
   "/about/": ["Über Nuclide und Methodik", "Regeln für Fakten, Ranking-Formeln, Lizenz."],
   "/roadmap/": ["Roadmap", "Gesundheitsanzeigen des Korpus, jede Idee nach Status, und wie Nuclide wächst und aktuell bleibt."],
+  "/opportunities/": ["Chancen", "Wo heute keine klinische Entscheidung möglich ist und ein Radiopharmakon sie klären könnte, mit der gelesenen Evidenz und der Studie, die es prüfen würde."],
   "/gaps/": ["Lücken", "Objekte und Felder, die Arbeit brauchen."],
   "/review/": ["Prüfwarteschlange", "Welche Seiten am dringendsten eine namentlich genannte Prüfung brauchen, Abdeckung nach Art und Schiene, Übersetzungsabdeckung."],
   "/reviewers/": ["Prüferliste", "Wer Seiten freigegeben hat, auf welcher Schiene, mit erklärten Interessenkonflikten."],

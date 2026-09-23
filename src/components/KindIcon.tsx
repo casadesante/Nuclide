@@ -22,6 +22,7 @@ const ICONS: Record<Kind, (p: P) => React.ReactElement> = {
   idea: (p) => <Svg {...p}><path d="M9 18h6M10 21h4M12 3a6 6 0 0 1 3.5 10.9c-.7.5-1 1.2-1 2.1h-5c0-.9-.3-1.6-1-2.1A6 6 0 0 1 12 3Z" /></Svg>,
   collection: (p) => <Svg {...p}><ellipse cx="12" cy="6" rx="7" ry="3" /><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3" /></Svg>,
   person: (p) => <Svg {...p}><circle cx="12" cy="8" r="4" /><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0" /></Svg>,
+  opportunity: (p) => <Svg {...p}><path d="M12 12 19 5" /><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4.5" /><circle cx="17" cy="8" r="1.4" fill="currentColor" stroke="none" /></Svg>,
   bottleneck: (p) => <Svg {...p}><path d="M4 4h16l-6 8v7l-4 2v-9L4 4Z" /></Svg>,
   paper: (p) => <Svg {...p}><path d="M6 3h8l4 4v14H6V3ZM14 3v4h4" /><path d="M9 12h6M9 16h6" /></Svg>,
   journal: (p) => <Svg {...p}><path d="M4 4h16v16H4z" /><path d="M7 8h5v5H7zM14 8h3M14 11h3M7 16h10" /></Svg>,

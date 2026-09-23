@@ -221,6 +221,7 @@ export const hi: UiDict = {
   "kind.person.label": "व्यक्ति", "kind.person.plural": "लोग",
   "kind.journal.label": "पत्रिका", "kind.journal.plural": "पत्रिकाएँ",
   "kind.paper.label": "प्रमुख शोधपत्र", "kind.paper.plural": "प्रमुख शोधपत्र",
+  "kind.opportunity.label": "अवसर", "kind.opportunity.plural": "अवसर",
   "kind.bottleneck.label": "अड़चन", "kind.bottleneck.plural": "अड़चनें", "kind.bottleneck.title": "अड़चनें",
 
   "l.Summary": "सार",

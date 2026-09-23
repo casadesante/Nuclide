@@ -65,6 +65,7 @@ export const navFr: NavDict = {
 
   "/about/": ["À propos et méthodologie", "Règles pour les faits, formules de classement, licence."],
   "/roadmap/": ["Feuille de route", "Indicateurs de santé du corpus, chaque idée par statut, et comment Nuclide s'étend et reste à jour."],
+  "/opportunities/": ["Opportunités", "Là où une décision clinique est aujourd'hui impossible et où un radiopharmaceutique pourrait la trancher, avec les preuves examinées et l'étude qui le vérifierait."],
   "/gaps/": ["Lacunes à combler", "Objets et champs qui ont besoin de travail."],
   "/review/": ["File de relecture", "Quelles pages ont le plus besoin d'un relecteur nommé, couverture par type et filière, couverture des traductions."],
   "/reviewers/": ["Liste des relecteurs", "Qui a validé des pages, sur quelle filière, avec conflits d'intérêts déclarés."],

@@ -221,6 +221,7 @@ export const fr: UiDict = {
   "kind.person.label": "Personne", "kind.person.plural": "personnes",
   "kind.journal.label": "Revue", "kind.journal.plural": "revues",
   "kind.paper.label": "Article clé", "kind.paper.plural": "articles clés",
+  "kind.opportunity.label": "Opportunité", "kind.opportunity.plural": "opportunités",
   "kind.bottleneck.label": "Goulet d'étranglement", "kind.bottleneck.plural": "goulets d'étranglement", "kind.bottleneck.title": "Goulets d'étranglement",
 
   "l.Summary": "Résumé",

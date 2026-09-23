@@ -46,13 +46,13 @@ export function tracksFor(kind: Kind): Track[] {
     case "indication": return ["clinical", "advocate"];
     case "trial": return ["clinical"];
     case "drug": return ["regulatory", "clinical", "advocate"];
-    case "target": case "pathway": case "technology": case "idea": case "roadmap": case "pairing": case "paper": case "bottleneck": return ["scientific"];
+    case "target": case "pathway": case "technology": case "opportunity": case "idea": case "roadmap": case "pairing": case "paper": case "bottleneck": return ["scientific"];
     case "term": case "section": return ["advocate"];
     default: return [];
   }
 }
 
-const KIND_STAKES: Partial<Record<Kind, number>> = { indication: 30, section: 22, term: 12, pathway: 18, idea: 10, roadmap: 14, pairing: 14, paper: 18, bottleneck: 10 };
+const KIND_STAKES: Partial<Record<Kind, number>> = { indication: 30, section: 22, term: 12, pathway: 18, idea: 10, opportunity: 16, roadmap: 14, pairing: 14, paper: 18, bottleneck: 10 };
 
 export type QueueItem = {
   id: string; kind: Kind; name: string; route: string;

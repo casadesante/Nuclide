@@ -461,6 +461,80 @@ export const PersonSchema = Base.extend({
   hIndex: z.number().int().optional(),
 });
 
+/**
+ * An opportunity: a clinical decision that cannot be made today, the lens that found it, and the state of the
+ * public evidence against it. This is the surfacing half of the graph — where an idea is a hypothesis about the
+ * field, an opportunity is a specific unmet need with a named target or agent attached, judged on the same terms
+ * a diagnostics team would use to triage it.
+ *
+ * Deliberately not scored out of five. The five evidence domains carry a state and the reason for it, and the six
+ * review categories carry a traffic light and the reason for it, because a single total hides the reason and stops
+ * discriminating between opportunities once every candidate lands on the same number.
+ */
+export const OpportunitySchema = Base.extend({
+  kind: z.literal("opportunity"),
+  /**
+   * How it was found, which is also how it should be read:
+   *  - theranostic-gap: a therapy is in the clinic and no diagnostic is paired with it.
+   *  - standalone-diagnostic: a companion diagnostic inside somebody's therapy programme that would stand alone.
+   *  - target-crossover: a target validated by an antibody, ADC or small molecule with no radioligand against it.
+   *  - unmet-need-first: starts from a decision nobody can make, then asks which target could settle it.
+   *  - non-us-registry: the work is registered outside ClinicalTrials.gov and invisible to pipeline tracking.
+   *  - maturing-preclinical: preclinical evidence close enough to the clinic to belong in a clinical-stage funnel.
+   *  - supply-isotope: the opportunity is production, supply, dosimetry or delivery rather than the molecule.
+   */
+  lens: z.enum(["theranostic-gap", "standalone-diagnostic", "target-crossover", "unmet-need-first", "non-us-registry", "maturing-preclinical", "supply-isotope"]),
+  /** The decision that cannot be made today. One sentence, concrete, no hedging. */
+  unmetNeed: z.string().min(1),
+  /** Who would order it, where in the pathway, and what changes as a result. */
+  useCase: z.string().min(1),
+  /** What would have to be true for this to work. */
+  hypothesis: z.string().min(1),
+  /** Why it might be true, from the published evidence. */
+  rationale: z.string().min(1),
+  /** The specific study, dataset or readout that would settle it. */
+  test: z.string().min(1),
+  /** How far the most advanced public work has got. */
+  maturity: z.enum(["speculative", "preclinical-evidence", "early-clinical", "being-tested-at-scale", "approved-elsewhere"]),
+  /**
+   * Whether the diagnostic would have a use of its own or only as a companion to somebody else's therapy.
+   * Companion-only is not a no, but it makes the opportunity dependent on another company's approval.
+   */
+  verdict: z.enum(["standalone-and-companion", "standalone-only", "companion-only", "unclear"]),
+  /** The most advanced public agent against this need, its stage and its sponsor, in one line. */
+  mostAdvanced: z.string().optional(),
+  /**
+   * The five due-diligence domains, each with the state of the public evidence and the reason. Adapted for
+   * targeted radiopharmaceuticals from the Fryback-Thornbury hierarchy of diagnostic efficacy.
+   */
+  dueDiligence: z.array(z.object({
+    domain: z.enum(["target-biology", "clinical-evidence", "diagnostic-performance", "safety-dosimetry", "regulatory-path"]),
+    state: z.enum(["strong", "moderate", "thin", "none"]),
+    /** The fact behind the state, with its numbers. */
+    why: z.string().min(1),
+    source: z.string().optional(),
+    url: url.optional(),
+    /** True where this domain carries most weight at the asset's current stage. */
+    weighted: z.boolean().optional(),
+  })).default([]),
+  /** Red, amber or green on each review category, each with the reason, so an obvious no-go is visible at a glance. */
+  flags: z.array(z.object({
+    category: z.enum(["technical", "unmet-need", "ip", "commercial", "isotope", "competition"]),
+    flag: z.enum(["green", "amber", "red"]),
+    why: z.string().min(1),
+  })).default([]),
+  /** Who else is publicly in it. */
+  competition: z.array(z.object({ name: z.string(), what: z.string(), stage: z.string().optional(), url: url.optional() })).default([]),
+  /** The non-imaging test that already answers part of the same question, and how an imaging agent would differ. */
+  differentiation: z.string().optional(),
+  /** Numbers that size the problem, each with a source. */
+  metrics: z.array(z.object({ label: z.string(), value: z.string(), source: z.string().optional(), url: url.optional() })).default([]),
+  /** What would kill it, stated plainly. */
+  risks: z.array(z.string()).default([]),
+  /** What to watch for next, and where it would show up. */
+  watch: z.array(z.string()).default([]),
+});
+
 export const EntitySchema = z.discriminatedUnion("kind", [
   IndicationSchema,
   SectionSchema,
@@ -479,6 +553,7 @@ export const EntitySchema = z.discriminatedUnion("kind", [
   CollectionSchema,
   PersonSchema,
   BottleneckSchema,
+  OpportunitySchema,
   PaperSchema,
   JournalSchema,
 ]);
@@ -501,6 +576,7 @@ export type Idea = z.infer<typeof IdeaSchema>;
 export type Collection = z.infer<typeof CollectionSchema>;
 export type Person = z.infer<typeof PersonSchema>;
 export type Bottleneck = z.infer<typeof BottleneckSchema>;
+export type Opportunity = z.infer<typeof OpportunitySchema>;
 export type Paper = z.infer<typeof PaperSchema>;
 export type Journal = z.infer<typeof JournalSchema>;
 
@@ -522,6 +598,7 @@ export type IdeaInput = z.input<typeof IdeaSchema>;
 export type CollectionInput = z.input<typeof CollectionSchema>;
 export type PersonInput = z.input<typeof PersonSchema>;
 export type BottleneckInput = z.input<typeof BottleneckSchema>;
+export type OpportunityInput = z.input<typeof OpportunitySchema>;
 export type PaperInput = z.input<typeof PaperSchema>;
 export type JournalInput = z.input<typeof JournalSchema>;
 export type EntityInput = z.input<typeof EntitySchema>;

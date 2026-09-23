@@ -48,6 +48,9 @@ const PHRASES: Array<[RegExp, string]> = [
   [/\b(?:cost|price|afford\w*)\b/g, "access list price reimbursement"], [/\bkids?\b|children|childhood/g, "pediatric child"], [/medicines?|medications?/g, "drug"],
   [/therap(?:y|ies|eutic)\b/g, "treatment"], [/\bchemo\b/g, "chemotherapy"], [/\bimmuno\b/g, "immunotherapy"], [/second[- ]line|later lines?/g, "later-line pretreated"],
   [/first[- ]line/g, "first-line frontline"], [/\bspread\b/g, "metastatic"],
+  // The surfacing vocabulary: a reader asks for "gaps" and "white space", the records say "unmet need" and "standalone".
+  [/\bgaps? in (?:the )?(?:[\w-]+ ){0,3}(?:diagnostics?|imaging|pipeline|market|field|care|provision)/g, "unmet need opportunity standalone diagnostic"],
+  [/\bwhite space\b/g, "unmet need opportunity"], [/\bwithout another company'?s (?:drug|approval|asset)/g, "standalone diagnostic opportunity"],
 ];
 
 function stem(t: string): string {
@@ -122,7 +125,7 @@ const KIND_WORDS: Record<string, string> = {
   doctor: "person", clinician: "person", scientist: "person", oncologist: "person", researcher: "person", who: "person",
   pathway: "pathway", signalling: "pathway", signaling: "pathway",
   paper: "paper", publication: "paper", journal: "journal",
-  idea: "idea", hypothesis: "idea", bottleneck: "bottleneck", technology: "technology", technique: "technology", method: "technology", imaging: "technology", scan: "technology",
+  idea: "idea", hypothesis: "idea", bottleneck: "bottleneck", opportunity: "opportunity", "unmet need": "opportunity", "white space": "opportunity", technology: "technology", technique: "technology", method: "technology", imaging: "technology", scan: "technology",
   term: "term", mean: "term", definition: "term", glossary: "term",
 };
 

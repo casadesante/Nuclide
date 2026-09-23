@@ -78,7 +78,8 @@ describe("nuclide-mcp", () => {
 
   it("serves the kinds resource and the brief prompt", async () => {
     const kinds = await mcp.readResource({ uri: "nuclide://kinds" });
-    expect(JSON.parse(resourceText(kinds)).kinds.length).toBe(19);
+    // 20 since the opportunity kind was added (Sep 2026); this is the count in src/lib/kinds.ts.
+    expect(JSON.parse(resourceText(kinds)).kinds.length).toBe(20);
     const drugs = await mcp.readResource({ uri: "nuclide://kinds/drug" });
     expect(JSON.parse(resourceText(drugs)).total).toBe(2);
     const prompt = await mcp.getPrompt({ name: "nuclide-brief", arguments: { id: "tnbc", audience: "clinician" } });

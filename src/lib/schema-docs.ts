@@ -10,12 +10,12 @@ import { join } from "node:path";
 import { z } from "zod";
 import { graph } from "./graph";
 import {
-  BottleneckSchema, IndicationSchema, IsotopeSchema, CollectionSchema, CompanySchema, DrugSchema, IdeaSchema, InstitutionSchema, JournalSchema, KIND_META, KINDS, PairingSchema, PaperSchema, PathwaySchema, PersonSchema, RoadmapSchema, SectionSchema, STATUSES, TargetSchema, TechnologySchema, TermSchema, TrialSchema,
+  BottleneckSchema, OpportunitySchema, IndicationSchema, IsotopeSchema, CollectionSchema, CompanySchema, DrugSchema, IdeaSchema, InstitutionSchema, JournalSchema, KIND_META, KINDS, PairingSchema, PaperSchema, PathwaySchema, PersonSchema, RoadmapSchema, SectionSchema, STATUSES, TargetSchema, TechnologySchema, TermSchema, TrialSchema,
   type Entity, type Kind,
 } from "./schema";
 
 const SCHEMAS: Record<Kind, z.ZodType> = {
-  indication: IndicationSchema, isotope: IsotopeSchema, section: SectionSchema, technology: TechnologySchema, target: TargetSchema, drug: DrugSchema, company: CompanySchema, institution: InstitutionSchema, pathway: PathwaySchema, term: TermSchema, trial: TrialSchema, pairing: PairingSchema, roadmap: RoadmapSchema, idea: IdeaSchema, collection: CollectionSchema, person: PersonSchema, bottleneck: BottleneckSchema, paper: PaperSchema, journal: JournalSchema,
+  indication: IndicationSchema, isotope: IsotopeSchema, section: SectionSchema, technology: TechnologySchema, target: TargetSchema, drug: DrugSchema, company: CompanySchema, institution: InstitutionSchema, pathway: PathwaySchema, term: TermSchema, trial: TrialSchema, pairing: PairingSchema, roadmap: RoadmapSchema, idea: IdeaSchema, collection: CollectionSchema, person: PersonSchema, bottleneck: BottleneckSchema, opportunity: OpportunitySchema, paper: PaperSchema, journal: JournalSchema,
 };
 
 export type FieldDoc = { name: string; type: string; required: boolean; default?: string; description?: string; /** Nested fields for object or array-of-object types. */ children?: FieldDoc[] };
