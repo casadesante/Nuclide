@@ -38,28 +38,6 @@
   ],
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.nuclide.cc"
-        }
-      ],
-      "destination": "https://nuclide.cc/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "nuclide-umber.vercel.app"
-        }
-      ],
-      "destination": "https://nuclide.cc/:path*",
-      "permanent": true
-    },
-    {
       "source": "/companies/hansoh/:path*",
       "destination": "/companies/hansoh-pharma/:path*",
       "permanent": true
@@ -319,6 +297,5 @@
       "destination": "/trials/cross/:path*",
       "permanent": true
     }
-  ],
-  "ignoreCommand": "exit 0"
+  ]
 }
