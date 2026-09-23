@@ -1,0 +1,34 @@
+name: Harvest the patent universe (deep, on demand)
+
+# One-off / occasional deep harvest of every radiopharmaceutical patent publication worldwide, one job
+# per publication year so each runs from its own runner address. Results are uploaded as artifacts and
+# merged into src/data/universe by scripts/universe/build.py. The weekly refresh-patents.yml keeps the
+# newest filings current between deep runs.
+on:
+  workflow_dispatch:
+    inputs:
+      years:
+        description: "JSON array of years"
+        required: false
+        default: '[2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026]'
+
+permissions:
+  contents: read
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        year: ${{ fromJSON(github.event.inputs.years || '[2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026]') }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/universe/harvest_patents.py ${{ matrix.year }} out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: patents-${{ matrix.year }}
+          path: out/
+          retention-days: 30
