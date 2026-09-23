@@ -49,7 +49,23 @@ const CORPUS_IDS = new Set((ALL_INPUTS as Array<{ id: string }>).map((e) => e.id
 const HREF = /href[=:]\s*[`"{]{1,2}(\/[a-z0-9\-/.]*)/g;
 // public/api/v1 and public/feeds are gitignored: npm run build:api writes them from this declared
 // layout, so a link into them resolves if the layout says the build emits it.
-const GENERATED = new Set([...apiFiles({} as never).map((f) => f.path), ...FEEDS]);
+const GENERATED = [...apiFiles({} as never).map((f) => f.path), ...FEEDS];
+/** A generated path: an exact match, a directory above one, or a per-record file whose id exists.
+ * The layout writes patterns like "/api/v1/entities/<id>.json", and CI runs the tests on a clean
+ * tree where public/api/v1 has not been written yet, so this cannot fall back to the file system. */
+function generated(path: string, ids: Set<string>): boolean {
+  if (GENERATED.includes(path)) return true;
+  if (GENERATED.some((f) => f.startsWith(path))) return true;
+  for (const f of GENERATED) {
+    const m = /^(.*)<id>(.*)$/.exec(f);
+    if (!m) continue;
+    if (path.startsWith(m[1]) && path.endsWith(m[2])) {
+      const id = path.slice(m[1].length, path.length - m[2].length);
+      if (ids.has(id)) return true;
+    }
+  }
+  return false;
+}
 // /history/index.json is written by `npm run history`, and the page links it only inside the branch
 // that reads the file, so the link cannot render when the file is absent.
 const CONDITIONAL = new Set(["/history/index.json"]);
@@ -60,7 +76,7 @@ function resolves(href: string, patterns: string[][]): boolean {
   if (!segs.length) return true; // "/" is the home page
   // A file served straight out of public/, e.g. /audit.json or /survival/index.json.
   if (existsSync(join(ROOT, "public", ...segs))) return true;
-  if (GENERATED.has(path) || CONDITIONAL.has(path)) return true;
+  if (generated(path, CORPUS_IDS) || CONDITIONAL.has(path)) return true;
   // A record page: /drugs/pluvicto/ or /drugs/pluvicto/changes/. The id must still be in the corpus.
   if (KIND_SEGMENTS.has(segs[0])) {
     if (segs.length === 1) return true;
