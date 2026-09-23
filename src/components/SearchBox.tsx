@@ -53,7 +53,8 @@ export function SearchBox({ large = false, autoFocus = false }: { large?: boolea
     return () => document.removeEventListener("mousedown", onDoc);
   }, []);
 
-  const placeholder = useMemo(() => "Search TROP2, Enhertu, PSMA PET, TNBC, Gustave Roussy…", []);
+  // Five examples that all resolve in this corpus: a therapy, a scan, an isotope, an inhaled agent and a manufacturer.
+  const placeholder = useMemo(() => "Search Pluvicto, PSMA PET, actinium-225, Technegas, Curium…", []);
   const close = () => { setOpen(false); setQ(""); setResults([]); };
 
   return (
