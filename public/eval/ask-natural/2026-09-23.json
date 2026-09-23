@@ -2,22 +2,22 @@
  "summary": {
   "system": "Nuclide Ask (intents, entity resolution, templated cited answers; extractive fallback)",
   "date": "2026-09-23",
-  "questions": 46,
-  "set": "src/data/ask-eval.ts (46 natural questions: patient, clinician, investor)",
-  "meanScore": 0.449,
-  "meanRetrievalRecall": 0.804,
+  "questions": 48,
+  "set": "src/data/ask-eval.ts (48 natural questions: patient, clinician, investor)",
+  "meanScore": 0.415,
+  "meanRetrievalRecall": 0.813,
   "byAudience": {
-   "patient": 0.294,
-   "clinician": 0.556,
+   "patient": 0.25,
+   "clinician": 0.49,
    "investor": 0.524
   },
   "before": {
    "system": "Nuclide Ask (extractive answer, lexical + concept retrieval, top 6 records)",
-   "meanScore": 0.48,
-   "meanRetrievalRecall": 0.685,
+   "meanScore": 0.453,
+   "meanRetrievalRecall": 0.698,
    "byAudience": {
-    "patient": 0.373,
-    "clinician": 0.556,
+    "patient": 0.353,
+    "clinician": 0.49,
     "investor": 0.53
    }
   }
@@ -219,7 +219,7 @@
     "survival benefit"
    ],
    "retrievalRecall": 1,
-   "answer": "For cancer that has spread widely to bone and causes pain everywhere at once, a bone-seeking radioactive injection travels to every affected spot in the skeleton and delivers pain-relieving radiation from the inside, sparing a trip to radiotherapy for each site. [1] Right after some cancer treatments start working, a scan can briefly look worse before it looks better, because healing bone or an early immune response makes lesions light up more, not because the cancer has actually grown. [2] The flare phenomenon (bone flare or scintigraphic flare) is an apparent early worsening on a bone scan, PET or PSMA-PET scan that reflects a reparative or reactive process rather than true disease progression, and is followed by genuine improvement on later imaging if the underlying treatment is actually working. [2] It causes pain, fractures and high calcium, and the complications are counted in trials as 'skeletal-related events'. [3] Some radioactive drugs are built to home in on damaged bone rather than the tumour itself, easing bone pain from cancer that has spread to the skeleton and, in one case, helping patients live longer. [4] A single injection can ease bone pain for weeks by irradiating those spots from within. [5]\n\nSources\n[1] Bone pain palliation from osteoblastic metastases (https://nuclide.cc/indications/bone-pain-palliation/)\n[2] Flare phenomenon (https://nuclide.cc/terms/flare-phenomenon/)\n[3] Bone metastases and skeletal-related events (https://nuclide.cc/terms/bone-metastases/)\n[4] Bone-targeted radiopharmaceuticals (https://nuclide.cc/fronts/f-bone-targeted/)\n[5] Strontium-89 (https://nuclide.cc/isotopes/sr-89/)"
+   "answer": "For cancer that has spread widely to bone and causes pain everywhere at once, a bone-seeking radioactive injection travels to every affected spot in the skeleton and delivers pain-relieving radiation from the inside, sparing a trip to radiotherapy for each site. [1] Cancer spread to the bones, most common in prostate, breast, lung, kidney and thyroid cancer and myeloma. [2] It causes pain, fractures and high calcium, and the complications are counted in trials as 'skeletal-related events'. [2] Right after some cancer treatments start working, a scan can briefly look worse before it looks better, because healing bone or an early immune response makes lesions light up more, not because the cancer has actually grown. [3] The flare phenomenon (bone flare or scintigraphic flare) is an apparent early worsening on a bone scan, PET or PSMA-PET scan that reflects a reparative or reactive process rather than true disease progression, and is followed by genuine improvement on later imaging if the underlying treatment is actually working. [3] Some radioactive drugs are built to home in on damaged bone rather than the tumour itself, easing bone pain from cancer that has spread to the skeleton and, in one case, helping patients live longer. [4]\n\nSources\n[1] Bone pain palliation from osteoblastic metastases (https://nuclide.cc/indications/bone-pain-palliation/)\n[2] Bone metastases and skeletal-related events (https://nuclide.cc/terms/bone-metastases/)\n[3] Flare phenomenon (https://nuclide.cc/terms/flare-phenomenon/)\n[4] Bone-targeted radiopharmaceuticals (https://nuclide.cc/fronts/f-bone-targeted/)"
   },
   {
    "id": "c-01",
@@ -541,26 +541,29 @@
   {
    "id": "p-16",
    "audience": "patient",
-   "score": 0.25,
-   "met": 1,
+   "score": 0.5,
+   "met": 2,
    "total": 4,
    "missed": [
     "technegas",
-    "carbon",
-    "breath"
+    "carbon"
    ],
    "retrievalRecall": 0,
-   "answer": "Lung neuroendocrine tumours, called typical and atypical carcinoids, are slow-growing tumours of the airways that are usually cured by surgery. [1] When they spread, everolimus is the one drug tested in a randomised trial for this site, cabozantinib was approved in 2025, and somatostatin analogues and lutetium radioligand therapy are borrowed from gut tumours. [1] Labelled as [15O]water, it diffuses freely across cell membranes and its uptake is not confounded by metabolism, which makes it the physics gold standard for quantifying regional cerebral or myocardial blood flow; the very short half-life also allows repeat rest and stress or activation scans in the same session only 10-15 minutes apart, with a very low cumulative radiation dose. [2] Most cases are found once the disease has already spread, and a scan with radioactive sugar is what decides who can still be cured by surgery. [3] To check whether a blood clot has lodged in the lung's blood vessels, a scan compares which parts of the lung get air (ventilation) with which parts get blood flow (perfusion); a clot shows up as an area that is ventilated but not perfused. [4] A radioactive gas-forming isotope with a ten-minute lifetime, turned into ammonia and injected to map blood flow to the heart muscle on a PET scan. [5]\n\nSources\n[1] Lung neuroendocrine tumours (typical and atypical carcinoid) (https://nuclide.cc/indications/lung-net/)\n[2] Oxygen-15 (https://nuclide.cc/isotopes/o-15/)\n[3] Non-small cell lung cancer (https://nuclide.cc/indications/nsclc/)\n[4] Pulmonary embolism: ventilation/perfusion imaging (https://nuclide.cc/indications/pulmonary-embolism-vq/)\n[5] Nitrogen-13 (https://nuclide.cc/isotopes/n-13/)"
+   "answer": "Before a surgeon removes part of a lung, the scan is used as an arithmetic tool rather than a picture: it measures what share of the breathing work that piece of lung is actually doing, so the team can predict the patient's lung function after the operation and decide whether they will tolerate it. [1] The thresholds are what make the scan consequential. [1] A radioactive gas that a patient simply breathes in and out while the camera runs. [2] Lung neuroendocrine tumours, called typical and atypical carcinoids, are slow-growing tumours of the airways that are usually cured by surgery. [3] Most cases are found once the disease has already spread, and a scan with radioactive sugar is what decides who can still be cured by surgery. [4] To check whether a blood clot has lodged in the lung's blood vessels, a scan compares which parts of the lung get air (ventilation) with which parts get blood flow (perfusion); a clot shows up as an area that is ventilated but not perfused. [5]\n\nSources\n[1] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)\n[2] Krypton-81m (https://nuclide.cc/isotopes/kr-81m/)\n[3] Lung neuroendocrine tumours (typical and atypical carcinoid) (https://nuclide.cc/indications/lung-net/)\n[4] Non-small cell lung cancer (https://nuclide.cc/indications/nsclc/)\n[5] Pulmonary embolism: ventilation/perfusion imaging (https://nuclide.cc/indications/pulmonary-embolism-vq/)"
   },
   {
    "id": "p-17",
    "audience": "patient",
-   "score": 1,
-   "met": 3,
+   "score": 0,
+   "met": 0,
    "total": 3,
-   "missed": [],
+   "missed": [
+    "contraindicated",
+    "pulmonary hypertension",
+    "particle"
+   ],
    "retrievalRecall": 1,
-   "answer": "To check whether a blood clot has lodged in the lung's blood vessels, a scan compares which parts of the lung get air (ventilation) with which parts get blood flow (perfusion); a clot shows up as an area that is ventilated but not perfused. [1] Ventilation/perfusion (V/Q) scintigraphy diagnoses or excludes acute pulmonary embolism by comparing two maps of the lung obtained in the same sitting: a perfusion map, made by injecting Tc-99m-labelled macroaggregated albumin (MAA) particles that lodge in pulmonary capillaries in proportion to blood flow, and a ventilation map, made with an inhaled agent such as Technegas or krypton-81m gas. [1] Lung neuroendocrine tumours, called typical and atypical carcinoids, are slow-growing tumours of the airways that are usually cured by surgery. [2] The labels contraindicate the agent in severe pulmonary hypertension, where deaths have been reported, and in albumin hypersensitivity. [3] Technetium Tc-99m albumin aggregated (MAA) dosing: Intravenous injection for lung perfusion; intra-arterial (hepatic artery) for radioembolisation work-up; Adults 200,000-700,000 particles per injection, approximately 350,000 recommended; paediatric doses reduced by age, 10,000-50,000 particles for neonates under four weeks. [3] SPECT and the bone scan are an older type of nuclear scan, still used for bone metastases and to check where a radioactive drug went after treatment. [4]\n\nSources\n[1] Pulmonary embolism: ventilation/perfusion imaging (https://nuclide.cc/indications/pulmonary-embolism-vq/)\n[2] Lung neuroendocrine tumours (typical and atypical carcinoid) (https://nuclide.cc/indications/lung-net/)\n[3] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)\n[4] SPECT & bone scan (https://nuclide.cc/technologies/spect/)"
+   "answer": "Predicting postoperative lung function is where perfusion scintigraphy earns its place in thoracic oncology. [1] The ACCP physiologic evaluation guideline (Brunelli et al., Chest 2013) sets out the division of labour explicitly: for a pneumonectomy candidate the perfusion method is used, with predicted postoperative FEV1 taken as preoperative FEV1 times one minus the fraction of total perfusion for the resected lung, while for a lobectomy the anatomical segment-counting method is used. [1] The same Tc-99m MAA perfusion scan used to look for embolism, counted rather than merely looked at. [1] To check whether a blood clot has lodged in the lung's blood vessels, a scan compares which parts of the lung get air (ventilation) with which parts get blood flow (perfusion); a clot shows up as an area that is ventilated but not perfused. [2]\n\nSources\n[1] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)\n[2] Pulmonary embolism: ventilation/perfusion imaging (https://nuclide.cc/indications/pulmonary-embolism-vq/)"
   },
   {
    "id": "c-15",
@@ -572,7 +575,7 @@
     "30 gy"
    ],
    "retrievalRecall": 1,
-   "answer": "Injecting tiny radioactive glass or resin beads into the liver's artery so they lodge in the tumour and irradiate it from inside. [1] Before yttrium-90 radioembolisation, MAA is injected into the hepatic artery and imaged to estimate the lung shunt fraction, because hepatopulmonary shunting can deliver enough dose to the lungs to cause radiation pneumonitis. [2]\n\nSources\n[1] TARE / SIRT (radioembolisation with yttrium-90) (https://nuclide.cc/terms/tare/)\n[2] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)"
+   "answer": "Injecting tiny radioactive glass or resin beads into the liver's artery so they lodge in the tumour and irradiate it from inside. [1] Dosing is individualised: activity is planned using body-surface-area or partition (MIRD) dosimetry models with pre-treatment angiography and a technetium-99m macroaggregated albumin scan to check lung shunting before the therapeutic infusion. [2] Before a surgeon removes part of a lung, the scan is used as an arithmetic tool rather than a picture: it measures what share of the breathing work that piece of lung is actually doing, so the team can predict the patient's lung function after the operation and decide whether they will tolerate it. [3] Before yttrium-90 radioembolisation, MAA is injected into the hepatic artery and imaged to estimate the lung shunt fraction, because hepatopulmonary shunting can deliver enough dose to the lungs to cause radiation pneumonitis. [4]\n\nSources\n[1] TARE / SIRT (radioembolisation with yttrium-90) (https://nuclide.cc/terms/tare/)\n[2] Yttrium-90 resin microspheres (https://nuclide.cc/drugs/y-90-resin-microspheres/)\n[3] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)\n[4] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)"
   },
   {
    "id": "i-14",
@@ -583,6 +586,34 @@
    "missed": [],
    "retrievalRecall": 1,
    "answer": "The cancer that kills more people than any other, and the reason most PET scanners are busy. Most cases are found once the disease has already spread, and a scan with radioactive sugar is what decides who can still be cured by surgery. [1] Therapy is the gap: no radiopharmaceutical is approved to treat lung cancer of any histology anywhere, and the alpha-emitting DLL3 programmes now in the clinic are aimed at small-cell disease, which has its own record. [1] In January 2025 Telix bought a pipeline of early-stage therapeutic candidates and a biologics platform from ImaginAb for US$45 million plus up to US$185 million in milestones, including a discovery-stage programme against DLL3, the surface protein of small-cell lung cancer, with no TLX code or isotope assigned. [2] In April 2026 it signed a collaboration with Regeneron covering four initial programmes built on Regeneron antibodies, for US$40 million upfront, an equal share of costs and profits and up to US$2.1 billion in milestones; Telix’s own second-quarter 2026 results describe that collaboration as initially focused on lung cancer. [2] Shandong Cancer Hospital runs one of China's largest radiotherapy departments under Jinming Yu, with a proton therapy centre and PET-guided adaptive radiotherapy; it has led Chinese trials combining radiotherapy with immunotherapy in lung and oesophageal cancer and studies of brain metastasis management. [3] Actinium Pharmaceuticals attaches the alpha-emitting isotope actinium-225 to antibodies to treat acute myeloid leukaemia and, more recently, solid tumours such as prostate and lung cancer. [4]\n\nSources\n[1] Non-small cell lung cancer (https://nuclide.cc/indications/nsclc/)\n[2] Telix Pharmaceuticals (https://nuclide.cc/companies/telix/)\n[3] Shandong Cancer Hospital and Institute (https://nuclide.cc/institutions/shandong-cancer-hospital/)\n[4] Actinium Pharmaceuticals (https://nuclide.cc/companies/actinium-pharmaceuticals/)"
+  },
+  {
+   "id": "c-16",
+   "audience": "clinician",
+   "score": 0,
+   "met": 0,
+   "total": 3,
+   "missed": [
+    "fraction of total perfusion",
+    "preoperative fev1",
+    "60%"
+   ],
+   "retrievalRecall": 1,
+   "answer": "The reason is empirical, not dogmatic: before lobectomy, segment counting predicts postoperative FEV1 about as well as scintigraphy, so the scan is usually unnecessary; before pneumonectomy, the lung to be removed has to be measured. [1] Before a lobectomy it adds little: segment counting predicts postoperative FEV1 about as accurately, so guidelines reserve the scan for pneumonectomy candidates and borderline function. [1] After a radioactive treatment injection, patients are scanned two or three times over about a week so doctors can calculate exactly how much radiation dose the tumour and organs like the kidneys actually received, and adjust future doses if needed. [2] An estimand is a precise statement of what question a trial is answering, including what to do about patients who switch treatment, stop early or start another drug; the ICH E9(R1) framework makes trials write this down before they start. [3] A German medical physicist who has led the physics section of Würzburg's nuclear medicine department for three decades and helped set the international standards used to calculate radiation doses from radioactive cancer treatments. [4] PET scans using tracers that bind these clumps can show a doctor how much amyloid is present, well before it would show up on a brain biopsy. [5]\n\nSources\n[1] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)\n[2] SPECT dosimetry workflow for radionuclide therapy (https://nuclide.cc/technologies/spect-dosimetry-workflow/)\n[3] Estimands and intercurrent events (ICH E9(R1)) (https://nuclide.cc/terms/estimand/)\n[4] Michael Lassmann (https://nuclide.cc/people/michael-lassmann/)\n[5] Amyloid beta plaques (https://nuclide.cc/targets/amyloid-beta/)"
+  },
+  {
+   "id": "c-17",
+   "audience": "clinician",
+   "score": 0,
+   "met": 0,
+   "total": 3,
+   "missed": [
+    "190 kev",
+    "simultaneously",
+    "140 kev"
+   ],
+   "retrievalRecall": 1,
+   "answer": "To check whether a blood clot has lodged in the lung's blood vessels, a scan compares which parts of the lung get air (ventilation) with which parts get blood flow (perfusion); a clot shows up as an area that is ventilated but not perfused. [1] Ventilation/perfusion (V/Q) scintigraphy diagnoses or excludes acute pulmonary embolism by comparing two maps of the lung obtained in the same sitting: a perfusion map, made by injecting Tc-99m-labelled macroaggregated albumin (MAA) particles that lodge in pulmonary capillaries in proportion to blood flow, and a ventilation map, made with an inhaled agent such as Technegas or krypton-81m gas. [1] The 2019 EANM guideline for ventilation/perfusion SPECT for diagnosis of pulmonary embolism and beyond is the current European reference standard, recommending Technegas or krypton gas over Tc-99m-DTPA aerosol in patients with COPD and SPECT over planar imaging throughout. [1] It decays in thirteen seconds, so the picture is of ventilation happening now rather than of particles left behind, and it has to be generated in the room from a parent that itself lasts only a few hours. [2] The 2019 EANM V/Q SPECT guideline puts krypton alongside Technegas as preferred over Tc-99m DTPA aerosol in patients with COPD, where a wet aerosol deposits centrally, and one comparative review argues krypton is the better ventilation tracer for its penetration and absence of hot spots, cautioning against replacing it with Technegas in severe COPD. [2] The ACCP physiologic evaluation guideline (Brunelli et al., Chest 2013) sets out the division of labour explicitly: for a pneumonectomy candidate the perfusion method is used, with predicted postoperative FEV1 taken as preoperative FEV1 times one minus the fraction of total perfusion for the resected lung, while for a lobectomy the anatomical segment-counting method is used. [3]\n\nSources\n[1] Pulmonary embolism: ventilation/perfusion imaging (https://nuclide.cc/indications/pulmonary-embolism-vq/)\n[2] Krypton-81m (https://nuclide.cc/isotopes/kr-81m/)\n[3] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)"
   },
   {
    "id": "p-15",

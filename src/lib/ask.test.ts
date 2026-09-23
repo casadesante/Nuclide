@@ -285,8 +285,8 @@ describe("Ask Nuclide end to end", () => {
   });
 
   it("clears the floors on the open benchmark and the natural set (measured 2026-09-23)", { timeout: 300_000 }, async () => {
-    // Measured on the 108-question benchmark and the 46-question natural set the day they were written:
-    // benchmark rubric 0.44, recall 1.00; natural rubric 0.45, recall 0.80. These are honest numbers for an
+    // Measured on the 110-question benchmark and the 48-question natural set the day they were written:
+    // benchmark rubric 0.43, recall 1.00; natural rubric 0.42, recall 0.81. These are honest numbers for an
     // extractive pipeline answering from record text — the rubrics ask for specific figures the composer does
     // not always surface. Floors sit just below each measured value so a retrieval or composition regression
     // fails loudly, and are raised as the pipeline improves. Never lower one to make a failing run pass.
@@ -313,7 +313,7 @@ describe("Ask Nuclide end to end", () => {
 
   it("keeps the extractive path at or above its floors (measured 2026-09-23)", { timeout: 300_000 }, () => {
     // The path without the curated question/answer pairs: lexical plus semantic retrieval, top 6 records,
-    // composed extractively. Measured rubric 0.36, recall 0.62 on the 108-question benchmark. This is the
+    // composed extractively. Measured rubric 0.38, recall 0.62 on the 110-question benchmark. This is the
     // floor that catches a search or ranking regression, which the pipeline's curated pairs would otherwise hide.
     const g = graph();
     const ms = new MiniSearch<SearchDoc>({ fields: ["name", "aka", "tldr", "tags", "id"], storeFields: ["id"], searchOptions: { boost: { name: 4, aka: 3, id: 2 }, prefix: true, fuzzy: 0.2 } });

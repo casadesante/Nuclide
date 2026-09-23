@@ -4,8 +4,11 @@
  *
  * Scope: Technegas and Tc-99m macroaggregated albumin are the inhaled and injected halves of the V/Q
  * scan, the oldest routine nuclear medicine test still in daily use, and MAA doubles as the simulation
- * injection before Y-90 radioembolisation. 212Pb-PSV359 is the one clinical radioligand whose trial now
- * names non-small cell lung cancer explicitly. Cyclopharm is here because it owns Technegas.
+ * injection before Y-90 radioembolisation. Krypton-81m is the third ventilation agent, a gas so
+ * short-lived it has to be made a few metres from the patient. Split-function perfusion scintigraphy is
+ * the same perfusion scan read for a different question: how much lung function a resection will cost.
+ * 212Pb-PSV359 is the one clinical radioligand whose trial now names non-small cell lung cancer
+ * explicitly. Cyclopharm is here because it owns Technegas.
  *
  * All facts are taken from FDA labels and approval packages, ClinicalTrials.gov records, company
  * announcements and peer-reviewed sources, each linked on the record that states them. Where a figure
@@ -47,7 +50,7 @@ export const lungAgents: EntityInput[] = [
       { label: "Technegas particle characterisation: nanoparticle agglomerates of 60-160 nm (review)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10144982/" },
       { label: "Cyclomedica: FDA grants approval for Technegas", url: "https://www.cyclomedica.com/2023/10/02/united-states-fda-grants-approval-for-technegas/" },
     ],
-    related: ["tc-99m-maa", "tc-99m", "pulmonary-embolism-vq", "cyclopharm", "spect"],
+    related: ["tc-99m-maa", "kr-81m", "tc-99m", "pulmonary-embolism-vq", "cyclopharm", "spect"],
     tags: ["ventilation", "V/Q", "technetium", "inhaled"],
   },
   {
@@ -79,7 +82,7 @@ export const lungAgents: EntityInput[] = [
       { label: "FDA label: DRAXIMAGE MAA (BLA 017881), revised December 2023", url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/017881s030lbl.pdf" },
       { label: "Kappadath et al.: lung shunt fraction from 99mTc-MAA SPECT/CT for Y-90 treatment planning, with the 30 Gy single and 50 Gy cumulative lung dose constraints", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8479035/" },
     ],
-    related: ["technegas", "tc-99m", "pulmonary-embolism-vq", "y-90-resin-microspheres", "y-90-glass-microspheres", "radioembolisation-tare", "curium", "jubilant-radiopharma"],
+    related: ["technegas", "kr-81m", "split-function-lung-perfusion", "tc-99m", "pulmonary-embolism-vq", "y-90-resin-microspheres", "y-90-glass-microspheres", "radioembolisation-tare", "curium", "jubilant-radiopharma"],
     tags: ["perfusion", "V/Q", "technetium", "radioembolisation work-up"],
   },
   {
@@ -129,6 +132,71 @@ export const lungAgents: EntityInput[] = [
     ],
     related: ["technegas", "cyclopharm", "pulmonary-embolism-vq"],
     tags: ["ventilation", "registration trial"],
+  },
+  {
+    id: "kr-81m",
+    kind: "isotope",
+    name: "Krypton-81m",
+    aka: ["81mKr", "Kr-81m", "krypton gas"],
+    symbol: "81mKr",
+    element: "Krypton",
+    massNumber: 81,
+    tldr: "A radioactive gas that a patient simply breathes in and out while the camera runs. It decays in thirteen seconds, so the picture is of ventilation happening now rather than of particles left behind, and it has to be generated in the room from a parent that itself lasts only a few hours.",
+    summary: "Krypton-81m is an inert gas with a 13-second physical half-life and a 190 keV gamma emission, eluted from an 81Rb/81mKr generator: rubidium-81, bound to a zirconium phosphate cation exchange resin, sits in equilibrium with its krypton daughter, and passing oxygen or air through the generator carries the gas to the patient. The patient inhales continuously through the acquisition, so the image is a steady-state map of where air is arriving, and because the activity vanishes between views the study can be repeated in as many projections as wanted with negligible dose.\n\nIts distinctive advantage is the 190 keV photon, well separated from technetium-99m's 140 keV, which means ventilation and perfusion can be acquired simultaneously rather than sequentially. The 2019 EANM V/Q SPECT guideline puts krypton alongside Technegas as preferred over Tc-99m DTPA aerosol in patients with COPD, where a wet aerosol deposits centrally, and one comparative review argues krypton is the better ventilation tracer for its penetration and absence of hot spots, cautioning against replacing it with Technegas in severe COPD. The counterweight is that in badly obstructed lungs the time to reach steady state may be too long.\n\nAvailability is the whole problem. Rubidium-81 is cyclotron-made, principally by the 82Kr(p,2n)81Rb reaction, and has a half-life of about 4.6 hours, so a generator has to be delivered to the hospital daily from a nearby cyclotron. That economics confined krypton to a handful of countries: Kr-81m/Tc-99m V/Q imaging was once, by one account, the second most performed nuclear medicine procedure in the United Kingdom after bone scanning, and a generator remains licensed in Denmark by Rigshospitalet's own cyclotron. In the United States GE Healthcare's MPI Krypton 81m generator (NDA 018088, approved 1980) was withdrawn effective 7 December 2007, and US commercial availability had already ended years earlier.",
+    halfLife: "13 seconds",
+    emissions: ["γ 190 keV"],
+    emissionClass: "gamma",
+    use: "imaging",
+    production: "Generator: decay of cyclotron-produced rubidium-81 (half-life about 4.6 hours) adsorbed on zirconium phosphate resin, made principally by the 82Kr(p,2n)81Rb reaction; the gas is eluted by a continuous flow of oxygen or air and inhaled directly.",
+    supply: "constrained",
+    supplyNote: "The parent's 4.6-hour half-life forces daily delivery from a cyclotron within a few hours' reach, which is why use is confined to a few centres and countries. The only US product, GE Healthcare's MPI Krypton 81m generator (NDA 018088, 1980), was formally withdrawn effective 7 December 2007. A generator authorisation is held in Denmark by the cyclotron and radiochemistry unit at Rigshospitalet, Copenhagen.",
+    chelators: [],
+    pairedWith: ["tc-99m"],
+    status: "historic",
+    asOf: "2026-09-23",
+    links: [
+      { label: "EANM 2019 guideline for ventilation/perfusion SPECT (krypton and Technegas preferred over DTPA in COPD; 13 s half-life, 190 keV, simultaneous acquisition with Tc-99m)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6813289/" },
+      { label: "Comparative review: krypton-81m versus Technegas for ventilation imaging in COPD", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7808361/" },
+      { label: "IAEA evaluated nuclear data for 81Rb production, 82Kr(p,2n)81Rb, parent half-life 4.572 h", url: "http://arxiv.org/pdf/2006.03125" },
+      { label: "Ventilation studies with krypton-81m: continuous-flow elution and repeated projections", url: "https://pubmed.ncbi.nlm.nih.gov/542943/" },
+    ],
+    related: ["technegas", "tc-99m-maa", "tc-99m", "pulmonary-embolism-vq", "split-function-lung-perfusion"],
+    technologies: ["spect", "radionuclide-generators-kits"],
+    indications: ["pulmonary-embolism-vq"],
+    tags: ["ventilation", "V/Q", "generator", "gas"],
+  },
+  {
+    id: "split-function-lung-perfusion",
+    kind: "technology",
+    name: "Split-function perfusion scintigraphy before lung resection",
+    aka: ["Quantitative lung perfusion scintigraphy", "Split lung function study", "Differential perfusion scan"],
+    principle:
+      "The same Tc-99m MAA perfusion scan used to look for embolism, counted rather than merely looked at. Activity is measured per lung (and per region on tomographic studies) to give the fraction of total perfusion each part contributes, and that fraction is used to predict what spirometry will look like after a resection: predicted postoperative FEV1 equals preoperative FEV1 multiplied by one minus the fraction of total perfusion belonging to the lung to be removed. For a lobectomy the anatomical version is used instead, multiplying by one minus the number of unobstructed segments to be removed over the total number of unobstructed segments, counting 19 segments in all.",
+    tldr: "Before a surgeon removes part of a lung, the scan is used as an arithmetic tool rather than a picture: it measures what share of the breathing work that piece of lung is actually doing, so the team can predict the patient's lung function after the operation and decide whether they will tolerate it.",
+    summary: "Predicting postoperative lung function is where perfusion scintigraphy earns its place in thoracic oncology. The ACCP physiologic evaluation guideline (Brunelli et al., Chest 2013) sets out the division of labour explicitly: for a pneumonectomy candidate the perfusion method is used, with predicted postoperative FEV1 taken as preoperative FEV1 times one minus the fraction of total perfusion for the resected lung, while for a lobectomy the anatomical segment-counting method is used. The reason is empirical, not dogmatic: before lobectomy, segment counting predicts postoperative FEV1 about as well as scintigraphy, so the scan is usually unnecessary; before pneumonectomy, the lung to be removed has to be measured.\n\nThe thresholds are what make the scan consequential. The ACCP guideline recommends no further testing when both predicted postoperative FEV1 and DLCO exceed 60% of predicted; a low-technology exercise test (stair climb or shuttle walk) when either falls below 60% but both stay above 30%; and formal cardiopulmonary exercise testing with VO2max measurement when either falls below 30%. The ERS/ESTS 2009 guideline routes any patient whose FEV1 or DLCO is below 80% of predicted to cardiopulmonary exercise testing, and regards predicted postoperative FEV1 or DLCO below 30% combined with a peak VO2 below 35% of predicted or 10 mL/kg/min as prohibitive risk for major resection. In its framing, segment counting is the default calculation and perfusion scintigraphy is reserved for patients whose function is borderline.\n\nWhether tomographic quantification beats planar counting is genuinely unsettled. A 2024 series found SPECT/CT predicted postoperative FEV1 and DLCO more accurately than either planar scintigraphy or segment counting, and would have qualified 58 of 82 patients for resection against 47 by segment counting. A 2020 head-to-head study in the Journal of Nuclear Medicine found no significant difference between segment counting, planar perfusion and SPECT/CT, and concluded the extra effort may add nothing outside right lobectomy. What both agree on is the direction of the error in segment counting: it systematically underestimates postoperative function, which risks denying surgery to patients who would have tolerated it.",
+    strengths: [
+      "Turns a routine perfusion scan into a quantitative decision tool, using a formula stated in guidelines rather than judgement.",
+      "Measures what the lung to be resected actually contributes, which matters most when disease has already destroyed function in that lung; segment counting assumes every segment is equal.",
+      "Segment counting systematically underestimates predicted postoperative FEV1, so the scan can qualify patients for curative surgery who would otherwise be refused.",
+    ],
+    limitations: [
+      "Before a lobectomy it adds little: segment counting predicts postoperative FEV1 about as accurately, so guidelines reserve the scan for pneumonectomy candidates and borderline function.",
+      "Whether SPECT or SPECT/CT quantification beats planar counting is contested, with a 2024 series favouring SPECT/CT and a 2020 head-to-head study finding no difference.",
+      "It predicts spirometry, not outcome: the guidelines pair it with exercise testing precisely because a predicted value alone does not decide operability.",
+    ],
+    status: "standard-of-care",
+    asOf: "2026-09-23",
+    links: [
+      { label: "ACCP physiologic evaluation of the patient with lung cancer being considered for resectional surgery (Brunelli et al., Chest 2013): the ppo formulas and the 60% and 30% thresholds", url: "https://www.aamr.org.ar/secciones/oncologia/evaluacion_fisiologica.pdf" },
+      { label: "ERS/ESTS clinical guidelines on fitness for radical therapy in lung cancer patients (Brunelli et al. 2009)", url: "https://academic.oup.com/ejcts/article/36/1/181/2755225" },
+      { label: "Fitness for radical treatment of lung cancer patients (Breathe 2011): why segment counting suffices before lobectomy", url: "https://publications.ersnet.org/content/breathe/7/3/221" },
+      { label: "SPECT/CT quantification predicted postoperative FEV1 and DLCO better than planar or segment counting (2024)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11509096/" },
+      { label: "Head-to-head comparison finding no significant difference between segment counting, planar perfusion and SPECT/CT (J Nucl Med 2020)", url: "https://jnm.snmjournals.org/content/61/7/981" },
+    ],
+    related: ["tc-99m-maa", "kr-81m", "pulmonary-embolism-vq", "nsclc"],
+    indications: ["nsclc"],
+    drugs: ["tc-99m-maa"],
+    tags: ["pulmonary", "surgical planning", "quantitative", "SPECT"],
   },
   {
     id: "cyclopharm",

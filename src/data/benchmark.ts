@@ -1,5 +1,5 @@
 /**
- * The Nuclide open benchmark: 108 questions a patient, carer, clinician or analyst might actually ask
+ * The Nuclide open benchmark: 110 questions a patient, carer, clinician or analyst might actually ask
  * about radiopharmaceuticals — isotope production and supply, imaging protocols, radioligand therapy,
  * dosimetry, approved products, trial readouts, terminology, the non-oncology indications, and the
  * industry's bottlenecks.
@@ -7,7 +7,7 @@
  * Every question is grounded in the corpus: the entity ids listed carry the answer, every figure in an
  * expected answer appears in those records, and every rubric point has at least one accepted phrase that
  * is a verbatim substring of those records' own text. src/data/benchmark.test.ts enforces all of that, so
- * the set cannot drift away from the corpus the way the inherited OnCo set did. 100 questions were written
+ * the set cannot drift away from the corpus the way the inherited OnCo set did. 102 questions were written
  * for this fork; 8 were carried from OnCo's set because they are true of a radiopharmaceutical corpus.
  *
  * A system's free-text answer scores one point per rubric item for which at least one phrase appears
@@ -480,6 +480,14 @@ export const benchmark: Question[] = [
     "The FDA approved it on 29 September 2023 under NDA 022335, held by Cyclomedica Australia, after the CYC-009 phase 3 study comparing it with xenon-133 planar imaging. It was already sold in 65 countries with more than 5 million procedures performed; US revenue-generating sites went from 35 in June 2025 to 83 by August 2026.",
     ["technegas", "cyclopharm", "nct03054870"],
     [["29 september 2023", "nda 022335"], ["xenon-133"], ["65 countries", "5 million"], ["cyclomedica", "cyclopharm"]]),
+  Q("lung-07", "Why is krypton-81m so rarely used despite being a good ventilation agent?", "reasoning", 3, "analyst",
+    "Its parent rubidium-81 is cyclotron-made and lasts about 4.6 hours, so a generator has to be delivered daily from a nearby cyclotron. That logistics, not the physics, confined it to a few countries; the only US product was withdrawn effective 7 December 2007. The gas itself is excellent: a 13-second half-life and a 190 keV photon well separated from technetium's 140 keV, which lets ventilation and perfusion be acquired simultaneously.",
+    ["kr-81m"],
+    [["4.6 hours", "rubidium-81"], ["cyclotron"], ["13-second", "190 kev"], ["withdrawn", "7 december 2007"]]),
+  Q("lung-08", "A patient needs a pneumonectomy but has borderline lung function - what does the scan contribute?", "procedural", 3, "clinician",
+    "A quantitative perfusion scan gives the fraction of total perfusion belonging to the lung to be removed, and predicted postoperative FEV1 is preoperative FEV1 times one minus that fraction. The ACCP guideline needs no further testing if predicted postoperative FEV1 and DLCO both exceed 60% of predicted, a low-technology exercise test if either is below 60% with both above 30%, and formal cardiopulmonary exercise testing if either is below 30%. Before a lobectomy, segment counting predicts about as well, so the scan is reserved for pneumonectomy and borderline function.",
+    ["split-function-lung-perfusion", "tc-99m-maa"],
+    [["fraction of total perfusion"], ["60%"], ["30%"], ["segment counting"], ["pneumonectomy"]]),
   // ---------------- Carried over from the fork's own set ----------------
   Q("prostate-23", "What is theranostics and what is the best-known example?", "factual", 1, "patient",
     "Using the same targeting molecule for a diagnostic scan and a treatment: PSMA PET shows where prostate cancer is, and 177Lu-PSMA-617 (Pluvicto) delivers radiation to the same target.",

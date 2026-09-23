@@ -2,13 +2,13 @@
  "summary": {
   "system": "Nuclide (search-retrieval proxy, top 8 entities)",
   "date": "2026-09-23",
-  "questions": 108,
-  "meanScore": 0.757,
-  "meanRetrievalRecall": 0.542,
+  "questions": 110,
+  "meanScore": 0.761,
+  "meanRetrievalRecall": 0.545,
   "byCategory": {
    "factual": 0.764,
-   "reasoning": 0.787,
-   "procedural": 0.656
+   "reasoning": 0.792,
+   "procedural": 0.675
   },
   "method": "For each question: MiniSearch retrieval over the site index; rubric coverage of tldr+summary of the top entities. 1 point per rubric item met, normalised to 0-1."
  },
@@ -450,7 +450,7 @@
    ],
    "retrievedEntities": [],
    "retrievalRecall": 0,
-   "answer": "idea-total-body-pet-lower-dose-tracers, radiotherapy, f-radioligand-therapy, idea-net-antagonist-ligands, idea-rlt-plus-parp-inhibitor, idea-neoadjuvant-psma-therapy, idea-rlt-plus-checkpoint-inhibitor, idea-fap-theranostics-sarcoma"
+   "answer": "idea-total-body-pet-lower-dose-tracers, radiotherapy, f-radioligand-therapy, idea-net-antagonist-ligands, idea-rlt-plus-parp-inhibitor, idea-rlt-plus-checkpoint-inhibitor, idea-neoadjuvant-psma-therapy, idea-fap-theranostics-sarcoma"
   },
   {
    "id": "ther-04",
@@ -586,7 +586,7 @@
    ],
    "retrievedEntities": [],
    "retrievalRecall": 0,
-   "answer": "ga68-dotatate-then-lutathera, estimand, patient-release-criteria, idea-dosimetry-guided-dosing-standard, idea-open-dosimetry-data-commons, fixed-versus-personalised-dosing, nct03972488, in-vivo-dosimetry"
+   "answer": "ga68-dotatate-then-lutathera, split-function-lung-perfusion, estimand, patient-release-criteria, idea-dosimetry-guided-dosing-standard, idea-open-dosimetry-data-commons, fixed-versus-personalised-dosing, nct03972488"
   },
   {
    "id": "drug-03",
@@ -681,7 +681,7 @@
    ],
    "retrievedEntities": [],
    "retrievalRecall": 0,
-   "answer": "ideas-amyloid, nct05849298, idea-copper-theranostic-pair-standard, antigen, curie-siopen-score, arpi, fdg-pet-response-adapted-therapy, paper-jadvar-snmmi-psma-auc-jnm-2022"
+   "answer": "ideas-amyloid, nct05849298, idea-copper-theranostic-pair-standard, antigen, arpi, curie-siopen-score, fdg-pet-response-adapted-therapy, paper-jadvar-snmmi-psma-auc-jnm-2022"
   },
   {
    "id": "drug-09",
@@ -738,7 +738,7 @@
     "psmafore"
    ],
    "retrievalRecall": 1,
-   "answer": "docetaxel-then-lu177-psma, radiopharmaceutical-gmp-release, paper-psmafore-lancet-2024, pluvicto-plus-olaparib, psmafore, idea-neoadjuvant-psma-therapy, idea-reg-yb176-enrichment-capacity, partial-volume-effect"
+   "answer": "docetaxel-then-lu177-psma, radiopharmaceutical-gmp-release, paper-psmafore-lancet-2024, split-function-lung-perfusion, pluvicto-plus-olaparib, psmafore, idea-neoadjuvant-psma-therapy, idea-reg-yb176-enrichment-capacity"
   },
   {
    "id": "trial-03",
@@ -822,7 +822,7 @@
     "upfront-psma"
    ],
    "retrievalRecall": 1,
-   "answer": "upfront-psma, lighthouse, lutectomy, nct06235151, prince-trial, nct06122584, paper-vision-nejm-2021, idea-neoadjuvant-psma-therapy"
+   "answer": "upfront-psma, lighthouse, lutectomy, nct06235151, prince-trial, nct06122584, paper-vision-nejm-2021, docetaxel-then-lu177-psma"
   },
   {
    "id": "trial-09",
@@ -895,7 +895,7 @@
    ],
    "retrievedEntities": [],
    "retrievalRecall": 0,
-   "answer": "bms, paper-strosberg-netter1-qol-jco-2018, nct06590857, sdh-deficiency, estimand, nct05547061, curie-siopen-score, nct02952508"
+   "answer": "bms, paper-strosberg-netter1-qol-jco-2018, nct06590857, sdh-deficiency, estimand, nct05547061, nct02952508, nct06726161"
   },
   {
    "id": "sup-04",
@@ -927,7 +927,7 @@
    ],
    "retrievedEntities": [],
    "retrievalRecall": 0,
-   "answer": "lutectomy, lu-177, lu177-radioligand-therapy, idea-rlt-plus-checkpoint-inhibitor, idea-neoadjuvant-psma-therapy, lu-177-pnt2002, nct06780670, idea-rlt-plus-parp-inhibitor"
+   "answer": "lutectomy, lu-177, lu177-radioligand-therapy, idea-rlt-plus-checkpoint-inhibitor, lu-177-pnt2002, idea-neoadjuvant-psma-therapy, nct06780670, idea-rlt-plus-parp-inhibitor"
   },
   {
    "id": "sup-06",
@@ -1079,7 +1079,7 @@
     "suv"
    ],
    "retrievalRecall": 1,
-   "answer": "suv, quantitative-imaging-biomarkers, idea-total-body-pet-lower-dose-tracers, antigen, fes-pet, medical-imaging-scanner-manufacturing, curie-siopen-score, fapi-pet"
+   "answer": "suv, quantitative-imaging-biomarkers, idea-total-body-pet-lower-dose-tracers, split-function-lung-perfusion, antigen, fes-pet, medical-imaging-scanner-manufacturing, fapi-pet"
   },
   {
    "id": "term-06",
@@ -1123,7 +1123,7 @@
     "release-criteria"
    ],
    "retrievalRecall": 0.3333333333333333,
-   "answer": "release-criteria, beta-psma-then-alpha-psma-rescue, lutectomy, psma-theranostics-roadmap, salivary-gland-toxicity, idea-rlt-plus-checkpoint-inhibitor, idea-neoadjuvant-psma-therapy, tc-99m-psma-imaging"
+   "answer": "release-criteria, beta-psma-then-alpha-psma-rescue, lutectomy, psma-theranostics-roadmap, salivary-gland-toxicity, idea-rlt-plus-checkpoint-inhibitor, tc-99m-psma-imaging, idea-neoadjuvant-psma-therapy"
   },
   {
    "id": "term-09",
@@ -1158,7 +1158,7 @@
     "equivalent-dose"
    ],
    "retrievalRecall": 0.6666666666666666,
-   "answer": "idea-copper-theranostic-pair-standard, absorbed-dose-term, estimand, equivalent-dose, idea-total-body-pet-lower-dose-tracers, curie-siopen-score, patient-release-criteria, idea-ai-lesion-segmentation-dosimetry"
+   "answer": "idea-copper-theranostic-pair-standard, absorbed-dose-term, estimand, equivalent-dose, idea-total-body-pet-lower-dose-tracers, patient-release-criteria, curie-siopen-score, idea-ai-lesion-segmentation-dosimetry"
   },
   {
    "id": "clin-01",
@@ -1186,7 +1186,7 @@
    ],
    "retrievedEntities": [],
    "retrievalRecall": 0,
-   "answer": "aurora-flurpiridaz, f-18-flurpiridaz, idea-total-body-pet-lower-dose-tracers, pulmonary-embolism-vq, bracco, fes-pet, quantitative-imaging-biomarkers, tc-99m-hmpao-brain"
+   "answer": "aurora-flurpiridaz, f-18-flurpiridaz, idea-total-body-pet-lower-dose-tracers, split-function-lung-perfusion, pulmonary-embolism-vq, bracco, fes-pet, quantitative-imaging-biomarkers"
   },
   {
    "id": "clin-03",
@@ -1200,7 +1200,7 @@
    ],
    "retrievedEntities": [],
    "retrievalRecall": 0,
-   "answer": "dopamine-transporter, tc-99m-psma-imaging, idea-accelerator-ac225-at-scale, psa-kinetics, idea-total-body-pet-lower-dose-tracers, estimand, nct03972657, curie-siopen-score"
+   "answer": "dopamine-transporter, tc-99m-psma-imaging, split-function-lung-perfusion, idea-accelerator-ac225-at-scale, psa-kinetics, idea-total-body-pet-lower-dose-tracers, estimand, nct03972657"
   },
   {
    "id": "clin-04",
@@ -1228,7 +1228,7 @@
     "infection-prosthetic-joint"
    ],
    "retrievalRecall": 1,
-   "answer": "infection-prosthetic-joint, nct03972657, f-infection-imaging, time-activity-curve, antigen, sstr-theranostics-roadmap, idea-rlt-plus-checkpoint-inhibitor, alara"
+   "answer": "infection-prosthetic-joint, nct03972657, f-infection-imaging, time-activity-curve, antigen, idea-rlt-plus-checkpoint-inhibitor, sstr-theranostics-roadmap, alara"
   },
   {
    "id": "clin-06",
@@ -1358,7 +1358,7 @@
     "sstr-theranostics-roadmap"
    ],
    "retrievalRecall": 1,
-   "answer": "sstr-theranostics-roadmap, neuro-imaging-roadmap, psma-theranostics-roadmap, radiopharm-theranostics, curie-siopen-score, idea-copper-theranostic-pair-standard, theranostics, tc-99m-psma-imaging"
+   "answer": "sstr-theranostics-roadmap, neuro-imaging-roadmap, psma-theranostics-roadmap, radiopharm-theranostics, curie-siopen-score, idea-copper-theranostic-pair-standard, tc-99m-psma-imaging, theranostics"
   },
   {
    "id": "reg-05",
@@ -1437,7 +1437,7 @@
     "isotope-supply-roadmap"
    ],
    "retrievalRecall": 0.5,
-   "answer": "therapy-isotope-supply-chain, b-enriched-target-material, idea-reg-medical-isotope-reactor-reserve, isotope-supply-roadmap, estimand, sstr-theranostics-roadmap, idea-tb161-instead-of-lu177, lu177-radioligand-therapy"
+   "answer": "therapy-isotope-supply-chain, b-enriched-target-material, idea-reg-medical-isotope-reactor-reserve, isotope-supply-roadmap, estimand, idea-tb161-instead-of-lu177, sstr-theranostics-roadmap, lu177-radioligand-therapy"
   },
   {
    "id": "lung-01",
@@ -1454,7 +1454,7 @@
    ],
    "retrievedEntities": [],
    "retrievalRecall": 0,
-   "answer": "idea-tr2-psma-volume-qualification, extravasation-radiopharmaceutical, integrin-avb3, pb-212-vmt-alpha-net, quantitative-imaging-biomarkers, quirem-medical, curie-siopen-score, idea-ai-lesion-segmentation-dosimetry"
+   "answer": "idea-tr2-psma-volume-qualification, extravasation-radiopharmaceutical, integrin-avb3, pb-212-vmt-alpha-net, quantitative-imaging-biomarkers, quirem-medical, idea-ai-lesion-segmentation-dosimetry, antigen"
   },
   {
    "id": "lung-02",
@@ -1499,7 +1499,7 @@
     "y-90-resin-microspheres"
    ],
    "retrievalRecall": 0.5,
-   "answer": "y-90, tare, y-90-resin-microspheres, y-90-glass-microspheres, radioembolisation-tare, estimand, idea-neoadjuvant-psma-therapy, nct03972657"
+   "answer": "y-90, tare, y-90-resin-microspheres, y-90-glass-microspheres, radioembolisation-tare, split-function-lung-perfusion, estimand, idea-neoadjuvant-psma-therapy"
   },
   {
    "id": "lung-05",
@@ -1514,7 +1514,7 @@
    ],
    "retrievedEntities": [],
    "retrievalRecall": 0,
-   "answer": "lung-net, astatine-211-alpha-therapy, pb-212-vmt-alpha-net, nsclc, alpha-tau-medical, choline-metabolism-in-cancer, idea-alpha-for-oligometastatic-disease, shandong-cancer-hospital"
+   "answer": "lung-net, astatine-211-alpha-therapy, pb-212-vmt-alpha-net, nsclc, alpha-tau-medical, choline-metabolism-in-cancer, idea-alpha-for-oligometastatic-disease, split-function-lung-perfusion"
   },
   {
    "id": "lung-06",
@@ -1531,6 +1531,34 @@
    ],
    "retrievalRecall": 0.3333333333333333,
    "answer": "technegas, inselspital-bern, paper-jadvar-snmmi-psma-auc-jnm-2022, asnc, idea-reg-yb176-enrichment-capacity, in-111-pentetreotide, idea-regional-radiopharmacy-network, choline-metabolism-in-cancer"
+  },
+  {
+   "id": "lung-07",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 1,
+   "met": 4,
+   "total": 4,
+   "missed": [],
+   "retrievedEntities": [
+    "kr-81m"
+   ],
+   "retrievalRecall": 1,
+   "answer": "kr-81m, arpi, chelator-term, cyclopharm, paper-jadvar-snmmi-psma-auc-jnm-2022, authorized-user, atomic-alchemy, anaemia"
+  },
+  {
+   "id": "lung-08",
+   "category": "procedural",
+   "difficulty": 3,
+   "score": 1,
+   "met": 5,
+   "total": 5,
+   "missed": [],
+   "retrievedEntities": [
+    "split-function-lung-perfusion"
+   ],
+   "retrievalRecall": 0.5,
+   "answer": "split-function-lung-perfusion, lung-net, nsclc, antigen, arpi, idea-reg-ac225-accelerator-pharmacopoeia, atomic-alchemy, thyroid-nodule-assessment"
   },
   {
    "id": "prostate-23",

@@ -1,5 +1,5 @@
 /**
- * Ask Nuclide natural-question set: 46 questions written the way a patient, a clinician or an investor
+ * Ask Nuclide natural-question set: 48 questions written the way a patient, a clinician or an investor
  * actually types them ("who owns pluvicto", "how long am I radioactive after radioiodine"), each with the
  * records that carry the answer and a rubric of must-mention points (any phrase in a point satisfies it,
  * case-insensitive substring). Complements the open benchmark (benchmark.ts), which is phrased more
@@ -74,6 +74,8 @@ export const askEval: AskEvalQuestion[] = [
   Q("p-17", "patient", "is the injection for a lung perfusion scan safe if I have pulmonary hypertension", ["tc-99m-maa"], [["contraindicated", "deaths have been reported"], ["pulmonary hypertension"], ["particle"]]),
   Q("c-15", "clinician", "lung shunt fraction threshold before y-90", ["tc-99m-maa"], [["30 gy", "50 gy"], ["20%", "shunt"], ["hepatic artery", "radioembolisation"]]),
   Q("i-14", "investor", "does telix have a lung cancer programme", ["telix"], [["regeneron"], ["dll3"], ["discovery", "pre-clinical", "no asset"], ["lung cancer"]]),
+  Q("c-16", "clinician", "how do I calculate predicted postoperative fev1 before a pneumonectomy", ["split-function-lung-perfusion"], [["fraction of total perfusion"], ["preoperative fev1"], ["60%", "30%"]]),
+  Q("c-17", "clinician", "can I do ventilation and perfusion at the same time with krypton", ["kr-81m"], [["190 kev"], ["simultaneously"], ["140 kev", "technetium"]]),
   // Carried from OnCo's set: still true of this corpus, renumbered to fit the new ids.
   Q("p-15", "patient", "What is the difference between a PET scan and a CT scan?", ["pet", "ct"], [["tracer", "glucose", "fdg", "metabol", "radioactive"], ["x-ray", "anatom", "structure", "cross-section"], ["pet"], ["ct"]]),
   Q("i-13", "investor", "Who are the main companies in radioligand therapy?", ["radioligand-therapy", "novartis"], [["novartis"], ["pluvicto", "lutathera"]]),

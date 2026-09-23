@@ -2,36 +2,36 @@
  "summary": {
   "system": "Nuclide Ask (intents, entity resolution, templated cited answers; extractive fallback)",
   "date": "2026-09-23",
-  "questions": 108,
-  "meanScore": 0.437,
+  "questions": 110,
+  "meanScore": 0.43,
   "meanRetrievalRecall": 1,
   "byCategory": {
-   "factual": 0.612,
-   "reasoning": 0.328,
-   "procedural": 0.282
+   "factual": 0.607,
+   "reasoning": 0.321,
+   "procedural": 0.289
   },
   "method": "For each question: intent from wording rules; records named in the question resolved by longest match over names and aliases; a template per intent fills sentences from those records' structured fields (TL;DR first), each sentence cited; curated benchmark and patient-question pairs supply records when the question matches closely; sentence retrieval (MiniSearch plus concept index, fused) is the fallback and adds detail. The answer text shown on /ask/ is scored for rubric coverage. No language model.",
   "before": {
    "system": "Nuclide Ask (extractive answer, lexical + concept retrieval, top 6 records)",
-   "meanScore": 0.362,
-   "meanRetrievalRecall": 0.624,
+   "meanScore": 0.375,
+   "meanRetrievalRecall": 0.623,
    "byCategory": {
     "factual": 0.484,
-    "reasoning": 0.317,
-    "procedural": 0.168
+    "reasoning": 0.352,
+    "procedural": 0.167
    }
   },
   "withoutCuratedPairs": {
-   "meanScore": 0.354,
-   "meanRetrievalRecall": 0.769,
+   "meanScore": 0.349,
+   "meanRetrievalRecall": 0.759,
    "byCategory": {
-    "factual": 0.508,
-    "reasoning": 0.276,
-    "procedural": 0.171
+    "factual": 0.502,
+    "reasoning": 0.27,
+    "procedural": 0.183
    }
   },
   "intents": {
-   "general": 54,
+   "general": 56,
    "define": 21,
    "compare": 1,
    "results": 8,
@@ -46,7 +46,7 @@
    "roadmap": 3
   },
   "templates": {
-   "orientation": 54,
+   "orientation": 56,
    "define": 28,
    "compare": 1,
    "results": 8,
@@ -1338,7 +1338,7 @@
     "suv"
    ],
    "retrievalRecall": 1,
-   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] The standardised uptake value (SUV) is a number for how brightly a spot lights up on a PET scan. [2] The numbers pulled from scans that decide whether a cancer is shrinking, growing or dead: tumour diameters for RECIST, sugar uptake on PET, water movement on MRI; they run every trial and most clinic decisions, and they are only as good as the way the scan was taken. [3] A PET tracer that measures how much of the DNA repair enzyme PARP a tumour has, to predict response to PARP inhibitors. [4] A PET scan using a radioactive form of oestrogen that lights up every tumour deposit still carrying the oestrogen receptor, so doctors can see whether metastases across the body will respond to hormone treatment without biopsying each one. [5] Measure the radiation each patient's tumour and kidneys actually absorb and adjust the number and size of doses, instead of giving everyone four identical cycles. [6]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] Standardised uptake value (SUV) (https://nuclide.cc/terms/suv/)\n[3] Quantitative imaging biomarkers (RECIST, PERCIST, SUV, ADC) (https://nuclide.cc/technologies/quantitative-imaging-biomarkers/)\n[4] PARP PET (https://nuclide.cc/technologies/parp-pet/)\n[5] FES PET (oestrogen receptor imaging) (https://nuclide.cc/technologies/fes-pet/)\n[6] Dosimetry-personalised PRRT instead of four fixed cycles (https://nuclide.cc/ideas/idea-net-dosimetry-prrt/)"
+   "answer": "A scan that shows where a radioactive tracer accumulates, so it images what tumours are doing rather than what they look like. [1] The standardised uptake value (SUV) is a number for how brightly a spot lights up on a PET scan. [2] The numbers pulled from scans that decide whether a cancer is shrinking, growing or dead: tumour diameters for RECIST, sugar uptake on PET, water movement on MRI; they run every trial and most clinic decisions, and they are only as good as the way the scan was taken. [3] Before a surgeon removes part of a lung, the scan is used as an arithmetic tool rather than a picture: it measures what share of the breathing work that piece of lung is actually doing, so the team can predict the patient's lung function after the operation and decide whether they will tolerate it. [4] A PET tracer that measures how much of the DNA repair enzyme PARP a tumour has, to predict response to PARP inhibitors. [5] A PET scan using a radioactive form of oestrogen that lights up every tumour deposit still carrying the oestrogen receptor, so doctors can see whether metastases across the body will respond to hormone treatment without biopsying each one. [6]\n\nSources\n[1] PET (positron emission tomography) (https://nuclide.cc/technologies/pet/)\n[2] Standardised uptake value (SUV) (https://nuclide.cc/terms/suv/)\n[3] Quantitative imaging biomarkers (RECIST, PERCIST, SUV, ADC) (https://nuclide.cc/technologies/quantitative-imaging-biomarkers/)\n[4] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)\n[5] PARP PET (https://nuclide.cc/technologies/parp-pet/)\n[6] FES PET (oestrogen receptor imaging) (https://nuclide.cc/technologies/fes-pet/)"
   },
   {
    "id": "term-06",
@@ -1396,7 +1396,7 @@
     "radiopharmacy-term"
    ],
    "retrievalRecall": 1,
-   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] Before any batch of radioactive drug can be given to a patient, it has to pass a checklist of quality tests, such as being the right radioactive strength, sterile, and chemically pure. [2] A quality check on a radioactive drug that asks: of all the radioactivity in the vial, what fraction is actually in the correct, working chemical form, rather than stuck to the wrong molecule or floating free? [3] For men with high-risk prostate cancer that hasn't spread yet, giving a dose or two of PSMA-targeted radioactive treatment before surgery, rather than only using it after the cancer has spread, might kill hidden cancer cells surgery alone would miss. [4] In the trial that got 177Lu-PSMA-617 (Pluvicto) approved, everyone had already been treated with a taxane chemotherapy drug like docetaxel and with a hormone pill first. [5] When the standard radioactive prostate cancer treatment (177Lu-PSMA) stops working, some clinics switch to a more powerful alpha-particle version (225Ac-PSMA) as a rescue option. [6] 177Lu-PSMA-I&T is a second PSMA radioligand, chemically different from Pluvicto, that has passed two phase 3 trials on progression but has not yet shown a survival benefit. [7] LuTectomy, Highest tumour radiation absorbed dose after cycle 1: 177Lu-PSMA-617 (5 GBq), one or two cycles before prostatectomy 35.5 Gy. [8]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Product release criteria (radiopharmaceutical quality control) (https://nuclide.cc/terms/release-criteria/)\n[3] Radiochemical purity (RCP) (https://nuclide.cc/terms/radiochemical-purity/)\n[4] Neoadjuvant PSMA radioligand therapy before prostatectomy (https://nuclide.cc/ideas/idea-neoadjuvant-psma-therapy/)\n[5] Docetaxel (taxane chemotherapy) then 177Lu-PSMA-617 (https://nuclide.cc/pairings/docetaxel-then-lu177-psma/)\n[6] 177Lu-PSMA-617 then 225Ac-PSMA rescue therapy (https://nuclide.cc/pairings/beta-psma-then-alpha-psma-rescue/)\n[7] 177Lu-PSMA-I&T (https://nuclide.cc/drugs/lu177-psma-it/)\n[8] LuTectomy (https://nuclide.cc/trials/lutectomy/)"
+   "answer": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever. [1] Before any batch of radioactive drug can be given to a patient, it has to pass a checklist of quality tests, such as being the right radioactive strength, sterile, and chemically pure. [2] A quality check on a radioactive drug that asks: of all the radioactivity in the vial, what fraction is actually in the correct, working chemical form, rather than stuck to the wrong molecule or floating free? [3] In the trial that got 177Lu-PSMA-617 (Pluvicto) approved, everyone had already been treated with a taxane chemotherapy drug like docetaxel and with a hormone pill first. [4] For men with high-risk prostate cancer that hasn't spread yet, giving a dose or two of PSMA-targeted radioactive treatment before surgery, rather than only using it after the cancer has spread, might kill hidden cancer cells surgery alone would miss. [5] When the standard radioactive prostate cancer treatment (177Lu-PSMA) stops working, some clinics switch to a more powerful alpha-particle version (225Ac-PSMA) as a rescue option. [6] 177Lu-PSMA-I&T is a second PSMA radioligand, chemically different from Pluvicto, that has passed two phase 3 trials on progression but has not yet shown a survival benefit. [7] LuTectomy, Highest tumour radiation absorbed dose after cycle 1: 177Lu-PSMA-617 (5 GBq), one or two cycles before prostatectomy 35.5 Gy. [8]\n\nSources\n[1] Lutetium-177 vipivotide tetraxetan (https://nuclide.cc/drugs/pluvicto/)\n[2] Product release criteria (radiopharmaceutical quality control) (https://nuclide.cc/terms/release-criteria/)\n[3] Radiochemical purity (RCP) (https://nuclide.cc/terms/radiochemical-purity/)\n[4] Docetaxel (taxane chemotherapy) then 177Lu-PSMA-617 (https://nuclide.cc/pairings/docetaxel-then-lu177-psma/)\n[5] Neoadjuvant PSMA radioligand therapy before prostatectomy (https://nuclide.cc/ideas/idea-neoadjuvant-psma-therapy/)\n[6] 177Lu-PSMA-617 then 225Ac-PSMA rescue therapy (https://nuclide.cc/pairings/beta-psma-then-alpha-psma-rescue/)\n[7] 177Lu-PSMA-I&T (https://nuclide.cc/drugs/lu177-psma-it/)\n[8] LuTectomy (https://nuclide.cc/trials/lutectomy/)"
   },
   {
    "id": "term-09",
@@ -1846,7 +1846,7 @@
     "y-90-resin-microspheres"
    ],
    "retrievalRecall": 1,
-   "answer": "Millions of tiny radioactive glass or resin beads are injected into the liver artery, lodging in the tumour and irradiating it from within. [1] Tiny clumps of albumin, a normal blood protein, tagged with a radioactive marker and injected into a vein. They wedge briefly in the smallest blood vessels of the lung wherever blood is flowing, so the scan maps the lung's blood supply; the clumps then break up and clear. [2]\n\nSources\n[1] Radioembolisation (TARE / SIRT, yttrium-90) (https://nuclide.cc/technologies/radioembolisation-tare/)\n[2] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)"
+   "answer": "Millions of tiny radioactive glass or resin beads are injected into the liver artery, lodging in the tumour and irradiating it from within. [1] Tiny clumps of albumin, a normal blood protein, tagged with a radioactive marker and injected into a vein. They wedge briefly in the smallest blood vessels of the lung wherever blood is flowing, so the scan maps the lung's blood supply; the clumps then break up and clear. [2] Before a surgeon removes part of a lung, the scan is used as an arithmetic tool rather than a picture: it measures what share of the breathing work that piece of lung is actually doing, so the team can predict the patient's lung function after the operation and decide whether they will tolerate it. [3]\n\nSources\n[1] Radioembolisation (TARE / SIRT, yttrium-90) (https://nuclide.cc/technologies/radioembolisation-tare/)\n[2] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)\n[3] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)"
   },
   {
    "id": "lung-05",
@@ -1860,16 +1860,17 @@
     "pb-212-psv359"
    ],
    "retrievalRecall": 1,
-   "answer": "The cancer that kills more people than any other, and the reason most PET scanners are busy. Most cases are found once the disease has already spread, and a scan with radioactive sugar is what decides who can still be cured by surgery. [1] A drug that homes to the scaffolding cells tumours build around themselves, carrying a radioactive metal that fires alpha particles over a very short range. A matching scan version shows first whether a patient's tumour has the target. [2] Therapy is the gap: no radiopharmaceutical is approved to treat lung cancer of any histology anywhere, and the alpha-emitting DLL3 programmes now in the clinic are aimed at small-cell disease, which has its own record. [1] FAP-alpha is attractive because it is present in the stroma of most epithelial cancers and nearly absent from normal adult tissue, and because high expression tracks with poor prognosis in non-small cell lung, colorectal, pancreatic, gastric, mesothelioma, head and neck, oesophageal and ovarian cancers. [2] On 14 September 2026 Perspective announced a clinical collaboration and supply agreement with Merck under which the trial is amended to add cohorts combining [212Pb]PSV359 with pembrolizumab in FAP-alpha-positive non-small cell lung cancer and colorectal cancer. [2] A drug that targets a marker on neuroendocrine tumour cells is being tested with two versions of a radioactive metal: one lets doctors see where the tumour is on a scan, and the other delivers a strong, short-range dose of radiation to kill the tumour cells. [3] Lung neuroendocrine tumours, called typical and atypical carcinoids, are slow-growing tumours of the airways that are usually cured by surgery. [4]\n\nSources\n[1] Non-small cell lung cancer (https://nuclide.cc/indications/nsclc/)\n[2] Lead-212 PSV359 (https://nuclide.cc/drugs/pb-212-psv359/)\n[3] Lead-212 VMT-alpha-NET (https://nuclide.cc/drugs/pb-212-vmt-alpha-net/)\n[4] Lung neuroendocrine tumours (typical and atypical carcinoid) (https://nuclide.cc/indications/lung-net/)"
+   "answer": "The cancer that kills more people than any other, and the reason most PET scanners are busy. Most cases are found once the disease has already spread, and a scan with radioactive sugar is what decides who can still be cured by surgery. [1] A drug that homes to the scaffolding cells tumours build around themselves, carrying a radioactive metal that fires alpha particles over a very short range. A matching scan version shows first whether a patient's tumour has the target. [2] Therapy is the gap: no radiopharmaceutical is approved to treat lung cancer of any histology anywhere, and the alpha-emitting DLL3 programmes now in the clinic are aimed at small-cell disease, which has its own record. [1] FAP-alpha is attractive because it is present in the stroma of most epithelial cancers and nearly absent from normal adult tissue, and because high expression tracks with poor prognosis in non-small cell lung, colorectal, pancreatic, gastric, mesothelioma, head and neck, oesophageal and ovarian cancers. [2] On 14 September 2026 Perspective announced a clinical collaboration and supply agreement with Merck under which the trial is amended to add cohorts combining [212Pb]PSV359 with pembrolizumab in FAP-alpha-positive non-small cell lung cancer and colorectal cancer. [2] A drug that targets a marker on neuroendocrine tumour cells is being tested with two versions of a radioactive metal: one lets doctors see where the tumour is on a scan, and the other delivers a strong, short-range dose of radiation to kill the tumour cells. [3] Before a surgeon removes part of a lung, the scan is used as an arithmetic tool rather than a picture: it measures what share of the breathing work that piece of lung is actually doing, so the team can predict the patient's lung function after the operation and decide whether they will tolerate it. [4]\n\nSources\n[1] Non-small cell lung cancer (https://nuclide.cc/indications/nsclc/)\n[2] Lead-212 PSV359 (https://nuclide.cc/drugs/pb-212-psv359/)\n[3] Lead-212 VMT-alpha-NET (https://nuclide.cc/drugs/pb-212-vmt-alpha-net/)\n[4] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)"
   },
   {
    "id": "lung-06",
    "category": "factual",
    "difficulty": 2,
-   "score": 0.75,
-   "met": 3,
+   "score": 0.5,
+   "met": 2,
    "total": 4,
    "missed": [
+    "29 september 2023",
     "65 countries"
    ],
    "retrievedEntities": [
@@ -1878,7 +1879,45 @@
     "nct03054870"
    ],
    "retrievalRecall": 1,
-   "answer": "A puff of radioactive carbon particles so fine they travel with the breath into the depths of the lung, where they stick. A gamma camera then photographs which parts of the lung are getting air, which is compared with a second scan showing which parts are getting blood. [1] The trial that got Technegas approved in the United States: it compared the inhaled carbon aerosol against xenon-133 gas, the agent it was meant to replace. [2] The Australian company behind Technegas, the inhaled ventilation agent, which spent thirty years as a product the United States could not buy and is now being installed across American hospitals. [3] The FDA approved Technegas on 29 September 2023 under NDA 022335, held by Cyclomedica Australia, after decades of use elsewhere. [1] Installing compact, automated dose-preparation equipment inside individual hospitals, so they compound the treatment themselves from bulk material, could cut that wasted radioactivity and get treatment to more places. [4]\n\nSources\n[1] Technegas (technetium Tc-99m labelled carbon inhalation aerosol) (https://nuclide.cc/drugs/technegas/)\n[2] CYC-009: Technegas versus xenon-133 ventilation imaging (https://nuclide.cc/trials/nct03054870/)\n[3] Cyclopharm (https://nuclide.cc/companies/cyclopharm/)\n[4] In-house hospital radiopharmacy compounding to cut dose waste (https://nuclide.cc/ideas/idea-regional-radiopharmacy-network/)"
+   "answer": "A puff of radioactive carbon particles so fine they travel with the breath into the depths of the lung, where they stick. A gamma camera then photographs which parts of the lung are getting air, which is compared with a second scan showing which parts are getting blood. [1] The trial that got Technegas approved in the United States: it compared the inhaled carbon aerosol against xenon-133 gas, the agent it was meant to replace. [2] The Australian company behind Technegas, the inhaled ventilation agent, which spent thirty years as a product the United States could not buy and is now being installed across American hospitals. [3]\n\nSources\n[1] Technegas (technetium Tc-99m labelled carbon inhalation aerosol) (https://nuclide.cc/drugs/technegas/)\n[2] CYC-009: Technegas versus xenon-133 ventilation imaging (https://nuclide.cc/trials/nct03054870/)\n[3] Cyclopharm (https://nuclide.cc/companies/cyclopharm/)"
+  },
+  {
+   "id": "lung-07",
+   "category": "reasoning",
+   "difficulty": 3,
+   "score": 0,
+   "met": 0,
+   "total": 4,
+   "missed": [
+    "4.6 hours",
+    "cyclotron",
+    "13-second",
+    "withdrawn"
+   ],
+   "retrievedEntities": [
+    "kr-81m"
+   ],
+   "retrievalRecall": 1,
+   "answer": "A radioactive gas that a patient simply breathes in and out while the camera runs. It decays in thirteen seconds, so the picture is of ventilation happening now rather than of particles left behind, and it has to be generated in the room from a parent that itself lasts only a few hours. [1] The Australian company behind Technegas, the inhaled ventilation agent, which spent thirty years as a product the United States could not buy and is now being installed across American hospitals. [2] Ventilation/perfusion (V/Q) scintigraphy diagnoses or excludes acute pulmonary embolism by comparing two maps of the lung obtained in the same sitting: a perfusion map, made by injecting Tc-99m-labelled macroaggregated albumin (MAA) particles that lodge in pulmonary capillaries in proportion to blood flow, and a ventilation map, made with an inhaled agent such as Technegas or krypton-81m gas. [3]\n\nSources\n[1] Krypton-81m (https://nuclide.cc/isotopes/kr-81m/)\n[2] Cyclopharm (https://nuclide.cc/companies/cyclopharm/)\n[3] Pulmonary embolism: ventilation/perfusion imaging (https://nuclide.cc/indications/pulmonary-embolism-vq/)"
+  },
+  {
+   "id": "lung-08",
+   "category": "procedural",
+   "difficulty": 3,
+   "score": 0.4,
+   "met": 2,
+   "total": 5,
+   "missed": [
+    "fraction of total perfusion",
+    "60%",
+    "30%"
+   ],
+   "retrievedEntities": [
+    "split-function-lung-perfusion",
+    "tc-99m-maa"
+   ],
+   "retrievalRecall": 1,
+   "answer": "Before a surgeon removes part of a lung, the scan is used as an arithmetic tool rather than a picture: it measures what share of the breathing work that piece of lung is actually doing, so the team can predict the patient's lung function after the operation and decide whether they will tolerate it. [1] Tiny clumps of albumin, a normal blood protein, tagged with a radioactive marker and injected into a vein. They wedge briefly in the smallest blood vessels of the lung wherever blood is flowing, so the scan maps the lung's blood supply; the clumps then break up and clear. [2] Before a lobectomy it adds little: segment counting predicts postoperative FEV1 about as accurately, so guidelines reserve the scan for pneumonectomy candidates and borderline function. [1] When a lump is found in the thyroid, a scan showing whether it takes up iodine-like tracer more or less than the rest of the gland tells doctors whether it is a low-risk overactive nodule that rarely needs a biopsy, or a quiet 'cold' nodule that does. [3] Lung neuroendocrine tumours, called typical and atypical carcinoids, are slow-growing tumours of the airways that are usually cured by surgery. [4] Most cases are found once the disease has already spread, and a scan with radioactive sugar is what decides who can still be cured by surgery. [5]\n\nSources\n[1] Split-function perfusion scintigraphy before lung resection (https://nuclide.cc/technologies/split-function-lung-perfusion/)\n[2] Technetium Tc-99m albumin aggregated (MAA) (https://nuclide.cc/drugs/tc-99m-maa/)\n[3] Functional assessment of thyroid nodules (https://nuclide.cc/indications/thyroid-nodule-assessment/)\n[4] Lung neuroendocrine tumours (typical and atypical carcinoid) (https://nuclide.cc/indications/lung-net/)\n[5] Non-small cell lung cancer (https://nuclide.cc/indications/nsclc/)"
   },
   {
    "id": "prostate-23",
