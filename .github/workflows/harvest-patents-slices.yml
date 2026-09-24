@@ -1,0 +1,35 @@
+name: Harvest the patent universe (one small slice per job)
+
+# Google Patents blocks a runner address after roughly a dozen queries, so the deep harvest is split into
+# one publication-month x CPC-class slice per job: each fresh runner does a handful of requests and exits.
+# The dispatcher passes a JSON array of {"y": year, "m": month, "c": class} objects (max 256 per run).
+on:
+  workflow_dispatch:
+    inputs:
+      slices:
+        description: 'JSON array like [{"y":2015,"m":3,"c":"A61K51"}]'
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  slice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        s: ${{ fromJSON(github.event.inputs.slices) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts/universe
+      - run: python3 scripts/universe/harvest_patents.py ${{ matrix.s.y }} out --slices "${{ matrix.s.m }}:${{ matrix.s.c }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pat-${{ matrix.s.y }}-${{ matrix.s.m }}-${{ matrix.s.c }}
+          path: out/
+          retention-days: 30

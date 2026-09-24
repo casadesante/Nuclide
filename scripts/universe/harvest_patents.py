@@ -18,7 +18,12 @@ Usage: python3 harvest_patents.py <year> [outdir]
 """
 import json, os, sys, time, random, urllib.parse, urllib.request, datetime as dt
 
-YEAR = int(sys.argv[1]); OUT = sys.argv[2] if len(sys.argv) > 2 else "out"
+YEAR = int(sys.argv[1]); OUT = sys.argv[2] if len(sys.argv) > 2 and not sys.argv[2].startswith("--") else "out"
+# Optional --slices "3:A61K51,3:C07B59": only these month/class slices (one small slice per runner stays under Google's limit)
+SLICES = None
+if "--slices" in sys.argv:
+    SLICES = {(int(x.split(":")[0]), x.split(":")[1]) for x in sys.argv[sys.argv.index("--slices") + 1].split(",") if x}
+TAG = ("-" + sys.argv[sys.argv.index("--slices") + 1].replace(":", "").replace(",", "_")) if SLICES else ""
 os.makedirs(OUT, exist_ok=True)
 CLASSES = [("A61K51", "(A61K51)"), ("A61K2123", "(A61K2123)"), ("C07B59", "(C07B59)"), ("G21G1", "(G21G1)"), ("G21G4", "(G21G4/08)")]
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
@@ -72,19 +77,20 @@ def slice_(cls_id, q, a, b, depth=0):
         if len(items) < 100: break
     print(f"{cls_id} {ymd(a)}-{ymd(b)} total={total} new={got} running={len(seen)}", flush=True)
 
-OUTF = open(f"{OUT}/patents-{YEAR}.jsonl", "a")
+OUTF = open(f"{OUT}/patents-{YEAR}{TAG}.jsonl", "a")
 written = set()
 def flush():
     for k, v in seen.items():
         if k not in written:
             OUTF.write(json.dumps(v, ensure_ascii=False) + "\n"); written.add(k)
     OUTF.flush()
-    json.dump(gaps, open(f"{OUT}/patents-{YEAR}-gaps.json", "w"))
+    json.dump(gaps, open(f"{OUT}/patents-{YEAR}{TAG}-gaps.json", "w"))
 
 for cls_id, q in CLASSES:
     for m in range(1, 13):
         a = dt.date(YEAR, m, 1); b = dt.date(YEAR + (m == 12), (m % 12) + 1, 1)
         if a > dt.date.today(): break
+        if SLICES is not None and (m, cls_id) not in SLICES: continue
         slice_(cls_id, q, a, b)
         flush()
 flush()
