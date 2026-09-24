@@ -917,6 +917,21 @@
 {
 "region": "ES",
 "regulator": "AEMPS",
+"brand": "POLTECHNET 8,0-175 GBq GENERADOR DE RADIONUCLIDO",
+"ingredient": "Tecnecio (99mTc), pertecnetato de",
+"original": "POLTECHNET 8,0-175 GBq GENERADOR DE RADIONUCLIDO",
+"lang": "es",
+"holder": "Narodowe Centrum Badan Jadrowych",
+"approved": "2015-07-06",
+"status": "withdrawn",
+"role": "diagnostic",
+"indication": null,
+"url": "https://cima.aemps.es/cima/publico/detalle.html?nregistro=79993",
+"atc": "V09FX01"
+},
+{
+"region": "ES",
+"regulator": "AEMPS",
 "brand": "PULMOTEC TM CRISOL DE GRAFITO PARA LA PREPARACION DE TECNEGAS PARA LA INHALACION",
 "ingredient": "Tecnecio (99mTc) tecnegas",
 "original": "PULMOTEC TM CRISOL DE GRAFITO PARA LA PREPARACION DE TECNEGAS PARA LA INHALACION",
