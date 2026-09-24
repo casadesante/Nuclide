@@ -11,8 +11,8 @@ export default function Page() {
   return (
     <>
       <PageHeader kicker={<Link href="/universe/" className="hover:underline">The universe</Link>} title="Congress abstracts"
-        lede={`${stats.abstracts.toLocaleString()} abstracts from ${stats.meetings.length} meetings (${stats.meetings.join(", ")}).`} />
-      <Container className="pb-16"><UniverseBrowser dataset="abstracts" /></Container>
+        lede={`${stats.abstracts.toLocaleString()} abstracts from ${stats.meetings.length} meetings, ${stats.abstractYears[0]} to ${stats.abstractYears[stats.abstractYears.length - 1]} (${stats.meetings.join(", ")}). The latest two years load first; add years from the Years menu.`} />
+      <Container className="pb-16"><UniverseBrowser dataset="abstracts" years={stats.abstractYears} /></Container>
     </>
   );
 }

@@ -142,7 +142,8 @@ const CFG: Record<Dataset, Cfg> = {
   },
   abstracts: {
     noun: "abstracts",
-    files: () => ["abstracts.json"],
+    sharded: true,
+    files: (years) => years.map((y) => `abstracts-${y}.json`),
     facets: [
       { key: "meeting", label: "Meeting", get: (r) => r.m, order: "desc" },
       ...tagFacets,

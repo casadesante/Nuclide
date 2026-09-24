@@ -7,7 +7,7 @@ stats file to <repo>/src/data/universe-stats.json. Every row keeps what is neede
   trials.json      ClinicalTrials.gov + EU CTIS radiopharmaceutical trials
   products.json    every regulator registration found (28 countries/regions)   agents.json  the same rolled up by agent
   papers-<y>.json  Europe PMC radiopharmaceutical publications, one shard per year
-  abstracts.json   SNMMI / EANM / ASNC / WMIC abstracts (title, authors, code, tags, official link)
+  abstracts-<y>.json  SNMMI / EANM / ASNC / WMIC abstracts, one shard per meeting year (title, authors, code, tags, official link)
   patents-<y>.json worldwide patent publications in the radiopharmaceutical CPC classes (when harvested)
   gaps.json        unmet-need / limitation statements quoted from abstracts, each with its citation
   ideas.json       candidate openings computed from the cross-links (every number traceable to the rows above)
@@ -108,7 +108,10 @@ _ab = os.path.join(BASE, "abstracts_all.json")
 abstracts = [{"id": a["id"], "m": a["m"], "y": a["y"], "t": a["t"][:260], "au": (a.get("au") or "")[:110] or None, "code": a.get("code"),
               "iso": a["iso"], "tg": a["tg"], "ds": a["ds"], "role": a["role"], "ty": a["type"], "ag": a.get("ag", [])[:6], "nv": 1 if a.get("novel") else 0,
               "u": a.get("url")} for a in (json.load(open(_ab)) if os.path.exists(_ab) else [])]
-if not abstracts and INCREMENTAL: abstracts = published("abstracts.json", [])
+if not abstracts and INCREMENTAL:   # carry the published shards over (legacy single file as a fallback)
+    abstracts = [a for f in sorted(glob.glob(os.path.join(REPO, "public/universe/abstracts-*.json"))) for a in json.load(open(f))] or published("abstracts.json", [])
+for a in abstracts:
+    if isinstance(a.get("y"), str) and a["y"].isdigit(): a["y"] = int(a["y"])
 
 # ------------------------------------------------------------------ patents
 patents = []
@@ -204,16 +207,22 @@ labels = {"targets": {k: LBL_T.get(k, nice(k)) for k in [g.key for g in cp.TG_LI
 exec(open(os.path.join(SCRIPTS, "build_ideas.py")).read())   # computes `ideas` from the sets above
 
 sizes = {"trials.json": dump("trials.json", trials), "products.json": dump("products.json", products), "agents.json": dump("agents.json", agents),
-         "abstracts.json": dump("abstracts.json", abstracts), "gaps.json": dump("gaps.json", gaps), "ideas.json": dump("ideas.json", ideas),
+         "gaps.json": dump("gaps.json", gaps), "ideas.json": dump("ideas.json", ideas),
          "labels.json": dump("labels.json", labels)}
 for y, rows in papers_by_year.items(): sizes[f"papers-{y}.json"] = dump(f"papers-{y}.json", rows)
+ab_years = collections.defaultdict(list)          # abstracts: one shard per meeting year, so no file nears the 10 MB limit
+for a in abstracts: ab_years[a["y"] or 0].append(a)
+for y, rows in ab_years.items(): sizes[f"abstracts-{y}.json"] = dump(f"abstracts-{y}.json", rows)
+for f in glob.glob(os.path.join(OUT, "abstracts*.json")):   # drop the legacy single file and any shard for a year no longer present
+    n = os.path.basename(f)
+    if n not in sizes: os.remove(f)
 pat_years = collections.defaultdict(list)
 for p in patents: pat_years[p["y"] or 0].append(p)
 for y, rows in pat_years.items(): sizes[f"patents-{y}.json"] = dump(f"patents-{y}.json", rows)
 stats = {"generated": TODAY, "trials": len(trials), "trialsCTG": sum(t["r"] == "CTG" for t in trials), "trialsCTIS": sum(t["r"] == "CTIS" for t in trials),
          "products": len(products), "regions": len({p["rg"] for p in products}), "agents": len(agents), "agentsNotInUS": sum(1 for a in agents if a["notInUS"] and a["activeRegions"]),
          "papers": len(papers), "paperYears": sorted(papers_by_year), "papersCore": sum(p["c"] for p in papers),
-         "abstracts": len(abstracts), "meetings": sorted({a["m"] for a in abstracts}), "patents": len(patents), "patentYears": sorted(y for y in pat_years if y),
+         "abstracts": len(abstracts), "abstractYears": sorted(y for y in ab_years if y), "meetings": sorted({a["m"] for a in abstracts}), "patents": len(patents), "patentYears": sorted(y for y in pat_years if y),
          "gaps": len(gaps), "ideas": len(ideas["ideas"]), "ideaLenses": dict(collections.Counter(i["lens"] for i in ideas["ideas"])),
          "bytes": sum(sizes.values())}
 json.dump(stats, open(os.path.join(REPO, "src/data/universe-stats.json"), "w"), indent=1)

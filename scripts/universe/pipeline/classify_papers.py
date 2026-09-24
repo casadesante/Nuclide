@@ -193,13 +193,19 @@ def lst(s):
     except Exception: v = []
     return [str(x) for x in v if x] if isinstance(v, (list, tuple)) else []
 
+# Core nuclear-medicine journals (Europe PMC journal titles, resolved 24 Sep 2026): every article they publish is kept,
+# whether or not it names an isotope. Broader imaging journals stay behind the relevance filter.
+NM_CORE_JOURNALS = ["american journal of nuclear medicine and molecular imaging", "annals of nuclear cardiology", "journal of nuclear medicine & radiation therapy", "annals of nuclear medicine","asia oceania journal of nuclear medicine & biology","cancer biotherapy & radiopharmaceuticals","clinical and translational imaging","clinical nuclear medicine","current radiopharmaceuticals","ejnmmi physics","ejnmmi radiopharmacy and chemistry","ejnmmi reports","ejnmmi research","european journal of nuclear medicine and molecular imaging","frontiers in nuclear medicine","hellenic journal of nuclear medicine","indian journal of nuclear medicine : ijnm : the official journal of the society of nuclear medicine, india","journal of labelled compounds & radiopharmaceuticals","journal of nuclear cardiology : official publication of the american society of nuclear cardiology","journal of nuclear medicine : official publication, society of nuclear medicine","journal of nuclear medicine technology","kaku igaku. the japanese journal of nuclear medicine","molecular imaging and radionuclide therapy","nuclear medicine and biology","nuclear medicine and molecular imaging","nuclear medicine communications","nuclear medicine review. central & eastern europe","nuklearmedizin. nuclear medicine","pet clinics","revista espanola de medicina nuclear e imagen molecular","seminars in nuclear medicine","the quarterly journal of nuclear medicine and molecular imaging : official publication of the italian association of nuclear medicine (aimn) [and] the international association of radiopharmacology (iar), [and] section of the society of...","world journal of nuclear medicine","european journal of hybrid imaging"]
+NM_CORE_SET = set(NM_CORE_JOURNALS)
+
 def main():
     years = sys.argv[1:] or [os.path.basename(p)[:4] for p in sorted(glob.glob(os.path.join(BASE, "raw/epmc/*.jsonl")))]
     gapf = open(os.path.join(BASE, f"gaps_raw_{'_'.join(years) if len(years) < 4 else 'all'}.jsonl"), "w")
     stats = {}
     for y in years:
         rows, seen, total = [], set(), 0
-        for line in open(os.path.join(BASE, f"raw/epmc/{y}.jsonl")):
+        _src = [os.path.join(BASE, f"raw/epmc/{y}.jsonl"), os.path.join(BASE, f"raw/epmc_journals/{y}.jsonl")]
+        for line in (l for p in _src if os.path.exists(p) for l in open(p)):
             total += 1
             try: r = json.loads(line)
             except Exception: continue
@@ -212,8 +218,9 @@ def main():
             if PLASTIC.search(text): continue
             isos = isotopes(text)
             cls = CLASS.search(text)
-            if not isos and not cls: continue
-            if not isos and ASSAY_ONLY.search(text) and not re.search(r"imaging|\bpet\b|spect|scintigra|therap", text, re.I): continue
+            nmj = bool(r.get("nmj")) or (r.get("journal") or "").lower() in NM_CORE_SET
+            if not isos and not cls and not nmj: continue
+            if not isos and not nmj and ASSAY_ONLY.search(text) and not re.search(r"imaging|\bpet\b|spect|scintigra|therap", text, re.I): continue
             core = bool(isotopes(title) or CLASS.search(title) or TARGET_RE["psma"].search(title))
             tg = targets(text)
             ds = paper_diseases(title, kw, mesh)

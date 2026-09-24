@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import stats from "@/data/universe-stats.json";
 import { LENS, loadUniverse, matches, paperUrl, pretty, REGION_NAME, trialUrl, type IdeasFile, type Labels } from "@/lib/universe";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -42,7 +43,7 @@ export function UniverseSearch() {
   useEffect(() => {
     if (!q || sets || loading) return;
     const raf = requestAnimationFrame(() => setLoading(true));
-    Promise.all([loadUniverse<IdeasFile>("ideas.json"), loadUniverse<Row[]>("gaps.json"), loadUniverse<Row[]>("trials.json"), loadUniverse<Row[]>("products.json"), loadUniverse<Row[]>("abstracts.json"), loadUniverse<Labels>("labels.json")])
+    Promise.all([loadUniverse<IdeasFile>("ideas.json"), loadUniverse<Row[]>("gaps.json"), loadUniverse<Row[]>("trials.json"), loadUniverse<Row[]>("products.json"), Promise.all(stats.abstractYears.map((y) => loadUniverse<Row[]>(`abstracts-${y}.json`))).then((parts) => parts.flat()), loadUniverse<Labels>("labels.json")])
       .then(([ideas, gaps, trials, products, abstracts, labels]) => setSets({ ideas, gaps, trials, products, abstracts, labels }))
       .catch((e) => setError(String(e)))
       .finally(() => { cancelAnimationFrame(raf); setLoading(false); });
@@ -87,7 +88,7 @@ export function UniverseSearch() {
           <Section title="Approved or registered products" n={res.products.length} href={`/universe/products/?q=${enc}`}>
             {res.products.slice(0, SHOW).map((p) => <li key={p.id}><a href={p.u ?? undefined} target="_blank" rel="noopener noreferrer" className="hover:underline">{p.b || p.i}</a><div className="text-xs text-muted">{[REGION_NAME[p.rg] ?? p.rg, p.i, p.a].filter(Boolean).join(" · ")}</div></li>)}
           </Section>
-          <Section title="Congress abstracts" n={res.abstracts.length} href={`/universe/abstracts/?q=${enc}`}>
+          <Section title="Congress abstracts" n={res.abstracts.length} href={`/universe/abstracts/?q=${enc}&${stats.abstractYears.map((y) => `years=${y}`).join("&")}`}>
             {res.abstracts.slice(0, SHOW).map((a) => <li key={a.id}><a href={a.u ?? undefined} target="_blank" rel="noopener noreferrer" className="hover:underline">{a.t}</a><div className="text-xs text-muted">{a.m}</div></li>)}
           </Section>
           <section className="rounded-xl border border-border bg-card p-4">

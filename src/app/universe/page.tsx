@@ -20,7 +20,7 @@ const PARTS = [
   { href: "/universe/products/", title: "Approved and registered products", count: stats.products, blurb: `Registrations at ${stats.regions} regulators, grouped into ${stats.agents} agents, with the regulator's own link and non-English names kept.` },
   { href: "/universe/trials/", title: "Trials", count: stats.trials, blurb: `ClinicalTrials.gov (${n(stats.trialsCTG)}) and the EU Clinical Trials Information System (${n(stats.trialsCTIS)}), every radiopharmaceutical trial found.` },
   { href: "/universe/papers/", title: "Papers", count: stats.papers, blurb: `Europe PMC publications since ${stats.paperYears[0]}, tagged by target, indication, isotope and paper type.` },
-  { href: "/universe/abstracts/", title: "Congress abstracts", count: stats.abstracts, blurb: `${stats.meetings.length} annual meetings of SNMMI, EANM, ASNC and WMIC: title, authors, code and the official link.` },
+  { href: "/universe/abstracts/", title: "Congress abstracts", count: stats.abstracts, blurb: `${stats.meetings.length} annual meetings of SNMMI, EANM, ASNC and WMIC since ${stats.abstractYears[0]}: title, authors, code and the official link.` },
   { href: "/universe/patents/", title: "Patents", count: stats.patents, blurb: "Worldwide patent publications in the radiopharmaceutical classes since 2015, from every office Google Patents indexes." },
 ];
 

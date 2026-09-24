@@ -19,7 +19,7 @@ export type UniverseStats = {
   trials: number; trialsCTG: number; trialsCTIS: number;
   products: number; regions: number; agents: number; agentsNotInUS: number;
   papers: number; paperYears: number[]; papersCore: number;
-  abstracts: number; meetings: string[];
+  abstracts: number; abstractYears: number[]; meetings: string[];
   patents: number; patentYears: number[];
   gaps: number; ideas: number; ideaLenses: Record<string, number>;
 };

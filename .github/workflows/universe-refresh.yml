@@ -83,9 +83,13 @@ jobs:
       - name: EU CTIS (two sort passes past the 10k cap)
         run: python3 -u "$P/harvest_ctis.py" DESC && python3 -u "$P/harvest_ctis.py" ASC && python3 -u "$P/classify_ctis.py" | tail -3
       - name: Europe PMC, current and previous year
+        run: Y=$(date -u +%Y); python3 -u "$P/harvest_epmc.py" $((Y-1)) $Y
+      - name: Nuclear medicine journal sweep (every PubMed article in 42 journals, current and previous year)
+        continue-on-error: true  # a PubMed outage leaves the keyword corpus as it is
+        run: Y=$(date -u +%Y); python3 -u "$P/sweep_journals.py" $((Y-1)) $Y | tail -5
+      - name: Classify papers
         run: |
           Y=$(date -u +%Y); PY=$((Y-1))
-          python3 -u "$P/harvest_epmc.py" $PY $Y
           python3 -u "$P/classify_papers.py" $PY $Y
           mv "$UNIVERSE_WORK/gaps_raw_${PY}_${Y}.jsonl" "$UNIVERSE_WORK/gaps_raw_all.jsonl"
       - name: National registries (Spain, France, Netherlands, Italy)
@@ -111,7 +115,7 @@ jobs:
         with:
           branch: bot/universe-refresh
           title: "Monthly refresh: radiopharmaceutical universe"
-          commit-message: "chore: monthly universe refresh (trials, CTIS, Europe PMC, openFDA, EU national registries, patents)"
+          commit-message: "chore: monthly universe refresh (trials, CTIS, Europe PMC, nuclear medicine journals, openFDA, EU national registries, patents)"
           add-paths: |
             public/universe/**
             src/data/universe-stats.json
