@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import { pageMeta } from "@/lib/seo";
 import { benchmark } from "@/data/benchmark";
@@ -16,6 +17,11 @@ export default function AskPage() {
     <>
       <PageHeader kicker={<GroupKicker id="find" />} title="Ask Nuclide" lede="Ask in plain words. Nuclide works out what you are asking and which records you named, then builds the answer from those records, plain English first, each sentence numbered and linked so you can check it at its source. Nothing is generated and nothing leaves your browser." />
       <Container className="pb-16">
+        <p className="mb-5 max-w-3xl rounded-xl border border-border bg-card p-3 text-sm">
+          Looking for unmet needs or candidates rather than a fact about a record?{" "}
+          <Link href="/universe/" className="text-accent hover:underline">Search the whole universe</Link>: every registered product, trial, paper, congress abstract, patent and published unmet need, with{" "}
+          <Link href="/universe/ideas/" className="text-accent hover:underline">ideas computed from the cross-links</Link>.
+        </p>
         <Suspense><AskNuclide examples={examples} /></Suspense>
       </Container>
     </>

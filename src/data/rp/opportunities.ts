@@ -25,9 +25,9 @@
  * that too: opp-her3-imaging-crossover and opp-alpha-synuclein-pet-parkinsons are deliberate worked
  * negatives, kept because the reasoning is the useful part.
  *
- * SCOPE. Public science only. Nothing here reflects any organisation's internal evaluation, pipeline
- * or commercial position, and the candidate list was drawn deliberately wider than any one company's
- * area of interest.
+ * SCOPE. Everything in the public domain is in scope: any target, indication, isotope, company or
+ * geography. The one thing never recorded is non-public information. The computed layer at
+ * /universe/ideas/ extends these hand-written records to every cross-link in the public data.
  */
 import type { EntityInput } from "@/lib/schema";
 

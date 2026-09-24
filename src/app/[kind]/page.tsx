@@ -19,6 +19,7 @@ import { buildBrowser, cap } from "@/lib/kind-browser";
 import { MyIndicationPin, MyIndicationTrialsFilter } from "@/components/MyIndication";
 import { myIndicationTiles } from "@/lib/my-indication-list";
 import { OpportunityScan } from "@/components/OpportunityScan";
+import universeStats from "@/data/universe-stats.json";
 
 const ROUTE_TO_KIND: Record<string, Kind> = Object.fromEntries(KINDS.map((k) => [KIND_META[k].route, k])) as Record<string, Kind>;
 
@@ -63,6 +64,12 @@ export default async function KindIndex({ params }: { params: Promise<{ kind: st
         {k === "bottleneck" && <BottlenecksPipeline />}
         {k === "indication" && <CancersGrid />}
         {k === "term" && <GlossaryCategories />}
+        {(k === "opportunity" || k === "idea") && (
+          <Link href="/universe/ideas/" className="mb-6 block rounded-xl border border-accent/40 bg-accent-soft p-4 hover:border-accent">
+            <span className="font-semibold">{universeStats.ideas.toLocaleString("en-GB")} more ideas computed from the whole radiopharmaceutical universe</span>
+            <span className="mt-1 block text-sm text-muted">Cross-links across {universeStats.products.toLocaleString("en-GB")} registered products, {universeStats.trials.toLocaleString("en-GB")} trials, {universeStats.papers.toLocaleString("en-GB")} papers, {universeStats.abstracts.toLocaleString("en-GB")} congress abstracts, {universeStats.patents.toLocaleString("en-GB")} patents and {universeStats.gaps.toLocaleString("en-GB")} published unmet needs, each idea with its evidence.</span>
+          </Link>
+        )}
         {k === "opportunity" && <OpportunityScan />}
         <EntityBrowser rows={rows} facets={facets} columns={columns} noun={meta.plural} hideStatus={hideStatus} hideTldr={hideTldr} defaultSort={defaultSort} nameKind={k} />
         {k === "institution" && (

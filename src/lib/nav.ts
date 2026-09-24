@@ -9,6 +9,9 @@ export const NAV_GROUPS: NavGroup[] = [
     id: "find", label: "Start here", href: "/find/", blurb: "Begin from an isotope, an agent, a target or a question, and follow the links in any direction.",
     items: [
       { href: "/opportunities/", label: "Opportunities", blurb: "Where a clinical decision cannot be made today and a radiopharmaceutical might settle it, each with the evidence read and the study that would test it." },
+      { href: "/universe/", label: "The universe", blurb: "Every approved product, trial, paper, congress abstract, patent and published unmet need in radiopharmaceuticals, cross-linked and searchable." },
+      { href: "/universe/ideas/", label: "Ideas from the data", blurb: "Openings computed from the cross-links, each with the evidence behind it." },
+      { href: "/universe/gaps/", label: "Unmet needs", blurb: "Quoted statements of unmet need from papers and congress abstracts, filterable by indication, target and theme." },
       { href: "/explore/", label: "Explore", blurb: "Pick an indication, switch kind, get a ranked and sortable list." },
       { href: "/search/", label: "Search", blurb: "Word and concept search side by side, each result explaining why it matched." },
       { href: "/path/", label: "Path finder", blurb: "How any two objects are related: shortest routes with every relationship named." },

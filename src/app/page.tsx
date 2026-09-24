@@ -49,6 +49,7 @@ const AUDIENCES: Array<{ id: string; title: string; lede: string; links: Array<{
       { href: "/targets/", label: "Targets", blurb: "PSMA, SSTR, FAP, CAIX and the rest" },
       { href: "/papers/", label: "Key papers", blurb: "The literature that defines each sub-field" },
       { href: "/opportunities/", label: "Opportunities", blurb: "Decisions nobody can make today, and what would settle them" },
+      { href: "/universe/", label: "The universe", blurb: "Every product, trial, paper, abstract, patent and stated unmet need, searchable" },
     ],
   },
   {
@@ -122,6 +123,8 @@ export default function Home() {
             </p>
             <div className="mt-8 max-w-2xl"><SearchBox large autoFocus={false} /></div>
             <div className="mt-5 flex flex-wrap gap-2">
+              <Link href="/universe/" className="btn">Search the whole universe</Link>
+              <Link href="/universe/ideas/" className="btn">Ideas from the data</Link>
               <Link href="/opportunities/" className="btn">Where the openings are</Link>
               <Link href="/isotopes/lu-177/" className="btn">Example: lutetium-177</Link>
               <Link href="/roadmaps/psma-theranostics-roadmap/" className="btn">PSMA theranostics roadmap</Link>
