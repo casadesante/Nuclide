@@ -91,16 +91,23 @@ const SYNONYMS: Record<string, string[]> = {
   alpha: ["ac-225", "pb-212", "at-211", "th-227", "ra-223", "bi-213", "tb-149"], cardiac: ["heart", "myocardial"], heart: ["cardiac", "myocardial"],
 };
 const escRx = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-const compiled = new Map<string, RegExp[]>();
+/** Two-word organ names that would otherwise start a matching word: "gall bladder" is not the bladder. */
+const JOINED: Array<[RegExp, string]> = [[/gall[\s-]+bladder/gi, "gallbladder"]];
+const compiled = new Map<string, { rx: RegExp[]; join: boolean }>();
 /** Every word of the query must start a word in the text (so "bladder" does not match "gallbladder"); a synonym also counts. */
 export function matches(hay: string, q: string): boolean {
-  let rx = compiled.get(q);
-  if (!rx) {
-    rx = q.toLowerCase().split(/\s+/).filter(Boolean).map((t) => new RegExp(`(?:^|[^a-z0-9])(?:${[t, ...(SYNONYMS[t] ?? [])].map(escRx).join("|")})`));
+  let c = compiled.get(q);
+  if (!c) {
+    const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+    c = {
+      rx: terms.map((t) => new RegExp(`(?:^|[^a-z0-9])(?:${[t, ...(SYNONYMS[t] ?? [])].map(escRx).join("|")})`, "i")),
+      join: terms.some((t) => t === "bladder" || (SYNONYMS[t] ?? []).includes("bladder")),
+    };
     if (compiled.size > 200) compiled.clear();
-    compiled.set(q, rx);
+    compiled.set(q, c);
   }
-  return rx.every((r) => r.test(hay));
+  const h = c.join ? JOINED.reduce((acc, [r, w]) => acc.replace(r, w), hay) : hay;
+  return c.rx.every((r) => r.test(h));
 }
 
 export function toCsv(rows: Array<Record<string, unknown>>, cols: Array<[string, (r: never) => unknown]>): string {
