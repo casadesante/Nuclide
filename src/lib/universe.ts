@@ -142,3 +142,39 @@ export type Idea = {
 /** [title or quoted sentence, year, url, source detail, source type for gaps] */
 export type Ref = [string, number | null, string | null, string | null, string?];
 export type IdeasFile = { ideas: Idea[]; refs: Record<string, Ref> };
+
+/**
+ * Society or meeting series behind a congress label: "ASCO GU 2023" → "ASCO", "AACR-NCI-EORTC 2023" → "AACR",
+ * "ESMO Asia 2024" → "ESMO", "JSMO 2019" → "JSMO". Labels without a leading acronym keep their name without the year
+ * ("Italian National Congress of Medical Oncology 2016" → "Italian National Congress of Medical Oncology").
+ */
+export function societyOf(meeting?: string | null): string | null {
+  if (!meeting) return null;
+  const label = meeting.trim();
+  const first = label.split(/\s+/)[0];
+  if (first.startsWith("AACR")) return "AACR";
+  if (/^[A-Z]{3,}$/.test(first)) return first;
+  return label.replace(/\s+\d{4}$/, "");
+}
+
+/** One line per society with its year span, e.g. "SNMMI 2015–2026, ASCO 2015–2026", from meeting labels ending in a year. */
+export function societySummary(meetings: string[]): string {
+  const span = new Map<string, number[]>();
+  for (const m of meetings) {
+    const s = societyOf(m);
+    const y = Number(/(\d{4})$/.exec(m)?.[1]);
+    if (!s) continue;
+    if (!span.has(s)) span.set(s, []);
+    if (y) span.get(s)!.push(y);
+  }
+  const order = ["SNMMI", "EANM", "ASNC", "WMIC", "ASCO", "ESMO", "AACR"];
+  const rank = (s: string) => (order.includes(s) ? order.indexOf(s) : order.length);
+  return [...span]
+    .sort((a, b) => rank(a[0]) - rank(b[0]) || a[0].localeCompare(b[0]))
+    .map(([s, ys]) => {
+      if (!ys.length) return s;
+      const [lo, hi] = [Math.min(...ys), Math.max(...ys)];
+      return lo === hi ? `${s} ${lo}` : `${s} ${lo}–${hi}`;
+    })
+    .join(", ");
+}

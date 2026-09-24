@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { matches } from "./universe";
+import { matches, societyOf, societySummary } from "./universe";
 
 describe("universe search matcher", () => {
   it("finds bladder rows under either name", () => {
@@ -24,5 +24,19 @@ describe("universe search matcher", () => {
   it("matches at word starts, so short terms do not hit inside other words", () => {
     expect(matches("Sentinel node mapping", "net")).toBe(false);
     expect(matches("Pancreatic NET treated with PRRT", "net")).toBe(true);
+  });
+});
+
+describe("congress societies", () => {
+  it("groups meeting labels under their society", () => {
+    expect(societyOf("ASCO GU 2023")).toBe("ASCO");
+    expect(societyOf("AACR-NCI-EORTC 2023")).toBe("AACR");
+    expect(societyOf("AACR special conferences 2024")).toBe("AACR");
+    expect(societyOf("ESMO Asia 2024")).toBe("ESMO");
+    expect(societyOf("Italian National Congress of Medical Oncology 2016")).toBe("Italian National Congress of Medical Oncology");
+    expect(societyOf(null)).toBeNull();
+  });
+  it("summarises year spans with nuclear medicine societies first", () => {
+    expect(societySummary(["ASCO 2016", "SNMMI 2015", "ASCO GI 2020", "EANM 2022", "JSMO 2019"])).toBe("SNMMI 2015, EANM 2022, ASCO 2016–2020, JSMO 2019");
   });
 });

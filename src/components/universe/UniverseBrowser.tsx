@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { FacetSelect, type FacetOption } from "@/components/filters/FacetSelect";
-import { download, loadUniverse, matches, paperUrl, patentUrl, pretty, REGION_NAME, toCsv, trialUrl, type Labels } from "@/lib/universe";
+import { download, loadUniverse, matches, paperUrl, patentUrl, pretty, REGION_NAME, societyOf, toCsv, trialUrl, type Labels } from "@/lib/universe";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type Row = Record<string, any>;
@@ -145,6 +145,7 @@ const CFG: Record<Dataset, Cfg> = {
     sharded: true,
     files: (years) => years.map((y) => `abstracts-${y}.json`),
     facets: [
+      { key: "society", label: "Society", get: (r) => societyOf(r.m) },
       { key: "meeting", label: "Meeting", get: (r) => r.m, order: "desc" },
       ...tagFacets,
       { key: "type", label: "Abstract type", get: (r) => r.ty },

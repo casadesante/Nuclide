@@ -20,7 +20,7 @@ const PARTS = [
   { href: "/universe/products/", title: "Approved and registered products", count: stats.products, blurb: `Registrations at ${stats.regions} regulators, grouped into ${stats.agents} agents, with the regulator's own link and non-English names kept.` },
   { href: "/universe/trials/", title: "Trials", count: stats.trials, blurb: `ClinicalTrials.gov (${n(stats.trialsCTG)}) and the EU Clinical Trials Information System (${n(stats.trialsCTIS)}), every radiopharmaceutical trial found.` },
   { href: "/universe/papers/", title: "Papers", count: stats.papers, blurb: `Europe PMC publications since ${stats.paperYears[0]}, tagged by target, indication, isotope and paper type.` },
-  { href: "/universe/abstracts/", title: "Congress abstracts", count: stats.abstracts, blurb: `${stats.meetings.length} annual meetings of SNMMI, EANM, ASNC and WMIC since ${stats.abstractYears[0]}: title, authors, code and the official link.` },
+  { href: "/universe/abstracts/", title: "Congress abstracts", count: stats.abstracts, blurb: `${stats.meetings.length} meetings since ${stats.abstractYears[0]}: SNMMI, EANM, ASNC and WMIC, plus the radiopharmaceutical abstracts of ASCO, ESMO and AACR. Title, authors, code and the official link.` },
   { href: "/universe/patents/", title: "Patents", count: stats.patents, blurb: "Worldwide patent publications in the radiopharmaceutical classes since 2015, from every office Google Patents indexes." },
 ];
 
@@ -66,7 +66,8 @@ export default function Page() {
           <ul className="mt-2 list-disc space-y-1 pl-5">
             <li>Products: FDA (openFDA Drugs@FDA), EMA, Health Canada, Swissmedic and public regulator lists or announcements for Japan, China, Korea, Taiwan, India, Australia, the UK, Ireland, Latin America, Russia, the Middle East and South-East Asia. New Zealand&apos;s Medsafe lists no radiopharmaceuticals.</li>
             <li>Trials: ClinicalTrials.gov and EU CTIS. The WHO registry portal and the Chinese and Japanese registries do not allow automated access, so their trials appear here only when also registered on ClinicalTrials.gov.</li>
-            <li>Papers: Europe PMC, which includes PubMed. Congress abstracts: SNMMI (Journal of Nuclear Medicine supplements), EANM (EJNMMI supplements), ASNC and WMIC. ASNC 2023 and WMIC 2023 and 2024 are behind paywalls and are missing.</li>
+            <li>Papers: Europe PMC, which includes PubMed, plus every article of 42 nuclear medicine journals.</li>
+            <li>Congress abstracts: SNMMI (Journal of Nuclear Medicine supplements), EANM (EJNMMI supplements), ASNC (Journal of Nuclear Cardiology supplements) and WMIC (Molecular Imaging and Biology supplements). From ASCO (Journal of Clinical Oncology supplements), AACR (Cancer Research and Molecular Cancer Therapeutics supplements) and ESMO (Annals of Oncology, ESMO Open and ESMO Immuno-Oncology and Technology supplements, plus the 2015 European Cancer Congress, held jointly with ECCO, in the European Journal of Cancer), only the abstracts about a radiopharmaceutical or nuclear imaging. ESMO abstracts and the ASCO 2015, 2016 and 2018 annual meetings are screened on their titles, because their abstract text is not openly available. Behind paywalls and missing: EANM 2015, 2018 and 2019, ASNC 2015 to 2020 and 2023, WMIC 2017, 2018, 2023 and 2024.</li>
             <li>Patents: Google Patents, which indexes over 100 patent offices and gives English titles for most non-English filings.</li>
             <li>Tags come from word rules, not reading: an idea says what the data counts, and the evidence list is there to check it. Last rebuilt {stats.generated}.</li>
           </ul>
