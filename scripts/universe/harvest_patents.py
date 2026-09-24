@@ -24,9 +24,12 @@ CLASSES = [("A61K51", "(A61K51)"), ("A61K2123", "(A61K2123)"), ("C07B59", "(C07B
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 seen, gaps = {}, []
 
+BLOCKED = {"on": False}
 def fetch(inner):
+    """One polite request. Google answers a blocked address with an HTML 'Sorry' page; after three tries
+    spread over ~3 minutes the address is treated as blocked and the run stops cleanly, keeping what it has."""
     url = "https://patents.google.com/xhr/query?url=" + urllib.parse.quote(inner, safe="") + "&exp="
-    for attempt in range(6):
+    for attempt in range(3):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
             with urllib.request.urlopen(req, timeout=60) as r:
@@ -34,7 +37,8 @@ def fetch(inner):
             if body.lstrip().startswith("{"): return json.loads(body)
         except Exception:
             pass
-        time.sleep(min(240, 15 * (attempt + 1) ** 2) + random.random() * 5)
+        time.sleep(60 * (attempt + 1))
+    BLOCKED["on"] = True
     return None
 
 def ymd(d): return d.strftime("%Y%m%d")
@@ -44,7 +48,9 @@ def slice_(cls_id, q, a, b, depth=0):
     total, got = None, 0
     for page in range(10):
         inner = f"q={q}&after=publication:{ymd(a)}&before=publication:{ymd(b)}&num=100&sort=old" + (f"&page={page}" if page else "")
-        d = fetch(inner); time.sleep(2.5 + random.random())
+        if BLOCKED["on"]:
+            gaps.append({"class": cls_id, "from": ymd(a), "to": ymd(b), "page": page}); return
+        d = fetch(inner); time.sleep(9 + random.random() * 4)
         if d is None or "results" not in d:
             gaps.append({"class": cls_id, "from": ymd(a), "to": ymd(b), "page": page}); return
         res = d["results"]; total = res.get("total_num_results", 0)
@@ -66,13 +72,20 @@ def slice_(cls_id, q, a, b, depth=0):
         if len(items) < 100: break
     print(f"{cls_id} {ymd(a)}-{ymd(b)} total={total} new={got} running={len(seen)}", flush=True)
 
+OUTF = open(f"{OUT}/patents-{YEAR}.jsonl", "a")
+written = set()
+def flush():
+    for k, v in seen.items():
+        if k not in written:
+            OUTF.write(json.dumps(v, ensure_ascii=False) + "\n"); written.add(k)
+    OUTF.flush()
+    json.dump(gaps, open(f"{OUT}/patents-{YEAR}-gaps.json", "w"))
+
 for cls_id, q in CLASSES:
     for m in range(1, 13):
         a = dt.date(YEAR, m, 1); b = dt.date(YEAR + (m == 12), (m % 12) + 1, 1)
         if a > dt.date.today(): break
         slice_(cls_id, q, a, b)
-
-with open(f"{OUT}/patents-{YEAR}.jsonl", "w") as f:
-    for v in seen.values(): f.write(json.dumps(v, ensure_ascii=False) + "\n")
-json.dump(gaps, open(f"{OUT}/patents-{YEAR}-gaps.json", "w"))
-print("YEAR", YEAR, "publications", len(seen), "blocked slices", len(gaps))
+        flush()
+flush()
+print("YEAR", YEAR, "publications", len(seen), "blocked slices", len(gaps), "blocked" if BLOCKED["on"] else "complete")

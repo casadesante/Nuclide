@@ -18,16 +18,17 @@ permissions:
 jobs:
   harvest:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 240
     strategy:
       fail-fast: false
-      max-parallel: 12
+      max-parallel: 4
       matrix:
         year: ${{ fromJSON(github.event.inputs.years || '[2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026]') }}
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/universe/harvest_patents.py ${{ matrix.year }} out
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: patents-${{ matrix.year }}
           path: out/
