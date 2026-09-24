@@ -114,6 +114,9 @@ def paper_diseases(title, kw, mesh):
     ds = diseases(f"{title} {' '.join(kw)} {' '.join(mesh)}")
     if "neuroendocrine-tumours" in ds:
         t = set(diseases(title)); ds = [d for d in ds if d not in NET_ORGANS or d in t]
+    # MeSH files a bladder paraganglioma / phaeochromocytoma under 'Urinary Bladder Neoplasms'; it is not urothelial cancer
+    if "urothelial-cancer" in ds and re.search(r"(?i)paragangli|ph?aeochromo|pheochromo", title) and not re.search(r"(?i)urothelial|carcinoma", title):
+        ds = [d for d in ds if d != "urothelial-cancer"]
     return ds
 
 def diseases(text):

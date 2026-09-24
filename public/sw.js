@@ -3,13 +3,14 @@
  * Strategy
  *  - shell (home, offline page, manifest) is cached on install;
  *  - hashed build assets under /_next/static/ are cache-first (immutable by construction);
- *  - the search index and entity JSON under /api/v1/ are network-first (fresh after every deploy), falling back to the cached copy offline;
+ *  - the search index and entity JSON under /api/v1/, and the universe datasets under /universe/, are network-first (fresh after
+ *    every deploy and every monthly refresh), falling back to the cached copy offline;
  *  - molecule structures, logos and other media are cache-first on demand;
  *  - page navigations are network-first with a short timeout, then the cached copy, then /offline/.
  * Visited pages accumulate in the page cache, capped at PAGE_LIMIT entries (oldest evicted).
  * Bump VERSION to drop every old cache on the next activation. Registered by src/components/RegisterSW.tsx.
  */
-const VERSION = "onco-v4";
+const VERSION = "nuclide-v5";  // v5: /universe/*.json moved off the cache-first media rule, so old copies must go
 const SHELL_CACHE = `${VERSION}-shell`;
 const PAGE_CACHE = `${VERSION}-pages`;
 const ASSET_CACHE = `${VERSION}-assets`;
@@ -96,7 +97,7 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== self.location.origin) return;
 
   if (url.pathname.startsWith("/_next/static/")) { event.respondWith(cacheFirst(req, ASSET_CACHE)); return; }
-  if (url.pathname.startsWith("/api/v1/") || url.pathname === "/provenance.json" || url.pathname.startsWith("/feeds/")) { event.respondWith(networkFirstData(req, DATA_CACHE)); return; }
+  if (url.pathname.startsWith("/api/v1/") || (url.pathname.startsWith("/universe/") && url.pathname.endsWith(".json")) || url.pathname === "/provenance.json" || url.pathname.startsWith("/feeds/")) { event.respondWith(networkFirstData(req, DATA_CACHE)); return; }
   if (/^\/(structures|logos|globocan|openalex|trials|papers)\//.test(url.pathname) || /\.(svg|png|jpg|jpeg|webp|ico|woff2?|json)$/.test(url.pathname)) { event.respondWith(cacheFirst(req, MEDIA_CACHE, MEDIA_LIMIT)); return; }
   if (isNavigation(req)) { event.respondWith(networkFirstPage(req)); return; }
 });

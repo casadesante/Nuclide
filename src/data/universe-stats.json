@@ -56,16 +56,16 @@
   2026
  ],
  "gaps": 15083,
- "ideas": 1043,
+ "ideas": 1036,
  "ideaLenses": {
-  "momentum-no-trials": 63,
-  "first-in-human": 71,
-  "unmet-need": 368,
-  "therapy-partner": 51,
-  "indication-expansion": 25,
-  "needs-vs-trials": 15,
+  "momentum-no-trials": 64,
+  "first-in-human": 70,
+  "unmet-need": 365,
+  "therapy-partner": 50,
+  "indication-expansion": 24,
+  "needs-vs-trials": 14,
   "patent-momentum": 20,
-  "isotope-gap": 99,
+  "isotope-gap": 98,
   "companion-imaging": 12,
   "adc-validated": 9,
   "congress-signal": 26,
@@ -75,5 +75,5 @@
   "new-agent": 69,
   "stalled": 141
  },
- "bytes": 69047775
+ "bytes": 68976266
 }
