@@ -1,13 +1,13 @@
 {
  "generated": "2026-09-24",
- "trials": 7624,
+ "trials": 7625,
  "trialsCTG": 7166,
- "trialsCTIS": 458,
- "products": 1555,
+ "trialsCTIS": 459,
+ "products": 1556,
  "regions": 32,
  "agents": 202,
  "agentsNotInUS": 77,
- "papers": 118094,
+ "papers": 118110,
  "paperYears": [
   2015,
   2016,
@@ -22,7 +22,7 @@
   2025,
   2026
  ],
- "papersCore": 62379,
+ "papersCore": 62387,
  "abstracts": 15174,
  "meetings": [
   "ASNC 2022",
@@ -55,7 +55,7 @@
   2025,
   2026
  ],
- "gaps": 15083,
+ "gaps": 15086,
  "ideas": 1036,
  "ideaLenses": {
   "momentum-no-trials": 64,
@@ -75,5 +75,5 @@
   "new-agent": 69,
   "stalled": 141
  },
- "bytes": 68976266
+ "bytes": 68969900
 }
