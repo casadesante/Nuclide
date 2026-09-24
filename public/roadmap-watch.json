@@ -1,1 +1,684 @@
-{"generatedAt":"","offline":true,"requests":0,"roadmaps":[]}
+{
+ "generatedAt": "2026-09-24",
+ "offline": false,
+ "requests": 8,
+ "roadmaps": [
+  {
+   "id": "alpha-therapy-roadmap",
+   "name": "Alpha-emitter roadmap: radium-223 → 225Ac-PSMA-617 → a phase 3 pipeline",
+   "asOf": "2026-09-22",
+   "since": "2026-09-22",
+   "counts": {
+    "trials": 4,
+    "checked": 4,
+    "contradictions": 0,
+    "explained": 0,
+    "papers": 0,
+    "watch": 4,
+    "watchPassed": 0
+   },
+   "trials": [
+    {
+     "id": "action-1",
+     "name": "ACTION-1",
+     "nct": "NCT05477576",
+     "corpus": {
+      "status": "recruiting",
+      "phase": "3",
+      "enrolledBasis": "registry"
+     },
+     "registry": {
+      "nct": "NCT05477576",
+      "status": "RECRUITING",
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 338,
+      "enrolmentType": "ESTIMATED",
+      "primaryCompletion": "2026-12",
+      "completion": "2030-12",
+      "lastUpdate": "2026-03-30"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    },
+    {
+     "id": "alphabreak",
+     "name": "AlphaBreak (FPI-2265) & AcTION (225Ac-PSMA-617)",
+     "nct": "NCT06402331",
+     "corpus": {
+      "status": "active",
+      "phase": "2",
+      "enrolled": 600,
+      "enrolledBasis": "registry"
+     },
+     "registry": {
+      "nct": "NCT06402331",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 110,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2026-12-23",
+      "completion": "2031-01-23",
+      "lastUpdate": "2026-04-08"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    },
+    {
+     "id": "alphamedix-02",
+     "name": "ALPHAMEDIX-02",
+     "nct": "NCT05153772",
+     "corpus": {
+      "status": "positive",
+      "phase": "2",
+      "enrolledBasis": "registry",
+      "yearReported": 2025
+     },
+     "registry": {
+      "nct": "NCT05153772",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 69,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2025-04-14",
+      "completion": "2030-12",
+      "lastUpdate": "2026-04-15"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    },
+    {
+     "id": "alsympca",
+     "name": "ALSYMPCA",
+     "nct": "NCT00699751",
+     "corpus": {
+      "status": "positive",
+      "phase": "3",
+      "enrolled": 921,
+      "enrolledBasis": "registry",
+      "yearReported": 2013
+     },
+     "registry": {
+      "nct": "NCT00699751",
+      "status": "COMPLETED",
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 921,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2011-07-15",
+      "completion": "2014-02-13",
+      "lastUpdate": "2026-02-23"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    }
+   ],
+   "watch": [
+    {
+     "item": "ACTION-1 (RYZ101, RayzeBio/BMS) phase 3 primary completion",
+     "expected": "Primary Completion (Estimated): 2026-12",
+     "source": "https://clinicaltrials.gov/study/NCT05477576",
+     "refs": [
+      "action-1",
+      "rayzebio"
+     ],
+     "passed": false,
+     "contradictions": []
+    },
+    {
+     "item": "AlphaBreak (FPI-2265, Fusion Pharmaceuticals) phase 2 primary completion",
+     "expected": "Estimated Completion: July 23, 2026",
+     "source": "https://www.ancora.ai/en/detailsradiopharm/NCT06402331",
+     "refs": [
+      "alphabreak",
+      "fusion-pharma"
+     ],
+     "passed": false,
+     "contradictions": []
+    },
+    {
+     "item": "AAA817 (Novartis, PSMAcTION, NCT06780670) phase 3 primary completion",
+     "expected": "Primary completion date: Jun 27, 2028 (Anticipated)",
+     "source": "https://www.allclinicaltrials.com/study/NCT06780670",
+     "refs": [
+      "novartis"
+     ],
+     "passed": false,
+     "contradictions": []
+    },
+    {
+     "item": "TerraPower Isotopes' Philadelphia cGMP actinium-225 facility begins production",
+     "expected": "Production of cGMP actinium-225 beginning in 2029",
+     "source": "https://www.terrapower.com/TerraPower-Isotopes-announces-cGMP-manufacturing-facility",
+     "refs": [
+      "terrapower-isotopes"
+     ],
+     "passed": false,
+     "contradictions": []
+    }
+   ],
+   "contradictions": [],
+   "explained": []
+  },
+  {
+   "id": "dosimetry-roadmap",
+   "name": "Dosimetry roadmap: MIRD schema → fixed dosing → personalised, image-based dose",
+   "asOf": "2026-09-22",
+   "since": "2026-09-22",
+   "counts": {
+    "trials": 2,
+    "checked": 2,
+    "contradictions": 0,
+    "explained": 0,
+    "papers": 0,
+    "watch": 1,
+    "watchPassed": 0
+   },
+   "trials": [
+    {
+     "id": "netter-1",
+     "name": "NETTER-1",
+     "nct": "NCT01578239",
+     "corpus": {
+      "status": "positive",
+      "phase": "3",
+      "enrolled": 231,
+      "enrolledBasis": "registry",
+      "yearReported": 2017
+     },
+     "registry": {
+      "nct": "NCT01578239",
+      "status": "COMPLETED",
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 231,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2015-07-31",
+      "completion": "2021-01-18",
+      "lastUpdate": "2022-04-04"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    },
+    {
+     "id": "vision",
+     "name": "VISION",
+     "nct": "NCT03511664",
+     "corpus": {
+      "status": "positive",
+      "phase": "3",
+      "enrolled": 861,
+      "enrolledBasis": "registry",
+      "yearReported": 2021
+     },
+     "registry": {
+      "nct": "NCT03511664",
+      "status": "COMPLETED",
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 861,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2021-01-27",
+      "completion": "2023-12-14",
+      "lastUpdate": "2025-01-13"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    }
+   ],
+   "watch": [
+    {
+     "item": "Joint EANM/SNMMI procedure guideline for 177Lu-PSMA-RLT, next revision",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10317889/",
+     "refs": [
+      "radioligand-dosimetry"
+     ],
+     "passed": false,
+     "contradictions": []
+    }
+   ],
+   "contradictions": [],
+   "explained": []
+  },
+  {
+   "id": "isotope-supply-roadmap",
+   "name": "Isotope supply roadmap: reactor dependence → non-uranium production → accelerator-made actinium",
+   "asOf": "2026-09-22",
+   "since": "2026-09-22",
+   "counts": {
+    "trials": 0,
+    "checked": 0,
+    "contradictions": 0,
+    "explained": 0,
+    "papers": 0,
+    "watch": 2,
+    "watchPassed": 1
+   },
+   "trials": [],
+   "watch": [
+    {
+     "item": "NorthStar RadioGenix expansion and additional Mo-99 filling lines",
+     "expected": "FDA approval of two additional Mo-99 filling lines, announced 18 February 2020",
+     "source": "https://www.itnonline.com/content/fda-approves-additional-molybdenum-99-mo-99-filling-lines-northstar-medical-radioisotopes",
+     "refs": [
+      "northstar-medical-radioisotopes"
+     ],
+     "passed": true,
+     "contradictions": []
+    },
+    {
+     "item": "TerraPower Isotopes' Philadelphia cGMP actinium-225 facility begins production",
+     "expected": "Production of cGMP actinium-225 beginning in 2029",
+     "source": "https://www.terrapower.com/TerraPower-Isotopes-announces-cGMP-manufacturing-facility",
+     "refs": [
+      "terrapower-isotopes"
+     ],
+     "passed": false,
+     "contradictions": []
+    }
+   ],
+   "contradictions": [],
+   "explained": []
+  },
+  {
+   "id": "molecular-imaging-roadmap",
+   "name": "Molecular imaging roadmap: FDG → PSMA → FAP → antigen and immune PET",
+   "asOf": "2026-09-04",
+   "since": "2026-09-04",
+   "counts": {
+    "trials": 0,
+    "checked": 0,
+    "contradictions": 0,
+    "explained": 0,
+    "papers": 0,
+    "watch": 0,
+    "watchPassed": 0
+   },
+   "trials": [],
+   "watch": [],
+   "contradictions": [],
+   "explained": []
+  },
+  {
+   "id": "neuro-imaging-roadmap",
+   "name": "Neuro-oncology imaging roadmap: FDG PET → amino acid PET → SSTR2 theranostics in meningioma",
+   "asOf": "2026-09-22",
+   "since": "2026-09-22",
+   "counts": {
+    "trials": 0,
+    "checked": 0,
+    "contradictions": 0,
+    "explained": 0,
+    "papers": 0,
+    "watch": 1,
+    "watchPassed": 0
+   },
+   "trials": [],
+   "watch": [
+    {
+     "item": "RYZ101 for progressive/recurrent intracranial meningioma, Ohio State trial",
+     "source": "https://clinicaltrials.gov/study/NCT07150806",
+     "refs": [
+      "meningioma"
+     ],
+     "passed": false,
+     "contradictions": []
+    }
+   ],
+   "contradictions": [],
+   "explained": []
+  },
+  {
+   "id": "psma-theranostics-roadmap",
+   "name": "PSMA theranostics roadmap: antigen discovery → PSMA PET → 177Lu-PSMA-617 → earlier lines and alpha",
+   "asOf": "2026-09-22",
+   "since": "2026-09-22",
+   "counts": {
+    "trials": 3,
+    "checked": 3,
+    "contradictions": 0,
+    "explained": 0,
+    "papers": 0,
+    "watch": 3,
+    "watchPassed": 0
+   },
+   "trials": [
+    {
+     "id": "alphabreak",
+     "name": "AlphaBreak (FPI-2265) & AcTION (225Ac-PSMA-617)",
+     "nct": "NCT06402331",
+     "corpus": {
+      "status": "active",
+      "phase": "2",
+      "enrolled": 600,
+      "enrolledBasis": "registry"
+     },
+     "registry": {
+      "nct": "NCT06402331",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 110,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2026-12-23",
+      "completion": "2031-01-23",
+      "lastUpdate": "2026-04-08"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    },
+    {
+     "id": "psmafore",
+     "name": "PSMAfore",
+     "nct": "NCT04689828",
+     "corpus": {
+      "status": "positive",
+      "phase": "3",
+      "enrolled": 469,
+      "enrolledBasis": "registry",
+      "yearReported": 2023
+     },
+     "registry": {
+      "nct": "NCT04689828",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 469,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2022-10-02",
+      "completion": "2026-09-10",
+      "lastUpdate": "2026-09-11"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    },
+    {
+     "id": "vision",
+     "name": "VISION",
+     "nct": "NCT03511664",
+     "corpus": {
+      "status": "positive",
+      "phase": "3",
+      "enrolled": 861,
+      "enrolledBasis": "registry",
+      "yearReported": 2021
+     },
+     "registry": {
+      "nct": "NCT03511664",
+      "status": "COMPLETED",
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 861,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2021-01-27",
+      "completion": "2023-12-14",
+      "lastUpdate": "2025-01-13"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    }
+   ],
+   "watch": [
+    {
+     "item": "AAA817 + ARPI vs standard of care in PSMA-positive mCRPC, phase 3 primary completion",
+     "expected": "Primary Completion (Estimated): 2028-09-29",
+     "source": "https://clinicaltrials.gov/study/NCT06855277",
+     "refs": [
+      "novartis"
+     ],
+     "passed": false,
+     "contradictions": []
+    },
+    {
+     "item": "AAA817 vs standard of care after 177Lu-PSMA progression (PSMAcTION), primary completion",
+     "expected": "Primary completion date: Jun 27, 2028 (Anticipated)",
+     "source": "https://www.allclinicaltrials.com/study/NCT06780670",
+     "refs": [
+      "novartis"
+     ],
+     "passed": false,
+     "contradictions": []
+    },
+    {
+     "item": "AlphaBreak (FPI-2265) phase 2 primary completion",
+     "expected": "Estimated Completion: July 23, 2026",
+     "source": "https://www.ancora.ai/en/detailsradiopharm/NCT06402331",
+     "refs": [
+      "alphabreak",
+      "fusion-pharma"
+     ],
+     "passed": false,
+     "contradictions": []
+    }
+   ],
+   "contradictions": [],
+   "explained": []
+  },
+  {
+   "id": "radiopharma-roadmap",
+   "name": "Radiopharmaceutical roadmap: iodine → lutetium → actinium",
+   "asOf": "2026-09-04",
+   "since": "2026-09-04",
+   "counts": {
+    "trials": 2,
+    "checked": 2,
+    "contradictions": 0,
+    "explained": 0,
+    "papers": 0,
+    "watch": 0,
+    "watchPassed": 0
+   },
+   "trials": [
+    {
+     "id": "psmafore",
+     "name": "PSMAfore",
+     "nct": "NCT04689828",
+     "corpus": {
+      "status": "positive",
+      "phase": "3",
+      "enrolled": 469,
+      "enrolledBasis": "registry",
+      "yearReported": 2023
+     },
+     "registry": {
+      "nct": "NCT04689828",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 469,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2022-10-02",
+      "completion": "2026-09-10",
+      "lastUpdate": "2026-09-11"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    },
+    {
+     "id": "vision",
+     "name": "VISION",
+     "nct": "NCT03511664",
+     "corpus": {
+      "status": "positive",
+      "phase": "3",
+      "enrolled": 861,
+      "enrolledBasis": "registry",
+      "yearReported": 2021
+     },
+     "registry": {
+      "nct": "NCT03511664",
+      "status": "COMPLETED",
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 861,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2021-01-27",
+      "completion": "2023-12-14",
+      "lastUpdate": "2025-01-13"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    }
+   ],
+   "watch": [],
+   "contradictions": [],
+   "explained": []
+  },
+  {
+   "id": "sstr-theranostics-roadmap",
+   "name": "SSTR theranostics roadmap: octreotide scintigraphy → 68Ga-DOTATATE → 177Lu-DOTATATE → alpha",
+   "asOf": "2026-09-22",
+   "since": "2026-09-22",
+   "counts": {
+    "trials": 3,
+    "checked": 3,
+    "contradictions": 0,
+    "explained": 0,
+    "papers": 0,
+    "watch": 2,
+    "watchPassed": 0
+   },
+   "trials": [
+    {
+     "id": "action-1",
+     "name": "ACTION-1",
+     "nct": "NCT05477576",
+     "corpus": {
+      "status": "recruiting",
+      "phase": "3",
+      "enrolledBasis": "registry"
+     },
+     "registry": {
+      "nct": "NCT05477576",
+      "status": "RECRUITING",
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 338,
+      "enrolmentType": "ESTIMATED",
+      "primaryCompletion": "2026-12",
+      "completion": "2030-12",
+      "lastUpdate": "2026-03-30"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    },
+    {
+     "id": "alphamedix-02",
+     "name": "ALPHAMEDIX-02",
+     "nct": "NCT05153772",
+     "corpus": {
+      "status": "positive",
+      "phase": "2",
+      "enrolledBasis": "registry",
+      "yearReported": 2025
+     },
+     "registry": {
+      "nct": "NCT05153772",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 69,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2025-04-14",
+      "completion": "2030-12",
+      "lastUpdate": "2026-04-15"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    },
+    {
+     "id": "netter-1",
+     "name": "NETTER-1",
+     "nct": "NCT01578239",
+     "corpus": {
+      "status": "positive",
+      "phase": "3",
+      "enrolled": 231,
+      "enrolledBasis": "registry",
+      "yearReported": 2017
+     },
+     "registry": {
+      "nct": "NCT01578239",
+      "status": "COMPLETED",
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL",
+      "enrolment": 231,
+      "enrolmentType": "ACTUAL",
+      "primaryCompletion": "2015-07-31",
+      "completion": "2021-01-18",
+      "lastUpdate": "2022-04-04"
+     },
+     "contradictions": [],
+     "explained": [],
+     "papers": []
+    }
+   ],
+   "watch": [
+    {
+     "item": "ACTION-1 (RYZ101) phase 3 primary completion",
+     "expected": "Primary Completion (Estimated): 2026-12",
+     "source": "https://clinicaltrials.gov/study/NCT05477576",
+     "refs": [
+      "action-1"
+     ],
+     "passed": false,
+     "contradictions": []
+    },
+    {
+     "item": "RYZ101 for progressive/recurrent intracranial meningioma, Ohio State trial",
+     "source": "https://clinicaltrials.gov/study/NCT07150806",
+     "refs": [
+      "meningioma"
+     ],
+     "passed": false,
+     "contradictions": []
+    }
+   ],
+   "contradictions": [],
+   "explained": []
+  }
+ ]
+}
