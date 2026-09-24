@@ -96,7 +96,8 @@ export function UniverseIdeas() {
 
   const toggle = (id: string) => setOpen((s) => { const n = new Set(s); if (n.has(id)) n.delete(id); else n.add(id); return n; });
   const pick = (key: Key, v: string) => { setLimit(PAGE); setSel((s) => (s[key]?.includes(v) ? s : { ...s, [key]: [...(s[key] ?? []), v] })); };
-  const lensCounts = useMemo(() => { const m = new Map<string, number>(); for (const i of filtered) m.set(i.lens, (m.get(i.lens) ?? 0) + 1); return m; }, [filtered]);
+  // Each lens chip counts what that lens would show under the other filters, so choosing one lens does not zero the rest.
+  const lensCounts = useMemo(() => new Map((options[0] ?? []).map((o) => [o.value, o.count])), [options]);
 
   return (
     <div>

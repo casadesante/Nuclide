@@ -80,9 +80,27 @@ export const LENS: Record<string, { label: string; tip: string }> = {
 export const pretty = (s: string | null | undefined) => (s ? s.toLowerCase().replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase()) : "");
 
 /** Token search: every whitespace-separated term must appear somewhere in the haystack. */
+/** Clinical shorthand and lay words mapped to the wording the data uses, so "bladder" finds urothelial rows. */
+const SYNONYMS: Record<string, string[]> = {
+  bladder: ["urothelial"], urothelial: ["bladder"], crc: ["colorectal"], colon: ["colorectal"], rectal: ["colorectal"], bowel: ["colorectal"],
+  nsclc: ["lung"], sclc: ["lung"], lung: ["nsclc", "sclc"], hcc: ["liver", "hepatocellular"], liver: ["hcc", "hepatocellular"],
+  gbm: ["glioblastoma", "brain"], glioma: ["brain"], net: ["neuroendocrine"], nets: ["neuroendocrine"], nen: ["neuroendocrine"],
+  mcrpc: ["prostate"], crpc: ["prostate"], pca: ["prostate"], rcc: ["renal cell"], kidney: ["renal"], tnbc: ["breast"],
+  pdac: ["pancreatic"], mm: ["myeloma"], aml: ["leukaemia", "leukemia"], leukemia: ["leukaemia"], leukaemia: ["leukemia"],
+  oesophageal: ["esophageal"], esophageal: ["oesophageal"], tumor: ["tumour"], tumour: ["tumor"], alzheimer: ["alzheimer's"],
+  alpha: ["ac-225", "pb-212", "at-211", "th-227", "ra-223", "bi-213", "tb-149"], cardiac: ["heart", "myocardial"], heart: ["cardiac", "myocardial"],
+};
+const escRx = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const compiled = new Map<string, RegExp[]>();
+/** Every word of the query must start a word in the text (so "bladder" does not match "gallbladder"); a synonym also counts. */
 export function matches(hay: string, q: string): boolean {
-  const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
-  return terms.every((t) => hay.includes(t));
+  let rx = compiled.get(q);
+  if (!rx) {
+    rx = q.toLowerCase().split(/\s+/).filter(Boolean).map((t) => new RegExp(`(?:^|[^a-z0-9])(?:${[t, ...(SYNONYMS[t] ?? [])].map(escRx).join("|")})`));
+    if (compiled.size > 200) compiled.clear();
+    compiled.set(q, rx);
+  }
+  return rx.every((r) => r.test(hay));
 }
 
 export function toCsv(rows: Array<Record<string, unknown>>, cols: Array<[string, (r: never) => unknown]>): string {

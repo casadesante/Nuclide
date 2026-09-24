@@ -1,0 +1,296 @@
+[
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "アキュミン静注 (Accumin)", "ingredient": "Fluciclovine (18F)", "original": "アキュミン静注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "2021-03-23", "status": "approved", "role": "diagnostic",
+    "indication": "PET imaging agent (amino acid analog); listed as an approved diagnostic radiopharmaceutical",
+    "url": "https://www.nmp.co.jp/member/code/01.html"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "アシアロシンチ注 (Asialoscinti)", "ingredient": "Technetium (99mTc) Galactosyl Human Serum Albumin Diethylenetriaminepentaacetic Acid (GSA)", "original": "アシアロシンチ注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1992-07-03", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of liver function and morphology by scintigraphy",
+    "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/530359_4300435A1020_1_13"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "インジウムDTPA(111In)注", "ingredient": "Indium (111In) DTPA", "original": "インジウムDTPA(111In)注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1978-01-24", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of cerebrospinal fluid space lesions by radionuclide cisternography",
+    "url": "https://www.nmp.co.jp/sites/default/files/2022-03/T_In-DTPA_202203.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "FDGスキャン注", "ingredient": "Fludeoxyglucose (18F) [FDG]", "original": "FDGスキャン注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "2005-07-25", "status": "approved", "role": "diagnostic",
+    "indication": "PET glucose-metabolism imaging (listed on NMP approval-date table)",
+    "url": "https://www.nmp.co.jp/member/code/01.html"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "塩化インジウム(111In)注", "ingredient": "Indium (111In) Chloride", "original": "塩化インジウム(111In)注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1983-05-27", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of hematopoietic bone marrow by bone-marrow scintigraphy",
+    "url": "https://www.nmp.co.jp/sites/default/files/2018-09/T_In-Cl.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "塩化タリウム(201Tl)注NMP", "ingredient": "Thallium (201Tl) Chloride", "original": "塩化タリウム(201Tl)注NMP", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1978-08-01", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of heart disease (myocardial scintigraphy), tumors (brain, thyroid, lung, bone/soft-tissue, mediastinum) and parathyroid disease",
+    "url": "https://www.nmp.co.jp/sites/default/files/2022-09/IF_Tl_220930.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "塩化タリウム-Tl201注射液 (PDR)", "ingredient": "Thallium (201Tl) Chloride", "original": "塩化タリウム-Tl201注射液", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": null, "status": "approved", "role": "diagnostic",
+    "indication": "Heart, tumor and parathyroid imaging",
+    "url": "https://www.pdradiopharma.com/en/hcw/products/diagnostic/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "カルディオダイン注 (Cardiodine)", "ingredient": "15-(4-Iodophenyl)-3-methylpentadecanoic acid (123I) [BMIPP]", "original": "カルディオダイン注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1993-01-19", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of heart disease by fatty-acid metabolism scintigraphy",
+    "url": "https://www.nmp.co.jp/sites/default/files/2024-10/T_caldio_202410.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "キドニーシンチTc-99m注 (Kidneyscinti)", "ingredient": "Technetium (99mTc) Dimercaptosuccinic Acid [DMSA]", "original": "キドニーシンチTc-99m注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1978-08-01", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of renal disease by renal scintigraphy",
+    "url": "https://www.nmp.co.jp/sites/default/files/2024-10/T_kidney_202410.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "クエン酸ガリウム(67Ga)注NMP", "ingredient": "Gallium (67Ga) Citrate", "original": "クエン酸ガリウム(67Ga)注NMP", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1975-12-18", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of malignant tumors; diagnosis of inflammatory lesions (abscess, pneumonia, pneumoconiosis, sarcoidosis, tuberculosis, osteomyelitis, diffuse panbronchiolitis, pulmonary fibrosis, cholecystitis, arthritis, etc.)",
+    "url": "https://www.nmp.co.jp/sites/default/files/2018-09/T_Ga.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "クリアボーンキット/クリアボーン注 (Clearbone)", "ingredient": "Technetium (99mTc) Hydroxymethylene Diphosphonate [HMDP]", "original": "クリアボーン注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1982-12-15", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of bone disease by bone scintigraphy",
+    "url": "https://www.nmp.co.jp/sites/default/files/2022-03/IF_CB_220324.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "クリプトン(81mKr)ジェネレータ", "ingredient": "Krypton (81mKr) generator", "original": "クリプトン(81mKr)ジェネレータ", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1981-06-04", "status": "approved", "role": "diagnostic",
+    "indication": "Regional pulmonary ventilation function test by inhalation of krypton-81m gas (historically also pulmonary/cerebral blood-flow studies, since discontinued)",
+    "url": "https://www.nmp.co.jp/member/inter/pdf/IF_Kr.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "スズコロイドTc-99m注調製用キット (Tin Colloid Kit)", "ingredient": "Technetium (99mTc) Tin Colloid", "original": "スズコロイドTc-99m注調製用キット", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1977-03-05", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of liver/spleen disease by hepatosplenic scintigraphy; sentinel lymph node identification and lymphoscintigraphy in breast cancer and malignant melanoma",
+    "url": "https://www.nmp.co.jp/sites/default/files/2024-03/IF_Sn_Sn-kit_240318.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ダットスキャン静注 (DaTscan)", "ingredient": "Ioflupane (123I)", "original": "ダットスキャン静注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "2013-09-20", "status": "approved", "role": "diagnostic",
+    "indication": "Dopamine transporter scintigraphy for diagnosis of Parkinsonian syndrome and dementia with Lewy bodies",
+    "url": "https://www.nmp.co.jp/sites/default/files/2024-10/T_DS_202410.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "テクネシンチ注-10M (Technescinti)", "ingredient": "Sodium Pertechnetate (99mTc) Injection (pre-made)", "original": "テクネシンチ注-10M", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1990-08-02", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of brain tumor/cerebrovascular disorder, thyroid disease, salivary gland disease, and ectopic gastric mucosa disease",
+    "url": "https://www.nmp.co.jp/sites/default/files/2024-10/T_Tc_202410.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "パーヒューザミン注 (Perfusamine)", "ingredient": "N-Isopropyl-4-iodoamphetamine hydrochloride (123I) [IMP]", "original": "パーヒューザミン注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1994-03-07", "status": "approved", "role": "diagnostic",
+    "indication": "Regional cerebral blood flow scintigraphy",
+    "url": "https://www.nmp.co.jp/sites/default/files/2018-09/T_IMP.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ビザミル静注 (Vizamyl)", "ingredient": "Flutemetamol (18F)", "original": "ビザミル静注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "2017-09-27", "status": "approved", "role": "diagnostic",
+    "indication": "PET imaging agent for beta-amyloid brain plaques (listed on NMP approval-date table)",
+    "url": "https://www.nmp.co.jp/member/code/01.html"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "プールシンチ注 (Poolscinti)", "ingredient": "Technetium (99mTc) Human Serum Albumin DTPA", "original": "プールシンチ注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1989-03-31", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of hemodynamics and vascular lesions of various organs by RI angiography and blood pool scintigraphy",
+    "url": "https://www.carenet.com/drugs/materials/pdf/530359_4300419A1020_1_11.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ヘパティメージ注 (Hepatimage)", "ingredient": "N-Pyridoxyl-5-methyltryptophan Technetium (99mTc) [PMT]", "original": "ヘパティメージ注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1984-07-24", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of hepatobiliary disease and function",
+    "url": "https://www.kegg.jp/medicus-bin/japic_med?japic_code=00001569"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ベンゾダイン注 (Benzodine)", "ingredient": "Iomazenil (123I)", "original": "ベンゾダイン注", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "2004-04-23", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of epileptic focus in partial epilepsy patients being considered for surgical treatment",
+    "url": "https://www.nmp.co.jp/sites/default/files/2024-10/T_benzo_202410.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "マイオビュー「注射用」/注シリンジ (Myoview)", "ingredient": "Tetrofosmin Technetium (99mTc)", "original": "マイオビュー「注射用」", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1994-01-19", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of heart disease by myocardial scintigraphy; diagnosis of cardiac function by first-pass method",
+    "url": "https://www.nmp.co.jp/sites/default/files/2023-10/IF_myo-kit_231012.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "メジテック (Meditec)", "ingredient": "Sodium Pertechnetate (99mTc) generator", "original": "メジテック", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1984-07-24", "status": "approved", "role": "diagnostic",
+    "indication": "Tc-99m generator for brain tumor/cerebrovascular, thyroid, salivary gland and ectopic gastric mucosa diagnosis",
+    "url": "https://www.nmp.co.jp/sites/default/files/2024-10/T_meditec_202410.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ヨードカプセル-123", "ingredient": "Sodium Iodide (123I) Capsule", "original": "ヨードカプセル-123", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1979-03-13", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of thyroid disease by scintigraphy; thyroid function test by uptake measurement",
+    "url": "https://www.nmp.co.jp/sites/default/files/2018-09/T_I-cap.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "セレブロテックキット (Cerebrotec)", "ingredient": "Exametazime Technetium (99mTc) [HMPAO]", "original": "セレブロテックキット", "lang": "ja",
+    "holder": "Nihon Medi-Physics", "approved": "1989-09-01", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of regional cerebral blood flow",
+    "url": "https://www.nmp.co.jp/sites/default/files/2021-01/IF_PAO_210120.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "セラAgX100 (TheraAgX100)", "ingredient": "Iodine-125 sealed brachytherapy seed source (Ag wire in Ti capsule)", "original": "セラAgX100", "lang": "ja",
+    "holder": "Nihon Medi-Physics (licensed from Theragenics Corp.)", "approved": "2016-03-16", "status": "approved", "role": "therapy",
+    "indication": "Treatment of localized malignant tumors (excluding non-solid tumors), e.g. prostate brachytherapy",
+    "url": "https://www.nmp.co.jp/sites/default/files/member/news/pdf/2016_05_09.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "セラストランド-SL (TheraStrand-SL)", "ingredient": "Iodine-125 sealed source on absorbable braided strand", "original": "セラストランド－SL", "lang": "ja",
+    "holder": "Nihon Medi-Physics (licensed from Theragenics Corp.)", "approved": "2016-03-16", "status": "approved", "role": "therapy",
+    "indication": "Treatment of localized malignant tumors (excluding non-solid tumors), e.g. prostate brachytherapy",
+    "url": "https://www.nmp.co.jp/sites/default/files/2022-07/T_sl_202207.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "Iofetamine (123I) Injection Daiichi", "ingredient": "N-Isopropyl-4-Iodoamphetamine (123I) Hydrochloride", "original": "イオフェタミン(123I)注射液「第一」", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": null, "status": "approved", "role": "diagnostic",
+    "indication": "Brain perfusion imaging",
+    "url": "https://www.pdradiopharma.com/en/hcw/products/diagnostic/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "Ultra-Techne Kow", "ingredient": "Sodium Pertechnetate (99mTc) Injection Generator", "original": "ウルトラテクネカウ", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": null, "status": "approved", "role": "diagnostic",
+    "indication": "Brain, thyroid, salivary gland and ectopic gastric mucosa imaging / regional lung ventilation imaging",
+    "url": "https://www.pdradiopharma.com/en/hcw/products/diagnostic/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "Techne DTPA Kit", "ingredient": "Technetium (99mTc) Diethylenetriamine Pentaacetic Acid [DTPA]", "original": "テクネDTPAキット", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": null, "status": "approved", "role": "diagnostic",
+    "indication": "Kidney and urinary tract imaging",
+    "url": "https://www.pdradiopharma.com/en/hcw/products/diagnostic/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "Techne MDP Kit / Injection", "ingredient": "Technetium (99mTc) Methylenediphosphonate [MDP]", "original": "テクネMDPキット / テクネMDP注射液", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": null, "status": "approved", "role": "diagnostic",
+    "indication": "Bone and brain imaging",
+    "url": "https://www.pdradiopharma.com/en/hcw/products/diagnostic/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "Techne Pyrophosphate Kit / Injection", "ingredient": "Technetium (99mTc) Pyrophosphate", "original": "テクネピロリン酸キット / テクネピロリン酸静注", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": null, "status": "approved", "role": "diagnostic",
+    "indication": "Heart and bone imaging",
+    "url": "https://www.pdradiopharma.com/en/hcw/products/diagnostic/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "Techne Phytate Kit", "ingredient": "Technetium (99mTc) Phytate", "original": "テクネフチン酸キット", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": "2009-09-18", "status": "approved", "role": "diagnostic",
+    "indication": "Liver imaging; also sentinel lymph node identification in breast cancer and malignant melanoma",
+    "url": "https://www.pdradiopharma.com/en/hcw/products/diagnostic/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "MyoMIBG-I123 Injection (ミオMIBG-I123注射液)", "ingredient": "3-Iodobenzylguanidine (123I) [MIBG]", "original": "ミオMIBG-I123注射液", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": null, "status": "approved", "role": "diagnostic",
+    "indication": "Cardiac sympathetic nerve, neuroblastoma and pheochromocytoma imaging",
+    "url": "https://www.pdradiopharma.com/en/hcw/products/diagnostic/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "Sodium Iodide-131 Capsules (No.1/3/5/30/50)", "ingredient": "Sodium Iodide (131I) Capsules", "original": "ヨウ化ナトリウム-131 カプセル", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": null, "status": "approved", "role": "therapy",
+    "indication": "Radioiodine therapy for thyroid disease",
+    "url": "https://www.pdradiopharma.com/en/hcw/products/therapeutic/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "アミヴィッド静注 (Amyvid)", "ingredient": "Florbetapir (18F)", "original": "アミヴィッド静注", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": "2016-12-19", "status": "approved", "role": "diagnostic",
+    "indication": "Visualization of cerebral beta-amyloid plaque in patients with cognitive impairment suspected of Alzheimer-type dementia; later expanded to mild cognitive impairment and post anti-amyloid antibody treatment",
+    "url": "https://www.pdradiopharma.com/wpeptip/wp-content/uploads/2023/08/AMY_interview.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "カーディオライト注射液 第一 (Cardiolite)", "ingredient": "Hexakis(2-methoxyisobutylisonitrile) Technetium (99mTc) [Sestamibi]", "original": "カーディオライト注射液　第一", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": "1993-04-02", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of heart disease by myocardial perfusion scintigraphy; also parathyroid scintigraphy (per approval history)",
+    "url": "https://www.pdradiopharma.com/products/1159/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "オクトレオスキャン静注用セット (OctreoScan)", "ingredient": "Indium (111In) Pentetreotide", "original": "オクトレオスキャン静注用セット", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": "2015-09-28", "status": "approved", "role": "diagnostic",
+    "indication": "Somatostatin receptor scintigraphy for diagnosis of neuroendocrine tumors",
+    "url": "https://www.pdradiopharma.com/products/1200/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ニューロライト注射液第一 (Neurolite)", "ingredient": "[N,N'-Ethylenedi-L-cysteinate(3-)]oxotechnetium (99mTc), diethyl ester [ECD/bicisate]", "original": "ニューロライト注射液第一", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": "1994-01-19", "status": "approved", "role": "diagnostic",
+    "indication": "Regional cerebral blood flow diagnosis (局所脳血流診断薬)",
+    "url": "https://www.pdradiopharma.com/products/1095/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "テクネMAG3キット/注射液", "ingredient": "Mercaptoacetyltriglycine Technetium (99mTc) [MAG3]", "original": "テクネMAG3キット", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": "1994-01-19", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of renal and urinary tract disease by scintigraphy and renography",
+    "url": "https://www.pdradiopharma.com/products/1222/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "テクネMAAキット (Techne MAA Kit)", "ingredient": "Technetium (99mTc) Macroaggregated Albumin [MAA]", "original": "テクネMAAキット", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": "1977-06-14", "status": "approved", "role": "diagnostic",
+    "indication": "Diagnosis of pulmonary blood-flow distribution abnormalities by lung scintigraphy",
+    "url": "https://www.pdradiopharma.com/products/1208/"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ライアットMIBG-I131静注 (Raiatt MIBG)", "ingredient": "3-Iodobenzylguanidine (131I) [MIBG]", "original": "ライアットMIBG-I131静注", "lang": "ja",
+    "holder": "PDRadiopharma", "approved": "2021-01-01", "status": "approved", "role": "therapy",
+    "indication": "Treatment of MIBG-avid unresectable pheochromocytoma/paraganglioma; indication expanded 2025-09-19 to include MIBG-avid neuroblastoma",
+    "url": "https://www.jrias.or.jp/pdf/MIBGmanual_v1.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ゼヴァリン イットリウム(90Y)静注用セット (Zevalin Yttrium)", "ingredient": "Ibritumomab Tiuxetan (Yttrium-90)", "original": "ゼヴァリン イットリウム（90Y）静注用セット", "lang": "ja",
+    "holder": "Originally Bayer Yakuhin, now PDRadiopharma (via Spectrum/Mundipharma)", "approved": "2008-01-25", "status": "approved", "role": "therapy",
+    "indication": "CD20-positive relapsed or refractory low-grade B-cell non-Hodgkin lymphoma and mantle cell lymphoma",
+    "url": "https://www.pdradiopharma.com/uploads/zvr-y_if.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ゼヴァリン インジウム(111In)静注用セット (Zevalin Indium)", "ingredient": "Ibritumomab Tiuxetan (Indium-111)", "original": "ゼヴァリン インジウム（111In）静注用セット", "lang": "ja",
+    "holder": "Originally Bayer Yakuhin, now PDRadiopharma (via Spectrum/Mundipharma)", "approved": "2008-01-25", "status": "approved", "role": "diagnostic",
+    "indication": "Confirmation of biodistribution before Yttrium-90 ibritumomab tiuxetan therapy (no direct tumor efficacy)",
+    "url": "https://www.pdradiopharma.com/uploads/zvr-y_if.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ルタテラ静注 (Lutathera)", "ingredient": "Lutetium Oxodotreotide (177Lu)", "original": "ルタテラ静注", "lang": "ja",
+    "holder": "Originally Fujifilm Toyama Chemical; transferred to Novartis Pharma 2023-03-31", "approved": "2021-06-23", "status": "approved", "role": "therapy",
+    "indication": "Somatostatin receptor-positive neuroendocrine tumors",
+    "url": "https://asset.fujifilm.com/www/fftc/files/2021-07/57bdfd5c786109b02596948ecc794ded/210623_01_1.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ライザケア輸液 (Lysakare)", "ingredient": "L-Lysine hydrochloride / L-Arginine hydrochloride infusion (non-radioactive; renal protection co-administered with Lutathera)", "original": "ライザケア輸液", "lang": "ja",
+    "holder": "Novartis Pharma (originally Fujifilm Toyama Chemical)", "approved": "2021-06-23", "status": "approved", "role": "therapy",
+    "indication": "Reduction of renal radiation exposure from lutetium (177Lu) oxodotreotide (not itself radioactive; included for completeness as a companion product)",
+    "url": "https://asset.fujifilm.com/www/fftc/files/2021-07/57bdfd5c786109b02596948ecc794ded/210623_01_1.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "プルヴィクト静注 (Pluvicto)", "ingredient": "Lutetium Vipivotide Tetraxetan (177Lu)", "original": "プルヴィクト静注", "lang": "ja",
+    "holder": "Novartis Pharma", "approved": "2025-09-19", "status": "approved", "role": "therapy",
+    "indication": "PSMA-positive metastatic castration-resistant prostate cancer with distant metastasis",
+    "url": "https://www.novartis.com/jp-ja/news/media-releases/prkk20250919"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ロカメッツキット (Locametz)", "ingredient": "Gozetotide (labeled with Gallium-68) [PSMA-11]", "original": "ロカメッツキット", "lang": "ja",
+    "holder": "Novartis Pharma", "approved": "2025-09-19", "status": "approved", "role": "diagnostic",
+    "indication": "Assistance in determining eligibility of prostate cancer patients for PSMA-targeted therapy (PET imaging)",
+    "url": "https://www.pmda.go.jp/RMP/www/300242/b2b7c2ed-b58b-4f75-9146-1004dc9bc851/300242_72904A5D1024_01_001RMPm.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ガリアファーム 68Ge/68Ga ジェネレータ (GalliaPharm)", "ingredient": "Gallium-68 generator (Ge-68/Ga-68)", "original": "ガリアファーム68Ge/68Gaジェネレータ", "lang": "ja",
+    "holder": "Novartis Pharma (product of Eckert & Ziegler Radiopharma GmbH)", "approved": "2025-09-19", "status": "approved", "role": "diagnostic",
+    "indication": "Generator for radiolabeling PET diagnostic radiopharmaceutical kits (e.g. gozetotide) with Gallium-68",
+    "url": "https://www.pmda.go.jp/drugs/2025/P20250912002/300242000_30700AMX00227_A100_1.pdf"
+  },
+  {
+    "region": "JP", "regulator": "PMDA/MHLW", "brand": "ゾーフィゴ静注 (Xofigo)", "ingredient": "Radium Chloride (223Ra)", "original": "ゾーフィゴ静注", "lang": "ja",
+    "holder": "Bayer Yakuhin", "approved": "2016-03-28", "status": "approved", "role": "therapy",
+    "indication": "Castration-resistant prostate cancer with bone metastases (Japan's first alpha-emitting radiopharmaceutical)",
+    "url": "https://www.pmda.go.jp/drugs/2016/P20160407001/630004000_22800AMX00383_A100_1.pdf"
+  }
+]

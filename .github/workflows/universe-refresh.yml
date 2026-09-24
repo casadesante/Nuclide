@@ -1,0 +1,125 @@
+name: Refresh the radiopharmaceutical universe (monthly)
+
+# Re-harvests the sources that move month to month and rebuilds public/universe/ (ideas, unmet needs, trials,
+# products, papers, patents) in incremental mode: anything not re-harvested here (older paper years, congress
+# abstracts, older patents, non-US registrations) is carried over from the files already published.
+#   - ClinicalTrials.gov (API v2) and the EU CTIS register: full re-harvest, re-classified
+#   - Europe PMC: the current and previous publication year, re-classified (tags + unmet-need sentences)
+#   - openFDA Drugs@FDA: US registrations, merged with the committed non-US registration lists
+#   - Google Patents: the current and previous publication month, one small job per month x CPC class
+# The result opens a pull request for review (Sunday review workflow), like the other refresh jobs.
+on:
+  schedule:
+    - cron: "23 5 2 * *"  # 2nd of each month, 05:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      slices: ${{ steps.p.outputs.slices }}
+    steps:
+      - id: p
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import datetime as dt, json
+          t = dt.date.today(); prev = (t.replace(day=1) - dt.timedelta(days=1))
+          months = [(prev.year, prev.month), (t.year, t.month)]
+          print("slices=" + json.dumps([{"y": y, "m": m, "c": c} for y, m in months for c in ("A61K51", "C07B59", "G21G1", "G21G4")]))
+          PY
+
+  patents:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        s: ${{ fromJSON(needs.plan.outputs.slices) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts/universe
+      - run: python3 scripts/universe/harvest_patents.py ${{ matrix.s.y }} out --slices "${{ matrix.s.m }}:${{ matrix.s.c }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pat-${{ matrix.s.y }}-${{ matrix.s.m }}-${{ matrix.s.c }}
+          path: out/
+          retention-days: 14
+
+  build:
+    needs: patents
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    defaults:
+      run:
+        shell: bash  # -eo pipefail, so a failing script is not masked by `| tail`
+    env:
+      UNIVERSE_WORK: ${{ github.workspace }}/.universe-work
+      NUCLIDE_REPO: ${{ github.workspace }}
+      UNIVERSE_INCREMENTAL: "1"
+      P: scripts/universe/pipeline
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare the work directory (committed non-US registration lists)
+        run: mkdir -p "$UNIVERSE_WORK/raw" && cp -r "$P/inputs/." "$UNIVERSE_WORK/"
+      - name: Patents (this month and last)
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: pat-*
+          path: ${{ env.UNIVERSE_WORK }}/patents/slices
+      - name: ClinicalTrials.gov
+        run: python3 -u "$P/harvest_ctgov.py" && python3 -u "$P/classify_trials.py" | tail -3
+      - name: EU CTIS (two sort passes past the 10k cap)
+        run: python3 -u "$P/harvest_ctis.py" DESC && python3 -u "$P/harvest_ctis.py" ASC && python3 -u "$P/classify_ctis.py" | tail -3
+      - name: Europe PMC, current and previous year
+        run: |
+          Y=$(date -u +%Y); PY=$((Y-1))
+          python3 -u "$P/harvest_epmc.py" $PY $Y
+          python3 -u "$P/classify_papers.py" $PY $Y
+          mv "$UNIVERSE_WORK/gaps_raw_${PY}_${Y}.jsonl" "$UNIVERSE_WORK/gaps_raw_all.jsonl"
+      - name: National registries (Spain, France, Netherlands, Italy)
+        continue-on-error: true  # a registry outage keeps last month's committed list
+        run: |
+          python3 -u "$P/harvest_eu_national.py" | tail -6
+          cp "$UNIVERSE_WORK"/approvals/{es,fr,nl,it}.json "$P/inputs/approvals/"
+      - name: openFDA and the product merge
+        run: python3 -u "$P/harvest_fda.py" && python3 -u "$P/build_products.py" | tail -3
+      - name: Rebuild the universe (incremental)
+        run: python3 -u "$P/build_universe.py" | tail -40
+      - name: Sanity check (no source may shrink by more than 10%)
+        run: |
+          git show HEAD:src/data/universe-stats.json > /tmp/old.json
+          python3 - <<'PY'
+          import json, sys
+          old, new = json.load(open("/tmp/old.json")), json.load(open("src/data/universe-stats.json"))
+          bad = [k for k in ("trials", "products", "papers", "abstracts", "patents", "gaps") if new.get(k, 0) < 0.9 * old.get(k, 0)]
+          print({k: (old.get(k), new.get(k)) for k in ("trials", "products", "papers", "abstracts", "patents", "gaps", "ideas")})
+          sys.exit(f"shrank by more than 10%: {bad}" if bad else 0)
+          PY
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: bot/universe-refresh
+          title: "Monthly refresh: radiopharmaceutical universe"
+          commit-message: "chore: monthly universe refresh (trials, CTIS, Europe PMC, openFDA, EU national registries, patents)"
+          add-paths: |
+            public/universe/**
+            src/data/universe-stats.json
+            scripts/universe/pipeline/inputs/approvals/**
+          body: |
+            Automated monthly rebuild of `public/universe/` in incremental mode.
+            Re-harvested: ClinicalTrials.gov, EU CTIS, Europe PMC (current and previous year), openFDA, the Spanish, French, Dutch and Italian national registries, Google Patents (current and previous month).
+            Carried over unchanged: older paper years, congress abstracts, older patents, non-US registrations.
+            The sanity step failed the run if any source shrank by more than 10%. Check the idea counts in `src/data/universe-stats.json`.
+          labels: automated, pipeline
+          delete-branch: false

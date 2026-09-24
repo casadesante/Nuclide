@@ -3,10 +3,10 @@
  "trials": 7624,
  "trialsCTG": 7166,
  "trialsCTIS": 458,
- "products": 1240,
- "regions": 28,
- "agents": 233,
- "agentsNotInUS": 92,
+ "products": 1555,
+ "regions": 32,
+ "agents": 202,
+ "agentsNotInUS": 77,
  "papers": 118094,
  "paperYears": [
   2015,
@@ -23,7 +23,7 @@
   2026
  ],
  "papersCore": 62379,
- "abstracts": 12663,
+ "abstracts": 15174,
  "meetings": [
   "ASNC 2022",
   "ASNC 2024",
@@ -55,25 +55,25 @@
   2025,
   2026
  ],
- "gaps": 14661,
- "ideas": 1014,
+ "gaps": 15083,
+ "ideas": 1043,
  "ideaLenses": {
   "momentum-no-trials": 63,
-  "first-in-human": 70,
-  "unmet-need": 354,
+  "first-in-human": 71,
+  "unmet-need": 368,
   "therapy-partner": 51,
   "indication-expansion": 25,
   "needs-vs-trials": 15,
   "patent-momentum": 20,
-  "isotope-gap": 96,
+  "isotope-gap": 99,
   "companion-imaging": 12,
   "adc-validated": 9,
+  "congress-signal": 26,
   "academic-only": 9,
-  "congress-signal": 14,
-  "approved-abroad": 80,
+  "approved-abroad": 58,
   "china-only": 7,
-  "new-agent": 48,
+  "new-agent": 69,
   "stalled": 141
  },
- "bytes": 67464699
+ "bytes": 69047775
 }
