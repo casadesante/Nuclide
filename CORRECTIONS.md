@@ -6,6 +6,10 @@ Nuclide forked from [OnCo](https://github.com/judegomila/OnCo) on 2026-09-22; On
 
 No corrections have been recorded yet.
 
+## Proposed by the update bot (pending review)
+
+- 2026-09-26: 27 proposals drafted from the feeds (23 high confidence); review in [docs/proposals/latest.md](docs/proposals/latest.md). Nothing here is a confirmed correction until a human moves it above.
+
 ## How corrections are logged
 
 - Anyone can report an error via a GitHub issue or pull request.

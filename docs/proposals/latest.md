@@ -1,11 +1,41 @@
-# Change proposals 2026-09-22
+# Change proposals 2026-09-26
 
-Drafted by scripts/propose-updates.ts from: factcheck missing, trialChanges 2026-09-22, fda 2026-09-22, regional 2026-09-22.
+Drafted by scripts/propose-updates.ts from: factcheck 2026-09-22, trialChanges 2026-09-22, fda 2026-09-22, regional 2026-09-22.
 
 Review each line against its source. Apply by editing the file named; nothing is applied automatically.
 
 ## High confidence (23)
 
+- [ ] **Flortaucipir F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-flortaucipir/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2024, "https://www.ema.europa.eu/en/medicines/human/EPAR/tauvid", "This medicinal product is for diagnostic use only. Flortaucipir (18F) is a radio")
+  - evidence: EMA register: Tauvid (flortaucipir (18F)) Authorised, 2024-08-22. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/tauvid))
+  - file: `src/data/regional-approvals.ts`
+- [ ] **Gallium-68 edotreotide (DOTATOC)** ([page](https://nuclide-umber.vercel.app/drugs/ga-68-dotatoc/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2016, "https://www.ema.europa.eu/en/medicines/human/EPAR/somakit-toc", "This medicinal product is for diagnostic use only. After radiolabelling with gal")
+  - evidence: EMA register: SomaKit TOC (edotreotide) Authorised, 2016-12-08. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/somakit-toc))
+  - file: `src/data/regional-approvals.ts`
+- [ ] **Flutemetamol F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-flutemetamol/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2014, "https://www.ema.europa.eu/en/medicines/human/EPAR/vizamyl", "This medicinal product is for diagnostic use only. Vizamyl is a radiopharmaceuti")
+  - evidence: EMA register: Vizamyl (flutemetamol (18F)) Authorised, 2014-08-22. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/vizamyl))
+  - file: `src/data/regional-approvals.ts`
+- [ ] **Florbetaben F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-florbetaben/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2014, "https://www.ema.europa.eu/en/medicines/human/EPAR/neuraceq", "This medicinal product is for diagnostic use only. Neuraceq is a radiopharmaceut")
+  - evidence: EMA register: Neuraceq (florbetaben (18F)) Authorised, 2014-02-20. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/neuraceq))
+  - file: `src/data/regional-approvals.ts`
+- [ ] **Florbetapir F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-florbetapir/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2013, "https://www.ema.europa.eu/en/medicines/human/EPAR/amyvid", "This medicinal product is for diagnostic use only. Amyvid is a radiopharmaceutic")
+  - evidence: EMA register: Amyvid (florbetapir (18F)) Authorised, 2013-01-14. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/amyvid))
+  - file: `src/data/regional-approvals.ts`
+- [ ] **Ioflupane I-123** ([page](https://nuclide-umber.vercel.app/drugs/i-123-ioflupane/)) · regional-row · `EU`
+  - current: (no EU entry)
+  - proposed: EU: A(2000, "https://www.ema.europa.eu/en/medicines/human/EPAR/datscan", "This medicinal product is for diagnostic use only. DaTSCAN is indicated for dete")
+  - evidence: EMA register: DaTSCAN (ioflupane (123l)) Authorised, 2000-07-27. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/datscan))
+  - file: `src/data/regional-approvals.ts`
 - [ ] **Floretyrosine F-18 (FET)** ([page](https://nuclide-umber.vercel.app/drugs/f-18-fet/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-09-11
   - proposed: { date: "2026-09-11", type: "approval", region: "US", note: "PIXCLARA (FLORETYROSINE F 18): Type 1 - New Molecular Entity", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218592" }
@@ -91,36 +121,6 @@ Review each line against its source. Apply by editing the file named; nothing is
   - proposed: { date: "2026-06-01", type: "approval", region: "US", note: "AFINITOR (EVEROLIMUS): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022334" }
   - evidence: NOVARTIS · SUPPL 55 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022334))
   - file: `src/data/drugs.ts:1`
-- [ ] **Flortaucipir F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-flortaucipir/)) · regional-row · `EU`
-  - current: (no EU entry)
-  - proposed: EU: A(2024, "https://www.ema.europa.eu/en/medicines/human/EPAR/tauvid", "This medicinal product is for diagnostic use only. Flortaucipir (18F) is a radio")
-  - evidence: EMA register: Tauvid (flortaucipir (18F)) Authorised, 2024-08-22. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/tauvid))
-  - file: `src/data/regional-approvals.ts`
-- [ ] **Gallium-68 edotreotide (DOTATOC)** ([page](https://nuclide-umber.vercel.app/drugs/ga-68-dotatoc/)) · regional-row · `EU`
-  - current: (no EU entry)
-  - proposed: EU: A(2016, "https://www.ema.europa.eu/en/medicines/human/EPAR/somakit-toc", "This medicinal product is for diagnostic use only. After radiolabelling with gal")
-  - evidence: EMA register: SomaKit TOC (edotreotide) Authorised, 2016-12-08. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/somakit-toc))
-  - file: `src/data/regional-approvals.ts`
-- [ ] **Flutemetamol F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-flutemetamol/)) · regional-row · `EU`
-  - current: (no EU entry)
-  - proposed: EU: A(2014, "https://www.ema.europa.eu/en/medicines/human/EPAR/vizamyl", "This medicinal product is for diagnostic use only. Vizamyl is a radiopharmaceuti")
-  - evidence: EMA register: Vizamyl (flutemetamol (18F)) Authorised, 2014-08-22. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/vizamyl))
-  - file: `src/data/regional-approvals.ts`
-- [ ] **Florbetaben F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-florbetaben/)) · regional-row · `EU`
-  - current: (no EU entry)
-  - proposed: EU: A(2014, "https://www.ema.europa.eu/en/medicines/human/EPAR/neuraceq", "This medicinal product is for diagnostic use only. Neuraceq is a radiopharmaceut")
-  - evidence: EMA register: Neuraceq (florbetaben (18F)) Authorised, 2014-02-20. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/neuraceq))
-  - file: `src/data/regional-approvals.ts`
-- [ ] **Florbetapir F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-florbetapir/)) · regional-row · `EU`
-  - current: (no EU entry)
-  - proposed: EU: A(2013, "https://www.ema.europa.eu/en/medicines/human/EPAR/amyvid", "This medicinal product is for diagnostic use only. Amyvid is a radiopharmaceutic")
-  - evidence: EMA register: Amyvid (florbetapir (18F)) Authorised, 2013-01-14. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/amyvid))
-  - file: `src/data/regional-approvals.ts`
-- [ ] **Ioflupane I-123** ([page](https://nuclide-umber.vercel.app/drugs/i-123-ioflupane/)) · regional-row · `EU`
-  - current: (no EU entry)
-  - proposed: EU: A(2000, "https://www.ema.europa.eu/en/medicines/human/EPAR/datscan", "This medicinal product is for diagnostic use only. DaTSCAN is indicated for dete")
-  - evidence: EMA register: DaTSCAN (ioflupane (123l)) Authorised, 2000-07-27. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/datscan))
-  - file: `src/data/regional-approvals.ts`
 
 ## Medium confidence (4)
 
