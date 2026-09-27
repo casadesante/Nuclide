@@ -391,7 +391,7 @@ export const diagnosticOncologyAgents: EntityInput[] = [
     summary:
       "Pixclara (floretyrosine F 18, 18F-FET) was approved by FDA on 11 September 2026 (the PDUFA goal date), after an initial complete response letter in April 2025 requesting additional confirmatory clinical evidence and a resubmission by Telix in March 2026. It is indicated for use with PET to differentiate recurrent or progressive glioma from treatment-related change, alongside other diagnostic evaluations, in adults and children from 1 month of age -- making it the first FDA-approved radiopharmaceutical imaging drug for glioma in the US. Safety was assessed in 382 glioma patients; the only adverse reaction at or above 0.5% incidence was headache, with nausea, injection-site reaction, fatigue and malaise each occurring in under 0.5%.\n\nFET-PET has been used in Europe and recommended by joint EANM/EANO/RANO/SNMMI guidelines for glioma imaging for over a decade, well ahead of US approval: recommended adult activity is 185-200 MBq, with a tumour-to-brain SUV ratio threshold of roughly 1.6-1.8 used to define biological tumour volume, and a maximum tumour-to-brain ratio of at least 2.5 associated with a 98% positive predictive value for neoplasm in newly diagnosed lesions. The Pixclara US label sets the adult dose at 185-259 MBq (5-7 mCi) and a paediatric weight-based dose from 1 month of age. The agent remains in a phase 3 registrational study for a possible brain-metastases indication, which is not yet part of the approved US label.",
     status: "approved",
-    asOf: "2026-09-22",
+    asOf: "2026-09-27",
     approvals: [
       {
         region: "US",
@@ -399,6 +399,9 @@ export const diagnosticOncologyAgents: EntityInput[] = [
         indication:
           "Use with PET to differentiate recurrent or progressive glioma from treatment-related change, in conjunction with other diagnostic evaluations, in adults and paediatric patients 1 month of age and older",
       },
+    ],
+    regulatoryEvents: [
+      { date: "2026-09-11", type: "approval", region: "US", note: "Pixclara, NDA 218592 (Telix Pharmaceuticals US), original approval; FDA classification Type 1 new molecular entity", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218592" },
     ],
     dosing: {
       route: "Intravenous bolus injection",
@@ -418,6 +421,7 @@ export const diagnosticOncologyAgents: EntityInput[] = [
     technologies: ["pet", "pet-ct"],
     companies: ["telix"],
     links: [
+      { label: "Drugs@FDA: NDA 218592, Pixclara (floretyrosine F 18)", url: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218592" },
       {
         label: "Pixclara (floretyrosine F 18) US Prescribing Information, Telix Pharmaceuticals",
         url: "https://telixpharma.com/wp-content/uploads/2026/09/USPI_PIXCLARA_Sep2026.pdf",

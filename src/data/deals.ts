@@ -89,6 +89,11 @@ export const deals: Deal[] = [
     upfront: "$40m non-refundable payment to Telix", total: "equal share of global commercialisation costs and profits, or up to $2.1bn in aggregate milestones plus low double-digit royalties if Telix opts out of co-funding", territories: "Global, with an option to expand to four further programmes", refs: ["nsclc", "radioligand-therapy"],
     note: "Telix's second-quarter 2026 results describe the collaboration as initially focused on lung cancer. No target, isotope or candidate code has been disclosed and nothing is in the clinic.",
     source: "https://telixpharma.com/news-views/telix-and-regeneron-announce-strategic-radiopharma-collaboration/", status: "announced" },
+  { id: "d-2026-novartis-boomray", date: "2026-09-22", type: "licence", from: x("Boomray Pharmaceuticals", "CN"), to: c("novartis", "Novartis"),
+    assets: [], assetText: "An undisclosed preclinical radioligand therapy asset; target, isotope and indication were not disclosed",
+    total: "up to $900m, including an undisclosed upfront payment and development, regulatory and sales milestones, plus royalties on future global net sales", territories: "Exclusive global licence", refs: ["radioligand-therapy"],
+    note: "Suzhou-based BoomRay's release is the only primary source; neither company named the asset.",
+    source: "https://www.prnewswire.com/news-releases/boomray-enters-exclusive-global-license-agreement-with-novartis-for-a-novel-radioligand-therapy-asset-302885500.html", status: "announced" },
 ];
 
 export const DEAL_TYPE_LABEL: Record<DealType, string> = { licence: "Licence", acquisition: "Acquisition", "co-development": "Co-development", option: "Option" };

@@ -809,9 +809,13 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-06",
+    "asOf": "2026-09-27",
     "id": "enzalutamide",
     "links": [
+      {
+        "label": "FDA supplement approval letter: Xtandi NDA 203415/S-026 and NDA 213674/S-016 (EMBARK overall survival), 24 July 2026",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/203415Orig1s026;213674Orig1s016ltr.pdf"
+      },
       {
         "label": "FDA label (DailyMed)",
         "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Enzalutamide"
@@ -849,6 +853,15 @@ export const carriedAgents: EntityInput[] = [
     ],
     "companies": [
       "pfizer"
+    ],
+    "regulatoryEvents": [
+      {
+        "date": "2026-07-24",
+        "type": "label-change",
+        "region": "US",
+        "note": "US Prescribing Information updated with overall survival data from EMBARK (NDA 203415/S-026, NDA 213674/S-016; efficacy labelling change with clinical data)",
+        "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/203415Orig1s026;213674Orig1s016ltr.pdf"
+      }
     ],
     "indications": [
       "prostate",
@@ -1407,12 +1420,16 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-06",
+    "asOf": "2026-09-27",
     "id": "ga68-psma-11",
     "trials": [
       "nct07052214"
     ],
     "links": [
+      {
+        "label": "Drugs@FDA: ANDA 216410, gallium Ga 68 gozetotide (RadioMedix)",
+        "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216410"
+      },
       {
         "label": "FDA label (DailyMed)",
         "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Gallium-68%20gozetotide"
@@ -1432,6 +1449,15 @@ export const carriedAgents: EntityInput[] = [
         "indication": "PSMA PET (UCLA/UCSF NDA); kits 2021-2022"
       }
     ],
+    "regulatoryEvents": [
+      {
+        "date": "2026-06-08",
+        "type": "approval",
+        "region": "US",
+        "note": "Gallium Ga 68 gozetotide from RadioMedix approved under an abbreviated new drug application, ANDA 216410 (original approval)",
+        "source": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216410"
+      }
+    ],
     "targets": [
       "psma"
     ],
@@ -1440,7 +1466,8 @@ export const carriedAgents: EntityInput[] = [
     ],
     "companies": [
       "telix",
-      "novartis"
+      "novartis",
+      "radiomedix"
     ],
     "indications": [
       "prostate"

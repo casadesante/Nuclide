@@ -334,9 +334,12 @@ export const newTherapyAgents: EntityInput[] = [
     summary:
       "Bexlutry (lutetium Lu 177 dotatate injection), from Curium, is the first product the FDA has approved as a 'radioligand equivalent' of an existing radiopharmaceutical: it has the same active radiopharmaceutical ingredient as Novartis/Advanced Accelerator Applications' Lutathera. The FDA approved it on 14 September 2026 for adults with somatostatin receptor-positive gastroenteropancreatic neuroendocrine tumours (GEP-NETs), spanning foregut, midgut and hindgut tumours.\n\nCurium filed under the FDA's 505(b)(2) pathway in July 2024, relying on published evidence and bridging data demonstrating a similar biological and chemical profile to Lutathera rather than running a new phase 3 trial. Approval followed a June 2026 court decision that cleared Curium of patent-infringement claims brought by Novartis. Unlike Lutathera, whose US label also covers paediatric patients aged 12 and older, Bexlutry's approval is adult-only.\n\nBexlutry is immediately available for prescribing in the US. A second lutetium dotatate candidate, Lantheus's PNT2003, received FDA tentative approval in March 2026 under the abbreviated new drug application (ANDA) pathway but is not yet launched; separately, ITM's related product 177Lu-edotreotide (ITM-11) received an FDA complete response letter in August 2026 over manufacturing and third-party facility issues unrelated to its clinical data. Bexlutry's approval is the first time a radioligand therapy for cancer has faced this kind of direct, lower-cost competition in the US market.",
     status: "approved",
-    asOf: "2026-09-22",
+    asOf: "2026-09-27",
     approvals: [
       { region: "US", year: 2026, indication: "Somatostatin receptor-positive gastroenteropancreatic neuroendocrine tumours (GEP-NETs), including foregut, midgut and hindgut tumours, in adults", note: "Approved via the FDA 505(b)(2) pathway as a radioligand equivalent of Lutathera, 14 September 2026" },
+    ],
+    regulatoryEvents: [
+      { date: "2026-09-14", type: "approval", region: "US", note: "Bexlutry, NDA 218525 (Curium), original approval; FDA classification Type 5 new formulation or new manufacturer, standard review", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218525" },
     ],
     companies: ["curium"],
     targets: ["sstr2"],
@@ -344,6 +347,7 @@ export const newTherapyAgents: EntityInput[] = [
     technologies: ["radioligand-therapy", "prrt"],
     tags: ["radioligand therapy", "generic", "neuroendocrine tumours", "beta emitter"],
     links: [
+      { label: "Drugs@FDA: NDA 218525, Bexlutry (lutetium Lu 177 dotatate)", url: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218525" },
       { label: "Curium: FDA approval of BEXLUTRY, 14 September 2026", url: "https://www.curiumpharma.com/2026/09/14/fda-approval-bexlutry/" },
       { label: "FiercePharma: FDA approves first radioligand equivalent", url: "https://www.fiercepharma.com/pharma/fda-approves-first-radioligand-equivalent-curiums-copycat-novartis-lutathera" },
       { label: "MedPath: FDA approves Curium's Bexlutry, first generic radioligand", url: "https://trial.medpath.com/news/fda-approves-curium-s-bexlutry-first-generic-radioligand-challenging-lutathera-s-gep-net-monopoly" },

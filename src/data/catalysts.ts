@@ -91,13 +91,6 @@ export const catalysts: Catalyst[] = [
     source: ct("NCT05840211"),
   },
   {
-    id: "c-pluvicto-mhspc-decision", date: "2026", kind: "pdufa", confidence: "expected",
-    title: "FDA decision on Pluvicto in metastatic hormone-sensitive prostate cancer (PSMAddition)",
-    companies: ["novartis"], drugs: ["pluvicto"], refs: ["prostate", "psma"],
-    note: "Novartis announced the supplemental filing after the PSMAddition results in 2025. No action date has been disclosed; the year is our estimate.",
-    source: "https://www.novartis.com/news",
-  },
-  {
     id: "c-intismeran-filing", date: "2027", kind: "filing", confidence: "expected",
     title: "Regulatory filings for intismeran autogene plus pembrolizumab in adjuvant melanoma (INTerpath-001)",
     companies: ["moderna", "merck"], drugs: ["intismeran-autogene", "pembrolizumab"], refs: ["melanoma", "interpath-001"],
