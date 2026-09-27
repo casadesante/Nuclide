@@ -65,7 +65,7 @@ export const carriedTrials: EntityInput[] = [
   },
   {
     "kind": "trial",
-    "asOf": "2026-09-06",
+    "asOf": "2026-09-27",
     "id": "alphabreak",
     "name": "AlphaBreak (FPI-2265) & AcTION (225Ac-PSMA-617)",
     "nct": "NCT06402331",
@@ -73,8 +73,8 @@ export const carriedTrials: EntityInput[] = [
     "status": "active",
     "sponsor": "AstraZeneca (Fusion); Novartis",
     "setting": "PSMA-positive mCRPC: actinium-225 PSMA radioligands vs standard of care, including after 177Lu-PSMA",
-    "tldr": "The phase 3 trials that will decide whether alpha-emitting PSMA drugs become the next step after Pluvicto.",
-    "summary": "AlphaBreak and AcTION, led by trial NCT06402331, are the phase 3 trials that will decide whether alpha-emitting PSMA drugs become the next step after Pluvicto in PSMA-positive metastatic castration-resistant prostate cancer. AlphaBreak tests FPI-2265, an actinium-225 PSMA-I&T agent from AstraZeneca and Fusion, after lutetium PSMA therapy, while Novartis' AcTION programme tests actinium-225 PSMA-617 in post-lutetium and lutetium-naive settings, and Bayer's PAnTHA phase 1 of 225Ac-PSMA-Trillium reported at ASCO GU 2026; the record lists an enrolment target of 600. Nuclide links them to targeted alpha therapy, the actinium-225 PSMA agents record, and to Fusion, AstraZeneca, Novartis and Bayer. Both are recruiting with no results, dry mouth and actinium-225 supply are the constraints, and whether alpha emitters help after lutetium is the question they exist to answer.",
+    "tldr": "The actinium-225 PSMA trials that will help decide whether alpha-emitting PSMA drugs become the next step after Pluvicto.",
+    "summary": "AlphaBreak and AcTION, led by trial NCT06402331, are the trials that will help decide whether alpha-emitting PSMA drugs become the next step after Pluvicto in PSMA-positive metastatic castration-resistant prostate cancer. AlphaBreak tests FPI-2265, an actinium-225 PSMA-I&T agent from AstraZeneca and Fusion, after lutetium PSMA therapy, while Novartis' AcTION programme tests actinium-225 PSMA-617 in post-lutetium and lutetium-naive settings, and Bayer's PAnTHA phase 1 of 225Ac-PSMA-Trillium reported at ASCO GU 2026. ClinicalTrials.gov lists AlphaBreak (NCT06402331) as phase 2, active and no longer recruiting, with an actual enrolment of 110 (registry record last updated 8 April 2026). Nuclide links them to targeted alpha therapy, the actinium-225 PSMA agents record, and to Fusion, AstraZeneca, Novartis and Bayer. AlphaBreak has stopped recruiting and has posted no results; dry mouth and actinium-225 supply are the constraints, and whether alpha emitters help after lutetium is the question they exist to answer.",
     "drugs": [
       "ac225-psma"
     ],
@@ -97,9 +97,9 @@ export const carriedTrials: EntityInput[] = [
         "url": "https://clinicaltrials.gov/study/NCT06402331"
       }
     ],
-    "enrolled": 600,
+    "enrolled": 110,
     "outcomes": [],
-    "replication": "Ongoing phase 3 of 225Ac-PSMA-I&T after 177Lu-PSMA; no results."
+    "replication": "Ongoing phase 2 of 225Ac-PSMA-I&T after 177Lu-PSMA (ClinicalTrials.gov: active, not recruiting, 110 enrolled); no results."
   },
   {
     "kind": "trial",
@@ -244,7 +244,7 @@ export const carriedTrials: EntityInput[] = [
   },
   {
     "kind": "trial",
-    "asOf": "2026-09-07",
+    "asOf": "2026-09-27",
     "id": "astra",
     "name": "ASTRA",
     "nct": "NCT01843062",
@@ -252,10 +252,10 @@ export const carriedTrials: EntityInput[] = [
     "status": "negative",
     "yearReported": 2019,
     "sponsor": "AstraZeneca",
-    "enrolled": 401,
+    "enrolled": 233,
     "setting": "High-risk differentiated thyroid cancer: selumetinib + adjuvant radioiodine vs placebo + radioiodine",
     "tldr": "Adding a MEK inhibitor to boost iodine uptake before ablation did not improve complete remission rates, cooling the 'redifferentiation for everyone' idea.",
-    "summary": "ASTRA, trial NCT01843062 sponsored by AstraZeneca and reported in 2019, found that adding the MEK inhibitor selumetinib to boost iodine uptake before adjuvant radioiodine in high-risk differentiated thyroid cancer did not improve complete remission rates, cooling the idea of redifferentiation for everyone. It randomised 401 patients to selumetinib or placebo with radioiodine and found no difference in complete remission at eighteen months. Nuclide links it to thyroid cancer, radioiodine therapy, kinase inhibitors, the MAPK pathway and the pairing of MAPK inhibitor redifferentiation followed by radioiodine. Redifferentiation remains reserved for selected radioiodine-refractory patients, where small series show MEK or BRAF and MEK inhibitors restore uptake in about half, and whether that selected use can be proved in a randomised trial is the open question.",
+    "summary": "ASTRA, trial NCT01843062 sponsored by AstraZeneca and reported in 2019, found that adding the MEK inhibitor selumetinib to boost iodine uptake before adjuvant radioiodine in high-risk differentiated thyroid cancer did not improve complete remission rates, cooling the idea of redifferentiation for everyone. It enrolled 400 patients and randomised 233 of them 2:1 to selumetinib or placebo with radioiodine (Ho and colleagues, Journal of Clinical Oncology 2022) and found no difference in complete remission at eighteen months. Nuclide links it to thyroid cancer, radioiodine therapy, kinase inhibitors, the MAPK pathway and the pairing of MAPK inhibitor redifferentiation followed by radioiodine. Redifferentiation remains reserved for selected radioiodine-refractory patients, where small series show MEK or BRAF and MEK inhibitors restore uptake in about half, and whether that selected use can be proved in a randomised trial is the open question.",
     "result": "Complete remission 40% vs 38.5%; not significant.",
     "outcomes": [
       {
@@ -287,6 +287,10 @@ export const carriedTrials: EntityInput[] = [
       "lesson:adjuvant-vs-active-disease"
     ],
     "links": [
+      {
+        "label": "Ho et al., J Clin Oncol 2022: selumetinib plus adjuvant radioactive iodine (ASTRA)",
+        "url": "https://doi.org/10.1200/JCO.21.00714"
+      },
       {
         "label": "ClinicalTrials.gov NCT01843062",
         "url": "https://clinicaltrials.gov/study/NCT01843062"
@@ -3871,13 +3875,13 @@ export const carriedTrials: EntityInput[] = [
   },
   {
     "kind": "trial",
-    "asOf": "2026-09-17",
+    "asOf": "2026-09-27",
     "tags": [
       "radiation-wave4"
     ],
     "id": "pop-rt",
     "name": "POP-RT",
-    "nct": "NCT01952223",
+    "nct": "NCT02302105",
     "phase": "3",
     "status": "positive",
     "yearReported": 2021,
@@ -3914,8 +3918,8 @@ export const carriedTrials: EntityInput[] = [
     ],
     "links": [
       {
-        "label": "ClinicalTrials.gov NCT01952223",
-        "url": "https://clinicaltrials.gov/study/NCT01952223"
+        "label": "ClinicalTrials.gov NCT02302105 (POP-RT, Tata Memorial Centre)",
+        "url": "https://clinicaltrials.gov/study/NCT02302105"
       },
       {
         "label": "JCO 2021",

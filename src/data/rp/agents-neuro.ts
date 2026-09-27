@@ -166,6 +166,43 @@ export const neuroAgents: EntityInput[] = [
     tags: ["tau PET", "diagnostic", "neurology"],
   },
   {
+    id: "f-18-florquinitau",
+    kind: "drug",
+    name: "Florquinitau F-18",
+    aka: ["Tauklarify", "florquinitau F 18 injection"],
+    modality: "PET tracer",
+    mechanism:
+      "A fluorine-18 labelled tracer that binds aggregated tau protein (in-vitro dissociation constant 0.3 nM in post-mortem brain homogenates containing tau neurofibrillary tangles). It crosses the blood-brain barrier, so PET shows where tau tangles, one of the two lesions that define Alzheimer's disease pathologically, have built up.",
+    brand: "Tauklarify",
+    status: "approved",
+    tldr: "A new PET scan tracer, approved by the FDA in August 2026, that shows tangled tau protein in the brain of adults with memory or thinking problems who are being assessed for Alzheimer's disease. It is read alongside other tests: a negative scan does not rule tau out and a positive one does not prove it.",
+    summary:
+      "Tauklarify (florquinitau F 18 injection), sponsored by Cerveau (Lantheus), was approved by the FDA on 13 August 2026 under NDA 220496 (original approval, FDA classification Type 1 new molecular entity, standard review). It is indicated for PET of the brain in adults with cognitive impairment who are being evaluated for Alzheimer's disease, to identify patients with tau neurofibrillary tangle (NFT) pathology. The label limits use to Alzheimer's disease: safety and effectiveness are not established for non-Alzheimer tauopathies, and it warns that a negative scan does not exclude, and a positive scan does not confirm, tau NFT pathology.\n\nThe recommended activity is 185 MBq (5 mCi) as an intravenous bolus in up to 10 mL, with imaging started about 90 minutes after injection; the whole-body effective dose from 185 MBq in an adult is estimated at 5.4 mSv, before any CT. CYP1A2 inducers, including tobacco smoking, should be avoided for at least 7 days beforehand. Effectiveness rests on two blinded read studies (279 and 338 subjects) in which five independent readers per study classified scans as tau-positive or negative against a reference standard built from cognitive status and amyloid PET; in Study 1, positive percent agreement ranged from 80% to 88% across readers and negative percent agreement from 98% to 99%. Across 1,734 subjects in the clinical trials, the most common adverse reaction was headache (0.7%).",
+    approvals: [
+      { region: "US", year: 2026, indication: "PET of the brain in adults with cognitive impairment who are being evaluated for Alzheimer's disease, to identify patients with tau neurofibrillary tangle pathology" },
+    ],
+    regulatoryEvents: [
+      { date: "2026-08-13", type: "approval", region: "US", note: "Tauklarify, NDA 220496 (Cerveau/Lantheus), original approval; FDA classification Type 1 new molecular entity, standard review", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220496" },
+    ],
+    dosing: {
+      route: "Intravenous bolus",
+      schedule: "185 MBq (5 mCi) in up to 10 mL; PET imaging starts approximately 90 minutes after injection",
+      source: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220496Orig1s000lbl.pdf",
+    },
+    toxicity: [
+      { event: "Headache", anyGradePct: 0.7, source: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220496Orig1s000lbl.pdf" },
+    ],
+    companies: ["lantheus"],
+    asOf: "2026-09-27",
+    links: [
+      { label: "FDA label: Tauklarify (florquinitau F 18 injection), August 2026", url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220496Orig1s000lbl.pdf" },
+      { label: "Drugs@FDA: NDA 220496, Tauklarify", url: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220496" },
+      { label: "FDA approval letter: NDA 220496, 13 August 2026", url: "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/220496Orig1s000ltr.pdf" },
+    ],
+    related: ["alzheimers-disease", "f-18-flortaucipir", "f-18-florbetapir", "f-18-flutemetamol", "f-18-florbetaben"],
+    tags: ["tau PET", "diagnostic", "neurology", "newly approved"],
+  },
+  {
     id: "i-123-ioflupane",
     kind: "drug",
     name: "Ioflupane I-123",
