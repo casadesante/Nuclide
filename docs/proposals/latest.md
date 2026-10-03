@@ -1,10 +1,10 @@
-# Change proposals 2026-09-27
+# Change proposals 2026-10-03
 
-Drafted by scripts/propose-updates.ts from: factcheck 2026-09-22, trialChanges 2026-09-22, fda 2026-09-22, regional 2026-09-22.
+Drafted by scripts/propose-updates.ts from: factcheck 2026-09-22, trialChanges 2026-09-22, fda 2026-09-23, regional 2026-09-23.
 
 Review each line against its source. Apply by editing the file named; nothing is applied automatically.
 
-## High confidence (23)
+## High confidence (25)
 
 - [ ] **Flortaucipir F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-flortaucipir/)) · regional-row · `EU`
   - current: (no EU entry)
@@ -36,6 +36,16 @@ Review each line against its source. Apply by editing the file named; nothing is
   - proposed: EU: A(2000, "https://www.ema.europa.eu/en/medicines/human/EPAR/datscan", "This medicinal product is for diagnostic use only. DaTSCAN is indicated for dete")
   - evidence: EMA register: DaTSCAN (ioflupane (123l)) Authorised, 2000-07-27. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/datscan))
   - file: `src/data/regional-approvals.ts`
+- [ ] **Everolimus** ([page](https://nuclide-umber.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-09-16
+  - proposed: { date: "2026-09-16", type: "approval", region: "US", note: "ZORTRESS (EVEROLIMUS): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021560" }
+  - evidence: NOVARTIS · SUPPL 34 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021560))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Lutetium-177 dotatate (radioligand equivalent)** ([page](https://nuclide-umber.vercel.app/drugs/lu-177-dotatate-generic/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-09-14
+  - proposed: { date: "2026-09-14", type: "approval", region: "US", note: "BEXLUTRY (LUTETIUM LU 177 DONATATE): Type 5 - New Formulation or New Manufacturer", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218525" }
+  - evidence: CURIUM · ORIG 1 · Type 5 - New Formulation or New Manufacturer ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218525))
+  - file: `src/data/rp/agents-therapy-new.ts:324`
 - [ ] **Floretyrosine F-18 (FET)** ([page](https://nuclide-umber.vercel.app/drugs/f-18-fet/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-09-11
   - proposed: { date: "2026-09-11", type: "approval", region: "US", note: "PIXCLARA (FLORETYROSINE F 18): Type 1 - New Molecular Entity", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218592" }
@@ -88,8 +98,8 @@ Review each line against its source. Apply by editing the file named; nothing is
   - file: `src/data/rp/agents-neuro.ts:104`
 - [ ] **Capecitabine** ([page](https://nuclide-umber.vercel.app/drugs/capecitabine/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-07-01
-  - proposed: { date: "2026-07-01", type: "approval", region: "US", note: "CAPECITABINE (CAPECITABINE): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211724" }
-  - evidence: RELIANCE LIFE · SUPPL 6 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211724))
+  - proposed: { date: "2026-07-01", type: "approval", region: "US", note: "CAPECITABINE (CAPECITABINE): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=210203" }
+  - evidence: HETERO LABS LTD V · SUPPL 7 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=210203))
   - file: `src/data/drugs.ts:1`
 - [ ] **Everolimus** ([page](https://nuclide-umber.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-06-30
@@ -113,25 +123,17 @@ Review each line against its source. Apply by editing the file named; nothing is
   - file: `src/data/drugs.ts:1`
 - [ ] **Everolimus** ([page](https://nuclide-umber.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-06-01
-  - proposed: { date: "2026-06-01", type: "approval", region: "US", note: "AFINITOR DISPERZ (EVEROLIMUS): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203985" }
-  - evidence: NOVARTIS PHARM · SUPPL 28 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203985))
+  - proposed: { date: "2026-06-01", type: "approval", region: "US", note: "AFINITOR (EVEROLIMUS): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022334" }
+  - evidence: NOVARTIS · SUPPL 55 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022334))
   - file: `src/data/drugs.ts:1`
 - [ ] **Everolimus** ([page](https://nuclide-umber.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-06-01
-  - proposed: { date: "2026-06-01", type: "approval", region: "US", note: "AFINITOR (EVEROLIMUS): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022334" }
-  - evidence: NOVARTIS · SUPPL 55 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022334))
+  - proposed: { date: "2026-06-01", type: "approval", region: "US", note: "AFINITOR DISPERZ (EVEROLIMUS): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203985" }
+  - evidence: NOVARTIS PHARM · SUPPL 28 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203985))
   - file: `src/data/drugs.ts:1`
 
 ## Medium confidence (4)
 
-- [ ] **CITRIC ACID ANHYDROUS AND 13C UREA** · new-product · `new drug record`
-  - current: (not in corpus)
-  - proposed: add product CITRIC ACID ANHYDROUS AND 13C UREA with a US approval dated 2026-07-24
-  - evidence: IDKIT:HP (CITRIC ACID ANHYDROUS AND 13C UREA) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021314))
-- [ ] **GALLIUM GA-68 GOZETOTIDE** · new-product · `new drug record`
-  - current: (not in corpus)
-  - proposed: add product GALLIUM GA-68 GOZETOTIDE with a US approval dated 2026-06-08
-  - evidence: GALLIUM GA 68 GOZETOTIDE (GALLIUM GA-68 GOZETOTIDE) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216410))
 - [ ] **FLORQUINITAU F-18** · new-product · `new drug record`
   - current: (not in corpus)
   - proposed: add product FLORQUINITAU F-18 with a US approval dated 2026-08-13
@@ -140,3 +142,11 @@ Review each line against its source. Apply by editing the file named; nothing is
   - current: (not in corpus)
   - proposed: add product KIT FOR THE PREPARATION OF TECHNETIUM TC 99M RED BLOOD CELLS with a US approval dated 2026-08-27
   - evidence: ULTRATAG (KIT FOR THE PREPARATION OF TECHNETIUM TC 99M RED BLOOD CELLS) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=019981))
+- [ ] **CITRIC ACID ANHYDROUS AND 13C UREA** · new-product · `new drug record`
+  - current: (not in corpus)
+  - proposed: add product CITRIC ACID ANHYDROUS AND 13C UREA with a US approval dated 2026-07-24
+  - evidence: IDKIT:HP (CITRIC ACID ANHYDROUS AND 13C UREA) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021314))
+- [ ] **GALLIUM GA-68 GOZETOTIDE** · new-product · `new drug record`
+  - current: (not in corpus)
+  - proposed: add product GALLIUM GA-68 GOZETOTIDE with a US approval dated 2026-06-08
+  - evidence: GALLIUM GA 68 GOZETOTIDE (GALLIUM GA-68 GOZETOTIDE) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=216410))
