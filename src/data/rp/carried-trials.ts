@@ -2705,17 +2705,17 @@ export const carriedTrials: EntityInput[] = [
     "name": "Study of 18F-Florastamin PET/CT Imaging in Patients With Suspected Recurrence of Prostate Cancer",
     "nct": "NCT06754085",
     "phase": "3",
-    "status": "recruiting",
+    "status": "completed",
     "sponsor": "HTA Co., Ltd.",
     "enrolled": 131,
-    "asOf": "2026-09-16",
+    "asOf": "2026-10-04",
     "tags": [
       "pipeline",
       "ctgov-ingest"
     ],
     "setting": "A Phase III, Prospective, Open-Label, Single-Arm, Multi-center Clinical Study to Assess the Diagnostic Performance and Safety of 18F-Florastamin PET/CT Imaging in Patients With Suspected Recurrence of Prostate Cancer",
-    "tldr": "A phase 3 trial of Florastamin[18F] Injection in prostate cancer, run by HTA Co., Ltd., now recruiting.",
-    "summary": "Study of 18F-Florastamin PET/CT Imaging in Patients With Suspected Recurrence of Prostate Cancer is a phase 3 interventional study registered as NCT06754085 by HTA Co., Ltd., with 131 participants planned, started 2024-12-19 and due to reach its primary completion in 2026-01-01. Interventions recorded: Florastamin[18F] Injection.",
+    "tldr": "A phase 3 trial of Florastamin[18F] Injection in prostate cancer, run by HTA Co., Ltd., completed in June 2026 with no results posted yet.",
+    "summary": "Study of 18F-Florastamin PET/CT Imaging in Patients With Suspected Recurrence of Prostate Cancer is a phase 3 interventional study registered as NCT06754085 by HTA Co., Ltd., with 131 participants enrolled (actual), started 2024-12-19 and completed on 2026-06-11 (primary completion and study completion both actual, per ClinicalTrials.gov, last updated 2026-09-25). Interventions recorded: Florastamin[18F] Injection.",
     "drugs": [
       "florastamin-f18"
     ],
