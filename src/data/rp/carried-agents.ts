@@ -2005,17 +2005,25 @@ export const carriedAgents: EntityInput[] = [
       {
         "label": "FDA label (DailyMed)",
         "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Lutetium-177%20dotatate"
+      },
+      {
+        "label": "Drugs@FDA: ANDA 217060, Bravnetsa (Lantheus), tentative approval",
+        "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217060"
+      },
+      {
+        "label": "FDA tentative approval letter, ANDA 217060 (21 Sep 2026)",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217060Orig1s000TAltr.pdf"
       }
     ],
     "name": "Lutetium-177 dotatate",
     "brand": "Lutathera",
     "code": "177Lu-DOTATATE",
     "modality": "Radioligand therapy (beta)",
-    "asOf": "2026-09-04",
+    "asOf": "2026-10-04",
     "status": "approved",
     "wikipedia": "https://en.wikipedia.org/wiki/Lutetium_(177Lu)_oxodotreotide",
     "tldr": "Lutetium-177 dotatate was the first modern radioligand therapy (2018), for neuroendocrine tumours, and is now used in first line.",
-    "summary": "Lutetium-177 dotatate is a radioligand therapy: the somatostatin analogue DOTATATE binds SSTR2 on neuroendocrine tumour cells and carries the beta emitter 177Lu into them, irradiating over a few millimetres. NETTER-1 established it in midgut NETs progressing on octreotide, and NETTER-2 (2024) moved it into first line for higher grade-2 and grade-3 GEP-NETs with PFS 22.8 versus 8.5 months. It was approved in 2018 for SSTR-positive GEP-NETs, with paediatric use from age 12 added in 2024. Dosing is 7.4 GBq every 8 weeks for 4 doses with an amino acid infusion to protect the kidneys; lymphopenia is common, and myelodysplastic syndrome (2.3%) and acute leukaemia (0.5%) are rare late risks. Alpha-emitting successors RYZ101 and AlphaMedix are in phase 3. For a newcomer: the first modern radioligand therapy and the template for a whole class.",
+    "summary": "Lutetium-177 dotatate is a radioligand therapy: the somatostatin analogue DOTATATE binds SSTR2 on neuroendocrine tumour cells and carries the beta emitter 177Lu into them, irradiating over a few millimetres. NETTER-1 established it in midgut NETs progressing on octreotide, and NETTER-2 (2024) moved it into first line for higher grade-2 and grade-3 GEP-NETs with PFS 22.8 versus 8.5 months. It was approved in 2018 for SSTR-positive GEP-NETs, with paediatric use from age 12 added in 2024. Dosing is 7.4 GBq every 8 weeks for 4 doses with an amino acid infusion to protect the kidneys; lymphopenia is common, and myelodysplastic syndrome (2.3%) and acute leukaemia (0.5%) are rare late risks. Alpha-emitting successors RYZ101 and AlphaMedix are in phase 3. The first generic is queued behind the patents: on 21 September 2026 FDA tentatively approved Lantheus's ANDA 217060 (Bravnetsa, 10 mCi/mL), finding it bioequivalent to Lutathera (NDA 208700), but withheld final approval because Advanced Accelerator Applications (Novartis) is suing Lantheus over US patent 10,596,276 in the District of Delaware (Civil Action No. 24-00095); final approval waits for the 30-month stay to run out, a court ruling that the patent is invalid or not infringed, or the patent's expiry on 25 January 2039. For a newcomer: the first modern radioligand therapy and the template for a whole class.",
     "mechanism": "SSTR2 agonist peptide with 177Lu.",
     "approvals": [
       {
@@ -2868,11 +2876,13 @@ export const carriedAgents: EntityInput[] = [
     "id": "psma-1007-f18",
     "kind": "drug",
     "name": "PSMA-1007 F-18",
-    "aka": [],
+    "aka": [
+      "Prostalumin"
+    ],
     "modality": "PSMA-targeted PET radiotracer, fluorine-18",
     "mechanism": "A fluorine-18 PSMA ligand excreted mainly through the liver rather than the kidneys, so the bladder does not obscure the prostate bed on PET.",
     "status": "phase-3",
-    "asOf": "2026-09-16",
+    "asOf": "2026-10-04",
     "tags": [
       "pipeline",
       "ctgov-ingest"
@@ -2882,7 +2892,7 @@ export const carriedAgents: EntityInput[] = [
       "editedOn": "2026-09-16"
     },
     "tldr": "PSMA-1007 is a fluorine-18 PSMA PET tracer from ABX in Germany, widely used in Europe for prostate cancer staging because little of it reaches the bladder, and in a phase 3 trial registered by its maker.",
-    "summary": "PSMA-1007, developed at Heidelberg and manufactured by ABX advanced biochemical compounds in Radeberg, is a fluorine-18 PSMA ligand whose low urinary excretion improves views of the prostate bed and pelvic nodes. It is authorised in several European countries and Canada and used in many centres alongside gallium-68 PSMA-11 and piflufolastat; a phase 3 trial by ABX is registered on ClinicalTrials.gov.",
+    "summary": "PSMA-1007, developed at Heidelberg and manufactured by ABX advanced biochemical compounds in Radeberg, is a fluorine-18 PSMA ligand whose low urinary excretion improves views of the prostate bed and pelvic nodes. It is authorised in several European countries and Canada and used in many centres alongside gallium-68 PSMA-11 and piflufolastat; a phase 3 trial by ABX is registered on ClinicalTrials.gov. Health Canada's Drug Product Database lists PROSTALUMIN ((18F)PSMA-1007, 3.7 GBq/mL intravenous solution, DIN 02571757) from the Centre for Probe Development and Commercialization in Hamilton, Ontario, with status Approved and a product monograph dated 24 September 2026.",
     "targets": [
       "psma"
     ],
@@ -2903,6 +2913,10 @@ export const carriedAgents: EntityInput[] = [
       {
         "label": "ClinicalTrials.gov: trials of PSMA-1007 F-18",
         "url": "https://clinicaltrials.gov/search?intr=PSMA-1007%20F-18"
+      },
+      {
+        "label": "Health Canada Drug Product Database: PROSTALUMIN, DIN 02571757",
+        "url": "https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=107378"
       }
     ]
   },
