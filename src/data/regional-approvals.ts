@@ -31,7 +31,7 @@ export type RegionalStatus = "approved" | "conditional" | "under-review" | "not-
 export type RegionalEntry = { status: RegionalStatus; year?: number; indication?: string; source?: string; note?: string; verified?: boolean; /** ISO date of the last check against the regulator (EU rows: the EMA register). */ verifiedOn?: string };
 
 /** Date the EU rows marked V() were last checked against the EMA register. Updated by scripts/fetch-ema.ts. */
-export const EPAR_CHECKED = "2026-09-10";
+export const EPAR_CHECKED = "2026-10-07";
 export type RegionalRow = Partial<Record<Region, RegionalEntry>>;
 
 const epar = (slug: string) => `https://www.ema.europa.eu/en/medicines/human/EPAR/${slug}`;
