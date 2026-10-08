@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-24",
+ "generatedAt": "2026-10-08",
  "offline": false,
  "requests": 8,
  "roadmaps": [
@@ -11,7 +11,7 @@
    "counts": {
     "trials": 4,
     "checked": 4,
-    "contradictions": 0,
+    "contradictions": 1,
     "explained": 0,
     "papers": 0,
     "watch": 4,
@@ -29,18 +29,20 @@
      },
      "registry": {
       "nct": "NCT05477576",
-      "status": "RECRUITING",
+      "status": "ACTIVE_NOT_RECRUITING",
       "phases": [
        "PHASE3"
       ],
       "studyType": "INTERVENTIONAL",
-      "enrolment": 338,
-      "enrolmentType": "ESTIMATED",
+      "enrolment": 343,
+      "enrolmentType": "ACTUAL",
       "primaryCompletion": "2026-12",
       "completion": "2030-12",
-      "lastUpdate": "2026-03-30"
+      "lastUpdate": "2026-10-05"
      },
-     "contradictions": [],
+     "contradictions": [
+      "corpus says recruiting, registry says active not recruiting"
+     ],
      "explained": [],
      "papers": []
     },
@@ -51,7 +53,7 @@
      "corpus": {
       "status": "active",
       "phase": "2",
-      "enrolled": 600,
+      "enrolled": 110,
       "enrolledBasis": "registry"
      },
      "registry": {
@@ -171,7 +173,13 @@
      "contradictions": []
     }
    ],
-   "contradictions": [],
+   "contradictions": [
+    {
+     "ref": "action-1",
+     "name": "ACTION-1",
+     "text": "corpus says recruiting, registry says active not recruiting"
+    }
+   ],
    "explained": []
   },
   {
@@ -370,7 +378,7 @@
      "corpus": {
       "status": "active",
       "phase": "2",
-      "enrolled": 600,
+      "enrolled": 110,
       "enrolledBasis": "registry"
      },
      "registry": {
@@ -567,7 +575,7 @@
    "counts": {
     "trials": 3,
     "checked": 3,
-    "contradictions": 0,
+    "contradictions": 1,
     "explained": 0,
     "papers": 0,
     "watch": 2,
@@ -585,18 +593,20 @@
      },
      "registry": {
       "nct": "NCT05477576",
-      "status": "RECRUITING",
+      "status": "ACTIVE_NOT_RECRUITING",
       "phases": [
        "PHASE3"
       ],
       "studyType": "INTERVENTIONAL",
-      "enrolment": 338,
-      "enrolmentType": "ESTIMATED",
+      "enrolment": 343,
+      "enrolmentType": "ACTUAL",
       "primaryCompletion": "2026-12",
       "completion": "2030-12",
-      "lastUpdate": "2026-03-30"
+      "lastUpdate": "2026-10-05"
      },
-     "contradictions": [],
+     "contradictions": [
+      "corpus says recruiting, registry says active not recruiting"
+     ],
      "explained": [],
      "papers": []
     },
@@ -677,7 +687,13 @@
      "contradictions": []
     }
    ],
-   "contradictions": [],
+   "contradictions": [
+    {
+     "ref": "action-1",
+     "name": "ACTION-1",
+     "text": "corpus says recruiting, registry says active not recruiting"
+    }
+   ],
    "explained": []
   }
  ]
