@@ -1,10 +1,10 @@
-# Change proposals 2026-10-04
+# Change proposals 2026-10-10
 
-Drafted by scripts/propose-updates.ts from: factcheck 2026-09-22, trialChanges 2026-09-22, fda 2026-09-23, regional 2026-09-23.
+Drafted by scripts/propose-updates.ts from: factcheck 2026-09-28, trialChanges 2026-09-28, fda 2026-09-30, regional 2026-09-30.
 
 Review each line against its source. Apply by editing the file named; nothing is applied automatically.
 
-## High confidence (25)
+## High confidence (21)
 
 - [ ] **Flortaucipir F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-flortaucipir/)) · regional-row · `EU`
   - current: (no EU entry)
@@ -37,20 +37,15 @@ Review each line against its source. Apply by editing the file named; nothing is
   - evidence: EMA register: DaTSCAN (ioflupane (123l)) Authorised, 2000-07-27. ([source](https://www.ema.europa.eu/en/medicines/human/EPAR/datscan))
   - file: `src/data/regional-approvals.ts`
 - [ ] **Everolimus** ([page](https://nuclide-umber.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
+  - current: 0 events; none dated 2026-09-21
+  - proposed: { date: "2026-09-21", type: "approval", region: "US", note: "EVEROLIMUS (EVEROLIMUS): ORIG", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220597" }
+  - evidence: NOVITIUM PHARMA · ORIG 1 · ORIG ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220597))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Everolimus** ([page](https://nuclide-umber.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-09-16
   - proposed: { date: "2026-09-16", type: "approval", region: "US", note: "ZORTRESS (EVEROLIMUS): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021560" }
   - evidence: NOVARTIS · SUPPL 34 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021560))
   - file: `src/data/drugs.ts:1`
-- [ ] **Lutetium-177 dotatate (radioligand equivalent)** ([page](https://nuclide-umber.vercel.app/drugs/lu-177-dotatate-generic/)) · regulatory-event · `regulatoryEvents`
-  - current: 0 events; none dated 2026-09-14
-  - proposed: { date: "2026-09-14", type: "approval", region: "US", note: "BEXLUTRY (LUTETIUM LU 177 DONATATE): Type 5 - New Formulation or New Manufacturer", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218525" }
-  - evidence: CURIUM · ORIG 1 · Type 5 - New Formulation or New Manufacturer ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218525))
-  - file: `src/data/rp/agents-therapy-new.ts:324`
-- [ ] **Floretyrosine F-18 (FET)** ([page](https://nuclide-umber.vercel.app/drugs/f-18-fet/)) · regulatory-event · `regulatoryEvents`
-  - current: 0 events; none dated 2026-09-11
-  - proposed: { date: "2026-09-11", type: "approval", region: "US", note: "PIXCLARA (FLORETYROSINE F 18): Type 1 - New Molecular Entity", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218592" }
-  - evidence: TELIX PHARMACEUTICALS US INC · ORIG 1 · Type 1 - New Molecular Entity ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218592))
-  - file: `src/data/rp/agents-diagnostic-oncology.ts:382`
 - [ ] **Cabozantinib** ([page](https://nuclide-umber.vercel.app/drugs/cabozantinib/)) · regulatory-event · `regulatoryEvents`
   - current: 1 events; none dated 2026-09-03
   - proposed: { date: "2026-09-03", type: "approval", region: "US", note: "OMCAZIO (CABOZANTINIB LAURYLSULFATE): ORIG", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220613" }
@@ -65,7 +60,7 @@ Review each line against its source. Apply by editing the file named; nothing is
   - current: 0 events; none dated 2026-08-31
   - proposed: { date: "2026-08-31", type: "approval", region: "US", note: "FLUDEOXYGLUCOSE F18 (FLUDEOXYGLUCOSE F 18): Manufacturing (CMC)", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=079086" }
   - evidence: PETNET · SUPPL 31 · Manufacturing (CMC) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=079086))
-  - file: `src/data/rp/agents-neuro.ts:231`
+  - file: `src/data/rp/agents-neuro.ts:268`
 - [ ] **Durvalumab** ([page](https://nuclide-umber.vercel.app/drugs/durvalumab/)) · regulatory-event · `regulatoryEvents`
   - current: 9 events; none dated 2026-08-31
   - proposed: { date: "2026-08-31", type: "approval", region: "US", note: "IMFINZI (DURVALUMAB): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069" }
@@ -85,11 +80,6 @@ Review each line against its source. Apply by editing the file named; nothing is
   - current: 12 events; none dated 2026-07-31
   - proposed: { date: "2026-07-31", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB AND BERAHYALURONIDASE ALFA-PMPH): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
   - evidence: MERCK SHARP DOHME · SUPPL 15 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467))
-  - file: `src/data/drugs.ts:1`
-- [ ] **Enzalutamide** ([page](https://nuclide-umber.vercel.app/drugs/enzalutamide/)) · regulatory-event · `regulatoryEvents`
-  - current: 0 events; none dated 2026-07-24
-  - proposed: { date: "2026-07-24", type: "approval", region: "US", note: "XTANDI (ENZALUTAMIDE): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203415" }
-  - evidence: ASTELLAS · SUPPL 26 · Efficacy ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203415))
   - file: `src/data/drugs.ts:1`
 - [ ] **Florbetaben F-18** ([page](https://nuclide-umber.vercel.app/drugs/f-18-florbetaben/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-07-22
@@ -121,19 +111,18 @@ Review each line against its source. Apply by editing the file named; nothing is
   - proposed: { date: "2026-06-05", type: "approval", region: "US", note: "ABIRATERONE ACETATE (ABIRATERONE ACETATE): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=208371" }
   - evidence: RISING · SUPPL 5 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=208371))
   - file: `src/data/drugs.ts:1`
-- [ ] **Everolimus** ([page](https://nuclide-umber.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
-  - current: 0 events; none dated 2026-06-01
-  - proposed: { date: "2026-06-01", type: "approval", region: "US", note: "AFINITOR (EVEROLIMUS): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022334" }
-  - evidence: NOVARTIS · SUPPL 55 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022334))
-  - file: `src/data/drugs.ts:1`
-- [ ] **Everolimus** ([page](https://nuclide-umber.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
-  - current: 0 events; none dated 2026-06-01
-  - proposed: { date: "2026-06-01", type: "approval", region: "US", note: "AFINITOR DISPERZ (EVEROLIMUS): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203985" }
-  - evidence: NOVARTIS PHARM · SUPPL 28 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=203985))
-  - file: `src/data/drugs.ts:1`
 
-## Medium confidence (4)
+## Medium confidence (6)
 
+- [ ] **CYC-009: Technegas versus xenon-133 ventilation imaging** ([page](https://nuclide-umber.vercel.app/trials/nct03054870/)) · trial-status · `status`
+  - current: historic
+  - proposed: withdrawn
+  - evidence: ClinicalTrials.gov overall status is TERMINATED; recorded historic. Editorial statuses (positive, negative, mixed) need the result, so this is a floor, not a verdict. ([source](https://clinicaltrials.gov/study/NCT03054870))
+  - file: `src/data/rp/agents-lung.ts:114`
+- [ ] **LUTETIUM LU-177 DOTATATE** · new-product · `new drug record`
+  - current: (not in corpus)
+  - proposed: add product LUTETIUM LU-177 DOTATATE with a US approval dated 2026-09-21
+  - evidence: BRAVNETSA (LUTETIUM LU-177 DOTATATE) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217060))
 - [ ] **FLORQUINITAU F-18** · new-product · `new drug record`
   - current: (not in corpus)
   - proposed: add product FLORQUINITAU F-18 with a US approval dated 2026-08-13
