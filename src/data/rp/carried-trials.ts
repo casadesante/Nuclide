@@ -10,16 +10,17 @@ import type { EntityInput } from "@/lib/schema";
 export const carriedTrials: EntityInput[] = [
   {
     "kind": "trial",
-    "asOf": "2026-09-07",
+    "asOf": "2026-10-11",
     "id": "action-1",
     "name": "ACTION-1",
     "nct": "NCT05477576",
     "phase": "3",
-    "status": "recruiting",
+    "status": "active",
+    "enrolled": 343,
     "sponsor": "BMS (RayzeBio)",
     "setting": "SSTR-positive GEP-NETs progressing after 177Lu somatostatin-analogue therapy: 225Ac-DOTATATE (RYZ101) vs investigator's choice",
     "tldr": "Tests whether an actinium alpha-radioligand rescues neuroendocrine tumours after lutetium therapy fails.",
-    "summary": "ACTION-1, trial NCT05477576 sponsored by Bristol Myers Squibb through RayzeBio, tests whether the actinium-225 alpha-radioligand RYZ101, or 225Ac-DOTATATE, rescues somatostatin-receptor-positive gastroenteropancreatic neuroendocrine tumours after lutetium-177 somatostatin analogue therapy has failed. Its phase 1b established a fixed dose of 10.2 MBq with encouraging responses, the phase 3 against investigator's choice is enrolling with an interim analysis expected in 2026, and its dosimetry was published in the Journal of Nuclear Medicine in 2026. Nuclide links it to targeted alpha therapy, actinium-225 DOTATATE, lutetium-177 dotatate and the pairing of beta then alpha PRRT. Whether an alpha emitter can overcome resistance to a beta emitter aimed at the same receptor is the question it will answer.",
+    "summary": "ACTION-1, trial NCT05477576 sponsored by Bristol Myers Squibb through RayzeBio, tests whether the actinium-225 alpha-radioligand RYZ101, or 225Ac-DOTATATE, rescues somatostatin-receptor-positive gastroenteropancreatic neuroendocrine tumours after lutetium-177 somatostatin analogue therapy has failed. Its phase 1b established a fixed dose of 10.2 MBq with encouraging responses, the phase 3 against investigator's choice has closed enrolment (ClinicalTrials.gov status active, not recruiting, 343 participants actual, record updated 5 October 2026; primary completion estimated December 2026), and its dosimetry was published in the Journal of Nuclear Medicine in 2026. Nuclide links it to targeted alpha therapy, actinium-225 DOTATATE, lutetium-177 dotatate and the pairing of beta then alpha PRRT. Whether an alpha emitter can overcome resistance to a beta emitter aimed at the same receptor is the question it will answer.",
     "drugs": [
       "ryz101",
       "lutathera"
@@ -2522,14 +2523,14 @@ export const carriedTrials: EntityInput[] = [
     "status": "recruiting",
     "sponsor": "Convergent Therapeutics",
     "enrolled": 93,
-    "asOf": "2026-09-16",
+    "asOf": "2026-10-11",
     "tags": [
       "pipeline",
       "ctgov-ingest"
     ],
     "setting": "A Phase 2, Open-label Study Evaluating Dosimetry, Randomized Dose Optimization, Dose Escalation and Efficacy of Ac-225 Rosopatamab Tetraxetan in Participants With PSMA PET-Positive Castration-Resistant Prostate Cancer",
-    "tldr": "A phase 2 trial of In-111 rosopatamab tetraxetan in prostate cancer, run by Convergent Therapeutics, now recruiting.",
-    "summary": "Study Evaluating Dosimetry, Randomized Dose Optimization, Dose Escalation and Efficacy of Ac-225 Rosopatamab Tetraxetan in Participants With PSMA PET-Positive Castration-Resistant Prostate Cancer (CRPC) is a phase 2 interventional study registered as NCT06549465 by Convergent Therapeutics, with 93 participants planned, started 2024-08-06 and due to reach its primary completion in 2027-04-20. Interventions recorded: In-111 rosopatamab tetraxetan, 45 kBq/kg Ac-225 rosopatamab tetraxetan, 45 kBq/kg or equivalent fixed dose activity Ac-225 rosopatamab tetraxetan, 60 kBq/kg Ac-225 rosopatamab tetraxetan, Single dose 22 kBq/kg or equivalent fixed dose activity Ac-225 rosopatamab tetraxetan and Single dose 34 kBq/kg or equivalent fixed dose activity Ac-225 rosopatamab tetraxetan.",
+    "tldr": "A phase 2 trial of the actinium-225 antibody rosopatamab tetraxetan (with an indium-111 version for dosimetry) in prostate cancer, run by Convergent Therapeutics, now recruiting.",
+    "summary": "Study Evaluating Dosimetry, Randomized Dose Optimization, Dose Escalation and Efficacy of Ac-225 Rosopatamab Tetraxetan in Participants With PSMA PET-Positive Castration-Resistant Prostate Cancer (CRPC) is a phase 2 interventional study registered as NCT06549465 by Convergent Therapeutics, with 93 participants planned, started 2024-08-06 and due to reach its primary completion in August 2027 (estimated; moved from 20 April 2027 in the registry update of 2 October 2026). Interventions recorded: In-111 rosopatamab tetraxetan, 45 kBq/kg Ac-225 rosopatamab tetraxetan, 45 kBq/kg or equivalent fixed dose activity Ac-225 rosopatamab tetraxetan, 60 kBq/kg Ac-225 rosopatamab tetraxetan, Single dose 22 kBq/kg or equivalent fixed dose activity Ac-225 rosopatamab tetraxetan and Single dose 34 kBq/kg or equivalent fixed dose activity Ac-225 rosopatamab tetraxetan.",
     "indications": [
       "prostate"
     ],
