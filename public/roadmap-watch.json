@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-08",
+ "generatedAt": "2026-10-15",
  "offline": false,
  "requests": 8,
  "roadmaps": [
@@ -11,7 +11,7 @@
    "counts": {
     "trials": 4,
     "checked": 4,
-    "contradictions": 1,
+    "contradictions": 0,
     "explained": 0,
     "papers": 0,
     "watch": 4,
@@ -23,8 +23,9 @@
      "name": "ACTION-1",
      "nct": "NCT05477576",
      "corpus": {
-      "status": "recruiting",
+      "status": "active",
       "phase": "3",
+      "enrolled": 343,
       "enrolledBasis": "registry"
      },
      "registry": {
@@ -40,9 +41,7 @@
       "completion": "2030-12",
       "lastUpdate": "2026-10-05"
      },
-     "contradictions": [
-      "corpus says recruiting, registry says active not recruiting"
-     ],
+     "contradictions": [],
      "explained": [],
      "papers": []
     },
@@ -173,13 +172,7 @@
      "contradictions": []
     }
    ],
-   "contradictions": [
-    {
-     "ref": "action-1",
-     "name": "ACTION-1",
-     "text": "corpus says recruiting, registry says active not recruiting"
-    }
-   ],
+   "contradictions": [],
    "explained": []
   },
   {
@@ -575,7 +568,7 @@
    "counts": {
     "trials": 3,
     "checked": 3,
-    "contradictions": 1,
+    "contradictions": 0,
     "explained": 0,
     "papers": 0,
     "watch": 2,
@@ -587,8 +580,9 @@
      "name": "ACTION-1",
      "nct": "NCT05477576",
      "corpus": {
-      "status": "recruiting",
+      "status": "active",
       "phase": "3",
+      "enrolled": 343,
       "enrolledBasis": "registry"
      },
      "registry": {
@@ -604,9 +598,7 @@
       "completion": "2030-12",
       "lastUpdate": "2026-10-05"
      },
-     "contradictions": [
-      "corpus says recruiting, registry says active not recruiting"
-     ],
+     "contradictions": [],
      "explained": [],
      "papers": []
     },
@@ -687,13 +679,7 @@
      "contradictions": []
     }
    ],
-   "contradictions": [
-    {
-     "ref": "action-1",
-     "name": "ACTION-1",
-     "text": "corpus says recruiting, registry says active not recruiting"
-    }
-   ],
+   "contradictions": [],
    "explained": []
   }
  ]
