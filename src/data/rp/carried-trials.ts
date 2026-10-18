@@ -2580,17 +2580,17 @@ export const carriedTrials: EntityInput[] = [
     "name": "Trial of 225Ac-DOTATATE (RYZ101) in Subjects With ER+, HER2-negative Unresectable or Metastatic Breast Cancer Expressing SSTRs.",
     "nct": "NCT06590857",
     "phase": "1/2",
-    "status": "active",
+    "status": "recruiting",
     "sponsor": "RayzeBio, Inc.",
-    "enrolled": 16,
-    "asOf": "2026-09-16",
+    "enrolled": 64,
+    "asOf": "2026-10-18",
     "tags": [
       "pipeline",
       "ctgov-ingest"
     ],
     "setting": "Phase 1b/2 Open-label Trial of 225Ac-DOTATATE (RYZ101) in Subjects With Estrogen Receptor-positive (ER+), Human Epidermal Growth Factor Receptor 2 (HER2)-Negative, Locally Advanced and Unresectable or Metastatic Breast Cancer Expressing Somatostatin Receptors (SSTRs) (TRACY-1).",
-    "tldr": "A phase 1/2 trial of Actinium-225 DOTATATE in HR-positive / HER2-negative breast cancer, run by RayzeBio, Inc., active and no longer recruiting.",
-    "summary": "Trial of 225Ac-DOTATATE (RYZ101) in Subjects With ER+, HER2-negative Unresectable or Metastatic Breast Cancer Expressing SSTRs. is a phase 1/2 interventional study registered as NCT06590857 by RayzeBio, Inc., with 16 participants enrolled, started 2024-07-19 and due to reach its primary completion in 2028-10. Interventions recorded: RYZ101 and Standard of Care Endocrine Therapy.",
+    "tldr": "A phase 1/2 trial of Actinium-225 DOTATATE in HR-positive / HER2-negative breast cancer, run by RayzeBio, Inc., now recruiting.",
+    "summary": "Trial of 225Ac-DOTATATE (RYZ101) in Subjects With ER+, HER2-negative Unresectable or Metastatic Breast Cancer Expressing SSTRs. is a phase 1/2 interventional study registered as NCT06590857 by RayzeBio, Inc., with 64 participants planned (ClinicalTrials.gov status recruiting, enrolment estimated, record updated 2 October 2026), started 2024-07-19 and due to reach its primary completion in 2028-10. Interventions recorded: RYZ101 and Standard of Care Endocrine Therapy.",
     "drugs": [
       "ryz101"
     ],
