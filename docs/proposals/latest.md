@@ -1,11 +1,21 @@
-# Change proposals 2026-10-25
+# Change proposals 2026-10-31
 
-Drafted by scripts/propose-updates.ts from: factcheck 2026-10-12, trialChanges 2026-10-12, fda 2026-10-14, regional 2026-10-14.
+Drafted by scripts/propose-updates.ts from: factcheck 2026-10-19, trialChanges 2026-10-19, fda 2026-10-21, regional 2026-10-21.
 
 Review each line against its source. Apply by editing the file named; nothing is applied automatically.
 
-## High confidence (16)
+## High confidence (18)
 
+- [ ] **Pembrolizumab** ([page](https://nuclide-umber.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
+  - current: 12 events; none dated 2026-10-16
+  - proposed: { date: "2026-10-16", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB AND BERAHYALURONIDASE ALFA-PMPH): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
+  - evidence: MERCK SHARP DOHME · SUPPL 8 · Efficacy ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Pembrolizumab** ([page](https://nuclide-umber.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
+  - current: 12 events; none dated 2026-10-16
+  - proposed: { date: "2026-10-16", type: "approval", region: "US", note: "KEYTRUDA (PEMBROLIZUMAB): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514" }
+  - evidence: MERCK SHARP DOHME · SUPPL 191 · Efficacy ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514))
+  - file: `src/data/drugs.ts:1`
 - [ ] **Rituximab** ([page](https://nuclide-umber.vercel.app/drugs/rituximab/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-09-29
   - proposed: { date: "2026-09-29", type: "approval", region: "US", note: "RIABNI (RITUXIMAB-ARRX): Bioequivalence", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761140" }
