@@ -8,7 +8,7 @@
  * advisory committee. Those were removed on 2026-09-22 and replaced with the nuclear medicine
  * meeting year. Every date below was read from the society's own congress page on that day - no
  * aggregator sites, no inferred dates. Meetings whose next edition has not been announced by the
- * society (ASNC 2027, EANM 2027, ACNM 2027, the 15th WFNMB World Congress) are deliberately absent
+ * society (ASNC 2027, ACNM 2027, the 15th WFNMB World Congress) are deliberately absent
  * rather than guessed; the entry appears when the society publishes it.
  *
  * Note for maintainers: scripts/freshness.ts treats an event still listed 30 days after its date as
@@ -26,13 +26,6 @@ export type CalendarEvent = {
 };
 
 export const calendar: CalendarEvent[] = [
-  {
-    date: "2026-10-17", kind: "congress", confidence: "confirmed",
-    title: "EANM'26, 39th Annual Congress of the European Association of Nuclear Medicine, Vienna (17 to 21 October)",
-    refs: ["eanm", "prrt", "lu177-radioligand-therapy", "radioligand-dosimetry"],
-    note: "Europe's largest nuclear medicine congress, with dedicated radiopharmacy, dosimetry and theranostics tracks. European first-in-human radioligand data and the EANM guideline updates land here.",
-    source: "https://eanm.org/congress-scientific-events/eanm26/",
-  },
   {
     date: "2026-11-04", kind: "congress", confidence: "confirmed",
     title: "SNMMI Theranostics Conference 2026, Bethesda, Maryland (4 to 7 November)",
@@ -88,6 +81,13 @@ export const calendar: CalendarEvent[] = [
     refs: ["snmmi", "radioligand-therapy", "psma-pet", "prrt"],
     note: "The largest nuclear medicine meeting in the United States: new tracers, radiochemistry, dosimetry and the year's radioligand trial updates across oncology, cardiology and neurology.",
     source: "https://snmmi.org/AM/Web/Education-and-Meetings/Upcoming-Events.aspx",
+  },
+  {
+    date: "2027-10-09", kind: "congress", confidence: "confirmed",
+    title: "EANM'27, 40th Annual Congress of the European Association of Nuclear Medicine, Hamburg (9 to 13 October)",
+    refs: ["eanm", "prrt", "lu177-radioligand-therapy", "radioligand-dosimetry"],
+    note: "Europe's largest nuclear medicine congress, with dedicated radiopharmacy, dosimetry and theranostics tracks; EANM's page says it takes place at the Congress Center Hamburg and marks the 40th edition of the congress.",
+    source: "https://eanm.org/congress-scientific-events/eanm27/",
   },
   {
     date: "2027-11-11", kind: "congress", confidence: "confirmed",
