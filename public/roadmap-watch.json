@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-15",
+ "generatedAt": "2026-11-05",
  "offline": false,
  "requests": 8,
  "roadmaps": [
@@ -404,7 +404,7 @@
      },
      "registry": {
       "nct": "NCT04689828",
-      "status": "ACTIVE_NOT_RECRUITING",
+      "status": "COMPLETED",
       "phases": [
        "PHASE3"
       ],
@@ -412,8 +412,8 @@
       "enrolment": 469,
       "enrolmentType": "ACTUAL",
       "primaryCompletion": "2022-10-02",
-      "completion": "2026-09-10",
-      "lastUpdate": "2026-09-11"
+      "completion": "2026-09-09",
+      "lastUpdate": "2026-11-04"
      },
      "contradictions": [],
      "explained": [],
@@ -512,7 +512,7 @@
      },
      "registry": {
       "nct": "NCT04689828",
-      "status": "ACTIVE_NOT_RECRUITING",
+      "status": "COMPLETED",
       "phases": [
        "PHASE3"
       ],
@@ -520,8 +520,8 @@
       "enrolment": 469,
       "enrolmentType": "ACTUAL",
       "primaryCompletion": "2022-10-02",
-      "completion": "2026-09-10",
-      "lastUpdate": "2026-09-11"
+      "completion": "2026-09-09",
+      "lastUpdate": "2026-11-04"
      },
      "contradictions": [],
      "explained": [],
