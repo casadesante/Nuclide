@@ -157,7 +157,7 @@ function renderMarkdown(s: ProposalsSnapshot): string {
     if (!group.length) continue;
     lines.push(`## ${conf[0].toUpperCase()}${conf.slice(1)} confidence (${group.length})`, "");
     for (const p of group) {
-      lines.push(`- [ ] **${p.entityName}**${p.route ? ` ([page](https://nuclide-umber.vercel.app${p.route}))` : ""} · ${p.kind} · \`${p.field}\``);
+      lines.push(`- [ ] **${p.entityName}**${p.route ? ` ([page](https://nuclide-virid.vercel.app${p.route}))` : ""} · ${p.kind} · \`${p.field}\``);
       if (p.current) lines.push(`  - current: ${p.current}`);
       lines.push(`  - proposed: ${p.proposed}`);
       lines.push(`  - evidence: ${p.evidence} ([source](${p.sourceUrl}))`);
