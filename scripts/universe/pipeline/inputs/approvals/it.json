@@ -92,21 +92,6 @@
 {
 "region": "IT",
 "regulator": "AIFA",
-"brand": "TECHNEMIBI (1 mg KIT RADIOFARMACEUTICO)",
-"ingredient": "TECNEZIO-99MTC-SESTAMIBI",
-"original": "TETRAKIS(2-METOSSI-2-METILPROPIL-1 ISOCIANIDE)RAME(I)",
-"lang": "it",
-"holder": "CURIUM NETHERLANDS B.V.",
-"approved": "2009-07-16",
-"status": "approved",
-"role": "diagnostic",
-"indication": null,
-"url": "https://medicinali.aifa.gov.it/it/#/it/dettaglio/19066",
-"atc": "V09GA01"
-},
-{
-"region": "IT",
-"regulator": "AIFA",
 "brand": "RENOCIS (1 mg KIT PER PREPARAZIONE RADIOFARMACEUTICA)",
 "ingredient": "TECNEZIO-99MTC-SUCCIMERO",
 "original": "ACIDO DIMERCAPTOSUCCINICO (DMSA)",
