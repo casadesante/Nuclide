@@ -108,8 +108,12 @@ _ab = os.path.join(BASE, "abstracts_all.json")
 abstracts = [{"id": a["id"], "m": a["m"], "y": a["y"], "t": a["t"][:260], "au": (a.get("au") or "")[:110] or None, "code": a.get("code"),
               "iso": a["iso"], "tg": a["tg"], "ds": a["ds"], "role": a["role"], "ty": a["type"], "ag": a.get("ag", [])[:6], "nv": 1 if a.get("novel") else 0,
               "u": a.get("url")} for a in (json.load(open(_ab)) if os.path.exists(_ab) else [])]
-if not abstracts and INCREMENTAL:   # carry the published shards over (legacy single file as a fallback)
-    abstracts = [a for f in sorted(glob.glob(os.path.join(REPO, "public/universe/abstracts-*.json"))) for a in json.load(open(f))] or published("abstracts.json", [])
+_congress_ids = {a["id"] for a in abstracts}       # abstracts (and their gap sentences) re-harvested this run
+if INCREMENTAL:   # carry the published shards over (legacy single file as a fallback); a meeting re-harvested this run replaces its published rows
+    _new_m = {a["m"] for a in abstracts}
+    _pub = [a for f in sorted(glob.glob(os.path.join(REPO, "public/universe/abstracts-*.json"))) for a in json.load(open(f))]
+    _congress_ids |= {a["id"] for a in _pub if a["m"] in _new_m}
+    abstracts = [a for a in _pub if a["m"] not in _new_m] + abstracts or published("abstracts.json", [])
 for a in abstracts:
     if isinstance(a.get("y"), str) and a["y"].isdigit(): a["y"] = int(a["y"])
 
@@ -153,7 +157,7 @@ if INCREMENTAL:
     _congress_new = os.path.exists(os.path.join(BASE, "gaps_raw_abstracts.jsonl"))
     for g in published("gaps.json", []):
         if g["src"] == "paper" and g.get("y") in refreshed_paper_years: continue
-        if g["src"] != "paper" and _congress_new: continue
+        if g["src"] != "paper" and _congress_new and (g["id"] in _congress_ids or not _congress_ids): continue   # only the re-harvested abstracts' gaps
         gseen.add(g["s"][:160].lower()); gaps.append(g)
 for f, src_default in [("gaps_raw_all.jsonl", "paper"), ("gaps_raw_abstracts.jsonl", "congress")]:
     p = os.path.join(BASE, f)
