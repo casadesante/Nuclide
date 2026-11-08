@@ -2321,14 +2321,14 @@ export const carriedTrials: EntityInput[] = [
     "status": "recruiting",
     "sponsor": "Abscint NV/SA",
     "enrolled": 60,
-    "asOf": "2026-09-16",
+    "asOf": "2026-11-08",
     "tags": [
       "pipeline",
       "ctgov-ingest"
     ],
     "setting": "Evaluating the Diagnostic Performance of Human Epidermal Growth Factor Receptor 2 (HER2) Targeted Positron Emission Tomography and Computed Tomography (PET/CT) With 68Ga-ABS011 in Metastatic Breast Cancer (mBC) and Other Metastatic Solid Carcinomas.",
     "tldr": "A phase 2 trial of an investigational treatment in advanced solid tumours, run by Abscint NV/SA, now recruiting.",
-    "summary": "HER2 Targeted Molecular Imaging in mBC and Other Metastatic Solid Carcinomas Using 68Ga-ABS011 is a phase 2 interventional study registered as NCT06369831 by Abscint NV/SA, with 60 participants planned, started 2024-09-12 and due to reach its primary completion in 2026-09.",
+    "summary": "HER2 Targeted Molecular Imaging in mBC and Other Metastatic Solid Carcinomas Using 68Ga-ABS011 is a phase 2 interventional study registered as NCT06369831 by Abscint NV/SA, with 60 participants planned, started 2024-09-12 and still recruiting; its estimated primary completion moved from September 2026 to 31 December 2026 in the registry update of 26 October 2026.",
     "links": [
       {
         "label": "ClinicalTrials.gov NCT06369831",

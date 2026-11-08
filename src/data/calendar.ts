@@ -8,8 +8,8 @@
  * advisory committee. Those were removed on 2026-09-22 and replaced with the nuclear medicine
  * meeting year. Every date below was read from the society's own congress page on that day - no
  * aggregator sites, no inferred dates. Meetings whose next edition has not been announced by the
- * society (ASNC 2027, ACNM 2027, the 15th WFNMB World Congress) are deliberately absent
- * rather than guessed; the entry appears when the society publishes it.
+ * society (ASNC 2027, ACNM 2027, the 15th WFNMB World Congress, SNMMI Theranostics 2027, KSNM 2027)
+ * are deliberately absent rather than guessed; the entry appears when the society publishes it.
  *
  * Note for maintainers: scripts/freshness.ts treats an event still listed 30 days after its date as
  * critically stale, so past congresses must be replaced with the next edition, not left to rot.
@@ -26,20 +26,6 @@ export type CalendarEvent = {
 };
 
 export const calendar: CalendarEvent[] = [
-  {
-    date: "2026-11-04", kind: "congress", confidence: "confirmed",
-    title: "SNMMI Theranostics Conference 2026, Bethesda, Maryland (4 to 7 November)",
-    refs: ["snmmi", "radioligand-therapy", "radioligand-dosimetry", "lu177-radioligand-therapy"],
-    note: "SNMMI's conference devoted to theranostics alone: dosimetry practice, alpha-emitter programmes, supply and reimbursement rather than broad nuclear medicine.",
-    source: "https://snmmi.org/Theranostics/",
-  },
-  {
-    date: "2026-11-06", kind: "congress", confidence: "confirmed",
-    title: "65th Annual Meeting of the Korean Society of Nuclear Medicine with the 25th ARCCNM, Seoul (6 to 7 November)",
-    refs: ["ksnm", "futurechem", "cellbion"],
-    note: "Korea's national nuclear medicine meeting, held with the Asian Regional Cooperative Council for Nuclear Medicine. Where Korean radioligand programmes (FutureChem, CellBion) report domestically before Western congresses.",
-    source: "https://www.ksnm.or.kr/eng/",
-  },
   {
     date: "2026-11-19", kind: "congress", confidence: "confirmed",
     title: "66th Annual Scientific Meeting of the Japanese Society of Nuclear Medicine, Himeji (19 to 21 November)",
