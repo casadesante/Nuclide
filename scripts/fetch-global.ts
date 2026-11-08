@@ -6,7 +6,8 @@
  * blocked ones are listed too, so a later agent does not "fix" a working URL or waste a day on one
  * that cannot work:
  *   WORKS  Health Canada Drug Product Database API - JSON, carries a "Radiopharmaceutical" class.
- *   WORKS  Swissmedic authorised-medicines list (xlsx) - carries the class "Radiopharmazeutika".
+ *   WORKS  Swissmedic authorised-medicines list (xlsx) - carries the class "Radiopharmazeutikum"
+ *          (spelt "Radiopharmazeutika" in editions up to 30 Sep 2026; both are accepted).
  *   WORKS  NMPA English site (news.html, drugs.html) - the regulator's own English announcements.
  *   WORKS  MFDS English news board - Korea's own English press releases.
  *   WORKS  CTIS public API (POST only) - EU trials, which is where French, German, Spanish and
@@ -104,7 +105,7 @@ async function canada(match: (s: string) => string[]): Promise<GlobalSnapshot["r
 // ---------------------------------------------------------------- Switzerland
 
 async function switzerland(match: (s: string) => string[]): Promise<GlobalSnapshot["regulators"]["switzerland"]> {
-  const note = "Product names are Swissmedic's own German and French listings and are not translated here; the class column 'Radiopharmazeutika' is the filter.";
+  const note = "Product names are Swissmedic's own German and French listings and are not translated here; the class column 'Radiopharmazeutikum' (formerly 'Radiopharmazeutika') is the filter.";
   const buf = await getBuffer(SWISS_XLSX);
   if (!buf) return { source: SWISS_XLSX, total: 0, rows: [], note, error: "Swissmedic list unreachable" };
   const entries = zipEntries(buf);
@@ -114,10 +115,12 @@ async function switzerland(match: (s: string) => string[]): Promise<GlobalSnapsh
   // Columns: A authorisation number, C product name, D holder, E class, H first authorisation date.
   const asOf = records.map((r) => r.D).find((v) => v?.startsWith("Stand"))?.match(/\d{4}-\d{2}-\d{2}|\d{2}\.\d{2}\.\d{4}/)?.[0];
   const rows = records
-    .filter((r) => r.E === "Radiopharmazeutika")
+    .filter((r) => /^Radiopharmazeutik(a|um)$/.test((r.E ?? "").trim()))
     .map((r) => ({ id: r.A, name: r.C ?? "", company: r.D, date: r.H?.slice(0, 10), lang: "de-fr", refs: match(r.C ?? "") }))
     .filter((r) => r.name)
     .sort((a, b) => a.name.localeCompare(b.name));
+  // An empty match means the class label changed again (it did on 31 Oct 2026); say so instead of shipping a quiet zero.
+  if (!rows.length) return { source: SWISS_XLSX, asOf, total: 0, rows, note, error: "No rows matched the Radiopharmazeutikum class; check the column label" };
   return { source: SWISS_XLSX, asOf, total: rows.length, rows, note };
 }
 
