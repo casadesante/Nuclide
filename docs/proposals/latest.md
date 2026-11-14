@@ -1,20 +1,20 @@
-# Change proposals 2026-11-08
+# Change proposals 2026-11-14
 
-Drafted by scripts/propose-updates.ts from: factcheck 2026-10-26, trialChanges 2026-10-26, fda 2026-10-28, regional 2026-10-28.
+Drafted by scripts/propose-updates.ts from: factcheck 2026-11-02, trialChanges 2026-11-02, fda 2026-11-04, regional 2026-11-04.
 
 Review each line against its source. Apply by editing the file named; nothing is applied automatically.
 
-## High confidence (18)
+## High confidence (16)
 
-- [ ] **Pembrolizumab** ([page](https://nuclide-virid.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
-  - current: 12 events; none dated 2026-10-16
-  - proposed: { date: "2026-10-16", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB AND BERAHYALURONIDASE ALFA-PMPH): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
-  - evidence: MERCK SHARP DOHME · SUPPL 8 · Efficacy ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467))
-  - file: `src/data/drugs.ts:1`
 - [ ] **Pembrolizumab** ([page](https://nuclide-virid.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
   - current: 12 events; none dated 2026-10-16
   - proposed: { date: "2026-10-16", type: "approval", region: "US", note: "KEYTRUDA (PEMBROLIZUMAB): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514" }
   - evidence: MERCK SHARP DOHME · SUPPL 191 · Efficacy ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Pembrolizumab** ([page](https://nuclide-virid.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
+  - current: 12 events; none dated 2026-10-16
+  - proposed: { date: "2026-10-16", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB / BERAHYALURONIDASE ALFA-PMPH): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
+  - evidence: MERCK SHARP DOHME · SUPPL 8 · Efficacy ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467))
   - file: `src/data/drugs.ts:1`
 - [ ] **Cabozantinib** ([page](https://nuclide-virid.vercel.app/drugs/cabozantinib/)) · regulatory-event · `regulatoryEvents`
   - current: 1 events; none dated 2026-10-16
@@ -73,7 +73,7 @@ Review each line against its source. Apply by editing the file named; nothing is
   - file: `src/data/drugs.ts:1`
 - [ ] **Pembrolizumab** ([page](https://nuclide-virid.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
   - current: 12 events; none dated 2026-07-31
-  - proposed: { date: "2026-07-31", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB AND BERAHYALURONIDASE ALFA-PMPH): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
+  - proposed: { date: "2026-07-31", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB / BERAHYALURONIDASE ALFA-PMPH): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
   - evidence: MERCK SHARP DOHME · SUPPL 15 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467))
   - file: `src/data/drugs.ts:1`
 - [ ] **Rituximab** ([page](https://nuclide-virid.vercel.app/drugs/rituximab/)) · regulatory-event · `regulatoryEvents`
@@ -86,24 +86,19 @@ Review each line against its source. Apply by editing the file named; nothing is
   - proposed: { date: "2026-07-22", type: "approval", region: "US", note: "NEURACEQ (FLORBETABEN F 18): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=204677" }
   - evidence: LANTHEUS · SUPPL 41 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=204677))
   - file: `src/data/rp/agents-neuro.ts:104`
-- [ ] **Capecitabine** ([page](https://nuclide-virid.vercel.app/drugs/capecitabine/)) · regulatory-event · `regulatoryEvents`
-  - current: 0 events; none dated 2026-07-01
-  - proposed: { date: "2026-07-01", type: "approval", region: "US", note: "CAPECITABINE (CAPECITABINE): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211724" }
-  - evidence: SOMERSET THERAPS LLC · SUPPL 6 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=211724))
-  - file: `src/data/drugs.ts:1`
-- [ ] **Everolimus** ([page](https://nuclide-virid.vercel.app/drugs/everolimus/)) · regulatory-event · `regulatoryEvents`
-  - current: 0 events; none dated 2026-06-30
-  - proposed: { date: "2026-06-30", type: "approval", region: "US", note: "EVEROLIMUS (EVEROLIMUS): ORIG", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219464" }
-  - evidence: PHARMAZONE · ORIG 1 · ORIG ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=219464))
-  - file: `src/data/drugs.ts:1`
 
-## Medium confidence (5)
+## Medium confidence (6)
 
 - [ ] **CYC-009: Technegas versus xenon-133 ventilation imaging** ([page](https://nuclide-virid.vercel.app/trials/nct03054870/)) · trial-status · `status`
   - current: historic
   - proposed: withdrawn
   - evidence: ClinicalTrials.gov overall status is TERMINATED; recorded historic. Editorial statuses (positive, negative, mixed) need the result, so this is a floor, not a verdict. ([source](https://clinicaltrials.gov/study/NCT03054870))
   - file: `src/data/rp/agents-lung.ts:114`
+- [ ] **HER2 Targeted Molecular Imaging in mBC and Other Metastatic Solid Carcinomas Using 68Ga-ABS011** ([page](https://nuclide-virid.vercel.app/trials/nct06369831/)) · trial-completion · `yearReported / calendar`
+  - current: 2026-09
+  - proposed: 2026-12-31
+  - evidence: Primary completion date moved from 2026-09 to 2026-12-31; check the readout calendar entry. ([source](https://clinicaltrials.gov/study/NCT06369831))
+  - file: `src/data/trials.ts:1`
 - [ ] **PSMA PET Combined With MRI for the Detection of PCa** ([page](https://nuclide-virid.vercel.app/trials/nct07052214/)) · trial-status · `status`
   - current: recruiting
   - proposed: active
