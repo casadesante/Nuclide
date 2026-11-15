@@ -1981,13 +1981,13 @@ export const carriedTrials: EntityInput[] = [
     "status": "active",
     "sponsor": "Novartis Pharmaceuticals",
     "enrolled": 23,
-    "asOf": "2026-09-16",
+    "asOf": "2026-11-15",
     "tags": [
       "ctgov-ingest"
     ],
     "setting": "An Open-label Dosimetry, Biodistribution, Tolerability and Safety Study of Lutetium (177Lu) Vipivotide Tetraxetan in Participants With Progressive PSMA-Positive Metastatic Castration-Resistant Prostate Cancer (mCRPC) With Moderately and Severely Impaired and With Normal Renal Function.",
     "tldr": "A phase 2 trial of Lutetium-177 vipivotide tetraxetan in prostate cancer, run by Novartis Pharmaceuticals, active and no longer recruiting.",
-    "summary": "Study of Lutetium (177Lu) Vipivotide Tetraxetan in mCRPC Participants With Moderately and Severely Impaired and With Normal Renal Function is a phase 2 interventional study registered as NCT06004661 by Novartis Pharmaceuticals, with 23 participants enrolled, started 2024-04-04 and due to reach its primary completion in 2026-12-14. Interventions recorded: AAA617, 68Ga-PSMA-11. Conditions listed: Metastatic Castration-Resistant Prostate Cancer (mCRPC). No results are recorded here; the registry entry is the source.",
+    "summary": "Study of Lutetium (177Lu) Vipivotide Tetraxetan in mCRPC Participants With Moderately and Severely Impaired and With Normal Renal Function is a phase 2 interventional study registered as NCT06004661 by Novartis Pharmaceuticals, with 23 participants enrolled, started 2024-04-04 and due to reach its primary completion on 2026-11-06 (estimated; moved forward from 2026-12-14 in the registry update of 6 November 2026). Interventions recorded: AAA617, 68Ga-PSMA-11. Conditions listed: Metastatic Castration-Resistant Prostate Cancer (mCRPC). No results are recorded here; the registry entry is the source.",
     "drugs": [
       "pluvicto"
     ],
@@ -2321,14 +2321,14 @@ export const carriedTrials: EntityInput[] = [
     "status": "recruiting",
     "sponsor": "Abscint NV/SA",
     "enrolled": 60,
-    "asOf": "2026-09-16",
+    "asOf": "2026-11-08",
     "tags": [
       "pipeline",
       "ctgov-ingest"
     ],
     "setting": "Evaluating the Diagnostic Performance of Human Epidermal Growth Factor Receptor 2 (HER2) Targeted Positron Emission Tomography and Computed Tomography (PET/CT) With 68Ga-ABS011 in Metastatic Breast Cancer (mBC) and Other Metastatic Solid Carcinomas.",
     "tldr": "A phase 2 trial of an investigational treatment in advanced solid tumours, run by Abscint NV/SA, now recruiting.",
-    "summary": "HER2 Targeted Molecular Imaging in mBC and Other Metastatic Solid Carcinomas Using 68Ga-ABS011 is a phase 2 interventional study registered as NCT06369831 by Abscint NV/SA, with 60 participants planned, started 2024-09-12 and due to reach its primary completion in 2026-09.",
+    "summary": "HER2 Targeted Molecular Imaging in mBC and Other Metastatic Solid Carcinomas Using 68Ga-ABS011 is a phase 2 interventional study registered as NCT06369831 by Abscint NV/SA, with 60 participants planned, started 2024-09-12 and still recruiting; its estimated primary completion moved from September 2026 to 31 December 2026 in the registry update of 26 October 2026.",
     "links": [
       {
         "label": "ClinicalTrials.gov NCT06369831",
@@ -2580,17 +2580,17 @@ export const carriedTrials: EntityInput[] = [
     "name": "Trial of 225Ac-DOTATATE (RYZ101) in Subjects With ER+, HER2-negative Unresectable or Metastatic Breast Cancer Expressing SSTRs.",
     "nct": "NCT06590857",
     "phase": "1/2",
-    "status": "active",
+    "status": "recruiting",
     "sponsor": "RayzeBio, Inc.",
-    "enrolled": 16,
-    "asOf": "2026-09-16",
+    "enrolled": 64,
+    "asOf": "2026-10-18",
     "tags": [
       "pipeline",
       "ctgov-ingest"
     ],
     "setting": "Phase 1b/2 Open-label Trial of 225Ac-DOTATATE (RYZ101) in Subjects With Estrogen Receptor-positive (ER+), Human Epidermal Growth Factor Receptor 2 (HER2)-Negative, Locally Advanced and Unresectable or Metastatic Breast Cancer Expressing Somatostatin Receptors (SSTRs) (TRACY-1).",
-    "tldr": "A phase 1/2 trial of Actinium-225 DOTATATE in HR-positive / HER2-negative breast cancer, run by RayzeBio, Inc., active and no longer recruiting.",
-    "summary": "Trial of 225Ac-DOTATATE (RYZ101) in Subjects With ER+, HER2-negative Unresectable or Metastatic Breast Cancer Expressing SSTRs. is a phase 1/2 interventional study registered as NCT06590857 by RayzeBio, Inc., with 16 participants enrolled, started 2024-07-19 and due to reach its primary completion in 2028-10. Interventions recorded: RYZ101 and Standard of Care Endocrine Therapy.",
+    "tldr": "A phase 1/2 trial of Actinium-225 DOTATATE in HR-positive / HER2-negative breast cancer, run by RayzeBio, Inc., now recruiting.",
+    "summary": "Trial of 225Ac-DOTATATE (RYZ101) in Subjects With ER+, HER2-negative Unresectable or Metastatic Breast Cancer Expressing SSTRs. is a phase 1/2 interventional study registered as NCT06590857 by RayzeBio, Inc., with 64 participants planned (ClinicalTrials.gov status recruiting, enrolment estimated, record updated 2 October 2026), started 2024-07-19 and due to reach its primary completion in 2028-10. Interventions recorded: RYZ101 and Standard of Care Endocrine Therapy.",
     "drugs": [
       "ryz101"
     ],
@@ -2934,17 +2934,17 @@ export const carriedTrials: EntityInput[] = [
     "name": "A Single-Arm, Blinded, Fluorescent PSMA Histopathology Trial of AS1986NS",
     "nct": "NCT06906471",
     "phase": "1/2",
-    "status": "recruiting",
+    "status": "active",
     "sponsor": "Antelope Surgical Solutions, Inc",
-    "enrolled": 10,
-    "asOf": "2026-09-16",
+    "enrolled": 15,
+    "asOf": "2026-11-01",
     "tags": [
       "pipeline",
       "ctgov-ingest"
     ],
     "setting": "A Single-Arm, Blinded, Fluorescent PSMA Histopathology Trial of AS1986NS",
-    "tldr": "A phase 1/2 trial of AS1986NS in prostate cancer, run by Antelope Surgical Solutions, Inc, now recruiting.",
-    "summary": "A Single-Arm, Blinded, Fluorescent PSMA Histopathology Trial of AS1986NS is a phase 1/2 interventional study registered as NCT06906471 by Antelope Surgical Solutions, Inc, with 10 participants planned, started 2026-07-01 and due to reach its primary completion in 2026-10-30. Interventions recorded: AS1986NS.",
+    "tldr": "A phase 1/2 trial of AS1986NS in prostate cancer, run by Antelope Surgical Solutions, Inc. Recruitment has closed with 15 participants enrolled.",
+    "summary": "A Single-Arm, Blinded, Fluorescent PSMA Histopathology Trial of AS1986NS is a phase 1/2 interventional study registered as NCT06906471 by Antelope Surgical Solutions, Inc, started 2026-07-01 and is active but no longer recruiting, with 15 participants enrolled (actual, registry updated 16 Oct 2026). Primary completion is estimated for 2026-10-30 and study completion for 2026-11-30. Interventions recorded: AS1986NS.",
     "indications": [
       "prostate"
     ],
@@ -3081,16 +3081,16 @@ export const carriedTrials: EntityInput[] = [
     "name": "PSMA PET Combined With MRI for the Detection of PCa",
     "nct": "NCT07052214",
     "phase": "3",
-    "status": "recruiting",
+    "status": "active",
     "sponsor": "Telix Pharmaceuticals (Innovations) Pty Limited",
     "enrolled": 338,
-    "asOf": "2026-09-16",
+    "asOf": "2026-11-01",
     "tags": [
       "ctgov-ingest"
     ],
     "setting": "A Single Arm, Multicenter, Prospective, Open Label, Longitudinal Phase 3 Study of Prostate Specific Membrane Antigen (PSMA) Positron Emission Tomography (PET) Combined With Magnetic Resonance Imaging (MRI) Compared to Standard of Care (SOC) for the Detection of Prostate Cancer (PCa).",
-    "tldr": "A phase 3 trial of Gallium-68 gozetotide in prostate cancer, run by Telix Pharmaceuticals (Innovations) Pty Limited, now recruiting.",
-    "summary": "PSMA PET Combined With MRI for the Detection of PCa is a phase 3 interventional study registered as NCT07052214 by Telix Pharmaceuticals (Innovations) Pty Limited, with 338 participants planned, started 2025-08-18 and due to reach its primary completion in 2027-01. Interventions recorded: 68Ga-PSMA-11. Conditions listed: PCA, Prostate Cancer, Prostatic Neoplasm, PSMA PET. No results are recorded here; the registry entry is the source.",
+    "tldr": "A phase 3 trial of Gallium-68 gozetotide in prostate cancer, run by Telix Pharmaceuticals (Innovations) Pty Limited, active and no longer recruiting.",
+    "summary": "PSMA PET Combined With MRI for the Detection of PCa is a phase 3 interventional study registered as NCT07052214 by Telix Pharmaceuticals (Innovations) Pty Limited, with 338 participants planned (estimated), started 2025-08-18 and active but no longer recruiting (registry updated 20 Oct 2026); primary completion is due in 2027-01. Interventions recorded: 68Ga-PSMA-11. Conditions listed: PCA, Prostate Cancer, Prostatic Neoplasm, PSMA PET. No results are recorded here; the registry entry is the source.",
     "drugs": [
       "ga68-psma-11"
     ],
@@ -4166,7 +4166,7 @@ export const carriedTrials: EntityInput[] = [
   },
   {
     "kind": "trial",
-    "asOf": "2026-09-04",
+    "asOf": "2026-11-15",
     "id": "psmafore",
     "name": "PSMAfore",
     "nct": "NCT04689828",
@@ -4176,7 +4176,7 @@ export const carriedTrials: EntityInput[] = [
     "sponsor": "Novartis",
     "setting": "PSMA+ mCRPC after one ARPI, taxane-naive: 177Lu-PSMA-617 vs ARPI switch",
     "tldr": "PSMAfore moved Pluvicto before chemotherapy in prostate cancer.",
-    "summary": "PSMAfore, trial NCT04689828 sponsored by Novartis and published in the Lancet in 2024, moved Pluvicto, or 177Lu-PSMA-617, before chemotherapy in PSMA-positive metastatic castration-resistant prostate cancer after one androgen receptor pathway inhibitor. It randomised 468 taxane-naive men to the radioligand or a switch of androgen receptor pathway inhibitor, met its primary radiographic progression-free survival endpoint with a large effect, and overall survival was confounded by crossover of most control patients, with crossover-adjusted analyses favouring the radioligand; approval in the pre-chemotherapy setting followed in 2025. Whether earlier use improves survival, not just progression, is the open question.",
+    "summary": "PSMAfore, trial NCT04689828 sponsored by Novartis and published in the Lancet in 2024, moved Pluvicto, or 177Lu-PSMA-617, before chemotherapy in PSMA-positive metastatic castration-resistant prostate cancer after one androgen receptor pathway inhibitor. It randomised 468 taxane-naive men to the radioligand or a switch of androgen receptor pathway inhibitor, met its primary radiographic progression-free survival endpoint with a large effect, and overall survival was confounded by crossover of most control patients, with crossover-adjusted analyses favouring the radioligand; approval in the pre-chemotherapy setting followed in 2025. Whether earlier use improves survival, not just progression, is the open question. ClinicalTrials.gov now lists the study as completed, with primary completion on 2 October 2022, study completion on 9 September 2026 and 469 participants enrolled.",
     "result": "rPFS HR 0.41.",
     "drugs": [
       "pluvicto"
