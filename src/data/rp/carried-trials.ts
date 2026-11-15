@@ -1981,13 +1981,13 @@ export const carriedTrials: EntityInput[] = [
     "status": "active",
     "sponsor": "Novartis Pharmaceuticals",
     "enrolled": 23,
-    "asOf": "2026-09-16",
+    "asOf": "2026-11-15",
     "tags": [
       "ctgov-ingest"
     ],
     "setting": "An Open-label Dosimetry, Biodistribution, Tolerability and Safety Study of Lutetium (177Lu) Vipivotide Tetraxetan in Participants With Progressive PSMA-Positive Metastatic Castration-Resistant Prostate Cancer (mCRPC) With Moderately and Severely Impaired and With Normal Renal Function.",
     "tldr": "A phase 2 trial of Lutetium-177 vipivotide tetraxetan in prostate cancer, run by Novartis Pharmaceuticals, active and no longer recruiting.",
-    "summary": "Study of Lutetium (177Lu) Vipivotide Tetraxetan in mCRPC Participants With Moderately and Severely Impaired and With Normal Renal Function is a phase 2 interventional study registered as NCT06004661 by Novartis Pharmaceuticals, with 23 participants enrolled, started 2024-04-04 and due to reach its primary completion in 2026-12-14. Interventions recorded: AAA617, 68Ga-PSMA-11. Conditions listed: Metastatic Castration-Resistant Prostate Cancer (mCRPC). No results are recorded here; the registry entry is the source.",
+    "summary": "Study of Lutetium (177Lu) Vipivotide Tetraxetan in mCRPC Participants With Moderately and Severely Impaired and With Normal Renal Function is a phase 2 interventional study registered as NCT06004661 by Novartis Pharmaceuticals, with 23 participants enrolled, started 2024-04-04 and due to reach its primary completion on 2026-11-06 (estimated; moved forward from 2026-12-14 in the registry update of 6 November 2026). Interventions recorded: AAA617, 68Ga-PSMA-11. Conditions listed: Metastatic Castration-Resistant Prostate Cancer (mCRPC). No results are recorded here; the registry entry is the source.",
     "drugs": [
       "pluvicto"
     ],
@@ -4166,7 +4166,7 @@ export const carriedTrials: EntityInput[] = [
   },
   {
     "kind": "trial",
-    "asOf": "2026-09-04",
+    "asOf": "2026-11-15",
     "id": "psmafore",
     "name": "PSMAfore",
     "nct": "NCT04689828",
@@ -4176,7 +4176,7 @@ export const carriedTrials: EntityInput[] = [
     "sponsor": "Novartis",
     "setting": "PSMA+ mCRPC after one ARPI, taxane-naive: 177Lu-PSMA-617 vs ARPI switch",
     "tldr": "PSMAfore moved Pluvicto before chemotherapy in prostate cancer.",
-    "summary": "PSMAfore, trial NCT04689828 sponsored by Novartis and published in the Lancet in 2024, moved Pluvicto, or 177Lu-PSMA-617, before chemotherapy in PSMA-positive metastatic castration-resistant prostate cancer after one androgen receptor pathway inhibitor. It randomised 468 taxane-naive men to the radioligand or a switch of androgen receptor pathway inhibitor, met its primary radiographic progression-free survival endpoint with a large effect, and overall survival was confounded by crossover of most control patients, with crossover-adjusted analyses favouring the radioligand; approval in the pre-chemotherapy setting followed in 2025. Whether earlier use improves survival, not just progression, is the open question.",
+    "summary": "PSMAfore, trial NCT04689828 sponsored by Novartis and published in the Lancet in 2024, moved Pluvicto, or 177Lu-PSMA-617, before chemotherapy in PSMA-positive metastatic castration-resistant prostate cancer after one androgen receptor pathway inhibitor. It randomised 468 taxane-naive men to the radioligand or a switch of androgen receptor pathway inhibitor, met its primary radiographic progression-free survival endpoint with a large effect, and overall survival was confounded by crossover of most control patients, with crossover-adjusted analyses favouring the radioligand; approval in the pre-chemotherapy setting followed in 2025. Whether earlier use improves survival, not just progression, is the open question. ClinicalTrials.gov now lists the study as completed, with primary completion on 2 October 2022, study completion on 9 September 2026 and 469 participants enrolled.",
     "result": "rPFS HR 0.41.",
     "drugs": [
       "pluvicto"
