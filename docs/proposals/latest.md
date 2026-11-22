@@ -1,6 +1,6 @@
-# Change proposals 2026-11-15
+# Change proposals 2026-11-22
 
-Drafted by scripts/propose-updates.ts from: factcheck 2026-11-02, trialChanges 2026-11-02, fda 2026-11-04, regional 2026-11-04.
+Drafted by scripts/propose-updates.ts from: factcheck 2026-11-09, trialChanges 2026-11-09, fda 2026-11-11, regional 2026-11-11.
 
 Review each line against its source. Apply by editing the file named; nothing is applied automatically.
 
@@ -13,7 +13,7 @@ Review each line against its source. Apply by editing the file named; nothing is
   - file: `src/data/drugs.ts:1`
 - [ ] **Pembrolizumab** ([page](https://nuclide-virid.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
   - current: 12 events; none dated 2026-10-16
-  - proposed: { date: "2026-10-16", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB / BERAHYALURONIDASE ALFA-PMPH): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
+  - proposed: { date: "2026-10-16", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB AND BERAHYALURONIDASE ALFA-PMPH): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
   - evidence: MERCK SHARP DOHME · SUPPL 8 · Efficacy ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467))
   - file: `src/data/drugs.ts:1`
 - [ ] **Cabozantinib** ([page](https://nuclide-virid.vercel.app/drugs/cabozantinib/)) · regulatory-event · `regulatoryEvents`
@@ -71,15 +71,15 @@ Review each line against its source. Apply by editing the file named; nothing is
   - proposed: { date: "2026-08-14", type: "approval", region: "US", note: "CABOZANTINIB S-MALATE (CABOZANTINIB S-MALATE): ORIG", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213878" }
   - evidence: MSN · ORIG 1 · ORIG ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213878))
   - file: `src/data/drugs.ts:1`
-- [ ] **Pembrolizumab** ([page](https://nuclide-virid.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
-  - current: 12 events; none dated 2026-07-31
-  - proposed: { date: "2026-07-31", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB / BERAHYALURONIDASE ALFA-PMPH): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
-  - evidence: MERCK SHARP DOHME · SUPPL 15 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467))
-  - file: `src/data/drugs.ts:1`
 - [ ] **Rituximab** ([page](https://nuclide-virid.vercel.app/drugs/rituximab/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-07-31
   - proposed: { date: "2026-07-31", type: "approval", region: "US", note: "ZIMRIXBY (RITUXIMAB-CDXX): ORIG", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761376" }
   - evidence: DR REDDYS LABS SA · ORIG 1 · ORIG ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761376))
+  - file: `src/data/drugs.ts:1`
+- [ ] **Pembrolizumab** ([page](https://nuclide-virid.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
+  - current: 12 events; none dated 2026-07-31
+  - proposed: { date: "2026-07-31", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB AND BERAHYALURONIDASE ALFA-PMPH): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
+  - evidence: MERCK SHARP DOHME · SUPPL 15 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467))
   - file: `src/data/drugs.ts:1`
 - [ ] **Florbetaben F-18** ([page](https://nuclide-virid.vercel.app/drugs/f-18-florbetaben/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-07-22
@@ -87,13 +87,23 @@ Review each line against its source. Apply by editing the file named; nothing is
   - evidence: LANTHEUS · SUPPL 41 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=204677))
   - file: `src/data/rp/agents-neuro.ts:104`
 
-## Medium confidence (6)
+## Medium confidence (8)
 
 - [ ] **CYC-009: Technegas versus xenon-133 ventilation imaging** ([page](https://nuclide-virid.vercel.app/trials/nct03054870/)) · trial-status · `status`
   - current: historic
   - proposed: withdrawn
   - evidence: ClinicalTrials.gov overall status is TERMINATED; recorded historic. Editorial statuses (positive, negative, mixed) need the result, so this is a floor, not a verdict. ([source](https://clinicaltrials.gov/study/NCT03054870))
   - file: `src/data/rp/agents-lung.ts:114`
+- [ ] **PSMAfore** ([page](https://nuclide-virid.vercel.app/trials/psmafore/)) · trial-status · `status`
+  - current: positive
+  - proposed: completed
+  - evidence: Registry status moved from ACTIVE_NOT_RECRUITING to COMPLETED (detected 2026-11-09). ([source](https://clinicaltrials.gov/study/NCT04689828))
+  - file: `src/data/trials.ts:1`
+- [ ] **Study of Lutetium (177Lu) Vipivotide Tetraxetan in mCRPC Participants With Moderately and Severely Impaired and With Normal Renal Function** ([page](https://nuclide-virid.vercel.app/trials/nct06004661/)) · trial-completion · `yearReported / calendar`
+  - current: 2026-12-14
+  - proposed: 2026-11-06
+  - evidence: Primary completion date moved from 2026-12-14 to 2026-11-06; check the readout calendar entry. ([source](https://clinicaltrials.gov/study/NCT06004661))
+  - file: `src/data/trials.ts:1`
 - [ ] **HER2 Targeted Molecular Imaging in mBC and Other Metastatic Solid Carcinomas Using 68Ga-ABS011** ([page](https://nuclide-virid.vercel.app/trials/nct06369831/)) · trial-completion · `yearReported / calendar`
   - current: 2026-09
   - proposed: 2026-12-31
