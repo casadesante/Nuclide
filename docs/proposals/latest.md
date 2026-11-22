@@ -1,20 +1,15 @@
 # Change proposals 2026-11-22
 
-Drafted by scripts/propose-updates.ts from: factcheck 2026-11-09, trialChanges 2026-11-09, fda 2026-11-11, regional 2026-11-11.
+Drafted by scripts/propose-updates.ts from: factcheck 2026-11-16, trialChanges 2026-11-16, fda 2026-11-18, regional 2026-11-18.
 
 Review each line against its source. Apply by editing the file named; nothing is applied automatically.
 
-## High confidence (16)
+## High confidence (15)
 
-- [ ] **Pembrolizumab** ([page](https://nuclide-virid.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
-  - current: 12 events; none dated 2026-10-16
-  - proposed: { date: "2026-10-16", type: "approval", region: "US", note: "KEYTRUDA (PEMBROLIZUMAB): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514" }
-  - evidence: MERCK SHARP DOHME · SUPPL 191 · Efficacy ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125514))
-  - file: `src/data/drugs.ts:1`
-- [ ] **Pembrolizumab** ([page](https://nuclide-virid.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
-  - current: 12 events; none dated 2026-10-16
-  - proposed: { date: "2026-10-16", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB AND BERAHYALURONIDASE ALFA-PMPH): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
-  - evidence: MERCK SHARP DOHME · SUPPL 8 · Efficacy ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467))
+- [ ] **Durvalumab** ([page](https://nuclide-virid.vercel.app/drugs/durvalumab/)) · regulatory-event · `regulatoryEvents`
+  - current: 9 events; none dated 2026-11-13
+  - proposed: { date: "2026-11-13", type: "approval", region: "US", note: "IMFINZI (DURVALUMAB): Efficacy", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069" }
+  - evidence: ASTRAZENECA UK LTD · SUPPL 59 · Efficacy ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069))
   - file: `src/data/drugs.ts:1`
 - [ ] **Cabozantinib** ([page](https://nuclide-virid.vercel.app/drugs/cabozantinib/)) · regulatory-event · `regulatoryEvents`
   - current: 1 events; none dated 2026-10-16
@@ -51,11 +46,6 @@ Review each line against its source. Apply by editing the file named; nothing is
   - proposed: { date: "2026-09-03", type: "approval", region: "US", note: "OMCAZIO (CABOZANTINIB LAURYLSULFATE): Type 5 - New Formulation or New Manufacturer", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220613" }
   - evidence: HANDA ONCOL · ORIG 1 · Type 5 - New Formulation or New Manufacturer ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=220613))
   - file: `src/data/drugs.ts:1`
-- [ ] **Durvalumab** ([page](https://nuclide-virid.vercel.app/drugs/durvalumab/)) · regulatory-event · `regulatoryEvents`
-  - current: 9 events; none dated 2026-08-31
-  - proposed: { date: "2026-08-31", type: "approval", region: "US", note: "IMFINZI (DURVALUMAB): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069" }
-  - evidence: ASTRAZENECA UK LTD · SUPPL 60 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069))
-  - file: `src/data/drugs.ts:1`
 - [ ] **Fludeoxyglucose F-18 (FDG)** ([page](https://nuclide-virid.vercel.app/drugs/fludeoxyglucose-f18/)) · regulatory-event · `regulatoryEvents`
   - current: 0 events; none dated 2026-08-31
   - proposed: { date: "2026-08-31", type: "approval", region: "US", note: "FLUDEOXYGLUCOSE F18 (FLUDEOXYGLUCOSE F 18): Manufacturing (CMC)", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=079086" }
@@ -66,6 +56,11 @@ Review each line against its source. Apply by editing the file named; nothing is
   - proposed: { date: "2026-08-31", type: "approval", region: "US", note: "FLUDEOXYGLUCOSE F18 (FLUDEOXYGLUCOSE F 18): Manufacturing (CMC)", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=079086" }
   - evidence: PETNET · SUPPL 31 · Manufacturing (CMC) ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=079086))
   - file: `src/data/rp/agents-neuro.ts:268`
+- [ ] **Durvalumab** ([page](https://nuclide-virid.vercel.app/drugs/durvalumab/)) · regulatory-event · `regulatoryEvents`
+  - current: 9 events; none dated 2026-08-31
+  - proposed: { date: "2026-08-31", type: "approval", region: "US", note: "IMFINZI (DURVALUMAB): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069" }
+  - evidence: ASTRAZENECA UK LTD · SUPPL 60 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761069))
+  - file: `src/data/drugs.ts:1`
 - [ ] **Cabozantinib** ([page](https://nuclide-virid.vercel.app/drugs/cabozantinib/)) · regulatory-event · `regulatoryEvents`
   - current: 1 events; none dated 2026-08-14
   - proposed: { date: "2026-08-14", type: "approval", region: "US", note: "CABOZANTINIB S-MALATE (CABOZANTINIB S-MALATE): ORIG", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213878" }
@@ -77,7 +72,7 @@ Review each line against its source. Apply by editing the file named; nothing is
   - evidence: DR REDDYS LABS SA · ORIG 1 · ORIG ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761376))
   - file: `src/data/drugs.ts:1`
 - [ ] **Pembrolizumab** ([page](https://nuclide-virid.vercel.app/drugs/pembrolizumab/)) · regulatory-event · `regulatoryEvents`
-  - current: 12 events; none dated 2026-07-31
+  - current: 13 events; none dated 2026-07-31
   - proposed: { date: "2026-07-31", type: "approval", region: "US", note: "KEYTRUDA QLEX (PEMBROLIZUMAB AND BERAHYALURONIDASE ALFA-PMPH): Labeling", source: "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467" }
   - evidence: MERCK SHARP DOHME · SUPPL 15 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761467))
   - file: `src/data/drugs.ts:1`
@@ -87,13 +82,28 @@ Review each line against its source. Apply by editing the file named; nothing is
   - evidence: LANTHEUS · SUPPL 41 · Labeling ([source](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=204677))
   - file: `src/data/rp/agents-neuro.ts:104`
 
-## Medium confidence (8)
+## Medium confidence (10)
 
 - [ ] **CYC-009: Technegas versus xenon-133 ventilation imaging** ([page](https://nuclide-virid.vercel.app/trials/nct03054870/)) · trial-status · `status`
   - current: historic
   - proposed: withdrawn
   - evidence: ClinicalTrials.gov overall status is TERMINATED; recorded historic. Editorial statuses (positive, negative, mixed) need the result, so this is a floor, not a verdict. ([source](https://clinicaltrials.gov/study/NCT03054870))
   - file: `src/data/rp/agents-lung.ts:114`
+- [ ] **A Study Comparing Treatment With Lutetium[177Lu] Oxodotreotide Injection to Octreotide LAR in Patients With GEP-NETs** ([page](https://nuclide-virid.vercel.app/trials/nct05459844/)) · trial-status · `status`
+  - current: active
+  - proposed: completed
+  - evidence: Registry status moved from ACTIVE_NOT_RECRUITING to COMPLETED (detected 2026-11-16). ([source](https://clinicaltrials.gov/study/NCT05459844))
+  - file: `src/data/trials.ts:1`
+- [ ] **A Study Comparing Treatment With Lutetium[177Lu] Oxodotreotide Injection to Octreotide LAR in Patients With GEP-NETs** ([page](https://nuclide-virid.vercel.app/trials/nct05459844/)) · trial-completion · `yearReported / calendar`
+  - current: 2024-06-26
+  - proposed: 2025-06-26
+  - evidence: Primary completion date moved from 2024-06-26 to 2025-06-26; check the readout calendar entry. ([source](https://clinicaltrials.gov/study/NCT05459844))
+  - file: `src/data/trials.ts:1`
+- [ ] **An Open-label Study of Lutetium (177Lu) Vipivotide Tetraxetan (AAA617) in Combination With ARPI Versus AAA617 in PSMA Positive First-line mCRPC** ([page](https://nuclide-virid.vercel.app/trials/nct06894511/)) · trial-completion · `yearReported / calendar`
+  - current: 2026-10-15
+  - proposed: 2026-11-17
+  - evidence: Primary completion date moved from 2026-10-15 to 2026-11-17; check the readout calendar entry. ([source](https://clinicaltrials.gov/study/NCT06894511))
+  - file: `src/data/trials.ts:1`
 - [ ] **PSMAfore** ([page](https://nuclide-virid.vercel.app/trials/psmafore/)) · trial-status · `status`
   - current: positive
   - proposed: completed
@@ -108,11 +118,6 @@ Review each line against its source. Apply by editing the file named; nothing is
   - current: 2026-09
   - proposed: 2026-12-31
   - evidence: Primary completion date moved from 2026-09 to 2026-12-31; check the readout calendar entry. ([source](https://clinicaltrials.gov/study/NCT06369831))
-  - file: `src/data/trials.ts:1`
-- [ ] **PSMA PET Combined With MRI for the Detection of PCa** ([page](https://nuclide-virid.vercel.app/trials/nct07052214/)) · trial-status · `status`
-  - current: recruiting
-  - proposed: active
-  - evidence: Registry status moved from RECRUITING to ACTIVE_NOT_RECRUITING (detected 2026-10-26). ([source](https://clinicaltrials.gov/study/NCT07052214))
   - file: `src/data/trials.ts:1`
 - [ ] **Study Evaluating Dosimetry, Randomized Dose Optimization, Dose Escalation and Efficacy of Ac-225 Rosopatamab Tetraxetan in Participants With PSMA PET-Positive Castration-Resistant Prostate Cancer (CRPC)** ([page](https://nuclide-virid.vercel.app/trials/nct06549465/)) · trial-completion · `yearReported / calendar`
   - current: 2027-04-20

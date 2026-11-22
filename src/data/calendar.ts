@@ -27,13 +27,6 @@ export type CalendarEvent = {
 
 export const calendar: CalendarEvent[] = [
   {
-    date: "2026-11-19", kind: "congress", confidence: "confirmed",
-    title: "66th Annual Scientific Meeting of the Japanese Society of Nuclear Medicine, Himeji (19 to 21 November)",
-    refs: ["jsnm", "pdradiopharma", "nihon-medi-physics"],
-    note: "Japan's national nuclear medicine meeting. Japanese approvals and supply questions (domestic Mo-99 production, PDRadiopharma's product line) are discussed here first.",
-    source: "https://jsnm.org/english/meetings_and_events/",
-  },
-  {
     date: "2027-02-04", kind: "congress", confidence: "confirmed",
     title: "SNMMI Mid-Winter Meeting 2027, San Francisco (4 to 6 February)",
     refs: ["snmmi", "radiopharmaceutical-gmp-release", "radiopharmacy-network"],

@@ -1522,11 +1522,10 @@ export const carriedTrials: EntityInput[] = [
       "ctgov-ingest"
     ],
     "setting": "A Phase Ib/II Dose Finding Study Assessing Safety and Efficacy of [177Lu]Lu-DOTA-TATE in Newly Diagnosed Extensive Stage Small Cell Lung Cancer (ES-SCLC) in Combination With Carboplatin, Etoposide, and Atezolizumab in Induction and With Atezolizumab in Maintenance Phase",
-    "tldr": "A phase 1/2 trial of Lutetium-177 dotatate, FAP-2286, Atezolizumab in small-cell lung cancer, run by Novartis Pharmaceuticals, active and no longer recruiting.",
+    "tldr": "A phase 1/2 trial of lutetium-177 dotatate with carboplatin, etoposide and atezolizumab in newly diagnosed extensive-stage small-cell lung cancer, run by Novartis Pharmaceuticals, active and no longer recruiting.",
     "summary": "A Study of [177Lu]Lu-DOTA-TATE in Newly Diagnosed ES-SCLC Patients in Combination With Carboplatin, Etoposide and Atezolizumab is a phase 1/2 interventional study registered as NCT05142696 by Novartis Pharmaceuticals, with 55 participants enrolled, started 2022-07-13 and due to reach its primary completion in 2028-03-07. Interventions recorded: [177Lu]Lu-DOTA-TATE, Atezolizumab, [68Ga]Ga-DOTA-TATE, Carboplatin, Etoposide. Conditions listed: Extensive Stage Small Cell Lung Cancer. No results are recorded here; the registry entry is the source.",
     "drugs": [
-      "lutathera",
-      "fap-2286"
+      "lutathera"
     ],
     "indications": [
       "sclc"
@@ -1624,11 +1623,9 @@ export const carriedTrials: EntityInput[] = [
       "ctgov-ingest"
     ],
     "setting": "An Open-label, Multicentre, Integrated Phase 1 & 2 Study to Evaluate the Safety, Tolerability, Radiation Dosimetry and Anti-tumour Activity of Lutetium (177Lu) rhPSMA-10.1 Injection in Men With Metastatic Castrate-resistant Prostate Cancer",
-    "tldr": "A phase 1/2 trial of FAP-2286 in prostate cancer, run by Blue Earth Therapeutics Ltd, now recruiting.",
+    "tldr": "A phase 1/2 trial of lutetium-177 rhPSMA-10.1 in prostate cancer, run by Blue Earth Therapeutics Ltd, now recruiting.",
     "summary": "Anti-tumour Activity of (177Lu) rhPSMA-10.1 Injection is a phase 1/2 interventional study registered as NCT05413850 by Blue Earth Therapeutics Ltd, with 82 participants planned, started 2022-07-20 and due to reach its primary completion in 2026-08-27. Interventions recorded: Lutetium (177Lu) rhPSMA-10.1 Injection, 18F-rhPSMA-7.3 injection (in phase 1 only). Conditions listed: Prostate Cancer, Metastatic Castration-resistant Prostate Cancer, mCRPC, Urogenital Neoplasms. No results are recorded here; the registry entry is the source.",
-    "drugs": [
-      "fap-2286"
-    ],
+    "drugs": [],
     "indications": [
       "prostate",
       "prostate-mcrpc"
@@ -1646,17 +1643,17 @@ export const carriedTrials: EntityInput[] = [
     "name": "A Study Comparing Treatment With Lutetium[177Lu] Oxodotreotide Injection to Octreotide LAR in Patients With GEP-NETs",
     "nct": "NCT05459844",
     "phase": "3",
-    "status": "active",
+    "status": "completed",
     "sponsor": "Sinotau Pharmaceutical Group",
     "enrolled": 196,
-    "asOf": "2026-09-16",
+    "asOf": "2026-11-22",
     "tags": [
       "pipeline",
       "ctgov-ingest"
     ],
     "setting": "A Study Comparing Treatment With Lutetium[177Lu] Oxodotreotide Injection to Octreotide LAR in Patients With Inoperable, Progressive, Well Differentiated, Somatostatin Receptor Positive Gastroenteropancreatic Neuroendocrine Tumours",
-    "tldr": "A phase 3 trial of Lutetium[177Lu] Oxodotreotide Injection in neuroendocrine tumours, run by Sinotau Pharmaceutical Group, active and no longer recruiting.",
-    "summary": "A Study Comparing Treatment With Lutetium[177Lu] Oxodotreotide Injection to Octreotide LAR in Patients With GEP-NETs is a phase 3 interventional study registered as NCT05459844 by Sinotau Pharmaceutical Group, with 196 participants enrolled, started 2022-08-31 and due to reach its primary completion in 2024-06-26. Interventions recorded: Lutetium[177Lu] Oxodotreotide Injection and Octreotide LAR.",
+    "tldr": "A phase 3 trial of Lutetium[177Lu] Oxodotreotide Injection in neuroendocrine tumours, run by Sinotau Pharmaceutical Group; the registry now lists it as completed, with no results posted yet.",
+    "summary": "A Study Comparing Treatment With Lutetium[177Lu] Oxodotreotide Injection to Octreotide LAR in Patients With GEP-NETs is a phase 3 interventional study registered as NCT05459844 by Sinotau Pharmaceutical Group, with 196 participants enrolled (actual), started 2022-08-31, reached primary completion on 2025-06-26 and study completion on 2026-04-03; the registry status moved to completed in November 2026 and no results are posted there. Interventions recorded: Lutetium[177Lu] Oxodotreotide Injection and Octreotide LAR.",
     "indications": [
       "neuroendocrine",
       "pancreatic-net",
@@ -1954,10 +1951,12 @@ export const carriedTrials: EntityInput[] = [
       "ctgov-ingest"
     ],
     "setting": "An International, Prospective, Open-label, Multi-center, Randomized Phase III Study Comparing Lutetium (177Lu) Vipivotide Tetraxetan (AAA617) Versus Observation to Delay Castration or Disease Recurrence in Adult Male Patients With Prostate-specific Membrane Antigen (PSMA) Positive Oligometastatic Prostate Cancer (OMPC)",
-    "tldr": "A phase 3 trial of FAP-2286 in prostate cancer, run by Novartis Pharmaceuticals, now recruiting.",
+    "tldr": "A phase 3 trial of lutetium-177 vipivotide tetraxetan (Pluvicto) versus observation in PSMA-positive oligometastatic prostate cancer, run by Novartis Pharmaceuticals, now recruiting.",
     "summary": "An Open-label Study Comparing Lutetium (177Lu) Vipivotide Tetraxetan Versus Observation in PSMA Positive OMPC. is a phase 3 interventional study registered as NCT05939414 by Novartis Pharmaceuticals, with 450 participants planned, started 2024-03-12 and due to reach its primary completion in 2028-04-25. Interventions recorded: AAA617, piflufolastat (18F), gallium (68Ga) gozetotide (25μg). Conditions listed: Oligometastatic Prostate Cancer (OMPC). No results are recorded here; the registry entry is the source.",
     "drugs": [
-      "fap-2286"
+      "pluvicto",
+      "pylarify",
+      "ga68-psma-11"
     ],
     "indications": [
       "prostate"
@@ -2492,10 +2491,9 @@ export const carriedTrials: EntityInput[] = [
       "ctgov-ingest"
     ],
     "setting": "A Multinational, Multicenter, Prospective, Randomized, Controlled, Open-Label, Phase 3 Study of Lutetium (177Lu) Rosopatamab Tetraxetan in Combination With Standard of Care Versus Standard of Care Alone in Patients With PSMA Positive Metastatic Castration-Resistant Prostate Cancer Previously After Androgen Receptor Pathway Inhibitor Treatment",
-    "tldr": "A phase 3 trial of FAP-2286, Enzalutamide, Abiraterone acetate in prostate cancer, run by Telix Pharmaceuticals (Innovations) Pty Limited, now recruiting.",
+    "tldr": "A phase 3 trial (ProstACT Global) of 177Lu-TLX591 (lutetium-177 rosopatamab tetraxetan) added to standard care with enzalutamide, abiraterone or docetaxel in castration-resistant prostate cancer, run by Telix Pharmaceuticals (Innovations) Pty Limited, now recruiting.",
     "summary": "The Study of 177Lu-TLX591 Plus SOC Versus SOC Alone in Patients With mCRPC (ProstACT Global) is a phase 3 interventional study registered as NCT06520345 by Telix Pharmaceuticals (Innovations) Pty Limited, with 520 participants planned, started 2024-07-26 and due to reach its primary completion in 2027-12. Interventions recorded: 177Lu-TLX591, Enzalutamide, Abiraterone, Docetaxel. Conditions listed: Metastatic Castration-resistant Prostate Cancer. No results are recorded here; the registry entry is the source.",
     "drugs": [
-      "fap-2286",
       "enzalutamide",
       "abiraterone",
       "docetaxel"
@@ -2900,16 +2898,17 @@ export const carriedTrials: EntityInput[] = [
     "status": "active",
     "sponsor": "Novartis Pharmaceuticals",
     "enrolled": 7,
-    "asOf": "2026-09-16",
+    "asOf": "2026-11-22",
     "tags": [
       "ctgov-ingest"
     ],
     "setting": "A Phase II, Open-label, Multi-Center, Randomized Study of Combination of Lutetium (177Lu) Vipivotide Tetraxetan (AAA617) and Androgen Receptor Pathway Inhibitor (ARPI) vs. Lutetium (177Lu) Vipivotide Tetraxetan (AAA617) in First-line Treatment of Patients With Prostate-Specific Membrane Antigen (PSMA)-Positive Progressive Metastatic Castration Resistant Prostate Cancer (mCRPC)",
-    "tldr": "A phase 2 trial of FAP-2286, Lutetium-177 vipivotide tetraxetan in prostate cancer, run by Novartis Pharmaceuticals, active and no longer recruiting.",
-    "summary": "An Open-label Study of Lutetium (177Lu) Vipivotide Tetraxetan (AAA617) in Combination With ARPI Versus AAA617 in PSMA Positive First-line mCRPC is a phase 2 interventional study registered as NCT06894511 by Novartis Pharmaceuticals, with 7 participants enrolled, started 2025-09-11 and due to reach its primary completion in 2026-10-15. Interventions recorded: AAA617, ARPI: Abiraterone, ARPI: Enzalutamide. Conditions listed: Metastatic Castration Resistant Prostate Cancer (mCRPC). No results are recorded here; the registry entry is the source.",
+    "tldr": "A phase 2 trial of lutetium-177 vipivotide tetraxetan (Pluvicto) with or without an androgen-receptor pathway inhibitor (abiraterone or enzalutamide) as first treatment for PSMA-positive castration-resistant prostate cancer, run by Novartis; only 7 patients were enrolled and it is no longer recruiting.",
+    "summary": "An Open-label Study of Lutetium (177Lu) Vipivotide Tetraxetan (AAA617) in Combination With ARPI Versus AAA617 in PSMA Positive First-line mCRPC is a phase 2 interventional study registered as NCT06894511 by Novartis Pharmaceuticals, with 7 participants enrolled (actual), started 2025-09-11 and due to reach primary and study completion on 2026-11-17 (moved from 2026-10-15). Interventions recorded: AAA617, ARPI: Abiraterone, ARPI: Enzalutamide. Conditions listed: Metastatic Castration Resistant Prostate Cancer (mCRPC). No results are recorded here; the registry entry is the source.",
     "drugs": [
-      "fap-2286",
-      "pluvicto"
+      "pluvicto",
+      "abiraterone",
+      "enzalutamide"
     ],
     "indications": [
       "prostate",
@@ -3265,11 +3264,9 @@ export const carriedTrials: EntityInput[] = [
       "ctgov-ingest"
     ],
     "setting": "A Phase 2/3, Multicenter, Open-Label, Non-Randomized Study to Evaluate Diagnostic Performance of GEH300079 (68Ga) Injection Positron-Emission Tomography (PET)/Computed Tomography (CT) for Detection of Peritoneal Carcinomatosis (PC) in Patients With Colorectal, Gastric, Ovarian, or Pancreatic Cancers (PERISCOPE)",
-    "tldr": "A phase 2/3 trial of FAP-2286 in colorectal cancer and ovarian cancer, run by GE Healthcare, now recruiting.",
+    "tldr": "A phase 2/3 trial (PERISCOPE) of the gallium-68 PET tracer GEH300079 for detecting peritoneal carcinomatosis in colorectal, gastric, ovarian or pancreatic cancer, run by GE Healthcare, now recruiting.",
     "summary": "Study to Evaluate the Diagnostic Performance of GEH300079 (68Ga) Injection PET/CT for Detection of PC in Patients With Colorectal, Gastric, Ovarian, or Pancreatic Cancers (PERISCOPE) is a phase 2/3 interventional study registered as NCT07219238 by GE Healthcare, with 175 participants planned, started 2026-10 and due to reach its primary completion in 2029-06. Interventions recorded: GEH300079 (68Ga) Injection Positron-Emission Tomography (PET)/Computed Tomography (CT). Conditions listed: Colorectal Cancer, Gastric Cancers, Ovarian Cancers, Pancreatic Ductal Adenocarcinoma. No results are recorded here; the registry entry is the source.",
-    "drugs": [
-      "fap-2286"
-    ],
+    "drugs": [],
     "companies": [
       "ge-healthcare"
     ],
