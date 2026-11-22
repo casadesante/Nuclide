@@ -51,7 +51,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-06",
+    "asOf": "2026-11-22",
     "id": "abiraterone",
     "links": [
       {
@@ -257,7 +257,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-06",
+    "asOf": "2026-11-22",
     "id": "cabazitaxel",
     "links": [
       {
@@ -291,7 +291,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-07",
+    "asOf": "2026-11-22",
     "id": "cabozantinib",
     "name": "Cabozantinib",
     "brand": "Cabometyx",
@@ -400,7 +400,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-10",
+    "asOf": "2026-11-22",
     "status": "approved",
     "id": "capecitabine",
     "trials": [
@@ -413,7 +413,7 @@ export const carriedAgents: EntityInput[] = [
     "mechanism": "Converted in three steps, the last by thymidine phosphorylase enriched in tumours, to fluorouracil; FdUMP blocks thymidylate synthase and FUTP is incorporated into RNA.",
     "wikipedia": "https://en.wikipedia.org/wiki/Capecitabine",
     "tldr": "Capecitabine (Xeloda) is a tablet form of the chemotherapy fluorouracil. It is a backbone of treatment for bowel cancer and a standard option in advanced breast cancer.",
-    "summary": "Capecitabine was approved by the FDA in 1998 for anthracycline- and taxane-resistant metastatic breast cancer and later for adjuvant stage III colon cancer (X-ACT: disease-free survival at least equivalent to bolus fluorouracil and leucovorin), metastatic colorectal cancer, perioperative chemoradiotherapy for rectal cancer and, with docetaxel, for anthracycline-pretreated breast cancer. The EU authorised Xeloda in 2001; it is also approved there for gastric cancer. It is the oral partner in CAPOX and CAPTEM and in the CREATE-X post-neoadjuvant breast regimen. Hand-foot syndrome, diarrhoea and cardiotoxicity are the key toxicities, and DPD deficiency (DPYD variants) causes severe or fatal toxicity, so genotype-guided dosing is increasingly used. Warfarin interaction carries a boxed warning.",
+    "summary": "Capecitabine was approved by the FDA in 1998 for anthracycline- and taxane-resistant metastatic breast cancer and later for adjuvant stage III colon cancer (X-ACT: disease-free survival at least equivalent to bolus fluorouracil and leucovorin), metastatic colorectal cancer, perioperative chemoradiotherapy for rectal cancer and, with docetaxel, for anthracycline-pretreated breast cancer. The EU authorised Xeloda in 2001; it is also approved there for gastric cancer. It is the oral partner in CAPOX and CAPTEM and in the CREATE-X post-neoadjuvant breast regimen. Hand-foot syndrome, diarrhoea and cardiotoxicity are the key toxicities, and DPD deficiency (DPYD variants) causes severe or fatal toxicity, so genotype-guided dosing is increasingly used. Warfarin interaction carries a boxed warning. In the US the Xeloda brand (NDA 020896, now held by Cheplapharm) is listed as discontinued on Drugs@FDA, while generic capecitabine tablets remain marketed.",
     "approvals": [
       {
         "region": "US",
@@ -430,6 +430,10 @@ export const carriedAgents: EntityInput[] = [
       "breast-her2-positive"
     ],
     "links": [
+      {
+        "label": "Drugs@FDA: Xeloda NDA 020896 (marketing status: discontinued)",
+        "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020896"
+      },
       {
         "label": "US label (DailyMed)",
         "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=capecitabine"
@@ -494,7 +498,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-10",
+    "asOf": "2026-11-22",
     "status": "approved",
     "id": "dexrazoxane",
     "companies": [
@@ -510,7 +514,7 @@ export const carriedAgents: EntityInput[] = [
     "mechanism": "Cyclic EDTA derivative hydrolysed intracellularly to a metal chelator that removes iron from anthracycline-iron complexes, limiting free-radical cardiac injury; also a catalytic topoisomerase II inhibitor, which underlies its action against extravasation injury.",
     "wikipedia": "https://en.wikipedia.org/wiki/Dexrazoxane",
     "tldr": "Dexrazoxane protects the heart from the cumulative damage of doxorubicin in women with metastatic breast cancer who need to keep receiving it, and, as Totect, limits tissue destruction when an anthracycline leaks out of a vein.",
-    "summary": "Dexrazoxane (Zinecard) was approved in May 1995 to reduce the incidence and severity of doxorubicin cardiomyopathy in women with metastatic breast cancer who have received a cumulative 300 mg/m2 and will continue doxorubicin, on randomised trials that markedly reduced cardiac events; it is not used from the start of treatment because of an early signal of reduced response, later not confirmed. Totect was approved in 2007 for anthracycline extravasation, given within six hours on three consecutive days, on two single-arm European studies in which surgery was avoided in the great majority. Dexrazoxane is also used in paediatric leukaemia and lymphoma protocols to protect against late cardiotoxicity, an area where long-term Children's Oncology Group follow-up has been reassuring about secondary malignancy. Myelosuppression adds to that of chemotherapy.",
+    "summary": "Dexrazoxane (Zinecard) was approved in May 1995 to reduce the incidence and severity of doxorubicin cardiomyopathy in women with metastatic breast cancer who have received a cumulative 300 mg/m2 and will continue doxorubicin, on randomised trials that markedly reduced cardiac events; it is not used from the start of treatment because of an early signal of reduced response, later not confirmed. Totect was approved in 2007 for anthracycline extravasation, given within six hours on three consecutive days, on two single-arm European studies in which surgery was avoided in the great majority. Dexrazoxane is also used in paediatric leukaemia and lymphoma protocols to protect against late cardiotoxicity, an area where long-term Children's Oncology Group follow-up has been reassuring about secondary malignancy. Myelosuppression adds to that of chemotherapy. Drugs@FDA now lists both US brands, Zinecard (NDA 020212, Pfizer) and Totect (NDA 022025, Clinigen), as discontinued, with an FDA determination that neither was withdrawn for safety or efficacy reasons; generic dexrazoxane for injection remains marketed.",
     "approvals": [
       {
         "region": "US",
@@ -524,6 +528,14 @@ export const carriedAgents: EntityInput[] = [
       }
     ],
     "links": [
+      {
+        "label": "Drugs@FDA: Totect NDA 022025 (marketing status: discontinued)",
+        "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022025"
+      },
+      {
+        "label": "Drugs@FDA: Zinecard NDA 020212 (marketing status: discontinued)",
+        "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020212"
+      },
       {
         "label": "US label (DailyMed)",
         "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=all&query=dexrazoxane"
@@ -540,7 +552,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-06",
+    "asOf": "2026-11-22",
     "id": "docetaxel",
     "links": [
       {
@@ -632,6 +644,14 @@ export const carriedAgents: EntityInput[] = [
     "kind": "drug",
     "links": [
       {
+        "label": "FDA: durvalumab with enfortumab vedotin-ejfv for muscle invasive bladder cancer (VOLGA), 13 November 2026",
+        "url": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-durvalumab-enfortumab-vedotin-ejfv-muscle-invasive-bladder-cancer"
+      },
+      {
+        "label": "FDA supplement approval letter: Imfinzi BLA 761069/S-059 (corrected; effective 13 November 2026)",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761069Orig1s059ltr.pdf"
+      },
+      {
         "label": "FDA label (DailyMed)",
         "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Durvalumab"
       }
@@ -639,11 +659,11 @@ export const carriedAgents: EntityInput[] = [
     "name": "Durvalumab",
     "brand": "Imfinzi",
     "modality": "Monoclonal antibody (anti-PD-L1)",
-    "asOf": "2026-09-04",
+    "asOf": "2026-11-22",
     "status": "approved",
     "wikipedia": "https://en.wikipedia.org/wiki/Durvalumab",
     "tldr": "A PD-L1 blocker that became standard after chemoradiation for stage III lung cancer, and now in bladder, biliary, and gastric cancers.",
-    "summary": "PACIFIC (unresectable stage III NSCLC), ADRIATIC (limited-stage SCLC, 2024), TOPAZ-1 (biliary tract), HIMALAYA (HCC with tremelimumab), NIAGARA (perioperative muscle-invasive bladder cancer, 2025), MATTERHORN (perioperative gastric, 2025), and Q2 2026 high-risk non-muscle-invasive bladder cancer with BCG (POTOMAC). Partner of Dato-DXd in TROPION-Breast05.",
+    "summary": "PACIFIC (unresectable stage III NSCLC), ADRIATIC (limited-stage SCLC, 2024), TOPAZ-1 (biliary tract), HIMALAYA (HCC with tremelimumab), NIAGARA (perioperative muscle-invasive bladder cancer, 2025), MATTERHORN (perioperative gastric, 2025), Q2 2026 high-risk non-muscle-invasive bladder cancer with BCG (POTOMAC), and on 13 November 2026 neoadjuvant durvalumab with enfortumab vedotin followed by adjuvant durvalumab after radical cystectomy for muscle-invasive bladder cancer in patients ineligible for or refusing cisplatin (VOLGA, NCT04960709: 695 randomised 1:1:1; event-free survival HR 0.51, 95% CI 0.38-0.67, and overall survival HR 0.58, 95% CI 0.40-0.83, versus cystectomy alone). Partner of Dato-DXd in TROPION-Breast05.",
     "mechanism": "Human IgG1 anti-PD-L1 with reduced Fc effector function.",
     "approvals": [
       {
@@ -660,6 +680,11 @@ export const carriedAgents: EntityInput[] = [
         "region": "US",
         "year": 2026,
         "indication": "High-risk NMIBC with BCG"
+      },
+      {
+        "region": "US",
+        "year": 2026,
+        "indication": "Muscle-invasive bladder cancer, cisplatin-ineligible or refusing cisplatin: neoadjuvant with enfortumab vedotin, then adjuvant after radical cystectomy (VOLGA)"
       }
     ],
     "companies": [
@@ -797,6 +822,13 @@ export const carriedAgents: EntityInput[] = [
         "region": "US",
         "note": "High-risk non-muscle-invasive bladder cancer with BCG (POTOMAC)",
         "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-durvalumab-combination-bacillus-calmette-guerin-high-risk-non-muscle-invasive-bladder"
+      },
+      {
+        "date": "2026-11-13",
+        "type": "approval",
+        "region": "US",
+        "note": "With enfortumab vedotin-ejfv (neoadjuvant), then single-agent durvalumab (adjuvant) after radical cystectomy, for muscle-invasive bladder cancer ineligible for or refusing cisplatin (VOLGA; BLA 761069/S-059, priority review)",
+        "source": "https://www.fda.gov/drugs/cancer-approvals/fda-approves-durvalumab-enfortumab-vedotin-ejfv-muscle-invasive-bladder-cancer"
       }
     ],
     "mechanismSteps": [
@@ -881,7 +913,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-07",
+    "asOf": "2026-11-22",
     "id": "everolimus",
     "name": "Everolimus",
     "brand": "Afinitor",
@@ -962,12 +994,6 @@ export const carriedAgents: EntityInput[] = [
   {
     "id": "fap-2286",
     "trials": [
-      "nct05939414",
-      "nct06520345",
-      "nct07219238",
-      "nct05413850",
-      "nct06894511",
-      "nct05142696",
       "nct04939610"
     ],
     "links": [
@@ -1134,7 +1160,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-06",
+    "asOf": "2026-11-22",
     "id": "flotufolastat",
     "links": [
       {
@@ -1172,7 +1198,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-08",
+    "asOf": "2026-11-22",
     "id": "fluciclovine-f18",
     "name": "Fluciclovine F-18",
     "brand": "Axumin",
@@ -1221,7 +1247,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-10",
+    "asOf": "2026-11-22",
     "tags": [
       "test"
     ],
@@ -1274,7 +1300,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-08",
+    "asOf": "2026-11-22",
     "id": "fluoroestradiol-f18",
     "name": "Fluoroestradiol F-18 (FES PET)",
     "brand": "Cerianna",
@@ -1354,7 +1380,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-08",
+    "asOf": "2026-11-22",
     "id": "ga68-dotatate",
     "name": "Gallium-68 DOTATATE (and Cu-64 DOTATATE)",
     "brand": "Netspot / Detectnet",
@@ -1595,7 +1621,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-10",
+    "asOf": "2026-11-22",
     "status": "approved",
     "id": "ibritumomab-tiuxetan",
     "name": "Ibritumomab tiuxetan",
@@ -1661,7 +1687,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-10",
+    "asOf": "2026-11-22",
     "tags": [
       "test"
     ],
@@ -1916,7 +1942,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-10",
+    "asOf": "2026-11-22",
     "tags": [
       "test"
     ],
@@ -2222,7 +2248,7 @@ export const carriedAgents: EntityInput[] = [
     "name": "Olaparib",
     "brand": "Lynparza",
     "modality": "Small-molecule PARP inhibitor",
-    "asOf": "2026-09-04",
+    "asOf": "2026-11-22",
     "status": "approved",
     "wikipedia": "https://en.wikipedia.org/wiki/Olaparib",
     "tldr": "Olaparib was the first PARP inhibitor, and turned an inherited BRCA mutation from a risk factor into a drug target, including after surgery in breast cancer.",
@@ -2474,12 +2500,20 @@ export const carriedAgents: EntityInput[] = [
       {
         "label": "FDA label (DailyMed)",
         "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Pembrolizumab"
+      },
+      {
+        "label": "FDA letter: Keytruda S-191, TMB-high PMR fulfilled (16 Oct 2026)",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125514s191ltrCorrected.pdf"
+      },
+      {
+        "label": "FDA letter: Keytruda Qlex S-008, TMB-high PMR fulfilled (16 Oct 2026)",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761467Orig1s008ltr.pdf"
       }
     ],
     "name": "Pembrolizumab",
     "brand": "Keytruda / Keytruda Qlex (SC)",
     "modality": "Monoclonal antibody (anti-PD-1)",
-    "asOf": "2026-09-04",
+    "asOf": "2026-11-01",
     "status": "approved",
     "wikipedia": "https://en.wikipedia.org/wiki/Pembrolizumab",
     "tldr": "Pembrolizumab is a PD-1 blocking antibody approved in more than 40 settings, from melanoma and lung cancer to the first tumour-agnostic approval for mismatch-repair-deficient tumours in 2017, and before and after surgery in triple-negative breast cancer. A subcutaneous form arrived in 2025, and it is the backbone partner for ADCs and personalised neoantigen vaccines.",
@@ -2682,6 +2716,13 @@ export const carriedAgents: EntityInput[] = [
         "region": "US",
         "note": "Muscle-invasive bladder cancer with enfortumab vedotin, as pembrolizumab or pembrolizumab with berahyaluronidase alfa",
         "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pembrolizumab-or-pembrolizumab-and-berahyaluronidase-alfa-pmph-each-enfortumab-vedotin"
+      },
+      {
+        "date": "2026-10-16",
+        "type": "label-change",
+        "region": "US",
+        "note": "TMB-high indication: confirmatory data fulfil the postmarketing requirement for Keytruda (BLA 125514/S-191) and Keytruda Qlex (BLA 761467/S-008), and the label now defines TMB-high as ≥13 mutations/megabase by an FDA-approved test",
+        "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125514s191ltrCorrected.pdf"
       }
     ],
     "mechanismSteps": [
@@ -2732,7 +2773,7 @@ export const carriedAgents: EntityInput[] = [
     "brand": "Pluvicto",
     "code": "177Lu-PSMA-617",
     "modality": "Radioligand therapy (beta)",
-    "asOf": "2026-09-04",
+    "asOf": "2026-11-22",
     "status": "approved",
     "wikipedia": "https://en.wikipedia.org/wiki/Lutetium_(177Lu)_vipivotide_tetraxetan",
     "tldr": "A radioactive drug that seeks out PSMA on prostate cancer cells; the best-selling radiopharmaceutical ever.",
@@ -2960,7 +3001,7 @@ export const carriedAgents: EntityInput[] = [
     "brand": "Pylarify",
     "code": "18F-DCFPyL",
     "modality": "PET imaging agent",
-    "asOf": "2026-09-04",
+    "asOf": "2026-11-22",
     "status": "approved",
     "wikipedia": "https://en.wikipedia.org/wiki/Piflufolastat_F-18",
     "tldr": "Piflufolastat F-18 (Pylarify) is the leading PSMA PET tracer for prostate cancer, with a new formulation approved in March 2026.",
@@ -3047,7 +3088,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-07",
+    "asOf": "2026-11-22",
     "id": "radioactive-iodine",
     "links": [
       {
@@ -3119,7 +3160,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-06",
+    "asOf": "2026-11-22",
     "id": "radium-223",
     "links": [
       {
@@ -3161,7 +3202,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-07",
+    "asOf": "2026-11-22",
     "id": "rituximab",
     "aka": [
       "Rituximab and Hyaluronidase Human",
@@ -3307,7 +3348,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-10",
+    "asOf": "2026-11-22",
     "status": "approved",
     "id": "samarium-153-lexidronam",
     "name": "Samarium-153 lexidronam",
@@ -3320,7 +3361,7 @@ export const carriedAgents: EntityInput[] = [
     "mechanism": "Samarium-153 chelated to the tetraphosphonate EDTMP concentrates in areas of high bone turnover around osteoblastic metastases; beta emission (1.9 day half-life) irradiates the metastases and relieves pain, with gamma emission allowing imaging.",
     "wikipedia": "https://en.wikipedia.org/wiki/Samarium_(153Sm)_lexidronam",
     "tldr": "Quadramet (samarium-153 lexidronam) is a radioactive bone-seeking injection that lodges in bone metastases and irradiates them from inside, approved in 1997 to relieve pain from prostate, breast and other cancers spread to bone. Most patients get relief within one to two weeks, but marrow suppression follows at three to five weeks, and radium-223 and PSMA radioligands have largely replaced it.",
-    "summary": "Samarium-153 lexidronam was approved by the FDA in March 1997 and authorised in the EU in February 1998 for relief of pain in patients with confirmed osteoblastic metastatic bone lesions that take up technetium-labelled bisphosphonate on bone scan, on placebo-controlled trials in which most patients had pain relief within one to two weeks lasting for months. It and strontium-89 (Metastron) were the bone-pain radiopharmaceuticals of the 1990s; radium-223 (Xofigo), which extends survival in prostate cancer, and PSMA radioligands have since taken most of their role. A single intravenous dose is given; transient marrow suppression, with nadir at three to five weeks, is the main toxicity, and a pain flare can occur early. Distributed by Lantheus in the US and Curium in Europe.",
+    "summary": "Samarium-153 lexidronam was approved by the FDA in March 1997 and authorised in the EU in February 1998 for relief of pain in patients with confirmed osteoblastic metastatic bone lesions that take up technetium-labelled bisphosphonate on bone scan, on placebo-controlled trials in which most patients had pain relief within one to two weeks lasting for months. It and strontium-89 (Metastron) were the bone-pain radiopharmaceuticals of the 1990s; radium-223 (Xofigo), which extends survival in prostate cancer, and PSMA radioligands have since taken most of their role. A single intravenous dose is given; transient marrow suppression, with nadir at three to five weeks, is the main toxicity, and a pain flare can occur early. In the US, Drugs@FDA lists Lantheus's Quadramet (NDA 020570) as discontinued; in the EU it remains authorised (EMA register; first authorised to CIS bio international in 1998). Curium has distributed it in Europe.",
     "approvals": [
       {
         "region": "US",
@@ -3348,6 +3389,10 @@ export const carriedAgents: EntityInput[] = [
     ],
     "links": [
       {
+        "label": "Drugs@FDA: Quadramet NDA 020570 (marketing status: discontinued)",
+        "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020570"
+      },
+      {
         "label": "EPAR (EMA)",
         "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/quadramet"
       },
@@ -3363,7 +3408,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-07",
+    "asOf": "2026-11-22",
     "id": "sorafenib",
     "links": [
       {
@@ -3447,7 +3492,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-07",
+    "asOf": "2026-11-22",
     "id": "sunitinib",
     "links": [
       {
@@ -3556,7 +3601,7 @@ export const carriedAgents: EntityInput[] = [
     "name": "Temozolomide",
     "brand": "Temodar",
     "modality": "Oral alkylating chemotherapy",
-    "asOf": "2026-09-06",
+    "asOf": "2026-11-22",
     "status": "standard-of-care",
     "wikipedia": "https://en.wikipedia.org/wiki/Temozolomide",
     "tldr": "The only chemotherapy proven to extend life in glioblastoma, given during and after radiation. It works best when the tumour has switched off a repair gene called MGMT.",
@@ -3594,7 +3639,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-10",
+    "asOf": "2026-11-22",
     "status": "approved",
     "id": "thyrotropin-alfa",
     "name": "Thyrotropin alfa",
@@ -3646,7 +3691,7 @@ export const carriedAgents: EntityInput[] = [
   },
   {
     "kind": "drug",
-    "asOf": "2026-09-08",
+    "asOf": "2026-11-22",
     "id": "tilmanocept-tc99m",
     "companies": [
       "navidea"
