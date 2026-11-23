@@ -2474,12 +2474,20 @@ export const carriedAgents: EntityInput[] = [
       {
         "label": "FDA label (DailyMed)",
         "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=Pembrolizumab"
+      },
+      {
+        "label": "FDA letter: Keytruda S-191, TMB-high PMR fulfilled (16 Oct 2026)",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125514s191ltrCorrected.pdf"
+      },
+      {
+        "label": "FDA letter: Keytruda Qlex S-008, TMB-high PMR fulfilled (16 Oct 2026)",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761467Orig1s008ltr.pdf"
       }
     ],
     "name": "Pembrolizumab",
     "brand": "Keytruda / Keytruda Qlex (SC)",
     "modality": "Monoclonal antibody (anti-PD-1)",
-    "asOf": "2026-09-04",
+    "asOf": "2026-11-01",
     "status": "approved",
     "wikipedia": "https://en.wikipedia.org/wiki/Pembrolizumab",
     "tldr": "Pembrolizumab is a PD-1 blocking antibody approved in more than 40 settings, from melanoma and lung cancer to the first tumour-agnostic approval for mismatch-repair-deficient tumours in 2017, and before and after surgery in triple-negative breast cancer. A subcutaneous form arrived in 2025, and it is the backbone partner for ADCs and personalised neoantigen vaccines.",
@@ -2682,6 +2690,13 @@ export const carriedAgents: EntityInput[] = [
         "region": "US",
         "note": "Muscle-invasive bladder cancer with enfortumab vedotin, as pembrolizumab or pembrolizumab with berahyaluronidase alfa",
         "source": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pembrolizumab-or-pembrolizumab-and-berahyaluronidase-alfa-pmph-each-enfortumab-vedotin"
+      },
+      {
+        "date": "2026-10-16",
+        "type": "label-change",
+        "region": "US",
+        "note": "TMB-high indication: confirmatory data fulfil the postmarketing requirement for Keytruda (BLA 125514/S-191) and Keytruda Qlex (BLA 761467/S-008), and the label now defines TMB-high as ≥13 mutations/megabase by an FDA-approved test",
+        "source": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125514s191ltrCorrected.pdf"
       }
     ],
     "mechanismSteps": [
