@@ -2934,17 +2934,17 @@ export const carriedTrials: EntityInput[] = [
     "name": "A Single-Arm, Blinded, Fluorescent PSMA Histopathology Trial of AS1986NS",
     "nct": "NCT06906471",
     "phase": "1/2",
-    "status": "recruiting",
+    "status": "active",
     "sponsor": "Antelope Surgical Solutions, Inc",
-    "enrolled": 10,
-    "asOf": "2026-09-16",
+    "enrolled": 15,
+    "asOf": "2026-11-01",
     "tags": [
       "pipeline",
       "ctgov-ingest"
     ],
     "setting": "A Single-Arm, Blinded, Fluorescent PSMA Histopathology Trial of AS1986NS",
-    "tldr": "A phase 1/2 trial of AS1986NS in prostate cancer, run by Antelope Surgical Solutions, Inc, now recruiting.",
-    "summary": "A Single-Arm, Blinded, Fluorescent PSMA Histopathology Trial of AS1986NS is a phase 1/2 interventional study registered as NCT06906471 by Antelope Surgical Solutions, Inc, with 10 participants planned, started 2026-07-01 and due to reach its primary completion in 2026-10-30. Interventions recorded: AS1986NS.",
+    "tldr": "A phase 1/2 trial of AS1986NS in prostate cancer, run by Antelope Surgical Solutions, Inc. Recruitment has closed with 15 participants enrolled.",
+    "summary": "A Single-Arm, Blinded, Fluorescent PSMA Histopathology Trial of AS1986NS is a phase 1/2 interventional study registered as NCT06906471 by Antelope Surgical Solutions, Inc, started 2026-07-01 and is active but no longer recruiting, with 15 participants enrolled (actual, registry updated 16 Oct 2026). Primary completion is estimated for 2026-10-30 and study completion for 2026-11-30. Interventions recorded: AS1986NS.",
     "indications": [
       "prostate"
     ],
@@ -3081,16 +3081,16 @@ export const carriedTrials: EntityInput[] = [
     "name": "PSMA PET Combined With MRI for the Detection of PCa",
     "nct": "NCT07052214",
     "phase": "3",
-    "status": "recruiting",
+    "status": "active",
     "sponsor": "Telix Pharmaceuticals (Innovations) Pty Limited",
     "enrolled": 338,
-    "asOf": "2026-09-16",
+    "asOf": "2026-11-01",
     "tags": [
       "ctgov-ingest"
     ],
     "setting": "A Single Arm, Multicenter, Prospective, Open Label, Longitudinal Phase 3 Study of Prostate Specific Membrane Antigen (PSMA) Positron Emission Tomography (PET) Combined With Magnetic Resonance Imaging (MRI) Compared to Standard of Care (SOC) for the Detection of Prostate Cancer (PCa).",
-    "tldr": "A phase 3 trial of Gallium-68 gozetotide in prostate cancer, run by Telix Pharmaceuticals (Innovations) Pty Limited, now recruiting.",
-    "summary": "PSMA PET Combined With MRI for the Detection of PCa is a phase 3 interventional study registered as NCT07052214 by Telix Pharmaceuticals (Innovations) Pty Limited, with 338 participants planned, started 2025-08-18 and due to reach its primary completion in 2027-01. Interventions recorded: 68Ga-PSMA-11. Conditions listed: PCA, Prostate Cancer, Prostatic Neoplasm, PSMA PET. No results are recorded here; the registry entry is the source.",
+    "tldr": "A phase 3 trial of Gallium-68 gozetotide in prostate cancer, run by Telix Pharmaceuticals (Innovations) Pty Limited, active and no longer recruiting.",
+    "summary": "PSMA PET Combined With MRI for the Detection of PCa is a phase 3 interventional study registered as NCT07052214 by Telix Pharmaceuticals (Innovations) Pty Limited, with 338 participants planned (estimated), started 2025-08-18 and active but no longer recruiting (registry updated 20 Oct 2026); primary completion is due in 2027-01. Interventions recorded: 68Ga-PSMA-11. Conditions listed: PCA, Prostate Cancer, Prostatic Neoplasm, PSMA PET. No results are recorded here; the registry entry is the source.",
     "drugs": [
       "ga68-psma-11"
     ],
