@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-05",
+ "generatedAt": "2026-11-26",
  "offline": false,
  "requests": 8,
  "roadmaps": [
@@ -93,7 +93,7 @@
       "enrolmentType": "ACTUAL",
       "primaryCompletion": "2025-04-14",
       "completion": "2030-12",
-      "lastUpdate": "2026-04-15"
+      "lastUpdate": "2026-11-24"
      },
      "contradictions": [],
      "explained": [],
@@ -359,7 +359,7 @@
     "checked": 3,
     "contradictions": 0,
     "explained": 0,
-    "papers": 0,
+    "papers": 1,
     "watch": 3,
     "watchPassed": 0
    },
@@ -417,7 +417,15 @@
      },
      "contradictions": [],
      "explained": [],
-     "papers": []
+     "papers": [
+      {
+       "pmid": "43063372",
+       "doi": "10.1200/cci-26-00168",
+       "title": "Overall Survival With [&lt;sup&gt;177&lt;/sup&gt;Lu]Lu-PSMA-617 in Chemotherapy-Naïve Metastatic Castration-Resistant Prostate Cancer: Bayesian Reanalysis of the PSMAfore Trial.",
+       "journal": "JCO Clin Cancer Inform",
+       "date": "2026-10-01"
+      }
+     ]
     },
     {
      "id": "vision",
@@ -494,7 +502,7 @@
     "checked": 2,
     "contradictions": 0,
     "explained": 0,
-    "papers": 0,
+    "papers": 1,
     "watch": 0,
     "watchPassed": 0
    },
@@ -525,7 +533,15 @@
      },
      "contradictions": [],
      "explained": [],
-     "papers": []
+     "papers": [
+      {
+       "pmid": "43063372",
+       "doi": "10.1200/cci-26-00168",
+       "title": "Overall Survival With [&lt;sup&gt;177&lt;/sup&gt;Lu]Lu-PSMA-617 in Chemotherapy-Naïve Metastatic Castration-Resistant Prostate Cancer: Bayesian Reanalysis of the PSMAfore Trial.",
+       "journal": "JCO Clin Cancer Inform",
+       "date": "2026-10-01"
+      }
+     ]
     },
     {
      "id": "vision",
@@ -623,7 +639,7 @@
       "enrolmentType": "ACTUAL",
       "primaryCompletion": "2025-04-14",
       "completion": "2030-12",
-      "lastUpdate": "2026-04-15"
+      "lastUpdate": "2026-11-24"
      },
      "contradictions": [],
      "explained": [],
